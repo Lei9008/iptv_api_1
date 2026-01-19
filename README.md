@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/alantang1977/X/main/Pictures/SuperMAN.png" alt="logo"/>
   <h1 align="center">IPTV自动获取更新直播源</h1>
 </div>
 
@@ -29,7 +28,7 @@
 > 声明: 所有播放源均收集于互联网，仅供测试研究学习，`不得商用!`
 
 ## 订阅链接:        
-> [IPV4直播加速URL1](https://gh.catmak.name/https://raw.githubusercontent.com/alantang1977/iptv_api/refs/heads/main/output/live_ipv4.m3u)
+> [IPV4直播加速URL1]:https://gh.catmak.name/https://raw.githubusercontent.com/alantang1977/iptv_api/refs/heads/main/output/live_ipv4.m3u
 > 
 >[IPV4直播加速CDN](https://cdn.jsdelivr.net/gh/alantang1977/iptv_api@master/output/live_ipv4.m3u)
 > 
