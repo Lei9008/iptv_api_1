@@ -10,7 +10,7 @@ source_urls = [
     "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
     "http://rihou.cc:555/gggg.nzk",
     "https://github.com/plsy1/iptv/blob/main/multicast/multicast-jinan.m3u",
-    "https://raw.kkgithub.com/liuchuang0321/K-TV/master/output/user_result.m3u",
+    "https://github.com/liuchuang0321/K-TV/blob/master/output/user_result.txt",
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     
     "https://zb.pl10000.top/list.txt",
