@@ -10,6 +10,8 @@ source_urls = [
     "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
     "http://rihou.cc:555/gggg.nzk",
     "https://github.com/plsy1/iptv/blob/main/multicast/multicast-jinan.m3u",
+    "https://raw.kkgithub.com/liuchuang0321/K-TV/master/output/user_result.m3u",
+    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     
     "https://zb.pl10000.top/list.txt",
     "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
@@ -93,8 +95,9 @@ epg_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
-    "https://epg.pw/xmltv/epg_TW.xml"
-    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz"
+    "https://epg.pw/xmltv/epg_TW.xml",
+    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz",
+    "https://live.fanmingming.cn/e.xml",
 ]
 # 测速超时时间（秒）
 TEST_TIMEOUT = 8
