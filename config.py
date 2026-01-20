@@ -108,6 +108,7 @@ epg_urls = [
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
     "https://epg.pw/xmltv/epg_TW.xml"
+    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz"
 ]
 # 测速超时时间（秒）
 TEST_TIMEOUT = 10
