@@ -169,8 +169,8 @@ async def main():
     
     # 根据测试结果排序直播源
     url_to_result = {result.url: result for result in results}
-    sorted_live_sources = sorted(
-        live_sources,
+    sorted_live_ipv4 = sorted(
+        live_ipv4,
         key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
     )
     
@@ -180,12 +180,12 @@ async def main():
     
     logger.info(f"速度测试完成: 成功 {success_count}/{total_count}")
     logger.info("前5个最快的直播源:")
-    for i, (name, url) in enumerate(sorted_live_sources[:5], 1):
+    for i, (name, url) in enumerate(sorted_live_ipv4[:5], 1):
         latency = url_to_result[url].latency
         logger.info(f"{i}. {name} - 延迟: {latency:.2f}ms")
     
     # 生成排序后的M3U文件
-    m3u_processor.generate_m3u(sorted_live_sources, output_file)
+    m3u_processor.generate_m3u(sorted_live_ipv4, output_file)
     
     # 生成速度测试报告
     report_file = f"{config.OUTPUT_DIR}/speed_test_report_{int(time.time())}.txt"
@@ -197,7 +197,7 @@ async def main():
             f.write(f"成功数量: {success_count}\n\n")
             
             f.write("排序后的直播源列表:\n")
-            for i, (name, url) in enumerate(sorted_live_sources, 1):
+            for i, (name, url) in enumerate(sorted_live_ipv4, 1):
                 result = url_to_result[url]
                 latency = result.latency if result.latency is not None else "N/A"
                 status = "成功" if result.success else f"失败 ({result.error})"
