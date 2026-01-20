@@ -147,7 +147,7 @@ class M3UProcessor:
 # 主程序
 async def main():
     # 输入输出文件路径
-    input_file = "input/live_sources.m3u"
+    input_file = "output/live_ipv4.m3u"
     output_file = f"{config.OUTPUT_DIR}/live_sources_sorted_{int(time.time())}.m3u"
     
     # 解析M3U文件
@@ -155,16 +155,16 @@ async def main():
     m3u_processor = M3UProcessor()
     live_sources = m3u_processor.parse_m3u(input_file)
     
-    if not live_sources:
+    if not live_ipv4:
         logger.error("未找到有效的直播源")
         return
     
-    logger.info(f"找到 {len(live_sources)} 个直播源")
+    logger.info(f"找到 {len(live_ipv4)} 个直播源")
     
     # 执行速度测试
     logger.info("开始速度测试...")
     async with SpeedTester() as tester:
-        urls = [source[1] for source in live_sources]
+        urls = [source[1] for source in live_ipv4]
         results = await tester.batch_speed_test(urls)
     
     # 根据测试结果排序直播源
