@@ -6,9 +6,10 @@ ip_version_priority = "ipv4"
 # 直播源URL列表
 source_urls = [
     "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
-    "https://raw.kkgithub.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
+    "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
     "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
     "http://rihou.cc:555/gggg.nzk",
+    "https://github.com/plsy1/iptv/blob/main/multicast/multicast-jinan.m3u",
     
     "https://zb.pl10000.top/list.txt",
     "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
@@ -33,9 +34,7 @@ source_urls = [
     "https://iptv.catvod.com/tv.m3u",
     "https://live.zbds.top/tv/iptv4.txt",
     "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy",
-
-    
-    
+       
     "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
@@ -98,7 +97,7 @@ epg_urls = [
     "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz"
 ]
 # 测速超时时间（秒）
-TEST_TIMEOUT = 10
+TEST_TIMEOUT = 8
 
 # 测速线程池最大工作线程数
 MAX_WORKERS = 20
