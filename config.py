@@ -6,7 +6,7 @@ ip_version_priority = "ipv4"
 # 直播源URL列表
 source_urls = [
     "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
-    "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
+    "https://raw.kkgithub.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
     "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
     "http://rihou.cc:555/gggg.nzk",
     
