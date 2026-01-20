@@ -5,6 +5,11 @@ ip_version_priority = "ipv4"
 
 # 直播源URL列表
 source_urls = [
+    "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
+    "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
+    "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
+    "http://rihou.cc:555/gggg.nzk",
+    
     "https://zb.pl10000.top/list.txt",
     "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
     "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
@@ -24,15 +29,13 @@ source_urls = [
     "https://www.iyouhun.com/tv/myIPTV/ipv6.m3u",
     "https://www.iyouhun.com/tv/myIPTV/ipv4.m3u",
     "https://live.izbds.com/tv/iptv4.txt",
-    "http://rihou.cc:555/gggg.nzk",
     "http://1.94.31.214/live/livelite.txt",
     "https://iptv.catvod.com/tv.m3u",
     "https://live.zbds.top/tv/iptv4.txt",
     "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy",
 
-    "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
-    "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
-    "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
+    
+    
     "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
