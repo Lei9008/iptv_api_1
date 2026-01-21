@@ -9,7 +9,7 @@ import os
 import difflib
 
 # 确保 output 文件夹存在
-output_folder = "output"
+output_folder = "self_use/output"
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
