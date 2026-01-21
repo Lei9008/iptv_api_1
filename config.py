@@ -82,7 +82,7 @@ announcements = [
         "entries": [
             {
                 #"name": None,
-                "name":  f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n"),
+                "name": '%Y-%m-%d %H:%M:%S',
                 "url": "https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Robot.mp4",
                 "logo": "https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Chao.png"
             }
