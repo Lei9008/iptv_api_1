@@ -276,6 +276,6 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, new_url):
     f_txt.write(f"{channel_name},{new_url}\n")
 
 if __name__ == "__main__":
-    template_file = "demo.txt"
+    template_file = "user_demo.txt"
     channels, template_channels = filter_source_urls(template_file)
     updateChannelUrlsM3U(channels, template_channels)
