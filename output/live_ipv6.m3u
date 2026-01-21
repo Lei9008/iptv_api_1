@@ -76,7 +76,9 @@ http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001026/index.m3u8$IPV6
 #EXTINF:-1 tvg-id="1" tvg-name="江苏卫视" tvg-logo="./pic/logos江苏卫视.png" group-title="┃卫视频道",江苏卫视
 http://[2409:8087:2001:20:2800:0:df6e:eb12]/wh7f454c46tw2983110475_-1591539074/ott.mobaibox.com/PLTV/3/224/3221228097/index.m3u8?icpid=3&RTS=1668597777&from=40&popid=40&hms_devid=2112&prioritypopid=40&vqe=3$IPV6
 #EXTINF:-1 tvg-id="1" tvg-name="安徽卫视" tvg-logo="./pic/logos安徽卫视.png" group-title="┃卫视频道",安徽卫视
-http://[2409:8087:2001:20:2800:0:df6e:eb12]/wh7f454c46tw2802330256_375747539/ott.mobaibox.com/PLTV/3/224/3221227558/index.m3u8?icpid=3&RTS=1668597596&from=40&popid=40&hms_devid=2112&prioritypopid=40&vqe=3$IPV6
+http://[2409:8087:2001:20:2800:0:df6e:eb12]/wh7f454c46tw2802330256_375747539/ott.mobaibox.com/PLTV/3/224/3221227558/index.m3u8?icpid=3&RTS=1668597596&from=40&popid=40&hms_devid=2112&prioritypopid=40&vqe=3$IPV6•线路1
+#EXTINF:-1 tvg-id="2" tvg-name="安徽卫视" tvg-logo="./pic/logos安徽卫视.png" group-title="┃卫视频道",安徽卫视
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226943/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7E0QmKQ_slRCwvVVUUfxPVbw%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND$IPV6•线路2
 #EXTINF:-1 tvg-id="1" tvg-name="重庆卫视" tvg-logo="./pic/logos重庆卫视.png" group-title="┃卫视频道",重庆卫视
 http://[2409:8087:2001:20:2800:0:df6e:eb09]/wh7f454c46tw2787424866_142914197/ott.mobaibox.com/PLTV/3/224/3221228133/index.m3u8?icpid=3&RTS=1669701388&from=40&popid=40&hms_devid=2037&prioritypopid=40&vqe=3$IPV6
 #EXTINF:-1 tvg-id="1" tvg-name="四川卫视" tvg-logo="./pic/logos四川卫视.png" group-title="┃卫视频道",四川卫视
