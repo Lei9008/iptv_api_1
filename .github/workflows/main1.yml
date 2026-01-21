@@ -39,7 +39,7 @@ jobs:
 
     - name: Run Python script  # 执行主脚本
       run: |
-        python /self_use/user_main.py
+        python self_use/user_main.py
       
         
     #- name: Run Python script  # 执行测速脚本
