@@ -5,8 +5,8 @@ ip_version_priority = "ipv4"
 
 # 直播源URL列表
 source_urls = [
-    "https://github.com/Lei9008/iptv_api_1/blob/main/output/live_sources_ipv4.m3u",
     
+    "https://gh.catmak.name/https://raw.githubusercontent.com/Lei9008/iptv_api_1/refs/heads/main/output/live_sources_ipv4.m3u",
        
  
 
