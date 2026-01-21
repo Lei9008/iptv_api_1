@@ -1,0 +1,11 @@
+更新日期,#genre#
+2026-01-21,https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Robot.mp4
+┃4K频道,#genre#
+┃央视频道,#genre#
+┃央视付费频道,#genre#
+┃卫视频道,#genre#
+┃山东频道,#genre#
+┃少儿频道,#genre#
+┃湾区频道,#genre#
+┃影视频道,#genre#
+
