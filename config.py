@@ -78,7 +78,7 @@ url_blacklist = [
 # 公告信息
 announcements = [
     {
-        "channel": "更新日期"open_update_time,
+        "channel": "更新日期",
         "entries": [
             {
                 "name": None,
