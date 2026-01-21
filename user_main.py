@@ -185,7 +185,7 @@ def updateChannelUrlsM3U(channels, template_channels):
     written_urls_ipv6 = set()
 
     current_date = datetime.now().strftime("%Y-%m-%d")
-    for group in config.announcements:
+    for group in config1.announcements:
         for announcement in group['entries']:
             if announcement['name'] is None:
                 announcement['name'] = current_date
@@ -200,10 +200,10 @@ def updateChannelUrlsM3U(channels, template_channels):
             open(ipv6_m3u_path, "w", encoding="utf-8") as f_m3u_ipv6, \
             open(ipv6_txt_path, "w", encoding="utf-8") as f_txt_ipv6:
 
-        f_m3u_ipv4.write(f"""#EXTM3U x-tvg-url={",".join(f'"{epg_url}"' for epg_url in config.epg_urls)}\n""")
-        f_m3u_ipv6.write(f"""#EXTM3U x-tvg-url={",".join(f'"{epg_url}"' for epg_url in config.epg_urls)}\n""")
+        f_m3u_ipv4.write(f"""#EXTM3U x-tvg-url={",".join(f'"{epg_url}"' for epg_url in config1.epg_urls)}\n""")
+        f_m3u_ipv6.write(f"""#EXTM3U x-tvg-url={",".join(f'"{epg_url}"' for epg_url in config1.epg_urls)}\n""")
 
-        for group in config.announcements:
+        for group in config1.announcements:
             f_txt_ipv4.write(f"{group['channel']},#genre#\n")
             f_txt_ipv6.write(f"{group['channel']},#genre#\n")
             for announcement in group['entries']:
@@ -256,8 +256,8 @@ def updateChannelUrlsM3U(channels, template_channels):
 def sort_and_filter_urls(urls, written_urls):
     # 排序和过滤URL。
     filtered_urls = [
-        url for url in sorted(urls, key=lambda u: not is_ipv6(u) if config.ip_version_priority == "ipv6" else is_ipv6(u))
-        if url and url not in written_urls and not any(blacklist in url for blacklist in config.url_blacklist)
+        url for url in sorted(urls, key=lambda u: not is_ipv6(u) if config1.ip_version_priority == "ipv6" else is_ipv6(u))
+        if url and url not in written_urls and not any(blacklist in url for blacklist in config1.url_blacklist)
     ]
     written_urls.update(filtered_urls)
     return filtered_urls
