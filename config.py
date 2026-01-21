@@ -81,7 +81,7 @@ announcements = [
         "channel": "更新日期",
         "entries": [
             {
-                #"name": None, {time.strftime('%Y-%m-%d %H:%M:%S')}\n,
+                #"name": None,
                 "name": {time.strftime('%Y-%m-%d %H:%M:%S')}\n,
                 "url": "https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Robot.mp4",
                 "logo": "https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Chao.png"
