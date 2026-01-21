@@ -241,9 +241,9 @@ def updateChannelUrlsM3U(channels, template_channels):
                         total_urls_ipv4 = len(sorted_urls_ipv4)
                         total_urls_ipv6 = len(sorted_urls_ipv6)
 
-                        #for index, url in enumerate(sorted_urls_ipv4, start=1):
-                            #new_url = add_url_suffix(url, index, total_urls_ipv4, "IPV4")
-                            #write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, index, new_url)
+                        for index, url in enumerate(sorted_urls_ipv4, start=1):
+                            new_url = add_url_suffix(url, index, total_urls_ipv4, "IPV4")
+                            write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, index, new_url)
 
                         for index, url in enumerate(sorted_urls_ipv6, start=1):
                             new_url = add_url_suffix(url, index, total_urls_ipv6, "IPV6")
@@ -264,8 +264,8 @@ def sort_and_filter_urls(urls, written_urls):
 def add_url_suffix(url, index, total_urls, ip_version):
     # 添加URL后缀。
     suffix = f"${ip_version}" 
-    #if total_urls == 1 else f"${ip_version}•线路{index}"
-   #base_url = url.split('$', 1)[0] if '$' in url else url
+    if total_urls == 1 else f"${ip_version}•线路{index}"
+    base_url = url.split('$', 1)[0] if '$' in url else url
     return f"{base_url}{suffix}"
 
 def write_to_files(f_m3u, f_txt, category, channel_name, index, new_url):
