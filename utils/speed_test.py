@@ -148,7 +148,8 @@ class M3UProcessor:
 # 主程序
 async def main():
     # 输入输出文件路径
-    input_file = "input/live_sources.m3u"
+    #input_file = "input/live_sources.m3u"
+    input_file = "output/live_ipv4.m3u"
     output_file = f"{config.OUTPUT_DIR}/live_sources_sorted_{int(time.time())}.m3u"
     
     # 解析M3U文件
