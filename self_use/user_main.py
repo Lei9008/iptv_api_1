@@ -4,7 +4,7 @@ import requests
 import logging
 from collections import OrderedDict
 from datetime import datetime
-import config
+import user_config
 import os
 import difflib
 
