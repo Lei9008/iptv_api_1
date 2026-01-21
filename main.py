@@ -263,7 +263,8 @@ def sort_and_filter_urls(urls, written_urls):
 
 def add_url_suffix(url, index, total_urls, ip_version):
     # 添加URL后缀。
-    suffix = f"${ip_version}" if total_urls == 1 else f"${ip_version}•线路{index}"
+    suffix = f"${ip_version}" if total_urls == 1 else 
+    #f"${ip_version}•线路{index}"
     base_url = url.split('$', 1)[0] if '$' in url else url
     return f"{base_url}{suffix}"
 
