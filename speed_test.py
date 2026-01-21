@@ -212,6 +212,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())    
-    template_file = "demo.txt"
-    channels, template_channels = filter_source_urls(template_file)
-    updateChannelUrlsM3U(channels, template_channels)
