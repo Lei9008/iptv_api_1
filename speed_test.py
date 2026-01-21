@@ -191,7 +191,7 @@ async def main():
     m3u_processor.generate_m3u(sorted_live_sources, output_file)
     
     # 生成速度测试报告
-    report_file = f"{config.OUTPUT_DIR}/speed_test_report_{int(time.time())}.txt"
+    report_file = f"{config.OUTPUT_DIR}/speed_test_report.txt"
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write("IPTV直播源速度测试报告\n")
