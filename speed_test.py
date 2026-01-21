@@ -150,7 +150,8 @@ async def main():
     # 输入输出文件路径
     #input_file = "input/live_sources.m3u"
     input_file = "output/live_ipv4.m3u"
-    output_file = f"{config.OUTPUT_DIR}/live_sources_sorted_{int(time.time())}.m3u"
+    #output_file = f"{config.OUTPUT_DIR}/live_sources_sorted_{int(time.time())}.m3u"
+    output_file = f"{config.OUTPUT_DIR}/live_sources_ipv4}.m3u"
     
     # 解析M3U文件
     logger.info(f"开始解析M3U文件: {input_file}")
@@ -211,3 +212,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())    
+    template_file = "demo.txt"
+    channels, template_channels = filter_source_urls(template_file)
+    updateChannelUrlsM3U(channels, template_channels)
