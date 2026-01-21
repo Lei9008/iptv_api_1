@@ -34,6 +34,7 @@ CCTV17,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/
 兵器科技,http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8$IPV6
 ┃卫视频道,#genre#
 山东卫视,http://[2409:8087:2001:20:2800:0:df6e:eb10]/wh7f454c46tw2848465480_1677095697/ott.mobaibox.com/PLTV/3/224/3221227517/index.m3u8?icpid=3&RTS=1668597642&from=40&popid=40&hms_devid=2110&prioritypopid=40&vqe=3$IPV6
+山东卫视,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226957/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EjW26v5VaHGy1jQuIA-4EbA%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND$IPV6
 北京卫视,http://[2409:8087:2001:20:2800:0:df6e:eb0b]/wh7f454c46tw2687876293_-1703018199/ott.mobaibox.com/PLTV/3/224/3221227508/index.m3u8?icpid=3&RTS=1668597482&from=40&popid=40&hms_devid=2038&prioritypopid=40&vqe=3$IPV6
 北京卫视,http://[2409:8087:1:20:20::2c]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226436/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7ElMQ3ov45VmhzipweN5VstQ%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNPg_yZ8DZHTaSU92MIl_o3b%2CEND$IPV6
 东方卫视,http://[2409:8087:2001:20:2800:0:df6e:eb16]/wh7f454c46tw2542426131_1585848046/ott.mobaibox.com/PLTV/3/224/3221227511/index.m3u8?icpid=3&RTS=1668597336&from=40&popid=40&hms_devid=2114&prioritypopid=40&vqe=3$IPV6
@@ -55,12 +56,14 @@ CCTV17,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/
 贵州卫视,http://[2409:8087:2001:20:2800:0:df6e:eb08]/wh7f454c46tw2087544744_109645303/ott.mobaibox.com/PLTV/3/224/3221228136/index.m3u8?icpid=3&RTS=1669700688&from=40&popid=40&hms_devid=2037&prioritypopid=40&vqe=3$IPV6
 贵州卫视,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221227012/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EnqBF03rFwPucF8ODtWxLQQ%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND$IPV6
 贵州卫视,http://[2409:8087:1a01:df::4030]:80/TVOD/88888888/224/3221225974/main.m3u8$IPV6
+贵州卫视,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226474/index.m3u8$IPV6
 河北卫视,http://[2409:8087:2001:20:2800:0:df6e:eb05]/wh7f454c46tw1698524218_988816054/ott.mobaibox.com/PLTV/3/224/3221228106/index.m3u8?icpid=3&RTS=1669700299&from=40&popid=40&hms_devid=2041&prioritypopid=40&vqe=3$IPV6
 河南卫视,http://[2409:8087:2001:20:2800:0:df6e:eb17]/wh7f454c46tw1784575403_-1712002709/ott.mobaibox.com/PLTV/3/224/3221228221/index.m3u8?icpid=3&RTS=1669700385&from=40&popid=40&hms_devid=2114&prioritypopid=40&vqe=3$IPV6
 黑龙江卫视,http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001031/index.m3u8$IPV6
 黑龙江卫视,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226965/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7E7UiKL56-L86ihmTWaZ6csw%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND$IPV6
 黑龙江卫视,http://[2409:8087:1a01:df::4001]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226327/1.m3u8$IPV6
 湖北卫视,http://[2409:8087:2001:20:2800:0:df6e:eb11]/wh7f454c46tw3059146177_-1525708880/ott.mobaibox.com/PLTV/3/224/3221227479/index.m3u8?icpid=3&RTS=1668597853&from=40&popid=40&hms_devid=2110&prioritypopid=40&vqe=3$IPV6
+湖北卫视,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226952/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EREB40lnZnCEwjRy7LZuhIQ%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND$IPV6
 江西卫视,http://[2409:8087:2001:20:2800:0:df6e:eb17]/wh7f454c46tw1965546073_-1364170119/ott.mobaibox.com/PLTV/3/224/3221228109/index.m3u8?icpid=3&RTS=1669700566&from=40&popid=40&hms_devid=2114&prioritypopid=40&vqe=3$IPV6
 江西卫视,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226956/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7Ei6ZIpVizXlewg-YfGvH8dA%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND$IPV6
 江西卫视,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226504/index.m3u8$IPV6
