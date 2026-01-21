@@ -11,7 +11,7 @@ from typing import List, Dict, Tuple, Optional
 class Config:
     CONCURRENT_LIMIT = 20  # 并发限制
     TIMEOUT = 10  # 超时时间（秒）
-    RETRY_TIMES = 3  # 重试次数
+    RETRY_TIMES = 2  # 重试次数
     OUTPUT_DIR = "output"  # 输出目录
     LOG_FILE = "output/speed_test.log"  # 日志文件
 
