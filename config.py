@@ -6,6 +6,15 @@ ip_version_priority = "ipv4"
 
 # 直播源URL列表
 source_urls = [
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E7%A7%BB%E5%8A%A8IPV6IPTV%E7%9B%B4%E6%92%AD%E6%BA%90.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B0202509.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%B1%B1%E4%B8%9C%E7%94%B5%E4%BF%A12025.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%B1%B1%E4%B8%9C%E8%81%94%E9%80%9A.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%B1%B1%E4%B8%9C%E8%81%94%E9%80%9A%E7%BB%84%E6%92%AD.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E6%B1%9F%E8%8B%8F%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E7%99%BE%E8%A7%86TV.m3u",
+    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/CCTV+%E5%8D%AB%E8%A7%86+%E5%8C%97%E4%BA%AC+%E5%87%A4%E5%87%B0+%E6%8E%A2%E7%B4%A2+%E6%98%9F%E7%A9%BA%E5%8D%AB%E8%A7%86-%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91.m3u",
+    
     "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
     "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
     "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
