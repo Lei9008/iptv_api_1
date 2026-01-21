@@ -78,7 +78,7 @@ url_blacklist = [
 # 公告信息
 announcements = [
     {
-        "channel": " 更新日期: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")",
+        "channel": " 更新日期",open_update_time
         "entries": [
             {
                 "name": None,
