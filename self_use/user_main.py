@@ -156,7 +156,7 @@ def match_channels(template_channels, all_channels):
 def filter_source_urls(template_file):
     # 过滤源URL，获取匹配后的频道信息。
     template_channels = parse_template(template_file)
-    source_urls = self_use/user_config.source_urls
+    source_urls = user_config.source_urls
 
     all_channels = OrderedDict()
     for url in source_urls:
