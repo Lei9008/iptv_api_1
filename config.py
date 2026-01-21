@@ -6,10 +6,44 @@ ip_version_priority = "ipv4"
 
 # 直播源URL列表
 source_urls = [
+    "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
+    "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
+    "https://fastly.jsdelivr.net/gh/plsy1/iqilu@master/iqilu-ku9.m3u",
+    "http://rihou.cc:555/gggg.nzk",
+    "https://github.com/plsy1/iptv/blob/main/multicast/multicast-jinan.m3u",
+    "https://github.com/liuchuang0321/K-TV/blob/master/output/user_result.txt",
+    "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     
-   "https://github.com/Lei9008/iptv-api/blob/master/output/user_result.txt",
-   "https://github.com/Lei9008/iptv-api/blob/master/output/user_result.m3u",
-  
+    "https://zb.pl10000.top/list.txt",
+    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
+    "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
+    "https://115.190.105.236/vip/qwt.m3u",
+    "https://115.190.105.236/vip/vip.m3u",
+    "https://cloud.7so.top/f/xv80ux/天浪.txt",
+    "https://gitee.com/main-stream/tv/raw/master/BOSS.json",
+    "https://raw.githubusercontent.com/alantang1977/iptv-auto/refs/heads/main/my.txt",
+    "https://gitee.com/alexkw/app/raw/master/kgk.txt",
+    "https://d.kstore.dev/download/15114/HKTV.txt",
+    "http://go8.myartsonline.com/zx/0/TVBTV28.txt",
+    "https://raw.githubusercontent.com/iodata999/frxz751113-IPTVzb1/refs/heads/main/结果.m3u",
+    "https://raw.githubusercontent.com/alantang1977/jtv/refs/heads/main/网络收集.txt",
+    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
+    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/gqds+.txt",
+    "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt",
+    "https://www.iyouhun.com/tv/myIPTV/ipv6.m3u",
+    "https://www.iyouhun.com/tv/myIPTV/ipv4.m3u",
+    "https://live.izbds.com/tv/iptv4.txt",
+    "http://1.94.31.214/live/livelite.txt",
+    "https://iptv.catvod.com/tv.m3u",
+    "https://live.zbds.top/tv/iptv4.txt",
+    "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy",
+       
+    "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
+    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
+    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
+    
+
+    
        
  
 
