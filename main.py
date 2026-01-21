@@ -261,13 +261,13 @@ def sort_and_filter_urls(urls, written_urls):
     written_urls.update(filtered_urls)
     return filtered_urls
 
-def add_url_suffix(url, index, total_urls, ip_version):
+#def add_url_suffix(url, index, total_urls, ip_version):
     # 添加URL后缀。
-    suffix = f"${ip_version}" 
+    #suffix = f"${ip_version}" 
     #if total_urls == 1 else f"${ip_version}•线路{index}"
-    base_url = url.split('$', 1)[0] 
+   #base_url = url.split('$', 1)[0] 
     #if '$' in url else url
-    return f"{base_url}{suffix}"
+    #return f"{base_url}{suffix}"
 
 def write_to_files(f_m3u, f_txt, category, channel_name, index, new_url):
     # 写入M3U和TXT文件。
