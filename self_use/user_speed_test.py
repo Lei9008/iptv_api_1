@@ -155,7 +155,7 @@ class M3UProcessor:
               f.write('#EXTM3U\n')
             # 2. 写入文件级分组标题（含当前时间戳）
               current_time = time.strftime('%Y-%m-%d %H:%M')
-              f.write(f"#EXTINF:-1 group-title="更新时间",{current_time}\n")
+              f.write(f"#EXTINF:-1 group-title=\"更新时间\",{current_time}\n")
             #f.write(f"#EXT-X-GROUP:TITLE=\"测试日期: {current_time}\"\n")
             # 3. 遍历直播源，写入每个频道（index自增作为tvg-id）
               for index, (name, url) in enumerate(live_sources, start=1):
