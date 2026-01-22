@@ -1,44 +1,6 @@
 #EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml","http://epg.51zmt.top:8000/e.xml","https://epg.pw/xmltv/epg_CN.xml","https://epg.pw/xmltv/epg_HK.xml","https://epg.pw/xmltv/epg_TW.xml","https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz","https://live.fanmingming.cn/e.xml"
 #EXTINF:-1 tvg-id="1" tvg-name="2026-01-22" tvg-logo="https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Chao.png" group-title="更新日期",2026-01-22
 https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Robot.mp4
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV4K" tvg-logo="./pic/logosCCTV4K.png" group-title="┃4K频道",CCTV4K
-http://p.ytelc.com/169l/0/cctv.php?id=cctv4k$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV4K" tvg-logo="./pic/logosCCTV4K.png" group-title="┃4K频道",CCTV4K
-http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV4K" tvg-logo="./pic/logosCCTV4K.png" group-title="┃4K频道",CCTV4K
-rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23122814382128126762.rsc/99912_Uni.sdp$IPV4•线路3
-#EXTINF:-1 tvg-id="1" tvg-name="山东卫视4K" tvg-logo="./pic/logos山东卫视4K.png" group-title="┃4K频道",山东卫视4K
-http://101.35.240.114:88/live.php?id=山东卫视4K$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="山东卫视4K" tvg-logo="./pic/logos山东卫视4K.png" group-title="┃4K频道",山东卫视4K
-rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch25081411425529721444.rsc/103166_Uni.sdp$IPV4•线路2
-#EXTINF:-1 tvg-id="1" tvg-name="北京卫视4K" tvg-logo="./pic/logos北京卫视4K.png" group-title="┃4K频道",北京卫视4K
-http://139.ye23.vip/dl/btv2502.php?id=bjws4$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="北京卫视4K" tvg-logo="./pic/logos北京卫视4K.png" group-title="┃4K频道",北京卫视4K
-http://101.35.240.114:88/live.php?id=北京卫视$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="北京卫视4K" tvg-logo="./pic/logos北京卫视4K.png" group-title="┃4K频道",北京卫视4K
-http://106.53.99.30/tv/api.php?id=bjws4k$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="北京卫视4K" tvg-logo="./pic/logos北京卫视4K.png" group-title="┃4K频道",北京卫视4K
-rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch25032514071097767315.rsc/102825_Uni.sdp$IPV4•线路4
-#EXTINF:-1 tvg-id="1" tvg-name="东方卫视4K" tvg-logo="./pic/logos东方卫视4K.png" group-title="┃4K频道",东方卫视4K
-http://bp-resource-dfl.bestv.cn/148/3/video.m3u8$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="东方卫视4K" tvg-logo="./pic/logos东方卫视4K.png" group-title="┃4K频道",东方卫视4K
-rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch25092214082801723362.rsc/103278_Uni.sdp$IPV4•线路2
-#EXTINF:-1 tvg-id="1" tvg-name="湖南卫视4K" tvg-logo="./pic/logos湖南卫视4K.png" group-title="┃4K频道",湖南卫视4K
-http://101.35.240.114:88/live.php?id=湖南卫视4K$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="湖南卫视4K" tvg-logo="./pic/logos湖南卫视4K.png" group-title="┃4K频道",湖南卫视4K
-rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch25092214073911761412.rsc/103206_Uni.sdp$IPV4•线路2
-#EXTINF:-1 tvg-id="1" tvg-name="浙江卫视4K" tvg-logo="./pic/logos浙江卫视4K.png" group-title="┃4K频道",浙江卫视4K
-https://play-qukan.cztv.com:443/live/1758879019692345.m3u8$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="浙江卫视4K" tvg-logo="./pic/logos浙江卫视4K.png" group-title="┃4K频道",浙江卫视4K
-rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch25092214075944736959.rsc/103230_Uni.sdp$IPV4•线路2
-#EXTINF:-1 tvg-id="1" tvg-name="江苏卫视4K" tvg-logo="./pic/logos江苏卫视4K.png" group-title="┃4K频道",江苏卫视4K
-http://8.138.7.223/tv/jsws4k.php$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="江苏卫视4K" tvg-logo="./pic/logos江苏卫视4K.png" group-title="┃4K频道",江苏卫视4K
-rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch25092214081313070909.rsc/103254_Uni.sdp$IPV4•线路2
-#EXTINF:-1 tvg-id="1" tvg-name="四川卫视4K" tvg-logo="./pic/logos四川卫视4K.png" group-title="┃4K频道",四川卫视4K
-http://101.35.240.114:88/live.php?id=四川卫视4K$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="四川卫视4K" tvg-logo="./pic/logos四川卫视4K.png" group-title="┃4K频道",四川卫视4K
-rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch25092214084431033201.rsc/103302_Uni.sdp$IPV4•线路2
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="./pic/logosCCTV1.png" group-title="┃央视频道",CCTV1
 http://101.35.240.114:88/live.php?id=CCTV1$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="CCTV1" tvg-logo="./pic/logosCCTV1.png" group-title="┃央视频道",CCTV1
@@ -163,14 +125,6 @@ http://120.211.62.180:8000/hls/4/index.m3u8$IPV4•线路12
 https://iptv.catvod.com/live.php?id=CCTV4$IPV4•线路13
 #EXTINF:-1 tvg-id="14" tvg-name="CCTV4" tvg-logo="./pic/logosCCTV4.png" group-title="┃央视频道",CCTV4
 https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8$IPV4•线路14
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV4美洲" tvg-logo="./pic/logosCCTV4美洲.png" group-title="┃央视频道",CCTV4美洲
-https://www.wmviv.com/iptv/bc2t.php?id=cctv4m$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV4美洲" tvg-logo="./pic/logosCCTV4美洲.png" group-title="┃央视频道",CCTV4美洲
-rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch21062215392161397058.rsc/91682_Uni.sdp$IPV4•线路2
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV4欧洲" tvg-logo="./pic/logosCCTV4欧洲.png" group-title="┃央视频道",CCTV4欧洲
-https://www.wmviv.com/iptv/bc2t.php?id=cctv4o$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV4欧洲" tvg-logo="./pic/logosCCTV4欧洲.png" group-title="┃央视频道",CCTV4欧洲
-rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch21062215382556856499.rsc/91655_Uni.sdp$IPV4•线路2
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV5" tvg-logo="./pic/logosCCTV5.png" group-title="┃央视频道",CCTV5
 http://101.35.240.114:88/live.php?id=CCTV5$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="CCTV5" tvg-logo="./pic/logosCCTV5.png" group-title="┃央视频道",CCTV5
@@ -657,32 +611,6 @@ https://other.ottiptv.cc/cwjd.m3u8$IPV4•线路3
 http://101.35.240.114:88/live.php?id=重温经典$IPV4•线路4
 #EXTINF:-1 tvg-id="1" tvg-name="中国天气" tvg-logo="./pic/logos中国天气.png" group-title="┃央视频道",中国天气
 http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8$IPV4
-#EXTINF:-1 tvg-id="1" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://171.83.103.119:9999/rtp/239.69.1.90:10180$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://120.238.94.10:9901/tsfile/live/1089_1.m3u8$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://hmfs.f3322.net:3388/hls/29/index.m3u8$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-https://hls-gateway.vpstv.net/streams/708858.m3u8$IPV4•线路4
-#EXTINF:-1 tvg-id="5" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://iptv.666230.xyz/iptv/jsyd.php/G_FENGYUNYY-CQ$IPV4•线路5
-#EXTINF:-1 tvg-id="6" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://www.lizhinas.top:1009/rtp/239.252.219.87:5140$IPV4•线路6
-#EXTINF:-1 tvg-id="7" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$IPV4•线路7
-#EXTINF:-1 tvg-id="8" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://58.222.30.156/sx.v.smtcdns.net/hlslive-tx-cdn.ysp.cctv.cn/ysp/2024163303.m3u8$IPV4•线路8
-#EXTINF:-1 tvg-id="9" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://rihou.cc:555/cqyx.php?id=fyyy$IPV4•线路9
-#EXTINF:-1 tvg-id="10" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://1.82.144.44:4022/rtp/239.111.205.69:5140$IPV4•线路10
-#EXTINF:-1 tvg-id="11" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://163.177.122.71:9901/tsfile/live/1097_1.m3u8$IPV4•线路11
-#EXTINF:-1 tvg-id="12" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://163.177.122.122:9901/tsfile/live/1097_1.m3u8$IPV4•线路12
-#EXTINF:-1 tvg-id="13" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://112.234.21.109:9901/tsfile/live/1030_1.m3u8$IPV4•线路13
 #EXTINF:-1 tvg-id="1" tvg-name="第一剧场" tvg-logo="./pic/logos第一剧场.png" group-title="┃央视付费频道",第一剧场
 http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="第一剧场" tvg-logo="./pic/logos第一剧场.png" group-title="┃央视付费频道",第一剧场
@@ -715,6 +643,32 @@ http://171.83.103.119:9999/rtp/239.69.1.89:10174$IPV4•线路2
 https://hls-gateway.vpstv.net/streams/708853.m3u8$IPV4•线路3
 #EXTINF:-1 tvg-id="4" tvg-name="怀旧剧场" tvg-logo="./pic/logos怀旧剧场.png" group-title="┃央视付费频道",怀旧剧场
 http://iptv.666230.xyz/iptv/jsyd.php/G_HUAIJIUJC-CQ$IPV4•线路4
+#EXTINF:-1 tvg-id="1" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://171.83.103.119:9999/rtp/239.69.1.90:10180$IPV4•线路1
+#EXTINF:-1 tvg-id="2" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://120.238.94.10:9901/tsfile/live/1089_1.m3u8$IPV4•线路2
+#EXTINF:-1 tvg-id="3" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://hmfs.f3322.net:3388/hls/29/index.m3u8$IPV4•线路3
+#EXTINF:-1 tvg-id="4" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+https://hls-gateway.vpstv.net/streams/708858.m3u8$IPV4•线路4
+#EXTINF:-1 tvg-id="5" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://iptv.666230.xyz/iptv/jsyd.php/G_FENGYUNYY-CQ$IPV4•线路5
+#EXTINF:-1 tvg-id="6" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://www.lizhinas.top:1009/rtp/239.252.219.87:5140$IPV4•线路6
+#EXTINF:-1 tvg-id="7" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$IPV4•线路7
+#EXTINF:-1 tvg-id="8" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://58.222.30.156/sx.v.smtcdns.net/hlslive-tx-cdn.ysp.cctv.cn/ysp/2024163303.m3u8$IPV4•线路8
+#EXTINF:-1 tvg-id="9" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://rihou.cc:555/cqyx.php?id=fyyy$IPV4•线路9
+#EXTINF:-1 tvg-id="10" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://1.82.144.44:4022/rtp/239.111.205.69:5140$IPV4•线路10
+#EXTINF:-1 tvg-id="11" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://163.177.122.71:9901/tsfile/live/1097_1.m3u8$IPV4•线路11
+#EXTINF:-1 tvg-id="12" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://163.177.122.122:9901/tsfile/live/1097_1.m3u8$IPV4•线路12
+#EXTINF:-1 tvg-id="13" tvg-name="风云音乐" tvg-logo="./pic/logos风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://112.234.21.109:9901/tsfile/live/1030_1.m3u8$IPV4•线路13
 #EXTINF:-1 tvg-id="1" tvg-name="高尔夫网球" tvg-logo="./pic/logos高尔夫网球.png" group-title="┃央视付费频道",高尔夫网球
 http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="高尔夫网球" tvg-logo="./pic/logos高尔夫网球.png" group-title="┃央视付费频道",高尔夫网球
@@ -782,27 +736,31 @@ http://182.150.23.74:808/hls/23/index.m3u8$IPV4•线路12
 #EXTINF:-1 tvg-id="1" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
 http://iptv.huuc.edu.cn/hls/btv1hd.m3u8$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://112.27.235.94:8000/hls/27/index.m3u8$IPV4•线路2
+http://101.35.240.114:88/live.php?id=北京卫视$IPV4•线路2
 #EXTINF:-1 tvg-id="3" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-https://zby.130519.xyz/PLTV/11/224/3221225724/index.m3u8$IPV4•线路3
+http://112.27.235.94:8000/hls/27/index.m3u8$IPV4•线路3
 #EXTINF:-1 tvg-id="4" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch12051116365437815794.rsc/69968_Uni.sdp$IPV4•线路4
+https://zby.130519.xyz/PLTV/11/224/3221225724/index.m3u8$IPV4•线路4
 #EXTINF:-1 tvg-id="5" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub$IPV4•线路5
+rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch12051116365437815794.rsc/69968_Uni.sdp$IPV4•线路5
 #EXTINF:-1 tvg-id="6" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://satellitepull.cnr.cn/live/wxbtv/playlist.m3u8$IPV4•线路6
+http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub$IPV4•线路6
 #EXTINF:-1 tvg-id="7" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009$IPV4•线路7
+http://satellitepull.cnr.cn/live/wxbtv/playlist.m3u8$IPV4•线路7
 #EXTINF:-1 tvg-id="8" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://183.215.134.239:19901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路8
+http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009$IPV4•线路8
 #EXTINF:-1 tvg-id="9" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://183.11.239.36:808/hls/41/index.m3u8$IPV4•线路9
+http://139.ye23.vip/dl/btv2502.php?id=bjws4$IPV4•线路9
 #EXTINF:-1 tvg-id="10" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://120.211.62.180:8000/hls/35/index.m3u8$IPV4•线路10
+http://183.215.134.239:19901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路10
 #EXTINF:-1 tvg-id="11" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-https://iptv.catvod.com/live.php?id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86$IPV4•线路11
+http://183.11.239.36:808/hls/41/index.m3u8$IPV4•线路11
 #EXTINF:-1 tvg-id="12" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://182.150.23.74:808/hls/17/index.m3u8$IPV4•线路12
+http://120.211.62.180:8000/hls/35/index.m3u8$IPV4•线路12
+#EXTINF:-1 tvg-id="13" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
+https://iptv.catvod.com/live.php?id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86$IPV4•线路13
+#EXTINF:-1 tvg-id="14" tvg-name="北京卫视" tvg-logo="./pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
+http://182.150.23.74:808/hls/17/index.m3u8$IPV4•线路14
 #EXTINF:-1 tvg-id="1" tvg-name="东方卫视" tvg-logo="./pic/logos东方卫视.png" group-title="┃卫视频道",东方卫视
 http://iptv.huuc.edu.cn/hls/dfhd.m3u8$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="东方卫视" tvg-logo="./pic/logos东方卫视.png" group-title="┃卫视频道",东方卫视
@@ -1801,16 +1759,8 @@ https://www.freetv.top/migu/626064703.m3u8?migutoken=7f7c4b909389a0cd51727017680
 https://www.freetv.top/migu/626064703.m3u8?migutoken=deac6c5275081b54ad412a195e499b7c0cb8f04446b6c80aaa9d3eb1063d620261c68202d59aea05060007b58a62d5d208f16379d861d6f1627c10c9dd894f0bf7e3ca97b04696255e193e871c$IPV4•线路7
 #EXTINF:-1 tvg-id="8" tvg-name="优漫卡通" tvg-logo="./pic/logos优漫卡通.png" group-title="┃少儿频道",优漫卡通
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch11042914374730524823.rsc/69927_Uni.sdp$IPV4•线路8
-#EXTINF:-1 tvg-id="1" tvg-name="靖洋卡通" tvg-logo="./pic/logos靖洋卡通.png" group-title="┃少儿频道",靖洋卡通
-http://220.135.64.124:5050/4gtv-4gtv057/index.m3u8?proxy=true$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="靖洋卡通" tvg-logo="./pic/logos靖洋卡通.png" group-title="┃少儿频道",靖洋卡通
-http://220.135.64.124:5050/li-4gtv-4gtv057/index.m3u8?proxy=true$IPV4•线路2
 #EXTINF:-1 tvg-id="1" tvg-name="广东少儿" tvg-logo="./pic/logos广东少儿.png" group-title="┃少儿频道",广东少儿
 http://119.32.12.17:2901/udp/224.1.100.9:11111$IPV4
-#EXTINF:-1 tvg-id="1" tvg-name="东森幼幼" tvg-logo="./pic/logos东森幼幼.png" group-title="┃少儿频道",东森幼幼
-https://live.catvod.com/live.php?id=yoyo_twn$IPV4
-#EXTINF:-1 tvg-id="1" tvg-name="黑莓动画" tvg-logo="./pic/logos黑莓动画.png" group-title="┃少儿频道",黑莓动画
-rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090915451711071162.rsc/70065_Uni.sdp$IPV4
 #EXTINF:-1 tvg-id="1" tvg-name="翡翠台" tvg-logo="./pic/logos翡翠台.png" group-title="┃湾区频道",翡翠台
 http://bxtv.3a.ink/api.php?id=fct$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="翡翠台" tvg-logo="./pic/logos翡翠台.png" group-title="┃湾区频道",翡翠台
@@ -1977,93 +1927,3 @@ https://stream1.freetv.fun/chcjia-ting-ying-yuan-15.ctv$IPV4•线路9
 https://stream1.freetv.fun/chcjia-ting-ying-yuan-9.ctv$IPV4•线路10
 #EXTINF:-1 tvg-id="11" tvg-name="CHC家庭影院" tvg-logo="./pic/logosCHC家庭影院.png" group-title="┃影视频道",CHC家庭影院
 https://www.freetv.top/migu/644368373.m3u8?migutoken=b9d9d0ba0208e949cf0736455b86290b2d1d2ff4727f523b7117dde6eb883cb4582c5ce1519685e57d54bfb562057c10a00dde58bb674d8600fd2d918b8cb440294e083e7b8f19e0dbcc9250d8$IPV4•线路11
-#EXTINF:-1 tvg-id="1" tvg-name="NewTV惊悚悬疑" tvg-logo="./pic/logosNewTV惊悚悬疑.png" group-title="┃影视频道",NewTV惊悚悬疑
-https://iptv.catvod.com/live.php?id=NewTV%E6%83%8A%E6%82%9A%E6%82%AC%E7%96%91$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="NewTV惊悚悬疑" tvg-logo="./pic/logosNewTV惊悚悬疑.png" group-title="┃影视频道",NewTV惊悚悬疑
-http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010077$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="NewTV惊悚悬疑" tvg-logo="./pic/logosNewTV惊悚悬疑.png" group-title="┃影视频道",NewTV惊悚悬疑
-http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225665/index.m3u8$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="NewTV惊悚悬疑" tvg-logo="./pic/logosNewTV惊悚悬疑.png" group-title="┃影视频道",NewTV惊悚悬疑
-http://iptv.666230.xyz/iptv/bjyd.php/7013$IPV4•线路4
-#EXTINF:-1 tvg-id="5" tvg-name="NewTV惊悚悬疑" tvg-logo="./pic/logosNewTV惊悚悬疑.png" group-title="┃影视频道",NewTV惊悚悬疑
-http://ott.mobaibox.com/PLTV/3/224/3221227536/index.m3u8$IPV4•线路5
-#EXTINF:-1 tvg-id="6" tvg-name="NewTV惊悚悬疑" tvg-logo="./pic/logosNewTV惊悚悬疑.png" group-title="┃影视频道",NewTV惊悚悬疑
-http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221236223/index.m3u8$IPV4•线路6
-#EXTINF:-1 tvg-id="1" tvg-name="NewTV动作电影" tvg-logo="./pic/logosNewTV动作电影.png" group-title="┃影视频道",NewTV动作电影
-https://iptv.catvod.com/live.php?id=NewTV%E5%8A%A8%E4%BD%9C%E7%94%B5%E5%BD%B1$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="NewTV动作电影" tvg-logo="./pic/logosNewTV动作电影.png" group-title="┃影视频道",NewTV动作电影
-http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010003$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="NewTV动作电影" tvg-logo="./pic/logosNewTV动作电影.png" group-title="┃影视频道",NewTV动作电影
-http://ott.mobaibox.com/PLTV/3/224/3221227606/index.m3u8$IPV4•线路3
-#EXTINF:-1 tvg-id="1" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-http://live4play.uk/livehttpplay?channel_id=20199$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-http://43.251.226.89:8080/play/744.m3u8$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-http://43.251.226.89:8080/play/679.m3u8$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://stream1.freetv.fun/wei-lai-dian-ying-1.m3u8$IPV4•线路4
-#EXTINF:-1 tvg-id="5" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://hls-gateway.vpstv.net/streams/477063.m3u8$IPV4•线路5
-#EXTINF:-1 tvg-id="6" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://smart.pendy.dpdns.org/Smart.php?id=videolandmovie$IPV4•线路6
-#EXTINF:-1 tvg-id="7" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://smt.iktv.ddns-ip.net/Smart.php?id=videolandmovie$IPV4•线路7
-#EXTINF:-1 tvg-id="8" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://stream1.freetv.fun/wei-lai-dian-ying-3.m3u8$IPV4•线路8
-#EXTINF:-1 tvg-id="9" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://smt.858.qzz.io/Smart.php?id=videolandmovie$IPV4•线路9
-#EXTINF:-1 tvg-id="10" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-https://smt.go-iptv.ggff.net/smart.php?id=videolandmovie&token=Goiptv$IPV4•线路10
-#EXTINF:-1 tvg-id="11" tvg-name="纬来电影" tvg-logo="./pic/logos纬来电影.png" group-title="┃影视频道",纬来电影
-http://php.666230.xyz/smt.php?id=videolandmovie$IPV4•线路11
-#EXTINF:-1 tvg-id="1" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-https://cdn.iptv8k.top/dl/jrys.php?id=320&time=20240926215313&ip=111.229.253.40$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-http://43.251.226.89:8080/play/841.m3u8$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-http://nmk.ioapk.com:5050/4gtv-4gtv055/index.m3u8?proxy=true$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-http://nmk.ioapk.com:5050/li-4gtv-4gtv055/index.m3u8?proxy=true$IPV4•线路4
-#EXTINF:-1 tvg-id="5" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-http://220.135.64.124:5050/li-4gtv-4gtv055/index.m3u8?proxy=true$IPV4•线路5
-#EXTINF:-1 tvg-id="6" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-http://220.135.64.124:5050/4gtv-4gtv055/index.m3u8?proxy=true$IPV4•线路6
-#EXTINF:-1 tvg-id="7" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-https://hls-gateway.vpstv.net/streams/476302.m3u8$IPV4•线路7
-#EXTINF:-1 tvg-id="8" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv055$IPV4•线路8
-#EXTINF:-1 tvg-id="9" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-https://4gtv.dxjc.pp.ua/li-4gtv-4gtv055/index.m3u8$IPV4•线路9
-#EXTINF:-1 tvg-id="10" tvg-name="靖天映画" tvg-logo="./pic/logos靖天映画.png" group-title="┃影视频道",靖天映画
-https://4gtv.dxjc.pp.ua/4gtv-4gtv055/index.m3u8$IPV4•线路10
-#EXTINF:-1 tvg-id="1" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-https://cdn.iptv8k.top/dl/jrys.php?id=318&time=20240926215313&ip=111.229.253.40$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://43.251.226.89:8080/play/839.m3u8$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://220.135.64.124:5050/li-4gtv-4gtv058/index.m3u8?proxy=true$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://220.135.64.124:5050/4gtv-4gtv058/index.m3u8?proxy=true$IPV4•线路4
-#EXTINF:-1 tvg-id="5" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://nmk.ioapk.com:5050/li-4gtv-4gtv058/index.m3u8?proxy=true$IPV4•线路5
-#EXTINF:-1 tvg-id="6" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://nmk.ioapk.com:5050/4gtv-4gtv058/index.m3u8?proxy=true$IPV4•线路6
-#EXTINF:-1 tvg-id="7" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://serv00.bkpcp.top/litv3.php?id=4gtv-4gtv058$IPV4•线路7
-#EXTINF:-1 tvg-id="8" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-https://stream1.freetv.fun/jing-tian-xi-ju-4.ctv$IPV4•线路8
-#EXTINF:-1 tvg-id="9" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv058$IPV4•线路9
-#EXTINF:-1 tvg-id="10" tvg-name="靖天戏剧" tvg-logo="./pic/logos靖天戏剧.png" group-title="┃影视频道",靖天戏剧
-https://mao.ffmking888.dpdns.org/?id=6Z2W5aSp5oiy5YqH5Yaw&auth=30234cedf871581989d3c91a3daec1e9f50e024aafcfa2247e7d44d91bb8d02fbc3f571b2d67f9d82642cc1d0f133d89$IPV4•线路10
-#EXTINF:-1 tvg-id="1" tvg-name="星卫娱乐" tvg-logo="./pic/logos星卫娱乐.png" group-title="┃影视频道",星卫娱乐
-generationnexxxt.com:19806/e83cc99135884327a96306484b0b8685$IPV4
-#EXTINF:-1 tvg-id="1" tvg-name="艾尔达娱乐" tvg-logo="./pic/logos艾尔达娱乐.png" group-title="┃影视频道",艾尔达娱乐
-http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild$IPV4•线路1
-#EXTINF:-1 tvg-id="2" tvg-name="艾尔达娱乐" tvg-logo="./pic/logos艾尔达娱乐.png" group-title="┃影视频道",艾尔达娱乐
-https://stream.hrbtv.net/ylpd/sd/live.m3u8$IPV4•线路2
-#EXTINF:-1 tvg-id="3" tvg-name="艾尔达娱乐" tvg-logo="./pic/logos艾尔达娱乐.png" group-title="┃影视频道",艾尔达娱乐
-http://stream.hrbtv.net/ylpd/sd/live.m3u8$IPV4•线路3
-#EXTINF:-1 tvg-id="4" tvg-name="艾尔达娱乐" tvg-logo="./pic/logos艾尔达娱乐.png" group-title="┃影视频道",艾尔达娱乐
-http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild#http://stream.hrbtv.net/ylpd/sd/live.m3u8#https://stream.hrbtv.net/ylpd/sd/live.m3u8$IPV4•线路4
