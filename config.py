@@ -52,7 +52,6 @@ source_urls = [
     "https://github.com/liuchuang0321/K-TV/blob/master/output/user_result.txt",
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     
-    "https://zb.pl10000.top/list.txt",
     "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
     "https://115.190.105.236/vip/qwt.m3u",
     "https://115.190.105.236/vip/vip.m3u",
