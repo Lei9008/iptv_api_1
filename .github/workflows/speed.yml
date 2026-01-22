@@ -1,8 +1,5 @@
 name: Speed Test
 
-
-name: Daily Update
-
 on:
   schedule:
     - cron: '55 2 */3 * *'  # 每3天凌晨00点55分执行任务（上海时区的UTC时间）
