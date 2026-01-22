@@ -132,15 +132,6 @@ class M3UProcessor:
             return []
     
     @staticmethod
-    import os
-import time
-import logging
-from typing import List, Tuple
-
-# 初始化日志（必须，否则logger会报错）
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
-
 def generate_m3u(
     live_sources: List[Tuple[str, str]], 
     output_path: str,
