@@ -7,10 +7,7 @@ ip_version_priority = "ipv4"
 # 直播源URL列表
 source_urls = [
     
-    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E7%A7%BB%E5%8A%A8IPV6IPTV%E7%9B%B4%E6%92%AD%E6%BA%90.m3u",
-    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B0202509.m3u",
-    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%B1%B1%E4%B8%9C%E7%94%B5%E4%BF%A12025.m3u",
-   
+       
 
 
 
