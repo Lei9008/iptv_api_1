@@ -11,9 +11,9 @@ on:
     - cron: '5 * * * *'  # 每2天凌晨00点55分执行任务（上海时区的UTC时间）
   workflow_dispatch:  # 允许手动触发工作流
   
- 
+env:
 # 删除早期的 workflow 任务
-  DELETE_OLD_WORKFLOW: true  
+   DELETE_OLD_WORKFLOW: true  
  
 jobs:
   run_script:
