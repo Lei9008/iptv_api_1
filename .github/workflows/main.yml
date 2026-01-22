@@ -7,9 +7,7 @@ on:
   workflow_dispatch:  # 允许手动触发工作流
   
 env:
-# 删除早期的 workflow 任务
-   DELETE_OLD_WORKFLOW: true  
-   TZ: Asia/Shanghai  # 设置时区为上海
+  TZ: Asia/Shanghai  # 设置时区为上海
    
 
 jobs:
@@ -57,11 +55,6 @@ jobs:
           git pull --rebase
           git push
         fi
-    - name: 删除旧的工作流 (Delete old Workflow Runs)
-      uses: GitRML/delete-workflow-runs@main
-      if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
-      with:
-        retain_days: 1
-        keep_minimum_runs: 3
+  
       
       
