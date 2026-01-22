@@ -170,13 +170,13 @@ async def main():
         urls = [source[1] for source in live_sources]
         results = await tester.batch_speed_test(urls)
     
-    # 根据测试结果直播源延时时间≤600ms 的保留并排序，其他直播源删除
+    # 根据测试结果直播源延时时间≤650ms 的保留并排序，其他直播源删除
     url_to_result = {result.url: result for result in results}
     sorted_live_sources = sorted(
     [item for item in live_sources
      if (item[1] in url_to_result) 
      and (url_to_result[item[1]].latency is not None) 
-     and (url_to_result[item[1]].latency <= 600)],
+     and (url_to_result[item[1]].latency <= 650)],
     key=lambda x: url_to_result[x[1]].latency
     )
 
