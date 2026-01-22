@@ -1,7 +1,7 @@
 name: Daily Update
 
 on:
-  
+  repository_dispatch:
   push:        # Git Push 时触发编译(不要删除此行注释)
      branches: 
       - master
