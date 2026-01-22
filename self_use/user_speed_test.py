@@ -141,7 +141,7 @@ class M3UProcessor:
                 f.write('#EXTM3U\n')
                 f.write(f"group-title=测试日期: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
                 for name, url in live_sources:
-                    f.write(f'#EXTINF:-1,{name}\n' tvg-logo="{logo_url}")
+                    f.write(f'#EXTINF:-1 {name} tvg-logo="{logo_url}" \n')
                     #f.write(f"""#EXTINF:-1  tvg-name="{announcement['name']}" tvg-logo="{announcement['logo']}" group-title="{group['channel']}",{announcement['name']}\n""")    
                     #f.write(f'#EXTINF:-1 , tvg-id="{index}", tvg-name="{name}\n", tvg-logo="{logo_url}" ,group-title="{category}",{name}\n")
                     #f.write(f'#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{name}\" tvg-logo=\"{logo_url}\" group-title=\"{category}\",{name}\n")
