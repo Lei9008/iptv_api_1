@@ -131,26 +131,60 @@ class M3UProcessor:
             return []
     
     @staticmethod
-    def generate_m3u(live_sources: List[Tuple[str, str]], output_path: str) -> None:
-        """生成M3U文件"""
-        try:
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    def generate_m3u(
+    live_sources: List[Tuple[str, str]], 
+    output_path: str,
+    category: str = "默认分组"  # 新增：频道分组名称，可自定义
+) -> None:
+    """
+    生成带扩展字段的M3U文件（含频道logo、分组、时间戳、tvg-id）
+    
+    Args:
+        live_sources: 直播源列表，元素为(频道名称, 播放URL)的二元组
+        output_path: M3U文件输出路径（如./output/live.m3u）
+        category: 所有频道的分组名称（默认：默认分组）
+    """
+    # 前置校验：空列表直接返回
+    if not live_sources:
+        logger.warning("直播源列表为空，跳过M3U文件生成")
+        return
+
+    try:
+        # 自动创建输出目录
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        # 写入M3U文件（修复所有语法/逻辑错误）
+        with open(output_path, 'w', encoding='utf-8') as f:
+            # 1. 写入M3U头部
+            f.write('#EXTM3U\n')
+            # 2. 写入文件级分组标题（含当前时间戳）
+            current_time = time.strftime('%Y-%m-%d %H:%M:%S')
+            f.write(f"#EXT-X-GROUP:TITLE=\"测试日期: {current_time}\"\n")
             
-            with open(output_path, 'w', encoding='utf-8') as f:
-                logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{name}\n'.png"
-                f.write('#EXTM3U\n')
-                f.write(f"group-title=测试日期: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-                for name, url in live_sources:
-                    #f.write(f'#EXTINF:-1 {name} tvg-logo="{logo_url}" \n')
-                    #f.write(f"""#EXTINF:-1  tvg-name="{announcement['name']}" tvg-logo="{announcement['logo']}" group-title="{group['channel']}",{announcement['name']}\n""") 
-                    f.write(f'#EXTINF:-1 tvg-name=\"{name}\" tvg-logo=\"{logo_url}\" group-title=,{name}\n')
-                    #f.write(f'#EXTINF:-1 , tvg-id="{index}", tvg-name="{name}\n", tvg-logo="{logo_url}" ,group-title="{category}",{name}\n")
-                    #f.write(f'#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{name}\" tvg-logo=\"{logo_url}\" group-title=\"{category}\",{name}\n")
-                    f.write(f'{url}\n')
-            
-            logger.info(f"已生成M3U文件: {output_path}")
-        except Exception as e:
-            logger.error(f"生成M3U文件失败: {e}")
+            # 3. 遍历直播源，写入每个频道（index自增作为tvg-id）
+            for index, (name, url) in enumerate(live_sources, start=1):
+                # 过滤无效直播源
+                if not name or not url:
+                    logger.warning(f"跳过无效直播源：名称={name}, URL={url}")
+                    continue
+                
+                # 修复logo URL拼接（移除错误的\n，拼接正确的logo地址）
+                # logo地址规则：https://raw.githubusercontent.com/fanmingming/live/main/tv/频道名称.png
+                logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{name}.png"
+                
+                # 写入带扩展字段的频道信息（符合M3U8标准）
+                f.write(
+                    f'#EXTINF:-1 tvg-id="{index}" tvg-name="{name}" tvg-logo="{logo_url}" group-title="{category}",{name}\n'
+                )
+                # 写入播放URL
+                f.write(f'{url}\n')
+        
+        logger.info(f"已生成带扩展字段的M3U文件: {output_path}（共{len(live_sources)}个频道）")
+    except PermissionError:
+        logger.error(f"生成M3U文件失败：无写入权限（路径：{output_path}）")
+    except Exception as e:
+        logger.error(f"生成M3U文件失败: {str(e)}", exc_info=True)
+   
 
 # 主程序
 async def main():
