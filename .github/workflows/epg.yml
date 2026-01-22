@@ -1,7 +1,7 @@
 name: EPG Update
 on:
   schedule:
-    - cron: '0 1 * * *' # 上海时区的UTC时间
+    - cron: '55 3 * * *' # 上海时区的UTC时间
   workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
