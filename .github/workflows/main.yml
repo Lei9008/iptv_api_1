@@ -1,8 +1,8 @@
 name: Daily Update
 
 on:
-  repository_dispatch:
-   push:        # Git Push 时触发编译(不要删除此行注释)
+  
+  push:        # Git Push 时触发编译(不要删除此行注释)
      branches: 
       - master
       - dev
@@ -13,7 +13,7 @@ on:
   
  
 # 删除早期的 workflow 任务
- DELETE_OLD_WORKFLOW: true  
+  DELETE_OLD_WORKFLOW: true  
  
 jobs:
   run_script:
