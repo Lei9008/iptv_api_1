@@ -1,15 +1,19 @@
 name: Daily Update
 
 on:
-  schedule:
-    - cron: '5 * * * *'  # 每2天凌晨00点55分执行任务（上海时区的UTC时间）
-  workflow_dispatch:  # 允许手动触发工作流
-  
+  repository_dispatch:
   push:        # Git Push 时触发编译(不要删除此行注释)
     branches: 
       - master
       - dev
       - gd
+  schedule:
+    - cron: '5 * * * *'  # 每2天凌晨00点55分执行任务（上海时区的UTC时间）
+  workflow_dispatch:  # 允许手动触发工作流
+  
+ 
+# 删除早期的 workflow 任务
+ DELETE_OLD_WORKFLOW: true  
  
 jobs:
   run_script:
@@ -60,6 +64,16 @@ jobs:
           git pull --rebase
           git push
         fi
-
+    - name: 删除旧的工作流 (Delete old Workflow Runs)
+      continue-on-error: true
+      if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 3
+          keep_minimum_runs: 0
+          body: |
     env:
       TZ: Asia/Shanghai  # 设置时区为上海
+
