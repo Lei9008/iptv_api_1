@@ -32,8 +32,8 @@ logger = logging.getLogger(__name__)
 @dataclass
 class SpeedTestResult:
     url: str
-    latency: Optional[float] = 1000  # 延迟（毫秒）
-    resolution: Optional[str] = 1920  # 分辨率
+    latency: Optional[float] = None  # 延迟（毫秒）
+    resolution: Optional[str] = None  # 分辨率
     success: bool = False  # 是否成功
     error: Optional[str] = None  # 错误信息
     test_time: float = 0  # 测试时间戳
@@ -173,9 +173,11 @@ async def main():
     # 根据测试结果排序直播源
     url_to_result = {result.url: result for result in results}
     sorted_live_sources = sorted(
-        live_sources,
-        key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
+    [item for item in live_sources
+     if (item[1] in url_to_result) and (url_to_result[item[1]].latency is not None)],
+    key=lambda x: url_to_result[x[1]].latency
     )
+
     
     # 生成报告
     success_count = sum(1 for r in results if r.success)
