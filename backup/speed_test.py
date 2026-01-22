@@ -1,4 +1,5 @@
 
+
 import asyncio
 import aiohttp
 import time
@@ -170,12 +171,16 @@ async def main():
         urls = [source[1] for source in live_sources]
         results = await tester.batch_speed_test(urls)
     
-    # 根据测试结果排序直播源
+    # 根据测试结果直播源延时时间≤650ms 的保留并排序，其他直播源删除
     url_to_result = {result.url: result for result in results}
     sorted_live_sources = sorted(
-        live_sources,
-        key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
+    [item for item in live_sources
+     if (item[1] in url_to_result) 
+     and (url_to_result[item[1]].latency is not None) 
+     and (url_to_result[item[1]].latency <= 650)],
+    key=lambda x: url_to_result[x[1]].latency
     )
+
     
     # 生成报告
     success_count = sum(1 for r in results if r.success)
@@ -191,7 +196,7 @@ async def main():
     m3u_processor.generate_m3u(sorted_live_sources, output_file)
     
     # 生成速度测试报告
-    report_file = f"{config.OUTPUT_DIR}/speed_test_report.txt"
+    report_file = f"{config.OUTPUT_DIR}/speed_test_report_log.txt"
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write("IPTV直播源速度测试报告\n")
