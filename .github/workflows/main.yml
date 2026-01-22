@@ -4,7 +4,9 @@ on:
   schedule:
     - cron: '5 * * * *'  # 每2天凌晨00点55分执行任务（上海时区的UTC时间）
   workflow_dispatch:  # 允许手动触发工作流
-    branches:
+  
+  push:        # Git Push 时触发编译(不要删除此行注释)
+    branches: 
       - master
       - dev
       - gd
