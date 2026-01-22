@@ -7,6 +7,7 @@ import logging
 import os
 from dataclasses import dataclass, asdict
 from typing import List, Dict, Tuple, Optional
+from typing import List, Tuple
 
 # 配置类
 class Config:
@@ -131,15 +132,9 @@ class M3UProcessor:
             return []
     
     @staticmethod
-    def generate_m3u(
-    live_sources: List[Tuple[str, str]], 
-    output_path: str,
-    category: str = "默认分组"  # 新增：频道分组名称，可自定义
-) -> None:
-    """
-    生成带扩展字段的M3U文件（含频道logo、分组、时间戳、tvg-id）
-    
-    Args:
+    def generate_m3u(live_sources: List[Tuple[str, str]], output_path: str, category: str = "默认分组"  # 新增：频道分组名称，可自定义) -> None:
+    """生成带扩展字段的M3U文件（含频道logo、分组、时间戳、tvg-id）
+        Args:
         live_sources: 直播源列表，元素为(频道名称, 播放URL)的二元组
         output_path: M3U文件输出路径（如./output/live.m3u）
         category: 所有频道的分组名称（默认：默认分组）
