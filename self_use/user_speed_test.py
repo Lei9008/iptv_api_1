@@ -137,11 +137,13 @@ class M3UProcessor:
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
             
             with open(output_path, 'w', encoding='utf-8') as f:
+                logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{name}.png"
                 f.write('#EXTM3U\n')
-                f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+                f.write(f"测试日期: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
                 for name, url in live_sources:
-                    f.write(f'#EXTINF:-1,{name}\n')
-                    #f.write(f"""#EXTINF:-1  tvg-name="{announcement['name']}" tvg-logo="{announcement['logo']}" group-title="{group['channel']}",{announcement['name']}\n""")     
+                    #f.write(f'#EXTINF:-1,{name}\n')
+                    #f.write(f"""#EXTINF:-1  tvg-name="{announcement['name']}" tvg-logo="{announcement['logo']}" group-title="{group['channel']}",{announcement['name']}\n""")    
+                    f.write(f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{name}\" tvg-logo=\"{logo_url}\" group-title=\"{category}\",{name}\n")
                     f.write(f'{url}\n')
             
             logger.info(f"已生成M3U文件: {output_path}")
