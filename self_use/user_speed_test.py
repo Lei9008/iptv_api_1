@@ -133,8 +133,7 @@ class M3UProcessor:
     
     @staticmethod
     def generate_m3u(live_sources: List[Tuple[str, str]],output_path: str,category: str = "默认分组") -> None:  # 新增：频道分组名称，可自定义
-    #"""
-    #生成带扩展字段的M3U文件（含频道logo、分组、时间戳、tvg-id）
+    ##生成带扩展字段的M3U文件（含频道logo、分组、时间戳、tvg-id）
     
     #Args:
         #live_sources: 直播源列表，元素为(频道名称, 播放URL)的二元组
@@ -155,8 +154,8 @@ class M3UProcessor:
             # 1. 写入M3U头部
               f.write('#EXTM3U\n')
             # 2. 写入文件级分组标题（含当前时间戳）
-              current_time = time.strftime('%Y-%m-%d %H:%M:%S')
-              f.write(f"#EXT-X-GROUP:TITLE=\"测试日期: {current_time}\"\n")
+              current_time = time.strftime('%Y-%m-%d %H:%M')
+              f.write(f"group-title=\"测试日期: {current_time}\"\n")
             
             # 3. 遍历直播源，写入每个频道（index自增作为tvg-id）
               for index, (name, url) in enumerate(live_sources, start=1):
@@ -164,15 +163,12 @@ class M3UProcessor:
                   if not name or not url:
                       logger.warning(f"跳过无效直播源：名称={name}, URL={url}")
                       continue
-                
-                # 修复logo URL拼接（移除错误的\n，拼接正确的logo地址）
+                      
                 # logo地址规则：https://raw.githubusercontent.com/fanmingming/live/main/tv/频道名称.png
                   logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{name}.png"
                 
                 # 写入带扩展字段的频道信息（符合M3U8标准）
-                  f.write(
-                      f'#EXTINF:-1 tvg-id="{index}" tvg-name="{name}" tvg-logo="{logo_url}" group-title="{category}",{name}\n'
-                )
+                  f.write(f'#EXTINF:-1 tvg-id="{index}" tvg-name="{name}" tvg-logo="{logo_url}" group-title="{category}",{name}\n')
                 # 写入播放URL
                   f.write(f'{url}\n')
         
