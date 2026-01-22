@@ -14,6 +14,35 @@ source_urls = [
     "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E6%B1%9F%E8%8B%8F%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.m3u",
     "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E7%99%BE%E8%A7%86TV.m3u",
     "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/CCTV+%E5%8D%AB%E8%A7%86+%E5%8C%97%E4%BA%AC+%E5%87%A4%E5%87%B0+%E6%8E%A2%E7%B4%A2+%E6%98%9F%E7%A9%BA%E5%8D%AB%E8%A7%86-%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91.m3u",
+    "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
+    "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
+    "https://github.com/8080713/iptv-api666/blob/main/output/result.m3u",
+    "https://raw.githubusercontent.com/Guovin/iptv-database/master/result.txt",
+    "https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
+    "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
+    "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
+    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt",
+    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
+    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
+    "https://live.hacks.tools/tv/iptv6.txt",
+    "https://live.hacks.tools/tv/iptv4.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/xzw832/cmys/main/S_CCTV.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/xzw832/cmys/main/S_weishi.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/l.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/kk.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/yuanzl77/IPTV/master/live.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u",
+
+
+
     
     "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
     "https://fastly.jsdelivr.net/gh/plsy1/iptv@master/unicast/unicast-ku9.m3u",
@@ -24,7 +53,6 @@ source_urls = [
     "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
     
     "https://zb.pl10000.top/list.txt",
-    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
     "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
     "https://115.190.105.236/vip/qwt.m3u",
     "https://115.190.105.236/vip/vip.m3u",
@@ -46,10 +74,8 @@ source_urls = [
     "https://iptv.catvod.com/tv.m3u",
     "https://live.zbds.top/tv/iptv4.txt",
     "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy",
-       
     "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
+    
     
 
     
