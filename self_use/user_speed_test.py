@@ -138,9 +138,10 @@ class M3UProcessor:
             
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write('#EXTM3U\n')
+                f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
                 for name, url in live_sources:
-                    #f.write(f'#EXTINF:-1,tvg-name="{name}\n'")
-                    f.write(f"""#EXTINF:-1  tvg-name="{announcement['name']}" tvg-logo="{announcement['logo']}" group-title="{group['channel']}",{announcement['name']}\n""")     
+                    f.write(f'#EXTINF:-1,{name}\n')
+                    #f.write(f"""#EXTINF:-1  tvg-name="{announcement['name']}" tvg-logo="{announcement['logo']}" group-title="{group['channel']}",{announcement['name']}\n""")     
                     f.write(f'{url}\n')
             
             logger.info(f"已生成M3U文件: {output_path}")
