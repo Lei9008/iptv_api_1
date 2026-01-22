@@ -32,8 +32,8 @@ logger = logging.getLogger(__name__)
 @dataclass
 class SpeedTestResult:
     url: str
-    latency: Optional[float] = None  # 延迟（毫秒）
-    resolution: Optional[str] = None  # 分辨率
+    latency: Optional[float] = 1000  # 延迟（毫秒）
+    resolution: Optional[str] = 1920x1080  # 分辨率
     success: bool = False  # 是否成功
     error: Optional[str] = None  # 错误信息
     test_time: float = 0  # 测试时间戳
