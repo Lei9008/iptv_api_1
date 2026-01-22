@@ -132,7 +132,7 @@ class M3UProcessor:
             return []
     
     @staticmethod
-    def generate_m3u(live_sources: List[Tuple[str, str]], output_path: str, category: str = "默认分组"  -> None: # 新增：频道分组名称，可自定义) -> None:
+    def generate_m3u(live_sources: List[Tuple[str, str]], output_path: str, category: str = "默认分组" ) -> None:  # 新增：频道分组名称，可自定义
     """生成带扩展字段的M3U文件（含频道logo、分组、时间戳、tvg-id）
         Args:
         live_sources: 直播源列表，元素为(频道名称, 播放URL)的二元组
