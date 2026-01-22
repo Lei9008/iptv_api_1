@@ -43,9 +43,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests aiohttp
 
-    - name: 执行主脚本(Run Python script)  # 执行测速脚本
+    - name: 执行测速脚本(Run Python script)  # 执行测速脚本
       run: |
-        python speed_test.py
+        python self_use/user_speed_test.py
         
     - name: 如果有更改，则提交并推送(Commit and push if changed)  # 如果有更改，则提交并推送
       run: |
