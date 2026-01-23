@@ -211,7 +211,7 @@ async def main():
     # 执行速度测试
     logger.info("开始速度测试...")
     async with SpeedTester() as tester:
-        urls = [source[1] for source in live_sources]
+        urls = [source[2] for source in live_sources]
         results = await tester.batch_speed_test(urls)
     
     # 根据测试结果直播源延时时间≤650ms 的保留并排序，其他直播源删除
