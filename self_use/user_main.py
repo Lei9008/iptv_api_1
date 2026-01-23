@@ -1,4 +1,4 @@
-下列代码增加解析M3U格式的频道行,名称，URL；解析TXT格式的频道行，名称，URL         import re
+import re
 import requests
 import logging
 from collections import OrderedDict
