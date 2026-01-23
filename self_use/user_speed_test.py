@@ -18,7 +18,7 @@ class Config:
 
 config = Config()
 
-# ========== 关键优化1：提前创建输出目录，避免路径错误 ==========
+# 提前创建输出目录
 os.makedirs(config.OUTPUT_DIR, exist_ok=True)
 
 # 日志配置
@@ -48,7 +48,6 @@ class SpeedTester:
         self.session = None
     
     async def __aenter__(self):
-        # ========== 优化2：添加请求头，模拟浏览器，提升兼容性 ==========
         timeout = aiohttp.ClientTimeout(total=config.TIMEOUT)
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         self.session = aiohttp.ClientSession(timeout=timeout, headers=headers)
@@ -69,7 +68,7 @@ class SpeedTester:
                     elapsed_time = (time.time() - start_time) * 1000
                     
                     if response.status == 200:
-                        # ========== 优化3：解析M3U8分辨率 ==========
+                        # 解析M3U8分辨率
                         resolution = "unknown"
                         content_type = response.headers.get("Content-Type", "")
                         if "application/vnd.apple.mpegurl" in content_type:
@@ -89,7 +88,7 @@ class SpeedTester:
                     else:
                         result.error = f"HTTP状态码: {response.status}"
                         logger.warning(f"[{attempt+1}] {url} 失败 | 状态码: {response.status}")
-            # ========== 优化4：细分异常类型，精准排查 ==========
+            # 细分异常类型
             except asyncio.TimeoutError:
                 result.error = "请求超时"
             except aiohttp.ClientConnectionError:
@@ -143,7 +142,7 @@ class M3UProcessor:
                     name_start = line.find(',') + 1
                     current_name = line[name_start:].strip() if name_start > 0 else "未知频道"
                 elif line.startswith(("http://", "https://")) and current_group and current_name:
-                    # ========== 优化5：去重，避免重复URL ==========
+                    # 去重，避免重复URL
                     if not any(src[2] == line for src in live_sources):
                         live_sources.append((current_group, current_name, line))
                     current_group = None
@@ -174,7 +173,7 @@ class M3UProcessor:
                 f.write('#EXTM3U\n')
                 # 写入注释行记录生成时间（不影响播放器解析）
                 f.write(f"# 生成时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-                f.write(f"# 有效频道数: {len(live_sources)} | 延迟阈值: {config.LATENCY_THRESHOLD}ms\n\n")
+                f.write(f"# 排序规则: group-title升序 → name升序 → 延迟升序 | 延迟阈值: {config.LATENCY_THRESHOLD}ms\n\n")
 
                 # 遍历生成每个频道的信息
                 for index, (group, name, url) in enumerate(live_sources, start=1):
@@ -220,19 +219,25 @@ async def main():
 
     # 3. 筛选延迟≤阈值的直播源
     url_to_result = {res.url: res for res in results}
+    # ========== 核心修改：多维度排序 ==========
+    # 排序规则：1.group-title（分组）升序 → 2.name（频道名）升序 → 3.延迟升序
     sorted_live_sources = sorted(
         [src for src in live_sources
          if url_to_result.get(src[2]) and url_to_result[src[2]].latency and url_to_result[src[2]].latency <= config.LATENCY_THRESHOLD],
-        key=lambda x: url_to_result[x[2]].latency
+        key=lambda x: (
+            x[0].lower(),  # 分组名（转小写，避免大小写影响排序）
+            x[1].lower(),  # 频道名（转小写）
+            url_to_result[x[2]].latency  # 延迟时间
+        )
     )
 
     # 4. 生成日志报告
     success_count = sum(1 for res in results if res.success)
     logger.info(f"测试完成 | 总数: {len(results)} | 成功: {success_count} | 有效: {len(sorted_live_sources)}")
     
-    # 打印前5快的频道
-    logger.info("前5个最快的直播源:")
-    for i, (group, name, url) in enumerate(sorted_live_sources[:5], 1):
+    # 打印前10个排序后的频道（验证排序效果）
+    logger.info("前10个排序后的直播源（分组→名称→延迟）:")
+    for i, (group, name, url) in enumerate(sorted_live_sources[:10], 1):
         latency = url_to_result[url].latency
         res = url_to_result[url].resolution
         logger.info(f"{i}. [{group}] {name} | 延迟: {latency:.2f}ms | 分辨率: {res}")
@@ -247,6 +252,7 @@ async def main():
             f.write("="*50 + "\n")
             f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"延迟阈值: {config.LATENCY_THRESHOLD}ms\n")
+            f.write(f"排序规则: group-title升序 → name升序 → 延迟升序\n")
             f.write(f"总测试数: {len(results)} | 成功数: {success_count} | 有效数: {len(sorted_live_sources)}\n\n")
             
             for i, (group, name, url) in enumerate(sorted_live_sources, 1):
@@ -259,7 +265,7 @@ async def main():
         logger.error(f"生成报告失败: {e}")
 
 if __name__ == "__main__":
-    # ========== 优化6：兼容Windows系统的事件循环 ==========
+    # 兼容Windows系统的事件循环
     try:
         asyncio.run(main())
     except RuntimeError as e:
