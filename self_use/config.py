@@ -16,6 +16,7 @@ source_urls = [
     "https://github.com/liuchuang0321/K-TV/blob/master/output/user_result.m3u",
     "https://d.kstore.dev/download/15114/HKTV.txt",
     "http://go8.myartsonline.com/zx/0/TVBTV28.txt",
+    "https://github.com/Lei9008/iptv-api/blob/master/output/user_result.m3u",
    
 
     
