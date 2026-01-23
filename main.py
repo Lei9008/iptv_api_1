@@ -51,8 +51,9 @@ def clean_channel_name(channel_name):
     """标准化清洗频道名称，提升匹配率"""
     if not channel_name:
         return ""
-    # 去掉特殊字符和空白
-    cleaned_name = re.sub(r'[$「」-()（）\s+]', '', channel_name)
+    # 修复：将-放在字符集最后，避免被解析为范围符号
+    # 正确写法：把特殊符号转义或放在末尾
+    cleaned_name = re.sub(r'[$「」()（）\s+-]', '', channel_name)
     # 数字标准化（如 05 → 5）
     cleaned_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), cleaned_name)
     return cleaned_name.upper()
