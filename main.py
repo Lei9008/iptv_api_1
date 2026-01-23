@@ -29,7 +29,7 @@ OUTPUT_FOLDER = Path("output")
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
 # 测速配置（可在config.py中配置，此处做默认值兜底）
-DEFAULT_LATENCY_THRESHOLD = 500  # 延迟阈值（毫秒）
+DEFAULT_LATENCY_THRESHOLD = 600  # 延迟阈值（毫秒）
 DEFAULT_CONCURRENT_LIMIT = 20    # 并发测速限制
 DEFAULT_TIMEOUT = 10             # 超时时间（秒）
 DEFAULT_RETRY_TIMES = 2          # 重试次数
@@ -411,12 +411,11 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         return
     
     # 修复LOGO路径
-    logo_url = f"./pic/logos/{channel_name}.png"
+    logo_url = f"./pic/logos{channel_name}.png"
     # 写入M3U（添加延迟信息）
-    display_name = f"{channel_name}({latency:.0f}ms)"
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" "
-        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{display_name}\n"
+        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n"
     )
     f_m3u.write(url + "\n")
     # 写入TXT
