@@ -1,0 +1,69 @@
+#EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml"
+# 生成时间: 2026-01-23 22:36:05
+# 筛选条件: 延迟≤550.0ms | 并发数: 20
+# 总计有效频道: 20
+
+# 分组: ┃卫视频道
+#EXTINF:-1 tvg-id="1" tvg-name="云南卫视" tvg-logo="./pic/logos/云南卫视.png" group-title="┃卫视频道",云南卫视 | 延迟:388.31ms
+http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovL3d3dy5kc2suY2MvcGhwL3N4Z2QucGhwP2lkPXlud3M=$IPV4•线路2
+
+#EXTINF:-1 tvg-id="2" tvg-name="农林卫视" tvg-logo="./pic/logos/农林卫视.png" group-title="┃卫视频道",农林卫视 | 延迟:297.61ms
+http://120.76.248.139/live/bfgd/4200000122.m3u8$IPV4•线路1
+
+#EXTINF:-1 tvg-id="3" tvg-name="宁夏卫视" tvg-logo="./pic/logos/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视 | 延迟:407.06ms
+http://120.76.248.139/live/bfgd/4200000118.m3u8$IPV4•线路2
+
+#EXTINF:-1 tvg-id="4" tvg-name="广东卫视" tvg-logo="./pic/logos/广东卫视.png" group-title="┃卫视频道",广东卫视 | 延迟:497.5ms
+http://61.156.228.12:8154/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路37
+
+#EXTINF:-1 tvg-id="5" tvg-name="广东卫视" tvg-logo="./pic/logos/广东卫视.png" group-title="┃卫视频道",广东卫视 | 延迟:531.09ms
+http://183.47.2.156:16883/udp/239.77.0.84:5146$IPV4•线路10
+
+#EXTINF:-1 tvg-id="6" tvg-name="广东卫视" tvg-logo="./pic/logos/广东卫视.png" group-title="┃卫视频道",广东卫视 | 延迟:545.19ms
+http://www.3344.uk:8888/rtp/239.77.1.2:5146$IPV4•线路21
+
+#EXTINF:-1 tvg-id="7" tvg-name="延边卫视" tvg-logo="./pic/logos/延边卫视.png" group-title="┃卫视频道",延边卫视 | 延迟:412.88ms
+http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
+
+#EXTINF:-1 tvg-id="8" tvg-name="海南卫视" tvg-logo="./pic/logos/海南卫视.png" group-title="┃卫视频道",海南卫视 | 延迟:420.81ms
+http://120.76.248.139/live/bfgd/4200000473.m3u8$IPV4•线路3
+
+#EXTINF:-1 tvg-id="9" tvg-name="湖南卫视" tvg-logo="./pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视 | 延迟:119.07ms
+http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub$IPV4•线路5
+
+# 分组: ┃央视频道
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV12" tvg-logo="./pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12 | 延迟:119.35ms
+http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub$IPV4•线路3
+
+#EXTINF:-1 tvg-id="11" tvg-name="CCTV16" tvg-logo="./pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16 | 延迟:59.88ms
+http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$IPV4•线路4
+
+#EXTINF:-1 tvg-id="12" tvg-name="CCTV17" tvg-logo="./pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17 | 延迟:59.62ms
+http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$IPV4•线路3
+
+#EXTINF:-1 tvg-id="13" tvg-name="CCTV17" tvg-logo="./pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17 | 延迟:282.15ms
+http://p.ytelc.com/169l/0/cctv.php?id=cctv17$IPV4•线路6
+
+#EXTINF:-1 tvg-id="14" tvg-name="CCTV5+" tvg-logo="./pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+ | 延迟:525.43ms
+http://112.254.55.106:22222/udp/239.253.254.80:8000$IPV4•线路9
+
+# 分组: ┃少儿频道
+#EXTINF:-1 tvg-id="15" tvg-name="广东少儿" tvg-logo="./pic/logos/广东少儿.png" group-title="┃少儿频道",广东少儿 | 延迟:540.61ms
+http://www.3344.uk:8888/rtp/239.77.0.12:5146$IPV4•线路4
+
+# 分组: ┃湾区频道
+#EXTINF:-1 tvg-id="16" tvg-name="凤凰中文" tvg-logo="./pic/logos/凤凰中文.png" group-title="┃湾区频道",凤凰中文 | 延迟:278.89ms
+http://live4play.uk/livehttpplay?channel_id=20065$IPV4•线路16
+
+#EXTINF:-1 tvg-id="17" tvg-name="凤凰中文" tvg-logo="./pic/logos/凤凰中文.png" group-title="┃湾区频道",凤凰中文 | 延迟:319.6ms
+http://live4play.uk/livehttpplay?channel_id=30014$IPV4•线路15
+
+#EXTINF:-1 tvg-id="18" tvg-name="凤凰资讯" tvg-logo="./pic/logos/凤凰资讯.png" group-title="┃湾区频道",凤凰资讯 | 延迟:271.06ms
+http://live4play.uk/livehttpplay?channel_id=30015$IPV4•线路19
+
+#EXTINF:-1 tvg-id="19" tvg-name="凤凰资讯" tvg-logo="./pic/logos/凤凰资讯.png" group-title="┃湾区频道",凤凰资讯 | 延迟:416.15ms
+http://live4play.uk/livehttpplay?channel_id=20066$IPV4•线路20
+
+#EXTINF:-1 tvg-id="20" tvg-name="凤凰香港" tvg-logo="./pic/logos/凤凰香港.png" group-title="┃湾区频道",凤凰香港 | 延迟:103.0ms
+http://cdn3.132.us.kg/live/fhhk/stream.m3u8$IPV4•线路12
+

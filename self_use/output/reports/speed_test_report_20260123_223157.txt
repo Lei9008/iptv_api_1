@@ -1,0 +1,102 @@
+============================================================
+IPTV直播源测速报告
+============================================================
+测试时间: 2026-01-23 22:36:05
+配置信息: 并发=20 | 超时=10s | 重试=2次 | 延迟阈值=550.0ms
+
+【统计摘要】
+总测试URL数: 1251
+测试成功数: 46 (3.7%)
+有效频道数: 20 (1.6%)
+有效频道平均延迟: 329.76ms
+
+【详细列表】
+------------------------------------------------------------
+
+★ 分组: ┃卫视频道 | 频道数: 9
+  ▶ 名称: 云南卫视
+     URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovL3d3dy5kc2suY2MvcGhwL3N4Z2QucGhwP2lkPXlud3M=$IPV4•线路2
+     延迟: 388.31ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 农林卫视
+     URL: http://120.76.248.139/live/bfgd/4200000122.m3u8$IPV4•线路1
+     延迟: 297.61ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 宁夏卫视
+     URL: http://120.76.248.139/live/bfgd/4200000118.m3u8$IPV4•线路2
+     延迟: 407.06ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 广东卫视
+     URL: http://61.156.228.12:8154/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路37
+     延迟: 497.50ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 广东卫视
+     URL: http://183.47.2.156:16883/udp/239.77.0.84:5146$IPV4•线路10
+     延迟: 531.09ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 广东卫视
+     URL: http://www.3344.uk:8888/rtp/239.77.1.2:5146$IPV4•线路21
+     延迟: 545.19ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 延边卫视
+     URL: http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
+     延迟: 412.88ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 海南卫视
+     URL: http://120.76.248.139/live/bfgd/4200000473.m3u8$IPV4•线路3
+     延迟: 420.81ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 湖南卫视
+     URL: http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub$IPV4•线路5
+     延迟: 119.07ms | 分辨率: unknown | 尝试次数: 1
+
+
+★ 分组: ┃央视频道 | 频道数: 5
+  ▶ 名称: CCTV12
+     URL: http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub$IPV4•线路3
+     延迟: 119.35ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: CCTV16
+     URL: http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$IPV4•线路4
+     延迟: 59.88ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: CCTV17
+     URL: http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$IPV4•线路3
+     延迟: 59.62ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: CCTV17
+     URL: http://p.ytelc.com/169l/0/cctv.php?id=cctv17$IPV4•线路6
+     延迟: 282.15ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: CCTV5+
+     URL: http://112.254.55.106:22222/udp/239.253.254.80:8000$IPV4•线路9
+     延迟: 525.43ms | 分辨率: unknown | 尝试次数: 1
+
+
+★ 分组: ┃少儿频道 | 频道数: 1
+  ▶ 名称: 广东少儿
+     URL: http://www.3344.uk:8888/rtp/239.77.0.12:5146$IPV4•线路4
+     延迟: 540.61ms | 分辨率: unknown | 尝试次数: 1
+
+
+★ 分组: ┃湾区频道 | 频道数: 5
+  ▶ 名称: 凤凰中文
+     URL: http://live4play.uk/livehttpplay?channel_id=20065$IPV4•线路16
+     延迟: 278.89ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 凤凰中文
+     URL: http://live4play.uk/livehttpplay?channel_id=30014$IPV4•线路15
+     延迟: 319.60ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 凤凰资讯
+     URL: http://live4play.uk/livehttpplay?channel_id=30015$IPV4•线路19
+     延迟: 271.06ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 凤凰资讯
+     URL: http://live4play.uk/livehttpplay?channel_id=20066$IPV4•线路20
+     延迟: 416.15ms | 分辨率: unknown | 尝试次数: 1
+
+  ▶ 名称: 凤凰香港
+     URL: http://cdn3.132.us.kg/live/fhhk/stream.m3u8$IPV4•线路12
+     延迟: 103.00ms | 分辨率: unknown | 尝试次数: 2
+
