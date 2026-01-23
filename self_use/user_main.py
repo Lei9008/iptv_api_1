@@ -56,7 +56,7 @@ def clean_channel_name(channel_name: str) -> str:
         return ""
     
     # 修复：转义-符号，避免被解析为字符范围
-    # 方案1：将-放在字符集开头；方案2：用\-转义；这里选方案1更直观
+    # 将-放在字符集开头；
     cleaned_name = re.sub(r'[-$「」«»]', '', channel_name)  # 补充常见特殊字符
     cleaned_name = re.sub(r'\s+', '', cleaned_name)
     cleaned_name = re.sub(
@@ -143,6 +143,8 @@ def write_to_files(f_m3u, f_txt, category: str, channel_name: str, index: int, n
         f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n"
     )
     f_m3u.write(f"{new_url}\n")
+    f_m3u.write(url + "\n\n")  # 空行分隔，提升可读性
+    
     # TXT格式写入
     f_txt.write(f"{channel_name},{new_url}\n")
 
