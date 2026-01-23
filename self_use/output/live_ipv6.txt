@@ -1,0 +1,12 @@
+更新日期,#genre#
+┃央视频道,#genre#
+┃央视付费频道,#genre#
+┃卫视频道,#genre#
+东南卫视,http://[2409:8087:1a01:df::4035]:80/TVOD/88888888/224/3221225950/main.m3u8$IPV6
+贵州卫视,http://[2409:8087:1a01:df::4030]:80/TVOD/88888888/224/3221225974/main.m3u8$IPV6
+新疆卫视,http://[2409:8087:2001:20:2800:0:df6e:eb0b]/wh7f454c46tw993550557_162751766/ott.mobaibox.com/PLTV/3/224/3221228290/index.m3u8?icpid=3&RTS=1668604377&from=40&popid=40&hms_devid=2038&prioritypopid=40&vqe=3$IPV6
+┃山东频道,#genre#
+┃少儿频道,#genre#
+┃湾区频道,#genre#
+┃影视频道,#genre#
+
