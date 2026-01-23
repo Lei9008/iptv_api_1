@@ -440,7 +440,7 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
 
             # 写入M3U头部（EPG配置 + 延迟阈值说明）
             epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
-            header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{current_date}\n"
+            header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n")
             
             f_m3u_ipv4.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
             f_m3u_ipv6.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
