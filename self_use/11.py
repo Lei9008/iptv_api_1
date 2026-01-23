@@ -199,8 +199,8 @@ class M3UProcessor:
 # 主程序
 async def main():
     input_file = "output/live_ipv4.m3u"
-    output_file = f"{config.OUTPUT_DIR}/live_sources_ipv41.m3u"
-    report_file = f"{config.OUTPUT_DIR}/speed_test_report_log1.txt"
+    output_file = f"{config.OUTPUT_DIR}/live_sources_ipv4.m3u"
+    report_file = f"{config.OUTPUT_DIR}/speed_test_report_log.txt"
 
     # 1. 解析M3U
     logger.info(f"开始解析文件: {input_file}")
