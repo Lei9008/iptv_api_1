@@ -14,7 +14,7 @@ class Config:
     RETRY_TIMES = 2  # 重试次数
     OUTPUT_DIR = "output"  # 输出目录
     LOG_FILE = "output/speed_test.log"  # 日志文件
-    LATENCY_THRESHOLD = 650  # 延迟阈值（毫秒）
+    LATENCY_THRESHOLD = 550  # 延迟阈值（毫秒）
 
 config = Config()
 
