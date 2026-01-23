@@ -1,1 +1,7 @@
 #EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml","http://epg.51zmt.top:8000/e.xml","https://epg.pw/xmltv/epg_CN.xml","https://epg.pw/xmltv/epg_HK.xml","https://epg.pw/xmltv/epg_TW.xml","https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz","https://live.fanmingming.cn/e.xml"
+#EXTINF:-1 tvg-id="1" tvg-name="东南卫视" tvg-logo="/home/runner/work/iptv_api_1/iptv_api_1/self_use/pic/logos东南卫视.png" group-title="┃卫视频道",东南卫视
+http://[2409:8087:1a01:df::4035]:80/TVOD/88888888/224/3221225950/main.m3u8$IPV6
+#EXTINF:-1 tvg-id="1" tvg-name="贵州卫视" tvg-logo="/home/runner/work/iptv_api_1/iptv_api_1/self_use/pic/logos贵州卫视.png" group-title="┃卫视频道",贵州卫视
+http://[2409:8087:1a01:df::4030]:80/TVOD/88888888/224/3221225974/main.m3u8$IPV6
+#EXTINF:-1 tvg-id="1" tvg-name="新疆卫视" tvg-logo="/home/runner/work/iptv_api_1/iptv_api_1/self_use/pic/logos新疆卫视.png" group-title="┃卫视频道",新疆卫视
+http://[2409:8087:2001:20:2800:0:df6e:eb0b]/wh7f454c46tw993550557_162751766/ott.mobaibox.com/PLTV/3/224/3221228290/index.m3u8?icpid=3&RTS=1668604377&from=40&popid=40&hms_devid=2038&prioritypopid=40&vqe=3$IPV6
