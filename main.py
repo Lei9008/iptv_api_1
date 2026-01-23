@@ -28,6 +28,11 @@ class SpeedTestResult:
 OUTPUT_FOLDER = Path("output")
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
+# 初始化 logo 目录（自动创建不存在的目录）
+LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
+for dir_path in LOGO_DIRS:
+    dir_path.mkdir(parents=True, exist_ok=True)  # parents=True：自动创建上级 pic 目录
+
 # 测速配置（可在config.py中配置，此处做默认值兜底）
 DEFAULT_LATENCY_THRESHOLD = 600  # 延迟阈值（毫秒）
 DEFAULT_CONCURRENT_LIMIT = 20    # 并发测速限制
@@ -131,6 +136,29 @@ def add_url_suffix(url, index, total_urls, ip_version, latency):
     else:
         suffix = f"${ip_version}•线路{index}({latency_str})"
     return f"{base_url}{suffix}"
+
+def get_channel_logo_url(channel_name):
+    """
+    检测本地logo文件，生成动态logo_url
+    优先级：./pic/logos/xxx.png > ./pic/logo/xxx.png
+    无匹配文件则返回空（也可设为默认logo地址）
+    :param channel_name: 原始频道名
+    :return: 匹配到的logo相对路径，无则返回空字符串
+    """
+    # 清洗频道名，和本地logo文件名保持一致
+    clean_logo_name = clean_channel_name(channel_name)
+    # 定义logo文件名称（后缀固定为png）
+    logo_filename = f"{clean_logo_name}.png"
+    
+    # 遍历目录检测文件是否存在（按优先级）
+    for logo_dir in LOGO_DIRS:
+        logo_path = logo_dir / logo_filename
+        if logo_path.exists():
+            # 返回规范化的相对路径（统一用/分隔，适配M3U格式）
+            return logo_path.as_posix()
+    
+    # 无匹配文件时返回空（可替换为默认logo路径，例如：return "./pic/default_logo.png"）
+    return "https://github.com/fanmingming/live/tree/main/tv"
 
 # ===================== 测速模块 =====================
 class SpeedTester:
@@ -410,8 +438,9 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
     if not url:
         return
     
-    # 修复LOGO路径
-    logo_url = f"./pic/logos{channel_name}.png"
+    # 核心修改：动态获取logo路径（优先logos目录，其次logo目录）
+    logo_url = get_channel_logo_url(channel_name)
+    
     # 写入M3U（添加延迟信息）
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" "
