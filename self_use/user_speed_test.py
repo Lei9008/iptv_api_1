@@ -106,7 +106,7 @@ class SpeedTester:
 # M3U文件处理类
 class M3UProcessor:
     @staticmethod
-    def parse_m3u(file_path: str) -> List[Tuple[str, str]]:
+    def parse_m3u(file_path: str) -> List[Tuple[str, str, str]]:
         """解析M3U文件，返回[(名称, URL), ...]"""
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
