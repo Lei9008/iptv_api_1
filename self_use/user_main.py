@@ -15,11 +15,8 @@ except ImportError:
 # 使用Path类简化文件路径操作
 BASE_DIR = Path(__file__).parent
 OUTPUT_DIR = BASE_DIR / "output"
-LOG_FILE = OUTPUT_DIR / "function.log"
+LOG_FILE = BASE_DIR / "output" / "function.log"
 
-# 确保必要文件夹存在
-for dir_path in [OUTPUT_DIR, PIC_DIR]:
-    dir_path.mkdir(exist_ok=True)
 
 # 日志配置（优化格式、添加文件名/行号、避免重复输出）
 logger = logging.getLogger(__name__)
