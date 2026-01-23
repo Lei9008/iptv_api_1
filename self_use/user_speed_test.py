@@ -500,7 +500,7 @@ async def main():
     config.load_from_file()
     
     # 2. 配置输入输出路径
-    input_file = config.BASE_DIR / "self_use" / "output" / "live_ipv4.m3u"
+    input_file =  "self_use/output/live_ipv4.m3u"
     timestamp = time.strftime("%Y%m%d_%H%M%S")  # 时间戳避免文件覆盖
     output_m3u = config.OUTPUT_DIR / f"live_sources_ipv4_{timestamp}.m3u"
     report_file = config.REPORT_DIR / f"speed_test_report_{timestamp}.txt"
