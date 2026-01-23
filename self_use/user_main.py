@@ -16,7 +16,6 @@ except ImportError:
 BASE_DIR = Path(__file__).parent
 OUTPUT_DIR = BASE_DIR / "output"
 LOG_FILE = OUTPUT_DIR / "function.log"
-PIC_DIR = BASE_DIR / "pic"
 
 # 确保必要文件夹存在
 for dir_path in [OUTPUT_DIR, PIC_DIR]:
@@ -136,7 +135,7 @@ def write_to_files(f_m3u, f_txt, category: str, channel_name: str, index: int, n
         return
     
     # LOGO路径优化：确保容错
-    logo_url = f"{PIC_DIR}/logos{channel_name}.png"
+    logo_url = f"https://github.com/fanmingming/live/tree/main/tv/{channel_name}.png"
     # M3U格式写入（完善元信息）
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" "
