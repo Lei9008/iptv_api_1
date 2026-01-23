@@ -33,6 +33,11 @@ LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
 for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)  # parents=True：自动创建上级 pic 目录
 
+# GitHub Logo 远程仓库配置
+GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
+# 缓存已检测的GitHub logo文件列表（避免重复请求）
+GITHUB_LOGO_CACHE = None
+
 # 测速配置（可在config.py中配置，此处做默认值兜底）
 DEFAULT_LATENCY_THRESHOLD = 600  # 延迟阈值（毫秒）
 DEFAULT_CONCURRENT_LIMIT = 20    # 并发测速限制
@@ -137,28 +142,81 @@ def add_url_suffix(url, index, total_urls, ip_version, latency):
         suffix = f"${ip_version}•线路{index}({latency_str})"
     return f"{base_url}{suffix}"
 
+def get_github_logo_list():
+    """获取GitHub仓库中的logo文件列表（缓存机制）"""
+    global GITHUB_LOGO_CACHE
+    if GITHUB_LOGO_CACHE is not None:
+        return GITHUB_LOGO_CACHE
+    
+    # GitHub API 获取文件列表（兼容tree路径）
+    api_url = "https://api.github.com/repos/fanmingming/live/contents/main/tv"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    logo_files = []
+    
+    try:
+        response = requests.get(api_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        # 提取所有png文件名称
+        for item in data:
+            if item.get("type") == "file" and item.get("name", "").lower().endswith(".png"):
+                logo_files.append(item["name"])
+        
+        GITHUB_LOGO_CACHE = logo_files
+        logger.info(f"成功获取GitHub logo列表，共{len(logo_files)}个文件")
+    except Exception as e:
+        logger.warning(f"获取GitHub logo列表失败：{str(e)[:50]}")
+        GITHUB_LOGO_CACHE = []
+    
+    return GITHUB_LOGO_CACHE
+
 def get_channel_logo_url(channel_name):
     """
-    检测本地logo文件，生成动态logo_url
-    优先级：./pic/logos/xxx.png > ./pic/logo/xxx.png
-    无匹配文件则返回空（也可设为默认logo地址）
+    检测logo文件，生成动态logo_url
+    优先级：本地./pic/logos/xxx.png > 本地./pic/logo/xxx.png > GitHub远程logo
     :param channel_name: 原始频道名
-    :return: 匹配到的logo相对路径，无则返回空字符串
+    :return: logo路径/URL，无则返回空字符串
     """
-    # 清洗频道名，和本地logo文件名保持一致
+    # 清洗频道名，统一匹配规则
     clean_logo_name = clean_channel_name(channel_name)
-    # 定义logo文件名称（后缀固定为png）
     logo_filename = f"{clean_logo_name}.png"
     
-    # 遍历目录检测文件是否存在（按优先级）
+    # 第一步：检测本地logos目录（最高优先级）
     for logo_dir in LOGO_DIRS:
-        logo_path = logo_dir / logo_filename
-        if logo_path.exists():
-            # 返回规范化的相对路径（统一用/分隔，适配M3U格式）
-            return logo_path.as_posix()
+        local_logo_path = logo_dir / logo_filename
+        if local_logo_path.exists():
+            return local_logo_path.as_posix()  # 返回本地路径（规范化）
     
-    # 无匹配文件时返回空（可替换为默认logo路径，例如：return "./pic/default_logo.png"）
-    return "https://github.com/fanmingming/live/tree/main/tv"
+    # 第二步：检测GitHub远程logo
+    github_logo_files = get_github_logo_list()
+    # 精确匹配
+    if logo_filename in github_logo_files:
+        return f"{GITHUB_LOGO_BASE_URL}/{logo_filename}"
+    # 模糊匹配（处理文件名大小写/格式差异）
+    else:
+        # 生成候选匹配名（兼容不同命名风格）
+        candidate_names = [
+            logo_filename,
+            logo_filename.replace("+", "PLUS"),  # CCTV5+ → CCTV5PLUS.png
+            logo_filename.upper(),
+            logo_filename.lower()
+        ]
+        for candidate in candidate_names:
+            if candidate in github_logo_files:
+                return f"{GITHUB_LOGO_BASE_URL}/{candidate}"
+        # 相似度匹配（最后兜底）
+        similar_logo = find_similar_name(clean_logo_name, 
+                                        [f.replace(".png", "") for f in github_logo_files],
+                                        cutoff=0.7)
+        if similar_logo:
+            github_logo_url = f"{GITHUB_LOGO_BASE_URL}/{similar_logo}.png"
+            logger.debug(f"频道{channel_name}匹配到GitHub相似logo：{github_logo_url}")
+            return github_logo_url
+    
+    # 无匹配logo
+    logger.debug(f"频道{channel_name}未找到本地/GitHub logo文件")
+    return ""
 
 # ===================== 测速模块 =====================
 class SpeedTester:
@@ -438,7 +496,7 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
     if not url:
         return
     
-    # 核心修改：动态获取logo路径（优先logos目录，其次logo目录）
+    # 核心修改：动态获取logo路径（本地优先，GitHub兜底）
     logo_url = get_channel_logo_url(channel_name)
     
     # 写入M3U（添加延迟信息）
@@ -628,6 +686,9 @@ async def main():
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', DEFAULT_LATENCY_THRESHOLD)
         logger.info("===== 开始处理直播源 =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms")
+        
+        # 预加载GitHub logo列表（可选，提前初始化缓存）
+        get_github_logo_list()
         
         # 2. 抓取并匹配频道
         logger.info("\n===== 1. 抓取并匹配直播源 =====")
