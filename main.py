@@ -51,9 +51,15 @@ def clean_channel_name(channel_name):
     """标准化清洗频道名称，提升匹配率"""
     if not channel_name:
         return ""
-    # 修复：将-放在字符集最后，避免被解析为范围符号
-    # 正确写法：把特殊符号转义或放在末尾
-    cleaned_name = re.sub(r'[$「」()（）\s+-]', '', channel_name)
+    # 第一步：专门处理CCTV5+等带+号的频道名，保留+号
+    # 先把常见的CCTV5+变体统一为"CCTV5+"
+    channel_name = re.sub(r'CCTV-?5\+', 'CCTV5+', channel_name)
+    channel_name = re.sub(r'CCTV5\+\s*(\S+)', 'CCTV5+', channel_name)  # 去掉CCTV5+后面的多余文字
+    
+    # 第二步：清洗其他特殊字符（-放在最后避免解析为范围）
+    # 注意：排除了+号，避免被清洗掉
+    cleaned_name = re.sub(r'[$「」()（）\s-]', '', channel_name)
+    
     # 数字标准化（如 05 → 5）
     cleaned_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), cleaned_name)
     return cleaned_name.upper()
@@ -64,10 +70,14 @@ def is_ipv6(url):
         return False
     return re.match(r'^http:\/\/\[[0-9a-fA-F:]+\]', url) is not None
 
-def find_similar_name(target_name, name_list, cutoff=0.6):
+def find_similar_name(target_name, name_list, cutoff=0.4):
     """模糊匹配最相似的频道名"""
     if not target_name or not name_list:
         return None
+    # 优先精确匹配（关键：避免CCTV5+被模糊匹配成其他）
+    if target_name in name_list:
+        return target_name
+    # 模糊匹配
     matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=cutoff)
     return matches[0] if matches else None
 
@@ -259,9 +269,8 @@ def parse_m3u_lines(lines):
             if match:
                 current_category = match.group(1).strip()
                 channel_name = match.group(2).strip()
-                # 清洗CCTV频道名
-                if channel_name and channel_name.startswith("CCTV"):
-                    channel_name = clean_channel_name(channel_name)
+                # 修复：所有频道名都清洗，不只是CCTV开头
+                channel_name = clean_channel_name(channel_name)
                 if current_category not in channels:
                     channels[current_category] = []
             else:
@@ -290,9 +299,8 @@ def parse_txt_lines(lines):
             match = re.match(r"^(.*?),(.*?)$", line)
             if match:
                 channel_name = match.group(1).strip()
-                # 清洗CCTV频道名
-                if channel_name and channel_name.startswith("CCTV"):
-                    channel_name = clean_channel_name(channel_name)
+                # 修复：所有频道名都清洗，不只是CCTV开头
+                channel_name = clean_channel_name(channel_name)
                 # 处理多URL（#分隔）
                 channel_urls = match.group(2).strip().split('#')
                 for url in channel_urls:
@@ -359,8 +367,10 @@ def match_channels(template_channels, all_channels):
     for category, template_names in template_channels.items():
         matched_channels[category] = OrderedDict()
         for channel_name in template_names:
+            # 先清洗模板中的频道名（和源保持一致）
+            cleaned_template_name = clean_channel_name(channel_name)
             # 模糊匹配
-            similar_name = find_similar_name(channel_name, all_online_names)
+            similar_name = find_similar_name(cleaned_template_name, all_online_names)
             if similar_name:
                 matched_channels[category][channel_name] = name_to_urls.get(similar_name, [])
                 logger.debug(f"匹配成功：{channel_name} → {similar_name}")
@@ -401,13 +411,12 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         return
     
     # 修复LOGO路径
-    #logo_url = f"./pic/logos/{channel_name}.png"
-    logo_url = f"./pic/logos{channel_name}.png"
+    logo_url = f"./pic/logos/{channel_name}.png"
     # 写入M3U（添加延迟信息）
     display_name = f"{channel_name}({latency:.0f}ms)"
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" "
-        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n"
+        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{display_name}\n"
     )
     f_m3u.write(url + "\n")
     # 写入TXT
@@ -440,7 +449,8 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
 
             # 写入M3U头部（EPG配置 + 延迟阈值说明）
             epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
-            header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+            # 修复：去掉多余的括号
+            header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
             
             f_m3u_ipv4.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
             f_m3u_ipv6.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
