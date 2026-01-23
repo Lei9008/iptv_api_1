@@ -5,7 +5,8 @@ import time
 import logging
 import os
 from dataclasses import dataclass, asdict
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple, Optional, OrderedDict
+from collections import OrderedDict
 
 # 配置类
 class Config:
@@ -15,11 +16,14 @@ class Config:
     OUTPUT_DIR = "output"  # 输出目录
     LOG_FILE = "output/speed_test.log"  # 日志文件
     LATENCY_THRESHOLD = 550  # 延迟阈值（毫秒）
+    PIC_DIR = "pic"  # LOGO文件夹配置
+    TEMPLATE_FILE = "demo.txt"  # 模板文件路径
 
 config = Config()
 
-# 提前创建输出目录
+# 提前创建输出目录和LOGO目录
 os.makedirs(config.OUTPUT_DIR, exist_ok=True)
+os.makedirs(config.PIC_DIR, exist_ok=True)
 
 # 日志配置
 logging.basicConfig(
@@ -77,8 +81,8 @@ class SpeedTester:
                                 res_match = re.search(rb"RESOLUTION=(\d+x\d+)", content)
                                 if res_match:
                                     resolution = res_match.group(1).decode()
-                            except:
-                                pass
+                            except Exception as e:
+                                logger.debug(f"解析分辨率失败 {url}: {e}")
                         
                         result.latency = elapsed_time
                         result.resolution = resolution
@@ -154,6 +158,38 @@ class M3UProcessor:
             return []
     
     @staticmethod
+    def parse_template(template_file: str) -> OrderedDict:
+        """解析demo.txt模板，返回有序字典 {分类: [频道名列表]}"""
+        template_channels = OrderedDict()
+        current_category = None
+        
+        try:
+            with open(template_file, "r", encoding="utf-8") as f:
+                for line_num, line in enumerate(f, 1):
+                    line = line.strip()
+                    # 跳过空行、注释行
+                    if not line or line.startswith("#"):
+                        continue
+                    
+                    if "#genre#" in line:
+                        # 提取分类名
+                        current_category = line.split(",")[0].strip()
+                        template_channels[current_category] = []
+                        logger.debug(f"模板文件第{line_num}行：识别分类 {current_category}")
+                    elif current_category:
+                        # 提取频道名
+                        channel_name = line.split(",")[0].strip()
+                        template_channels[current_category].append(channel_name)
+                        logger.debug(f"模板文件第{line_num}行：添加频道 {channel_name} 到分类 {current_category}")
+        
+        except FileNotFoundError:
+            logger.error(f"模板文件不存在：{template_file}")
+        except Exception as e:
+            logger.error(f"解析模板文件失败：{e}", exc_info=True)
+        
+        return template_channels
+    
+    @staticmethod
     def generate_m3u(live_sources: List[Tuple[str, str, str]], output_path: str) -> None:
         """
         生成带扩展字段的M3U文件（含tvg-id、tvg-logo、group-title）
@@ -173,7 +209,7 @@ class M3UProcessor:
                 f.write('#EXTM3U\n')
                 # 写入注释行记录生成时间（不影响播放器解析）
                 f.write(f"# 生成时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-                f.write(f"# 排序规则: group-title升序 → name升序 → 延迟升序 | 延迟阈值: {config.LATENCY_THRESHOLD}ms\n\n")
+                f.write(f"# 排序规则: 按demo.txt模板顺序 | 延迟阈值: {config.LATENCY_THRESHOLD}ms\n\n")
 
                 # 遍历生成每个频道的信息
                 for index, (group, name, url) in enumerate(live_sources, start=1):
@@ -181,9 +217,8 @@ class M3UProcessor:
                         logger.warning(f"跳过无效频道: 名称={name}, URL={url}")
                         continue
                     
-                    # 拼接logo地址
-                    #logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{name}.png"
-                    logo_url = f"{PIC_DIR}/logos{name}.png"
+                    # 使用配置的PIC_DIR和循环变量name
+                    logo_url = f"{config.PIC_DIR}/logos{name}.png"
                     # 标准EXTINF格式，包含所有扩展字段
                     extinf_line = f'#EXTINF:-1 tvg-id="{index}" tvg-name="{name}" tvg-logo="{logo_url}" group-title="{group}",{name}'
                     
@@ -202,61 +237,92 @@ async def main():
     output_file = f"{config.OUTPUT_DIR}/live_sources_ipv4.m3u"
     report_file = f"{config.OUTPUT_DIR}/speed_test_report_log.txt"
 
-    # 1. 解析M3U
-    logger.info(f"开始解析文件: {input_file}")
+    # 1. 解析demo.txt模板（核心：获取模板顺序）
+    logger.info(f"开始解析模板文件: {config.TEMPLATE_FILE}")
+    template_channels = M3UProcessor.parse_template(config.TEMPLATE_FILE)
+    if not template_channels:
+        logger.error("模板文件解析为空，程序退出")
+        return
+    # 扁平化模板：[(分类, 频道名), ...] 保留模板顺序
+    template_flat = []
+    for category, names in template_channels.items():
+        for name in names:
+            template_flat.append((category, name))
+    logger.info(f"模板解析完成，共{len(template_flat)}个频道（按模板顺序）")
+
+    # 2. 解析M3U直播源
+    logger.info(f"开始解析直播源文件: {input_file}")
     m3u_processor = M3UProcessor()
     live_sources = m3u_processor.parse_m3u(input_file)
     
     if not live_sources:
         logger.error("未找到有效直播源，程序退出")
         return
-    logger.info(f"解析完成，共找到 {len(live_sources)} 个去重直播源")
+    logger.info(f"直播源解析完成，共找到 {len(live_sources)} 个去重直播源")
 
-    # 2. 批量测速
+    # 3. 批量测速
     logger.info("开始速度测试...")
     async with SpeedTester() as tester:
         urls = [src[2] for src in live_sources]
         results = await tester.batch_speed_test(urls)
 
-    # 3. 筛选延迟≤阈值的直播源
+    # 4. 构建直播源映射：(分类, 频道名) → 低延迟URL列表
     url_to_result = {res.url: res for res in results}
-    # ========== 核心修改：多维度排序 ==========
-    # 排序规则：1.group-title（分组）升序 → 2.name（频道名）升序 → 3.延迟升序
-    sorted_live_sources = sorted(
-        [src for src in live_sources
-         if url_to_result.get(src[2]) and url_to_result[src[2]].latency and url_to_result[src[2]].latency <= config.LATENCY_THRESHOLD],
-        key=lambda x: (
-            x[0].lower(),  # 分组名（转小写，避免大小写影响排序）
-            x[1].lower(),  # 频道名（转小写）
-            url_to_result[x[2]].latency  # 延迟时间
-        )
-    )
-
-    # 4. 生成日志报告
-    success_count = sum(1 for res in results if res.success)
-    logger.info(f"测试完成 | 总数: {len(results)} | 成功: {success_count} | 有效: {len(sorted_live_sources)}")
+    source_map = {}  # key: (分类, 频道名) → value: [(URL, 延迟), ...]
+    for group, name, url in live_sources:
+        result = url_to_result.get(url)
+        # 筛选符合延迟阈值的有效URL
+        if result and result.success and result.latency and result.latency <= config.LATENCY_THRESHOLD:
+            key = (group, name)
+            if key not in source_map:
+                source_map[key] = []
+            source_map[key].append((url, result.latency))
     
-    # 打印前10个排序后的频道（验证排序效果）
-    logger.info("前10个排序后的直播源（分组→名称→延迟）:")
-    for i, (group, name, url) in enumerate(sorted_live_sources[:10], 1):
+    # 5. 按模板顺序筛选有效频道（核心逻辑）
+    final_sources = []
+    for template_group, template_name in template_flat:
+        # 匹配模板中的频道（忽略大小写，提高匹配率）
+        match_key = None
+        for (group, name) in source_map.keys():
+            if name.upper() == template_name.upper() and group.upper() == template_group.upper():
+                match_key = (group, name)
+                break
+        
+        if match_key:
+            # 对该频道的URL按延迟升序排序，取最优（最低延迟）
+            sorted_urls = sorted(source_map[match_key], key=lambda x: x[1])
+            if sorted_urls:
+                best_url = sorted_urls[0][0]
+                final_sources.append((template_group, template_name, best_url))
+                logger.debug(f"模板匹配成功: [{template_group}] {template_name} → 最优URL延迟: {sorted_urls[0][1]:.2f}ms")
+        else:
+            logger.warning(f"模板中频道未找到有效直播源: [{template_group}] {template_name}")
+
+    # 6. 生成日志报告
+    success_count = sum(1 for res in results if res.success)
+    logger.info(f"测试完成 | 总数: {len(results)} | 成功: {success_count} | 模板匹配有效数: {len(final_sources)}")
+    
+    # 打印前10个按模板排序的频道
+    logger.info("前10个按模板顺序的有效直播源:")
+    for i, (group, name, url) in enumerate(final_sources[:10], 1):
         latency = url_to_result[url].latency
         res = url_to_result[url].resolution
         logger.info(f"{i}. [{group}] {name} | 延迟: {latency:.2f}ms | 分辨率: {res}")
 
-    # 5. 生成M3U和详细报告
-    m3u_processor.generate_m3u(sorted_live_sources, output_file)
+    # 7. 生成M3U和详细报告
+    m3u_processor.generate_m3u(final_sources, output_file)
     
     # 写入详细报告
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
-            f.write("IPTV直播源测速报告\n")
-            f.write("="*50 + "\n")
+            f.write("IPTV直播源测速报告（按demo.txt模板顺序）\n")
+            f.write("="*60 + "\n")
             f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"延迟阈值: {config.LATENCY_THRESHOLD}ms\n")
-            f.write(f"排序规则: group-title升序 → name升序 → 延迟升序\n")
-            f.write(f"总测试数: {len(results)} | 成功数: {success_count} | 有效数: {len(sorted_live_sources)}\n\n")
+            f.write(f"模板文件: {config.TEMPLATE_FILE}\n")
+            f.write(f"总测试数: {len(results)} | 成功数: {success_count} | 模板匹配有效数: {len(final_sources)}\n\n")
             
-            for i, (group, name, url) in enumerate(sorted_live_sources, 1):
+            for i, (group, name, url) in enumerate(final_sources, 1):
                 r = url_to_result[url]
                 f.write(f"{i}. 分组: {group} | 名称: {name}\n")
                 f.write(f"   URL: {url}\n")
@@ -266,9 +332,7 @@ async def main():
         logger.error(f"生成报告失败: {e}")
 
 if __name__ == "__main__":
-    # 兼容Windows系统的事件循环
-    try:
-        asyncio.run(main())
-    except RuntimeError as e:
-        loop = asyncio.get_event_loop_policy().get_event_loop()
-        loop.run_until_complete(main())
+    # 兼容Windows系统事件循环
+    if os.name == 'nt':  # Windows系统
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.run(main())
