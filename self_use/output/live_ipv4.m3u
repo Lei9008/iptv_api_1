@@ -132,7 +132,7 @@ http://112.27.235.94:8000/hls/5/index.m3u8$IPV4•线路5
 #EXTINF:-1 tvg-id="6" tvg-name="CCTV5" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5.png" group-title="┃央视频道",CCTV5
 https://zby.130519.xyz/PLTV/11/224/3221225734/index.m3u8$IPV4•线路6
 #EXTINF:-1 tvg-id="7" tvg-name="CCTV5" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5.png" group-title="┃央视频道",CCTV5
-http://119.123.176.82:8086/hls/6/index.m3u8$IPV4•线路7
+http://74.91.26.218:82/live/cctv5hd.m3u8$IPV4•线路7
 #EXTINF:-1 tvg-id="8" tvg-name="CCTV5" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5.png" group-title="┃央视频道",CCTV5
 http://112.254.55.106:22222/udp/239.253.254.192:8000$IPV4•线路8
 #EXTINF:-1 tvg-id="9" tvg-name="CCTV5" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5.png" group-title="┃央视频道",CCTV5
@@ -174,7 +174,7 @@ https://www.wmviv.com/iptv/bc2t.php?id=cctv5p$IPV4•线路6
 #EXTINF:-1 tvg-id="7" tvg-name="CCTV5+" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5+.png" group-title="┃央视频道",CCTV5+
 http://112.27.235.94:8000/hls/6/index.m3u8$IPV4•线路7
 #EXTINF:-1 tvg-id="8" tvg-name="CCTV5+" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5+.png" group-title="┃央视频道",CCTV5+
-http://119.123.176.82:8086/hls/252/index.m3u8$IPV4•线路8
+http://74.91.26.218:82/live/cctv5p.m3u8$IPV4•线路8
 #EXTINF:-1 tvg-id="9" tvg-name="CCTV5+" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5+.png" group-title="┃央视频道",CCTV5+
 http://112.254.55.106:22222/udp/239.253.254.80:8000$IPV4•线路9
 #EXTINF:-1 tvg-id="10" tvg-name="CCTV5+" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CCTV5+.png" group-title="┃央视频道",CCTV5+
