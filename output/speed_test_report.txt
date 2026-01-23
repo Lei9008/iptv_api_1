@@ -1,505 +1,383 @@
-================================================================================
-IPTV直播源测速报告（按demo.txt顺序）
-================================================================================
-测试时间: 2026-01-23 13:32:31
-模板文件: demo.txt
+============================================================
+IPTV直播源匹配测速报告
+============================================================
+测试时间: 2026-01-23 13:59:59
+匹配模板: demo.txt
 延迟阈值: 550ms
-有效频道数: 71
+匹配成功数: 75
 
 1. 分类: ┃央视频道
-   频道: CCTV1
-   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 118.09ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CCTV1
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv1hd.m3u8?auth=testpub$IPV4•线路7
+   延迟: 29.15ms | 分辨率: unknown
 
 2. 分类: ┃央视频道
-   频道: CCTV2
-   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20251009$IPV4•线路9
-   延迟: 59.45ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CCTV2
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv2hd.m3u8?auth=testpub$IPV4•线路8
+   延迟: 9.61ms | 分辨率: unknown
 
 3. 分类: ┃央视频道
-   频道: CCTV3
+   频道名: CCTV3
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv3hd.m3u8?auth=test20251009$IPV4•线路7
-   延迟: 59.40ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.05ms | 分辨率: unknown
 
 4. 分类: ┃央视频道
-   频道: CCTV4
+   频道名: CCTV4
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009$IPV4•线路7
-   延迟: 59.33ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.51ms | 分辨率: unknown
 
 5. 分类: ┃央视频道
-   频道: CCTV5
-   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv5hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.49ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CCTV5
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub$IPV4•线路19
+   延迟: 9.48ms | 分辨率: unknown
 
 6. 分类: ┃央视频道
-   频道: CCTV5+
-   URL: https://iptv.catvod.com/live.php?id=CCTV5%2B$IPV4•线路4
-   延迟: 69.98ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CCTV5+
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub$IPV4•线路19
+   延迟: 9.48ms | 分辨率: unknown
 
 7. 分类: ┃央视频道
-   频道: CCTV6
-   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009$IPV4•线路7
-   延迟: 59.54ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CCTV6
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv6hd.m3u8?auth=testpub$IPV4•线路9
+   延迟: 9.53ms | 分辨率: unknown
 
 8. 分类: ┃央视频道
-   频道: CCTV7
+   频道名: CCTV7
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv7hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.39ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.55ms | 分辨率: unknown
 
 9. 分类: ┃央视频道
-   频道: CCTV8
+   频道名: CCTV8
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009$IPV4•线路7
-   延迟: 59.65ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.54ms | 分辨率: unknown
 
 10. 分类: ┃央视频道
-   频道: CCTV9
+   频道名: CCTV9
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv9hd.m3u8?auth=test20251009$IPV4•线路9
-   延迟: 59.32ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.79ms | 分辨率: unknown
 
 11. 分类: ┃央视频道
-   频道: CCTV10
+   频道名: CCTV10
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.48ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.53ms | 分辨率: unknown
 
 12. 分类: ┃央视频道
-   频道: CCTV11
+   频道名: CCTV11
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.67ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 15.23ms | 分辨率: unknown
 
 13. 分类: ┃央视频道
-   频道: CCTV12
+   频道名: CCTV12
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv12hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.50ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.47ms | 分辨率: unknown
 
 14. 分类: ┃央视频道
-   频道: CCTV13
+   频道名: CCTV13
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.49ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.31ms | 分辨率: unknown
 
 15. 分类: ┃央视频道
-   频道: CCTV14
-   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009$IPV4•线路9
-   延迟: 59.51ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CCTV14
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub$IPV4•线路7
+   延迟: 9.59ms | 分辨率: unknown
 
 16. 分类: ┃央视频道
-   频道: CCTV15
+   频道名: CCTV15
    URL: http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009$IPV4•线路15
-   延迟: 59.46ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.31ms | 分辨率: unknown
 
 17. 分类: ┃央视频道
-   频道: CCTV16
+   频道名: CCTV16
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.42ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.27ms | 分辨率: unknown
 
 18. 分类: ┃央视频道
-   频道: CCTV17
+   频道名: CCTV17
    URL: http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009$IPV4•线路6
-   延迟: 59.62ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.22ms | 分辨率: unknown
 
 19. 分类: ┃央视频道
-   频道: CETV1
-   URL: https://migu.188766.xyz/?migutoken=a55dadc35d37e3e168faf8268cc6fa97&id=CETV1&type=yy$IPV4•线路4
-   延迟: 38.20ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CETV1
+   URL: https://migu.188766.xyz/?migutoken=36ef7f6bca62cec9abdcde133fce0012&id=CETV1&typ
+   延迟: 21.52ms | 分辨率: unknown
 
 20. 分类: ┃央视频道
-   频道: CETV4
-   URL: https://migu.188766.xyz/?migutoken=d5d19d868e1df41e984866fc7ca15071&id=CETV4&type=yy$IPV4•线路4
-   延迟: 41.50ms
-   分辨率: unknown
-   状态: 成功
+   频道名: CETV4
+   URL: https://migu.188766.xyz/?migutoken=d5d19d868e1df41e984866fc7ca15071&id=CETV4&typ
+   延迟: 26.04ms | 分辨率: unknown
 
 21. 分类: ┃央视付费频道
-   频道: 第一剧场
+   频道名: 第一剧场
    URL: http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.76ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 10.18ms | 分辨率: unknown
 
 22. 分类: ┃央视付费频道
-   频道: 风云剧场
+   频道名: 风云剧场
    URL: http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.84ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.60ms | 分辨率: unknown
 
 23. 分类: ┃央视付费频道
-   频道: 怀旧剧场
+   频道名: 怀旧剧场
    URL: http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.76ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.69ms | 分辨率: unknown
 
 24. 分类: ┃央视付费频道
-   频道: 风云音乐
+   频道名: 风云音乐
    URL: http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$IPV4•线路7
-   延迟: 59.61ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.96ms | 分辨率: unknown
 
 25. 分类: ┃央视付费频道
-   频道: 高尔夫网球
+   频道名: 高尔夫网球
    URL: http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.61ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.84ms | 分辨率: unknown
 
 26. 分类: ┃央视付费频道
-   频道: 风云足球
+   频道名: 风云足球
    URL: http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.59ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 14.02ms | 分辨率: unknown
 
 27. 分类: ┃央视付费频道
-   频道: 世界地理
+   频道名: 世界地理
    URL: http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.83ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.60ms | 分辨率: unknown
 
 28. 分类: ┃央视付费频道
-   频道: 兵器科技
+   频道名: 兵器科技
    URL: http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$IPV4•线路1
-   延迟: 59.59ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.82ms | 分辨率: unknown
 
 29. 分类: ┃卫视频道
-   频道: 山东卫视
+   频道名: 山东卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 59.78ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.91ms | 分辨率: unknown
 
 30. 分类: ┃卫视频道
-   频道: 北京卫视
-   URL: http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.48ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 北京卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub$IPV4•线路6
+   延迟: 9.81ms | 分辨率: unknown
 
 31. 分类: ┃卫视频道
-   频道: 东方卫视
+   频道名: 东方卫视
    URL: http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.52ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.60ms | 分辨率: unknown
 
 32. 分类: ┃卫视频道
-   频道: 浙江卫视
+   频道名: 浙江卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/zjwshd.m3u8?auth=testpub$IPV4•线路7
-   延迟: 59.80ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.74ms | 分辨率: unknown
 
 33. 分类: ┃卫视频道
-   频道: 湖南卫视
+   频道名: 湖南卫视
    URL: http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009$IPV4•线路8
-   延迟: 59.73ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.89ms | 分辨率: unknown
 
 34. 分类: ┃卫视频道
-   频道: 江苏卫视
+   频道名: 江苏卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 60.97ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 10.10ms | 分辨率: unknown
 
 35. 分类: ┃卫视频道
-   频道: 安徽卫视
+   频道名: 安徽卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/ahwshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 59.75ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.60ms | 分辨率: unknown
 
 36. 分类: ┃卫视频道
-   频道: 重庆卫视
-   URL: https://iptv.catvod.com/live.php?id=%E9%87%8D%E5%BA%86%E5%8D%AB%E8%A7%86$IPV4•线路7
-   延迟: 79.04ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 重庆卫视
+   URL: https://iptv.catvod.com/live.php?id=%E9%87%8D%E5%BA%86%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 17.15ms | 分辨率: unknown
 
 37. 分类: ┃卫视频道
-   频道: 四川卫视
+   频道名: 四川卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/scwshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 59.58ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.79ms | 分辨率: unknown
 
 38. 分类: ┃卫视频道
-   频道: 深圳卫视
+   频道名: 深圳卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 59.52ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.96ms | 分辨率: unknown
 
 39. 分类: ┃卫视频道
-   频道: 广东卫视
+   频道名: 广东卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub$IPV4•线路10
-   延迟: 59.54ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 10.17ms | 分辨率: unknown
 
 40. 分类: ┃卫视频道
-   频道: 广西卫视
-   URL: https://iptv.catvod.com/live.php?id=%E5%B9%BF%E8%A5%BF%E5%8D%AB%E8%A7%86$IPV4•线路4
-   延迟: 79.46ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 广西卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%B9%BF%E8%A5%BF%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 17.92ms | 分辨率: unknown
 
 41. 分类: ┃卫视频道
-   频道: 厦门卫视
+   频道名: 厦门卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub$IPV4•线路3
-   延迟: 59.62ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.82ms | 分辨率: unknown
 
 42. 分类: ┃卫视频道
-   频道: 甘肃卫视
+   频道名: 甘肃卫视
    URL: http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub$IPV4•线路4
-   延迟: 59.57ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.87ms | 分辨率: unknown
 
 43. 分类: ┃卫视频道
-   频道: 贵州卫视
-   URL: https://iptv.catvod.com/live.php?id=%E8%B4%B5%E5%B7%9E%E5%8D%AB%E8%A7%86$IPV4•线路5
-   延迟: 77.39ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 贵州卫视
+   URL: https://iptv.catvod.com/live.php?id=%E8%B4%B5%E5%B7%9E%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 17.50ms | 分辨率: unknown
 
 44. 分类: ┃卫视频道
-   频道: 河南卫视
-   URL: https://iptv.catvod.com/live.php?id=%E6%B2%B3%E5%8D%97%E5%8D%AB%E8%A7%86$IPV4•线路6
-   延迟: 79.10ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 河北卫视
+   URL: http://120.76.248.139/live/bfgd/4200000108.m3u8$IPV4•线路4
+   延迟: 549.08ms | 分辨率: unknown
 
 45. 分类: ┃卫视频道
-   频道: 黑龙江卫视
-   URL: http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub$IPV4•线路5
-   延迟: 59.50ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 河南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B2%B3%E5%8D%97%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 18.80ms | 分辨率: unknown
 
 46. 分类: ┃卫视频道
-   频道: 湖北卫视
-   URL: https://migu.188766.xyz/?migutoken=113ab9c895c1921cf6e77bf26ea0823a&id=%E6%B9%96%E5%8C%97%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路11
-   延迟: 42.37ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 黑龙江卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub$IPV4•线路5
+   延迟: 9.72ms | 分辨率: unknown
 
 47. 分类: ┃卫视频道
-   频道: 江西卫视
-   URL: https://migu.188766.xyz/?migutoken=f45c4555dcedb772397b8bd053869ce4&id=%E6%B1%9F%E8%A5%BF%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路10
-   延迟: 59.12ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 湖北卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B9%96%E5%8C%97%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 18.24ms | 分辨率: unknown
 
 48. 分类: ┃卫视频道
-   频道: 吉林卫视
-   URL: https://migu.188766.xyz/?migutoken=72de2bce525ce45747ebc9b62f6622c1&id=%E5%90%89%E6%9E%97%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路9
-   延迟: 42.41ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 江西卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B1%9F%E8%A5%BF%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 17.08ms | 分辨率: unknown
 
 49. 分类: ┃卫视频道
-   频道: 内蒙古卫视
-   URL: https://migu.188766.xyz/?migutoken=517fc2ced2c87ff5d24c4ef5ea37453c&id=%E5%86%85%E8%92%99%E5%8F%A4%E5%8D%AB%E8%A7%86&pp=1$IPV4•线路11
-   延迟: 37.40ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 吉林卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub$IPV4•线路4
+   延迟: 9.51ms | 分辨率: unknown
 
 50. 分类: ┃卫视频道
-   频道: 辽宁卫视
-   URL: http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 59.72ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 内蒙古卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%86%85%E8%92%99%E5%8F%A4%E5%8D%AB%E8%A7%8
+   延迟: 17.66ms | 分辨率: unknown
 
 51. 分类: ┃卫视频道
-   频道: 宁夏卫视
-   URL: https://migu.188766.xyz/?migutoken=e5ebdb498beb06d150da05595a961cbb&id=%E5%AE%81%E5%A4%8F%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路6
-   延迟: 35.53ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 辽宁卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub$IPV4•线路6
+   延迟: 9.86ms | 分辨率: unknown
 
 52. 分类: ┃卫视频道
-   频道: 青海卫视
-   URL: https://migu.188766.xyz/?migutoken=3f20379829f1e1fad50873a632595e84&id=%E9%9D%92%E6%B5%B7%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路11
-   延迟: 37.41ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 宁夏卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub$IPV4•线路3
+   延迟: 10.13ms | 分辨率: unknown
 
 53. 分类: ┃卫视频道
-   频道: 天津卫视
-   URL: http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009$IPV4•线路15
-   延迟: 59.30ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 青海卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub$IPV4•线路4
+   延迟: 9.71ms | 分辨率: unknown
 
 54. 分类: ┃卫视频道
-   频道: 海南卫视
-   URL: https://migu.188766.xyz/?migutoken=d2061f4f32fe7d8fda9c2ab3bffd12ad&id=hn_hnws&type=sz$IPV4•线路9
-   延迟: 36.37ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 天津卫视
+   URL: http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009$IPV4•线路15
+   延迟: 9.72ms | 分辨率: unknown
 
 55. 分类: ┃卫视频道
-   频道: 新疆卫视
-   URL: http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$IPV4•线路4
-   延迟: 59.65ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 海南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B5%B7%E5%8D%97%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 16.46ms | 分辨率: unknown
 
 56. 分类: ┃卫视频道
-   频道: 云南卫视
-   URL: http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub$IPV4•线路6
-   延迟: 59.63ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 新疆卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$IPV4•线路4
+   延迟: 9.81ms | 分辨率: unknown
 
 57. 分类: ┃卫视频道
-   频道: 西藏卫视
-   URL: https://iptv.catvod.com/live.php?id=%E8%A5%BF%E8%97%8F%E5%8D%AB%E8%A7%86$IPV4•线路3
-   延迟: 78.77ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 云南卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub$IPV4•线路6
+   延迟: 9.76ms | 分辨率: unknown
 
 58. 分类: ┃卫视频道
-   频道: 农林卫视
-   URL: http://120.76.248.139/live/bfgd/4200000122.m3u8$IPV4
-   延迟: 290.49ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 西藏卫视
+   URL: https://iptv.catvod.com/live.php?id=%E8%A5%BF%E8%97%8F%E5%8D%AB%E8%A7%86$IPV4•线路
+   延迟: 18.17ms | 分辨率: unknown
 
 59. 分类: ┃卫视频道
-   频道: 三沙卫视
-   URL: https://migu.188766.xyz/?migutoken=053b95cc9854161ab2d3ec4a19a64762&id=hn_ssws&type=sz$IPV4•线路6
-   延迟: 33.69ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 农林卫视
+   URL: http://120.76.248.139/live/bfgd/4200000122.m3u8$IPV4
+   延迟: 215.48ms | 分辨率: unknown
 
 60. 分类: ┃卫视频道
-   频道: 延边卫视
-   URL: http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
-   延迟: 406.09ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 三沙卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$IPV4•线路2
+   延迟: 11.71ms | 分辨率: unknown
 
-61. 分类: ┃山东频道
-   频道: 山东教育
-   URL: https://migu.188766.xyz/?migutoken=0fa9782ae14d799d3c8c17993b02b93e&id=%E5%B1%B1%E4%B8%9C%E6%95%99%E8%82%B2&type=yy$IPV4•线路9
-   延迟: 37.48ms
-   分辨率: unknown
-   状态: 成功
+61. 分类: ┃卫视频道
+   频道名: 延边卫视
+   URL: http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
+   延迟: 339.69ms | 分辨率: unknown
 
 62. 分类: ┃山东频道
-   频道: 山东文旅
-   URL: http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路2
-   延迟: 539.89ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 山东教育
+   URL: https://migu.188766.xyz/?migutoken=0fa9782ae14d799d3c8c17993b02b93e&id=%E5%B1%B1
+   延迟: 30.61ms | 分辨率: unknown
 
 63. 分类: ┃山东频道
-   频道: 济宁公共
-   URL: http://120.76.248.139/live/bfgd/4200000077.m3u8$IPV4•线路2
-   延迟: 403.18ms
-   分辨率: unknown
-   状态: 成功
+   频道名: 山东生活
+   URL: http://ls.qingting.fm/live/60260.m3u8$IPV4•线路2
+   延迟: 530.36ms | 分辨率: unknown
 
 64. 分类: ┃山东频道
-   频道: 济宁新闻综合
+   频道名: 山东文旅
+   URL: http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 413.94ms | 分辨率: unknown
+
+65. 分类: ┃山东频道
+   频道名: 济宁公共
+   URL: http://120.76.248.139/live/bfgd/4200000077.m3u8$IPV4•线路2
+   延迟: 328.38ms | 分辨率: unknown
+
+66. 分类: ┃山东频道
+   频道名: 济宁新闻综合
    URL: https://liveout.xntv.tv/a65jur/96iln2.m3u8?zqinghd$IPV4•线路6
-   延迟: 304.52ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 256.08ms | 分辨率: unknown
 
-65. 分类: ┃少儿频道
-   频道: 金鹰卡通
-   URL: http://101.66.199.137:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路4
-   延迟: 543.69ms
-   分辨率: unknown
-   状态: 成功
+67. 分类: ┃山东频道
+   频道名: 菏泽经济生活
+   URL: http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8#https://ali-m-l.cz
+   延迟: 387.69ms | 分辨率: unknown
 
-66. 分类: ┃少儿频道
-   频道: 优漫卡通
-   URL: https://www.freetv.top/migu/626064703.m3u8?migutoken=7f7c4b909389a0cd5172701768041a0f3887534c4534a68bf1dc85550389e9ab156655484be16e89604513fde9da2f036ebae28d31515b0be32eb12462f5de9d9cab8f00c44671241d5c6e1356$IPV4•线路6
-   延迟: 284.73ms
-   分辨率: unknown
-   状态: 成功
+68. 分类: ┃少儿频道
+   频道名: CCTV13
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009$IPV4•线路8
+   延迟: 9.31ms | 分辨率: unknown
 
-67. 分类: ┃湾区频道
-   频道: 凤凰中文
-   URL: https://mgev.188766.xyz/?migutoken=488cc8d5142343a18afcd003da4d11bc&id=hk_fhzw&type=dy$IPV4•线路8
-   延迟: 103.25ms
-   分辨率: unknown
-   状态: 成功
+69. 分类: ┃少儿频道
+   频道名: 优漫卡通
+   URL: https://www.freetv.top/migu/626064703.m3u8?migutoken=7f7c4b909389a0cd51727017680
+   延迟: 329.98ms | 分辨率: unknown
 
-68. 分类: ┃湾区频道
-   频道: 凤凰资讯
-   URL: https://mgev.188766.xyz/?migutoken=24cd07d564a889ac2b4b11883e0c3710&id=hk_fhzx&type=dy$IPV4•线路6
-   延迟: 35.30ms
-   分辨率: unknown
-   状态: 成功
+70. 分类: ┃湾区频道
+   频道名: 翡翠台
+   URL: https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40『线路
+   延迟: 212.83ms | 分辨率: unknown
 
-69. 分类: ┃湾区频道
-   频道: 凤凰香港
-   URL: https://mgev.188766.xyz/?migutoken=5e6e1e853d723afa1717151061309e04&id=hk_fhhk&type=dy$IPV4•线路9
-   延迟: 37.73ms
-   分辨率: unknown
-   状态: 成功
+71. 分类: ┃湾区频道
+   频道名: 凤凰中文
+   URL: https://cdn.iptv8k.top/dl/jrys.php?id=19&time=20240926215313&ip=111.229.253.40$I
+   延迟: 45.78ms | 分辨率: unknown
 
-70. 分类: ┃影视频道
-   频道: CHC动作电影
+72. 分类: ┃湾区频道
+   频道名: 凤凰资讯
+   URL: https://mgev.188766.xyz/?migutoken=1f2a8c13256a5c1d8538242a512ad64f&id=fhzx&pp=1
+   延迟: 23.10ms | 分辨率: unknown
+
+73. 分类: ┃湾区频道
+   频道名: 凤凰香港
+   URL: https://mgev.188766.xyz/?migutoken=40fa6c0ba9aebd84e02b7a2c1730f455&id=fhhk&pp=1
+   延迟: 26.00ms | 分辨率: unknown
+
+74. 分类: ┃影视频道
+   频道名: CHC动作电影
    URL: http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub$IPV4•线路5
-   延迟: 118.62ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 18.16ms | 分辨率: unknown
 
-71. 分类: ┃影视频道
-   频道: CHC家庭影院
+75. 分类: ┃影视频道
+   频道名: CHC家庭影院
    URL: http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub$IPV4•线路4
-   延迟: 59.82ms
-   分辨率: unknown
-   状态: 成功
+   延迟: 9.51ms | 分辨率: unknown
 
