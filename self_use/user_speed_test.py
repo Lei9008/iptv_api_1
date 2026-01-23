@@ -41,16 +41,60 @@ class Config:
             for key, value in config_dict.items():
                 if hasattr(cls, key):
                     setattr(cls, key, value)
-            logger.info(f"成功从{config_path}加载自定义配置")
+            # 这里用临时日志输出，避免依赖logger
+            print(f"成功从{config_path}加载自定义配置")
         except FileNotFoundError:
-            logger.warning(f"未找到配置文件{config_path}，使用默认配置")
+            print(f"未找到配置文件{config_path}，使用默认配置")
         except Exception as e:
-            logger.error(f"加载配置文件失败: {e}", exc_info=True)
+            print(f"加载配置文件失败: {e}")
 
 # 初始化配置
 config = Config()
 
-# ===================== 目录初始化（优化：原子化创建/容错） =====================
+# ===================== 日志配置（优先初始化，解决顺序问题） =====================
+def setup_logging() -> logging.Logger:
+    """配置日志系统（更规范的日志格式）"""
+    # 先创建临时日志（目录初始化前）
+    temp_logger = logging.getLogger("IPTV_Speed_Tester_Temp")
+    temp_logger.setLevel(logging.INFO)
+    temp_logger.handlers.clear()
+    
+    # 控制台处理器（临时，目录创建后会替换）
+    console_handler = logging.StreamHandler()
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+    console_handler.setFormatter(formatter)
+    temp_logger.addHandler(console_handler)
+    
+    # 尝试创建日志目录（如果失败，用临时日志输出）
+    try:
+        config.LOG_DIR.mkdir(parents=True, exist_ok=True)
+        # 正式日志配置（文件+控制台）
+        logger = logging.getLogger("IPTV_Speed_Tester")
+        logger.setLevel(config.LOG_LEVEL)
+        logger.handlers.clear()
+        
+        # 文件处理器（追加模式，避免覆盖）
+        file_handler = logging.FileHandler(config.LOG_FILE, encoding="utf-8", mode="a")
+        file_handler.setFormatter(formatter)
+        
+        # 控制台处理器
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
+        
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+        return logger
+    except Exception as e:
+        temp_logger.error(f"正式日志初始化失败，使用临时日志: {e}")
+        return temp_logger
+
+# 优先初始化日志（解决顺序问题）
+logger = setup_logging()
+
+# ===================== 目录初始化（修复：依赖已初始化的logger） =====================
 def init_directories() -> None:
     """初始化所有必要目录"""
     try:
@@ -64,34 +108,8 @@ def init_directories() -> None:
         logger.critical(f"目录初始化失败: {e}", exc_info=True)
         raise SystemExit(1)
 
-# ===================== 日志配置（优化：分级日志/滚动日志） =====================
-def setup_logging() -> logging.Logger:
-    """配置日志系统（更规范的日志格式）"""
-    logger = logging.getLogger("IPTV_Speed_Tester")
-    logger.setLevel(config.LOG_LEVEL)
-    logger.handlers.clear()  # 避免重复处理器
-    
-    # 日志格式
-    formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S"
-    )
-    
-    # 文件处理器（追加模式，避免覆盖）
-    file_handler = logging.FileHandler(config.LOG_FILE, encoding="utf-8", mode="a")
-    file_handler.setFormatter(formatter)
-    
-    # 控制台处理器
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
-    return logger
-
-# 初始化目录和日志
+# 初始化目录（此时logger已定义）
 init_directories()
-logger = setup_logging()
 
 # ===================== 数据类（优化：增加类型注解/序列化） =====================
 @dataclass
