@@ -218,10 +218,10 @@ async def main():
     url_to_result = {result.url: result for result in results}
     sorted_live_sources = sorted(
     [item for item in live_sources
-     if (item[1] in url_to_result) 
-     and (url_to_result[item[1]].latency is not None) 
-     and (url_to_result[item[1]].latency <= 650)],
-    key=lambda x: url_to_result[x[1]].latency
+     if (item[2] in url_to_result) 
+     and (url_to_result[item[2]].latency is not None) 
+     and (url_to_result[item[2]].latency <= 650)],
+    key=lambda x: url_to_result[x[2]].latency
     )
 
     
