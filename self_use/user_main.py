@@ -45,6 +45,7 @@ logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
 # ===================== 工具函数 =====================
+
 def clean_channel_name(channel_name: str) -> str:
     """
     标准化清洗频道名称
@@ -54,8 +55,9 @@ def clean_channel_name(channel_name: str) -> str:
     if not channel_name:
         return ""
     
-    # 移除特殊字符、空白，数字标准化，转大写
-    cleaned_name = re.sub(r'[$「」-«»]', '', channel_name)  # 补充常见特殊字符
+    # 修复：转义-符号，避免被解析为字符范围
+    # 方案1：将-放在字符集开头；方案2：用\-转义；这里选方案1更直观
+    cleaned_name = re.sub(r'[-$「」«»]', '', channel_name)  # 补充常见特殊字符
     cleaned_name = re.sub(r'\s+', '', cleaned_name)
     cleaned_name = re.sub(
         r'(\D*)(\d+)',
@@ -69,6 +71,7 @@ def is_ipv6(url: str) -> bool:
     if not url:
         return False
     return re.match(r'^http:\/\/\[[0-9a-fA-F:]+\]', url) is not None
+
 
 def find_similar_name(target_name: str, name_list: list, cutoff: float = 0.6) -> str | None:
     """
