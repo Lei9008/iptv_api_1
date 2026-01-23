@@ -199,7 +199,7 @@ class M3UProcessor:
 
 # 主程序
 async def main():
-    input_file = "output/live_ipv4.m3u"
+    input_file = "self_use/output/live_ipv4.m3u"
     output_file = f"{config.OUTPUT_DIR}/live_sources_ipv41.m3u"
     report_file = f"{config.OUTPUT_DIR}/speed_test_report_log1.txt"
 
