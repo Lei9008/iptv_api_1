@@ -1,6 +1,7 @@
 #EXTM3U
-# 生成时间: 2026-01-23 13:02:55
-# 排序规则: 按demo.txt模板顺序 | 延迟阈值: 550ms
+# 生成时间: 2026-01-23 13:32:31
+# 排序规则: 严格遵循 demo.txt 顺序
+# 延迟阈值: 550ms
 
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="pic/logosCCTV1.png" group-title="┃央视频道",CCTV1
 http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009$IPV4•线路8
@@ -48,7 +49,7 @@ http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009$IPV4•线�
 http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009$IPV4•线路9
 
 #EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="pic/logosCCTV15.png" group-title="┃央视频道",CCTV15
-http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009$IPV4•线路8
+http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009$IPV4•线路15
 
 #EXTINF:-1 tvg-id="17" tvg-name="CCTV16" tvg-logo="pic/logosCCTV16.png" group-title="┃央视频道",CCTV16
 http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$IPV4•线路8
@@ -60,7 +61,7 @@ http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009$IPV4•线�
 https://migu.188766.xyz/?migutoken=a55dadc35d37e3e168faf8268cc6fa97&id=CETV1&type=yy$IPV4•线路4
 
 #EXTINF:-1 tvg-id="20" tvg-name="CETV4" tvg-logo="pic/logosCETV4.png" group-title="┃央视频道",CETV4
-https://migu.188766.xyz/?migutoken=8d4526a960b7bdd7a85faa29d1cc9e03&id=CETV4&type=yy$IPV4•线路2
+https://migu.188766.xyz/?migutoken=d5d19d868e1df41e984866fc7ca15071&id=CETV4&type=yy$IPV4•线路4
 
 #EXTINF:-1 tvg-id="21" tvg-name="第一剧场" tvg-logo="pic/logos第一剧场.png" group-title="┃央视付费频道",第一剧场
 http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$IPV4•线路1
@@ -90,7 +91,7 @@ http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$IPV4•线路1
 http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub$IPV4•线路6
 
 #EXTINF:-1 tvg-id="30" tvg-name="北京卫视" tvg-logo="pic/logos北京卫视.png" group-title="┃卫视频道",北京卫视
-http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub$IPV4•线路6
+http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009$IPV4•线路8
 
 #EXTINF:-1 tvg-id="31" tvg-name="东方卫视" tvg-logo="pic/logos东方卫视.png" group-title="┃卫视频道",东方卫视
 http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009$IPV4•线路8
@@ -138,31 +139,31 @@ https://iptv.catvod.com/live.php?id=%E6%B2%B3%E5%8D%97%E5%8D%AB%E8%A7%86$IPV4•
 http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub$IPV4•线路5
 
 #EXTINF:-1 tvg-id="46" tvg-name="湖北卫视" tvg-logo="pic/logos湖北卫视.png" group-title="┃卫视频道",湖北卫视
-https://iptv.catvod.com/live.php?id=%E6%B9%96%E5%8C%97%E5%8D%AB%E8%A7%86$IPV4•线路7
+https://migu.188766.xyz/?migutoken=113ab9c895c1921cf6e77bf26ea0823a&id=%E6%B9%96%E5%8C%97%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路11
 
 #EXTINF:-1 tvg-id="47" tvg-name="江西卫视" tvg-logo="pic/logos江西卫视.png" group-title="┃卫视频道",江西卫视
-https://iptv.catvod.com/live.php?id=%E6%B1%9F%E8%A5%BF%E5%8D%AB%E8%A7%86$IPV4•线路7
+https://migu.188766.xyz/?migutoken=f45c4555dcedb772397b8bd053869ce4&id=%E6%B1%9F%E8%A5%BF%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路10
 
 #EXTINF:-1 tvg-id="48" tvg-name="吉林卫视" tvg-logo="pic/logos吉林卫视.png" group-title="┃卫视频道",吉林卫视
-http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub$IPV4•线路4
+https://migu.188766.xyz/?migutoken=72de2bce525ce45747ebc9b62f6622c1&id=%E5%90%89%E6%9E%97%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路9
 
 #EXTINF:-1 tvg-id="49" tvg-name="内蒙古卫视" tvg-logo="pic/logos内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
-https://iptv.catvod.com/live.php?id=%E5%86%85%E8%92%99%E5%8F%A4%E5%8D%AB%E8%A7%86$IPV4•线路5
+https://migu.188766.xyz/?migutoken=517fc2ced2c87ff5d24c4ef5ea37453c&id=%E5%86%85%E8%92%99%E5%8F%A4%E5%8D%AB%E8%A7%86&pp=1$IPV4•线路11
 
 #EXTINF:-1 tvg-id="50" tvg-name="辽宁卫视" tvg-logo="pic/logos辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
 http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub$IPV4•线路6
 
 #EXTINF:-1 tvg-id="51" tvg-name="宁夏卫视" tvg-logo="pic/logos宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
-http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub$IPV4•线路3
+https://migu.188766.xyz/?migutoken=e5ebdb498beb06d150da05595a961cbb&id=%E5%AE%81%E5%A4%8F%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路6
 
 #EXTINF:-1 tvg-id="52" tvg-name="青海卫视" tvg-logo="pic/logos青海卫视.png" group-title="┃卫视频道",青海卫视
-http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub$IPV4•线路4
+https://migu.188766.xyz/?migutoken=3f20379829f1e1fad50873a632595e84&id=%E9%9D%92%E6%B5%B7%E5%8D%AB%E8%A7%86&type=yy$IPV4•线路11
 
 #EXTINF:-1 tvg-id="53" tvg-name="天津卫视" tvg-logo="pic/logos天津卫视.png" group-title="┃卫视频道",天津卫视
 http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009$IPV4•线路15
 
 #EXTINF:-1 tvg-id="54" tvg-name="海南卫视" tvg-logo="pic/logos海南卫视.png" group-title="┃卫视频道",海南卫视
-https://iptv.catvod.com/live.php?id=%E6%B5%B7%E5%8D%97%E5%8D%AB%E8%A7%86$IPV4•线路6
+https://migu.188766.xyz/?migutoken=d2061f4f32fe7d8fda9c2ab3bffd12ad&id=hn_hnws&type=sz$IPV4•线路9
 
 #EXTINF:-1 tvg-id="55" tvg-name="新疆卫视" tvg-logo="pic/logos新疆卫视.png" group-title="┃卫视频道",新疆卫视
 http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$IPV4•线路4
@@ -177,13 +178,13 @@ https://iptv.catvod.com/live.php?id=%E8%A5%BF%E8%97%8F%E5%8D%AB%E8%A7%86$IPV4•
 http://120.76.248.139/live/bfgd/4200000122.m3u8$IPV4
 
 #EXTINF:-1 tvg-id="59" tvg-name="三沙卫视" tvg-logo="pic/logos三沙卫视.png" group-title="┃卫视频道",三沙卫视
-http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$IPV4•线路2
+https://migu.188766.xyz/?migutoken=053b95cc9854161ab2d3ec4a19a64762&id=hn_ssws&type=sz$IPV4•线路6
 
 #EXTINF:-1 tvg-id="60" tvg-name="延边卫视" tvg-logo="pic/logos延边卫视.png" group-title="┃卫视频道",延边卫视
 http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
 
 #EXTINF:-1 tvg-id="61" tvg-name="山东教育" tvg-logo="pic/logos山东教育.png" group-title="┃山东频道",山东教育
-https://migu.188766.xyz/?migutoken=1134813ab83db9f651ce86515f06b7c5&id=%E5%B1%B1%E4%B8%9C%E6%95%99%E8%82%B2&type=yy$IPV4•线路3
+https://migu.188766.xyz/?migutoken=0fa9782ae14d799d3c8c17993b02b93e&id=%E5%B1%B1%E4%B8%9C%E6%95%99%E8%82%B2&type=yy$IPV4•线路9
 
 #EXTINF:-1 tvg-id="62" tvg-name="山东文旅" tvg-logo="pic/logos山东文旅.png" group-title="┃山东频道",山东文旅
 http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路2
@@ -194,30 +195,24 @@ http://120.76.248.139/live/bfgd/4200000077.m3u8$IPV4•线路2
 #EXTINF:-1 tvg-id="64" tvg-name="济宁新闻综合" tvg-logo="pic/logos济宁新闻综合.png" group-title="┃山东频道",济宁新闻综合
 https://liveout.xntv.tv/a65jur/96iln2.m3u8?zqinghd$IPV4•线路6
 
-#EXTINF:-1 tvg-id="65" tvg-name="菏泽经济生活" tvg-logo="pic/logos菏泽经济生活.png" group-title="┃山东频道",菏泽经济生活
-http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8$IPV4•线路4
-
-#EXTINF:-1 tvg-id="66" tvg-name="金鹰卡通" tvg-logo="pic/logos金鹰卡通.png" group-title="┃少儿频道",金鹰卡通
+#EXTINF:-1 tvg-id="65" tvg-name="金鹰卡通" tvg-logo="pic/logos金鹰卡通.png" group-title="┃少儿频道",金鹰卡通
 http://101.66.199.137:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路4
 
-#EXTINF:-1 tvg-id="67" tvg-name="优漫卡通" tvg-logo="pic/logos优漫卡通.png" group-title="┃少儿频道",优漫卡通
+#EXTINF:-1 tvg-id="66" tvg-name="优漫卡通" tvg-logo="pic/logos优漫卡通.png" group-title="┃少儿频道",优漫卡通
 https://www.freetv.top/migu/626064703.m3u8?migutoken=7f7c4b909389a0cd5172701768041a0f3887534c4534a68bf1dc85550389e9ab156655484be16e89604513fde9da2f036ebae28d31515b0be32eb12462f5de9d9cab8f00c44671241d5c6e1356$IPV4•线路6
 
-#EXTINF:-1 tvg-id="68" tvg-name="翡翠台" tvg-logo="pic/logos翡翠台.png" group-title="┃湾区频道",翡翠台
-https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40『线路08』$IPV4•线路12
-
-#EXTINF:-1 tvg-id="69" tvg-name="凤凰中文" tvg-logo="pic/logos凤凰中文.png" group-title="┃湾区频道",凤凰中文
+#EXTINF:-1 tvg-id="67" tvg-name="凤凰中文" tvg-logo="pic/logos凤凰中文.png" group-title="┃湾区频道",凤凰中文
 https://mgev.188766.xyz/?migutoken=488cc8d5142343a18afcd003da4d11bc&id=hk_fhzw&type=dy$IPV4•线路8
 
-#EXTINF:-1 tvg-id="70" tvg-name="凤凰资讯" tvg-logo="pic/logos凤凰资讯.png" group-title="┃湾区频道",凤凰资讯
+#EXTINF:-1 tvg-id="68" tvg-name="凤凰资讯" tvg-logo="pic/logos凤凰资讯.png" group-title="┃湾区频道",凤凰资讯
 https://mgev.188766.xyz/?migutoken=24cd07d564a889ac2b4b11883e0c3710&id=hk_fhzx&type=dy$IPV4•线路6
 
-#EXTINF:-1 tvg-id="71" tvg-name="凤凰香港" tvg-logo="pic/logos凤凰香港.png" group-title="┃湾区频道",凤凰香港
-https://mgev.188766.xyz/?migutoken=40fa6c0ba9aebd84e02b7a2c1730f455&id=fhhk&pp=1$IPV4•线路8
+#EXTINF:-1 tvg-id="69" tvg-name="凤凰香港" tvg-logo="pic/logos凤凰香港.png" group-title="┃湾区频道",凤凰香港
+https://mgev.188766.xyz/?migutoken=5e6e1e853d723afa1717151061309e04&id=hk_fhhk&type=dy$IPV4•线路9
 
-#EXTINF:-1 tvg-id="72" tvg-name="CHC动作电影" tvg-logo="pic/logosCHC动作电影.png" group-title="┃影视频道",CHC动作电影
+#EXTINF:-1 tvg-id="70" tvg-name="CHC动作电影" tvg-logo="pic/logosCHC动作电影.png" group-title="┃影视频道",CHC动作电影
 http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub$IPV4•线路5
 
-#EXTINF:-1 tvg-id="73" tvg-name="CHC家庭影院" tvg-logo="pic/logosCHC家庭影院.png" group-title="┃影视频道",CHC家庭影院
+#EXTINF:-1 tvg-id="71" tvg-name="CHC家庭影院" tvg-logo="pic/logosCHC家庭影院.png" group-title="┃影视频道",CHC家庭影院
 http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub$IPV4•线路4
 
