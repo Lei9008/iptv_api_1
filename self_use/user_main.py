@@ -143,7 +143,7 @@ def write_to_files(f_m3u, f_txt, category: str, channel_name: str, index: int, n
         f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n"
     )
     f_m3u.write(f"{new_url}\n")
-    f_m3u.write(url + "\n\n")  # 空行分隔，提升可读性
+    
     
     # TXT格式写入
     f_txt.write(f"{channel_name},{new_url}\n")
