@@ -107,7 +107,7 @@ class SpeedTester:
 class M3UProcessor:
     @staticmethod
     def parse_m3u(file_path: str) -> List[Tuple[str, str, str]]:
-        """解析M3U文件，返回[(名称, URL), ...]"""
+        """解析M3U文件，返回[(分组, 名称, URL), ...]"""
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
@@ -128,7 +128,7 @@ class M3UProcessor:
                      name_start = line.find(',') + 1
                      current_name = line[name_start:].strip() if name_start > 0 else "未知频道"
                    
-                elif line.startswith('http') and current_name and current_group:
+                elif line.startswith('http') and current_group and current_name :
                     # 3. 只有同时有分组、名称、URL时才加入结果
                     live_sources.append((current_group, current_name, line))
                     # 重置临时变量，准备解析下一个频道
