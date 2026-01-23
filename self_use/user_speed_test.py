@@ -150,9 +150,9 @@ class M3UProcessor:
         #category: 所有频道的分组名称（默认：默认分组）
     #"""
     # 前置校验：空列表直接返回
-      if not live_sources:
-          logger.warning("直播源列表为空，跳过M3U文件生成")
-          return
+      #if not live_sources:
+          #logger.warning("直播源列表为空，跳过M3U文件生成")
+          #return
 
       try:
         # 自动创建输出目录
