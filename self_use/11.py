@@ -183,7 +183,7 @@ class M3UProcessor:
                     
                     # 拼接logo地址
                     #logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{name}.png"
-                    logo_url = f"{PIC_DIR}/logos{name}.png"
+                    logo_url = f"./pic/logos{name}.png"
                     # 标准EXTINF格式，包含所有扩展字段
                     extinf_line = f'#EXTINF:-1 tvg-id="{index}" tvg-name="{name}" tvg-logo="{logo_url}" group-title="{group}",{name}'
                     
