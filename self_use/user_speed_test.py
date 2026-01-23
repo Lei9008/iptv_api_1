@@ -113,18 +113,21 @@ class M3UProcessor:
                 lines = f.readlines()
             
             live_sources = []
-            current_name = None
+            current_group = None  # 存储当前频道的分组标题
+            current_name = None   # 存储当前频道的名称    
+            group_pattern = re.compile(r'group-title="([^"]+)"')    # 正则表达式匹配 group-title="xxx" 格式的内容
             
             for line in lines:
                 line = line.strip()
                 if line.startswith('#EXTINF:'):
-                    # 提取名称
-                    name_start = line.find(',') + 1
-                    current_name = line[name_start:] if name_start > 0 else "未知频道"
-               # elif line.startswith('http') and current_name:
-                    # 添加到源列表
-                    #live_sources.append((current_name, line))
-                    #current_name = None
+                     # 1. 提取分组标题（group-title）
+                     group_match = group_pattern.search(line)
+                     current_group = group_match.group(1) if group_match else "未分组"
+                
+                     # 2. 提取频道名称（逗号后到行尾的内容，去除空白）
+                     name_start = line.find(',') + 1
+                     current_name = line[name_start:].strip() if name_start > 0 else "未知频道"
+                   
                 elif line.startswith('http') and current_name and current_group:
                     # 3. 只有同时有分组、名称、URL时才加入结果
                     live_sources.append((current_group, current_name, line))
