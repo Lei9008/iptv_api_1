@@ -70,7 +70,7 @@ def is_ipv6(url):
         return False
     return re.match(r'^http:\/\/\[[0-9a-fA-F:]+\]', url) is not None
 
-def find_similar_name(target_name, name_list, cutoff=0.4):
+def find_similar_name(target_name, name_list, cutoff=0.6):
     """模糊匹配最相似的频道名"""
     if not target_name or not name_list:
         return None
