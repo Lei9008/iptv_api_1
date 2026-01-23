@@ -1,246 +1,271 @@
 IPTV直播源测速报告（按模板顺序）
-============================================================
-测试时间: 2026-01-23 15:31:05
+================================================================================
+测试时间: 2026-01-23 15:51:07
 延迟阈值: 550ms
-有效频道数: 48
+每个频道保留URL数: 10
+总有效URL数: 56
 
-1. 分类: ┃央视频道
-   频道: CCTV1
-   URL: http://112.27.235.94:8000/hls/1/index.m3u8
-   延迟: 160.16ms | 分辨率: unknown
+【CCTV1】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/1/index.m3u8
+     延迟: 194.05ms | 分辨率: unknown
 
-2. 分类: ┃央视频道
-   频道: CCTV2
-   URL: http://112.27.235.94:8000/hls/2/index.m3u8
-   延迟: 317.99ms | 分辨率: unknown
+【CCTV2】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/2/index.m3u8
+     延迟: 197.39ms | 分辨率: unknown
 
-3. 分类: ┃央视频道
-   频道: CCTV3
-   URL: http://112.27.235.94:8000/hls/3/index.m3u8
-   延迟: 157.33ms | 分辨率: unknown
+【CCTV3】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/3/index.m3u8
+     延迟: 192.09ms | 分辨率: unknown
 
-4. 分类: ┃央视频道
-   频道: CCTV4
-   URL: http://112.27.235.94:8000/hls/4/index.m3u8
-   延迟: 160.44ms | 分辨率: unknown
+【CCTV4】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/4/index.m3u8
+     延迟: 199.08ms | 分辨率: unknown
 
-5. 分类: ┃央视频道
-   频道: CCTV5
-   URL: http://112.27.235.94:8000/hls/5/index.m3u8
-   延迟: 161.94ms | 分辨率: unknown
+【CCTV5】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/6/index.m3u8
+     延迟: 190.59ms | 分辨率: unknown
+  2. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/5/index.m3u8
+     延迟: 196.23ms | 分辨率: unknown
 
-6. 分类: ┃央视频道
-   频道: CCTV6
-   URL: http://112.27.235.94:8000/hls/7/index.m3u8
-   延迟: 319.26ms | 分辨率: unknown
+【CCTV6】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/7/index.m3u8
+     延迟: 191.08ms | 分辨率: unknown
 
-7. 分类: ┃央视频道
-   频道: CCTV7
-   URL: http://112.27.235.94:8000/hls/8/index.m3u8
-   延迟: 161.92ms | 分辨率: unknown
+【CCTV7】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/8/index.m3u8
+     延迟: 199.20ms | 分辨率: unknown
 
-8. 分类: ┃央视频道
-   频道: CCTV9
-   URL: http://112.27.235.94:8000/hls/10/index.m3u8
-   延迟: 158.94ms | 分辨率: unknown
+【CCTV8】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/9/index.m3u8
+     延迟: 191.44ms | 分辨率: unknown
 
-9. 分类: ┃央视频道
-   频道: CCTV10
-   URL: http://112.27.235.94:8000/hls/11/index.m3u8
-   延迟: 157.79ms | 分辨率: unknown
+【CCTV9】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/10/index.m3u8
+     延迟: 194.20ms | 分辨率: unknown
 
-10. 分类: ┃央视频道
-   频道: CCTV11
-   URL: http://112.27.235.94:8000/hls/12/index.m3u8
-   延迟: 158.70ms | 分辨率: unknown
+【CCTV10】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/11/index.m3u8
+     延迟: 194.61ms | 分辨率: unknown
 
-11. 分类: ┃央视频道
-   频道: CCTV12
-   URL: http://112.27.235.94:8000/hls/13/index.m3u8
-   延迟: 159.49ms | 分辨率: unknown
+【CCTV11】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/12/index.m3u8
+     延迟: 193.22ms | 分辨率: unknown
 
-12. 分类: ┃央视频道
-   频道: CCTV13
-   URL: http://112.27.235.94:8000/hls/14/index.m3u8
-   延迟: 157.87ms | 分辨率: unknown
+【CCTV12】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/13/index.m3u8
+     延迟: 190.80ms | 分辨率: unknown
 
-13. 分类: ┃央视频道
-   频道: CCTV14
-   URL: http://112.27.235.94:8000/hls/15/index.m3u8
-   延迟: 160.61ms | 分辨率: unknown
+【CCTV13】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/14/index.m3u8
+     延迟: 393.30ms | 分辨率: unknown
 
-14. 分类: ┃央视频道
-   频道: CCTV15
-   URL: http://112.27.235.94:8000/hls/16/index.m3u8
-   延迟: 536.56ms | 分辨率: unknown
+【CCTV14】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/15/index.m3u8
+     延迟: 195.99ms | 分辨率: unknown
 
-15. 分类: ┃央视频道
-   频道: CCTV16
-   URL: http://p.ytelc.com/169l/0/cctv.php?id=cctv16
-   延迟: 499.42ms | 分辨率: unknown
+【CCTV15】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/16/index.m3u8
+     延迟: 396.12ms | 分辨率: unknown
 
-16. 分类: ┃央视频道
-   频道: CCTV17
-   URL: http://p.ytelc.com/169l/0/cctv.php?id=cctv17
-   延迟: 540.87ms | 分辨率: unknown
+【CCTV16】
+  1. 分类: ┃央视频道
+     URL: http://p.ytelc.com/169l/0/cctv.php?id=cctv16
+     延迟: 268.51ms | 分辨率: unknown
 
-17. 分类: ┃央视频道
-   频道: 重温经典
-   URL: http://112.27.235.94:8000/hls/50/index.m3u8
-   延迟: 166.24ms | 分辨率: unknown
+【重温经典】
+  1. 分类: ┃央视频道
+     URL: http://112.27.235.94:8000/hls/50/index.m3u8
+     延迟: 200.00ms | 分辨率: unknown
 
-18. 分类: ┃卫视频道
-   频道: 山东卫视
-   URL: http://112.27.235.94:8000/hls/34/index.m3u8
-   延迟: 158.52ms | 分辨率: unknown
+【山东卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/34/index.m3u8
+     延迟: 193.88ms | 分辨率: unknown
 
-19. 分类: ┃卫视频道
-   频道: 北京卫视
-   URL: http://112.27.235.94:8000/hls/27/index.m3u8
-   延迟: 157.88ms | 分辨率: unknown
+【北京卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/27/index.m3u8
+     延迟: 392.95ms | 分辨率: unknown
 
-20. 分类: ┃卫视频道
-   频道: 浙江卫视
-   URL: http://112.27.235.94:8000/hls/29/index.m3u8
-   延迟: 158.41ms | 分辨率: unknown
+【浙江卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/29/index.m3u8
+     延迟: 194.18ms | 分辨率: unknown
 
-21. 分类: ┃卫视频道
-   频道: 湖南卫视
-   URL: http://112.27.235.94:8000/hls/31/index.m3u8
-   延迟: 157.88ms | 分辨率: unknown
+【湖南卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/31/index.m3u8
+     延迟: 202.16ms | 分辨率: unknown
 
-22. 分类: ┃卫视频道
-   频道: 江苏卫视
-   URL: http://112.27.235.94:8000/hls/32/index.m3u8
-   延迟: 157.87ms | 分辨率: unknown
+【江苏卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/32/index.m3u8
+     延迟: 190.71ms | 分辨率: unknown
 
-23. 分类: ┃卫视频道
-   频道: 安徽卫视
-   URL: http://112.27.235.94:8000/hls/26/index.m3u8
-   延迟: 158.87ms | 分辨率: unknown
+【安徽卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/26/index.m3u8
+     延迟: 196.09ms | 分辨率: unknown
 
-24. 分类: ┃卫视频道
-   频道: 重庆卫视
-   URL: http://112.27.235.94:8000/hls/36/index.m3u8
-   延迟: 159.96ms | 分辨率: unknown
+【重庆卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/36/index.m3u8
+     延迟: 201.14ms | 分辨率: unknown
 
-25. 分类: ┃卫视频道
-   频道: 四川卫视
-   URL: http://112.27.235.94:8000/hls/35/index.m3u8
-   延迟: 160.26ms | 分辨率: unknown
+【四川卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/35/index.m3u8
+     延迟: 195.50ms | 分辨率: unknown
 
-26. 分类: ┃卫视频道
-   频道: 东南卫视
-   URL: http://112.27.235.94:8000/hls/38/index.m3u8
-   延迟: 175.27ms | 分辨率: unknown
+【东南卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/38/index.m3u8
+     延迟: 198.62ms | 分辨率: unknown
 
-27. 分类: ┃卫视频道
-   频道: 深圳卫视
-   URL: http://112.27.235.94:8000/hls/33/index.m3u8
-   延迟: 316.24ms | 分辨率: unknown
+【深圳卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/33/index.m3u8
+     延迟: 193.39ms | 分辨率: unknown
 
-28. 分类: ┃卫视频道
-   频道: 广东卫视
-   URL: http://112.27.235.94:8000/hls/30/index.m3u8
-   延迟: 162.35ms | 分辨率: unknown
+【广东卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/30/index.m3u8
+     延迟: 194.31ms | 分辨率: unknown
 
-29. 分类: ┃卫视频道
-   频道: 贵州卫视
-   URL: http://112.27.235.94:8000/hls/46/index.m3u8
-   延迟: 350.95ms | 分辨率: unknown
+【贵州卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/46/index.m3u8
+     延迟: 195.58ms | 分辨率: unknown
 
-30. 分类: ┃卫视频道
-   频道: 河北卫视
-   URL: http://112.27.235.94:8000/hls/39/index.m3u8
-   延迟: 157.90ms | 分辨率: unknown
+【河北卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/39/index.m3u8
+     延迟: 193.15ms | 分辨率: unknown
+  2. 分类: ┃卫视频道
+     URL: http://120.76.248.139/live/bfgd/4200000108.m3u8
+     延迟: 503.45ms | 分辨率: unknown
 
-31. 分类: ┃卫视频道
-   频道: 河南卫视
-   URL: http://112.27.235.94:8000/hls/37/index.m3u8
-   延迟: 157.99ms | 分辨率: unknown
+【河南卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/37/index.m3u8
+     延迟: 194.45ms | 分辨率: unknown
 
-32. 分类: ┃卫视频道
-   频道: 黑龙江卫视
-   URL: http://112.27.235.94:8000/hls/48/index.m3u8
-   延迟: 320.72ms | 分辨率: unknown
+【湖北卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/41/index.m3u8
+     延迟: 195.77ms | 分辨率: unknown
 
-33. 分类: ┃卫视频道
-   频道: 湖北卫视
-   URL: http://112.27.235.94:8000/hls/41/index.m3u8
-   延迟: 160.90ms | 分辨率: unknown
+【江西卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/44/index.m3u8
+     延迟: 400.67ms | 分辨率: unknown
 
-34. 分类: ┃卫视频道
-   频道: 江西卫视
-   URL: http://112.27.235.94:8000/hls/44/index.m3u8
-   延迟: 159.63ms | 分辨率: unknown
+【内蒙古卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/49/index.m3u8
+     延迟: 193.32ms | 分辨率: unknown
 
-35. 分类: ┃卫视频道
-   频道: 内蒙古卫视
-   URL: http://112.27.235.94:8000/hls/49/index.m3u8
-   延迟: 160.43ms | 分辨率: unknown
+【辽宁卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/47/index.m3u8
+     延迟: 197.76ms | 分辨率: unknown
 
-36. 分类: ┃卫视频道
-   频道: 辽宁卫视
-   URL: http://112.27.235.94:8000/hls/47/index.m3u8
-   延迟: 158.35ms | 分辨率: unknown
+【宁夏卫视】
+  1. 分类: ┃卫视频道
+     URL: http://120.76.248.139/live/bfgd/4200000118.m3u8
+     延迟: 377.14ms | 分辨率: unknown
 
-37. 分类: ┃卫视频道
-   频道: 海南卫视
-   URL: http://120.76.248.139/live/bfgd/4200000473.m3u8
-   延迟: 346.24ms | 分辨率: unknown
+【天津卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/42/index.m3u8
+     延迟: 201.80ms | 分辨率: unknown
 
-38. 分类: ┃卫视频道
-   频道: 云南卫视
-   URL: http://112.27.235.94:8000/hls/40/index.m3u8
-   延迟: 157.73ms | 分辨率: unknown
+【海南卫视】
+  1. 分类: ┃卫视频道
+     URL: http://120.76.248.139/live/bfgd/4200000473.m3u8
+     延迟: 252.05ms | 分辨率: unknown
 
-39. 分类: ┃卫视频道
-   频道: 海峡卫视
-   URL: http://8.138.7.223/tv/hxws.m3u8
-   延迟: 230.44ms | 分辨率: unknown
+【云南卫视】
+  1. 分类: ┃卫视频道
+     URL: http://112.27.235.94:8000/hls/40/index.m3u8
+     延迟: 193.72ms | 分辨率: unknown
 
-40. 分类: ┃卫视频道
-   频道: 农林卫视
-   URL: http://120.76.248.139/live/bfgd/4200000122.m3u8
-   延迟: 354.48ms | 分辨率: unknown
+【海峡卫视】
+  1. 分类: ┃卫视频道
+     URL: http://8.138.7.223/tv/hxws.m3u8
+     延迟: 497.13ms | 分辨率: unknown
 
-41. 分类: ┃卫视频道
-   频道: 延边卫视
-   URL: http://120.76.248.139/live/bfgd/4200000117.m3u8
-   延迟: 335.61ms | 分辨率: unknown
+【农林卫视】
+  1. 分类: ┃卫视频道
+     URL: http://120.76.248.139/live/bfgd/4200000122.m3u8
+     延迟: 252.12ms | 分辨率: unknown
 
-42. 分类: ┃山东频道
-   频道: 山东体育
-   URL: http://r.jdshipin.com/LiYdg
-   延迟: 126.99ms | 分辨率: unknown
+【延边卫视】
+  1. 分类: ┃卫视频道
+     URL: http://120.76.248.139/live/bfgd/4200000117.m3u8
+     延迟: 366.24ms | 分辨率: unknown
 
-43. 分类: ┃山东频道
-   频道: 济宁公共
-   URL: http://120.76.248.139/live/bfgd/4200000481.m3u8
-   延迟: 242.17ms | 分辨率: unknown
+【济宁公共】
+  1. 分类: ┃山东频道
+     URL: http://120.76.248.139/live/bfgd/4200000481.m3u8
+     延迟: 252.68ms | 分辨率: unknown
+  2. 分类: ┃山东频道
+     URL: http://dassby.qqff.top:99/live/辽宁公共/index.m3u8
+     延迟: 254.69ms | 分辨率: unknown
+  3. 分类: ┃山东频道
+     URL: http://120.76.248.139/live/bfgd/4200000077.m3u8
+     延迟: 357.09ms | 分辨率: unknown
 
-44. 分类: ┃山东频道
-   频道: 菏泽三套影视
-   URL: http://dassby.qqff.top:99/live/辽宁影视剧/index.m3u8
-   延迟: 239.11ms | 分辨率: unknown
+【济宁教育】
+  1. 分类: ┃山东频道
+     URL: http://120.76.248.139/live/bfgd/4200000075.m3u8
+     延迟: 360.06ms | 分辨率: unknown
 
-45. 分类: ┃湾区频道
-   频道: 翡翠台
-   URL: http://r.jdshipin.com/GeWKr
-   延迟: 54.93ms | 分辨率: unknown
+【翡翠台】
+  1. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/qrfbg
+     延迟: 126.40ms | 分辨率: 1920x1080
+  2. 分类: ┃湾区频道
+     URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
+     延迟: 133.74ms | 分辨率: 3840x2160
+  3. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/GeWKr
+     延迟: 142.75ms | 分辨率: unknown
+  4. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/qClQf
+     延迟: 441.50ms | 分辨率: unknown
+  5. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/n90gt
+     延迟: 534.14ms | 分辨率: 3840x2160
 
-46. 分类: ┃湾区频道
-   频道: 凤凰中文
-   URL: http://r.jdshipin.com/cCCzW
-   延迟: 68.81ms | 分辨率: unknown
+【凤凰中文】
+  1. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/cCCzW
+     延迟: 75.77ms | 分辨率: unknown
 
-47. 分类: ┃湾区频道
-   频道: 凤凰资讯
-   URL: http://r.jdshipin.com/0Rp07
-   延迟: 41.65ms | 分辨率: unknown
+【凤凰资讯】
+  1. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/0Rp07
+     延迟: 139.40ms | 分辨率: unknown
 
-48. 分类: ┃湾区频道
-   频道: 凤凰香港
-   URL: http://r.jdshipin.com/yDoTN
-   延迟: 423.56ms | 分辨率: unknown
+【凤凰香港】
+  1. 分类: ┃湾区频道
+     URL: http://r.jdshipin.com/yDoTN
+     延迟: 148.11ms | 分辨率: unknown
 
