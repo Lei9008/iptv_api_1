@@ -2,8 +2,7 @@
 # 源配置
 source_urls = [
     "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
-    "http://rihou.cc:555/gggg.nzk",
-    "https://github.com/plsy1/iptv/blob/main/multicast/multicast-jinan.m3u",
+    "https://github.com/liuchuang0321/K-TV/blob/master/output/user_result.txt",
     # 可添加更多源
 ]
 url_blacklist = ["example.com", "invalid.url"]  # URL黑名单
