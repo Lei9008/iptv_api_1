@@ -17,7 +17,14 @@ source_urls = [
     "https://d.kstore.dev/download/15114/HKTV.txt",
     "http://go8.myartsonline.com/zx/0/TVBTV28.txt",
     "https://github.com/Lei9008/iptv-api/blob/master/output/user_result.m3u",
-   
+    "https://gitee.com/buzhenglin2025/tv/raw/master/HKTV.m3u",
+    "https://cloud.7so.top/f/xv80ux/天浪.txt",
+    "https://cloud.7so.top/f/yr7BHL/HKTV.txt",
+    "https://gitee.com/main-stream/tv/raw/master/BOSS.json",
+    "https://raw.githubusercontent.com/alantang1977/iptv-auto/refs/heads/main/my.txt",
+    "http://gg.7749.org//i/ds.txt",
+    "https://gitee.com/alexkw/app/raw/master/kgk.txt",
+    "https://d.kstore.dev/download/15114/HKTV.txt",
 
     
     
