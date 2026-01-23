@@ -205,7 +205,7 @@ https://www.wmviv.com/iptv/bc2t.php?id=cctv17$IPV4•线路3
 http://p.ytelc.com/169l/0/cctv.php?id=cctv17$IPV4•线路4
 #EXTINF:-1 tvg-id="1" tvg-name="CETV1" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CETV1.png" group-title="┃央视频道",CETV1
 https://zby.130519.xyz/PLTV/11/224/3221225775/index.m3u8$IPV4
-#EXTINF:-1 tvg-id="1" tvg-name="CETV2" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CETV2.png" group-title="┃央视频道",CETV2
+#EXTINF:-1 tvg-id="1" tvg-name="CETV4" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/CETV4.png" group-title="┃央视频道",CETV4
 https://zby.130519.xyz/PLTV/11/224/3221226153/index.m3u8$IPV4
 #EXTINF:-1 tvg-id="1" tvg-name="重温经典" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/重温经典.png" group-title="┃央视频道",重温经典
 http://112.27.235.94:8000/hls/50/index.m3u8$IPV4•线路1
@@ -362,11 +362,13 @@ http://iptv.huuc.edu.cn/hls/hebhd.m3u8$IPV4•线路2
 #EXTINF:-1 tvg-id="3" tvg-name="河北卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河北卫视.png" group-title="┃卫视频道",河北卫视
 http://148.135.93.213/live.php?id=河北卫视$IPV4•线路3
 #EXTINF:-1 tvg-id="4" tvg-name="河北卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://112.27.235.94:8000/hls/39/index.m3u8$IPV4•线路4
+http://120.76.248.139/live/bfgd/4200000108.m3u8$IPV4•线路4
 #EXTINF:-1 tvg-id="5" tvg-name="河北卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河北卫视.png" group-title="┃卫视频道",河北卫视
-https://zby.130519.xyz/PLTV/11/224/3221226107/index.m3u8$IPV4•线路5
+http://112.27.235.94:8000/hls/39/index.m3u8$IPV4•线路5
 #EXTINF:-1 tvg-id="6" tvg-name="河北卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://tv.pull.hebtv.com/jishi/weishipindao.m3u8?t=2510710360&k=3d44740039027301acf8341d7361ab59$IPV4•线路6
+https://zby.130519.xyz/PLTV/11/224/3221226107/index.m3u8$IPV4•线路6
+#EXTINF:-1 tvg-id="7" tvg-name="河北卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河北卫视.png" group-title="┃卫视频道",河北卫视
+http://tv.pull.hebtv.com/jishi/weishipindao.m3u8?t=2510710360&k=3d44740039027301acf8341d7361ab59$IPV4•线路7
 #EXTINF:-1 tvg-id="1" tvg-name="河南卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河南卫视.png" group-title="┃卫视频道",河南卫视
 http://www.wmviv.com/iptv/bc2t.php?id=hnws$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="河南卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/河南卫视.png" group-title="┃卫视频道",河南卫视
@@ -428,7 +430,9 @@ http://112.27.235.94:8000/hls/47/index.m3u8$IPV4•线路4
 #EXTINF:-1 tvg-id="5" tvg-name="辽宁卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
 https://zby.130519.xyz/PLTV/11/224/3221225747/index.m3u8$IPV4•线路5
 #EXTINF:-1 tvg-id="1" tvg-name="宁夏卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
-http://www.wmviv.com/iptv/bc2t.php?id=nxws$IPV4
+http://www.wmviv.com/iptv/bc2t.php?id=nxws$IPV4•线路1
+#EXTINF:-1 tvg-id="2" tvg-name="宁夏卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
+http://120.76.248.139/live/bfgd/4200000118.m3u8$IPV4•线路2
 #EXTINF:-1 tvg-id="1" tvg-name="青海卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/青海卫视.png" group-title="┃卫视频道",青海卫视
 http://www.wmviv.com/iptv/bc2t.php?id=qhws$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="青海卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/青海卫视.png" group-title="┃卫视频道",青海卫视
@@ -462,9 +466,11 @@ http://101.35.240.114:88/live.php?id=新疆卫视$IPV4•线路2
 #EXTINF:-1 tvg-id="1" tvg-name="云南卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/云南卫视.png" group-title="┃卫视频道",云南卫视
 http://www.wmviv.com/iptv/bc2t.php?id=ynws$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="云南卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://112.27.235.94:8000/hls/40/index.m3u8$IPV4•线路2
+http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovL3d3dy5kc2suY2MvcGhwL3N4Z2QucGhwP2lkPXlud3M=$IPV4•线路2
 #EXTINF:-1 tvg-id="3" tvg-name="云南卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/云南卫视.png" group-title="┃卫视频道",云南卫视
-https://zby.130519.xyz/PLTV/11/224/3221226109/index.m3u8$IPV4•线路3
+http://112.27.235.94:8000/hls/40/index.m3u8$IPV4•线路3
+#EXTINF:-1 tvg-id="4" tvg-name="云南卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/云南卫视.png" group-title="┃卫视频道",云南卫视
+https://zby.130519.xyz/PLTV/11/224/3221226109/index.m3u8$IPV4•线路4
 #EXTINF:-1 tvg-id="1" tvg-name="西藏卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/西藏卫视.png" group-title="┃卫视频道",西藏卫视
 http://www.wmviv.com/iptv/bc2t.php?id=xzws$IPV4•线路1
 #EXTINF:-1 tvg-id="2" tvg-name="西藏卫视" tvg-logo="https://github.com/fanmingming/live/tree/main/tv/西藏卫视.png" group-title="┃卫视频道",西藏卫视
