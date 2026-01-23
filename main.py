@@ -401,12 +401,13 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         return
     
     # 修复LOGO路径
-    logo_url = f"./pic/logos/{channel_name}.png"
+    #logo_url = f"./pic/logos/{channel_name}.png"
+    logo_url = f"./pic/logos{channel_name}.png"
     # 写入M3U（添加延迟信息）
     display_name = f"{channel_name}({latency:.0f}ms)"
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" "
-        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{display_name}\n"
+        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n"
     )
     f_m3u.write(url + "\n")
     # 写入TXT
