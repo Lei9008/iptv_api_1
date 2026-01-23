@@ -1,2 +1,37 @@
 #EXTM3U
-#EXTINF:-1 group-title="更新时间",2026-01-23 09:38
+# 生成时间: 2026-01-23 09:56:05
+# 有效频道数: 11 | 延迟阈值: 650ms
+
+#EXTINF:-1 tvg-id="1" tvg-name="农林卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/农林卫视.png" group-title="┃卫视频道",农林卫视
+http://120.76.248.139/live/bfgd/4200000122.m3u8$IPV4
+
+#EXTINF:-1 tvg-id="2" tvg-name="海南卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/海南卫视.png" group-title="┃卫视频道",海南卫视
+http://120.76.248.139/live/bfgd/4200000473.m3u8$IPV4•线路3
+
+#EXTINF:-1 tvg-id="3" tvg-name="济宁公共" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/济宁公共.png" group-title="┃山东频道",济宁公共
+http://120.76.248.139/live/bfgd/4200000077.m3u8$IPV4•线路2
+
+#EXTINF:-1 tvg-id="4" tvg-name="延边卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/延边卫视.png" group-title="┃卫视频道",延边卫视
+http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4
+
+#EXTINF:-1 tvg-id="5" tvg-name="内蒙古卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://120.76.248.139/live/bfgd/4200000110.m3u8$IPV4•线路3
+
+#EXTINF:-1 tvg-id="6" tvg-name="宁夏卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
+http://120.76.248.139/live/bfgd/4200000118.m3u8$IPV4•线路2
+
+#EXTINF:-1 tvg-id="7" tvg-name="济宁教育" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/济宁教育.png" group-title="┃山东频道",济宁教育
+http://120.76.248.139/live/bfgd/4200000075.m3u8$IPV4
+
+#EXTINF:-1 tvg-id="8" tvg-name="CCTV16" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV16.png" group-title="┃央视频道",CCTV16
+http://p.ytelc.com/169l/0/cctv.php?id=cctv16$IPV4•线路2
+
+#EXTINF:-1 tvg-id="9" tvg-name="济宁公共" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/济宁公共.png" group-title="┃山东频道",济宁公共
+http://120.76.248.139/live/bfgd/4200000481.m3u8$IPV4•线路3
+
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV17" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV17.png" group-title="┃央视频道",CCTV17
+http://p.ytelc.com/169l/0/cctv.php?id=cctv17$IPV4•线路2
+
+#EXTINF:-1 tvg-id="11" tvg-name="CCTV15" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV15.png" group-title="┃央视频道",CCTV15
+http://p.ytelc.com/169l/0/cctv.php?id=cctv15$IPV4•线路2
+
