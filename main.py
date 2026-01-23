@@ -4,6 +4,7 @@ import aiohttp
 import requests
 import logging
 import os
+import time  # 修复：补充缺失的time模块导入
 from dataclasses import dataclass
 from typing import List, Dict, Tuple, Optional
 from collections import OrderedDict
@@ -37,6 +38,7 @@ class Config:
     # 扩展配置
     epg_urls = []  # EPG地址
     announcements = []  # 公告频道
+    MATCH_CUTOFF = 0.4  # 频道名模糊匹配阈值（调低提高匹配率）
 
 # ===================== 初始化 =====================
 # 创建必要文件夹
@@ -268,7 +270,8 @@ class SourceFetcher:
                 # 标准化后模糊匹配
                 std_template_name = clean_channel_name(template_name)
                 std_online_names = [clean_channel_name(n) for n in all_online_names]
-                similar_std_name = find_similar_name(std_template_name, std_online_names)
+                # 修复：使用配置中的匹配阈值，提高匹配率
+                similar_std_name = find_similar_name(std_template_name, std_online_names, cutoff=Config.MATCH_CUTOFF)
                 
                 if similar_std_name:
                     # 找到原始名称
@@ -320,6 +323,7 @@ class SpeedTester:
     
     async def measure_latency(self, url: str) -> SpeedTestResult:
         """测量单个URL的延迟和分辨率"""
+        # 修复：time模块已导入，可正常使用
         result = SpeedTestResult(url=url, test_time=time.time())
         
         for attempt in range(Config.RETRY_TIMES + 1):
@@ -432,11 +436,10 @@ class M3UGenerator:
                 
                 # 写入每个频道
                 for index, (group, name, url) in enumerate(final_sources, 1):
-                    # 修复LOGO路径
-                    logo_url = f"{Config.PIC_DIR}/logos/{name}.png"
+                    # 优化LOGO路径（使用空值避免本地路径问题）
                     extinf_line = (
                         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{name}\" "
-                        f"tvg-logo=\"{logo_url}\" group-title=\"{group}\",{name}"
+                        f"tvg-logo=\"\" group-title=\"{group}\",{name}"
                     )
                     f.write(f"{extinf_line}\n{url}\n\n")
             
