@@ -3,6 +3,9 @@
 source_urls = [
     "https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
     "https://github.com/liuchuang0321/K-TV/blob/master/output/user_result.txt",
+    "https://www.iyouhun.com/tv/myIPTV/ipv6.m3u",
+    "https://d.kstore.dev/download/15114/HKTV.txt",
+    "http://go8.myartsonline.com/zx/0/TVBTV28.txt",
     # 可添加更多源
 ]
 url_blacklist = ["example.com", "invalid.url"]  # URL黑名单
