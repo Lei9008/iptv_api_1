@@ -340,9 +340,9 @@ def parse_template(template_file):
     return template_channels
 
 def parse_m3u_lines(lines):
-    """解析M3U格式的频道列表行"""
+    """解析M3U格式的频道列表行（兼容带/不带group-title的格式）"""
     channels = OrderedDict()
-    current_category = None
+    current_category = "默认分类"  # 无group-title时的默认分类
     channel_name = ""
 
     for line_num, line in enumerate(lines, 1):
@@ -351,50 +351,79 @@ def parse_m3u_lines(lines):
             continue
         
         if line.startswith("#EXTINF"):
-            match = re.search(r'group-title="(.*?)",(.*)', line)
-            if match:
-                current_category = match.group(1).strip()
-                channel_name = match.group(2).strip()
-                # 修复：所有频道名都清洗，不只是CCTV开头
-                channel_name = clean_channel_name(channel_name)
-                if current_category not in channels:
-                    channels[current_category] = []
+            # 方案1：匹配带group-title的标准格式（优先级高）
+            group_match = re.search(r'group-title="(.*?)",(.*)', line)
+            if group_match:
+                current_category = group_match.group(1).strip()
+                channel_name = group_match.group(2).strip()
             else:
-                logger.warning(f"M3U第{line_num}行格式异常：{line}")
+                # 方案2：匹配无group-title的最简格式（#EXTINF:-1 ,频道名）
+                simple_match = re.search(r'#EXTINF:-?\d+\s*,([^,]+)$', line)
+                if simple_match:
+                    channel_name = simple_match.group(1).strip()
+                    # 保持当前分类（默认分类/上一个有效分类）
+                else:
+                    logger.warning(f"M3U第{line_num}行格式异常：{line}")
+                    channel_name = ""
+                    continue
+            
+            # 清洗频道名（统一规则）
+            channel_name = clean_channel_name(channel_name)
+            
+            # 确保分类存在于字典中
+            if current_category not in channels:
+                channels[current_category] = []
+        
         elif not line.startswith("#"):
             channel_url = line.strip()
             if current_category and channel_name and channel_url:
                 channels[current_category].append((channel_name, channel_url))
+                # 重置频道名（避免重复写入）
+                channel_name = ""
 
     return channels
 
 def parse_txt_lines(lines):
-    """解析TXT格式的频道列表行"""
+    """解析txt格式的频道列表行（兼容带/不带group-title的格式）"""
     channels = OrderedDict()
-    current_category = None
+    current_category = "默认分类"  # 无group-title时的默认分类
+    channel_name = ""
 
     for line_num, line in enumerate(lines, 1):
         line = line.strip()
-        if not line or line.startswith("#"):
+        if not line:
             continue
         
-        if "#genre#" in line:
-            current_category = line.split(",")[0].strip()
-            channels[current_category] = []
-        elif current_category:
-            match = re.match(r"^(.*?),(.*?)$", line)
-            if match:
-                channel_name = match.group(1).strip()
-                # 修复：所有频道名都清洗，不只是CCTV开头
-                channel_name = clean_channel_name(channel_name)
-                # 处理多URL（#分隔）
-                channel_urls = match.group(2).strip().split('#')
-                for url in channel_urls:
-                    url = url.strip()
-                    if url:
-                        channels[current_category].append((channel_name, url))
-            elif line:
-                logger.warning(f"TXT第{line_num}行格式异常：{line}")
+        if line.startswith("#EXTINF"):
+            # 方案1：匹配带group-title的标准格式（优先级高）
+            group_match = re.search(r'group-title="(.*?)",(.*)', line)
+            if group_match:
+                current_category = group_match.group(1).strip()
+                channel_name = group_match.group(2).strip()
+            else:
+                # 方案2：匹配无group-title的最简格式（#EXTINF:-1 ,频道名）
+                simple_match = re.search(r'#EXTINF:-?\d+\s*,([^,]+)$', line)
+                if simple_match:
+                    channel_name = simple_match.group(1).strip()
+                    # 保持当前分类（默认分类/上一个有效分类）
+                else:
+                    logger.warning(f"M3U第{line_num}行格式异常：{line}")
+                    channel_name = ""
+                    continue
+            
+            # 清洗频道名（统一规则）
+            channel_name = clean_channel_name(channel_name)
+            
+            # 确保分类存在于字典中
+            if current_category not in channels:
+                channels[current_category] = []
+        
+        elif not line.startswith("#"):
+            channel_url = line.strip()
+            if current_category and channel_name and channel_url:
+                channels[current_category].append((channel_name, channel_url))
+                # 重置频道名（避免重复写入）
+                channel_name = ""
 
     return channels
 
