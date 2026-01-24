@@ -13,6 +13,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple, Any
 from functools import lru_cache
+from urllib.parse import urlparse, urlunparse
 
 # ===================== 数据结构 =====================
 @dataclass
@@ -26,7 +27,7 @@ class SpeedTestResult:
 
 @dataclass
 class ChannelInfo:
-    """频道信息数据类（新增：存储M3U标准字段）"""
+    """频道信息数据类（存储M3U标准字段）"""
     name: str  # 频道名称（优先tvg-name，其次自定义名称）
     url: str  # 播放地址
     group_title: str = "默认分类"  # 分类（group-title）
@@ -63,8 +64,8 @@ GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
 CONFIG_DEFAULTS = {
     "LATENCY_THRESHOLD": 500,
     "CONCURRENT_LIMIT": 20,
-    "TIMEOUT": 10,
-    "RETRY_TIMES": 2,
+    "TIMEOUT": 15,  # 增加超时时间
+    "RETRY_TIMES": 3,  # 增加重试次数
     "IP_VERSION_PRIORITY": "ipv4",
     "URL_BLACKLIST": [],
     "TEMPLATE_FILE": "demo.txt",
@@ -82,11 +83,13 @@ GITHUB_MIRRORS = [
     "raw.fgithub.de"
 ]
 
-# 代理前缀列表
+# 代理前缀列表（扩充更多可用代理）
 PROXY_PREFIXES = [
     "https://ghproxy.com/",
     "https://mirror.ghproxy.com/",
-    "https://gh.api.99988866.xyz/"
+    "https://gh.api.99988866.xyz/",
+    "https://mirror.ghproxy.net/",
+    "https://github.moeyy.xyz/"
 ]
 
 # 日志配置
@@ -131,11 +134,42 @@ def find_similar_name(target_name: str, name_list: List[str], cutoff: float = 0.
     matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=cutoff)
     return matches[0] if matches else None
 
+def convert_github_url(raw_url: str) -> str:
+    """
+    自动转换GitHub URL格式：
+    - blob/main → raw.githubusercontent.com
+    - github.com → raw.githubusercontent.com
+    示例：
+    https://github.com/xxx/blob/main/file.txt → https://raw.githubusercontent.com/xxx/main/file.txt
+    """
+    if not raw_url or "github.com" not in raw_url:
+        return raw_url
+    
+    # 解析URL
+    parsed = urlparse(raw_url)
+    path_parts = parsed.path.split('/')
+    
+    # 移除blob或tree部分
+    if 'blob' in path_parts:
+        path_parts.remove('blob')
+    elif 'tree' in path_parts:
+        path_parts.remove('tree')
+    
+    # 重构路径
+    new_path = '/'.join(path_parts)
+    
+    # 替换域名并重构URL
+    new_parsed = parsed._replace(
+        netloc='raw.githubusercontent.com',
+        path=new_path
+    )
+    
+    converted_url = urlunparse(new_parsed)
+    logger.debug(f"转换GitHub URL: {raw_url} → {converted_url}")
+    return converted_url
+
 def parse_m3u_attributes(line: str) -> Dict[str, str]:
-    """
-    解析M3U属性行（#EXTINF:...）中的键值对
-    支持格式：#EXTINF:-1 group-title="央视" tvg-name="CCTV1" tvg-logo="xxx",CCTV1
-    """
+    """解析M3U属性行（#EXTINF:...）中的键值对"""
     attrs = {}
     
     # 提取逗号前的属性部分
@@ -167,11 +201,7 @@ def parse_m3u_attributes(line: str) -> Dict[str, str]:
     return attrs
 
 def extract_channels_from_content(content: str) -> List[ChannelInfo]:
-    """
-    优化：从直播源内容中提取频道信息，优先解析M3U标准字段
-    :param content: 抓取到的直播源文本内容
-    :return: 包含完整元数据的ChannelInfo列表
-    """
+    """从直播源内容中提取频道信息，优先解析M3U标准字段"""
     channels = []
     # 去重集合（URL+名称）
     seen_pairs = set()
@@ -284,9 +314,7 @@ def sort_and_filter_urls(
     latency_results: Dict[str, SpeedTestResult], 
     latency_threshold: float
 ) -> List[ChannelInfo]:
-    """
-    优化：排序和过滤频道信息（基于ChannelInfo对象）
-    """
+    """排序和过滤频道信息（基于ChannelInfo对象）"""
     if not channel_infos:
         return []
     
@@ -426,11 +454,15 @@ def get_channel_logo_url(channel_name: str) -> str:
 # ===================== 链接修复和重试函数 =====================
 def replace_github_domain(url: str) -> List[str]:
     """替换GitHub域名，生成多个可访问的镜像链接"""
-    if not url or "github" not in url.lower():
+    if not url:
         return [url]
+    
+    # 先转换GitHub URL格式
+    url = convert_github_url(url)
     
     candidate_urls = [url]
     
+    # 替换不同的GitHub镜像域名
     for mirror in GITHUB_MIRRORS:
         for original in GITHUB_MIRRORS:
             if original in url:
@@ -438,6 +470,7 @@ def replace_github_domain(url: str) -> List[str]:
                 if new_url not in candidate_urls:
                     candidate_urls.append(new_url)
     
+    # 添加代理前缀（优先使用不同的代理）
     proxy_urls = []
     for base_url in candidate_urls:
         for proxy in PROXY_PREFIXES:
@@ -447,32 +480,81 @@ def replace_github_domain(url: str) -> List[str]:
     
     candidate_urls.extend(proxy_urls)
     
+    # 去重并返回
     unique_urls = list(dict.fromkeys(candidate_urls))
     return unique_urls
 
 def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
-    """带重试和镜像替换的URL抓取函数"""
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    """
+    增强版：带重试和镜像替换的URL抓取函数
+    - 自动转换GitHub URL格式
+    - 增加超时时间
+    - 更多重试策略
+    """
+    # 自定义请求头（模拟浏览器）
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1"
+    }
     
+    # 生成候选URL列表（包含格式转换和镜像）
     candidate_urls = replace_github_domain(url)
+    
+    # 增加重试间隔
+    retry_delays = [1, 2, 3]  # 重试间隔（秒）
     
     for idx, candidate in enumerate(candidate_urls):
         try:
             logger.debug(f"尝试抓取 [{idx+1}/{len(candidate_urls)}]: {candidate}")
-            response = requests.get(
+            
+            # 创建会话，启用重试和超时
+            session = requests.Session()
+            session.mount('https://', requests.adapters.HTTPAdapter(
+                max_retries=requests.packages.urllib3.util.retry.Retry(
+                    total=3,
+                    backoff_factor=0.5,
+                    status_forcelist=[429, 500, 502, 503, 504]
+                )
+            ))
+            
+            response = session.get(
                 candidate,
                 headers=headers,
                 timeout=timeout,
-                verify=False,
-                allow_redirects=True
+                verify=False,  # 忽略SSL证书错误
+                allow_redirects=True,
+                stream=True  # 流式读取，避免大文件占用内存
             )
+            
+            # 检查状态码
             response.raise_for_status()
-            response.encoding = response.apparent_encoding or 'utf-8'
-            logger.info(f"成功抓取：{candidate}")
-            return response.text
-        except requests.RequestException as e:
+            
+            # 处理编码
+            if response.encoding is None:
+                response.encoding = 'utf-8'
+            
+            # 读取内容（处理gzip压缩）
+            content = response.content.decode(response.encoding, errors='ignore')
+            
+            logger.info(f"成功抓取：{candidate} (大小：{len(content)}字节)")
+            return content
+            
+        except requests.exceptions.Timeout:
+            logger.warning(f"抓取超时 [{idx+1}/{len(candidate_urls)}]: {candidate}")
+        except requests.exceptions.ConnectionError:
+            logger.warning(f"连接失败 [{idx+1}/{len(candidate_urls)}]: {candidate}")
+        except requests.exceptions.HTTPError as e:
+            logger.warning(f"HTTP错误 [{idx+1}/{len(candidate_urls)}]: {candidate} | 状态码：{e.response.status_code}")
+        except Exception as e:
             logger.warning(f"抓取失败 [{idx+1}/{len(candidate_urls)}]: {candidate} | 原因：{str(e)[:50]}")
-            continue
+        
+        # 重试间隔
+        if idx < len(candidate_urls) - 1 and idx < len(retry_delays):
+            time.sleep(retry_delays[idx])
     
     logger.error(f"所有候选链接都抓取失败：{url}")
     return None
@@ -589,10 +671,7 @@ def parse_template(template_file: str) -> OrderedDict:
     return template_channels
 
 def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
-    """
-    优化：抓取频道并按group-title分类
-    :return: {分类名: [ChannelInfo列表]}
-    """
+    """抓取频道并按group-title分类"""
     # 按分类存储频道
     categorized_channels = OrderedDict()
     categorized_channels["默认分类"] = []
@@ -618,9 +697,7 @@ def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
     return categorized_channels
 
 def merge_channels(target: Dict[str, List[ChannelInfo]], source: Dict[str, List[ChannelInfo]]):
-    """
-    优化：合并分类的频道信息（去重）
-    """
+    """合并分类的频道信息（去重）"""
     # 先收集所有已存在的URL用于去重
     existing_urls = set()
     for group in target:
@@ -637,10 +714,7 @@ def merge_channels(target: Dict[str, List[ChannelInfo]], source: Dict[str, List[
                 existing_urls.add(channel.url)
 
 def match_channels(template_channels: OrderedDict, all_channels: Dict[str, List[ChannelInfo]]) -> Dict[str, Dict[str, List[ChannelInfo]]]:
-    """
-    优化：匹配模板频道与抓取的频道（基于完整元数据）
-    :return: {模板分类: {频道名: [ChannelInfo列表]}}
-    """
+    """匹配模板频道与抓取的频道（基于完整元数据）"""
     matched_channels = OrderedDict()
     
     # 构建所有频道名到频道信息的映射
@@ -679,9 +753,7 @@ def match_channels(template_channels: OrderedDict, all_channels: Dict[str, List[
     return matched_channels
 
 def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[ChannelInfo]]], OrderedDict]:
-    """
-    优化：过滤源URL，返回分类的匹配结果
-    """
+    """过滤源URL，返回分类的匹配结果"""
     # 解析模板
     template_channels = parse_template(template_file)
     if not template_channels:
@@ -698,6 +770,7 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
     all_channels = OrderedDict()
     all_channels["默认分类"] = []
     failed_urls = []
+    success_urls = []
     
     for url in source_urls:
         logger.info(f"\n开始抓取源：{url}")
@@ -712,18 +785,22 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
         
         # 合并分类的频道
         merge_channels(all_channels, fetched_channels)
+        success_urls.append(url)
         logger.info(f"源 {url} 抓取完成，新增频道数：{total_fetched}（按{len(fetched_channels)}个分类组织）")
     
     # 输出抓取统计
     total_channels = sum(len(channels) for channels in all_channels.values())
     logger.info(f"\n抓取统计：")
     logger.info(f"  - 总源数：{len(source_urls)}")
+    logger.info(f"  - 成功源数：{len(success_urls)}")
     logger.info(f"  - 失败源数：{len(failed_urls)}")
     logger.info(f"  - 成功抓取频道总数：{total_channels}")
     logger.info(f"  - 频道分类数：{len(all_channels)}")
     
+    if success_urls:
+        logger.info(f"  - 成功的源：{', '.join(success_urls[:3])}{'...' if len(success_urls)>3 else ''}")
     if failed_urls:
-        logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
+        logger.info(f"  - 失败的源：{', '.join(failed_urls[:3])}{'...' if len(failed_urls)>3 else ''}")
     
     # 匹配频道
     matched_channels = match_channels(template_channels, all_channels)
@@ -732,9 +809,7 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
 
 # ===================== 文件生成 =====================
 def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int, ip_version: str, latency: float):
-    """
-    优化：写入带完整元数据的频道信息
-    """
+    """写入带完整元数据的频道信息"""
     if not channel_info.url:
         return
     
@@ -768,9 +843,7 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
 def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]]], 
                          template_channels: OrderedDict, 
                          latency_results: Dict[str, SpeedTestResult]):
-    """
-    优化：生成带完整M3U元数据的文件
-    """
+    """生成带完整M3U元数据的文件"""
     latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
@@ -933,7 +1006,7 @@ async def main():
         # 配置加载
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源（优化M3U元数据解析） =====")
+        logger.info("===== 开始处理直播源（优化M3U元数据解析+增强抓取） =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms")
         
         # 预加载GitHub logo列表
@@ -975,6 +1048,9 @@ async def main():
         logger.critical(f"程序执行异常：{str(e)}", exc_info=True)
 
 if __name__ == "__main__":
+    # 禁用requests警告
+    requests.packages.urllib3.disable_warnings()
+    
     # 兼容Windows异步事件循环
     if os.name == "nt":
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
