@@ -1,14 +1,7 @@
-# config.py
-# 基础配置
-TEMPLATE_FILE = "demo.txt"
-LATENCY_THRESHOLD = 500  # 延迟阈值（毫秒）
-CONCURRENT_LIMIT = 20    # 并发测速限制
-TIMEOUT = 10             # 超时时间（秒）
-RETRY_TIMES = 2          # 重试次数
-IP_VERSION_PRIORITY = "ipv4"
+# config.py - 配置文件示例
 
 # 源URL配置
-source_urls = [
+SOURCE_URLS = [
     "https://raw.kkgithub.com/develop202/migu_video/main/interface.txt",
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
     "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
@@ -24,33 +17,34 @@ source_urls = [
     "https://live.hacks.tools/tv/iptv6.txt",
     "https://live.hacks.tools/tv/iptv4.txt",
     "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
-
-
- 
 ]
 
-# 黑名单配置
-url_blacklist = ["example.com/bad", "192.168.0.1"]
+# 模板文件（需要新建demo.txt，格式参考下方）
+TEMPLATE_FILE = "demo.txt"
+
+# 延迟阈值（毫秒）
+LATENCY_THRESHOLD = 400
+
+# 并发限制
+CONCURRENT_LIMIT = 15
+
+# 超时时间（秒）
+TIMEOUT = 15
+
+# 重试次数
+RETRY_TIMES = 2
+
+# IP版本优先级（ipv4/ipv6）
+IP_VERSION_PRIORITY = "ipv4"
+
+# URL黑名单
+URL_BLACKLIST = []
 
 # EPG配置
-epg_urls = ["https://epg.51zmt.top:8000/e.xml"]
+EPG_URLS = []
 
 # 公告配置
-announcements = [
-    {
-        "channel": "公告",
-        "entries": [
-            {
-                "name": "测试公告",
-                "url": "https://example.com/notice.m3u8",
-                "logo": "https://example.com/logo.png"
-            }
-        ]
-    }
-]
-
-
-
+ANNOUNCEMENTS = []
 
 
 
