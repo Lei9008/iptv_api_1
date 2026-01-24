@@ -36,5 +36,15 @@ RETRY_TIMES = 2
 IP_VERSION_PRIORITY = "ipv4"
 URL_BLACKLIST = []
 TEMPLATE_FILE = "demo.txt"  # 模板文件
-EPG_URLS = []
+
+# EPG（电子节目指南）URL列表
+EPG_URLS  = [
+    "https://epg.v1.mk/fy.xml",
+    "http://epg.51zmt.top:8000/e.xml",
+    "https://epg.pw/xmltv/epg_CN.xml",
+    "https://epg.pw/xmltv/epg_HK.xml",
+    "https://epg.pw/xmltv/epg_TW.xml",
+    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz",
+    "https://live.fanmingming.cn/e.xml",
+]
 ANNOUNCEMENTS = []
