@@ -53,12 +53,12 @@ for dir_path in LOGO_DIRS:
 
 # 从config.py读取GitHub Logo配置
 GITHUB_LOGO_BASE_URL = getattr(config, 'GITHUB_LOGO_BASE_URL', 
-                              "https://raw.githubusercontent.com/fanmingming/live/main/tv")
+                              "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/")
 BACKUP_LOGO_BASE_URL = getattr(config, 'BACKUP_LOGO_BASE_URL',
-                              "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv")
+                              "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/")
 GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
-    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
+    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/"
 ])
 
 # 测速配置（放宽门槛，保留更多URL）
