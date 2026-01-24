@@ -34,9 +34,17 @@ LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
 for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)
 
-# GitHub Logo 远程仓库配置
-GITHUB_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
-BACKUP_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
+# 从config.py读取GitHub Logo配置（核心优化）
+# 读取Logo基础URL，设置默认值
+GITHUB_LOGO_BASE_URL = getattr(config, 'GITHUB_LOGO_BASE_URL', 
+                              "https://raw.githubusercontent.com/fanmingming/live/main/tv")
+BACKUP_LOGO_BASE_URL = getattr(config, 'BACKUP_LOGO_BASE_URL',
+                              "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv")
+# 读取Logo API URL列表，设置默认值
+GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
+    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
+    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
+])
 
 # 测速配置（集中管理默认值）
 CONFIG_DEFAULTS = {
@@ -167,15 +175,12 @@ def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, laten
 
 @lru_cache(maxsize=1)
 def get_github_logo_list() -> List[str]:
-    """获取GitHub仓库中的logo文件列表（缓存机制+代理）"""
-    api_urls = [
-        "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-        "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
-    ]
+    """获取GitHub仓库中的logo文件列表（缓存机制+代理）- 从config读取API URL"""
     headers = {"User-Agent": "Mozilla/5.0"}
     logo_files = []
     
-    for api_url in api_urls:
+    # 使用从config读取的API URL列表
+    for api_url in GITHUB_LOGO_API_URLS:
         try:
             response = requests.get(api_url, headers=headers, timeout=10)
             response.raise_for_status()
@@ -185,7 +190,7 @@ def get_github_logo_list() -> List[str]:
                 if item.get("type") == "file" and item.get("name", "").lower().endswith(".png"):
                     logo_files.append(item["name"])
             
-            logger.info(f"成功获取GitHub logo列表，共{len(logo_files)}个文件")
+            logger.info(f"成功获取GitHub logo列表，共{len(logo_files)}个文件（来源：{api_url}）")
             break
         except Exception as e:
             logger.warning(f"获取GitHub logo列表失败（{api_url}）：{str(e)[:50]}")
@@ -204,7 +209,7 @@ def get_github_logo_list() -> List[str]:
     return logo_files
 
 def get_channel_logo_url(channel_name: str) -> str:
-    """检测logo文件，生成动态logo_url"""
+    """检测logo文件，生成动态logo_url - 从config读取基础URL"""
     clean_logo_name = clean_channel_name(channel_name)
     logo_filename = f"{clean_logo_name}.png"
     
@@ -214,7 +219,7 @@ def get_channel_logo_url(channel_name: str) -> str:
         if local_logo_path.exists():
             return local_logo_path.as_posix()
     
-    # 检测GitHub远程logo
+    # 检测GitHub远程logo（使用从config读取的URL）
     github_logo_files = get_github_logo_list()
     if logo_filename in github_logo_files:
         return f"{BACKUP_LOGO_BASE_URL}/{logo_filename}"
@@ -311,7 +316,7 @@ def extract_channels_from_content(content: str) -> List[Tuple[str, str]]:
     logger.info(f"从内容中提取到 {len(channels)} 个有效频道")
     return channels
 
-# ===================== 新增：链接修复和重试函数 =====================
+# ===================== 链接修复和重试函数 =====================
 def replace_github_domain(url: str) -> List[str]:
     """
     替换GitHub域名，生成多个可访问的镜像链接
