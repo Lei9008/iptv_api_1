@@ -1,7 +1,7 @@
 # config.py - 配置文件示例
 
 # 源URL配置
-SOURCE_URLS = [
+source_urls = [
     "https://raw.kkgithub.com/develop202/migu_video/main/interface.txt",
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
     "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
@@ -19,32 +19,9 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
 ]
 
-# 模板文件（需要新建demo.txt，格式参考下方）
-TEMPLATE_FILE = "demo.txt"
-
-# 延迟阈值（毫秒）
-LATENCY_THRESHOLD = 400
-
-# 并发限制
-CONCURRENT_LIMIT = 15
-
-# 超时时间（秒）
-TIMEOUT = 15
-
-# 重试次数
-RETRY_TIMES = 2
-
-# IP版本优先级（ipv4/ipv6）
-IP_VERSION_PRIORITY = "ipv4"
-
-# URL黑名单
-URL_BLACKLIST = []
-
-# EPG配置
-EPG_URLS = []
-
-# 公告配置
-ANNOUNCEMENTS = []
+# 可选配置
+LATENCY_THRESHOLD = 400  # 延迟阈值（毫秒）
+TEMPLATE_FILE = "demo.txt"  # 模板文件
 
 
 
