@@ -35,8 +35,8 @@ for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)
 
 # GitHub Logo 远程仓库配置
-GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
-BACKUP_LOGO_BASE_URL = "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv"
+GITHUB_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
+BACKUP_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
 
 # 测速配置（集中管理默认值）
 CONFIG_DEFAULTS = {
@@ -51,6 +51,22 @@ CONFIG_DEFAULTS = {
     "ANNOUNCEMENTS": [],
     "SOURCE_URLS": []
 }
+
+# GitHub 镜像域名列表（用于替换不可访问的域名）
+GITHUB_MIRRORS = [
+    "raw.githubusercontent.com",
+    "raw.kkgithub.com",
+    "raw.githubusercontents.com",
+    "raw.fgit.cf",
+    "raw.fgithub.de"
+]
+
+# 代理前缀列表
+PROXY_PREFIXES = [
+    "https://ghproxy.com/",
+    "https://mirror.ghproxy.com/",
+    "https://gh.api.99988866.xyz/"
+]
 
 # 日志配置
 LOG_FILE_PATH = OUTPUT_FOLDER / "function.log"
@@ -295,6 +311,73 @@ def extract_channels_from_content(content: str) -> List[Tuple[str, str]]:
     logger.info(f"从内容中提取到 {len(channels)} 个有效频道")
     return channels
 
+# ===================== 新增：链接修复和重试函数 =====================
+def replace_github_domain(url: str) -> List[str]:
+    """
+    替换GitHub域名，生成多个可访问的镜像链接
+    :param url: 原始URL
+    :return: 多个候选URL列表
+    """
+    if not url or "github" not in url.lower():
+        return [url]
+    
+    candidate_urls = [url]
+    
+    # 替换不同的GitHub镜像域名
+    for mirror in GITHUB_MIRRORS:
+        for original in GITHUB_MIRRORS:
+            if original in url:
+                new_url = url.replace(original, mirror)
+                if new_url not in candidate_urls:
+                    candidate_urls.append(new_url)
+    
+    # 添加代理前缀
+    proxy_urls = []
+    for base_url in candidate_urls:
+        for proxy in PROXY_PREFIXES:
+            if not base_url.startswith(proxy):
+                proxy_url = proxy + base_url
+                proxy_urls.append(proxy_url)
+    
+    candidate_urls.extend(proxy_urls)
+    
+    # 去重并返回
+    unique_urls = list(dict.fromkeys(candidate_urls))
+    return unique_urls
+
+def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
+    """
+    带重试和镜像替换的URL抓取函数
+    :param url: 原始URL
+    :param timeout: 超时时间
+    :return: 抓取到的内容，失败返回None
+    """
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    
+    # 生成候选URL列表
+    candidate_urls = replace_github_domain(url)
+    
+    for idx, candidate in enumerate(candidate_urls):
+        try:
+            logger.debug(f"尝试抓取 [{idx+1}/{len(candidate_urls)}]: {candidate}")
+            response = requests.get(
+                candidate,
+                headers=headers,
+                timeout=timeout,
+                verify=False,  # 忽略SSL证书错误
+                allow_redirects=True
+            )
+            response.raise_for_status()
+            response.encoding = response.apparent_encoding or 'utf-8'
+            logger.info(f"成功抓取：{candidate}")
+            return response.text
+        except requests.RequestException as e:
+            logger.warning(f"抓取失败 [{idx+1}/{len(candidate_urls)}]: {candidate} | 原因：{str(e)[:50]}")
+            continue
+    
+    logger.error(f"所有候选链接都抓取失败：{url}")
+    return None
+
 # ===================== 测速模块 =====================
 class SpeedTester:
     """异步测速器"""
@@ -407,46 +490,24 @@ def parse_template(template_file: str) -> OrderedDict:
 
     return template_channels
 
-def fix_github_url(url: str) -> str:
-    """修复GitHub链接，转为可访问的raw链接"""
-    if not url:
-        return url
-    
-    # blob -> raw
-    blob_pattern = r'https://github\.com/([^/]+)/([^/]+)/blob/(.+)'
-    match = re.match(blob_pattern, url)
-    if match:
-        raw_url = f"https://raw.githubusercontent.com/{match.group(1)}/{match.group(2)}/{match.group(3)}"
-        url = raw_url
-    
-    # 添加代理
-    if "raw.githubusercontent.com" in url and not url.startswith("https://ghproxy.com/"):
-        url = f"https://ghproxy.com/{url}"
-    
-    return url
-
 def fetch_channels(url: str) -> OrderedDict:
-    """从指定URL抓取并提取频道（通用提取逻辑）"""
+    """从指定URL抓取并提取频道（增强异常处理+多镜像重试）"""
     channels = OrderedDict()
     default_category = "默认分类"
     channels[default_category] = []
     
     try:
-        # 修复GitHub链接
-        fixed_url = fix_github_url(url)
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-        response = requests.get(fixed_url, headers=headers, timeout=15)
-        response.raise_for_status()
-        response.encoding = response.apparent_encoding or 'utf-8'
-        
-        logger.info(f"成功抓取 {fixed_url}")
+        # 使用增强的抓取函数（带重试和镜像替换）
+        content = fetch_url_with_retry(url)
+        if content is None:
+            return channels
         
         # 核心：使用通用提取函数提取频道
-        extracted_channels = extract_channels_from_content(response.text)
+        extracted_channels = extract_channels_from_content(content)
         channels[default_category].extend(extracted_channels)
             
-    except requests.RequestException as e:
-        logger.error(f"抓取 {url} 失败：{str(e)}", exc_info=True)
+    except Exception as e:
+        logger.error(f"处理 {url} 时发生异常：{str(e)}", exc_info=True)
 
     return channels
 
@@ -492,7 +553,7 @@ def match_channels(template_channels: OrderedDict, all_channels: OrderedDict) ->
     return matched_channels
 
 def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
-    """过滤源URL，获取匹配后的频道信息"""
+    """过滤源URL，获取匹配后的频道信息（增强容错）"""
     # 解析模板
     template_channels = parse_template(template_file)
     if not template_channels:
@@ -505,11 +566,30 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
         logger.error("未配置source_urls，终止流程")
         return OrderedDict(), template_channels
     
-    # 抓取并合并所有源
+    # 抓取并合并所有源（单个源失败不影响）
     all_channels = OrderedDict()
+    failed_urls = []
+    
     for url in source_urls:
+        logger.info(f"\n开始抓取源：{url}")
         fetched_channels = fetch_channels(url)
+        if not fetched_channels or not fetched_channels.get("默认分类"):
+            failed_urls.append(url)
+            logger.warning(f"源 {url} 未抓取到任何频道")
+            continue
+        
         merge_channels(all_channels, fetched_channels)
+        logger.info(f"源 {url} 抓取完成，新增频道数：{len(fetched_channels['默认分类'])}")
+    
+    # 输出抓取统计
+    total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
+    logger.info(f"\n抓取统计：")
+    logger.info(f"  - 总源数：{len(source_urls)}")
+    logger.info(f"  - 失败源数：{len(failed_urls)}")
+    logger.info(f"  - 成功抓取频道总数：{total_channels}")
+    
+    if failed_urls:
+        logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
     
     # 匹配频道
     matched_channels = match_channels(template_channels, all_channels)
@@ -702,7 +782,7 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
 
 # ===================== 主程序 =====================
 async def main():
-    """主函数"""
+    """主函数（增强容错）"""
     try:
         # 配置加载
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
@@ -729,7 +809,7 @@ async def main():
             for entry in group.get('entries', []):
                 url = entry.get('url', '')
                 if url:
-                    all_urls.add(fix_github_url(url))
+                    all_urls.add(url)
         
         all_urls = list(all_urls)
         logger.info(f"\n===== 2. 开始批量测速（共{len(all_urls)}个URL） =====")
