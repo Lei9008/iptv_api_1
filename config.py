@@ -10,6 +10,7 @@ IP_VERSION_PRIORITY = "ipv4"
 # 源URL配置
 source_urls = [
     "https://raw.kkgithub.com/develop202/migu_video/main/interface.txt",
+    "https://github.com/develop202/migu_video/blob/main/interface.txt",
     "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
     "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
     "https://github.com/8080713/iptv-api666/blob/main/output/result.m3u",
