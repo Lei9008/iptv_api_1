@@ -35,14 +35,14 @@ for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)  # parents=True：自动创建上级 pic 目录
 
 # GitHub Logo 远程仓库配置
-GITHUB_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
+GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
 
 # 测速配置（集中管理默认值）
 CONFIG_DEFAULTS = {
     "LATENCY_THRESHOLD": 500,
     "CONCURRENT_LIMIT": 20,
-    "TIMEOUT": 15,  # 延长超时时间，适配GitHub访问
-    "RETRY_TIMES": 2,  # 增加重试次数
+    "TIMEOUT": 10,
+    "RETRY_TIMES": 2,
     "IP_VERSION_PRIORITY": "ipv4",
     "URL_BLACKLIST": [],
     "TEMPLATE_FILE": "demo.txt",
@@ -62,40 +62,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
-# ===================== 新增：链接修复工具函数 =====================
-def fix_github_url(url: str) -> str:
-    """
-    修复GitHub链接：将blob网页链接转为raw原始文件链接
-    示例：
-    https://github.com/xxx/blob/master/xxx.m3u → https://raw.githubusercontent.com/xxx/master/xxx.m3u
-    """
-    if not url:
-        return url
-    
-    # 匹配GitHub blob链接
-    blob_pattern = r'https://github\.com/([^/]+)/([^/]+)/blob/(.+)'
-    match = re.match(blob_pattern, url)
-    if match:
-        user = match.group(1)
-        repo = match.group(2)
-        path = match.group(3)
-        raw_url = f"https://raw.githubusercontent.com/{user}/{repo}/{path}"
-        logger.info(f"修复GitHub链接：{url} → {raw_url}")
-        return raw_url
-    
-    # 处理常见的GitHub镜像站
-    url = url.replace("raw.kkgithub.com", "raw.githubusercontent.com")
-    url = url.replace("kkgithub.com", "github.com")
-    
-    return url
-
-def validate_url(url: str) -> bool:
-    """验证URL是否有效（基础格式检查）"""
-    if not url.startswith(("http://", "https://")):
-        logger.warning(f"无效的URL格式：{url}")
-        return False
-    return True
 
 # ===================== 核心工具函数 =====================
 def clean_channel_name(channel_name):
@@ -276,9 +242,7 @@ class SpeedTester:
         timeout = aiohttp.ClientTimeout(total=self.timeout)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                          "Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "*/*",
-            "Accept-Encoding": "gzip, deflate, br"
+                          "Chrome/120.0.0.0 Safari/537.36"
         }
         self.session = aiohttp.ClientSession(timeout=timeout, headers=headers)
         return self
@@ -328,8 +292,6 @@ class SpeedTester:
                 result.error = "请求超时"
             except aiohttp.ClientConnectionError:
                 result.error = "连接失败"
-            except aiohttp.ClientError as e:
-                result.error = f"客户端错误: {str(e)[:30]}"
             except Exception as e:
                 result.error = f"未知错误: {str(e)[:30]}"
             
@@ -353,9 +315,8 @@ class SpeedTester:
                 result = await self.measure_latency(url)
                 results[url] = result
         
-        # 创建并执行所有测速任务（过滤无效URL）
-        valid_urls = [url for url in urls if url.strip() and validate_url(url)]
-        tasks = [worker(url) for url in valid_urls]
+        # 创建并执行所有测速任务
+        tasks = [worker(url) for url in urls if url.strip()]
         await asyncio.gather(*tasks)
         
         return results
@@ -396,29 +357,25 @@ def parse_m3u_lines(lines):
     current_category = "默认分类"  # 无group-title时的默认分类
     channel_name = ""
 
-    # 过滤空行和注释行，提升解析效率
-    valid_lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith(("#EXTM3U", "//"))]
-
-    for line_num, line in enumerate(valid_lines, 1):
+    for line_num, line in enumerate(lines, 1):
+        line = line.strip()
+        if not line:
+            continue
+        
         if line.startswith("#EXTINF"):
-            # 增强：兼容更多EXTINF格式（如包含tvg-id、tvg-logo等）
-            # 先移除tvg-*等属性，只保留group-title和频道名
-            clean_line = re.sub(r'tvg-\w+="[^"]*"', '', line)
-            clean_line = re.sub(r'\s+', ' ', clean_line)
-            
             # 方案1：匹配带group-title的标准格式（优先级高）
-            group_match = re.search(r'group-title="(.*?)",\s*(.*)', clean_line)
+            group_match = re.search(r'group-title="(.*?)",(.*)', line)
             if group_match:
                 current_category = group_match.group(1).strip()
                 channel_name = group_match.group(2).strip()
             else:
                 # 方案2：匹配无group-title的最简格式（#EXTINF:-1 ,频道名）
-                simple_match = re.search(r'#EXTINF:-?\d+\s*,([^,]+)$', clean_line)
+                simple_match = re.search(r'#EXTINF:-?\d+\s*,([^,]+)$', line)
                 if simple_match:
                     channel_name = simple_match.group(1).strip()
                     # 保持当前分类（默认分类/上一个有效分类）
                 else:
-                    logger.warning(f"M3U第{line_num}行格式异常：{line[:100]}")  # 截断过长行
+                    logger.warning(f"M3U第{line_num}行格式异常：{line}")
                     channel_name = ""
                     continue
             
@@ -432,9 +389,7 @@ def parse_m3u_lines(lines):
         elif not line.startswith("#"):
             channel_url = line.strip()
             if current_category and channel_name and channel_url:
-                # 修复：对解析出的频道URL也进行链接修复
-                fixed_url = fix_github_url(channel_url)
-                channels[current_category].append((channel_name, fixed_url))
+                channels[current_category].append((channel_name, channel_url))
                 # 重置频道名（避免重复写入）
                 channel_name = ""
 
@@ -445,14 +400,15 @@ def parse_txt_lines(lines):
     channels = OrderedDict()
     current_category = "默认分类"  # TXT默认分类
 
-    # 过滤空行和注释行
-    valid_lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith("#")]
-
-    for line_num, line in enumerate(valid_lines, 1):
+    for line_num, line in enumerate(lines, 1):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        
         # 修复：解析TXT格式（支持 频道名,URL 或 URL,频道名 两种格式）
         parts = line.split(",", 1)  # 只分割一次，避免URL含逗号
         if len(parts) != 2:
-            logger.warning(f"TXT第{line_num}行格式异常：{line[:100]}")  # 截断过长行
+            logger.warning(f"TXT第{line_num}行格式异常：{line}")
             continue
         
         # 判断哪部分是URL（包含http/https）
@@ -461,9 +417,6 @@ def parse_txt_lines(lines):
         else:
             channel_name, channel_url = parts[0].strip(), parts[1].strip()
         
-        # 修复：对解析出的频道URL进行链接修复
-        channel_url = fix_github_url(channel_url)
-        
         # 清洗频道名
         channel_name = clean_channel_name(channel_name)
         
@@ -471,56 +424,24 @@ def parse_txt_lines(lines):
         if current_category not in channels:
             channels[current_category] = []
         
-        # 添加到频道列表（验证URL有效性）
-        if validate_url(channel_url):
-            channels[current_category].append((channel_name, channel_url))
-        else:
-            logger.warning(f"TXT第{line_num}行跳过无效URL：{channel_url}")
+        # 添加到频道列表
+        channels[current_category].append((channel_name, channel_url))
 
     return channels
 
 def fetch_channels(url):
-    """从指定URL抓取频道列表（增强：修复GitHub链接、容错处理）"""
+    """从指定URL抓取频道列表"""
     channels = OrderedDict()
-    
-    # 第一步：修复URL
-    fixed_url = fix_github_url(url)
-    if not validate_url(fixed_url):
-        logger.error(f"URL验证失败，跳过抓取：{url}")
-        return channels
-    
     try:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept": "*/*",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Connection": "keep-alive"
-        }
-        # 增加超时时间
-        response = requests.get(fixed_url, headers=headers, timeout=15)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
-        
-        # 自动检测编码（增强容错）
-        if response.encoding == 'ISO-8859-1':
-            encodings = ['utf-8', 'gbk', 'gb2312', 'gb18030']
-            for enc in encodings:
-                try:
-                    response.encoding = enc
-                    response.text
-                    break
-                except:
-                    continue
-        else:
-            response.encoding = response.apparent_encoding or 'utf-8'
-        
+        response.encoding = response.apparent_encoding or 'utf-8'
         lines = response.text.split("\n")
         
-        # 增强：更鲁棒的格式判断
-        is_m3u = any(
-            line.strip().startswith("#EXTINF") or line.strip().startswith("#EXTM3U")
-            for line in lines[:20]  # 检查前20行
-        )
-        logger.info(f"成功抓取 {fixed_url}，格式：{'m3u' if is_m3u else 'txt'}")
+        # 判断格式
+        is_m3u = any(line.startswith("#EXTINF") for line in lines[:15])
+        logger.info(f"成功抓取 {url}，格式：{'m3u' if is_m3u else 'txt'}")
         
         # 解析内容
         if is_m3u:
@@ -528,14 +449,8 @@ def fetch_channels(url):
         else:
             channels = parse_txt_lines(lines)
             
-    except requests.exceptions.Timeout:
-        logger.error(f"抓取 {fixed_url} 超时（15秒）")
-    except requests.exceptions.HTTPError as e:
-        logger.error(f"抓取 {fixed_url} HTTP错误：{e}")
-    except requests.exceptions.RequestException as e:
-        logger.error(f"抓取 {fixed_url} 失败：{str(e)}", exc_info=True)
-    except Exception as e:
-        logger.error(f"解析 {fixed_url} 内容失败：{str(e)}", exc_info=True)
+    except requests.RequestException as e:
+        logger.error(f"抓取 {url} 失败：{str(e)}", exc_info=True)
 
     return channels
 
@@ -585,7 +500,7 @@ def match_channels(template_channels, all_channels):
     return matched_channels
 
 def filter_source_urls(template_file):
-    """过滤源URL，获取匹配后的频道信息（增强：修复源URL）"""
+    """过滤源URL，获取匹配后的频道信息"""
     # 解析模板
     template_channels = parse_template(template_file)
     if not template_channels:
@@ -598,22 +513,9 @@ def filter_source_urls(template_file):
         logger.error("未配置source_urls，终止流程")
         return OrderedDict(), template_channels
     
-    # 修复源URL
-    fixed_source_urls = []
-    for url in source_urls:
-        fixed_url = fix_github_url(url.strip())
-        if validate_url(fixed_url):
-            fixed_source_urls.append(fixed_url)
-        else:
-            logger.warning(f"跳过无效的源URL：{url}")
-    
-    if not fixed_source_urls:
-        logger.error("无有效的源URL，终止流程")
-        return OrderedDict(), template_channels
-    
     # 抓取并合并所有源
     all_channels = OrderedDict()
-    for url in fixed_source_urls:
+    for url in source_urls:
         fetched_channels = fetch_channels(url)
         merge_channels(all_channels, fetched_channels)
     
@@ -690,12 +592,6 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                     entry_logo = entry.get('logo', '')
                     
                     if not entry_url:
-                        continue
-                    
-                    # 修复：公告URL也需要修复
-                    entry_url = fix_github_url(entry_url)
-                    if not validate_url(entry_url):
-                        logger.warning(f"跳过无效的公告URL：{entry_url}")
                         continue
                     
                     # 公告频道也做延迟过滤
@@ -859,10 +755,7 @@ async def main():
             for entry in group.get('entries', []):
                 url = entry.get('url', '')
                 if url:
-                    # 修复公告URL
-                    fixed_url = fix_github_url(url)
-                    if validate_url(fixed_url):
-                        all_urls.add(fixed_url)
+                    all_urls.add(url)
         
         all_urls = list(all_urls)
         logger.info(f"\n===== 2. 开始批量测速（共{len(all_urls)}个URL） =====")
