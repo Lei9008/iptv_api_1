@@ -24,8 +24,8 @@ source_urls = [
 GITHUB_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
 BACKUP_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
 GITHUB_LOGO_API_URLS = [
-    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
+    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/",
+    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/"
 ]
 
 # 其他原有配置...
