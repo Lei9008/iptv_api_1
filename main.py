@@ -35,7 +35,7 @@ for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)  # parents=True：自动创建上级 pic 目录
 
 # GitHub Logo 远程仓库配置
-GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
+GITHUB_LOGO_BASE_URL = "https://github.com/fanmingming/live/tree/main/tv"
 
 # 测速配置（集中管理默认值）
 CONFIG_DEFAULTS = {
