@@ -34,21 +34,15 @@ CONCURRENT_LIMIT = 20
 TIMEOUT = 20
 # 重试次数
 RETRY_TIMES = 2
+#频道匹配阈值（默认 0.4）
+MATCH_CUTOFF=0.4
 # IP版本优先级（ipv4/ipv6）
 IP_VERSION_PRIORITY = "ipv4"
 
 # ===================== 过滤配置 =====================
 # URL黑名单（包含以下关键词的URL会被过滤）
 URL_BLACKLIST = [
-
-    
-    "https://epg.v1.mk/fy.xml",
-    "http://epg.51zmt.top:8000/e.xml",
-    "https://epg.pw/xmltv/epg_CN.xml",
-    "https://epg.pw/xmltv/epg_HK.xml",
-    "https://epg.pw/xmltv/epg_TW.xml",
-    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz",
-    "https://live.fanmingming.cn/e.xml",
+  
 
     
 ]
@@ -56,7 +50,13 @@ URL_BLACKLIST = [
 # ===================== EPG配置 =====================
 # 电子节目指南URL
 EPG_URLS = [
-    "https://epg.112114.xyz/pp.xml",
+    "https://epg.v1.mk/fy.xml",
+    "http://epg.51zmt.top:8000/e.xml",
+    "https://epg.pw/xmltv/epg_CN.xml",
+    "https://epg.pw/xmltv/epg_HK.xml",
+    "https://epg.pw/xmltv/epg_TW.xml",
+    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz",
+    "https://live.fanmingming.cn/e.xml",
 ]
 
 # ===================== 公告配置 =====================
