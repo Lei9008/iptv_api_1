@@ -1,488 +1,462 @@
 IPTV直播源测速报告
 ============================================================
-测试时间：2026-01-25 13:45:23
+测试时间：2026-01-25 14:39:28
 延迟阈值：500ms
-总测试URL数：609
-测试成功数：378 (62.1%)
-有效URL数（延迟<500ms）：245
+总测试URL数：616
+测试成功数：384 (62.3%)
+有效URL数（延迟<500ms）：218
 ============================================================
 
 【有效URL列表（按延迟升序）】
-  1. 延迟： 13.03ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv14.m3u8
-  2. 延迟： 13.12ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv12.m3u8
-  3. 延迟： 14.72ms | 分辨率：unknown  | URL：http://69.30.246.194/live/jsws.m3u8
-  4. 延迟： 26.12ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv16.m3u8
-  5. 延迟： 26.18ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv11.m3u8
-  6. 延迟： 26.22ms | 分辨率：unknown  | URL：http://69.30.246.194/live/hnws.m3u8
-  7. 延迟： 26.28ms | 分辨率：unknown  | URL：http://69.30.246.194/live/dfws.m3u8
-  8. 延迟： 26.35ms | 分辨率：unknown  | URL：http://69.30.246.194/live/zjws.m3u8
-  9. 延迟： 26.49ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv15.m3u8
- 10. 延迟： 61.73ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV9.m3u8
- 11. 延迟： 61.77ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV5.m3u8
- 12. 延迟： 61.80ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV12.m3u8
- 13. 延迟： 61.81ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/gansu.m3u8
- 14. 延迟： 61.83ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/hebei.m3u8
- 15. 延迟： 61.85ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/tianjing.m3u8
- 16. 延迟： 61.86ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/hainan.m3u8
- 17. 延迟： 61.94ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV17.m3u8
- 18. 延迟： 61.95ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV10.m3u8
- 19. 延迟： 62.44ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/hunan.m3u8
- 20. 延迟： 62.88ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV3.m3u8
- 21. 延迟： 62.93ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV7.m3u8
- 22. 延迟： 63.91ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/guangxi.m3u8
- 23. 延迟： 64.15ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/chongqing.m3u8
- 24. 延迟： 64.27ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/liaoning.m3u8
- 25. 延迟： 65.10ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/guangdong.m3u8
- 26. 延迟： 65.29ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV5p.m3u8
- 27. 延迟： 65.87ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/dongnan.m3u8
- 28. 延迟： 65.97ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/jiangxi.m3u8
- 29. 延迟： 66.52ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/neimenggu.m3u8
- 30. 延迟： 74.24ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
- 31. 延迟： 74.91ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
- 32. 延迟： 76.76ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
- 33. 延迟： 76.88ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
- 34. 延迟： 77.24ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
- 35. 延迟： 78.32ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/anhui.m3u8
- 36. 延迟： 82.29ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/shenzhen.m3u8
- 37. 延迟： 82.36ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/hubei.m3u8
- 38. 延迟： 83.33ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/guizhou.m3u8
- 39. 延迟： 88.34ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/zhejiang.m3u8
- 40. 延迟： 90.47ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/qinghai.m3u8
- 41. 延迟： 91.36ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/jilin.m3u8
- 42. 延迟： 95.39ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
- 43. 延迟： 98.94ms | 分辨率：1920x1080 | URL：http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
- 44. 延迟：103.89ms | 分辨率：unknown  | URL：http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
- 45. 延迟：104.64ms | 分辨率：1920x1080 | URL：http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
- 46. 延迟：116.29ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
- 47. 延迟：116.49ms | 分辨率：unknown  | URL：http://r.jdshipin.com/yDoTN
- 48. 延迟：116.60ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
- 49. 延迟：122.22ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
- 50. 延迟：122.43ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
- 51. 延迟：122.95ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub
- 52. 延迟：123.45ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV14.m3u8
- 53. 延迟：123.74ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV2.m3u8
- 54. 延迟：124.37ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV15.m3u8
- 55. 延迟：127.93ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV1.m3u8
- 56. 延迟：129.36ms | 分辨率：unknown  | URL：http://r.jdshipin.com/cCCzW
- 57. 延迟：130.67ms | 分辨率：unknown  | URL：https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8
- 58. 延迟：134.86ms | 分辨率：unknown  | URL：http://r.jdshipin.com/0Rp07
- 59. 延迟：145.16ms | 分辨率：unknown  | URL：http://r.jdshipin.com/GeWKr
- 60. 延迟：192.74ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/38/index.m3u8
- 61. 延迟：192.76ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/4/index.m3u8
- 62. 延迟：193.02ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/47/index.m3u8
- 63. 延迟：193.08ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/50/index.m3u8
- 64. 延迟：193.43ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/49/index.m3u8
- 65. 延迟：193.43ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/10/index.m3u8
- 66. 延迟：193.54ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/6/index.m3u8
- 67. 延迟：193.59ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/27/index.m3u8
- 68. 延迟：193.59ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/29/index.m3u8
- 69. 延迟：193.62ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/7/index.m3u8
- 70. 延迟：193.66ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/16/index.m3u8
- 71. 延迟：193.68ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/39/index.m3u8
- 72. 延迟：193.76ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/36/index.m3u8
- 73. 延迟：194.40ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/11/index.m3u8
- 74. 延迟：194.46ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/5/index.m3u8
- 75. 延迟：194.55ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/26/index.m3u8
- 76. 延迟：194.61ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/32/index.m3u8
- 77. 延迟：195.49ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/37/index.m3u8
- 78. 延迟：196.80ms | 分辨率：3840x2160 | URL：http://r.jdshipin.com/n90gt
- 79. 延迟：197.91ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/40/index.m3u8
- 80. 延迟：198.10ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/34/index.m3u8
- 81. 延迟：199.27ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/31/index.m3u8
- 82. 延迟：199.75ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/14/index.m3u8
- 83. 延迟：200.15ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/35/index.m3u8
- 84. 延迟：201.36ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/46/index.m3u8
- 85. 延迟：201.53ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/13/index.m3u8
- 86. 延迟：202.67ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/1/index.m3u8
- 87. 延迟：204.31ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/3/index.m3u8
- 88. 延迟：204.99ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/2/index.m3u8
- 89. 延迟：205.82ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/14/index.m3u8
- 90. 延迟：206.16ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/42/index.m3u8
- 91. 延迟：206.35ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/12/index.m3u8
- 92. 延迟：206.43ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/30/index.m3u8
- 93. 延迟：206.63ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/48/index.m3u8
- 94. 延迟：209.83ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/35/index.m3u8
- 95. 延迟：222.08ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1046_1.m3u8
- 96. 延迟：222.29ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/38/index.m3u8
- 97. 延迟：236.06ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/33/index.m3u8
- 98. 延迟：236.20ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/10/index.m3u8
- 99. 延迟：236.49ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/11/index.m3u8
-100. 延迟：236.93ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/7/index.m3u8
-101. 延迟：237.01ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/8/index.m3u8
-102. 延迟：237.14ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/906/index.m3u8
-103. 延迟：237.21ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/10/index.m3u8
-104. 延迟：237.51ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/9/index.m3u8
-105. 延迟：237.53ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/42/index.m3u8
-106. 延迟：237.56ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/14/index.m3u8
-107. 延迟：237.74ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/17/index.m3u8
-108. 延迟：242.87ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/37/index.m3u8
-109. 延迟：243.33ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/24/index.m3u8
-110. 延迟：246.08ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/33/index.m3u8
-111. 延迟：246.13ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/52/index.m3u8
-112. 延迟：246.48ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/7/index.m3u8
-113. 延迟：246.96ms | 分辨率：unknown  | URL：http://8.138.7.223/【公众号：榴芒电视】/cctv13.m3u8
-114. 延迟：248.82ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0143_1.m3u8
-115. 延迟：249.08ms | 分辨率：unknown  | URL：http://gmxw.7766.org:808/hls/15/index.m3u8
-116. 延迟：249.99ms | 分辨率：unknown  | URL：https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
-117. 延迟：251.07ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/102/index.m3u8
-118. 延迟：251.15ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/96/index.m3u8
-119. 延迟：251.57ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/40/index.m3u8
-120. 延迟：251.99ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/17/index.m3u8
-121. 延迟：252.11ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/35/index.m3u8
-122. 延迟：254.31ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/169/index.m3u8
-123. 延迟：254.33ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/53/index.m3u8
-124. 延迟：254.64ms | 分辨率：unknown  | URL：http://112.46.85.60:8009/hls/33/index.m3u8
-125. 延迟：256.16ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/19/index.m3u8
-126. 延迟：256.29ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000481.m3u8
-127. 延迟：256.34ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000122.m3u8
-128. 延迟：256.44ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000246.m3u8
-129. 延迟：256.64ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000077.m3u8
-130. 延迟：257.69ms | 分辨率：unknown  | URL：http://cssbyd.imwork.net:8082/hls/36/index.m3u8
-131. 延迟：258.25ms | 分辨率：unknown  | URL：http://cssbyd.imwork.net:8082/hls/41/index.m3u8
-132. 延迟：258.57ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/60/index.m3u8
-133. 延迟：258.98ms | 分辨率：unknown  | URL：http://hmfs.f3322.net:3388/hls/28/index.m3u8
-134. 延迟：260.55ms | 分辨率：unknown  | URL：http://gmxw.7766.org:808/hls/169/index.m3u8
-135. 延迟：262.04ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1044_1.m3u8
-136. 延迟：262.04ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
-137. 延迟：262.10ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1020_1.m3u8
-138. 延迟：262.18ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1035_1.m3u8
-139. 延迟：262.20ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1013_1.m3u8
-140. 延迟：262.57ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1032_1.m3u8
-141. 延迟：262.99ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1040_1.m3u8
-142. 延迟：267.02ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
-143. 延迟：267.11ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1007_1.m3u8
-144. 延迟：267.12ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
-145. 延迟：267.36ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1018_1.m3u8
-146. 延迟：267.49ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1034_1.m3u8
-147. 延迟：267.54ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1031_1.m3u8
-148. 延迟：267.54ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1056_1.m3u8
-149. 延迟：267.61ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1038_1.m3u8
-150. 延迟：267.68ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1042_1.m3u8
-151. 延迟：267.68ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1021_1.m3u8
-152. 延迟：267.69ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/0019_1.m3u8
-153. 延迟：267.79ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
-154. 延迟：267.82ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1054_1.m3u8
-155. 延迟：267.95ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1008_1.m3u8
-156. 延迟：267.96ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
-157. 延迟：267.99ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1057_1.m3u8
-158. 延迟：268.17ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1010_1.m3u8
-159. 延迟：268.35ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1015_1.m3u8
-160. 延迟：268.37ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1028_1.m3u8
-161. 延迟：268.37ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
-162. 延迟：268.54ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1049_1.m3u8
-163. 延迟：268.62ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1002_1.m3u8
-164. 延迟：268.65ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1048_1.m3u8
-165. 延迟：268.69ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1000_1.m3u8
-166. 延迟：268.71ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
-167. 延迟：268.82ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1046_1.m3u8
-168. 延迟：268.91ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1043_1.m3u8
-169. 延迟：269.50ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1014_1.m3u8
-170. 延迟：270.00ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1036_1.m3u8
-171. 延迟：282.55ms | 分辨率：unknown  | URL：https://liveout.xntv.tv/a65jur/96iln2.m3u8
-172. 延迟：284.94ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1012_1.m3u8
-173. 延迟：287.12ms | 分辨率：unknown  | URL：https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8
-174. 延迟：289.81ms | 分辨率：unknown  | URL：http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#
-175. 延迟：307.01ms | 分辨率：unknown  | URL：http://124.116.183.146:9901/tsfile/live/0143_1.m3u8
-176. 延迟：308.73ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/35/index.m3u8
-177. 延迟：310.15ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/17/index.m3u8
-178. 延迟：310.71ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/51/index.m3u8
-179. 延迟：314.46ms | 分辨率：unknown  | URL：http://124.116.183.146:9901/tsfile/live/1004_1.m3u8
-180. 延迟：314.87ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/48/index.m3u8
-181. 延迟：316.57ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/41/index.m3u8
-182. 延迟：322.38ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/49/index.m3u8
-183. 延迟：324.87ms | 分辨率：unknown  | URL：https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8
-184. 延迟：365.35ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000150.m3u8
-185. 延迟：365.76ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000098.m3u8
-186. 延迟：373.56ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000110.m3u8
-187. 延迟：386.44ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000117.m3u8
-188. 延迟：387.00ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/15/index.m3u8
-189. 延迟：389.48ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/33/index.m3u8
-190. 延迟：390.18ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/8/index.m3u8
-191. 延迟：392.49ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/9/index.m3u8
-192. 延迟：396.26ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/41/index.m3u8
-193. 延迟：396.65ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/19/index.m3u8
-194. 延迟：399.54ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/36/live.m3u8
-195. 延迟：406.16ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/18/index.m3u8
-196. 延迟：406.57ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/13/index.m3u8
-197. 延迟：408.06ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
-198. 延迟：416.00ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8
-199. 延迟：425.72ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8
-200. 延迟：425.98ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/15/index.m3u8
-201. 延迟：427.08ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1029_1.m3u8
-202. 延迟：427.31ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/37/index.m3u8
-203. 延迟：427.95ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/46/live.m3u8
-204. 延迟：430.12ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1008_1.m3u8
-205. 延迟：436.58ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1044_1.m3u8
-206. 延迟：437.43ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1002_1.m3u8
-207. 延迟：438.38ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1024_1.m3u8
-208. 延迟：441.18ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1015_1.m3u8
-209. 延迟：441.75ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/45/live.m3u8
-210. 延迟：449.28ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1089_1.m3u8
-211. 延迟：455.12ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1026_1.m3u8
-212. 延迟：456.38ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1022_1.m3u8
-213. 延迟：456.62ms | 分辨率：unknown  | URL：http://ali-m-l.cztv.com:80/channels/lantian/channel001/1080p.m3u8
-214. 延迟：457.69ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/40/index.m3u8
-215. 延迟：460.46ms | 分辨率：unknown  | URL：http://183.222.242.31:8088/hls/35/index.m3u8
-216. 延迟：460.87ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1020_1.m3u8
-217. 延迟：460.88ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1079_1.m3u8
-218. 延迟：462.65ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/5/index.m3u8
-219. 延迟：462.79ms | 分辨率：unknown  | URL：http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
-220. 延迟：464.94ms | 分辨率：unknown  | URL：http://221.226.51.220:50081/newlive/live/hls/4/live.m3u8
-221. 延迟：465.81ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1073_1.m3u8
-222. 延迟：468.91ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1055_1.m3u8
-223. 延迟：471.75ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1018_1.m3u8
-224. 延迟：474.16ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/2/index.m3u8
-225. 延迟：474.40ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/6/index.m3u8
-226. 延迟：475.04ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1023_1.m3u8
-227. 延迟：477.09ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1030_1.m3u8
-228. 延迟：481.10ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1068_1.m3u8
-229. 延迟：483.66ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/4/index.m3u8
-230. 延迟：484.98ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1025_1.m3u8
-231. 延迟：485.35ms | 分辨率：unknown  | URL：http://219.146.95.58:59902/tsfile/live/0110_1.m3u8
-232. 延迟：486.00ms | 分辨率：unknown  | URL：http://112.46.85.60:8009/hls/507/index.m3u8
-233. 延迟：486.67ms | 分辨率：unknown  | URL：http://sun135790.x3322.net:9901/tsfile/live/16035_1.m3u8?key=txiptv&playlive=1&authid=0
-234. 延迟：487.17ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1037_1.m3u8
-235. 延迟：487.62ms | 分辨率：unknown  | URL：http://153.0.171.163:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
-236. 延迟：487.77ms | 分辨率：unknown  | URL：http://112.46.85.60:8009/hls/509/index.m3u8
-237. 延迟：489.22ms | 分辨率：unknown  | URL：http://153.0.171.163:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
-238. 延迟：490.90ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1028_1.m3u8
-239. 延迟：492.19ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/32/index.m3u8
-240. 延迟：493.00ms | 分辨率：unknown  | URL：http://8.138.7.223/tv/hxws.m3u8
-241. 延迟：493.07ms | 分辨率：unknown  | URL：http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8
-242. 延迟：494.33ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0130_1.m3u8
-243. 延迟：494.39ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1069_1.m3u8
-244. 延迟：494.92ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0131_1.m3u8
-245. 延迟：495.34ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000099.m3u8
+  1. 延迟： 38.39ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv12.m3u8
+  2. 延迟： 38.55ms | 分辨率：unknown  | URL：http://69.30.246.194/live/hnws.m3u8
+  3. 延迟： 38.86ms | 分辨率：unknown  | URL：http://69.30.246.194/live/jsws.m3u8
+  4. 延迟： 59.46ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009
+  5. 延迟： 59.66ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/guangdong.m3u8
+  6. 延迟： 59.89ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/dongnan.m3u8
+  7. 延迟： 59.94ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/anhui.m3u8
+  8. 延迟： 59.99ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV14.m3u8
+  9. 延迟： 60.38ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/gansu.m3u8
+ 10. 延迟： 60.42ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV3.m3u8
+ 11. 延迟： 60.44ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/hunan.m3u8
+ 12. 延迟： 60.54ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV15.m3u8
+ 13. 延迟： 60.60ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV5.m3u8
+ 14. 延迟： 60.88ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/jiangxi.m3u8
+ 15. 延迟： 60.90ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/guangxi.m3u8
+ 16. 延迟： 61.78ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV9.m3u8
+ 17. 延迟： 62.17ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV17.m3u8
+ 18. 延迟： 62.41ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV5p.m3u8
+ 19. 延迟： 62.99ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV7.m3u8
+ 20. 延迟： 64.85ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/guizhou.m3u8
+ 21. 延迟： 65.69ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/jilin.m3u8
+ 22. 延迟： 66.54ms | 分辨率：unknown  | URL：http://23.237.228.134/live3/CCTV12.m3u8
+ 23. 延迟： 75.88ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/zhejiang.m3u8
+ 24. 延迟： 76.96ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv16.m3u8
+ 25. 延迟： 77.27ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv14.m3u8
+ 26. 延迟： 77.66ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/hebei.m3u8
+ 27. 延迟： 77.66ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv15.m3u8
+ 28. 延迟： 77.78ms | 分辨率：unknown  | URL：http://69.30.246.194/live/zjws.m3u8
+ 29. 延迟： 77.81ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/shenzhen.m3u8
+ 30. 延迟： 77.91ms | 分辨率：unknown  | URL：http://69.30.246.194/live/dfws.m3u8
+ 31. 延迟： 78.04ms | 分辨率：unknown  | URL：http://69.30.246.194/live/cctv11.m3u8
+ 32. 延迟： 78.67ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/hubei.m3u8
+ 33. 延迟： 81.39ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/hainan.m3u8
+ 34. 延迟： 98.17ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
+ 35. 延迟：118.58ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
+ 36. 延迟：119.54ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/liaoning.m3u8
+ 37. 延迟：119.78ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV10.m3u8
+ 38. 延迟：119.99ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV2.m3u8
+ 39. 延迟：120.11ms | 分辨率：1920x1080 | URL：http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
+ 40. 延迟：120.14ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/qinghai.m3u8
+ 41. 延迟：120.22ms | 分辨率：unknown  | URL：http://23.237.228.134/live6/chongqing.m3u8
+ 42. 延迟：120.44ms | 分辨率：unknown  | URL：http://23.237.228.134/live5/CCTV1.m3u8
+ 43. 延迟：120.62ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/tianjing.m3u8
+ 44. 延迟：120.64ms | 分辨率：unknown  | URL：http://23.237.228.134/live8/neimenggu.m3u8
+ 45. 延迟：120.92ms | 分辨率：unknown  | URL：http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
+ 46. 延迟：121.11ms | 分辨率：1920x1080 | URL：http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
+ 47. 延迟：128.25ms | 分辨率：unknown  | URL：https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
+ 48. 延迟：135.21ms | 分辨率：unknown  | URL：http://r.jdshipin.com/qClQf
+ 49. 延迟：136.80ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
+ 50. 延迟：136.92ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
+ 51. 延迟：137.37ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub
+ 52. 延迟：137.39ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
+ 53. 延迟：137.53ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
+ 54. 延迟：137.61ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
+ 55. 延迟：138.16ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub
+ 56. 延迟：195.37ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
+ 57. 延迟：195.76ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
+ 58. 延迟：195.94ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub
+ 59. 延迟：196.02ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
+ 60. 延迟：196.09ms | 分辨率：unknown  | URL：http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
+ 61. 延迟：199.26ms | 分辨率：unknown  | URL：http://r.jdshipin.com/cCCzW
+ 62. 延迟：203.75ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/9/index.m3u8
+ 63. 延迟：203.84ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/15/index.m3u8
+ 64. 延迟：203.87ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/1/index.m3u8
+ 65. 延迟：203.87ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/42/index.m3u8
+ 66. 延迟：203.88ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/26/index.m3u8
+ 67. 延迟：203.92ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/16/index.m3u8
+ 68. 延迟：203.93ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/32/index.m3u8
+ 69. 延迟：204.02ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/40/index.m3u8
+ 70. 延迟：204.03ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/29/index.m3u8
+ 71. 延迟：204.23ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/3/index.m3u8
+ 72. 延迟：206.16ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/33/index.m3u8
+ 73. 延迟：206.35ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/10/index.m3u8
+ 74. 延迟：206.42ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/27/index.m3u8
+ 75. 延迟：206.59ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/5/index.m3u8
+ 76. 延迟：206.62ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/31/index.m3u8
+ 77. 延迟：206.86ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/36/index.m3u8
+ 78. 延迟：206.88ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/7/index.m3u8
+ 79. 延迟：206.93ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/41/index.m3u8
+ 80. 延迟：207.69ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/6/index.m3u8
+ 81. 延迟：213.34ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/49/index.m3u8
+ 82. 延迟：213.37ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/11/index.m3u8
+ 83. 延迟：213.54ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/13/index.m3u8
+ 84. 延迟：213.75ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/35/index.m3u8
+ 85. 延迟：213.83ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/12/index.m3u8
+ 86. 延迟：213.96ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/2/index.m3u8
+ 87. 延迟：214.06ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/44/index.m3u8
+ 88. 延迟：214.67ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/47/index.m3u8
+ 89. 延迟：214.86ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/50/index.m3u8
+ 90. 延迟：215.38ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/14/index.m3u8
+ 91. 延迟：215.44ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/46/index.m3u8
+ 92. 延迟：215.62ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/30/index.m3u8
+ 93. 延迟：216.87ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/35/index.m3u8
+ 94. 延迟：216.89ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/17/index.m3u8
+ 95. 延迟：217.57ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/13/index.m3u8
+ 96. 延迟：220.05ms | 分辨率：unknown  | URL：https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8
+ 97. 延迟：220.92ms | 分辨率：unknown  | URL：http://r.jdshipin.com/yDoTN
+ 98. 延迟：221.71ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/33/index.m3u8
+ 99. 延迟：224.81ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/39/index.m3u8
+100. 延迟：229.01ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/37/index.m3u8
+101. 延迟：234.19ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1024_1.m3u8
+102. 延迟：255.54ms | 分辨率：unknown  | URL：https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8
+103. 延迟：257.66ms | 分辨率：unknown  | URL：http://112.46.85.60:8009/hls/33/index.m3u8
+104. 延迟：264.42ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/80/index.m3u8
+105. 延迟：267.49ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/42/index.m3u8
+106. 延迟：268.48ms | 分辨率：unknown  | URL：http://27.41.245.32:801/hls/2/index.m3u8
+107. 延迟：270.49ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/41/index.m3u8
+108. 延迟：270.57ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/33/index.m3u8
+109. 延迟：271.50ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/45/index.m3u8
+110. 延迟：273.26ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/60/index.m3u8
+111. 延迟：274.23ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/64/index.m3u8
+112. 延迟：274.33ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/96/index.m3u8
+113. 延迟：274.48ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/10/index.m3u8
+114. 延迟：274.53ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1038_1.m3u8
+115. 延迟：274.66ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/0001_1.m3u8
+116. 延迟：274.66ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1044_1.m3u8
+117. 延迟：274.79ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/53/index.m3u8
+118. 延迟：274.87ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000075.m3u8
+119. 延迟：275.00ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1034_1.m3u8
+120. 延迟：275.04ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000095.m3u8
+121. 延迟：275.05ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
+122. 延迟：275.20ms | 分辨率：unknown  | URL：http://60.16.0.216:5757/hls/37/index.m3u8
+123. 延迟：275.75ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000122.m3u8
+124. 延迟：275.80ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/124/index.m3u8
+125. 延迟：275.84ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1057_1.m3u8
+126. 延迟：275.86ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/94/index.m3u8
+127. 延迟：276.01ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1036_1.m3u8
+128. 延迟：276.22ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/19/index.m3u8
+129. 延迟：276.33ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1042_1.m3u8
+130. 延迟：276.57ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1033_1.m3u8
+131. 延迟：276.63ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1014_1.m3u8
+132. 延迟：276.63ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1007_1.m3u8
+133. 延迟：276.66ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1013_1.m3u8
+134. 延迟：276.75ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1000_1.m3u8
+135. 延迟：276.75ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1031_1.m3u8
+136. 延迟：276.76ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1046_1.m3u8
+137. 延迟：276.82ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1032_1.m3u8
+138. 延迟：276.91ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
+139. 延迟：276.93ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
+140. 延迟：277.34ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
+141. 延迟：277.46ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/0019_1.m3u8
+142. 延迟：277.54ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1011_1.m3u8
+143. 延迟：277.60ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1010_1.m3u8
+144. 延迟：277.76ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/17/index.m3u8
+145. 延迟：278.45ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/31/index.m3u8
+146. 延迟：282.50ms | 分辨率：unknown  | URL：http://183.11.239.36:808/hls/7/index.m3u8
+147. 延迟：282.78ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0130_1.m3u8
+148. 延迟：283.05ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0011_1.m3u8
+149. 延迟：284.03ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0006_1.m3u8
+150. 延迟：284.71ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1043_1.m3u8
+151. 延迟：285.10ms | 分辨率：unknown  | URL：http://61.136.172.236:9901/tsfile/live/0139_1.m3u8
+152. 延迟：285.82ms | 分辨率：unknown  | URL：http://cssbyd.imwork.net:8082/hls/6/index.m3u8
+153. 延迟：286.08ms | 分辨率：unknown  | URL：http://cssbyd.imwork.net:8082/hls/41/index.m3u8
+154. 延迟：286.44ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1035_1.m3u8
+155. 延迟：286.66ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1056_1.m3u8
+156. 延迟：286.85ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
+157. 延迟：286.99ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1003_1.m3u8
+158. 延迟：286.99ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1022_1.m3u8
+159. 延迟：287.01ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
+160. 延迟：287.06ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1030_1.m3u8
+161. 延迟：287.14ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1040_1.m3u8
+162. 延迟：287.19ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1050_1.m3u8
+163. 延迟：287.19ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1055_1.m3u8
+164. 延迟：287.35ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1048_1.m3u8
+165. 延迟：287.35ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
+166. 延迟：287.50ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
+167. 延迟：287.54ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1049_1.m3u8
+168. 延迟：287.73ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1012_1.m3u8
+169. 延迟：287.74ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1021_1.m3u8
+170. 延迟：287.75ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1028_1.m3u8
+171. 延迟：288.10ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1002_1.m3u8
+172. 延迟：288.37ms | 分辨率：unknown  | URL：http://58.57.40.22:9901/tsfile/live/1008_1.m3u8
+173. 延迟：290.12ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000481.m3u8
+174. 延迟：293.94ms | 分辨率：3840x2160 | URL：http://r.jdshipin.com/n90gt
+175. 延迟：300.13ms | 分辨率：unknown  | URL：https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqing
+176. 延迟：300.14ms | 分辨率：unknown  | URL：https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8
+177. 延迟：317.78ms | 分辨率：3840x2160 | URL：http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
+178. 延迟：324.30ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/38/index.m3u8
+179. 延迟：333.45ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/51/index.m3u8
+180. 延迟：335.37ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/41/index.m3u8
+181. 延迟：340.77ms | 分辨率：unknown  | URL：http://111.61.236.247:9081/hls/48/index.m3u8
+182. 延迟：358.05ms | 分辨率：unknown  | URL：http://124.116.183.146:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+183. 延迟：384.44ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000473.m3u8
+184. 延迟：385.62ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000098.m3u8
+185. 延迟：389.96ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000117.m3u8
+186. 延迟：392.61ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000110.m3u8
+187. 延迟：404.15ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000124.m3u8
+188. 延迟：408.05ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/38/index.m3u8
+189. 延迟：413.21ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/8/index.m3u8
+190. 延迟：413.37ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/48/index.m3u8
+191. 延迟：420.70ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8
+192. 延迟：421.62ms | 分辨率：unknown  | URL：http://120.76.248.139/live/bfgd/4200000111.m3u8
+193. 延迟：422.13ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/48/live.m3u8
+194. 延迟：423.22ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1096_1.m3u8
+195. 延迟：427.42ms | 分辨率：unknown  | URL：http://112.27.235.94:8000/hls/34/index.m3u8
+196. 延迟：427.75ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/14/index.m3u8
+197. 延迟：428.42ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/38/index.m3u8
+198. 延迟：428.73ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/18/index.m3u8
+199. 延迟：433.72ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/11/index.m3u8
+200. 延迟：443.29ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/10/index.m3u8
+201. 延迟：444.64ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/36/live.m3u8
+202. 延迟：446.34ms | 分辨率：unknown  | URL：http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8
+203. 延迟：448.16ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/34/live.m3u8
+204. 延迟：448.79ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1026_1.m3u8
+205. 延迟：460.66ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1077_1.m3u8
+206. 延迟：464.45ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/31/live.m3u8
+207. 延迟：468.82ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/15/index.m3u8
+208. 延迟：469.58ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1020_1.m3u8
+209. 延迟：473.00ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8
+210. 延迟：475.33ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1089_1.m3u8
+211. 延迟：476.08ms | 分辨率：unknown  | URL：https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4
+212. 延迟：476.91ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1046_1.m3u8
+213. 延迟：477.54ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1044_1.m3u8
+214. 延迟：480.92ms | 分辨率：unknown  | URL：http://36.32.174.67:60080/newlive/live/hls/24/live.m3u8
+215. 延迟：481.63ms | 分辨率：unknown  | URL：http://39.152.103.17:8089/tsfile/live/1015_1.m3u8
+216. 延迟：490.37ms | 分辨率：unknown  | URL：http://120.211.62.180:8000/hls/40/index.m3u8
+217. 延迟：493.59ms | 分辨率：unknown  | URL：http://120.238.94.10:9901/tsfile/live/1022_1.m3u8
+218. 延迟：499.25ms | 分辨率：unknown  | URL：http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
 
 【失败URL列表】
-  1. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV13
-  2. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/vny1wblsnch/index.m3u8
-  3. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=广西卫视
-  4. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV12
-  5. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=黑龙江卫视
-  6. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gsws
-  7. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0005_1.m3u8
-  8. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv17
-  9. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226152/index.m3u8
- 10. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226173/index.m3u8
- 11. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.90:5140
- 12. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV4
- 13. 原因：HTTP状态码: 403 | URL：http://tvbox6.icu/tv/mgtv.php?id=287
+  1. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=湖南卫视
+  2. 原因：连接失败       | URL：http://111.22.153.159:35455/itv/5000000011000031113.m3u8?cdn=bestzb
+  3. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=浙江卫视
+  4. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv6
+  5. 原因：HTTP状态码: 403 | URL：http://106.53.99.30/tv/cctv13.php
+  6. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv11
+  7. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=东南卫视
+  8. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=2025102308014162d44288f10c4a84b8b27a5f80ee99fd&mdspid=&spid=699067&netType=0&sid=5910021864&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838151753&ParentNodeID=-99&assertID=5910021864&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006207&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5a6e4ed4765e04fdb8e8bd37c3607a6c&ddCalcu=c56aea627e80406e3dc47736d5be80e48fbd
+  9. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=dfws
+ 10. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510250801048fff0e4b106b4345af1deefefd8d0de7&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251025080104&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.90&SecurityKey=20251025080104&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5ed99a35aabe1c5a975b3c9f32ac70d9&ddCalcu=95dee0d2799c90aa2335fa9acb3eb15c759a
+ 11. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=jlws
+ 12. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0003_1.m3u8
+ 13. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV6
  14. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226128/index.m3u8
- 15. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225739/index.m3u8
- 16. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/91wc8xdtj8/index.m3u8
- 17. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226103/index.m3u8
- 18. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225720/index.m3u8
- 19. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226147/index.m3u8
- 20. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gdws
- 21. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=天津卫视
- 22. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hunws
- 23. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226084/index.m3u8
+ 15. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV8
+ 16. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225720/index.m3u8
+ 17. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=20251023080141b90781bc871243ca9ccefdd19990364a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=147e2c56380633b791b7bb2fc8bdccc9&ddCalcu=91c4ec72ce8d20bc85c6f328b0b673b31b97
+ 18. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv7
+ 19. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV12
+ 20. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv14
+ 21. 原因：连接失败       | URL：http://43.152.143.193:80/1.v.smtcdns.net/tvlive.fengshows.cn/live/0701pcc72.flv
+ 22. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=湖北卫视
+ 23. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hubws
  24. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV1
- 25. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=江苏卫视
- 26. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225764/index.m3u8
- 27. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0012_1.m3u8
- 28. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510240801014993ead85bb84238ba256233f39ec1fe&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251024080101&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.88&SecurityKey=20251024080101&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=9a9b9f0fe534bfd0201d1b9425c62be5&ddCalcu=59eaeb922b9690cf502f4e95b314db1f0d20
- 29. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV16
- 30. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=dfws
- 31. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV10
- 32. 原因：连接失败       | URL：http://43.152.143.193:80/1.v.smtcdns.net/tvlive.fengshows.cn/live/0701phk72.flv
- 33. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.86:5140
- 34. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226132/index.m3u8
- 35. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225736/index.m3u8
- 36. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0004_1.m3u8
- 37. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0013_1.m3u8
- 38. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0009_1.m3u8
- 39. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=四川卫视
- 40. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225740/index.m3u8
- 41. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gxws
- 42. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV7
- 43. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=重温经典
- 44. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=jsws
- 45. 原因：HTTP状态码: 403 | URL：http://liveout.btzx.com.cn/62ds9e/yil08g.m3u8
- 46. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv14hd.m3u8
- 47. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=chcjtdy
- 48. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=新疆卫视
- 49. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=内蒙古卫视
- 50. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hxws
- 51. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0002_1.m3u8
- 52. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=zxs
- 53. 原因：HTTP状态码: 403 | URL：http://tv.pull.hebtv.com/jishi/weishipindao.m3u8?t=2510710360&k=3d44740039027301acf8341d7361ab59
- 54. 原因：HTTP状态码: 302 | URL：http://8.138.7.223/tv/fjtv1.php?id=dnws
- 55. 原因：连接失败       | URL：http://36.129.204.117:9003//hls/67/index.m3u8
- 56. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv5hd.m3u8
- 57. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV15
- 58. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv11hd.m3u8
- 59. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=2025091908013422d2a0f4ed5e4511b896d3d3645248f2&mdspid=&spid=699067&netType=0&sid=5910021865&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838153729&ParentNodeID=-99&assertID=5910021865&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006205&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=52692ec9c72414583509ce0cd575172e&ddCalcu=e522e7611985207e5cd9cc07e2c491045538
- 60. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=河南卫视
- 61. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226107/index.m3u8
- 62. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cqhd.m3u8
- 63. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=nmws
- 64. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv13
- 65. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225725/index.m3u8
- 66. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226136/index.m3u8
- 67. 原因：连接失败       | URL：http://111.22.153.159:35455/itv/5000000011000031123.m3u8?cdn=bestzb
- 68. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225727/index.m3u8
- 69. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV6
- 70. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV8
- 71. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hnws
- 72. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv16
- 73. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=qhws
- 74. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0011_1.m3u8
- 75. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv10hd.m3u8
- 76. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv5p
- 77. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv15
- 78. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=lgs
- 79. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225766/index.m3u8
- 80. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226149/index.m3u8
- 81. 原因：请求超时       | URL：https://other.ottiptv.cc/cwjd.m3u8
- 82. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=ynws
- 83. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hubws
- 84. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/jxhd.m3u8
- 85. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/mty4v56ud39/index.m3u8
- 86. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv3
- 87. 原因：请求超时       | URL：http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8
- 88. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=吉林卫视
- 89. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225745/index.m3u8
- 90. 原因：连接失败       | URL：http://43.152.143.193:80/1.v.smtcdns.net/tvlive.fengshows.cn/live/0701pcc72.flv
- 91. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=jxws
- 92. 原因：HTTP状态码: 404 | URL：http://74.48.192.96:82/live.php?id=CCTV17
- 93. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV5p
- 94. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=青海卫视
- 95. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv6hd.m3u8
- 96. 原因：请求超时       | URL：http://itv.iptv1688.top:2016/itv.php?id=金鹰卡通
- 97. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226090/index.m3u8
- 98. 原因：HTTP状态码: 403 | URL：http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/600/index.m3u8?msisdn=202601140802389fee40f767634affae86d7ba5c1f2df5&mdspid=&spid=699004&netType=0&sid=5500516288&pid=2028597139&timestamp=20260114080238&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=218.28.233.106&SecurityKey=20260114080238&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=WX-A1-8.12.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=254345c29fdec82abd6779270edb1d83&sv=10004&ct=android
- 99. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=ymkt
-100. 原因：HTTP状态码: 403 | URL：http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cetv2/50/20240709/index.m3u8?msisdn=202601140802499d512d62eaa74d1b80ee724fa99806db&mdspid=&spid=699004&netType=0&sid=5910022152&pid=2028597139&timestamp=20260114080249&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=923287211&ParentNodeID=-99&assertID=5910022152&client_ip=218.28.233.106&SecurityKey=20260114080249&promotionId=&mvid=5900006638&mcid=500020&playurlVersion=WX-A1-8.12.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=b9d246dd5c12d10834cf46710ab76f30&sv=10004&ct=android
-101. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0010_1.m3u8
-102. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226101/index.m3u8
-103. 原因：连接失败       | URL：http://r.jdshipin.com/NfC0f
-104. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0006_1.m3u8
-105. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/jshd.m3u8
-106. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv4hd.m3u8
-107. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0007_1.m3u8
-108. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/wzt3qbit80m/index.m3u8
-109. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226171/index.m3u8
-110. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=dnws
-111. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=chcdzdy
-112. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0003_1.m3u8
-113. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=lnws
-114. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv13hd.m3u8
-115. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=nxws
-116. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=贵州卫视
-117. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225738/index.m3u8
-118. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hbhd.m3u8
-119. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=海南卫视
-120. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225726/index.m3u8
-121. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/sdetv.m3u8
-122. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=xzws
-123. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv8hd.m3u8
-124. 原因：连接失败       | URL：http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
-125. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=香港卫视
-126. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226161/index.m3u8
-127. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=山东卫视
-128. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510250801048fff0e4b106b4345af1deefefd8d0de7&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251025080104&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.90&SecurityKey=20251025080104&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5ed99a35aabe1c5a975b3c9f32ac70d9&ddCalcu=95dee0d2799c90aa2335fa9acb3eb15c759a
-129. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv6
-130. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/sdhd.m3u8
-131. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV2
-132. 原因：请求超时       | URL：http://58.19.38.162:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-133. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gzws
-134. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/szhd.m3u8
-135. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225743/index.m3u8
-136. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=sdws
-137. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv3hd.m3u8
-138. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv2
-139. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225724/index.m3u8
-140. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv10
-141. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=202509190801346040f34e796a43e3821e1db9273c556a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=de89fe41d47757280f2c68af5d15033a&ddCalcu=ad3ee3810985f01ed451fda48767c527f208
-142. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225673/index.m3u8
-143. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226019/index.m3u8
-144. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=东南卫视
-145. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=202509190801349730ff2fd0254ae4ad096d68d3fc7f35&mdspid=&spid=699067&netType=0&sid=5910021864&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838151753&ParentNodeID=-99&assertID=5910021864&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006207&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=b0d57eedc76b6ea1b6b460ea0a8ac2d3&ddCalcu=3bd0e2d1c58a708eae0dace7066b46be6ab1
-146. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=西藏卫视
-147. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CHC家庭影院
-148. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hinws
-149. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/zjhd.m3u8
-150. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=2025102308014162d44288f10c4a84b8b27a5f80ee99fd&mdspid=&spid=699067&netType=0&sid=5910021864&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838151753&ParentNodeID=-99&assertID=5910021864&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006207&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5a6e4ed4765e04fdb8e8bd37c3607a6c&ddCalcu=c56aea627e80406e3dc47736d5be80e48fbd
-151. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=cqws
-152. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv9hd.m3u8
-153. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv7hd.m3u8
-154. 原因：请求超时       | URL：http://58.19.38.162:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-155. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV11
-156. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv11
-157. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv2hd.m3u8
-158. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/tjhd.m3u8
-159. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/btv1hd.m3u8
-160. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=20251023080141b90781bc871243ca9ccefdd19990364a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=147e2c56380633b791b7bb2fc8bdccc9&ddCalcu=91c4ec72ce8d20bc85c6f328b0b673b31b97
-161. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv9
-162. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hljhd.m3u8
-163. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226154/index.m3u8
-164. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20250927080126244a72fa1b554182ae03568fff35bca7&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20250927080126&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20250927080126&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=41ee1554c91427e91ee78ce8b64f7a33&ddCalcu=3431eae27e9f104565b48ce9c18472e7ee19
-165. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV5
-166. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/dfhd.m3u8
-167. 原因：连接失败       | URL：http://111.22.153.159:35455/itv/5000000011000031113.m3u8?cdn=bestzb
-168. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226094/index.m3u8
-169. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=江西卫视
-170. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=河北卫视
-171. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=浙江卫视
-172. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226122/index.m3u8
-173. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=重庆卫视
-174. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/schd.m3u8
-175. 原因：连接失败       | URL：http://43.152.143.193:80/1.v.smtcdns.net/tvlive.fengshows.cn/live/0701pin72.flv
-176. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226124/index.m3u8
-177. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv12hd.m3u8
-178. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225731/index.m3u8
-179. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=甘肃卫视
-180. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv5
-181. 原因：HTTP状态码: 403 | URL：http://106.53.99.30/tv/cctv13.php
-182. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225701/index.m3u8
-183. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=深圳卫视
-184. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/dnhd.m3u8
-185. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0008_1.m3u8
-186. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.93:5140
-187. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=安徽卫视
-188. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv4
-189. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=广东卫视
-190. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20251023080146a623a1a467704de1bb9f78bcfbe3cb85&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251023080146&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20251023080146&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=dac6a2cd92e52b24f75ac42655739371&ddCalcu=1d7ae3c29693a0725c5d69224ec5a25b72f4
-191. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226120/index.m3u8
-192. 原因：连接失败       | URL：http://119.32.12.17:2901/udp/224.1.100.9:11111
-193. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226153/index.m3u8
-194. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225728/index.m3u8
-195. 原因：连接失败       | URL：http://live.nbs.cn/channels/njtv/sepd/nbs23.m3u8
-196. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225747/index.m3u8
-197. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv7
-198. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=xjws
-199. 原因：HTTP状态码: 302 | URL：http://8.138.7.223/tv/fjtv1.php?id=xmws
-200. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv12
-201. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0014_1.m3u8
-202. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225742/index.m3u8
-203. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CHC动作电影
-204. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv8
-205. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv1hd.m3u8
-206. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0001_1.m3u8
-207. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/lnhd.m3u8
-208. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV3
-209. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/ahhd.m3u8
-210. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225733/index.m3u8
-211. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225741/index.m3u8
-212. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225775/index.m3u8
-213. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv1
-214. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=北京卫视
-215. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV9
-216. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv14
-217. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=jlws
-218. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.96:5140
-219. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226109/index.m3u8
-220. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=辽宁卫视
-221. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hunanhd.m3u8
-222. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=20251023080141d50925a1117343ecb53b23bb6266f888&mdspid=&spid=699067&netType=0&sid=5910021865&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838153729&ParentNodeID=-99&assertID=5910021865&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006205&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=b2b216d53c7175e66065d308271343c9&ddCalcu=9bc2e3b2428310167d25830c37d157650e66
-223. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226105/index.m3u8
-224. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510260801019bd2e5ad2269402db1f8eed1067a0adc&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251026080101&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20251026080101&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=e3cb945f8f4a023db7f9184295501750&ddCalcu=0e53e7c21b909054559f284f841a90f273bd
-225. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225734/index.m3u8
-226. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV14
-227. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=湖南卫视
-228. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225729/index.m3u8
-229. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=湖北卫视
-230. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hebhd.m3u8
-231. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/gdhd.m3u8
+ 25. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0009_1.m3u8
+ 26. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=新疆卫视
+ 27. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.90:5140
+ 28. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=广东卫视
+ 29. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225741/index.m3u8
+ 30. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0011_1.m3u8
+ 31. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225738/index.m3u8
+ 32. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=cqws
+ 33. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=ymkt
+ 34. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv4
+ 35. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=山东卫视
+ 36. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=黑龙江卫视
+ 37. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225742/index.m3u8
+ 38. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226084/index.m3u8
+ 39. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226122/index.m3u8
+ 40. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/tjhd.m3u8
+ 41. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=青海卫视
+ 42. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225739/index.m3u8
+ 43. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=天津卫视
+ 44. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225731/index.m3u8
+ 45. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hnws
+ 46. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv7hd.m3u8
+ 47. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=xzws
+ 48. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv15
+ 49. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv3hd.m3u8
+ 50. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv13
+ 51. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/jshd.m3u8
+ 52. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225727/index.m3u8
+ 53. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=lnws
+ 54. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv17
+ 55. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv4hd.m3u8
+ 56. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=chcdzdy
+ 57. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV3
+ 58. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=河南卫视
+ 59. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225747/index.m3u8
+ 60. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hebhd.m3u8
+ 61. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv14hd.m3u8
+ 62. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225745/index.m3u8
+ 63. 原因：HTTP状态码: 403 | URL：http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cetv2/50/20240709/index.m3u8?msisdn=202601140802499d512d62eaa74d1b80ee724fa99806db&mdspid=&spid=699004&netType=0&sid=5910022152&pid=2028597139&timestamp=20260114080249&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=923287211&ParentNodeID=-99&assertID=5910022152&client_ip=218.28.233.106&SecurityKey=20260114080249&promotionId=&mvid=5900006638&mcid=500020&playurlVersion=WX-A1-8.12.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=b9d246dd5c12d10834cf46710ab76f30&sv=10004&ct=android
+ 64. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=nmws
+ 65. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=河北卫视
+ 66. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hunws
+ 67. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv16
+ 68. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv13hd.m3u8
+ 69. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226153/index.m3u8
+ 70. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/jxhd.m3u8
+ 71. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225729/index.m3u8
+ 72. 原因：连接失败       | URL：http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
+ 73. 原因：连接失败       | URL：http://live.nbs.cn/channels/njtv/sepd/nbs23.m3u8
+ 74. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226109/index.m3u8
+ 75. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226090/index.m3u8
+ 76. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/zjhd.m3u8
+ 77. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510240801014993ead85bb84238ba256233f39ec1fe&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251024080101&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.88&SecurityKey=20251024080101&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=9a9b9f0fe534bfd0201d1b9425c62be5&ddCalcu=59eaeb922b9690cf502f4e95b314db1f0d20
+ 78. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=zxs
+ 79. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv11hd.m3u8
+ 80. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=海南卫视
+ 81. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0006_1.m3u8
+ 82. 原因：连接失败       | URL：http://119.32.12.17:2901/udp/224.1.100.9:11111
+ 83. 原因：连接失败       | URL：http://36.129.204.117:9003//hls/67/index.m3u8
+ 84. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=江苏卫视
+ 85. 原因：HTTP状态码: 302 | URL：http://8.138.7.223/tv/fjtv1.php?id=dnws
+ 86. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv5
+ 87. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.96:5140
+ 88. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=重温经典
+ 89. 原因：HTTP状态码: 403 | URL：http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/600/index.m3u8?msisdn=202601140802389fee40f767634affae86d7ba5c1f2df5&mdspid=&spid=699004&netType=0&sid=5500516288&pid=2028597139&timestamp=20260114080238&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=218.28.233.106&SecurityKey=20260114080238&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=WX-A1-8.12.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=254345c29fdec82abd6779270edb1d83&sv=10004&ct=android
+ 90. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV2
+ 91. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=江西卫视
+ 92. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gdws
+ 93. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV5
+ 94. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/szhd.m3u8
+ 95. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225775/index.m3u8
+ 96. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226120/index.m3u8
+ 97. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CHC家庭影院
+ 98. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=吉林卫视
+ 99. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV10
+100. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=甘肃卫视
+101. 原因：请求超时       | URL：http://58.19.38.162:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
+102. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gzws
+103. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CHC动作电影
+104. 原因：连接失败       | URL：http://r.jdshipin.com/NfC0f
+105. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0014_1.m3u8
+106. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=四川卫视
+107. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv5hd.m3u8
+108. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0010_1.m3u8
+109. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/dfhd.m3u8
+110. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=20251023080141d50925a1117343ecb53b23bb6266f888&mdspid=&spid=699067&netType=0&sid=5910021865&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838153729&ParentNodeID=-99&assertID=5910021865&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006205&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=b2b216d53c7175e66065d308271343c9&ddCalcu=9bc2e3b2428310167d25830c37d157650e66
+111. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=qhws
+112. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225743/index.m3u8
+113. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hljhd.m3u8
+114. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cqhd.m3u8
+115. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225701/index.m3u8
+116. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.93:5140
+117. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=贵州卫视
+118. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv5p
+119. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225766/index.m3u8
+120. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225728/index.m3u8
+121. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225724/index.m3u8
+122. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=重庆卫视
+123. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv2hd.m3u8
+124. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510260801019bd2e5ad2269402db1f8eed1067a0adc&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251026080101&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20251026080101&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=e3cb945f8f4a023db7f9184295501750&ddCalcu=0e53e7c21b909054559f284f841a90f273bd
+125. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0007_1.m3u8
+126. 原因：请求超时       | URL：http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8
+127. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=辽宁卫视
+128. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv10
+129. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226171/index.m3u8
+130. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/wzt3qbit80m/index.m3u8
+131. 原因：连接失败       | URL：http://111.22.153.159:35455/itv/5000000011000031123.m3u8?cdn=bestzb
+132. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/lnhd.m3u8
+133. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv10hd.m3u8
+134. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225736/index.m3u8
+135. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=广西卫视
+136. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225764/index.m3u8
+137. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225734/index.m3u8
+138. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0001_1.m3u8
+139. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV7
+140. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=202509190801349730ff2fd0254ae4ad096d68d3fc7f35&mdspid=&spid=699067&netType=0&sid=5910021864&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838151753&ParentNodeID=-99&assertID=5910021864&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006207&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=b0d57eedc76b6ea1b6b460ea0a8ac2d3&ddCalcu=3bd0e2d1c58a708eae0dace7066b46be6ab1
+141. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv12hd.m3u8
+142. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/sdetv.m3u8
+143. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV14
+144. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv1
+145. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226152/index.m3u8
+146. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226019/index.m3u8
+147. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226136/index.m3u8
+148. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=ynws
+149. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=chcjtdy
+150. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=内蒙古卫视
+151. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20250927080126244a72fa1b554182ae03568fff35bca7&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20250927080126&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20250927080126&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=41ee1554c91427e91ee78ce8b64f7a33&ddCalcu=3431eae27e9f104565b48ce9c18472e7ee19
+152. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226147/index.m3u8
+153. 原因：HTTP状态码: 403 | URL：http://tv.pull.hebtv.com/jishi/weishipindao.m3u8?t=2510710360&k=3d44740039027301acf8341d7361ab59
+154. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226161/index.m3u8
+155. 原因：HTTP状态码: 403 | URL：http://liveout.btzx.com.cn/62ds9e/yil08g.m3u8
+156. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV11
+157. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=深圳卫视
+158. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226107/index.m3u8
+159. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv2
+160. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=北京卫视
+161. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv6hd.m3u8
+162. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0005_1.m3u8
+163. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gsws
+164. 原因：连接失败       | URL：http://www.lizhinas.top:1009/rtp/239.252.219.86:5140
+165. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=202509190801346040f34e796a43e3821e1db9273c556a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=de89fe41d47757280f2c68af5d15033a&ddCalcu=ad3ee3810985f01ed451fda48767c527f208
+166. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=jxws
+167. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226154/index.m3u8
+168. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV4
+169. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225733/index.m3u8
+170. 原因：请求超时       | URL：http://58.19.38.162:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
+171. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226105/index.m3u8
+172. 原因：HTTP状态码: 302 | URL：http://8.138.7.223/tv/fjtv1.php?id=xmws
+173. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV5p
+174. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=安徽卫视
+175. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=sdws
+176. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=dnws
+177. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/vny1wblsnch/index.m3u8
+178. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20251023080146a623a1a467704de1bb9f78bcfbe3cb85&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251023080146&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20251023080146&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=dac6a2cd92e52b24f75ac42655739371&ddCalcu=1d7ae3c29693a0725c5d69224ec5a25b72f4
+179. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226103/index.m3u8
+180. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0004_1.m3u8
+181. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv9
+182. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0012_1.m3u8
+183. 原因：请求超时       | URL：http://61.156.228.12:8154/tsfile/live/1001_1.m3u8
+184. 原因：HTTP状态码: 404 | URL：http://74.48.192.96:82/live.php?id=CCTV17
+185. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/sdhd.m3u8
+186. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226132/index.m3u8
+187. 原因：连接失败       | URL：http://43.152.143.193:80/1.v.smtcdns.net/tvlive.fengshows.cn/live/0701pin72.flv
+188. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv12
+189. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226101/index.m3u8
+190. 原因：连接失败       | URL：http://43.152.143.193:80/1.v.smtcdns.net/tvlive.fengshows.cn/live/0701phk72.flv
+191. 原因：HTTP状态码: 403 | URL：http://tvbox6.icu/tv/mgtv.php?id=287
+192. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=nxws
+193. 原因：请求超时       | URL：http://itv.iptv1688.top:2016/itv.php?id=金鹰卡通
+194. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226124/index.m3u8
+195. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225673/index.m3u8
+196. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hbhd.m3u8
+197. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0013_1.m3u8
+198. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv8
+199. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/91wc8xdtj8/index.m3u8
+200. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv1hd.m3u8
+201. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=西藏卫视
+202. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hxws
+203. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=CCTV16
+204. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226173/index.m3u8
+205. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=gxws
+206. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226094/index.m3u8
+207. 原因：请求超时       | URL：http://182.150.23.74:808/hls/6/index.m3u8
+208. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/gdhd.m3u8
+209. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV9
+210. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV13
+211. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221226149/index.m3u8
+212. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=lgs
+213. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225726/index.m3u8
+214. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0002_1.m3u8
+215. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/btv1hd.m3u8
+216. 原因：HTTP状态码: 404 | URL：http://148.135.93.213/live.php?id=CCTV15
+217. 原因：连接失败       | URL：http://175.8.28.207:9999/tsfile/live/0008_1.m3u8
+218. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225740/index.m3u8
+219. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=jsws
+220. 原因：HTTP状态码: 403 | URL：https://www.wmviv.com/iptv/bc2t.php?id=cctv3
+221. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/ahhd.m3u8
+222. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=hinws
+223. 原因：连接失败       | URL：http://api.kkitv.itv888.vip:8080/streams/mty4v56ud39/index.m3u8
+224. 原因：连接失败       | URL：https://zby.130519.xyz/PLTV/11/224/3221225725/index.m3u8
+225. 原因：HTTP状态码: 660 | URL：http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=2025091908013422d2a0f4ed5e4511b896d3d3645248f2&mdspid=&spid=699067&netType=0&sid=5910021865&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838153729&ParentNodeID=-99&assertID=5910021865&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006205&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=52692ec9c72414583509ce0cd575172e&ddCalcu=e522e7611985207e5cd9cc07e2c491045538
+226. 原因：HTTP状态码: 403 | URL：http://www.wmviv.com/iptv/bc2t.php?id=xjws
+227. 原因：HTTP状态码: 404 | URL：http://101.35.240.114:88/live.php?id=香港卫视
+228. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/schd.m3u8
+229. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv8hd.m3u8
+230. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/hunanhd.m3u8
+231. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/dnhd.m3u8
+232. 原因：请求超时       | URL：http://iptv.huuc.edu.cn/hls/cctv9hd.m3u8

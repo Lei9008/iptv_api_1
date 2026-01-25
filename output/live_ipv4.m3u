@@ -1,492 +1,438 @@
 #EXTM3U x-tvg-url=
-# 延迟阈值：500ms | 生成时间：2026-01-25 13:45:23
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
-http://23.237.228.134/live5/CCTV1.m3u8$ipv4•线路1(128ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV1" tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
-http://112.27.235.94:8000/hls/1/index.m3u8$ipv4•线路2(203ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV1" tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
-http://183.11.239.36:808/hls/19/index.m3u8$ipv4•线路3(256ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV1" tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
-http://120.238.94.10:9901/tsfile/live/1018_1.m3u8$ipv4•线路4(472ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV2" tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
-http://23.237.228.134/live5/CCTV2.m3u8$ipv4•线路1(124ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
-http://112.27.235.94:8000/hls/2/index.m3u8$ipv4•线路2(205ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV2" tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
-http://27.41.245.32:801/hls/2/index.m3u8$ipv4•线路3(474ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV3" tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
-http://23.237.228.134/live5/CCTV3.m3u8$ipv4•线路1(63ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV3" tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
-http://112.27.235.94:8000/hls/3/index.m3u8$ipv4•线路2(204ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV3" tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
-http://58.57.40.22:9901/tsfile/live/1002_1.m3u8$ipv4•线路3(269ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV3" tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
-http://39.152.103.17:8089/tsfile/live/1002_1.m3u8$ipv4•线路4(437ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV3" tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
-http://120.238.94.10:9901/tsfile/live/1020_1.m3u8$ipv4•线路5(461ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV4" tvg-logo="pic/logos/CCTV4.png" group-title="┃央视频道",CCTV4
-http://112.27.235.94:8000/hls/4/index.m3u8$ipv4•线路1(193ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV4" tvg-logo="pic/logos/CCTV4.png" group-title="┃央视频道",CCTV4
-http://221.226.51.220:50081/newlive/live/hls/4/live.m3u8$ipv4•线路2(465ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV4" tvg-logo="pic/logos/CCTV4.png" group-title="┃央视频道",CCTV4
-http://120.211.62.180:8000/hls/4/index.m3u8$ipv4•线路3(484ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV5" tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
-http://23.237.228.134/live5/CCTV5.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV5" tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
-http://23.237.228.134/live5/CCTV5p.m3u8$ipv4•线路2(65ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV5" tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
-http://112.27.235.94:8000/hls/5/index.m3u8$ipv4•线路3(194ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV5" tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
-http://58.57.40.22:9901/tsfile/live/1004_1.m3u8$ipv4•线路4(268ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV5" tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
-http://120.238.94.10:9901/tsfile/live/1022_1.m3u8$ipv4•线路5(456ms)
-#EXTINF:-1 tvg-id="6" tvg-name="CCTV5" tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
-http://27.41.245.32:801/hls/5/index.m3u8$ipv4•线路6(463ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV5+" tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
-http://112.27.235.94:8000/hls/6/index.m3u8$ipv4•线路1(194ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV5+" tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
-http://120.76.248.139/live/bfgd/4200000246.m3u8$ipv4•线路2(256ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV5+" tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
-http://58.57.40.22:9901/tsfile/live/1005_1.m3u8$ipv4•线路3(268ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV5+" tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
-http://120.211.62.180:8000/hls/18/index.m3u8$ipv4•线路4(406ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV5+" tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
-http://120.238.94.10:9901/tsfile/live/1023_1.m3u8$ipv4•线路5(475ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV6" tvg-logo="pic/logos/CCTV6.png" group-title="┃央视频道",CCTV6
-http://112.27.235.94:8000/hls/7/index.m3u8$ipv4•线路1(194ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV6" tvg-logo="pic/logos/CCTV6.png" group-title="┃央视频道",CCTV6
-http://27.41.245.32:801/hls/6/index.m3u8$ipv4•线路2(474ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV7" tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
-http://23.237.228.134/live5/CCTV7.m3u8$ipv4•线路1(63ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV7" tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
-http://27.41.245.32:801/hls/7/index.m3u8$ipv4•线路2(237ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV7" tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
-http://58.57.40.22:9901/tsfile/live/1007_1.m3u8$ipv4•线路3(267ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV7" tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
-http://112.27.235.94:8000/hls/8/index.m3u8$ipv4•线路4(390ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV7" tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
-http://120.238.94.10:9901/tsfile/live/1025_1.m3u8$ipv4•线路5(485ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV8" tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
-http://27.41.245.32:801/hls/8/index.m3u8$ipv4•线路1(237ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV8" tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
-http://183.11.239.36:808/hls/96/index.m3u8$ipv4•线路2(251ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV8" tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
-http://58.57.40.22:9901/tsfile/live/1008_1.m3u8$ipv4•线路3(268ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV8" tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
-http://112.27.235.94:8000/hls/9/index.m3u8$ipv4•线路4(392ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV8" tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
-http://120.238.94.10:9901/tsfile/live/1026_1.m3u8$ipv4•线路5(455ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV9" tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
-http://23.237.228.134/live5/CCTV9.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV9" tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
-http://112.27.235.94:8000/hls/10/index.m3u8$ipv4•线路2(193ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV9" tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
-http://27.41.245.32:801/hls/9/index.m3u8$ipv4•线路3(238ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV9" tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
-http://58.57.40.22:9901/tsfile/live/1009_1.m3u8$ipv4•线路4(262ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV9" tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
-http://112.46.85.60:8009/hls/509/index.m3u8$ipv4•线路5(488ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV10" tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
-http://23.237.228.134/live5/CCTV10.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV10" tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
-http://112.27.235.94:8000/hls/11/index.m3u8$ipv4•线路2(194ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV10" tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
-http://120.211.62.180:8000/hls/10/index.m3u8$ipv4•线路3(236ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV10" tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
-http://27.41.245.32:801/hls/10/index.m3u8$ipv4•线路4(237ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV10" tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
-http://58.57.40.22:9901/tsfile/live/1010_1.m3u8$ipv4•线路5(268ms)
-#EXTINF:-1 tvg-id="6" tvg-name="CCTV10" tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
-http://120.238.94.10:9901/tsfile/live/1028_1.m3u8$ipv4•线路6(491ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV11" tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
-http://69.30.246.194/live/cctv11.m3u8$ipv4•线路1(26ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV11" tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
-http://112.27.235.94:8000/hls/12/index.m3u8$ipv4•线路2(206ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV11" tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
-http://120.211.62.180:8000/hls/11/index.m3u8$ipv4•线路3(236ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV11" tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
-http://120.238.94.10:9901/tsfile/live/1029_1.m3u8$ipv4•线路4(427ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV12" tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
-http://69.30.246.194/live/cctv12.m3u8$ipv4•线路1(13ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV12" tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
-http://23.237.228.134/live3/CCTV12.m3u8$ipv4•线路2(62ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV12" tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
-http://112.27.235.94:8000/hls/13/index.m3u8$ipv4•线路3(202ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV12" tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
-http://58.57.40.22:9901/tsfile/live/1012_1.m3u8$ipv4•线路4(285ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV12" tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
-http://120.238.94.10:9901/tsfile/live/1030_1.m3u8$ipv4•线路5(477ms)
-#EXTINF:-1 tvg-id="6" tvg-name="CCTV12" tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
-http://112.46.85.60:8009/hls/507/index.m3u8$ipv4•线路6(486ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV13" tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
-http://112.27.235.94:8000/hls/14/index.m3u8$ipv4•线路1(206ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV13" tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
-http://8.138.7.223/【公众号：榴芒电视】/cctv13.m3u8$ipv4•线路2(247ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV13" tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
-http://58.57.40.22:9901/tsfile/live/1013_1.m3u8$ipv4•线路3(262ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV13" tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
-http://120.211.62.180:8000/hls/13/index.m3u8$ipv4•线路4(407ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV14" tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
-http://69.30.246.194/live/cctv14.m3u8$ipv4•线路1(13ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV14" tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
-http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路2(123ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV14" tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
-http://120.211.62.180:8000/hls/14/index.m3u8$ipv4•线路3(200ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV14" tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
-http://27.41.245.32:801/hls/14/index.m3u8$ipv4•线路4(238ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV14" tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
-http://58.57.40.22:9901/tsfile/live/1014_1.m3u8$ipv4•线路5(270ms)
-#EXTINF:-1 tvg-id="6" tvg-name="CCTV14" tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
-http://112.27.235.94:8000/hls/15/index.m3u8$ipv4•线路6(387ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV15" tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
-http://69.30.246.194/live/cctv15.m3u8$ipv4•线路1(26ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV15" tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
-http://23.237.228.134/live3/CCTV15.m3u8$ipv4•线路2(124ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV15" tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
-http://112.27.235.94:8000/hls/16/index.m3u8$ipv4•线路3(194ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV15" tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
-http://183.11.239.36:808/hls/102/index.m3u8$ipv4•线路4(251ms)
-#EXTINF:-1 tvg-id="5" tvg-name="CCTV15" tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
-http://58.57.40.22:9901/tsfile/live/1015_1.m3u8$ipv4•线路5(268ms)
-#EXTINF:-1 tvg-id="6" tvg-name="CCTV15" tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
-http://120.211.62.180:8000/hls/15/index.m3u8$ipv4•线路6(426ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV16" tvg-logo="pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16
-http://69.30.246.194/live/cctv16.m3u8$ipv4•线路1(26ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV16" tvg-logo="pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16
-http://183.11.239.36:808/hls/169/index.m3u8$ipv4•线路2(254ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV16" tvg-logo="pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16
-http://gmxw.7766.org:808/hls/169/index.m3u8$ipv4•线路3(261ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV16" tvg-logo="pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16
-http://39.152.103.17:8089/tsfile/live/1015_1.m3u8$ipv4•线路4(441ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV17" tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
-http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="CCTV17" tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
-http://120.211.62.180:8000/hls/17/index.m3u8$ipv4•线路2(238ms)
-#EXTINF:-1 tvg-id="3" tvg-name="CCTV17" tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
-http://183.11.239.36:808/hls/35/index.m3u8$ipv4•线路3(252ms)
-#EXTINF:-1 tvg-id="4" tvg-name="CCTV17" tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
-http://58.57.40.22:9901/tsfile/live/0019_1.m3u8$ipv4•线路4(268ms)
-#EXTINF:-1 tvg-id="1" tvg-name="重温经典" tvg-logo="" group-title="┃央视频道",重温经典
-http://112.27.235.94:8000/hls/50/index.m3u8$ipv4(193ms)
-#EXTINF:-1 tvg-id="1" tvg-name="第一剧场" tvg-logo="pic/logo/第一剧场.png" group-title="┃央视付费频道",第一剧场
-http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$ipv4•线路1(123ms)
-#EXTINF:-1 tvg-id="2" tvg-name="第一剧场" tvg-logo="pic/logo/第一剧场.png" group-title="┃央视付费频道",第一剧场
-https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8$ipv4•线路2(325ms)
-#EXTINF:-1 tvg-id="1" tvg-name="风云剧场" tvg-logo="pic/logo/风云剧场.png" group-title="┃央视付费频道",风云剧场
-http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub$ipv4(74ms)
-#EXTINF:-1 tvg-id="1" tvg-name="怀旧剧场" tvg-logo="pic/logo/怀旧剧场.png" group-title="┃央视付费频道",怀旧剧场
-http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub$ipv4(408ms)
-#EXTINF:-1 tvg-id="1" tvg-name="风云音乐" tvg-logo="pic/logo/风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$ipv4•线路1(122ms)
-#EXTINF:-1 tvg-id="2" tvg-name="风云音乐" tvg-logo="pic/logo/风云音乐.png" group-title="┃央视付费频道",风云音乐
-http://120.238.94.10:9901/tsfile/live/1089_1.m3u8$ipv4•线路2(449ms)
-#EXTINF:-1 tvg-id="1" tvg-name="高尔夫网球" tvg-logo="pic/logo/高尔夫网球.png" group-title="┃央视付费频道",高尔夫网球
-http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub$ipv4(77ms)
-#EXTINF:-1 tvg-id="1" tvg-name="风云足球" tvg-logo="pic/logo/风云足球.png" group-title="┃央视付费频道",风云足球
-http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub$ipv4•线路1(122ms)
-#EXTINF:-1 tvg-id="2" tvg-name="风云足球" tvg-logo="pic/logo/风云足球.png" group-title="┃央视付费频道",风云足球
-http://27.41.245.32:801/hls/906/index.m3u8$ipv4•线路2(237ms)
-#EXTINF:-1 tvg-id="3" tvg-name="风云足球" tvg-logo="pic/logo/风云足球.png" group-title="┃央视付费频道",风云足球
-https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8$ipv4•线路3(250ms)
-#EXTINF:-1 tvg-id="1" tvg-name="世界地理" tvg-logo="pic/logo/世界地理.png" group-title="┃央视付费频道",世界地理
-http://hmfs.f3322.net:3388/hls/28/index.m3u8$ipv4(259ms)
-#EXTINF:-1 tvg-id="1" tvg-name="兵器科技" tvg-logo="pic/logos/兵器科技.png" group-title="┃央视付费频道",兵器科技
-http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$ipv4(116ms)
-#EXTINF:-1 tvg-id="1" tvg-name="山东卫视" tvg-logo="pic/logo/山东卫视.png" group-title="┃卫视频道",山东卫视
-http://112.27.235.94:8000/hls/34/index.m3u8$ipv4•线路1(198ms)
-#EXTINF:-1 tvg-id="2" tvg-name="山东卫视" tvg-logo="pic/logo/山东卫视.png" group-title="┃卫视频道",山东卫视
-http://120.211.62.180:8000/hls/38/index.m3u8$ipv4•线路2(222ms)
-#EXTINF:-1 tvg-id="3" tvg-name="山东卫视" tvg-logo="pic/logo/山东卫视.png" group-title="┃卫视频道",山东卫视
-http://61.136.172.236:9901/tsfile/live/0131_1.m3u8$ipv4•线路3(495ms)
-#EXTINF:-1 tvg-id="4" tvg-name="山东卫视" tvg-logo="pic/logo/山东卫视.png" group-title="┃卫视频道",山东卫视
-http://120.76.248.139/live/bfgd/4200000099.m3u8$ipv4•线路4(495ms)
-#EXTINF:-1 tvg-id="1" tvg-name="北京卫视" tvg-logo="pic/logos/北京卫视.png" group-title="┃卫视频道",北京卫视
-http://112.27.235.94:8000/hls/27/index.m3u8$ipv4•线路1(194ms)
-#EXTINF:-1 tvg-id="2" tvg-name="北京卫视" tvg-logo="pic/logos/北京卫视.png" group-title="┃卫视频道",北京卫视
-http://120.211.62.180:8000/hls/35/index.m3u8$ipv4•线路2(210ms)
-#EXTINF:-1 tvg-id="3" tvg-name="北京卫视" tvg-logo="pic/logos/北京卫视.png" group-title="┃卫视频道",北京卫视
-http://58.57.40.22:9901/tsfile/live/1032_1.m3u8$ipv4•线路3(263ms)
-#EXTINF:-1 tvg-id="1" tvg-name="东方卫视" tvg-logo="pic/logo/东方卫视.png" group-title="┃卫视频道",东方卫视
-http://69.30.246.194/live/dfws.m3u8$ipv4•线路1(26ms)
-#EXTINF:-1 tvg-id="2" tvg-name="东方卫视" tvg-logo="pic/logo/东方卫视.png" group-title="┃卫视频道",东方卫视
-http://23.237.228.134/live6/dongnan.m3u8$ipv4•线路2(66ms)
-#EXTINF:-1 tvg-id="1" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://69.30.246.194/live/zjws.m3u8$ipv4•线路1(26ms)
-#EXTINF:-1 tvg-id="2" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://23.237.228.134/live6/zhejiang.m3u8$ipv4•线路2(88ms)
-#EXTINF:-1 tvg-id="3" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://112.27.235.94:8000/hls/29/index.m3u8$ipv4•线路3(194ms)
-#EXTINF:-1 tvg-id="4" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://58.57.40.22:9901/tsfile/live/1029_1.m3u8$ipv4•线路4(267ms)
-#EXTINF:-1 tvg-id="5" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://ali-m-l.cztv.com:80/channels/lantian/channel001/1080p.m3u8$ipv4•线路5(457ms)
-#EXTINF:-1 tvg-id="1" tvg-name="湖南卫视" tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
-http://69.30.246.194/live/hnws.m3u8$ipv4•线路1(26ms)
-#EXTINF:-1 tvg-id="2" tvg-name="湖南卫视" tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
-http://23.237.228.134/live6/hunan.m3u8$ipv4•线路2(62ms)
-#EXTINF:-1 tvg-id="3" tvg-name="湖南卫视" tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
-http://112.27.235.94:8000/hls/31/index.m3u8$ipv4•线路3(199ms)
-#EXTINF:-1 tvg-id="4" tvg-name="湖南卫视" tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
-http://58.57.40.22:9901/tsfile/live/1028_1.m3u8$ipv4•线路4(268ms)
-#EXTINF:-1 tvg-id="1" tvg-name="江苏卫视" tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
-http://69.30.246.194/live/jsws.m3u8$ipv4•线路1(15ms)
-#EXTINF:-1 tvg-id="2" tvg-name="江苏卫视" tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
-http://112.27.235.94:8000/hls/32/index.m3u8$ipv4•线路2(195ms)
-#EXTINF:-1 tvg-id="3" tvg-name="江苏卫视" tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
-http://27.41.245.32:801/hls/42/index.m3u8$ipv4•线路3(238ms)
-#EXTINF:-1 tvg-id="4" tvg-name="江苏卫视" tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
-http://60.16.0.216:5757/hls/24/index.m3u8$ipv4•线路4(243ms)
-#EXTINF:-1 tvg-id="5" tvg-name="江苏卫视" tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
-http://112.46.85.60:8009/hls/33/index.m3u8$ipv4•线路5(255ms)
-#EXTINF:-1 tvg-id="6" tvg-name="江苏卫视" tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
-http://58.57.40.22:9901/tsfile/live/1031_1.m3u8$ipv4•线路6(268ms)
-#EXTINF:-1 tvg-id="1" tvg-name="安徽卫视" tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
-http://23.237.228.134/live8/anhui.m3u8$ipv4•线路1(78ms)
-#EXTINF:-1 tvg-id="2" tvg-name="安徽卫视" tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
-http://112.27.235.94:8000/hls/26/index.m3u8$ipv4•线路2(195ms)
-#EXTINF:-1 tvg-id="3" tvg-name="安徽卫视" tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
-http://120.211.62.180:8000/hls/33/index.m3u8$ipv4•线路3(236ms)
-#EXTINF:-1 tvg-id="4" tvg-name="安徽卫视" tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
-http://183.11.239.36:808/hls/40/index.m3u8$ipv4•线路4(252ms)
-#EXTINF:-1 tvg-id="5" tvg-name="安徽卫视" tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
-http://61.136.172.236:9901/tsfile/live/0130_1.m3u8$ipv4•线路5(494ms)
-#EXTINF:-1 tvg-id="1" tvg-name="重庆卫视" tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
-http://23.237.228.134/live6/chongqing.m3u8$ipv4•线路1(64ms)
-#EXTINF:-1 tvg-id="2" tvg-name="重庆卫视" tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
-http://112.27.235.94:8000/hls/36/index.m3u8$ipv4•线路2(194ms)
-#EXTINF:-1 tvg-id="3" tvg-name="重庆卫视" tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
-http://183.11.239.36:808/hls/53/index.m3u8$ipv4•线路3(254ms)
-#EXTINF:-1 tvg-id="4" tvg-name="重庆卫视" tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
-http://111.61.236.247:9081/hls/41/index.m3u8$ipv4•线路4(317ms)
-#EXTINF:-1 tvg-id="1" tvg-name="四川卫视" tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
-http://112.27.235.94:8000/hls/35/index.m3u8$ipv4•线路1(200ms)
-#EXTINF:-1 tvg-id="2" tvg-name="四川卫视" tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
-http://58.57.40.22:9901/tsfile/live/1046_1.m3u8$ipv4•线路2(269ms)
-#EXTINF:-1 tvg-id="3" tvg-name="四川卫视" tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
-http://111.61.236.247:9081/hls/35/index.m3u8$ipv4•线路3(309ms)
-#EXTINF:-1 tvg-id="4" tvg-name="四川卫视" tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
-http://39.152.103.17:8089/tsfile/live/1044_1.m3u8$ipv4•线路4(437ms)
-#EXTINF:-1 tvg-id="1" tvg-name="东南卫视" tvg-logo="pic/logo/东南卫视.png" group-title="┃卫视频道",东南卫视
-http://23.237.228.134/live8/gansu.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="东南卫视" tvg-logo="pic/logo/东南卫视.png" group-title="┃卫视频道",东南卫视
-http://112.27.235.94:8000/hls/38/index.m3u8$ipv4•线路2(193ms)
-#EXTINF:-1 tvg-id="3" tvg-name="东南卫视" tvg-logo="pic/logo/东南卫视.png" group-title="┃卫视频道",东南卫视
-http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8$ipv4•线路3(426ms)
-#EXTINF:-1 tvg-id="1" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://23.237.228.134/live6/shenzhen.m3u8$ipv4•线路1(82ms)
-#EXTINF:-1 tvg-id="2" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8$ipv4•线路2(99ms)
-#EXTINF:-1 tvg-id="3" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://58.57.40.22:9901/tsfile/live/1036_1.m3u8$ipv4•线路3(270ms)
-#EXTINF:-1 tvg-id="4" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://112.27.235.94:8000/hls/33/index.m3u8$ipv4•线路4(389ms)
-#EXTINF:-1 tvg-id="5" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0$ipv4•线路5(463ms)
-#EXTINF:-1 tvg-id="6" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://sun135790.x3322.net:9901/tsfile/live/16035_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路6(487ms)
-#EXTINF:-1 tvg-id="7" tvg-name="深圳卫视" tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
-http://153.0.171.163:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路7(489ms)
-#EXTINF:-1 tvg-id="1" tvg-name="广东卫视" tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
-http://23.237.228.134/live6/guangdong.m3u8$ipv4•线路1(65ms)
-#EXTINF:-1 tvg-id="2" tvg-name="广东卫视" tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
-http://112.27.235.94:8000/hls/30/index.m3u8$ipv4•线路2(206ms)
-#EXTINF:-1 tvg-id="3" tvg-name="广东卫视" tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
-http://58.57.40.22:9901/tsfile/live/1039_1.m3u8$ipv4•线路3(268ms)
-#EXTINF:-1 tvg-id="4" tvg-name="广东卫视" tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
-http://120.238.94.10:9901/tsfile/live/1008_1.m3u8$ipv4•线路4(430ms)
-#EXTINF:-1 tvg-id="1" tvg-name="广西卫视" tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
-http://23.237.228.134/live6/guangxi.m3u8$ipv4•线路1(64ms)
-#EXTINF:-1 tvg-id="2" tvg-name="广西卫视" tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
-http://23.237.228.134/live6/guizhou.m3u8$ipv4•线路2(83ms)
-#EXTINF:-1 tvg-id="3" tvg-name="广西卫视" tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
-http://58.57.40.22:9901/tsfile/live/1049_1.m3u8$ipv4•线路3(269ms)
-#EXTINF:-1 tvg-id="1" tvg-name="厦门卫视" tvg-logo="pic/logo/厦门卫视.png" group-title="┃卫视频道",厦门卫视
-http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub$ipv4•线路1(77ms)
-#EXTINF:-1 tvg-id="2" tvg-name="厦门卫视" tvg-logo="pic/logo/厦门卫视.png" group-title="┃卫视频道",厦门卫视
-http://183.11.239.36:808/hls/17/index.m3u8$ipv4•线路2(252ms)
-#EXTINF:-1 tvg-id="1" tvg-name="甘肃卫视" tvg-logo="pic/logo/甘肃卫视.png" group-title="┃卫视频道",甘肃卫视
-http://58.57.40.22:9901/tsfile/live/1056_1.m3u8$ipv4•线路1(268ms)
-#EXTINF:-1 tvg-id="2" tvg-name="甘肃卫视" tvg-logo="pic/logo/甘肃卫视.png" group-title="┃卫视频道",甘肃卫视
-http://120.238.94.10:9901/tsfile/live/1079_1.m3u8$ipv4•线路2(461ms)
-#EXTINF:-1 tvg-id="1" tvg-name="贵州卫视" tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
-http://23.237.228.134/live6/hainan.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="贵州卫视" tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
-http://112.27.235.94:8000/hls/46/index.m3u8$ipv4•线路2(201ms)
-#EXTINF:-1 tvg-id="3" tvg-name="贵州卫视" tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
-http://60.16.0.216:5757/hls/37/index.m3u8$ipv4•线路3(243ms)
-#EXTINF:-1 tvg-id="4" tvg-name="贵州卫视" tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
-http://58.57.40.22:9901/tsfile/live/1042_1.m3u8$ipv4•线路4(268ms)
-#EXTINF:-1 tvg-id="1" tvg-name="河北卫视" tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://23.237.228.134/live8/hebei.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="河北卫视" tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://112.27.235.94:8000/hls/39/index.m3u8$ipv4•线路2(194ms)
-#EXTINF:-1 tvg-id="3" tvg-name="河北卫视" tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://58.57.40.22:9901/tsfile/live/1044_1.m3u8$ipv4•线路3(262ms)
-#EXTINF:-1 tvg-id="4" tvg-name="河北卫视" tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://111.61.236.247:9081/hls/17/index.m3u8$ipv4•线路4(310ms)
-#EXTINF:-1 tvg-id="5" tvg-name="河北卫视" tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://120.211.62.180:8000/hls/19/index.m3u8$ipv4•线路5(397ms)
-#EXTINF:-1 tvg-id="6" tvg-name="河北卫视" tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
-http://36.32.174.67:60080/newlive/live/hls/36/live.m3u8$ipv4•线路6(400ms)
-#EXTINF:-1 tvg-id="1" tvg-name="河南卫视" tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
-http://112.27.235.94:8000/hls/37/index.m3u8$ipv4•线路1(195ms)
-#EXTINF:-1 tvg-id="2" tvg-name="河南卫视" tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
-http://58.57.40.22:9901/tsfile/live/1048_1.m3u8$ipv4•线路2(269ms)
-#EXTINF:-1 tvg-id="3" tvg-name="河南卫视" tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
-http://120.211.62.180:8000/hls/40/index.m3u8$ipv4•线路3(458ms)
-#EXTINF:-1 tvg-id="4" tvg-name="河南卫视" tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
-http://183.222.242.31:8088/hls/35/index.m3u8$ipv4•线路4(460ms)
-#EXTINF:-1 tvg-id="5" tvg-name="河南卫视" tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
-http://120.238.94.10:9901/tsfile/live/1068_1.m3u8$ipv4•线路5(481ms)
-#EXTINF:-1 tvg-id="1" tvg-name="黑龙江卫视" tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
-https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8$ipv4•线路1(131ms)
-#EXTINF:-1 tvg-id="2" tvg-name="黑龙江卫视" tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
-http://112.27.235.94:8000/hls/48/index.m3u8$ipv4•线路2(207ms)
-#EXTINF:-1 tvg-id="3" tvg-name="黑龙江卫视" tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
-http://61.136.172.236:9901/tsfile/live/0143_1.m3u8$ipv4•线路3(249ms)
-#EXTINF:-1 tvg-id="4" tvg-name="黑龙江卫视" tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
-http://58.57.40.22:9901/tsfile/live/1040_1.m3u8$ipv4•线路4(263ms)
-#EXTINF:-1 tvg-id="5" tvg-name="黑龙江卫视" tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
-http://124.116.183.146:9901/tsfile/live/0143_1.m3u8$ipv4•线路5(307ms)
-#EXTINF:-1 tvg-id="1" tvg-name="湖北卫视" tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
-http://23.237.228.134/live6/hubei.m3u8$ipv4•线路1(82ms)
-#EXTINF:-1 tvg-id="2" tvg-name="湖北卫视" tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
-http://60.16.0.216:5757/hls/33/index.m3u8$ipv4•线路2(246ms)
-#EXTINF:-1 tvg-id="3" tvg-name="湖北卫视" tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
-http://58.57.40.22:9901/tsfile/live/1038_1.m3u8$ipv4•线路3(268ms)
-#EXTINF:-1 tvg-id="4" tvg-name="湖北卫视" tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
-http://112.27.235.94:8000/hls/41/index.m3u8$ipv4•线路4(396ms)
-#EXTINF:-1 tvg-id="5" tvg-name="湖北卫视" tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
-http://120.238.94.10:9901/tsfile/live/1055_1.m3u8$ipv4•线路5(469ms)
-#EXTINF:-1 tvg-id="1" tvg-name="江西卫视" tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
-http://23.237.228.134/live8/jiangxi.m3u8$ipv4•线路1(66ms)
-#EXTINF:-1 tvg-id="2" tvg-name="江西卫视" tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
-http://58.57.40.22:9901/tsfile/live/1043_1.m3u8$ipv4•线路2(269ms)
-#EXTINF:-1 tvg-id="3" tvg-name="江西卫视" tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
-http://120.76.248.139/live/bfgd/4200000098.m3u8$ipv4•线路3(366ms)
-#EXTINF:-1 tvg-id="4" tvg-name="江西卫视" tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
-http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8$ipv4•线路4(416ms)
-#EXTINF:-1 tvg-id="1" tvg-name="吉林卫视" tvg-logo="pic/logo/吉林卫视.png" group-title="┃卫视频道",吉林卫视
-http://23.237.228.134/live8/jilin.m3u8$ipv4•线路1(91ms)
-#EXTINF:-1 tvg-id="2" tvg-name="吉林卫视" tvg-logo="pic/logo/吉林卫视.png" group-title="┃卫视频道",吉林卫视
-http://cssbyd.imwork.net:8082/hls/41/index.m3u8$ipv4•线路2(258ms)
-#EXTINF:-1 tvg-id="1" tvg-name="内蒙古卫视" tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
-http://23.237.228.134/live8/neimenggu.m3u8$ipv4•线路1(67ms)
-#EXTINF:-1 tvg-id="2" tvg-name="内蒙古卫视" tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
-http://112.27.235.94:8000/hls/49/index.m3u8$ipv4•线路2(193ms)
-#EXTINF:-1 tvg-id="3" tvg-name="内蒙古卫视" tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
-http://183.11.239.36:808/hls/60/index.m3u8$ipv4•线路3(259ms)
-#EXTINF:-1 tvg-id="4" tvg-name="内蒙古卫视" tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
-http://111.61.236.247:9081/hls/48/index.m3u8$ipv4•线路4(315ms)
-#EXTINF:-1 tvg-id="5" tvg-name="内蒙古卫视" tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
-http://120.76.248.139/live/bfgd/4200000110.m3u8$ipv4•线路5(374ms)
-#EXTINF:-1 tvg-id="1" tvg-name="辽宁卫视" tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
-http://23.237.228.134/live8/liaoning.m3u8$ipv4•线路1(64ms)
-#EXTINF:-1 tvg-id="2" tvg-name="辽宁卫视" tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
-http://112.27.235.94:8000/hls/47/index.m3u8$ipv4•线路2(193ms)
-#EXTINF:-1 tvg-id="3" tvg-name="辽宁卫视" tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
-http://58.57.40.22:9901/tsfile/live/1035_1.m3u8$ipv4•线路3(262ms)
-#EXTINF:-1 tvg-id="4" tvg-name="辽宁卫视" tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
-http://120.211.62.180:8000/hls/37/index.m3u8$ipv4•线路4(427ms)
-#EXTINF:-1 tvg-id="5" tvg-name="辽宁卫视" tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
-http://39.152.103.17:8089/tsfile/live/1024_1.m3u8$ipv4•线路5(438ms)
-#EXTINF:-1 tvg-id="6" tvg-name="辽宁卫视" tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
-http://60.16.0.216:5757/hls/32/index.m3u8$ipv4•线路6(492ms)
-#EXTINF:-1 tvg-id="1" tvg-name="宁夏卫视" tvg-logo="pic/logo/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
-http://58.57.40.22:9901/tsfile/live/1054_1.m3u8$ipv4•线路1(268ms)
-#EXTINF:-1 tvg-id="2" tvg-name="宁夏卫视" tvg-logo="pic/logo/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
-http://111.61.236.247:9081/hls/51/index.m3u8$ipv4•线路2(311ms)
-#EXTINF:-1 tvg-id="1" tvg-name="青海卫视" tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
-http://23.237.228.134/live8/qinghai.m3u8$ipv4•线路1(90ms)
-#EXTINF:-1 tvg-id="2" tvg-name="青海卫视" tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
-http://58.57.40.22:9901/tsfile/live/1057_1.m3u8$ipv4•线路2(268ms)
-#EXTINF:-1 tvg-id="3" tvg-name="青海卫视" tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
-http://111.61.236.247:9081/hls/49/index.m3u8$ipv4•线路3(322ms)
-#EXTINF:-1 tvg-id="4" tvg-name="青海卫视" tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
-http://120.238.94.10:9901/tsfile/live/1073_1.m3u8$ipv4•线路4(466ms)
-#EXTINF:-1 tvg-id="1" tvg-name="天津卫视" tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
-http://23.237.228.134/live8/tianjing.m3u8$ipv4•线路1(62ms)
-#EXTINF:-1 tvg-id="2" tvg-name="天津卫视" tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
-http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009$ipv4•线路2(95ms)
-#EXTINF:-1 tvg-id="3" tvg-name="天津卫视" tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
-http://112.27.235.94:8000/hls/42/index.m3u8$ipv4•线路3(206ms)
-#EXTINF:-1 tvg-id="4" tvg-name="天津卫视" tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
-http://58.57.40.22:9901/tsfile/live/1034_1.m3u8$ipv4•线路4(267ms)
-#EXTINF:-1 tvg-id="5" tvg-name="天津卫视" tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
-http://153.0.171.163:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路5(488ms)
-#EXTINF:-1 tvg-id="1" tvg-name="海南卫视" tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
-http://39.152.103.17:8089/tsfile/live/1046_1.m3u8$ipv4•线路1(222ms)
-#EXTINF:-1 tvg-id="2" tvg-name="海南卫视" tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
-http://58.57.40.22:9901/tsfile/live/1000_1.m3u8$ipv4•线路2(269ms)
-#EXTINF:-1 tvg-id="3" tvg-name="海南卫视" tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
-http://36.32.174.67:60080/newlive/live/hls/46/live.m3u8$ipv4•线路3(428ms)
-#EXTINF:-1 tvg-id="1" tvg-name="新疆卫视" tvg-logo="pic/logo/新疆卫视.png" group-title="┃卫视频道",新疆卫视
-http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$ipv4•线路1(117ms)
-#EXTINF:-1 tvg-id="2" tvg-name="新疆卫视" tvg-logo="pic/logo/新疆卫视.png" group-title="┃卫视频道",新疆卫视
-http://120.76.248.139/live/bfgd/4200000150.m3u8$ipv4•线路2(365ms)
-#EXTINF:-1 tvg-id="3" tvg-name="新疆卫视" tvg-logo="pic/logo/新疆卫视.png" group-title="┃卫视频道",新疆卫视
-http://219.146.95.58:59902/tsfile/live/0110_1.m3u8$ipv4•线路3(485ms)
-#EXTINF:-1 tvg-id="1" tvg-name="云南卫视" tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://112.27.235.94:8000/hls/40/index.m3u8$ipv4•线路1(198ms)
-#EXTINF:-1 tvg-id="2" tvg-name="云南卫视" tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://183.11.239.36:808/hls/52/index.m3u8$ipv4•线路2(246ms)
-#EXTINF:-1 tvg-id="3" tvg-name="云南卫视" tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://cssbyd.imwork.net:8082/hls/36/index.m3u8$ipv4•线路3(258ms)
-#EXTINF:-1 tvg-id="4" tvg-name="云南卫视" tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://58.57.40.22:9901/tsfile/live/1047_1.m3u8$ipv4•线路4(267ms)
-#EXTINF:-1 tvg-id="5" tvg-name="云南卫视" tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://36.32.174.67:60080/newlive/live/hls/45/live.m3u8$ipv4•线路5(442ms)
-#EXTINF:-1 tvg-id="6" tvg-name="云南卫视" tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
-http://120.238.94.10:9901/tsfile/live/1069_1.m3u8$ipv4•线路6(494ms)
-#EXTINF:-1 tvg-id="1" tvg-name="海峡卫视" tvg-logo="pic/logo/海峡卫视.png" group-title="┃卫视频道",海峡卫视
-http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8$ipv4•线路1(104ms)
-#EXTINF:-1 tvg-id="2" tvg-name="海峡卫视" tvg-logo="pic/logo/海峡卫视.png" group-title="┃卫视频道",海峡卫视
-http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8$ipv4•线路2(105ms)
-#EXTINF:-1 tvg-id="3" tvg-name="海峡卫视" tvg-logo="pic/logo/海峡卫视.png" group-title="┃卫视频道",海峡卫视
-http://8.138.7.223/tv/hxws.m3u8$ipv4•线路3(493ms)
-#EXTINF:-1 tvg-id="1" tvg-name="兵团卫视" tvg-logo="pic/logos/兵团卫视.png" group-title="┃卫视频道",兵团卫视
-http://183.11.239.36:808/hls/7/index.m3u8$ipv4(246ms)
-#EXTINF:-1 tvg-id="1" tvg-name="农林卫视" tvg-logo="pic/logo/农林卫视.png" group-title="┃卫视频道",农林卫视
-http://120.76.248.139/live/bfgd/4200000122.m3u8$ipv4•线路1(256ms)
-#EXTINF:-1 tvg-id="2" tvg-name="农林卫视" tvg-logo="pic/logo/农林卫视.png" group-title="┃卫视频道",农林卫视
-http://124.116.183.146:9901/tsfile/live/1004_1.m3u8$ipv4•线路2(314ms)
-#EXTINF:-1 tvg-id="3" tvg-name="农林卫视" tvg-logo="pic/logo/农林卫视.png" group-title="┃卫视频道",农林卫视
-http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8$ipv4•线路3(493ms)
-#EXTINF:-1 tvg-id="1" tvg-name="三沙卫视" tvg-logo="pic/logo/三沙卫视.png" group-title="┃卫视频道",三沙卫视
-http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$ipv4(77ms)
-#EXTINF:-1 tvg-id="1" tvg-name="延边卫视" tvg-logo="pic/logo/延边卫视.png" group-title="┃卫视频道",延边卫视
-http://gmxw.7766.org:808/hls/15/index.m3u8$ipv4•线路1(249ms)
-#EXTINF:-1 tvg-id="2" tvg-name="延边卫视" tvg-logo="pic/logo/延边卫视.png" group-title="┃卫视频道",延边卫视
-http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#$ipv4•线路2(290ms)
-#EXTINF:-1 tvg-id="3" tvg-name="延边卫视" tvg-logo="pic/logo/延边卫视.png" group-title="┃卫视频道",延边卫视
-http://120.76.248.139/live/bfgd/4200000117.m3u8$ipv4•线路3(386ms)
-#EXTINF:-1 tvg-id="1" tvg-name="安多卫视" tvg-logo="pic/logos/安多卫视.png" group-title="┃卫视频道",安多卫视
-https://liveout.xntv.tv/a65jur/96iln2.m3u8$ipv4(283ms)
-#EXTINF:-1 tvg-id="1" tvg-name="山东综艺" tvg-logo="" group-title="┃山东频道",山东综艺
-http://58.57.40.22:9901/tsfile/live/1021_1.m3u8$ipv4(268ms)
-#EXTINF:-1 tvg-id="1" tvg-name="山东生活" tvg-logo="" group-title="┃山东频道",山东生活
-http://58.57.40.22:9901/tsfile/live/1018_1.m3u8$ipv4(267ms)
-#EXTINF:-1 tvg-id="1" tvg-name="山东体育" tvg-logo="" group-title="┃山东频道",山东体育
-http://58.57.40.22:9901/tsfile/live/1020_1.m3u8$ipv4(262ms)
-#EXTINF:-1 tvg-id="1" tvg-name="山东文旅" tvg-logo="" group-title="┃山东频道",山东文旅
-http://58.57.40.22:9901/tsfile/live/1023_1.m3u8$ipv4(269ms)
-#EXTINF:-1 tvg-id="1" tvg-name="济宁公共" tvg-logo="" group-title="┃山东频道",济宁公共
-http://120.76.248.139/live/bfgd/4200000481.m3u8$ipv4•线路1(256ms)
-#EXTINF:-1 tvg-id="2" tvg-name="济宁公共" tvg-logo="" group-title="┃山东频道",济宁公共
-http://120.76.248.139/live/bfgd/4200000077.m3u8$ipv4•线路2(257ms)
-#EXTINF:-1 tvg-id="1" tvg-name="济宁新闻综合" tvg-logo="" group-title="┃山东频道",济宁新闻综合
-https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8$ipv4(287ms)
-#EXTINF:-1 tvg-id="1" tvg-name="哈哈炫动" tvg-logo="pic/logo/哈哈炫动.png" group-title="┃少儿频道",哈哈炫动
-http://120.238.94.10:9901/tsfile/live/1037_1.m3u8$ipv4(487ms)
-#EXTINF:-1 tvg-id="1" tvg-name="翡翠台" tvg-logo="pic/logo/翡翠台.png" group-title="┃湾区频道",翡翠台
-http://r.jdshipin.com/GeWKr$ipv4•线路1(145ms)
-#EXTINF:-1 tvg-id="2" tvg-name="翡翠台" tvg-logo="pic/logo/翡翠台.png" group-title="┃湾区频道",翡翠台
-http://r.jdshipin.com/n90gt$ipv4•线路2(197ms)
-#EXTINF:-1 tvg-id="1" tvg-name="凤凰中文" tvg-logo="" group-title="┃湾区频道",凤凰中文
-http://r.jdshipin.com/cCCzW$ipv4(129ms)
-#EXTINF:-1 tvg-id="1" tvg-name="凤凰资讯" tvg-logo="" group-title="┃湾区频道",凤凰资讯
-http://r.jdshipin.com/0Rp07$ipv4(135ms)
-#EXTINF:-1 tvg-id="1" tvg-name="凤凰香港" tvg-logo="" group-title="┃湾区频道",凤凰香港
-http://r.jdshipin.com/yDoTN$ipv4(116ms)
-#EXTINF:-1 tvg-id="1" tvg-name="CHC家庭影院" tvg-logo="pic/logos/CHC家庭影院.png" group-title="┃影视频道",CHC家庭影院
-http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub$ipv4(75ms)
+# 延迟阈值：500ms | 生成时间：2026-01-25 14:39:28
+#EXTINF:-1 tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
+http://23.237.228.134/live5/CCTV1.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
+http://112.27.235.94:8000/hls/1/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
+http://58.57.40.22:9901/tsfile/live/0001_1.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV1.png" group-title="┃央视频道",CCTV1
+http://183.11.239.36:808/hls/19/index.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
+http://23.237.228.134/live5/CCTV2.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
+http://112.27.235.94:8000/hls/2/index.m3u8$ipv4(214ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
+http://27.41.245.32:801/hls/2/index.m3u8$ipv4(268ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV2.png" group-title="┃央视频道",CCTV2
+http://58.57.40.22:9901/tsfile/live/1001_1.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
+http://23.237.228.134/live5/CCTV3.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
+http://112.27.235.94:8000/hls/3/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
+http://58.57.40.22:9901/tsfile/live/1002_1.m3u8$ipv4(288ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV3.png" group-title="┃央视频道",CCTV3
+http://120.238.94.10:9901/tsfile/live/1020_1.m3u8$ipv4(470ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV4.png" group-title="┃央视频道",CCTV4
+http://58.57.40.22:9901/tsfile/live/1003_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
+http://23.237.228.134/live5/CCTV5.m3u8$ipv4(61ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
+http://23.237.228.134/live5/CCTV5p.m3u8$ipv4(62ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
+http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub$ipv4(138ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
+http://112.27.235.94:8000/hls/5/index.m3u8$ipv4(207ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
+http://58.57.40.22:9901/tsfile/live/1004_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5.png" group-title="┃央视频道",CCTV5
+http://120.238.94.10:9901/tsfile/live/1022_1.m3u8$ipv4(494ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
+http://112.27.235.94:8000/hls/6/index.m3u8$ipv4(208ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
+http://cssbyd.imwork.net:8082/hls/6/index.m3u8$ipv4(286ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
+http://58.57.40.22:9901/tsfile/live/1005_1.m3u8$ipv4(288ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV5+.png" group-title="┃央视频道",CCTV5+
+http://120.211.62.180:8000/hls/18/index.m3u8$ipv4(429ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV6.png" group-title="┃央视频道",CCTV6
+http://112.27.235.94:8000/hls/7/index.m3u8$ipv4(207ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV6.png" group-title="┃央视频道",CCTV6
+http://183.11.239.36:808/hls/94/index.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV6.png" group-title="┃央视频道",CCTV6
+http://61.136.172.236:9901/tsfile/live/0006_1.m3u8$ipv4(284ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
+http://23.237.228.134/live5/CCTV7.m3u8$ipv4(63ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
+http://58.57.40.22:9901/tsfile/live/1007_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV7.png" group-title="┃央视频道",CCTV7
+http://112.27.235.94:8000/hls/8/index.m3u8$ipv4(413ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
+http://112.27.235.94:8000/hls/9/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
+http://183.11.239.36:808/hls/96/index.m3u8$ipv4(274ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
+http://58.57.40.22:9901/tsfile/live/1008_1.m3u8$ipv4(288ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV8.png" group-title="┃央视频道",CCTV8
+http://120.238.94.10:9901/tsfile/live/1026_1.m3u8$ipv4(449ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
+http://23.237.228.134/live5/CCTV9.m3u8$ipv4(62ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
+http://112.27.235.94:8000/hls/10/index.m3u8$ipv4(206ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV9.png" group-title="┃央视频道",CCTV9
+http://58.57.40.22:9901/tsfile/live/1009_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
+http://23.237.228.134/live5/CCTV10.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
+http://112.27.235.94:8000/hls/11/index.m3u8$ipv4(213ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
+http://58.57.40.22:9901/tsfile/live/1010_1.m3u8$ipv4(278ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV10.png" group-title="┃央视频道",CCTV10
+http://120.211.62.180:8000/hls/10/index.m3u8$ipv4(443ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
+http://69.30.246.194/live/cctv11.m3u8$ipv4(78ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
+http://112.27.235.94:8000/hls/12/index.m3u8$ipv4(214ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
+http://58.57.40.22:9901/tsfile/live/1011_1.m3u8$ipv4(278ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
+http://61.136.172.236:9901/tsfile/live/0011_1.m3u8$ipv4(283ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV11.png" group-title="┃央视频道",CCTV11
+http://120.211.62.180:8000/hls/11/index.m3u8$ipv4(434ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
+http://69.30.246.194/live/cctv12.m3u8$ipv4(38ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
+http://23.237.228.134/live3/CCTV12.m3u8$ipv4(67ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
+http://112.27.235.94:8000/hls/13/index.m3u8$ipv4(214ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV12.png" group-title="┃央视频道",CCTV12
+http://58.57.40.22:9901/tsfile/live/1012_1.m3u8$ipv4(288ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
+http://112.27.235.94:8000/hls/14/index.m3u8$ipv4(215ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
+http://120.211.62.180:8000/hls/13/index.m3u8$ipv4(218ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
+http://58.57.40.22:9901/tsfile/live/1013_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
+http://183.11.239.36:808/hls/31/index.m3u8$ipv4(278ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV13.png" group-title="┃央视频道",CCTV13
+http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8$ipv4(446ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
+http://23.237.228.134/live3/CCTV14.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
+http://69.30.246.194/live/cctv14.m3u8$ipv4(77ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
+http://112.27.235.94:8000/hls/15/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
+http://58.57.40.22:9901/tsfile/live/1014_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV14.png" group-title="┃央视频道",CCTV14
+http://120.211.62.180:8000/hls/14/index.m3u8$ipv4(428ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
+http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009$ipv4(59ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
+http://23.237.228.134/live3/CCTV15.m3u8$ipv4(61ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
+http://69.30.246.194/live/cctv15.m3u8$ipv4(78ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
+http://112.27.235.94:8000/hls/16/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV15.png" group-title="┃央视频道",CCTV15
+http://120.211.62.180:8000/hls/15/index.m3u8$ipv4(469ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16
+http://69.30.246.194/live/cctv16.m3u8$ipv4(77ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV16.png" group-title="┃央视频道",CCTV16
+http://39.152.103.17:8089/tsfile/live/1015_1.m3u8$ipv4(482ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
+http://23.237.228.134/live3/CCTV17.m3u8$ipv4(62ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
+http://120.211.62.180:8000/hls/17/index.m3u8$ipv4(217ms)
+#EXTINF:-1 tvg-logo="pic/logos/CCTV17.png" group-title="┃央视频道",CCTV17
+http://58.57.40.22:9901/tsfile/live/0019_1.m3u8$ipv4(277ms)
+#EXTINF:-1 group-title="┃央视频道",重温经典
+http://112.27.235.94:8000/hls/50/index.m3u8$ipv4(215ms)
+#EXTINF:-1 group-title="┃央视付费频道",CCTV第一剧场
+http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$ipv4(137ms)
+#EXTINF:-1 group-title="┃央视付费频道",CCTV第一剧场
+https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8$ipv4(220ms)
+#EXTINF:-1 tvg-logo="pic/logo/风云剧场.png" group-title="┃央视付费频道",风云剧场
+http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub$ipv4(137ms)
+#EXTINF:-1 group-title="┃央视付费频道",CCTV怀旧剧场
+http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub$ipv4(138ms)
+#EXTINF:-1 tvg-logo="pic/logo/风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$ipv4(98ms)
+#EXTINF:-1 tvg-logo="pic/logo/风云音乐.png" group-title="┃央视付费频道",风云音乐
+http://120.238.94.10:9901/tsfile/live/1089_1.m3u8$ipv4(475ms)
+#EXTINF:-1 tvg-logo="pic/logo/高尔夫网球.png" group-title="┃央视付费频道",高尔夫网球
+http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub$ipv4(196ms)
+#EXTINF:-1 group-title="┃央视付费频道",CCTV风云足球
+https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8$ipv4(128ms)
+#EXTINF:-1 group-title="┃央视付费频道",CCTV风云足球
+http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub$ipv4(195ms)
+#EXTINF:-1 group-title="┃央视付费频道",CCTV世界地理
+http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub$ipv4(196ms)
+#EXTINF:-1 tvg-logo="pic/logos/兵器科技.png" group-title="┃央视付费频道",兵器科技
+http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$ipv4(137ms)
+#EXTINF:-1 tvg-logo="pic/logos/兵器科技.png" group-title="┃央视付费频道",兵器科技
+http://120.238.94.10:9901/tsfile/live/1096_1.m3u8$ipv4(423ms)
+#EXTINF:-1 tvg-logo="pic/logo/山东卫视.png" group-title="┃卫视频道",山东卫视
+http://112.27.235.94:8000/hls/34/index.m3u8$ipv4(427ms)
+#EXTINF:-1 tvg-logo="pic/logo/山东卫视.png" group-title="┃卫视频道",山东卫视
+http://120.211.62.180:8000/hls/38/index.m3u8$ipv4(428ms)
+#EXTINF:-1 tvg-logo="pic/logos/北京卫视.png" group-title="┃卫视频道",北京卫视
+http://112.27.235.94:8000/hls/27/index.m3u8$ipv4(206ms)
+#EXTINF:-1 tvg-logo="pic/logos/北京卫视.png" group-title="┃卫视频道",北京卫视
+http://120.211.62.180:8000/hls/35/index.m3u8$ipv4(217ms)
+#EXTINF:-1 tvg-logo="pic/logos/北京卫视.png" group-title="┃卫视频道",北京卫视
+http://58.57.40.22:9901/tsfile/live/1032_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logo/东方卫视.png" group-title="┃卫视频道",东方卫视
+http://23.237.228.134/live6/dongnan.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logo/东方卫视.png" group-title="┃卫视频道",东方卫视
+http://69.30.246.194/live/dfws.m3u8$ipv4(78ms)
+#EXTINF:-1 tvg-logo="pic/logo/东方卫视.png" group-title="┃卫视频道",东方卫视
+http://58.57.40.22:9901/tsfile/live/1030_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/东方卫视.png" group-title="┃卫视频道",东方卫视
+http://36.32.174.67:60080/newlive/live/hls/24/live.m3u8$ipv4(481ms)
+#EXTINF:-1 tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
+http://23.237.228.134/live6/zhejiang.m3u8$ipv4(76ms)
+#EXTINF:-1 tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
+http://69.30.246.194/live/zjws.m3u8$ipv4(78ms)
+#EXTINF:-1 tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
+http://112.27.235.94:8000/hls/29/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
+http://58.57.40.22:9901/tsfile/live/1029_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
+http://69.30.246.194/live/hnws.m3u8$ipv4(39ms)
+#EXTINF:-1 tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
+http://23.237.228.134/live6/hunan.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
+http://112.27.235.94:8000/hls/31/index.m3u8$ipv4(207ms)
+#EXTINF:-1 tvg-logo="pic/logos/湖南卫视.png" group-title="┃卫视频道",湖南卫视
+http://58.57.40.22:9901/tsfile/live/1028_1.m3u8$ipv4(288ms)
+#EXTINF:-1 tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
+http://69.30.246.194/live/jsws.m3u8$ipv4(39ms)
+#EXTINF:-1 tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
+http://112.27.235.94:8000/hls/32/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
+http://112.46.85.60:8009/hls/33/index.m3u8$ipv4(258ms)
+#EXTINF:-1 tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
+http://27.41.245.32:801/hls/42/index.m3u8$ipv4(267ms)
+#EXTINF:-1 tvg-logo="pic/logos/江苏卫视.png" group-title="┃卫视频道",江苏卫视
+http://58.57.40.22:9901/tsfile/live/1031_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
+http://23.237.228.134/live8/anhui.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
+http://112.27.235.94:8000/hls/26/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
+http://120.211.62.180:8000/hls/33/index.m3u8$ipv4(222ms)
+#EXTINF:-1 tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
+http://58.57.40.22:9901/tsfile/live/1033_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logos/安徽卫视.png" group-title="┃卫视频道",安徽卫视
+http://61.136.172.236:9901/tsfile/live/0130_1.m3u8$ipv4(283ms)
+#EXTINF:-1 tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
+http://23.237.228.134/live6/chongqing.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
+http://112.27.235.94:8000/hls/36/index.m3u8$ipv4(207ms)
+#EXTINF:-1 tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
+http://183.11.239.36:808/hls/53/index.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
+http://111.61.236.247:9081/hls/41/index.m3u8$ipv4(335ms)
+#EXTINF:-1 tvg-logo="pic/logo/重庆卫视.png" group-title="┃卫视频道",重庆卫视
+http://36.32.174.67:60080/newlive/live/hls/34/live.m3u8$ipv4(448ms)
+#EXTINF:-1 tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
+http://112.27.235.94:8000/hls/35/index.m3u8$ipv4(214ms)
+#EXTINF:-1 tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
+http://58.57.40.22:9901/tsfile/live/1046_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logo/四川卫视.png" group-title="┃卫视频道",四川卫视
+http://39.152.103.17:8089/tsfile/live/1044_1.m3u8$ipv4(478ms)
+#EXTINF:-1 tvg-logo="pic/logo/东南卫视.png" group-title="┃卫视频道",东南卫视
+http://23.237.228.134/live8/gansu.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logo/东南卫视.png" group-title="┃卫视频道",东南卫视
+http://112.27.235.94:8000/hls/38/index.m3u8$ipv4(408ms)
+#EXTINF:-1 tvg-logo="pic/logo/东南卫视.png" group-title="┃卫视频道",东南卫视
+http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8$ipv4(421ms)
+#EXTINF:-1 tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
+http://23.237.228.134/live6/shenzhen.m3u8$ipv4(78ms)
+#EXTINF:-1 tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
+http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
+http://112.27.235.94:8000/hls/33/index.m3u8$ipv4(206ms)
+#EXTINF:-1 tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
+http://58.57.40.22:9901/tsfile/live/1036_1.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
+http://111.61.236.247:9081/hls/38/index.m3u8$ipv4(324ms)
+#EXTINF:-1 tvg-logo="pic/logo/深圳卫视.png" group-title="┃卫视频道",深圳卫视
+http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0$ipv4(499ms)
+#EXTINF:-1 tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
+http://23.237.228.134/live6/guangdong.m3u8$ipv4(60ms)
+#EXTINF:-1 tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
+http://112.27.235.94:8000/hls/30/index.m3u8$ipv4(216ms)
+#EXTINF:-1 tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
+http://183.11.239.36:808/hls/80/index.m3u8$ipv4(264ms)
+#EXTINF:-1 tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
+http://58.57.40.22:9901/tsfile/live/1039_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logo/广东卫视.png" group-title="┃卫视频道",广东卫视
+https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4$ipv4(476ms)
+#EXTINF:-1 tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
+http://23.237.228.134/live6/guangxi.m3u8$ipv4(61ms)
+#EXTINF:-1 tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
+http://23.237.228.134/live6/guizhou.m3u8$ipv4(65ms)
+#EXTINF:-1 tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
+http://60.16.0.216:5757/hls/45/index.m3u8$ipv4(272ms)
+#EXTINF:-1 tvg-logo="pic/logo/广西卫视.png" group-title="┃卫视频道",广西卫视
+http://58.57.40.22:9901/tsfile/live/1049_1.m3u8$ipv4(288ms)
+#EXTINF:-1 tvg-logo="pic/logo/厦门卫视.png" group-title="┃卫视频道",厦门卫视
+http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub$ipv4(196ms)
+#EXTINF:-1 tvg-logo="pic/logo/厦门卫视.png" group-title="┃卫视频道",厦门卫视
+http://183.11.239.36:808/hls/17/index.m3u8$ipv4(278ms)
+#EXTINF:-1 tvg-logo="pic/logo/甘肃卫视.png" group-title="┃卫视频道",甘肃卫视
+http://58.57.40.22:9901/tsfile/live/1056_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
+http://23.237.228.134/live6/hainan.m3u8$ipv4(81ms)
+#EXTINF:-1 tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
+http://112.27.235.94:8000/hls/46/index.m3u8$ipv4(215ms)
+#EXTINF:-1 tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
+http://60.16.0.216:5757/hls/37/index.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logo/贵州卫视.png" group-title="┃卫视频道",贵州卫视
+http://58.57.40.22:9901/tsfile/live/1042_1.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
+http://23.237.228.134/live8/hebei.m3u8$ipv4(78ms)
+#EXTINF:-1 tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
+http://112.27.235.94:8000/hls/39/index.m3u8$ipv4(225ms)
+#EXTINF:-1 tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
+http://58.57.40.22:9901/tsfile/live/1044_1.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logo/河北卫视.png" group-title="┃卫视频道",河北卫视
+http://36.32.174.67:60080/newlive/live/hls/36/live.m3u8$ipv4(445ms)
+#EXTINF:-1 tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
+http://61.136.172.236:9901/tsfile/live/0139_1.m3u8$ipv4(285ms)
+#EXTINF:-1 tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
+http://58.57.40.22:9901/tsfile/live/1048_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/河南卫视.png" group-title="┃卫视频道",河南卫视
+http://120.211.62.180:8000/hls/40/index.m3u8$ipv4(490ms)
+#EXTINF:-1 tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
+https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8$ipv4(256ms)
+#EXTINF:-1 tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
+http://120.76.248.139/live/bfgd/4200000095.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
+http://58.57.40.22:9901/tsfile/live/1040_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/黑龙江卫视.png" group-title="┃卫视频道",黑龙江卫视
+http://112.27.235.94:8000/hls/48/index.m3u8$ipv4(413ms)
+#EXTINF:-1 tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
+http://23.237.228.134/live6/hubei.m3u8$ipv4(79ms)
+#EXTINF:-1 tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
+http://112.27.235.94:8000/hls/41/index.m3u8$ipv4(207ms)
+#EXTINF:-1 tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
+http://60.16.0.216:5757/hls/33/index.m3u8$ipv4(271ms)
+#EXTINF:-1 tvg-logo="pic/logo/湖北卫视.png" group-title="┃卫视频道",湖北卫视
+http://58.57.40.22:9901/tsfile/live/1038_1.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
+http://23.237.228.134/live8/jiangxi.m3u8$ipv4(61ms)
+#EXTINF:-1 tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
+http://112.27.235.94:8000/hls/44/index.m3u8$ipv4(214ms)
+#EXTINF:-1 tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
+http://58.57.40.22:9901/tsfile/live/1043_1.m3u8$ipv4(285ms)
+#EXTINF:-1 tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
+http://120.76.248.139/live/bfgd/4200000098.m3u8$ipv4(386ms)
+#EXTINF:-1 tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
+http://36.32.174.67:60080/newlive/live/hls/31/live.m3u8$ipv4(464ms)
+#EXTINF:-1 tvg-logo="pic/logo/江西卫视.png" group-title="┃卫视频道",江西卫视
+http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8$ipv4(473ms)
+#EXTINF:-1 tvg-logo="pic/logo/吉林卫视.png" group-title="┃卫视频道",吉林卫视
+http://23.237.228.134/live8/jilin.m3u8$ipv4(66ms)
+#EXTINF:-1 tvg-logo="pic/logo/吉林卫视.png" group-title="┃卫视频道",吉林卫视
+http://183.11.239.36:808/hls/10/index.m3u8$ipv4(274ms)
+#EXTINF:-1 tvg-logo="pic/logo/吉林卫视.png" group-title="┃卫视频道",吉林卫视
+http://cssbyd.imwork.net:8082/hls/41/index.m3u8$ipv4(286ms)
+#EXTINF:-1 tvg-logo="pic/logo/吉林卫视.png" group-title="┃卫视频道",吉林卫视
+http://58.57.40.22:9901/tsfile/live/1050_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://23.237.228.134/live8/neimenggu.m3u8$ipv4(121ms)
+#EXTINF:-1 tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://112.27.235.94:8000/hls/49/index.m3u8$ipv4(213ms)
+#EXTINF:-1 tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://60.16.0.216:5757/hls/41/index.m3u8$ipv4(270ms)
+#EXTINF:-1 tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://183.11.239.36:808/hls/60/index.m3u8$ipv4(273ms)
+#EXTINF:-1 tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://111.61.236.247:9081/hls/48/index.m3u8$ipv4(341ms)
+#EXTINF:-1 tvg-logo="pic/logo/内蒙古卫视.png" group-title="┃卫视频道",内蒙古卫视
+http://120.76.248.139/live/bfgd/4200000110.m3u8$ipv4(393ms)
+#EXTINF:-1 tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
+http://23.237.228.134/live8/liaoning.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
+http://112.27.235.94:8000/hls/47/index.m3u8$ipv4(215ms)
+#EXTINF:-1 tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
+http://120.211.62.180:8000/hls/37/index.m3u8$ipv4(229ms)
+#EXTINF:-1 tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
+http://39.152.103.17:8089/tsfile/live/1024_1.m3u8$ipv4(234ms)
+#EXTINF:-1 tvg-logo="pic/logo/辽宁卫视.png" group-title="┃卫视频道",辽宁卫视
+http://58.57.40.22:9901/tsfile/live/1035_1.m3u8$ipv4(286ms)
+#EXTINF:-1 tvg-logo="pic/logo/宁夏卫视.png" group-title="┃卫视频道",宁夏卫视
+http://111.61.236.247:9081/hls/51/index.m3u8$ipv4(333ms)
+#EXTINF:-1 tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
+http://23.237.228.134/live8/qinghai.m3u8$ipv4(120ms)
+#EXTINF:-1 tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
+http://58.57.40.22:9901/tsfile/live/1057_1.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logo/青海卫视.png" group-title="┃卫视频道",青海卫视
+http://120.76.248.139/live/bfgd/4200000111.m3u8$ipv4(422ms)
+#EXTINF:-1 tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
+http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009$ipv4(119ms)
+#EXTINF:-1 tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
+http://23.237.228.134/live8/tianjing.m3u8$ipv4(121ms)
+#EXTINF:-1 tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
+http://112.27.235.94:8000/hls/42/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logo/天津卫视.png" group-title="┃卫视频道",天津卫视
+http://58.57.40.22:9901/tsfile/live/1034_1.m3u8$ipv4(275ms)
+#EXTINF:-1 tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
+http://183.11.239.36:808/hls/124/index.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
+http://58.57.40.22:9901/tsfile/live/1000_1.m3u8$ipv4(277ms)
+#EXTINF:-1 tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
+http://120.76.248.139/live/bfgd/4200000473.m3u8$ipv4(384ms)
+#EXTINF:-1 tvg-logo="pic/logo/海南卫视.png" group-title="┃卫视频道",海南卫视
+http://39.152.103.17:8089/tsfile/live/1046_1.m3u8$ipv4(477ms)
+#EXTINF:-1 tvg-logo="pic/logo/新疆卫视.png" group-title="┃卫视频道",新疆卫视
+http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$ipv4(138ms)
+#EXTINF:-1 tvg-logo="pic/logo/新疆卫视.png" group-title="┃卫视频道",新疆卫视
+http://58.57.40.22:9901/tsfile/live/1055_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
+http://112.27.235.94:8000/hls/40/index.m3u8$ipv4(204ms)
+#EXTINF:-1 tvg-logo="pic/logo/云南卫视.png" group-title="┃卫视频道",云南卫视
+http://58.57.40.22:9901/tsfile/live/1047_1.m3u8$ipv4(287ms)
+#EXTINF:-1 tvg-logo="pic/logo/西藏卫视.png" group-title="┃卫视频道",西藏卫视
+http://183.11.239.36:808/hls/64/index.m3u8$ipv4(274ms)
+#EXTINF:-1 tvg-logo="pic/logo/西藏卫视.png" group-title="┃卫视频道",西藏卫视
+http://36.32.174.67:60080/newlive/live/hls/48/live.m3u8$ipv4(422ms)
+#EXTINF:-1 tvg-logo="pic/logo/西藏卫视.png" group-title="┃卫视频道",西藏卫视
+http://120.238.94.10:9901/tsfile/live/1077_1.m3u8$ipv4(461ms)
+#EXTINF:-1 tvg-logo="pic/logo/海峡卫视.png" group-title="┃卫视频道",海峡卫视
+http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8$ipv4(121ms)
+#EXTINF:-1 tvg-logo="pic/logo/海峡卫视.png" group-title="┃卫视频道",海峡卫视
+http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8$ipv4(121ms)
+#EXTINF:-1 tvg-logo="pic/logos/兵团卫视.png" group-title="┃卫视频道",兵团卫视
+http://183.11.239.36:808/hls/7/index.m3u8$ipv4(282ms)
+#EXTINF:-1 tvg-logo="pic/logos/兵团卫视.png" group-title="┃卫视频道",兵团卫视
+http://120.76.248.139/live/bfgd/4200000124.m3u8$ipv4(404ms)
+#EXTINF:-1 tvg-logo="pic/logo/农林卫视.png" group-title="┃卫视频道",农林卫视
+http://120.76.248.139/live/bfgd/4200000122.m3u8$ipv4(276ms)
+#EXTINF:-1 tvg-logo="pic/logo/农林卫视.png" group-title="┃卫视频道",农林卫视
+http://124.116.183.146:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4(358ms)
+#EXTINF:-1 tvg-logo="pic/logo/三沙卫视.png" group-title="┃卫视频道",三沙卫视
+http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$ipv4(196ms)
+#EXTINF:-1 tvg-logo="pic/logo/延边卫视.png" group-title="┃卫视频道",延边卫视
+http://120.76.248.139/live/bfgd/4200000117.m3u8$ipv4(390ms)
+#EXTINF:-1 tvg-logo="pic/logos/安多卫视.png" group-title="┃卫视频道",安多卫视
+https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqing$ipv4(300ms)
+#EXTINF:-1 group-title="┃山东频道",山东综艺
+http://58.57.40.22:9901/tsfile/live/1021_1.m3u8$ipv4(288ms)
+#EXTINF:-1 group-title="┃山东频道",山东农科
+http://58.57.40.22:9901/tsfile/live/1022_1.m3u8$ipv4(287ms)
+#EXTINF:-1 group-title="┃山东频道",山东文旅
+http://58.57.40.22:9901/tsfile/live/1023_1.m3u8$ipv4(277ms)
+#EXTINF:-1 group-title="┃山东频道",辽宁公共
+http://120.76.248.139/live/bfgd/4200000481.m3u8$ipv4(290ms)
+#EXTINF:-1 tvg-logo="pic/logo/辽宁教育青少.png" group-title="┃山东频道",辽宁教育青少
+http://120.76.248.139/live/bfgd/4200000075.m3u8$ipv4(275ms)
+#EXTINF:-1 group-title="┃山东频道",西宁新闻综合
+https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8$ipv4(300ms)
+#EXTINF:-1 tvg-logo="pic/logo/翡翠台.png" group-title="┃湾区频道",翡翠台
+http://r.jdshipin.com/qClQf$ipv4(135ms)
+#EXTINF:-1 tvg-logo="pic/logo/翡翠台.png" group-title="┃湾区频道",翡翠台
+http://r.jdshipin.com/n90gt$ipv4(294ms)
+#EXTINF:-1 tvg-logo="pic/logo/翡翠台.png" group-title="┃湾区频道",翡翠台
+http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4$ipv4(318ms)
+#EXTINF:-1 group-title="┃湾区频道",凤凰中文
+http://r.jdshipin.com/cCCzW$ipv4(199ms)
+#EXTINF:-1 group-title="┃湾区频道",凤凰香港
+http://r.jdshipin.com/yDoTN$ipv4(221ms)
+#EXTINF:-1 tvg-logo="pic/logos/CHC家庭影院.png" group-title="┃影视频道",CHC家庭影院
+http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub$ipv4(137ms)
