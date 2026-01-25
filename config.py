@@ -42,7 +42,7 @@ IP_VERSION_PRIORITY = "ipv4"
 # ===================== 过滤配置 =====================
 # URL黑名单（包含以下关键词的URL会被过滤）
 URL_BLACKLIST = [
-  
+  "https://iptv.catvod.com/",
 
     
 ]
