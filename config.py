@@ -1,5 +1,15 @@
 # config.py
 
+# 其他原有配置...
+LATENCY_THRESHOLD = 500 # 延迟阈值（毫秒）
+CONCURRENT_LIMIT = 20
+TIMEOUT = 10
+RETRY_TIMES = 2
+IP_VERSION_PRIORITY = "ipv4"
+URL_BLACKLIST = []
+TEMPLATE_FILE = "demo.txt"  # 模板文件
+
+
 # 直播源链接配置
 source_urls = [
    
@@ -27,14 +37,6 @@ GITHUB_LOGO_API_URLS = [
     "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/"
 ]
 
-# 其他原有配置...
-LATENCY_THRESHOLD = 500 # 延迟阈值（毫秒）
-CONCURRENT_LIMIT = 20
-TIMEOUT = 10
-RETRY_TIMES = 2
-IP_VERSION_PRIORITY = "ipv4"
-URL_BLACKLIST = []
-TEMPLATE_FILE = "demo.txt"  # 模板文件
 
 # EPG（电子节目指南）URL列表
 EPG_URLS  = [
