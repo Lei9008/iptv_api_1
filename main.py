@@ -32,8 +32,8 @@ class ChannelInfo:
     url: str  # 播放地址
     group_title: Optional[str] = None  # 【修改1】移除默认值，保留原始分类（可为None）
     tvg_name: str = ""  # TVG名称
-    tvg_logo: str = ""  # TVG Logo地址
     tvg_id: str = ""  # TVG ID
+    tvg_logo: str = ""  # 【新增】台标URL
     other_attrs: Dict[str, str] = None  # 其他属性
     latency: float = 9999.0  # 新增：存储测速延迟，默认9999ms
 
@@ -42,29 +42,20 @@ class ChannelInfo:
             self.other_attrs = {}
         # 【修改2】确保group_title为字符串（None转为空字符串）
         self.group_title = self.group_title if self.group_title is not None else ""
+        # 【新增】自动生成台标URL（如果未指定）
+        if not self.tvg_logo and self.name and hasattr(config, 'logo_url') and config.logo_url:
+            logo_type = getattr(config, 'logo_type', 'png')
+            # 清理频道名用于台标文件名
+            clean_logo_name = re.sub(r'[^a-zA-Z0-9\u4e00-\u9fa5]', '', self.name)
+            self.tvg_logo = f"{config.logo_url.rstrip('/')}/{clean_logo_name}.{logo_type}"
 
 # ===================== 初始化配置 =====================
 # 确保 output 文件夹存在
 OUTPUT_FOLDER = Path("output")
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
-# 初始化 logo 目录
-LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
-for dir_path in LOGO_DIRS:
-    dir_path.mkdir(parents=True, exist_ok=True)
-
 # 标准化M3U文件路径（核心新增）
 STANDARD_M3U_PATH = OUTPUT_FOLDER / "live_standard.m3u"
-
-# 从config.py读取GitHub Logo配置
-GITHUB_LOGO_BASE_URL = getattr(config, 'GITHUB_LOGO_BASE_URL', 
-                              "https://raw.githubusercontent.com/fanmingming/live/main/tv")
-BACKUP_LOGO_BASE_URL = getattr(config, 'BACKUP_LOGO_BASE_URL',
-                              "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv")
-GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
-    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
-])
 
 # 测速配置（放宽门槛，保留更多URL）
 CONFIG_DEFAULTS = {
@@ -129,6 +120,22 @@ def clean_channel_name(channel_name: str) -> str:
     # 数字标准化
     cleaned_name = re.sub(r'(\D*)(\d+)(\D*)', lambda m: m.group(1) + str(int(m.group(2))) + m.group(3), cleaned_name)
     return cleaned_name.upper()
+
+# 【新增函数】生成台标URL
+def generate_logo_url(channel_name: str) -> str:
+    """根据频道名生成标准化的台标URL"""
+    if not channel_name or not hasattr(config, 'logo_url') or not config.logo_url:
+        return ""
+    
+    logo_type = getattr(config, 'logo_type', 'png')
+    # 清理频道名（移除特殊字符，用于文件名）
+    clean_name = re.sub(r'[^a-zA-Z0-9\u4e00-\u9fa5]', '', channel_name).strip()
+    if not clean_name:
+        return ""
+    
+    # 拼接台标URL
+    logo_base = config.logo_url.rstrip('/')
+    return f"{logo_base}/{clean_name}.{logo_type}"
 
 # 【新增函数】清洗分类名称（仅移除非法字符，保留原始语义）
 def clean_group_title(raw_group: str) -> str:
@@ -229,6 +236,7 @@ def generate_standard_m3u(channels: List[ChannelInfo], output_path: Path) -> Lis
     - 规范格式：严格遵循M3U行业标准
     - 有序整理：按分类+频道名排序
     - 【修改3】保留原始group_title，空分类显示为"未分类"
+    - 【新增】添加tvg-logo属性
     返回：去重后的URL列表（用于后续测速）
     """
     # 第一步：深度去重（按URL去重，保留第一个出现的频道信息）
@@ -276,10 +284,11 @@ def generate_standard_m3u(channels: List[ChannelInfo], output_path: Path) -> Lis
                 extinf_parts = [f"#EXTINF:-1"]
                 if channel.tvg_name:
                     extinf_parts.append(f'tvg-name="{channel.tvg_name}"')
-                if channel.tvg_logo:
-                    extinf_parts.append(f'tvg-logo="{channel.tvg_logo}"')
                 if channel.tvg_id:
                     extinf_parts.append(f'tvg-id="{channel.tvg_id}"')
+                # 【新增】添加tvg-logo属性
+                if channel.tvg_logo:
+                    extinf_parts.append(f'tvg-logo="{channel.tvg_logo}"')
                 # 【修改4】写入原始group_title（空值则不写）
                 if channel.group_title:
                     extinf_parts.append(f'group-title="{channel.group_title}"')
@@ -304,6 +313,7 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
     优化：减少过度去重，仅按URL去重（保留更多URL）
     从直播源内容中提取频道信息，优先解析M3U标准字段
     【修改5】完全保留原始group-title，不使用默认分类
+    【新增】解析tvg-logo属性并自动生成台标URL
     """
     channels = []
     # 仅按URL去重（放宽去重条件）
@@ -345,8 +355,9 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
             # 提取原始group-title并轻量清洗
             raw_group = current_attrs.get('group-title', current_attrs.get('group', ''))
             group_title = clean_group_title(raw_group)
-            tvg_logo = current_attrs.get('tvg-logo', '')
             tvg_id = current_attrs.get('tvg-id', '')
+            # 【新增】提取tvg-logo属性
+            tvg_logo = current_attrs.get('tvg-logo', '')
             channel_name = current_attrs.get('_channel_name', tvg_name or '未知频道')
             
             # 清洗频道名
@@ -354,15 +365,19 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
             if not cleaned_name:
                 cleaned_name = clean_channel_name(tvg_name) or '未知频道'
             
+            # 【新增】如果没有解析到tvg-logo，自动生成
+            if not tvg_logo:
+                tvg_logo = generate_logo_url(cleaned_name)
+            
             # 创建频道信息对象
             channel_info = ChannelInfo(
                 name=cleaned_name,
                 url=url,
                 group_title=group_title,  # 【修改7】传入原始清洗后的分类，无默认值
                 tvg_name=tvg_name,
-                tvg_logo=tvg_logo,
                 tvg_id=tvg_id,
-                other_attrs={k: v for k, v in current_attrs.items() if k not in ['tvg-name', 'group-title', 'tvg-logo', 'tvg-id', '_channel_name']}
+                tvg_logo=tvg_logo,  # 【新增】传入台标URL
+                other_attrs={k: v for k, v in current_attrs.items() if k not in ['tvg-name', 'group-title', 'tvg-id', 'tvg-logo', '_channel_name']}
             )
             channels.append(channel_info)
             
@@ -391,11 +406,15 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
                 
                 cleaned_name = clean_channel_name(name_part) or '未知频道'
                 
+                # 【新增】生成台标URL
+                tvg_logo = generate_logo_url(cleaned_name)
+                
                 # 创建兼容模式的频道信息 - 【修改8】旧格式group_title为空字符串
                 channel_info = ChannelInfo(
                     name=cleaned_name,
                     url=url_part,
-                    group_title=""  # 无分类信息，设为空字符串
+                    group_title="",  # 无分类信息，设为空字符串
+                    tvg_logo=tvg_logo  # 【新增】台标URL
                 )
                 channels.append(channel_info)
                 continue
@@ -424,11 +443,15 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
                     name_from_url = clean_channel_name(part)
                     break
             
+            # 【新增】生成台标URL
+            tvg_logo = generate_logo_url(name_from_url)
+            
             # 【修改9】单独URL的group_title为空字符串
             channel_info = ChannelInfo(
                 name=name_from_url,
                 url=url,
-                group_title=""
+                group_title="",
+                tvg_logo=tvg_logo  # 【新增】台标URL
             )
             channels.append(channel_info)
     
@@ -516,92 +539,6 @@ def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, laten
         suffix = f"${ip_version}•线路{index}({latency_str})"
     
     return f"{base_url}{suffix}"
-
-@lru_cache(maxsize=1)
-def get_github_logo_list() -> List[str]:
-    """获取GitHub仓库中的logo文件列表"""
-    headers = {"User-Agent": "Mozilla/5.0"}
-    logo_files = []
-    
-    for api_url in GITHUB_LOGO_API_URLS:
-        try:
-            response = requests.get(api_url, headers=headers, timeout=10)
-            response.raise_for_status()
-            data = response.json()
-            
-            for item in data:
-                if item.get("type") == "file" and item.get("name", "").lower().endswith(".png"):
-                    logo_files.append(item["name"])
-            
-            logger.info(f"成功获取GitHub logo列表，共{len(logo_files)}个文件（来源：{api_url}）")
-            break
-        except Exception as e:
-            logger.warning(f"获取GitHub logo列表失败（{api_url}）：{str(e)[:50]}")
-            continue
-    
-    if not logo_files:
-        logger.info("使用预设logo列表兜底")
-        logo_files = [
-            "CCTV1.png", "CCTV2.png", "CCTV3.png", "CCTV4.png", "CCTV5.png", "CCTV5PLUS.png",
-            "CCTV6.png", "CCTV7.png", "CCTV8.png", "CCTV9.png", "CCTV10.png", "CCTV11.png",
-            "CCTV12.png", "CCTV13.png", "CCTV14.png", "CCTV15.png", "湖南卫视.png", "浙江卫视.png",
-            "江苏卫视.png", "东方卫视.png", "北京卫视.png", "安徽卫视.png"
-        ]
-    
-    return logo_files
-
-def get_channel_logo_url(channel_name: str) -> str:
-    """检测logo文件，生成动态logo_url"""
-    clean_logo_name = clean_channel_name(channel_name)
-    logo_filename = f"{clean_logo_name}.png"
-    
-    # 检测本地logo
-    for logo_dir in LOGO_DIRS:
-        local_logo_path = logo_dir / logo_filename
-        if local_logo_path.exists():
-            return local_logo_path.as_posix()
-    
-    # 获取有效的logo URL
-    def get_valid_logo_url(filename):
-        base_urls = [GITHUB_LOGO_BASE_URL, BACKUP_LOGO_BASE_URL]
-        
-        for base_url in base_urls:
-            for mirror in GITHUB_MIRRORS:
-                if "raw.githubusercontent.com" in base_url:
-                    test_url = base_url.replace("raw.githubusercontent.com", mirror) + f"/{filename}"
-                else:
-                    test_url = base_url + f"/{filename}"
-                
-                try:
-                    response = requests.head(test_url, timeout=3, allow_redirects=True)
-                    if response.status_code == 200:
-                        return test_url
-                except:
-                    continue
-        
-        return f"{BACKUP_LOGO_BASE_URL}/{filename}"
-    
-    github_logo_files = get_github_logo_list()
-    
-    if logo_filename in github_logo_files:
-        return get_valid_logo_url(logo_filename)
-    
-    # 模糊匹配
-    candidate_names = [
-        logo_filename,
-        logo_filename.replace("+", "PLUS"),
-        logo_filename.upper(),
-        logo_filename.lower()
-    ]
-    for candidate in candidate_names:
-        if candidate in github_logo_files:
-            return get_valid_logo_url(candidate)
-    
-    similar_logo = find_similar_name(clean_logo_name, [f.replace(".png", "") for f in github_logo_files], cutoff=0.7)
-    if similar_logo:
-        return get_valid_logo_url(f"{similar_logo}.png")
-    
-    return ""
 
 # ===================== 链接修复和重试函数 =====================
 def replace_github_domain(url: str) -> List[str]:
@@ -1023,21 +960,20 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
     """
     写入带完整元数据的频道信息（标注失败状态）
     【修改14】保留原始group_title，空分类显示为"未分类"
+    【新增】添加tvg-logo属性到EXTINF行
     """
     if not channel_info.url:
         return
-    
-    # 优先使用频道自带的tvg-logo，否则自动匹配
-    logo_url = channel_info.tvg_logo or get_channel_logo_url(channel_info.name)
     
     # 构建M3U属性行
     extinf_parts = [f"#EXTINF:-1"]
     if channel_info.tvg_name:
         extinf_parts.append(f'tvg-name="{channel_info.tvg_name}"')
-    if logo_url:
-        extinf_parts.append(f'tvg-logo="{logo_url}"')
     if channel_info.tvg_id:
         extinf_parts.append(f'tvg-id="{channel_info.tvg_id}"')
+    # 【新增】添加tvg-logo属性
+    if channel_info.tvg_logo:
+        extinf_parts.append(f'tvg-logo="{channel_info.tvg_logo}"')
     # 【修改15】使用原始group_title（模板匹配时用模板分类，否则用原始）
     if category:
         extinf_parts.append(f'group-title="{category}"')
@@ -1065,10 +1001,10 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
     f_m3u.write(f"{extinf_line}\n")
     f_m3u.write(f"{url_with_suffix}\n")
     
-    # 写入TXT（分类,频道名,URL）
+    # 写入TXT（分类,频道名,URL,台标URL）【新增台标URL字段】
     # 【修改16】空分类显示为"未分类"
     display_category = category if category else (channel_info.group_title if channel_info.group_title else "未分类")
-    f_txt.write(f"{display_category},{channel_display_name},{url_with_suffix}\n")
+    f_txt.write(f"{display_category},{channel_display_name},{url_with_suffix},{channel_info.tvg_logo}\n")
 
 def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]]], 
                          template_channels: OrderedDict,
@@ -1078,6 +1014,7 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
     优化：生成带完整M3U元数据的文件
     包含所有抓取的URL（即使未匹配模板/测速失败）
     【修改17】保留原始group_title，空分类单独处理
+    【新增】支持tvg-logo属性生成
     """
     latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
     written_urls_ipv4 = set()
@@ -1123,10 +1060,12 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
                 for entry in group.get('entries', []):
                     entry_name = entry.get('name', datetime.now().strftime("%Y-%m-%d"))
                     entry_url = entry.get('url', '')
-                    entry_logo = entry.get('logo', '')
                     
                     if not entry_url:
                         continue
+                    
+                    # 【新增】为公告频道生成台标URL
+                    entry_logo = generate_logo_url(entry_name)
                     
                     entry_result = latency_results.get(entry_url)
                     if entry_result:
@@ -1140,14 +1079,18 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
                     if is_ipv6(entry_url):
                         if entry_url not in written_urls_ipv6:
                             written_urls_ipv6.add(entry_url)
-                            # 构建公告频道的EXTINF行
+                            # 构建公告频道的EXTINF行（新增tvg-logo）
                             if latency >= 9999.0:
                                 display_name = f"{entry_name}(失败)"
                             else:
                                 display_name = f"{entry_name}({latency:.0f}ms)"
-                            extinf = f"#EXTINF:-1 tvg-name=\"{entry_name}\" tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{display_name}"
+                            extinf_parts = [f"#EXTINF:-1", f'tvg-name="{entry_name}"', f'group-title="{channel_name}"']
+                            if entry_logo:
+                                extinf_parts.append(f'tvg-logo="{entry_logo}"')
+                            extinf = ' '.join(extinf_parts) + f',{display_name}'
+                            
                             f_m3u_ipv6.write(f"{extinf}\n{entry_url}\n")
-                            f_txt_ipv6.write(f"{channel_name},{display_name},{entry_url}\n")
+                            f_txt_ipv6.write(f"{channel_name},{display_name},{entry_url},{entry_logo}\n")
                             f_m3u_all.write(f"{extinf}\n{entry_url}\n")
                             announcement_id += 1
                     else:
@@ -1157,9 +1100,13 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
                                 display_name = f"{entry_name}(失败)"
                             else:
                                 display_name = f"{entry_name}({latency:.0f}ms)"
-                            extinf = f"#EXTINF:-1 tvg-name=\"{entry_name}\" tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{display_name}"
+                            extinf_parts = [f"#EXTINF:-1", f'tvg-name="{entry_name}"', f'group-title="{channel_name}"']
+                            if entry_logo:
+                                extinf_parts.append(f'tvg-logo="{entry_logo}"')
+                            extinf = ' '.join(extinf_parts) + f',{display_name}'
+                            
                             f_m3u_ipv4.write(f"{extinf}\n{entry_url}\n")
-                            f_txt_ipv4.write(f"{channel_name},{display_name},{entry_url}\n")
+                            f_txt_ipv4.write(f"{channel_name},{display_name},{entry_url},{entry_logo}\n")
                             f_m3u_all.write(f"{extinf}\n{entry_url}\n")
                             announcement_id += 1
 
@@ -1229,14 +1176,18 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
         generate_speed_report(latency_results, latency_threshold)
         
         logger.info(f"\n文件生成完成：")
-        logger.info(f"  - IPv4 M3U: {ipv4_m3u_path}（包含完整M3U元数据）")
-        logger.info(f"  - IPv4 TXT: {ipv4_txt_path}（分类,频道名,URL格式）")
-        logger.info(f"  - IPv6 M3U: {ipv6_m3u_path}（包含完整M3U元数据）")
-        logger.info(f"  - IPv6 TXT: {ipv6_txt_path}（分类,频道名,URL格式）")
+        logger.info(f"  - IPv4 M3U: {ipv4_m3u_path}（包含完整M3U元数据+台标）")
+        logger.info(f"  - IPv4 TXT: {ipv4_txt_path}（分类,频道名,URL,台标URL格式）")
+        logger.info(f"  - IPv6 M3U: {ipv6_m3u_path}（包含完整M3U元数据+台标）")
+        logger.info(f"  - IPv6 TXT: {ipv6_txt_path}（分类,频道名,URL,台标URL格式）")
         logger.info(f"  - 全量M3U: {all_m3u_path}（包含所有抓取的URL，共{len(latency_results)}个）")
-        logger.info(f"  - 标准化M3U: {STANDARD_M3U_PATH}（去重后规范格式）")
+        logger.info(f"  - 标准化M3U: {STANDARD_M3U_PATH}（去重后规范格式+台标）")
         logger.info(f"  - 延迟阈值：{latency_threshold}ms")
         logger.info(f"  - 未匹配模板的频道数：{unmatch_count}")
+        # 【新增】台标配置信息
+        if hasattr(config, 'logo_url') and config.logo_url:
+            logger.info(f"  - 台标库地址：{config.logo_url}")
+            logger.info(f"  - 台标文件类型：{getattr(config, 'logo_type', 'png')}")
         
     except Exception as e:
         logger.error(f"生成文件失败：{str(e)}", exc_info=True)
@@ -1266,6 +1217,9 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
             f.write("="*80 + "\n")
             f.write(f"测试时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"延迟阈值：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s\n")
+            # 【新增】台标配置信息
+            if hasattr(config, 'logo_url') and config.logo_url:
+                f.write(f"台标库地址：{config.logo_url} | 台标类型：{getattr(config, 'logo_type', 'png')}\n")
             f.write(f"总测试URL数：{total_urls}（基于标准化M3U去重后）\n")
             success_rate = f"{len(success_urls)/total_urls*100:.1f}%" if total_urls > 0 else "0.0%"
             f.write(f"测试成功数：{len(success_urls)} ({success_rate})\n")
@@ -1321,9 +1275,9 @@ async def main():
         logger.info("===== 开始处理直播源（优化版-标准化M3U） =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s")
         logger.info(f"⚠️  已启用原始group-title保留模式，不再使用默认分类 ⚠️")
-        
-        # 预加载GitHub logo列表
-        get_github_logo_list()
+        # 【新增】打印台标配置信息
+        if hasattr(config, 'logo_url') and config.logo_url:
+            logger.info(f"🎨 台标配置：{config.logo_url} | 文件类型：{getattr(config, 'logo_type', 'png')}")
         
         # 步骤1：抓取并提取所有频道
         logger.info("\n===== 1. 抓取并提取直播源频道 =====")
@@ -1333,7 +1287,7 @@ async def main():
             return
         
         # 步骤2：生成标准化M3U文件（核心新增）
-        logger.info("\n===== 2. 生成标准化M3U文件（去重+规范格式） =====")
+        logger.info("\n===== 2. 生成标准化M3U文件（去重+规范格式+台标） =====")
         # 生成标准化M3U并获取去重后的URL列表
         unique_urls = generate_standard_m3u(flat_channels, STANDARD_M3U_PATH)
         
@@ -1343,7 +1297,7 @@ async def main():
             latency_results = await tester.batch_speed_test(unique_urls)
         
         # 步骤4：生成最终文件（包含测速结果）
-        logger.info("\n===== 4. 生成最终文件（包含所有URL+失败标注） =====")
+        logger.info("\n===== 4. 生成最终文件（包含所有URL+失败标注+台标） =====")
         updateChannelUrlsM3U(matched_channels, template_channels, all_channels, latency_results)
         
         logger.info("\n===== 所有流程执行完成 =====")
