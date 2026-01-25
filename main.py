@@ -63,7 +63,7 @@ GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
 
 # 测速配置（放宽门槛，保留更多URL）
 CONFIG_DEFAULTS = {
-    "LATENCY_THRESHOLD": 1000,  # 延迟阈值从500ms→1000ms
+    "LATENCY_THRESHOLD": 500,  # 延迟阈值从500ms→1000ms
     "CONCURRENT_LIMIT": 20,
     "TIMEOUT": 20,               # 超时从15s→20s
     "RETRY_TIMES": 2,            # 重试次数降为2，节省时间
@@ -910,7 +910,7 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
     if channel_info.latency >= 9999.0:
         channel_display_name = f"{channel_info.name}(失败)"
     else:
-        channel_display_name = f"{channel_info.name}({channel_info.latency:.0f}ms)"
+        channel_display_name = f"{channel_info.name}"
     
     extinf_line = ' '.join(extinf_parts) + f',{channel_display_name}'
     
