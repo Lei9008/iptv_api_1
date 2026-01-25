@@ -1,28 +1,11 @@
 # config.py - IPTV直播源处理配置文件
-# ===================== 核心配置 =====================
-
-# 模板文件路径（必填，需提前创建）
-TEMPLATE_FILE = "demo.txt"
-
-# 延迟阈值（ms）：超过该值标记为延迟过高
-LATENCY_THRESHOLD = 1000
-
-# 并发限制：同时测速的URL数量
-CONCURRENT_LIMIT = 20
-
-# 超时时间（s）：单个URL请求超时时间
-TIMEOUT = 20
-
-# 重试次数：URL抓取/测速失败后的重试次数
-RETRY_TIMES = 2
-
-# IP版本优先级："ipv4" 或 "ipv6"
-IP_VERSION_PRIORITY = "ipv4"
-
-# 直播源URL列表（必填，填写你的直播源地址）
+# ===================== 核心源配置 =====================
+# 直播源URL列表（支持GitHub RAW/普通HTTP链接）
 SOURCE_URLS = [
-    # 示例：
-    "https://github.com/develop202/migu_video/blob/main/interface.txt",
+    # 替换为你自己的直播源链接
+
+    
+     "https://github.com/develop202/migu_video/blob/main/interface.txt",
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
    # "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
    # "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
@@ -36,23 +19,28 @@ SOURCE_URLS = [
     "https://live.hacks.tools/tv/iptv4.txt",
    # "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
     # 其他源链接...
-
-
-
 ]
 
+# 模板文件路径（相对路径）
+TEMPLATE_FILE = "demo.txt"
 
-# ===================== 辅助配置 =====================
-# URL黑名单：包含以下字符串的URL会被过滤
+# ===================== 测速配置 =====================
+# 延迟阈值（ms），超过该值仍保留但标注延迟
+LATENCY_THRESHOLD = 1000
+# 异步并发数（根据服务器性能调整）
+CONCURRENT_LIMIT = 20
+# 超时时间（s）
+TIMEOUT = 20
+# 重试次数
+RETRY_TIMES = 2
+# IP版本优先级（ipv4/ipv6）
+IP_VERSION_PRIORITY = "ipv4"
+
+# ===================== 过滤配置 =====================
+# URL黑名单（包含以下关键词的URL会被过滤）
 URL_BLACKLIST = [
-    # "test-url",
-    # "invalid-domain.com"
-]
 
-# EPG地址列表：生成M3U时添加x-tvg-url属性
-EPG_URLS = [
-
-   
+    
     "https://epg.v1.mk/fy.xml",
     "http://epg.51zmt.top:8000/e.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
@@ -61,34 +49,49 @@ EPG_URLS = [
     "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml.gz",
     "https://live.fanmingming.cn/e.xml",
 
-
-   
+    
 ]
 
-# 公告频道配置：会添加到M3U文件开头
+# ===================== EPG配置 =====================
+# 电子节目指南URL
+EPG_URLS = [
+    "https://epg.112114.xyz/pp.xml",
+]
+
+# ===================== 公告配置 =====================
 ANNOUNCEMENTS = [
-    # {
-    #     "channel": "公告频道",
-    #     "entries": [
-    #         {
-    #             "name": "直播源更新公告",
-    #             "url": "https://example.com/announcement.txt",
-    #             "logo": "https://example.com/logo.png"
-    #         }
-    #     ]
-    # }
+    {
+        "channel": "公告栏",
+        "entries": [
+            {
+                "name": "直播源更新时间",
+                "url": "",
+                "logo": "https://raw.githubusercontent.com/fanmingming/live/main/tv/公告.png"
+            },
+            {
+                "name": "使用说明",
+                "url": "",
+                "logo": "https://raw.githubusercontent.com/fanmingming/live/main/tv/说明.png"
+            }
+        ]
+    }
 ]
 
-# ===================== Logo配置 =====================
-# GitHub Logo仓库基础地址
+# ===================== 台标配置 =====================
+# GitHub台标仓库基础URL
 GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
+# 备用台标URL（GHProxy）
 BACKUP_LOGO_BASE_URL = "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv"
-
-# GitHub Logo API地址（用于获取logo文件列表）
+# GitHub API URL（获取台标列表）
 GITHUB_LOGO_API_URLS = [
     "https://api.github.com/repos/fanmingming/live/contents/main/tv",
     "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
 ]
+
+
+
+
+
 
 
 
