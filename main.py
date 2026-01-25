@@ -109,7 +109,7 @@ raw_name_mapping: Dict[str, str] = {}
 
 # ===================== 核心工具函数（修复正则分组问题） =====================
 def clean_channel_name(channel_name: str) -> str:
-    """标准化清洗频道名称（修复：正则分组引用错误）"""
+    """标准化清洗频道名称（修复：正则分组引用问题）"""
     if not channel_name:
         return ""
     
@@ -330,6 +330,68 @@ def get_channel_logo_url(channel_name: str) -> str:
         return f"{BACKUP_LOGO_BASE_URL}/{similar_logo}.png"
     
     return ""
+
+# ===================== 新增：抓取完成立即生成基础M3U文件 =====================
+def generate_basic_m3u(all_channels: OrderedDict):
+    """
+    抓取完成后立即生成基础M3U文件（未测速、未筛选）
+    :param all_channels: 所有抓取到的频道数据 {分类名: [(频道名, URL), ...]}
+    """
+    # 基础M3U文件路径
+    basic_m3u_path = OUTPUT_FOLDER / "live_basic.m3u"
+    basic_txt_path = OUTPUT_FOLDER / "live_basic.txt"
+    
+    try:
+        with open(basic_m3u_path, "w", encoding="utf-8", buffering=1024*1024) as f_m3u, \
+             open(basic_txt_path, "w", encoding="utf-8", buffering=1024*1024) as f_txt:
+            
+            # 写入M3U头部
+            epg_urls = getattr(config, 'epg_urls', CONFIG_DEFAULTS["EPG_URLS"])
+            epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
+            f_m3u.write(f"#EXTM3U x-tvg-url={epg_str}\n")
+            f_m3u.write(f"# 基础版直播源（仅抓取，未测速筛选）\n")
+            f_m3u.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f_m3u.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
+            
+            # 按分类写入所有频道
+            channel_id = 1
+            total_written = 0
+            
+            for category, channel_list in all_channels.items():
+                # 写入分类标记
+                f_m3u.write(f"# 分类：{category}\n")
+                f_txt.write(f"{category},#genre#\n")
+                
+                for name, url in channel_list:
+                    if not url or not url.startswith(("http://", "https://")):
+                        continue
+                    
+                    # 恢复原始频道名
+                    raw_name = restore_raw_name(name)
+                    
+                    # 获取logo
+                    logo_url = get_channel_logo_url(raw_name)
+                    
+                    # 写入M3U
+                    f_m3u.write(
+                        f"#EXTINF:-1 tvg-id=\"{channel_id}\" tvg-name=\"{raw_name}\" "
+                        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{raw_name}\n"
+                    )
+                    f_m3u.write(url + "\n")
+                    
+                    # 写入TXT
+                    f_txt.write(f"{raw_name},{url}\n")
+                    
+                    channel_id += 1
+                    total_written += 1
+            
+            logger.info(f"\n===== 基础M3U文件已生成 =====")
+            logger.info(f"  - 基础M3U: {basic_m3u_path} (写入{total_written}个频道)")
+            logger.info(f"  - 基础TXT: {basic_txt_path}")
+            logger.info(f"  - 该文件包含所有抓取到的频道，未进行测速和筛选\n")
+            
+    except Exception as e:
+        logger.error(f"生成基础M3U文件失败：{str(e)}", exc_info=True)
 
 # ===================== M3U提取函数 =====================
 def extract_m3u_meta(content: str) -> List[ChannelMeta]:
@@ -694,7 +756,6 @@ def fetch_channels(url: str) -> OrderedDict:
 
     return channels
 
-# ========== 关键修复：merge_channels 函数 ==========
 def merge_channels(target: OrderedDict, source: OrderedDict):
     """合并频道（修复解包错误）"""
     url_set = set()
@@ -815,6 +876,9 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
     
     if failed_urls:
         logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
+    
+    # ========== 新增：抓取完成后立即生成基础M3U文件 ==========
+    generate_basic_m3u(all_channels)
     
     # 匹配频道
     matched_channels = match_channels(template_channels, all_channels)
@@ -966,7 +1030,7 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
             # 生成报告
             generate_speed_report(latency_results, latency_threshold)
             
-            logger.info(f"\n文件生成完成：")
+            logger.info(f"\n===== 最终优化版文件生成完成 =====")
             logger.info(f"  - IPv4 M3U: {ipv4_m3u_path} (写入{ipv4_written}个URL)")
             logger.info(f"  - IPv4 TXT: {ipv4_txt_path}")
             logger.info(f"  - IPv6 M3U: {ipv6_m3u_path} (写入{ipv6_written}个URL)")
@@ -1082,13 +1146,17 @@ async def main():
         async with SpeedTester() as tester:
             latency_results = await tester.batch_speed_test(all_urls)
         
-        # 生成文件
-        logger.info("\n===== 3. 生成最终文件 =====")
+        # 生成最终优化版文件
+        logger.info("\n===== 3. 生成最终优化版文件 =====")
         updateChannelUrlsM3U(channels, template_channels, latency_results)
         
         # 统计耗时
         total_elapsed = time.time() - start_total
         logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
+        logger.info(f"\n文件说明：")
+        logger.info(f"  - live_basic.m3u: 基础版（仅抓取，未测速筛选）")
+        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类）")
+        logger.info(f"  - speed_test_report.txt: 详细测速报告")
     
     except Exception as e:
         logger.critical(f"程序执行异常：{str(e)}", exc_info=True)
