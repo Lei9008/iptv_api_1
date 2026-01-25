@@ -112,34 +112,113 @@ raw_extinf_mapping: Dict[str, str] = {}  # url -> 完整的原始#EXTINF行
 url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
 
 # ===================== 核心工具函数 =====================
-def clean_channel_name(channel_name: str) -> str:
-    """标准化清洗频道名称"""
+def standardize_channel_name(channel_name: str) -> str:
+    """
+    智能标准化频道名（核心函数）
+    将CCTV1综合 → CCTV1，CCTV17农业农村 → CCTV17等
+    """
     if not channel_name:
         return ""
     
-    # 保留特殊标识
-    channel_name = re.sub(r'CCTV-?5\+', 'CCTV5+', channel_name)
-    channel_name = re.sub(r'CCTV5\+\s*(\S+)', 'CCTV5+', channel_name)
+    # 转换为大写，便于匹配
+    name = channel_name.upper().strip()
+    
+    # 1. CCTV系列标准化规则（优先级最高）
+    # 匹配CCTV+数字（支持CCTV1、CCTV-1、CCTV 1等格式）
+    cctv_pattern = r'(CCTV)\s*\-?(\d+)(?:\+|PLUS)?'
+    cctv_match = re.search(cctv_pattern, name)
+    if cctv_match:
+        cctv_num = cctv_match.group(2)
+        # 处理CCTV5+等特殊情况
+        if '+' in name or 'PLUS' in name:
+            standardized = f"CCTV{cctv_num}+"
+        else:
+            standardized = f"CCTV{cctv_num}"
+        logger.debug(f"CCTV标准化：{channel_name} → {standardized}")
+        return standardized
+    
+    # 2. 卫视系列标准化
+    satellite_patterns = [
+        (r'(湖南)\s*卫视', '湖南卫视'),
+        (r'(浙江)\s*卫视', '浙江卫视'),
+        (r'(江苏)\s*卫视', '江苏卫视'),
+        (r'(东方)\s*卫视', '东方卫视'),
+        (r'(北京)\s*卫视', '北京卫视'),
+        (r'(安徽)\s*卫视', '安徽卫视'),
+        (r'(广东)\s*卫视', '广东卫视'),
+        (r'(山东)\s*卫视', '山东卫视'),
+        (r'(四川)\s*卫视', '四川卫视'),
+        (r'(重庆)\s*卫视', '重庆卫视'),
+        (r'(湖北)\s*卫视', '湖北卫视'),
+        (r'(河南)\s*卫视', '河南卫视'),
+        (r'(江西)\s*卫视', '江西卫视'),
+        (r'(广西)\s*卫视', '广西卫视'),
+        (r'(云南)\s*卫视', '云南卫视'),
+        (r'(贵州)\s*卫视', '贵州卫视'),
+        (r'(辽宁)\s*卫视', '辽宁卫视'),
+        (r'(黑龙江)\s*卫视', '黑龙江卫视'),
+        (r'(吉林)\s*卫视', '吉林卫视'),
+        (r'(天津)\s*卫视', '天津卫视'),
+        (r'(上海)\s*卫视', '上海卫视'),
+    ]
+    for pattern, replacement in satellite_patterns:
+        if re.search(pattern, name):
+            logger.debug(f"卫视标准化：{channel_name} → {replacement}")
+            return replacement
+    
+    # 3. 其他常见频道标准化
+    other_patterns = [
+        (r'(\w+)\s*综合\s*频道?', r'\1综合'),
+        (r'(\w+)\s*影视\s*频道?', r'\1影视'),
+        (r'(\w+)\s*新闻\s*频道?', r'\1新闻'),
+        (r'(\w+)\s*综艺\s*频道?', r'\1综艺'),
+        (r'(\w+)\s*体育\s*频道?', r'\1体育'),
+        (r'(\w+)\s*少儿\s*频道?', r'\1少儿'),
+        (r'(\w+)\s*电影\s*频道?', r'\1电影'),
+        (r'(\w+)\s*财经\s*频道?', r'\1财经'),
+        (r'(\w+)\s*科教\s*频道?', r'\1科教'),
+        (r'(\w+)\s*都市\s*频道?', r'\1都市'),
+        (r'(\w+)\s*公共\s*频道?', r'\1公共'),
+    ]
+    for pattern, replacement in other_patterns:
+        if re.search(pattern, name):
+            standardized = re.sub(pattern, replacement, name)
+            # 移除多余空格和符号
+            standardized = re.sub(r'\s+', '', standardized)
+            logger.debug(f"其他频道标准化：{channel_name} → {standardized}")
+            return standardized
+    
+    # 4. 最后清理：移除所有空格和特殊字符
+    cleaned = re.sub(r'[\s\(\)（）【】\-—_]+', '', name)
+    logger.debug(f"基础清理：{channel_name} → {cleaned}")
+    return cleaned
+
+def clean_channel_name(channel_name: str) -> str:
+    """标准化清洗频道名称（集成智能标准化）"""
+    if not channel_name:
+        return ""
+    
+    # 第一步：应用智能标准化
+    standardized_name = standardize_channel_name(channel_name)
+    
+    # 第二步：保留特殊标识
+    standardized_name = re.sub(r'CCTV-?5\+', 'CCTV5+', standardized_name)
+    standardized_name = re.sub(r'CCTV5\+\s*(\S+)', 'CCTV5+', standardized_name)
     
     # 港澳台/凤凰卫视特殊处理
-    channel_name = channel_name.replace("翡翠台", "TVB翡翠台")
-    channel_name = channel_name.replace("凤凰中文", "凤凰卫视中文台")
-    channel_name = channel_name.replace("凤凰资讯", "凤凰卫视资讯台")
-    channel_name = channel_name.replace("凤凰香港", "凤凰卫视香港台")
-    channel_name = channel_name.replace("凤凰卫视", "凤凰卫视中文台")
-    channel_name = channel_name.replace("香港卫视", "香港卫视综合台")
+    standardized_name = standardized_name.replace("翡翠台", "TVB翡翠台")
+    standardized_name = standardized_name.replace("凤凰中文", "凤凰卫视中文台")
+    standardized_name = standardized_name.replace("凤凰资讯", "凤凰卫视资讯台")
+    standardized_name = standardized_name.replace("凤凰香港", "凤凰卫视香港台")
+    standardized_name = standardized_name.replace("凤凰卫视", "凤凰卫视中文台")
+    standardized_name = standardized_name.replace("香港卫视", "香港卫视综合台")
     
     # 正则分组修复
-    channel_name = re.sub(r'(\w+)二套(\w+)', r'\g<1>2套\g<2>', channel_name)
-    channel_name = re.sub(r'(\w+)三套(\w+)', r'\g<1>3套\g<2>', channel_name)
-    
-    # 其他名称简化
-    channel_name = re.sub(r'经济生活', '经视', channel_name)
-    channel_name = re.sub(r'影视', '影视频道', channel_name)
-    channel_name = re.sub(r'文旅记录', '文旅', channel_name)
+    standardized_name = re.sub(r'(\w+)二套(\w+)', r'\g<1>2套\g<2>', standardized_name)
+    standardized_name = re.sub(r'(\w+)三套(\w+)', r'\g<1>3套\g<2>', standardized_name)
     
     # 移除特殊字符
-    cleaned_name = re.sub(r'[$「」()（）\s-]', '', channel_name)
+    cleaned_name = re.sub(r'[$「」()（）\s-]', '', standardized_name)
     # 数字标准化
     cleaned_name = re.sub(r'(\D*)(\d+)(\D*)', lambda m: m.group(1) + str(int(m.group(2))) + m.group(3), cleaned_name)
     
@@ -343,10 +422,10 @@ def get_channel_logo_url(channel_name: str) -> str:
     
     return ""
 
-# ===================== 核心修改：完整保留原始M3U元信息 =====================
+# ===================== 核心修改：完整保留原始M3U元信息 + 智能tvg-name =====================
 def generate_basic_m3u(all_channels: OrderedDict):
     """
-    抓取完成后立即生成基础M3U文件（100%保留原始M3U元信息）
+    抓取完成后立即生成基础M3U文件（100%保留原始M3U元信息 + 智能tvg-name）
     :param all_channels: 所有抓取到的频道数据 {group-title: [(频道名, URL), ...]}
     """
     # 基础M3U文件路径
@@ -385,13 +464,29 @@ def generate_basic_m3u(all_channels: OrderedDict):
                     # 获取完整的原始#EXTINF信息
                     meta = channel_meta_cache.get(url)
                     if meta and meta.raw_extinf:
-                        # 100%使用原始的#EXTINF行
-                        f_m3u.write(meta.raw_extinf + "\n")
+                        # 智能优化tvg-name字段
+                        optimized_extinf = meta.raw_extinf
+                        if meta.channel_name:
+                            # 提取原始tvg-name值
+                            tvg_name_match = re.search(r'tvg-name="([^"]+)"', optimized_extinf)
+                            if tvg_name_match:
+                                original_tvg_name = tvg_name_match.group(1)
+                                # 应用智能标准化
+                                standardized_tvg_name = standardize_channel_name(original_tvg_name)
+                                # 替换tvg-name值
+                                optimized_extinf = re.sub(
+                                    r'tvg-name="[^"]+"', 
+                                    f'tvg-name="{standardized_tvg_name}"', 
+                                    optimized_extinf
+                                )
+                        # 写入优化后的EXTINF行
+                        f_m3u.write(optimized_extinf + "\n")
                     else:
-                        # 对于非M3U格式的URL，生成基础的EXTINF行
+                        # 对于非M3U格式的URL，生成基础的EXTINF行（使用智能标准化的tvg-name）
                         channel_name = meta.channel_name if (meta and meta.channel_name) else "未知频道"
+                        standardized_tvg_name = standardize_channel_name(channel_name)
                         f_m3u.write(
-                            f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{channel_name}\" "
+                            f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standardized_tvg_name}\" "
                             f"tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}\n"
                         )
                     
@@ -409,19 +504,19 @@ def generate_basic_m3u(all_channels: OrderedDict):
             for cat, count in category_stats.items():
                 f_m3u.write(f"# {cat}: {count}个频道\n")
             
-            logger.info(f"\n===== 基础M3U文件已生成（保留原始元信息） =====")
+            logger.info(f"\n===== 基础M3U文件已生成（保留原始元信息 + 智能tvg-name） =====")
             logger.info(f"  - 基础M3U: {basic_m3u_path} (写入{total_written}个频道)")
             logger.info(f"  - 基础TXT: {basic_txt_path}")
             logger.info(f"  - 分类统计：{category_stats}")
-            logger.info(f"  - 所有#EXTINF元信息均保留原始/智能提取的值\n")
+            logger.info(f"  - tvg-name字段已智能标准化（如CCTV1综合→CCTV1）\n")
             
     except Exception as e:
         logger.error(f"生成基础M3U文件失败：{str(e)}", exc_info=True)
 
-# ===================== M3U提取函数（完整保留原始元信息） =====================
+# ===================== M3U提取函数（完整保留原始元信息 + 智能tvg-name） =====================
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
     """
-    提取M3U元信息（完整保留原始#EXTINF行）
+    提取M3U元信息（完整保留原始#EXTINF行 + 智能tvg-name）
     :return: (按原始group-title分类的频道字典, 完整的ChannelMeta列表)
     """
     # 匹配完整的M3U条目：#EXTINF行 + URL
@@ -463,7 +558,8 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             if attr1 == "tvg" and attr2 == "id":
                 tvg_id = value
             elif attr1 == "tvg" and attr2 == "name":
-                tvg_name = value
+                # 智能标准化tvg-name
+                tvg_name = standardize_channel_name(value)
             elif attr1 == "tvg" and attr2 == "logo":
                 tvg_logo = value
             elif attr1 == "group" and attr2 == "title":
@@ -477,12 +573,12 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         # 使用原始group-title，无则设为"未分类"
         group_title = group_title if group_title else "未分类"
         
-        # 创建完整的元信息对象
+        # 创建完整的元信息对象（tvg-name已标准化）
         meta = ChannelMeta(
             url=url,
             raw_extinf=raw_extinf,  # 保存完整的原始#EXTINF行
             tvg_id=tvg_id,
-            tvg_name=tvg_name,
+            tvg_name=tvg_name if tvg_name else standardize_channel_name(channel_name),
             tvg_logo=tvg_logo,
             group_title=group_title,
             channel_name=channel_name,
@@ -499,21 +595,21 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             categorized_channels[group_title] = []
         categorized_channels[group_title].append((channel_name, url))
     
-    logger.info(f"M3U精准提取：{len(meta_list)}个频道（保留原始元信息）")
+    logger.info(f"M3U精准提取：{len(meta_list)}个频道（保留原始元信息 + 智能tvg-name）")
     logger.info(f"识别的M3U分类：{list(categorized_channels.keys())}")
     
     return categorized_channels, meta_list
 
-# ===================== 频道提取函数（增强格式兼容） =====================
+# ===================== 频道提取函数（增强格式兼容 + 智能tvg-name） =====================
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
     """
-    提取频道和URL（增强格式兼容，智能识别分类和元信息）
+    提取频道和URL（增强格式兼容，智能识别分类和元信息 + 智能tvg-name）
     :return: 按原始group-title分类的频道字典
     """
     categorized_channels = OrderedDict()
     seen_urls = set()
     
-    # 优先处理M3U格式（完整保留元信息）
+    # 优先处理M3U格式（完整保留元信息 + 智能tvg-name）
     if "#EXTM3U" in content:
         m3u_categorized, _ = extract_m3u_meta(content, source_url)
         categorized_channels = m3u_categorized
@@ -575,10 +671,10 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     elif any(keyword in name for keyword in ['本地', '市', '县', '省']):
                         group_title = "地方频道"
                     
-                    # 生成更丰富的元信息
-                    tvg_name = name
+                    # 生成更丰富的元信息（使用智能标准化的tvg-name）
+                    standardized_tvg_name = standardize_channel_name(name)
                     # 提取数字作为tvg-id
-                    tvg_id = re.sub(r'\D', '', name) if re.search(r'\d', name) else ""
+                    tvg_id = re.sub(r'\D', '', standardized_tvg_name) if re.search(r'\d', standardized_tvg_name) else ""
                     # 自动匹配logo（增加异常保护）
                     try:
                         tvg_logo = get_channel_logo_url(name)
@@ -586,13 +682,13 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                         logger.debug(f"生成logo URL失败（频道：{name[:50]}）：{str(e)[:30]}")
                         tvg_logo = ""
                     
-                    raw_extinf = f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{tvg_name}\" tvg-logo=\"{tvg_logo}\" group-title=\"{group_title}\",{name}"
+                    raw_extinf = f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{standardized_tvg_name}\" tvg-logo=\"{tvg_logo}\" group-title=\"{group_title}\",{name}"
                     
                     meta = ChannelMeta(
                         url=url,
                         raw_extinf=raw_extinf,
                         tvg_id=tvg_id,
-                        tvg_name=tvg_name,
+                        tvg_name=standardized_tvg_name,
                         tvg_logo=tvg_logo,
                         group_title=group_title,
                         channel_name=name,
@@ -626,6 +722,8 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     channel_name = part
                     break
             
+            # 智能标准化tvg-name
+            standardized_tvg_name = standardize_channel_name(channel_name)
             # 智能分类
             group_title = "其他频道"
             if any(keyword in channel_name for keyword in ['CCTV', '央视']):
@@ -633,13 +731,13 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
             elif any(keyword in channel_name for keyword in ['卫视']):
                 group_title = "卫视频道"
             
-            raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{channel_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}"
+            raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standardized_tvg_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}"
             
             meta = ChannelMeta(
                 url=url,
                 raw_extinf=raw_extinf,
                 tvg_id="",
-                tvg_name=channel_name,
+                tvg_name=standardized_tvg_name,
                 tvg_logo="",
                 group_title=group_title,
                 channel_name=channel_name,
@@ -888,7 +986,7 @@ def parse_template(template_file: str) -> OrderedDict:
     return template_channels
 
 def fetch_channels(url: str) -> OrderedDict:
-    """抓取频道（完整保留原始M3U元信息）"""
+    """抓取频道（完整保留原始M3U元信息 + 智能tvg-name）"""
     channels = OrderedDict()
     
     try:
@@ -896,7 +994,7 @@ def fetch_channels(url: str) -> OrderedDict:
         if content is None:
             return channels
         
-        # 提取频道（保留原始元信息）
+        # 提取频道（保留原始元信息 + 智能tvg-name）
         categorized_channels = extract_channels_from_content(content, url)
         channels = categorized_channels
             
@@ -1031,7 +1129,7 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
     if failed_urls:
         logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
     
-    # 生成基础M3U文件（100%保留原始元信息）
+    # 生成基础M3U文件（100%保留原始元信息 + 智能tvg-name）
     generate_basic_m3u(all_channels)
     
     # 匹配频道
@@ -1041,7 +1139,7 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
 
 # ===================== 文件生成 =====================
 def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version, latency):
-    """写入文件（优化版）"""
+    """写入文件（优化版 + 智能tvg-name）"""
     if not url:
         return
     
@@ -1049,7 +1147,8 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         meta = channel_meta_cache.get(url)
         logo_url = meta.tvg_logo if (meta and meta.tvg_logo) else get_channel_logo_url(channel_name)
         tvg_id = meta.tvg_id if (meta and meta.tvg_id) else str(index)
-        tvg_name = meta.tvg_name if (meta and meta.tvg_name) else channel_name
+        # 使用智能标准化的tvg-name
+        tvg_name = meta.tvg_name if (meta and meta.tvg_name) else standardize_channel_name(channel_name)
         group_title = meta.group_title if (meta and meta.group_title) else category
         
         # 写入M3U
@@ -1270,14 +1369,14 @@ async def main():
         # 加载配置
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源（智能提取元信息版本） =====")
+        logger.info("===== 开始处理直播源（智能提取元信息 + 智能tvg-name版本） =====")
         logger.info(f"配置信息：延迟阈值{latency_threshold}ms | 匹配阈值{getattr(config, 'MATCH_CUTOFF', 0.4)}")
         
         # 预加载logo
         get_github_logo_list()
         
         # 抓取匹配频道
-        logger.info("\n===== 1. 抓取并提取直播源频道（智能识别分类） =====")
+        logger.info("\n===== 1. 抓取并提取直播源频道（智能识别分类 + 智能tvg-name） =====")
         channels, template_channels = filter_source_urls(template_file)
         if not channels:
             logger.error("无匹配的频道数据，终止流程")
@@ -1309,8 +1408,8 @@ async def main():
         total_elapsed = time.time() - start_total
         logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
         logger.info(f"\n文件说明：")
-        logger.info(f"  - live_basic.m3u: 基础版（保留原始/智能提取的元信息，未测速筛选）")
-        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类）")
+        logger.info(f"  - live_basic.m3u: 基础版（保留原始/智能提取的元信息 + 智能tvg-name，未测速筛选）")
+        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类 + 智能tvg-name）")
         logger.info(f"  - speed_test_report.txt: 详细测速报告")
     
     except Exception as e:
