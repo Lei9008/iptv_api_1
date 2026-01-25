@@ -30,7 +30,7 @@ class ChannelInfo:
     """频道信息数据类（存储M3U标准字段）"""
     name: str  # 频道名称（优先tvg-name，其次自定义名称）
     url: str  # 播放地址
-    group_title: str = "默认分类"  # 分类（group-title）
+    group_title: Optional[str] = None  # 【修改1】移除默认值，保留原始分类（可为None）
     tvg_name: str = ""  # TVG名称
     tvg_logo: str = ""  # TVG Logo地址
     tvg_id: str = ""  # TVG ID
@@ -40,6 +40,8 @@ class ChannelInfo:
     def __post_init__(self):
         if self.other_attrs is None:
             self.other_attrs = {}
+        # 【修改2】确保group_title为字符串（None转为空字符串）
+        self.group_title = self.group_title if self.group_title is not None else ""
 
 # ===================== 初始化配置 =====================
 # 确保 output 文件夹存在
@@ -128,6 +130,21 @@ def clean_channel_name(channel_name: str) -> str:
     cleaned_name = re.sub(r'(\D*)(\d+)(\D*)', lambda m: m.group(1) + str(int(m.group(2))) + m.group(3), cleaned_name)
     return cleaned_name.upper()
 
+# 【新增函数】清洗分类名称（仅移除非法字符，保留原始语义）
+def clean_group_title(raw_group: str) -> str:
+    """
+    轻量清洗分类名称，保留原始语义
+    - 移除不可见字符和极端特殊字符
+    - 保留空格、中英文符号等原始分类特征
+    """
+    if not raw_group:
+        return ""
+    # 仅移除控制字符和非法文件名字符
+    cleaned = re.sub(r'[\x00-\x1f\x7f<>:"|?*\\/]', '', raw_group.strip())
+    # 连续空格转为单个
+    cleaned = re.sub(r'\s+', ' ', cleaned)
+    return cleaned
+
 def is_ipv6(url: str) -> bool:
     """判断URL是否为IPv6地址"""
     if not url:
@@ -211,6 +228,7 @@ def generate_standard_m3u(channels: List[ChannelInfo], output_path: Path) -> Lis
     - 深度去重：移除URL中的随机参数，保证同链接不同参数也能去重
     - 规范格式：严格遵循M3U行业标准
     - 有序整理：按分类+频道名排序
+    - 【修改3】保留原始group_title，空分类显示为"未分类"
     返回：去重后的URL列表（用于后续测速）
     """
     # 第一步：深度去重（按URL去重，保留第一个出现的频道信息）
@@ -227,28 +245,31 @@ def generate_standard_m3u(channels: List[ChannelInfo], output_path: Path) -> Lis
         if url not in unique_channels:
             unique_channels[url] = channel
     
-    # 转换为有序列表（按分类+名称排序）
+    # 转换为有序列表（按分类+名称排序，空分类排最后）
     sorted_channels = sorted(
         unique_channels.values(),
-        key=lambda x: (x.group_title, x.name)
+        key=lambda x: (x.group_title if x.group_title else "zzz未分类", x.name)
     )
     
     # 第二步：生成标准M3U格式文件
     try:
         with open(output_path, 'w', encoding='utf-8') as f:
             # M3U文件头（标准格式）
-            f.write("#EXTM3U x-tvg-url=\"{}\"\n".format(
-                ",".join(getattr(config, 'epg_urls', [])) if getattr(config, 'epg_urls', []) else ""
-            ))
+            epg_urls = getattr(config, 'epg_urls', [])
+            epg_str = ",".join(epg_urls) if epg_urls else ""
+            f.write(f"#EXTM3U x-tvg-url=\"{epg_str}\"\n")
             f.write(f"# 标准化M3U文件 - 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"# 总频道数：{len(sorted_channels)}（已去重）\n\n")
             
             # 按分类分组写入
             current_group = ""
             for channel in sorted_channels:
+                # 获取显示用的分类名（空分类显示为"未分类"）
+                display_group = channel.group_title if channel.group_title else "未分类"
+                
                 # 分类分隔符
-                if channel.group_title != current_group:
-                    current_group = channel.group_title
+                if display_group != current_group:
+                    current_group = display_group
                     f.write(f"\n# 分类：{current_group}\n")
                 
                 # 标准EXTINF行
@@ -259,6 +280,7 @@ def generate_standard_m3u(channels: List[ChannelInfo], output_path: Path) -> Lis
                     extinf_parts.append(f'tvg-logo="{channel.tvg_logo}"')
                 if channel.tvg_id:
                     extinf_parts.append(f'tvg-id="{channel.tvg_id}"')
+                # 【修改4】写入原始group_title（空值则不写）
                 if channel.group_title:
                     extinf_parts.append(f'group-title="{channel.group_title}"')
                 
@@ -281,6 +303,7 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
     """
     优化：减少过度去重，仅按URL去重（保留更多URL）
     从直播源内容中提取频道信息，优先解析M3U标准字段
+    【修改5】完全保留原始group-title，不使用默认分类
     """
     channels = []
     # 仅按URL去重（放宽去重条件）
@@ -317,9 +340,11 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
                 continue
             seen_urls.add(url)
             
-            # 提取关键属性
+            # 提取关键属性 - 【修改6】保留原始group-title，不兜底
             tvg_name = current_attrs.get('tvg-name', '')
-            group_title = current_attrs.get('group-title', current_attrs.get('group', '默认分类'))
+            # 提取原始group-title并轻量清洗
+            raw_group = current_attrs.get('group-title', current_attrs.get('group', ''))
+            group_title = clean_group_title(raw_group)
             tvg_logo = current_attrs.get('tvg-logo', '')
             tvg_id = current_attrs.get('tvg-id', '')
             channel_name = current_attrs.get('_channel_name', tvg_name or '未知频道')
@@ -333,7 +358,7 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
             channel_info = ChannelInfo(
                 name=cleaned_name,
                 url=url,
-                group_title=group_title,
+                group_title=group_title,  # 【修改7】传入原始清洗后的分类，无默认值
                 tvg_name=tvg_name,
                 tvg_logo=tvg_logo,
                 tvg_id=tvg_id,
@@ -366,11 +391,11 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
                 
                 cleaned_name = clean_channel_name(name_part) or '未知频道'
                 
-                # 创建兼容模式的频道信息
+                # 创建兼容模式的频道信息 - 【修改8】旧格式group_title为空字符串
                 channel_info = ChannelInfo(
                     name=cleaned_name,
                     url=url_part,
-                    group_title="默认分类"
+                    group_title=""  # 无分类信息，设为空字符串
                 )
                 channels.append(channel_info)
                 continue
@@ -399,10 +424,11 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
                     name_from_url = clean_channel_name(part)
                     break
             
+            # 【修改9】单独URL的group_title为空字符串
             channel_info = ChannelInfo(
                 name=name_from_url,
                 url=url,
-                group_title="默认分类"
+                group_title=""
             )
             channels.append(channel_info)
     
@@ -647,11 +673,13 @@ def fetch_url_with_retry(url: str, timeout: int = 20) -> Optional[str]:
                 )
             ))
             
+            # 兼容SSL验证配置
+            verify = os.environ.get('REQUESTS_VERIFY_SSL', 'False').lower() == 'true'
             response = session.get(
                 candidate,
                 headers=headers,
                 timeout=timeout,
-                verify=False,  # 忽略SSL证书错误
+                verify=verify,  # 从环境变量控制
                 allow_redirects=True,
                 stream=True  # 流式读取，避免大文件占用内存
             )
@@ -734,9 +762,11 @@ class SpeedTester:
         """测量单个URL的延迟和分辨率（新增m3u8子链接解析）"""
         result = SpeedTestResult(url=url)
         
-        # 非HTTP协议跳过测速
+        # 非HTTP协议跳过测速（标记为成功，避免归为失败）
         if not url.startswith(('http://', 'https://')):
-            result.error = "非HTTP协议，跳过测速"
+            result.success = True
+            result.error = "非HTTP协议，无需测速"
+            result.latency = 0.0
             logger.debug(f"跳过非HTTP协议测速：{url[:60]}")
             return result
         
@@ -835,10 +865,12 @@ def parse_template(template_file: str) -> OrderedDict:
     return template_channels
 
 def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
-    """抓取频道并按group-title分类"""
-    # 按分类存储频道
+    """
+    抓取频道并按group-title分类
+    【修改10】移除默认分类，完全按原始group_title分组
+    """
+    # 按分类存储频道（不再预设默认分类）
     categorized_channels = OrderedDict()
-    categorized_channels["默认分类"] = []
     
     try:
         content = fetch_url_with_retry(url)
@@ -848,9 +880,9 @@ def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
         # 提取带完整元数据的频道列表
         channel_list = extract_channels_from_content(content)
         
-        # 按group-title分类
+        # 按原始group_title分类（支持空字符串键）
         for channel in channel_list:
-            group = channel.group_title or "默认分类"
+            group = channel.group_title  # 直接使用原始分类，可为空字符串
             if group not in categorized_channels:
                 categorized_channels[group] = []
             categorized_channels[group].append(channel)
@@ -861,7 +893,10 @@ def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
     return categorized_channels
 
 def merge_channels(target: Dict[str, List[ChannelInfo]], source: Dict[str, List[ChannelInfo]]):
-    """合并分类的频道信息（仅按URL去重）"""
+    """
+    合并分类的频道信息（仅按URL去重）
+    【修改11】支持空字符串的group_title合并
+    """
     # 先收集所有已存在的URL用于去重
     existing_urls = set()
     for group in target:
@@ -869,6 +904,7 @@ def merge_channels(target: Dict[str, List[ChannelInfo]], source: Dict[str, List[
             existing_urls.add(channel.url)
     
     for group, channels in source.items():
+        # 空字符串分类也正常合并
         if group not in target:
             target[group] = []
         
@@ -933,9 +969,8 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
         logger.error("未配置source_urls，终止流程")
         return {}, template_channels, {}, []
     
-    # 抓取并合并所有源
+    # 抓取并合并所有源（【修改12】不再预设默认分类）
     all_channels = OrderedDict()
-    all_channels["默认分类"] = []
     failed_urls = []
     success_urls = []
     
@@ -963,6 +998,10 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
     logger.info(f"  - 失败源数：{len(failed_urls)}")
     logger.info(f"  - 成功抓取频道总数：{total_channels}")
     logger.info(f"  - 频道分类数：{len(all_channels)}")
+    # 【修改13】统计空分类数量
+    empty_group_count = len([g for g in all_channels if g == ""])
+    if empty_group_count > 0:
+        logger.info(f"  - 无分类频道数：{len(all_channels.get('', []))}")
     
     if success_urls:
         logger.info(f"  - 成功的源：{', '.join(success_urls[:3])}{'...' if len(success_urls)>3 else ''}")
@@ -981,7 +1020,10 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
 
 # ===================== 文件生成 =====================
 def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int, ip_version: str):
-    """写入带完整元数据的频道信息（标注失败状态）"""
+    """
+    写入带完整元数据的频道信息（标注失败状态）
+    【修改14】保留原始group_title，空分类显示为"未分类"
+    """
     if not channel_info.url:
         return
     
@@ -996,8 +1038,11 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
         extinf_parts.append(f'tvg-logo="{logo_url}"')
     if channel_info.tvg_id:
         extinf_parts.append(f'tvg-id="{channel_info.tvg_id}"')
+    # 【修改15】使用原始group_title（模板匹配时用模板分类，否则用原始）
     if category:
         extinf_parts.append(f'group-title="{category}"')
+    elif channel_info.group_title:
+        extinf_parts.append(f'group-title="{channel_info.group_title}"')
     
     # 添加频道名（标注延迟/失败）
     if channel_info.latency >= 9999.0:
@@ -1021,7 +1066,9 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
     f_m3u.write(f"{url_with_suffix}\n")
     
     # 写入TXT（分类,频道名,URL）
-    f_txt.write(f"{category},{channel_display_name},{url_with_suffix}\n")
+    # 【修改16】空分类显示为"未分类"
+    display_category = category if category else (channel_info.group_title if channel_info.group_title else "未分类")
+    f_txt.write(f"{display_category},{channel_display_name},{url_with_suffix}\n")
 
 def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]]], 
                          template_channels: OrderedDict,
@@ -1030,6 +1077,7 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
     """
     优化：生成带完整M3U元数据的文件
     包含所有抓取的URL（即使未匹配模板/测速失败）
+    【修改17】保留原始group_title，空分类单独处理
     """
     latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
     written_urls_ipv4 = set()
@@ -1054,13 +1102,13 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
              open(all_m3u_path, "w", encoding="utf-8") as f_m3u_all:
 
             # 写入M3U头部（包含EPG信息）
-            epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
+            epg_str = ",".join(epg_urls) if epg_urls else ""
             header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
             header_note_all = f"# 包含所有抓取的URL（共{len(latency_results)}个）| 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
             
-            f_m3u_ipv4.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
-            f_m3u_ipv6.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
-            f_m3u_all.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note_all}")
+            f_m3u_ipv4.write(f"#EXTM3U x-tvg-url=\"{epg_str}\"\n{header_note}")
+            f_m3u_ipv6.write(f"#EXTM3U x-tvg-url=\"{epg_str}\"\n{header_note}")
+            f_m3u_all.write(f"#EXTM3U x-tvg-url=\"{epg_str}\"\n{header_note_all}")
 
             # 写入公告频道
             announcement_id = 1
@@ -1154,7 +1202,7 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
                         # 同时写入全量文件
                         write_to_files(f_m3u_all, f_txt_ipv6, template_group, channel, idx, "IPV6")
 
-            # 写入未匹配模板的频道（新增）
+            # 写入未匹配模板的频道（【修改18】保留原始group_title）
             # 收集已写入的URL
             all_written_urls = written_urls_ipv4.union(written_urls_ipv6)
             # 遍历所有频道，写入未匹配的
@@ -1165,15 +1213,17 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
                     if channel.url in all_written_urls:
                         continue
                     unmatch_count += 1
+                    # 显示用的分类名（空分类显示为"未分类"）
+                    display_group = group if group else "未分类"
                     # 按IP版本分类
                     if is_ipv6(channel.url):
                         if channel.url not in written_urls_ipv6:
                             written_urls_ipv6.add(channel.url)
-                            write_to_files(f_m3u_all, f_txt_ipv6, f"{group}_未匹配", channel, unmatch_count, "IPV6")
+                            write_to_files(f_m3u_all, f_txt_ipv6, display_group, channel, unmatch_count, "IPV6")
                     else:
                         if channel.url not in written_urls_ipv4:
                             written_urls_ipv4.add(channel.url)
-                            write_to_files(f_m3u_all, f_txt_ipv4, f"{group}_未匹配", channel, unmatch_count, "IPV4")
+                            write_to_files(f_m3u_all, f_txt_ipv4, display_group, channel, unmatch_count, "IPV4")
 
         # 生成测速报告
         generate_speed_report(latency_results, latency_threshold)
@@ -1270,6 +1320,7 @@ async def main():
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
         logger.info("===== 开始处理直播源（优化版-标准化M3U） =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s")
+        logger.info(f"⚠️  已启用原始group-title保留模式，不再使用默认分类 ⚠️")
         
         # 预加载GitHub logo列表
         get_github_logo_list()
