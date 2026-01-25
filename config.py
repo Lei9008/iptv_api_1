@@ -5,10 +5,10 @@ source_urls = [
     # 替换为你自己的直播源链接
 
     
+
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
-    "https://github.com/develop202/migu_video/blob/main/interface.txt",
-   # "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
-   # "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
+    "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
+    "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
    # "https://github.com/8080713/iptv-api666/blob/main/output/result.m3u",
    # "https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
    # "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
