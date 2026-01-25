@@ -51,6 +51,9 @@ LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
 for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)
 
+# 标准化M3U文件路径（新增）
+STANDARD_M3U_PATH = OUTPUT_FOLDER / "live_standard.m3u"
+
 # 从config.py读取GitHub Logo配置
 GITHUB_LOGO_BASE_URL = getattr(config, 'GITHUB_LOGO_BASE_URL', 
                               "https://raw.githubusercontent.com/fanmingming/live/main/tv")
@@ -372,6 +375,74 @@ def filter_invalid_urls(urls: List[str]) -> List[str]:
         valid.append(url)
     logger.info(f"URL过滤前{len(urls)}个，过滤后{len(valid)}个（仅过滤极端无效URL）")
     return valid
+
+def generate_standard_m3u(channels: List[ChannelInfo], output_path: Path) -> List[str]:
+    """
+    核心新增：生成标准化M3U文件（去重+规范格式）
+    返回去重后的URL列表，用于后续测速
+    """
+    # 第一步：深度去重（按URL去重，保留第一个出现的频道信息）
+    unique_channels = {}
+    for channel in channels:
+        # 统一URL格式（移除参数中的随机值，增强去重效果）
+        url = channel.url.strip()
+        # 移除URL中常见的随机参数
+        url = re.sub(r'(&|\?)?[a-zA-Z0-9]+=[a-zA-Z0-9]+', '', url)
+        url = re.sub(r'(&|\?)?token=[^&]+', '', url)
+        url = re.sub(r'(&|\?)?expires=[^&]+', '', url)
+        
+        if url not in unique_channels:
+            unique_channels[url] = channel
+    
+    # 转换为有序列表（按分类+名称排序）
+    sorted_channels = sorted(
+        unique_channels.values(),
+        key=lambda x: (x.group_title, x.name)
+    )
+    
+    # 第二步：生成标准M3U格式文件
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            # M3U文件头（标准格式）
+            f.write("#EXTM3U x-tvg-url=\"{}\"\n".format(
+                ",".join(getattr(config, 'epg_urls', [])) if getattr(config, 'epg_urls', []) else ""
+            ))
+            f.write(f"# 标准化M3U文件 - 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"# 总频道数：{len(sorted_channels)}（已去重）\n\n")
+            
+            # 按分类分组写入
+            current_group = ""
+            for channel in sorted_channels:
+                # 分类分隔符
+                if channel.group_title != current_group:
+                    current_group = channel.group_title
+                    f.write(f"\n# 分类：{current_group}\n")
+                
+                # 标准EXTINF行
+                extinf_parts = [f"#EXTINF:-1"]
+                if channel.tvg_name:
+                    extinf_parts.append(f'tvg-name="{channel.tvg_name}"')
+                if channel.tvg_logo:
+                    extinf_parts.append(f'tvg-logo="{channel.tvg_logo}"')
+                if channel.tvg_id:
+                    extinf_parts.append(f'tvg-id="{channel.tvg_id}"')
+                if channel.group_title:
+                    extinf_parts.append(f'group-title="{channel.group_title}"')
+                
+                extinf_line = ' '.join(extinf_parts) + f',{channel.name}'
+                f.write(f"{extinf_line}\n")
+                f.write(f"{channel.url}\n")
+        
+        logger.info(f"✅ 标准化M3U文件已生成：{output_path}")
+        logger.info(f"✅ 去重后总频道数：{len(sorted_channels)}（原始：{len(channels)}）")
+        
+        # 返回去重后的URL列表（用于后续测速）
+        return [channel.url for channel in sorted_channels]
+    
+    except Exception as e:
+        logger.error(f"生成标准化M3U文件失败：{str(e)}")
+        # 降级返回原始URL（去重）
+        return list(unique_channels.keys())
 
 def sort_and_filter_urls(
     channel_infos: List[ChannelInfo], 
@@ -879,22 +950,22 @@ def match_channels(template_channels: OrderedDict, all_channels: Dict[str, List[
     
     return matched_channels
 
-def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[ChannelInfo]]], OrderedDict, Dict[str, List[ChannelInfo]]]:
+def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[ChannelInfo]]], OrderedDict, Dict[str, List[ChannelInfo]], List[ChannelInfo]]:
     """
     优化：返回所有抓取的频道（不局限于模板匹配）
-    返回：匹配的频道、模板、所有抓取的频道
+    返回：匹配的频道、模板、所有抓取的频道、扁平化频道列表
     """
     # 解析模板
     template_channels = parse_template(template_file)
     if not template_channels:
         logger.error("模板解析为空，终止流程")
-        return {}, OrderedDict(), {}
+        return {}, OrderedDict(), {}, []
     
     # 获取源URL配置
     source_urls = getattr(config, 'source_urls', CONFIG_DEFAULTS["SOURCE_URLS"])
     if not source_urls:
         logger.error("未配置source_urls，终止流程")
-        return {}, template_channels, {}
+        return {}, template_channels, {}, []
     
     # 抓取并合并所有源
     all_channels = OrderedDict()
@@ -935,7 +1006,12 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
     # 匹配频道
     matched_channels = match_channels(template_channels, all_channels)
     
-    return matched_channels, template_channels, all_channels
+    # 扁平化所有频道（用于生成标准化M3U）
+    flat_channels = []
+    for group, channels in all_channels.items():
+        flat_channels.extend(channels)
+    
+    return matched_channels, template_channels, all_channels, flat_channels
 
 # ===================== 文件生成 =====================
 def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int, ip_version: str):
@@ -1142,6 +1218,7 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
         logger.info(f"  - IPv6 M3U: {ipv6_m3u_path}（包含完整M3U元数据）")
         logger.info(f"  - IPv6 TXT: {ipv6_txt_path}（分类,频道名,URL格式）")
         logger.info(f"  - 全量M3U: {all_m3u_path}（包含所有抓取的URL，共{len(latency_results)}个）")
+        logger.info(f"  - 标准化M3U: {STANDARD_M3U_PATH}（去重后规范格式）")
         logger.info(f"  - 延迟阈值：{latency_threshold}ms")
         logger.info(f"  - 未匹配模板的频道数：{unmatch_count}")
         
@@ -1181,7 +1258,7 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
             f.write("="*80 + "\n")
             f.write(f"测试时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"延迟阈值：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s\n")
-            f.write(f"总测试URL数：{total_urls}\n")
+            f.write(f"总测试URL数：{total_urls}（基于标准化M3U去重后）\n")
             success_rate = f"{len(success_urls)/total_urls*100:.1f}%" if total_urls > 0 else "0.0%"
             f.write(f"测试成功数：{len(success_urls)} ({success_rate})\n")
             valid_rate = f"{len(valid_urls)/total_urls*100:.1f}%" if total_urls > 0 else "0.0%"
@@ -1227,52 +1304,48 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
     except Exception as e:
         logger.error(f"生成测速报告失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序 =====================
+# ===================== 主程序（核心优化：新增M3U标准化汇总步骤） =====================
 async def main():
-    """主函数（整合所有优化）"""
+    """主函数（整合所有优化，新增M3U标准化汇总）"""
     try:
         # 配置加载
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源（终极优化版-兼容非主流格式） =====")
+        logger.info("===== 开始处理直播源（终极优化版-标准化M3U） =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s")
         logger.info(f"支持的播放协议：{', '.join(SUPPORTED_PROTOCOLS)}")
         
         # 预加载GitHub logo列表
         get_github_logo_list()
         
-        # 抓取并匹配频道（返回所有抓取的频道）
+        # 步骤1：抓取并提取所有频道
         logger.info("\n===== 1. 抓取并提取直播源频道（兼容非主流格式） =====")
-        matched_channels, template_channels, all_channels = filter_source_urls(template_file)
+        matched_channels, template_channels, all_channels, flat_channels = filter_source_urls(template_file)
         if not matched_channels and not all_channels:
             logger.error("无匹配的频道数据，终止流程")
             return
         
-        # 收集所有需要测速的URL（包含所有抓取的URL）
-        all_urls = set()
-        # 1. 所有抓取的频道URL
-        for group in all_channels.values():
-            for channel in group:
-                all_urls.add(channel.url)
-        # 2. 公告URL
-        for group in getattr(config, 'announcements', []):
-            for entry in group.get('entries', []):
-                url = entry.get('url', '')
-                if url:
-                    all_urls.add(url)
+        # 步骤2：生成标准化M3U文件（核心新增）
+        logger.info("\n===== 2. 生成标准化M3U文件（去重+规范格式） =====")
+        # 生成标准化M3U并获取去重后的URL列表
+        unique_urls = generate_standard_m3u(flat_channels, STANDARD_M3U_PATH)
         
-        all_urls = list(all_urls)
-        logger.info(f"\n===== 2. 开始批量测速（共{len(all_urls)}个URL，包含m3u8子链接解析） =====")
-        
-        # 异步测速
+        # 步骤3：批量测速（基于去重后的URL）
+        logger.info(f"\n===== 3. 开始批量测速（共{len(unique_urls)}个URL，基于标准化M3U） =====")
         async with SpeedTester() as tester:
-            latency_results = await tester.batch_speed_test(all_urls)
+            latency_results = await tester.batch_speed_test(unique_urls)
         
-        # 生成最终文件（包含所有URL）
-        logger.info("\n===== 3. 生成最终文件（包含所有URL+失败标注） =====")
+        # 步骤4：生成最终文件（包含测速结果）
+        logger.info("\n===== 4. 生成最终文件（包含所有URL+失败标注） =====")
         updateChannelUrlsM3U(matched_channels, template_channels, all_channels, latency_results)
         
         logger.info("\n===== 所有流程执行完成 =====")
+        logger.info(f"📊 最终统计：")
+        logger.info(f"   - 原始抓取频道数：{len(flat_channels)}")
+        logger.info(f"   - 去重后频道数：{len(unique_urls)}")
+        logger.info(f"   - 测速成功数：{len([r for r in latency_results.values() if r.success])}")
+        logger.info(f"   - 有效URL数：{len([r for r in latency_results.values() if r.success and r.latency and r.latency <= latency_threshold])}")
+        logger.info(f"   - 标准化M3U文件：{STANDARD_M3U_PATH}")
     
     except Exception as e:
         logger.critical(f"程序执行异常：{str(e)}", exc_info=True)
