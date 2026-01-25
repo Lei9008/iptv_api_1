@@ -10,6 +10,13 @@ URL_BLACKLIST = []
 TEMPLATE_FILE = "demo.txt"  # 模板文件
 
 
+# 频道台标库地址 | Channel logo library address
+logo_url = "https://github.com/fanmingming/live/tree/main/tv/"  # 替换为你的实际台标库地址
+
+# 频道台标文件类型 | Channel logo file type
+logo_type = "png"
+
+
 # 直播源链接配置
 source_urls = [
    
