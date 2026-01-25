@@ -14,6 +14,49 @@ from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
 import os
 import difflib
 
+# ===================== 导入外部配置文件 =====================
+# 从config.py导入所有配置参数
+try:
+    from config import (
+        SOURCE_URLS, TEMPLATE_FILE, LATENCY_THRESHOLD,
+        CONCURRENT_LIMIT, TIMEOUT, RETRY_TIMES, IP_VERSION_PRIORITY,
+        URL_BLACKLIST, EPG_URLS, ANNOUNCEMENTS,
+        GITHUB_LOGO_BASE_URL, BACKUP_LOGO_BASE_URL, GITHUB_LOGO_API_URLS
+    )
+except ImportError:
+    # 配置文件不存在时的兜底配置（避免程序崩溃）
+    # 先初始化日志（防止未定义）
+    LOG_FILE_PATH = Path("output") / "function.log"
+    LOG_FILE_PATH.parent.mkdir(exist_ok=True)
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(LOG_FILE_PATH, "w", encoding="utf-8"),
+            logging.StreamHandler()
+        ]
+    )
+    logger = logging.getLogger(__name__)
+    logger.error("⚠️ 未找到config.py配置文件，使用默认兜底配置！")
+    
+    # 兜底默认值
+    SOURCE_URLS = []
+    TEMPLATE_FILE = "demo.txt"
+    LATENCY_THRESHOLD = 1000
+    CONCURRENT_LIMIT = 20
+    TIMEOUT = 20
+    RETRY_TIMES = 2
+    IP_VERSION_PRIORITY = "ipv4"
+    URL_BLACKLIST = []
+    EPG_URLS = []
+    ANNOUNCEMENTS = []
+    GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
+    BACKUP_LOGO_BASE_URL = "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv"
+    GITHUB_LOGO_API_URLS = [
+        "https://api.github.com/repos/fanmingming/live/contents/main/tv",
+        "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
+    ]
+
 # ===================== 数据结构（核心优化） =====================
 @dataclass
 class SpeedTestResult:
@@ -67,33 +110,6 @@ OUTPUT_FOLDER.mkdir(exist_ok=True)
 LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
 for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)
-
-# 模拟config.py配置（可根据需要修改）
-class Config:
-    GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
-    BACKUP_LOGO_BASE_URL = "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv"
-    GITHUB_LOGO_API_URLS = [
-        "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-        "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
-    ]
-    LATENCY_THRESHOLD = 1000
-    CONCURRENT_LIMIT = 20
-    TIMEOUT = 20
-    RETRY_TIMES = 2
-    IP_VERSION_PRIORITY = "ipv4"
-    URL_BLACKLIST = []
-    TEMPLATE_FILE = "demo.txt"
-    EPG_URLS = []
-    ANNOUNCEMENTS = []
-    SOURCE_URLS = [
-        # 替换为你的直播源URL
-        # "https://example.com/your-iptv.m3u"
-    ]
-    url_blacklist = []
-    epg_urls = []
-    announcements = []
-
-config = Config()
 
 # GitHub 镜像域名列表
 GITHUB_MIRRORS = [
@@ -407,7 +423,7 @@ def sort_and_filter_urls(
         return []
     
     filtered_channels = []
-    url_blacklist = getattr(config, 'url_blacklist', [])
+    url_blacklist = URL_BLACKLIST  # 直接使用导入的配置
     
     for channel in channel_infos:
         # 遍历同频道所有URL
@@ -431,7 +447,7 @@ def sort_and_filter_urls(
             written_urls.add(url)
     
     # 按IP版本优先级排序
-    ip_priority = getattr(config, 'ip_version_priority', "ipv4")
+    ip_priority = IP_VERSION_PRIORITY  # 直接使用导入的配置
     if ip_priority == "ipv6":
         filtered_channels.sort(key=lambda c: is_ipv6(c.url), reverse=True)
     else:
@@ -467,7 +483,7 @@ def get_github_logo_list() -> List[str]:
     headers = {"User-Agent": "Mozilla/5.0"}
     logo_files = []
     
-    for api_url in config.GITHUB_LOGO_API_URLS:
+    for api_url in GITHUB_LOGO_API_URLS:  # 直接使用导入的配置
         try:
             response = requests.get(api_url, headers=headers, timeout=10)
             response.raise_for_status()
@@ -507,7 +523,7 @@ def get_channel_logo_url(channel_name: str) -> str:
     
     # 获取有效的logo URL
     def get_valid_logo_url(filename):
-        base_urls = [config.GITHUB_LOGO_BASE_URL, config.BACKUP_LOGO_BASE_URL]
+        base_urls = [GITHUB_LOGO_BASE_URL, BACKUP_LOGO_BASE_URL]  # 直接使用导入的配置
         
         for base_url in base_urls:
             for mirror in GITHUB_MIRRORS:
@@ -523,7 +539,7 @@ def get_channel_logo_url(channel_name: str) -> str:
                 except:
                     continue
         
-        return f"{config.BACKUP_LOGO_BASE_URL}/{filename}"
+        return f"{BACKUP_LOGO_BASE_URL}/{filename}"
     
     github_logo_files = get_github_logo_list()
     
@@ -580,7 +596,7 @@ def replace_github_domain(url: str) -> List[str]:
     unique_urls = list(dict.fromkeys(candidate_urls))
     return unique_urls
 
-def fetch_url_with_retry(url: str, timeout: int = 20) -> Optional[str]:
+def fetch_url_with_retry(url: str, timeout: int = TIMEOUT) -> Optional[str]:  # 直接使用导入的配置
     """
     增强版：带重试和镜像替换的URL抓取函数
     - 自动转换GitHub URL格式
@@ -660,9 +676,9 @@ class SpeedTester:
     """异步测速器（新增m3u8子链接解析）"""
     def __init__(self):
         self.session = None
-        self.concurrent_limit = getattr(config, 'CONCURRENT_LIMIT', 20)
-        self.timeout = getattr(config, 'TIMEOUT', 20)
-        self.retry_times = getattr(config, 'RETRY_TIMES', 2)
+        self.concurrent_limit = CONCURRENT_LIMIT  # 直接使用导入的配置
+        self.timeout = TIMEOUT  # 直接使用导入的配置
+        self.retry_times = RETRY_TIMES  # 直接使用导入的配置
     
     async def __aenter__(self):
         """创建异步HTTP会话"""
@@ -894,7 +910,7 @@ def match_channels(template_channels: OrderedDict, all_channels: Dict[str, List[
     
     return matched_channels
 
-def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[ChannelInfo]]], OrderedDict, Dict[str, List[ChannelInfo]]]:
+def filter_source_urls(template_file: str = TEMPLATE_FILE) -> Tuple[Dict[str, Dict[str, List[ChannelInfo]]], OrderedDict, Dict[str, List[ChannelInfo]]]:  # 直接使用导入的配置
     """
     优化：返回所有抓取的频道（不局限于模板匹配）
     返回：匹配的频道、模板、所有抓取的频道
@@ -906,7 +922,7 @@ def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[Cha
         return {}, OrderedDict(), {}
     
     # 获取源URL配置
-    source_urls = getattr(config, 'SOURCE_URLS', [])
+    source_urls = SOURCE_URLS  # 直接使用导入的配置
     if not source_urls:
         logger.error("未配置source_urls，终止流程")
         return {}, template_channels, {}
@@ -1006,7 +1022,7 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
     优化：生成带完整M3U元数据的文件，支持同频道多URL输出
     包含所有抓取的URL（即使未匹配模板/测速失败）
     """
-    latency_threshold = getattr(config, 'LATENCY_THRESHOLD', 1000)
+    latency_threshold = LATENCY_THRESHOLD  # 直接使用导入的配置
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
 
@@ -1018,8 +1034,8 @@ def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]
     all_m3u_path = OUTPUT_FOLDER / "live_all.m3u"  # 新增：所有URL汇总文件
 
     # 获取EPG和公告配置
-    epg_urls = getattr(config, 'epg_urls', [])
-    announcements = getattr(config, 'announcements', [])
+    epg_urls = EPG_URLS  # 直接使用导入的配置
+    announcements = ANNOUNCEMENTS  # 直接使用导入的配置
 
     try:
         with open(ipv4_m3u_path, "w", encoding="utf-8") as f_m3u_ipv4, \
@@ -1230,7 +1246,7 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
             f.write("IPTV直播源测速报告（优化版）\n")
             f.write("="*80 + "\n")
             f.write(f"测试时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"延迟阈值：{latency_threshold}ms | 超时时间：{20}s\n")
+            f.write(f"延迟阈值：{latency_threshold}ms | 超时时间：{TIMEOUT}s\n")  # 直接使用导入的配置
             f.write(f"总测试URL数：{total_urls}\n")
             success_rate = f"{len(success_urls)/total_urls*100:.1f}%" if total_urls > 0 else "0.0%"
             f.write(f"测试成功数：{len(success_urls)} ({success_rate})\n")
@@ -1281,17 +1297,15 @@ async def main():
     """主函数（整合所有优化）"""
     try:
         # 配置加载
-        template_file = getattr(config, 'TEMPLATE_FILE', "demo.txt")
-        latency_threshold = getattr(config, 'LATENCY_THRESHOLD', 1000)
         logger.info("===== 开始处理直播源（优化版） =====")
-        logger.info(f"延迟阈值设置：{latency_threshold}ms | 超时时间：{20}s")
+        logger.info(f"延迟阈值设置：{LATENCY_THRESHOLD}ms | 超时时间：{TIMEOUT}s")
         
         # 预加载GitHub logo列表
         get_github_logo_list()
         
         # 抓取并匹配频道（返回所有抓取的频道）
         logger.info("\n===== 1. 抓取并提取直播源频道（智能合并同频道URL） =====")
-        matched_channels, template_channels, all_channels = filter_source_urls(template_file)
+        matched_channels, template_channels, all_channels = filter_source_urls()
         if not matched_channels and not all_channels:
             logger.error("无匹配的频道数据，终止流程")
             return
@@ -1303,7 +1317,7 @@ async def main():
             for channel in group:
                 all_urls.update(channel.urls)
         # 2. 公告URL
-        for group in getattr(config, 'announcements', []):
+        for group in ANNOUNCEMENTS:  # 直接使用导入的配置
             for entry in group.get('entries', []):
                 url = entry.get('url', '')
                 if url:
