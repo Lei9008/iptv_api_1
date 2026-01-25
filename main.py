@@ -276,8 +276,18 @@ def get_github_logo_list() -> List[str]:
     return logo_files
 
 def get_channel_logo_url(channel_name: str) -> str:
-    """生成logo URL（仅用于优化版文件）"""
+    """生成logo URL（修复超长文件名问题）"""
+    if not channel_name:
+        return ""
+    
     clean_logo_name = clean_channel_name(channel_name)
+    
+    # 关键修复1：限制文件名长度（最大100个字符）
+    MAX_FILENAME_LENGTH = 100
+    if len(clean_logo_name) > MAX_FILENAME_LENGTH:
+        # 截取前97个字符 + 省略号
+        clean_logo_name = clean_logo_name[:MAX_FILENAME_LENGTH-3] + "..."
+    
     logo_filename = f"{clean_logo_name}.png"
     
     # 优先使用M3U提取的logo
@@ -285,16 +295,26 @@ def get_channel_logo_url(channel_name: str) -> str:
         if meta.clean_channel_name == clean_logo_name and meta.tvg_logo:
             return meta.tvg_logo
     
-    # 本地logo
-    for logo_dir in LOGO_DIRS:
-        local_logo_path = logo_dir / logo_filename
-        if local_logo_path.exists():
-            return local_logo_path.as_posix()
+    # 关键修复2：异常捕获，避免文件系统错误中断程序
+    try:
+        # 本地logo
+        for logo_dir in LOGO_DIRS:
+            local_logo_path = logo_dir / logo_filename
+            # 增加长度检查，避免系统错误
+            if len(str(local_logo_path)) < 255 and local_logo_path.exists():
+                return local_logo_path.as_posix()
+    except OSError as e:
+        logger.debug(f"检查本地logo失败（文件名过长/系统错误）：{logo_filename} | 错误：{str(e)[:30]}")
+        # 直接返回GitHub logo，跳过本地检查
+        pass
     
     # GitHub logo
-    github_logo_files = get_github_logo_list()
-    if logo_filename in github_logo_files:
-        return f"{BACKUP_LOGO_BASE_URL}/{logo_filename}"
+    try:
+        github_logo_files = get_github_logo_list()
+        if logo_filename in github_logo_files:
+            return f"{BACKUP_LOGO_BASE_URL}/{logo_filename}"
+    except Exception as e:
+        logger.debug(f"检查GitHub logo失败：{logo_filename} | 错误：{str(e)[:30]}")
     
     # 特殊匹配
     special_mapping = {
@@ -303,26 +323,23 @@ def get_channel_logo_url(channel_name: str) -> str:
         "凤凰卫视资讯台.png": ["凤凰资讯.png", "凤凰卫视.png"],
         "香港卫视综合台.png": ["香港卫视.png"]
     }
-    for target_logo, aliases in special_mapping.items():
-        if logo_filename == target_logo:
-            for alias in aliases:
-                if alias in github_logo_files:
-                    return f"{BACKUP_LOGO_BASE_URL}/{alias}"
+    try:
+        for target_logo, aliases in special_mapping.items():
+            if logo_filename == target_logo:
+                for alias in aliases:
+                    if alias in github_logo_files:
+                        return f"{BACKUP_LOGO_BASE_URL}/{alias}"
+    except Exception as e:
+        logger.debug(f"特殊匹配logo失败：{logo_filename} | 错误：{str(e)[:30]}")
     
-    # 模糊匹配
-    candidate_names = [
-        logo_filename,
-        logo_filename.replace("+", "PLUS"),
-        logo_filename.upper(),
-        logo_filename.lower()
-    ]
-    for candidate in candidate_names:
-        if candidate in github_logo_files:
-            return f"{BACKUP_LOGO_BASE_URL}/{candidate}"
-    
-    similar_logo = find_similar_name(clean_logo_name, [f.replace(".png", "") for f in github_logo_files], cutoff=0.5)
-    if similar_logo:
-        return f"{BACKUP_LOGO_BASE_URL}/{similar_logo}.png"
+    # 模糊匹配（增加异常保护）
+    try:
+        candidate_names = [f.replace(".png", "") for f in github_logo_files]
+        similar_logo = find_similar_name(clean_logo_name, candidate_names, cutoff=0.5)
+        if similar_logo:
+            return f"{BACKUP_LOGO_BASE_URL}/{similar_logo}.png"
+    except Exception as e:
+        logger.debug(f"模糊匹配logo失败：{clean_logo_name} | 错误：{str(e)[:30]}")
     
     return ""
 
@@ -562,8 +579,12 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     tvg_name = name
                     # 提取数字作为tvg-id
                     tvg_id = re.sub(r'\D', '', name) if re.search(r'\d', name) else ""
-                    # 自动匹配logo
-                    tvg_logo = get_channel_logo_url(name)
+                    # 自动匹配logo（增加异常保护）
+                    try:
+                        tvg_logo = get_channel_logo_url(name)
+                    except Exception as e:
+                        logger.debug(f"生成logo URL失败（频道：{name[:50]}）：{str(e)[:30]}")
+                        tvg_logo = ""
                     
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{tvg_name}\" tvg-logo=\"{tvg_logo}\" group-title=\"{group_title}\",{name}"
                     
