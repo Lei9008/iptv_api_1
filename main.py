@@ -344,7 +344,7 @@ def generate_basic_m3u(all_channels: OrderedDict):
             epg_urls = getattr(config, 'epg_urls', CONFIG_DEFAULTS["EPG_URLS"])
             epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
             f_m3u.write(f"#EXTM3U x-tvg-url={epg_str}\n")
-            f_m3u.write(f"# 基础版直播源（100%保留原始M3U元信息，未测速筛选）\n")
+            f_m3u.write(f"# 基础版直播源（保留原始/智能提取的元信息，未测速筛选）\n")
             f_m3u.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f_m3u.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
             f_m3u.write(f"# 分类数：{len(all_channels)}\n\n")
@@ -358,7 +358,7 @@ def generate_basic_m3u(all_channels: OrderedDict):
                 category_stats[group_title] = len(channel_list)
                 
                 # 写入分类标记
-                f_m3u.write(f"# ===== 原始分类：{group_title}（{len(channel_list)}个频道） =====\n")
+                f_m3u.write(f"# ===== 分类：{group_title}（{len(channel_list)}个频道） =====\n")
                 f_txt.write(f"{group_title},#genre#\n")
                 
                 for _, url in channel_list:
@@ -396,7 +396,7 @@ def generate_basic_m3u(all_channels: OrderedDict):
             logger.info(f"  - 基础M3U: {basic_m3u_path} (写入{total_written}个频道)")
             logger.info(f"  - 基础TXT: {basic_txt_path}")
             logger.info(f"  - 分类统计：{category_stats}")
-            logger.info(f"  - 所有#EXTINF元信息（tvg-id/tvg-name/tvg-logo/group-title）均保留原始值\n")
+            logger.info(f"  - 所有#EXTINF元信息均保留原始/智能提取的值\n")
             
     except Exception as e:
         logger.error(f"生成基础M3U文件失败：{str(e)}", exc_info=True)
@@ -483,14 +483,14 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         categorized_channels[group_title].append((channel_name, url))
     
     logger.info(f"M3U精准提取：{len(meta_list)}个频道（保留原始元信息）")
-    logger.info(f"原始分类：{list(categorized_channels.keys())}")
+    logger.info(f"识别的M3U分类：{list(categorized_channels.keys())}")
     
     return categorized_channels, meta_list
 
-# ===================== 频道提取函数 =====================
+# ===================== 频道提取函数（增强格式兼容） =====================
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
     """
-    提取频道和URL（完整保留原始M3U元信息）
+    提取频道和URL（增强格式兼容，智能识别分类和元信息）
     :return: 按原始group-title分类的频道字典
     """
     categorized_channels = OrderedDict()
@@ -505,50 +505,90 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
             for _, url in ch_list:
                 seen_urls.add(url)
     else:
-        # 处理普通格式（生成基础元信息）
-        pattern1 = r'([^,]+),\s*(https?://[^\s,]+)'
-        pattern3 = r'(https?://[^\s]+)'
+        # 增强：从普通文本中提取更多元信息
+        lines = content.split('\n')
+        current_group = "默认分类"
         
-        # 匹配频道名,URL格式
-        matches1 = re.findall(pattern1, content, re.IGNORECASE | re.MULTILINE)
-        for match in matches1:
-            part1, part2 = match[0].strip(), match[1].strip()
-            if part1.startswith(("http://", "https://")):
-                url, channel_name = part1, part2
-            else:
-                channel_name, url = part1, part2
-            
-            url = url.strip()
-            if not url or url in seen_urls:
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith(("//", "#", "/*", "*/")):
+                # 识别分类行（支持多种格式）
+                if any(keyword in line.lower() for keyword in ['#分类', '#genre', '分类:', 'genre:', '==', '---']):
+                    # 提取分类名称
+                    group_match = re.search(r'[：:=](\S+)', line)
+                    if group_match:
+                        current_group = group_match.group(1).strip()
+                    else:
+                        current_group = re.sub(r'[#分类:genre:==\-—]', '', line).strip() or "默认分类"
+                    # 清理特殊字符
+                    current_group = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9_()]', '', current_group)
+                    logger.debug(f"识别到分类：{current_group}")
+                    # 初始化分类
+                    if current_group not in categorized_channels:
+                        categorized_channels[current_group] = []
                 continue
             
-            seen_urls.add(url)
-            
-            # 生成基础元信息
-            group_title = "普通格式频道"
-            raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{channel_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}"
-            
-            meta = ChannelMeta(
-                url=url,
-                raw_extinf=raw_extinf,
-                tvg_id="",
-                tvg_name=channel_name,
-                tvg_logo="",
-                group_title=group_title,
-                channel_name=channel_name,
-                clean_channel_name=clean_channel_name(channel_name),
-                source_url=source_url
-            )
-            
-            channel_meta_cache[url] = meta
-            raw_extinf_mapping[url] = raw_extinf
-            
-            # 添加到分类字典
-            if group_title not in categorized_channels:
-                categorized_channels[group_title] = []
-            categorized_channels[group_title].append((channel_name, url))
+            # 匹配频道名,URL格式（增强正则，支持多种分隔符）
+            pattern = r'([^,|#$]+)[,|#$]\s*(https?://[^\s,|#$]+)'
+            matches = re.findall(pattern, line, re.IGNORECASE)
+            if matches:
+                for name, url in matches:
+                    name = name.strip()
+                    url = url.strip()
+                    if not url or url in seen_urls:
+                        continue
+                    
+                    seen_urls.add(url)
+                    
+                    # 智能分类推断
+                    group_title = current_group
+                    # 根据频道名智能分类
+                    if any(keyword in name for keyword in ['CCTV', '央视', '中央']):
+                        group_title = "央视频道"
+                    elif any(keyword in name for keyword in ['卫视', '江苏', '浙江', '湖南', '东方', '北京', '安徽', '山东', '广东']):
+                        group_title = "卫视频道"
+                    elif any(keyword in name for keyword in ['电影', '影视', '影院']):
+                        group_title = "电影频道"
+                    elif any(keyword in name for keyword in ['体育', 'CCTV5', '赛事']):
+                        group_title = "体育频道"
+                    elif any(keyword in name for keyword in ['少儿', '卡通', '动画', '优漫']):
+                        group_title = "少儿频道"
+                    elif any(keyword in name for keyword in ['新闻', '资讯']):
+                        group_title = "新闻频道"
+                    elif any(keyword in name for keyword in ['本地', '市', '县', '省']):
+                        group_title = "地方频道"
+                    
+                    # 生成更丰富的元信息
+                    tvg_name = name
+                    # 提取数字作为tvg-id
+                    tvg_id = re.sub(r'\D', '', name) if re.search(r'\d', name) else ""
+                    # 自动匹配logo
+                    tvg_logo = get_channel_logo_url(name)
+                    
+                    raw_extinf = f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{tvg_name}\" tvg-logo=\"{tvg_logo}\" group-title=\"{group_title}\",{name}"
+                    
+                    meta = ChannelMeta(
+                        url=url,
+                        raw_extinf=raw_extinf,
+                        tvg_id=tvg_id,
+                        tvg_name=tvg_name,
+                        tvg_logo=tvg_logo,
+                        group_title=group_title,
+                        channel_name=name,
+                        clean_channel_name=clean_channel_name(name),
+                        source_url=source_url
+                    )
+                    
+                    channel_meta_cache[url] = meta
+                    raw_extinf_mapping[url] = raw_extinf
+                    
+                    # 确保分类存在
+                    if group_title not in categorized_channels:
+                        categorized_channels[group_title] = []
+                    categorized_channels[group_title].append((name, url))
         
-        # 匹配单独URL
+        # 处理剩余的单独URL
+        pattern3 = r'(https?://[^\s]+)'
         matches3 = re.findall(pattern3, content, re.IGNORECASE | re.MULTILINE)
         for url in matches3:
             url = url.strip()
@@ -557,9 +597,21 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
             
             seen_urls.add(url)
             
-            # 生成基础元信息
+            # 从URL中提取频道名
             channel_name = "未知频道"
-            group_title = "单独URL频道"
+            url_parts = url.split('/')
+            for part in url_parts:
+                if part and len(part) > 3 and not part.startswith(('http', 'www', 'live', 'stream', 'cdn', 'api')):
+                    channel_name = part
+                    break
+            
+            # 智能分类
+            group_title = "其他频道"
+            if any(keyword in channel_name for keyword in ['CCTV', '央视']):
+                group_title = "央视频道"
+            elif any(keyword in channel_name for keyword in ['卫视']):
+                group_title = "卫视频道"
+            
             raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{channel_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}"
             
             meta = ChannelMeta(
@@ -582,10 +634,15 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                 categorized_channels[group_title] = []
             categorized_channels[group_title].append((channel_name, url))
     
+    # 确保至少有一个分类
+    if not categorized_channels:
+        categorized_channels["未分类频道"] = []
+    
     logger.info(f"从内容中提取到 {sum(len(v) for v in categorized_channels.values())} 个有效频道")
+    logger.info(f"智能识别的分类：{list(categorized_channels.keys())}")
     return categorized_channels
 
-# ===================== 链接处理函数 =====================
+# ===================== 链接处理函数（自动修复GitHub URL） =====================
 def replace_github_domain(url: str) -> List[str]:
     """替换GitHub域名"""
     if not url or "github" not in url.lower():
@@ -614,8 +671,15 @@ def replace_github_domain(url: str) -> List[str]:
     return unique_urls[:5]
 
 def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
-    """带重试的URL抓取"""
+    """带重试的URL抓取（自动修复GitHub URL）"""
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    
+    # 自动修复GitHub blob URL
+    original_url = url
+    if "github.com" in url and "/blob/" in url:
+        url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+        logger.info(f"自动修复GitHub URL：{original_url} → {url}")
+    
     candidate_urls = replace_github_domain(url)
     
     # 分级超时
@@ -640,7 +704,7 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
             logger.warning(f"抓取失败 [{idx+1}/{len(candidate_urls)}]: {candidate} | 原因：{str(e)[:50]}")
             continue
     
-    logger.error(f"所有候选链接都抓取失败：{url}")
+    logger.error(f"所有候选链接都抓取失败：{original_url}")
     return None
 
 # ===================== 测速模块 =====================
@@ -930,8 +994,8 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
         merge_channels(all_channels, fetched_channels)
         total_extracted += fetched_count
         logger.info(f"源 {url} 抓取完成，新增频道数：{fetched_count}")
-        logger.info(f"  - 原始分类数：{len(fetched_channels)}")
-        logger.info(f"  - 原始分类列表：{list(fetched_channels.keys())}")
+        logger.info(f"  - 识别分类数：{len(fetched_channels)}")
+        logger.info(f"  - 识别分类列表：{list(fetched_channels.keys())}")
     
     # 统计
     total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
@@ -940,8 +1004,8 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
     logger.info(f"  - 失败源数：{len(failed_urls)}")
     logger.info(f"  - 原始提取频道数：{total_extracted}")
     logger.info(f"  - 去重后频道总数：{total_channels}")
-    logger.info(f"  - 最终原始分类数：{len(all_channels)}")
-    logger.info(f"  - 最终原始分类列表：{list(all_channels.keys())}")
+    logger.info(f"  - 最终分类数：{len(all_channels)}")
+    logger.info(f"  - 最终分类列表：{list(all_channels.keys())}")
     
     if failed_urls:
         logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
@@ -1185,14 +1249,14 @@ async def main():
         # 加载配置
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源（保留原始M3U元信息） =====")
+        logger.info("===== 开始处理直播源（智能提取元信息版本） =====")
         logger.info(f"配置信息：延迟阈值{latency_threshold}ms | 匹配阈值{getattr(config, 'MATCH_CUTOFF', 0.4)}")
         
         # 预加载logo
         get_github_logo_list()
         
         # 抓取匹配频道
-        logger.info("\n===== 1. 抓取并提取直播源频道（保留原始元信息） =====")
+        logger.info("\n===== 1. 抓取并提取直播源频道（智能识别分类） =====")
         channels, template_channels = filter_source_urls(template_file)
         if not channels:
             logger.error("无匹配的频道数据，终止流程")
@@ -1224,7 +1288,7 @@ async def main():
         total_elapsed = time.time() - start_total
         logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
         logger.info(f"\n文件说明：")
-        logger.info(f"  - live_basic.m3u: 基础版（100%保留原始M3U元信息，未测速筛选）")
+        logger.info(f"  - live_basic.m3u: 基础版（保留原始/智能提取的元信息，未测速筛选）")
         logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类）")
         logger.info(f"  - speed_test_report.txt: 详细测速报告")
     
