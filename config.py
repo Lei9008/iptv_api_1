@@ -21,6 +21,10 @@ SOURCE_URLS = [
     # 其他源链接...
 ]
 
+# 保留大写别名（兼容原有习惯）
+SOURCE_URLS = source_urls
+
+
 # 模板文件路径（相对路径）
 TEMPLATE_FILE = "demo.txt"
 
