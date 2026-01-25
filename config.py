@@ -1,7 +1,7 @@
 # config.py - IPTV直播源处理配置文件
 # ===================== 核心源配置 =====================
 # 直播源URL列表（支持GitHub RAW/普通HTTP链接）
-SOURCE_URLS = [
+source_urls = [
     # 替换为你自己的直播源链接
 
     
