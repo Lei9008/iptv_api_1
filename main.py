@@ -11,7 +11,7 @@ import os
 import difflib
 from pathlib import Path
 from dataclasses import dataclass
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Any
 from functools import lru_cache
 
 # ===================== 数据结构 =====================
@@ -24,6 +24,21 @@ class SpeedTestResult:
     success: bool = False  # 是否成功
     error: Optional[str] = None  # 错误信息
 
+@dataclass
+class ChannelInfo:
+    """频道信息数据类（新增：存储M3U标准字段）"""
+    name: str  # 频道名称（优先tvg-name，其次自定义名称）
+    url: str  # 播放地址
+    group_title: str = "默认分类"  # 分类（group-title）
+    tvg_name: str = ""  # TVG名称
+    tvg_logo: str = ""  # TVG Logo地址
+    tvg_id: str = ""  # TVG ID
+    other_attrs: Dict[str, str] = None  # 其他属性
+
+    def __post_init__(self):
+        if self.other_attrs is None:
+            self.other_attrs = {}
+
 # ===================== 初始化配置 =====================
 # 确保 output 文件夹存在
 OUTPUT_FOLDER = Path("output")
@@ -34,13 +49,11 @@ LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
 for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)
 
-# 从config.py读取GitHub Logo配置（核心优化）
-# 读取Logo基础URL，设置默认值
+# 从config.py读取GitHub Logo配置
 GITHUB_LOGO_BASE_URL = getattr(config, 'GITHUB_LOGO_BASE_URL', 
-                              "https://github.com/fanmingming/live/tree/main/tv")
+                              "https://raw.githubusercontent.com/fanmingming/live/main/tv")
 BACKUP_LOGO_BASE_URL = getattr(config, 'BACKUP_LOGO_BASE_URL',
-                              "https://github.com/fanmingming/live/tree/main/tv")
-# 读取Logo API URL列表，设置默认值
+                              "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv")
 GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
     "https://api.github.com/repos/fanmingming/live/contents/main/tv",
     "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
@@ -60,7 +73,7 @@ CONFIG_DEFAULTS = {
     "SOURCE_URLS": []
 }
 
-# GitHub 镜像域名列表（用于替换不可访问的域名）
+# GitHub 镜像域名列表
 GITHUB_MIRRORS = [
     "raw.githubusercontent.com",
     "raw.kkgithub.com",
@@ -118,21 +131,170 @@ def find_similar_name(target_name: str, name_list: List[str], cutoff: float = 0.
     matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=cutoff)
     return matches[0] if matches else None
 
+def parse_m3u_attributes(line: str) -> Dict[str, str]:
+    """
+    解析M3U属性行（#EXTINF:...）中的键值对
+    支持格式：#EXTINF:-1 group-title="央视" tvg-name="CCTV1" tvg-logo="xxx",CCTV1
+    """
+    attrs = {}
+    
+    # 提取逗号前的属性部分
+    attr_part = line.split(',')[0] if ',' in line else line
+    # 移除EXTINF前缀
+    attr_part = attr_part.replace('#EXTINF:', '').strip()
+    
+    # 提取数字（时长）后的部分
+    attr_part = re.sub(r'^-?\d+\s*', '', attr_part)
+    
+    # 正则匹配带引号的属性（key="value"）
+    quoted_pattern = r'(\w+)="([^"]*)"'
+    quoted_matches = re.findall(quoted_pattern, attr_part)
+    for key, value in quoted_matches:
+        attrs[key.lower()] = value.strip()
+    
+    # 正则匹配不带引号的属性（key=value）
+    unquoted_pattern = r'(\w+)=([^\s"]+)'
+    unquoted_matches = re.findall(unquoted_pattern, attr_part)
+    for key, value in unquoted_matches:
+        if key.lower() not in attrs:  # 不覆盖带引号的属性
+            attrs[key.lower()] = value.strip()
+    
+    # 提取频道名（逗号后部分）
+    if ',' in line:
+        channel_name = line.split(',', 1)[1].strip()
+        attrs['_channel_name'] = channel_name
+    
+    return attrs
+
+def extract_channels_from_content(content: str) -> List[ChannelInfo]:
+    """
+    优化：从直播源内容中提取频道信息，优先解析M3U标准字段
+    :param content: 抓取到的直播源文本内容
+    :return: 包含完整元数据的ChannelInfo列表
+    """
+    channels = []
+    # 去重集合（URL+名称）
+    seen_pairs = set()
+    
+    lines = content.splitlines()
+    current_attrs = {}
+    
+    # 逐行解析M3U格式
+    for i, line in enumerate(lines):
+        line = line.strip()
+        if not line:
+            continue
+        
+        # 1. 匹配M3U属性行（优先解析）
+        if line.startswith('#EXTINF:'):
+            current_attrs = parse_m3u_attributes(line)
+            continue
+        
+        # 2. 匹配播放地址行（紧跟在EXTINF行后）
+        if line.startswith(('http://', 'https://', 'rtmp://', 'rtsp://')) and current_attrs:
+            url = line.strip()
+            
+            # 提取关键属性
+            tvg_name = current_attrs.get('tvg-name', '')
+            group_title = current_attrs.get('group-title', current_attrs.get('group', '默认分类'))
+            tvg_logo = current_attrs.get('tvg-logo', '')
+            tvg_id = current_attrs.get('tvg-id', '')
+            channel_name = current_attrs.get('_channel_name', tvg_name or '未知频道')
+            
+            # 清洗频道名
+            cleaned_name = clean_channel_name(channel_name)
+            if not cleaned_name:
+                cleaned_name = clean_channel_name(tvg_name) or '未知频道'
+            
+            # 去重检查
+            pair_key = (cleaned_name, url)
+            if pair_key in seen_pairs:
+                current_attrs = {}
+                continue
+            seen_pairs.add(pair_key)
+            
+            # 创建频道信息对象
+            channel_info = ChannelInfo(
+                name=cleaned_name,
+                url=url,
+                group_title=group_title,
+                tvg_name=tvg_name,
+                tvg_logo=tvg_logo,
+                tvg_id=tvg_id,
+                other_attrs={k: v for k, v in current_attrs.items() if k not in ['tvg-name', 'group-title', 'tvg-logo', 'tvg-id', '_channel_name']}
+            )
+            channels.append(channel_info)
+            
+            # 重置当前属性
+            current_attrs = {}
+            continue
+        
+        # 3. 兼容旧格式（频道名,URL）
+        if ',' in line and not line.startswith('#'):
+            parts = line.split(',', 1)
+            if len(parts) == 2 and parts[1].strip().startswith(('http://', 'https://')):
+                name_part = parts[0].strip()
+                url_part = parts[1].strip()
+                
+                cleaned_name = clean_channel_name(name_part) or '未知频道'
+                pair_key = (cleaned_name, url_part)
+                
+                if pair_key in seen_pairs:
+                    continue
+                seen_pairs.add(pair_key)
+                
+                # 创建兼容模式的频道信息
+                channel_info = ChannelInfo(
+                    name=cleaned_name,
+                    url=url_part,
+                    group_title="默认分类"
+                )
+                channels.append(channel_info)
+                continue
+        
+        # 4. 单独的URL（无属性）
+        if line.startswith(('http://', 'https://')) and not current_attrs:
+            url = line.strip()
+            # 从URL提取简易名称
+            url_parts = url.split('/')
+            name_from_url = '未知频道'
+            for part in url_parts:
+                if part and not part.startswith(('http', 'www', 'live', 'stream')) and len(part) > 2:
+                    name_from_url = clean_channel_name(part)
+                    break
+            
+            pair_key = (name_from_url, url)
+            if pair_key in seen_pairs:
+                continue
+            seen_pairs.add(pair_key)
+            
+            channel_info = ChannelInfo(
+                name=name_from_url,
+                url=url,
+                group_title="默认分类"
+            )
+            channels.append(channel_info)
+    
+    logger.info(f"从内容中提取到 {len(channels)} 个有效频道（优先解析M3U标准字段）")
+    return channels
+
 def sort_and_filter_urls(
-    urls: List[str], 
+    channel_infos: List[ChannelInfo], 
     written_urls: set, 
     latency_results: Dict[str, SpeedTestResult], 
     latency_threshold: float
-) -> List[str]:
-    """排序和过滤URL（去重、黑名单、IP优先级、延迟过滤）"""
-    if not urls:
+) -> List[ChannelInfo]:
+    """
+    优化：排序和过滤频道信息（基于ChannelInfo对象）
+    """
+    if not channel_infos:
         return []
     
-    filtered_urls = []
+    filtered_channels = []
     url_blacklist = getattr(config, 'url_blacklist', [])
     
-    for url in urls:
-        url = url.strip()
+    for channel in channel_infos:
+        url = channel.url.strip()
         if not url or url in written_urls:
             continue
         
@@ -145,20 +307,22 @@ def sort_and_filter_urls(
         if not result or not result.success or result.latency is None or result.latency > latency_threshold:
             continue
         
-        filtered_urls.append(url)
+        filtered_channels.append(channel)
     
     # 按IP版本优先级排序
     ip_priority = getattr(config, 'ip_version_priority', CONFIG_DEFAULTS["IP_VERSION_PRIORITY"])
     if ip_priority == "ipv6":
-        filtered_urls.sort(key=lambda u: is_ipv6(u), reverse=True)
+        filtered_channels.sort(key=lambda c: is_ipv6(c.url), reverse=True)
     else:
-        filtered_urls.sort(key=lambda u: is_ipv6(u))
+        filtered_channels.sort(key=lambda c: is_ipv6(c.url))
     
     # 按延迟升序排序
-    filtered_urls.sort(key=lambda u: latency_results[u].latency)
+    filtered_channels.sort(key=lambda c: latency_results[c.url].latency if latency_results.get(c.url) else float('inf'))
     
-    written_urls.update(filtered_urls)
-    return filtered_urls
+    # 更新已写入URL集合
+    written_urls.update([c.url for c in filtered_channels])
+    
+    return filtered_channels
 
 def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, latency: float) -> str:
     """添加URL后缀，区分IP版本、线路和延迟"""
@@ -175,11 +339,10 @@ def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, laten
 
 @lru_cache(maxsize=1)
 def get_github_logo_list() -> List[str]:
-    """获取GitHub仓库中的logo文件列表（缓存机制+代理）- 从config读取API URL"""
+    """获取GitHub仓库中的logo文件列表"""
     headers = {"User-Agent": "Mozilla/5.0"}
     logo_files = []
     
-    # 使用从config读取的API URL列表
     for api_url in GITHUB_LOGO_API_URLS:
         try:
             response = requests.get(api_url, headers=headers, timeout=10)
@@ -196,7 +359,6 @@ def get_github_logo_list() -> List[str]:
             logger.warning(f"获取GitHub logo列表失败（{api_url}）：{str(e)[:50]}")
             continue
     
-    # 兜底：预设常见logo列表
     if not logo_files:
         logger.info("使用预设logo列表兜底")
         logo_files = [
@@ -209,7 +371,7 @@ def get_github_logo_list() -> List[str]:
     return logo_files
 
 def get_channel_logo_url(channel_name: str) -> str:
-    """检测logo文件，生成动态logo_url - 从config读取基础URL"""
+    """检测logo文件，生成动态logo_url"""
     clean_logo_name = clean_channel_name(channel_name)
     logo_filename = f"{clean_logo_name}.png"
     
@@ -219,10 +381,30 @@ def get_channel_logo_url(channel_name: str) -> str:
         if local_logo_path.exists():
             return local_logo_path.as_posix()
     
-    # 检测GitHub远程logo（使用从config读取的URL）
+    # 获取有效的logo URL
+    def get_valid_logo_url(filename):
+        base_urls = [GITHUB_LOGO_BASE_URL, BACKUP_LOGO_BASE_URL]
+        
+        for base_url in base_urls:
+            for mirror in GITHUB_MIRRORS:
+                if "raw.githubusercontent.com" in base_url:
+                    test_url = base_url.replace("raw.githubusercontent.com", mirror) + f"/{filename}"
+                else:
+                    test_url = base_url + f"/{filename}"
+                
+                try:
+                    response = requests.head(test_url, timeout=3, allow_redirects=True)
+                    if response.status_code == 200:
+                        return test_url
+                except:
+                    continue
+        
+        return f"{BACKUP_LOGO_BASE_URL}/{filename}"
+    
     github_logo_files = get_github_logo_list()
+    
     if logo_filename in github_logo_files:
-        return f"{BACKUP_LOGO_BASE_URL}/{logo_filename}"
+        return get_valid_logo_url(logo_filename)
     
     # 模糊匹配
     candidate_names = [
@@ -233,102 +415,22 @@ def get_channel_logo_url(channel_name: str) -> str:
     ]
     for candidate in candidate_names:
         if candidate in github_logo_files:
-            return f"{BACKUP_LOGO_BASE_URL}/{candidate}"
+            return get_valid_logo_url(candidate)
     
     similar_logo = find_similar_name(clean_logo_name, [f.replace(".png", "") for f in github_logo_files], cutoff=0.7)
     if similar_logo:
-        return f"{BACKUP_LOGO_BASE_URL}/{similar_logo}.png"
+        return get_valid_logo_url(f"{similar_logo}.png")
     
     return ""
 
-# ===================== 通用频道提取函数 =====================
-def extract_channels_from_content(content: str) -> List[Tuple[str, str]]:
-    """
-    从任意文本内容中提取频道名和URL
-    :param content: 抓取到的直播源文本内容
-    :return: 列表[(频道名, URL), ...]
-    """
-    channels = []
-    # 去重集合
-    seen_pairs = set()
-    
-    # 正则1：匹配 "频道名,URL" 或 "URL,频道名" 格式（最常见）
-    pattern1 = r'([^,]+),\s*(https?://[^\s,]+)'
-    # 正则2：匹配 M3U 格式（#EXTINF:...,频道名\nURL）
-    pattern2 = r'#EXTINF:-?\d+\s*(?:[^,]+,)?\s*([^\\n]+)\n\s*(https?://[^\s]+)'
-    # 正则3：匹配单独的URL（尝试从上下文提取频道名）
-    pattern3 = r'(https?://[^\s]+)'
-    
-    # 第一步：匹配格式1（频道名,URL / URL,频道名）
-    matches1 = re.findall(pattern1, content, re.IGNORECASE | re.MULTILINE)
-    for match in matches1:
-        part1, part2 = match[0].strip(), match[1].strip()
-        if part1.startswith(("http://", "https://")):
-            url, name = part1, part2
-        else:
-            name, url = part1, part2
-        
-        # 清洗和验证
-        name = clean_channel_name(name)
-        if not name or not url.startswith(("http://", "https://")):
-            continue
-        
-        # 去重
-        pair = (name, url)
-        if pair not in seen_pairs:
-            seen_pairs.add(pair)
-            channels.append(pair)
-    
-    # 第二步：匹配格式2（M3U格式）
-    matches2 = re.findall(pattern2, content, re.IGNORECASE | re.MULTILINE | re.DOTALL)
-    for match in matches2:
-        name, url = match[0].strip(), match[1].strip()
-        name = clean_channel_name(name)
-        if not name or not url.startswith(("http://", "https://")):
-            continue
-        
-        pair = (name, url)
-        if pair not in seen_pairs:
-            seen_pairs.add(pair)
-            channels.append(pair)
-    
-    # 第三步：匹配单独的URL（尝试提取频道名）
-    matches3 = re.findall(pattern3, content, re.IGNORECASE | re.MULTILINE)
-    for url in matches3:
-        url = url.strip()
-        if not url.startswith(("http://", "https://")):
-            continue
-        
-        # 从URL中提取简易频道名
-        name = "未知频道"
-        # 从URL路径中提取关键词
-        url_parts = url.split("/")
-        for part in url_parts:
-            if part and not part.startswith(("http", "www", "live", "stream")) and len(part) > 2:
-                name = clean_channel_name(part)
-                break
-        
-        pair = (name, url)
-        if pair not in seen_pairs:
-            seen_pairs.add(pair)
-            channels.append(pair)
-    
-    logger.info(f"从内容中提取到 {len(channels)} 个有效频道")
-    return channels
-
 # ===================== 链接修复和重试函数 =====================
 def replace_github_domain(url: str) -> List[str]:
-    """
-    替换GitHub域名，生成多个可访问的镜像链接
-    :param url: 原始URL
-    :return: 多个候选URL列表
-    """
+    """替换GitHub域名，生成多个可访问的镜像链接"""
     if not url or "github" not in url.lower():
         return [url]
     
     candidate_urls = [url]
     
-    # 替换不同的GitHub镜像域名
     for mirror in GITHUB_MIRRORS:
         for original in GITHUB_MIRRORS:
             if original in url:
@@ -336,7 +438,6 @@ def replace_github_domain(url: str) -> List[str]:
                 if new_url not in candidate_urls:
                     candidate_urls.append(new_url)
     
-    # 添加代理前缀
     proxy_urls = []
     for base_url in candidate_urls:
         for proxy in PROXY_PREFIXES:
@@ -346,20 +447,13 @@ def replace_github_domain(url: str) -> List[str]:
     
     candidate_urls.extend(proxy_urls)
     
-    # 去重并返回
     unique_urls = list(dict.fromkeys(candidate_urls))
     return unique_urls
 
 def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
-    """
-    带重试和镜像替换的URL抓取函数
-    :param url: 原始URL
-    :param timeout: 超时时间
-    :return: 抓取到的内容，失败返回None
-    """
+    """带重试和镜像替换的URL抓取函数"""
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
     
-    # 生成候选URL列表
     candidate_urls = replace_github_domain(url)
     
     for idx, candidate in enumerate(candidate_urls):
@@ -369,7 +463,7 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
                 candidate,
                 headers=headers,
                 timeout=timeout,
-                verify=False,  # 忽略SSL证书错误
+                verify=False,
                 allow_redirects=True
             )
             response.raise_for_status()
@@ -417,7 +511,6 @@ class SpeedTester:
                     latency = (time.time() - start_time) * 1000
                     
                     if response.status == 200:
-                        # 解析分辨率
                         resolution = "unknown"
                         content_type = response.headers.get("Content-Type", "")
                         if "application/vnd.apple.mpegurl" in content_type:
@@ -469,7 +562,7 @@ class SpeedTester:
 
 # ===================== 模板解析与源抓取 =====================
 def parse_template(template_file: str) -> OrderedDict:
-    """解析模板文件，提取频道分类和频道名称（移除自动创建逻辑）"""
+    """解析模板文件，提取频道分类和频道名称"""
     template_channels = OrderedDict()
     current_category = None
 
@@ -495,103 +588,139 @@ def parse_template(template_file: str) -> OrderedDict:
 
     return template_channels
 
-def fetch_channels(url: str) -> OrderedDict:
-    """从指定URL抓取并提取频道（增强异常处理+多镜像重试）"""
-    channels = OrderedDict()
-    default_category = "默认分类"
-    channels[default_category] = []
+def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
+    """
+    优化：抓取频道并按group-title分类
+    :return: {分类名: [ChannelInfo列表]}
+    """
+    # 按分类存储频道
+    categorized_channels = OrderedDict()
+    categorized_channels["默认分类"] = []
     
     try:
-        # 使用增强的抓取函数（带重试和镜像替换）
         content = fetch_url_with_retry(url)
         if content is None:
-            return channels
+            return categorized_channels
         
-        # 核心：使用通用提取函数提取频道
-        extracted_channels = extract_channels_from_content(content)
-        channels[default_category].extend(extracted_channels)
+        # 提取带完整元数据的频道列表
+        channel_list = extract_channels_from_content(content)
+        
+        # 按group-title分类
+        for channel in channel_list:
+            group = channel.group_title or "默认分类"
+            if group not in categorized_channels:
+                categorized_channels[group] = []
+            categorized_channels[group].append(channel)
             
     except Exception as e:
         logger.error(f"处理 {url} 时发生异常：{str(e)}", exc_info=True)
 
-    return channels
+    return categorized_channels
 
-def merge_channels(target: OrderedDict, source: OrderedDict):
-    """合并两个频道字典（去重）"""
-    for category, channel_list in source.items():
-        if category not in target:
-            target[category] = []
+def merge_channels(target: Dict[str, List[ChannelInfo]], source: Dict[str, List[ChannelInfo]]):
+    """
+    优化：合并分类的频道信息（去重）
+    """
+    # 先收集所有已存在的URL用于去重
+    existing_urls = set()
+    for group in target:
+        for channel in target[group]:
+            existing_urls.add(channel.url)
+    
+    for group, channels in source.items():
+        if group not in target:
+            target[group] = []
         
-        existing = {(name, url) for name, url in target[category]}
-        for name, url in channel_list:
-            if (name, url) not in existing:
-                target[category].append((name, url))
-                existing.add((name, url))
+        for channel in channels:
+            if channel.url not in existing_urls:
+                target[group].append(channel)
+                existing_urls.add(channel.url)
 
-def match_channels(template_channels: OrderedDict, all_channels: OrderedDict) -> OrderedDict:
-    """匹配模板中的频道与抓取到的频道"""
+def match_channels(template_channels: OrderedDict, all_channels: Dict[str, List[ChannelInfo]]) -> Dict[str, Dict[str, List[ChannelInfo]]]:
+    """
+    优化：匹配模板频道与抓取的频道（基于完整元数据）
+    :return: {模板分类: {频道名: [ChannelInfo列表]}}
+    """
     matched_channels = OrderedDict()
     
-    # 构建频道名到URL的映射
-    name_to_urls = {}
-    all_online_names = set()
-    for _, channel_list in all_channels.items():
-        for name, url in channel_list:
-            if name:
-                all_online_names.add(name)
-                name_to_urls.setdefault(name, []).append(url)
+    # 构建所有频道名到频道信息的映射
+    name_to_channels = {}
+    all_channel_names = set()
     
-    all_online_names_list = list(all_online_names)
+    for group, channels in all_channels.items():
+        for channel in channels:
+            channel_name = channel.name
+            all_channel_names.add(channel_name)
+            if channel_name not in name_to_channels:
+                name_to_channels[channel_name] = []
+            name_to_channels[channel_name].append(channel)
+    
+    all_channel_names_list = list(all_channel_names)
     
     # 遍历模板进行匹配
-    for category, template_names in template_channels.items():
-        matched_channels[category] = OrderedDict()
-        for channel_name in template_names:
-            cleaned_template_name = clean_channel_name(channel_name)
-            similar_name = find_similar_name(cleaned_template_name, all_online_names_list)
-            if similar_name:
-                matched_channels[category][channel_name] = name_to_urls.get(similar_name, [])
-                logger.debug(f"匹配成功：{channel_name} → {similar_name}")
+    for template_group, template_names in template_channels.items():
+        matched_channels[template_group] = OrderedDict()
+        
+        for template_name in template_names:
+            cleaned_template_name = clean_channel_name(template_name)
+            # 优先精确匹配，再模糊匹配
+            if cleaned_template_name in name_to_channels:
+                matched_channels[template_group][template_name] = name_to_channels[cleaned_template_name]
+                logger.debug(f"精确匹配成功：{template_name} → {cleaned_template_name}")
             else:
-                logger.warning(f"未匹配到频道：{channel_name}")
+                similar_name = find_similar_name(cleaned_template_name, all_channel_names_list)
+                if similar_name:
+                    matched_channels[template_group][template_name] = name_to_channels.get(similar_name, [])
+                    logger.debug(f"模糊匹配成功：{template_name} → {similar_name}")
+                else:
+                    matched_channels[template_group][template_name] = []
+                    logger.warning(f"未匹配到频道：{template_name}")
     
     return matched_channels
 
-def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
-    """过滤源URL，获取匹配后的频道信息（增强容错）"""
+def filter_source_urls(template_file: str) -> Tuple[Dict[str, Dict[str, List[ChannelInfo]]], OrderedDict]:
+    """
+    优化：过滤源URL，返回分类的匹配结果
+    """
     # 解析模板
     template_channels = parse_template(template_file)
     if not template_channels:
         logger.error("模板解析为空，终止流程")
-        return OrderedDict(), OrderedDict()
+        return {}, OrderedDict()
     
     # 获取源URL配置
     source_urls = getattr(config, 'source_urls', CONFIG_DEFAULTS["SOURCE_URLS"])
     if not source_urls:
         logger.error("未配置source_urls，终止流程")
-        return OrderedDict(), template_channels
+        return {}, template_channels
     
-    # 抓取并合并所有源（单个源失败不影响）
+    # 抓取并合并所有源
     all_channels = OrderedDict()
+    all_channels["默认分类"] = []
     failed_urls = []
     
     for url in source_urls:
         logger.info(f"\n开始抓取源：{url}")
         fetched_channels = fetch_channels(url)
-        if not fetched_channels or not fetched_channels.get("默认分类"):
+        
+        # 检查是否抓取到有效频道
+        total_fetched = sum(len(channels) for channels in fetched_channels.values())
+        if total_fetched == 0:
             failed_urls.append(url)
             logger.warning(f"源 {url} 未抓取到任何频道")
             continue
         
+        # 合并分类的频道
         merge_channels(all_channels, fetched_channels)
-        logger.info(f"源 {url} 抓取完成，新增频道数：{len(fetched_channels['默认分类'])}")
+        logger.info(f"源 {url} 抓取完成，新增频道数：{total_fetched}（按{len(fetched_channels)}个分类组织）")
     
     # 输出抓取统计
-    total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
+    total_channels = sum(len(channels) for channels in all_channels.values())
     logger.info(f"\n抓取统计：")
     logger.info(f"  - 总源数：{len(source_urls)}")
     logger.info(f"  - 失败源数：{len(failed_urls)}")
     logger.info(f"  - 成功抓取频道总数：{total_channels}")
+    logger.info(f"  - 频道分类数：{len(all_channels)}")
     
     if failed_urls:
         logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
@@ -602,24 +731,46 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
     return matched_channels, template_channels
 
 # ===================== 文件生成 =====================
-def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version, latency):
-    """写入M3U和TXT文件"""
-    if not url:
+def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int, ip_version: str, latency: float):
+    """
+    优化：写入带完整元数据的频道信息
+    """
+    if not channel_info.url:
         return
     
-    logo_url = get_channel_logo_url(channel_name)
+    # 优先使用频道自带的tvg-logo，否则自动匹配
+    logo_url = channel_info.tvg_logo or get_channel_logo_url(channel_info.name)
+    
+    # 构建M3U属性行
+    extinf_parts = [f"#EXTINF:-1"]
+    if channel_info.tvg_name:
+        extinf_parts.append(f'tvg-name="{channel_info.tvg_name}"')
+    if logo_url:
+        extinf_parts.append(f'tvg-logo="{logo_url}"')
+    if channel_info.tvg_id:
+        extinf_parts.append(f'tvg-id="{channel_info.tvg_id}"')
+    if category:
+        extinf_parts.append(f'group-title="{category}"')
+    
+    # 添加频道名
+    extinf_line = ' '.join(extinf_parts) + f',{channel_info.name}'
+    
+    # 生成带后缀的URL
+    url_with_suffix = add_url_suffix(channel_info.url, index, 1, ip_version, latency)
     
     # 写入M3U
-    f_m3u.write(
-        f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" "
-        f"tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n"
-    )
-    f_m3u.write(url + "\n")
-    # 写入TXT
-    f_txt.write(f"{channel_name},{url}\n")
+    f_m3u.write(f"{extinf_line}\n")
+    f_m3u.write(f"{url_with_suffix}\n")
+    
+    # 写入TXT（分类,频道名,URL）
+    f_txt.write(f"{category},{channel_info.name},{url_with_suffix}\n")
 
-def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str, SpeedTestResult]):
-    """更新频道URL到M3U和TXT文件中"""
+def updateChannelUrlsM3U(matched_channels: Dict[str, Dict[str, List[ChannelInfo]]], 
+                         template_channels: OrderedDict, 
+                         latency_results: Dict[str, SpeedTestResult]):
+    """
+    优化：生成带完整M3U元数据的文件
+    """
     latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
@@ -640,7 +791,7 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
              open(ipv6_m3u_path, "w", encoding="utf-8") as f_m3u_ipv6, \
              open(ipv6_txt_path, "w", encoding="utf-8") as f_txt_ipv6:
 
-            # 写入M3U头部
+            # 写入M3U头部（包含EPG信息）
             epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
             header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
             
@@ -654,8 +805,8 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                 if not channel_name:
                     continue
                 
-                f_txt_ipv4.write(f"{channel_name},#genre#\n")
-                f_txt_ipv6.write(f"{channel_name},#genre#\n")
+                f_txt_ipv4.write(f"{channel_name},#genre#,\n")
+                f_txt_ipv6.write(f"{channel_name},#genre#,\n")
                 
                 for entry in group.get('entries', []):
                     entry_name = entry.get('name', datetime.now().strftime("%Y-%m-%d"))
@@ -670,74 +821,64 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                         if is_ipv6(entry_url):
                             if entry_url not in written_urls_ipv6:
                                 written_urls_ipv6.add(entry_url)
-                                f_m3u_ipv6.write(
-                                    f"#EXTINF:-1 tvg-id=\"{announcement_id}\" tvg-name=\"{entry_name}\" "
-                                    f"tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}({entry_result.latency:.0f}ms)\n"
-                                )
-                                f_m3u_ipv6.write(f"{entry_url}\n")
-                                f_txt_ipv6.write(f"{entry_name},{entry_url}\n")
+                                # 构建公告频道的EXTINF行
+                                extinf = f"#EXTINF:-1 tvg-name=\"{entry_name}\" tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}({entry_result.latency:.0f}ms)"
+                                f_m3u_ipv6.write(f"{extinf}\n{entry_url}\n")
+                                f_txt_ipv6.write(f"{channel_name},{entry_name},{entry_url}\n")
                                 announcement_id += 1
                         else:
                             if entry_url not in written_urls_ipv4:
                                 written_urls_ipv4.add(entry_url)
-                                f_m3u_ipv4.write(
-                                    f"#EXTINF:-1 tvg-id=\"{announcement_id}\" tvg-name=\"{entry_name}\" "
-                                    f"tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}({entry_result.latency:.0f}ms)\n"
-                                )
-                                f_m3u_ipv4.write(f"{entry_url}\n")
-                                f_txt_ipv4.write(f"{entry_name},{entry_url}\n")
+                                extinf = f"#EXTINF:-1 tvg-name=\"{entry_name}\" tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}({entry_result.latency:.0f}ms)"
+                                f_m3u_ipv4.write(f"{extinf}\n{entry_url}\n")
+                                f_txt_ipv4.write(f"{channel_name},{entry_name},{entry_url}\n")
                                 announcement_id += 1
 
-            # 写入模板频道
-            for category, channel_list in template_channels.items():
-                if not category or category not in channels:
+            # 写入模板频道（按分类组织）
+            for template_group, channel_map in matched_channels.items():
+                if not template_group:
                     continue
                 
-                f_txt_ipv4.write(f"{category},#genre#\n")
-                f_txt_ipv6.write(f"{category},#genre#\n")
+                # 写入分类标记
+                f_txt_ipv4.write(f"{template_group},#genre#,\n")
+                f_txt_ipv6.write(f"{template_group},#genre#,\n")
                 
-                for channel_name in channel_list:
-                    if channel_name not in channels[category]:
+                for channel_name, channel_infos in channel_map.items():
+                    if not channel_infos:
                         continue
                     
-                    raw_urls = channels[category][channel_name]
-                    
-                    # 分离IPv4/IPv6并过滤
-                    ipv4_urls = sort_and_filter_urls(
-                        [u for u in raw_urls if not is_ipv6(u)],
+                    # 分离IPv4/IPv6频道
+                    ipv4_channels = sort_and_filter_urls(
+                        [c for c in channel_infos if not is_ipv6(c.url)],
                         written_urls_ipv4,
                         latency_results,
                         latency_threshold
                     )
-                    ipv6_urls = sort_and_filter_urls(
-                        [u for u in raw_urls if is_ipv6(u)],
+                    ipv6_channels = sort_and_filter_urls(
+                        [c for c in channel_infos if is_ipv6(c.url)],
                         written_urls_ipv6,
                         latency_results,
                         latency_threshold
                     )
                     
-                    # 写入IPv4 URL
-                    total_ipv4 = len(ipv4_urls)
-                    for idx, url in enumerate(ipv4_urls, start=1):
-                        latency = latency_results[url].latency
-                        new_url = add_url_suffix(url, idx, total_ipv4, "IPV4", latency)
-                        write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, idx, new_url, "IPV4", latency)
+                    # 写入IPv4频道
+                    for idx, channel in enumerate(ipv4_channels, start=1):
+                        latency = latency_results[channel.url].latency
+                        write_to_files(f_m3u_ipv4, f_txt_ipv4, template_group, channel, idx, "IPV4", latency)
                     
-                    # 写入IPv6 URL
-                    total_ipv6 = len(ipv6_urls)
-                    for idx, url in enumerate(ipv6_urls, start=1):
-                        latency = latency_results[url].latency
-                        new_url = add_url_suffix(url, idx, total_ipv6, "IPV6", latency)
-                        write_to_files(f_m3u_ipv6, f_txt_ipv6, category, channel_name, idx, new_url, "IPV6", latency)
+                    # 写入IPv6频道
+                    for idx, channel in enumerate(ipv6_channels, start=1):
+                        latency = latency_results[channel.url].latency
+                        write_to_files(f_m3u_ipv6, f_txt_ipv6, template_group, channel, idx, "IPV6", latency)
 
         # 生成测速报告
         generate_speed_report(latency_results, latency_threshold)
         
         logger.info(f"\n文件生成完成：")
-        logger.info(f"  - IPv4 M3U: {ipv4_m3u_path}")
-        logger.info(f"  - IPv4 TXT: {ipv4_txt_path}")
-        logger.info(f"  - IPv6 M3U: {ipv6_m3u_path}")
-        logger.info(f"  - IPv6 TXT: {ipv6_txt_path}")
+        logger.info(f"  - IPv4 M3U: {ipv4_m3u_path}（包含完整M3U元数据）")
+        logger.info(f"  - IPv4 TXT: {ipv4_txt_path}（分类,频道名,URL格式）")
+        logger.info(f"  - IPv6 M3U: {ipv6_m3u_path}（包含完整M3U元数据）")
+        logger.info(f"  - IPv6 TXT: {ipv6_txt_path}（分类,频道名,URL格式）")
         logger.info(f"  - 延迟阈值：{latency_threshold}ms")
         
     except Exception as e:
@@ -792,24 +933,25 @@ async def main():
         # 配置加载
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源 =====")
+        logger.info("===== 开始处理直播源（优化M3U元数据解析） =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms")
         
         # 预加载GitHub logo列表
         get_github_logo_list()
         
-        # 抓取并匹配频道
-        logger.info("\n===== 1. 抓取并提取直播源频道 =====")
-        channels, template_channels = filter_source_urls(template_file)
-        if not channels:
+        # 抓取并匹配频道（带完整元数据）
+        logger.info("\n===== 1. 抓取并提取直播源频道（优先解析M3U字段） =====")
+        matched_channels, template_channels = filter_source_urls(template_file)
+        if not matched_channels:
             logger.error("无匹配的频道数据，终止流程")
             return
         
         # 收集所有需要测速的URL
         all_urls = set()
-        for category in channels.values():
-            for urls in category.values():
-                all_urls.update(urls)
+        for group in matched_channels.values():
+            for channel_infos in group.values():
+                for channel in channel_infos:
+                    all_urls.add(channel.url)
         for group in getattr(config, 'announcements', []):
             for entry in group.get('entries', []):
                 url = entry.get('url', '')
@@ -823,9 +965,9 @@ async def main():
         async with SpeedTester() as tester:
             latency_results = await tester.batch_speed_test(all_urls)
         
-        # 生成最终文件
-        logger.info("\n===== 3. 生成最终文件（过滤延迟>500ms） =====")
-        updateChannelUrlsM3U(channels, template_channels, latency_results)
+        # 生成最终文件（带完整M3U元数据）
+        logger.info("\n===== 3. 生成最终文件（包含group-title/tvg-name等元数据） =====")
+        updateChannelUrlsM3U(matched_channels, template_channels, latency_results)
         
         logger.info("\n===== 所有流程执行完成 =====")
     
