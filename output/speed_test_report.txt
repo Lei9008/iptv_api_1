@@ -1,313 +1,318 @@
 IPTV直播源测速报告
 ================================================================================
-测试时间：2026-01-25 22:43:31
+测试时间：2026-01-25 22:53:39
 延迟阈值：1000ms | 并发数：20
-总测试URL数：342
-测试成功数：320 (93.6%)
-有效URL数（延迟<1000ms）：272 (85.0%)
-  - IPv4有效URL：272
+总测试URL数：363
+测试成功数：330 (90.9%)
+有效URL数（延迟<1000ms）：266 (80.6%)
+  - IPv4有效URL：266
   - IPv6有效URL：0
-有效URL延迟统计：平均295.53ms | 最小8.78ms | 最大980.00ms
+有效URL延迟统计：平均329.06ms | 最小38.33ms | 最大979.52ms
 ================================================================================
 
 【有效URL列表（按延迟升序）】
 排名   延迟(ms)     分辨率        IP版本     URL
 --------------------------------------------------------------------------------
-1    8.78       1920x1080  IPv4     http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
-2    8.88       unknown    IPv4     http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
-3    12.68      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
-4    15.98      unknown    IPv4     http://23.237.228.134/live5/CCTV9.m3u8
-5    16.03      unknown    IPv4     http://23.237.228.134/live6/hubei.m3u8
-6    16.10      unknown    IPv4     http://23.237.228.134/live6/dongnan.m3u8
-7    16.17      unknown    IPv4     http://23.237.228.134/live5/CCTV3.m3u8
-8    16.19      unknown    IPv4     http://23.237.228.134/live3/CCTV17.m3u8
-9    16.37      unknown    IPv4     http://23.237.228.134/live5/CCTV10.m3u8
-10   16.39      unknown    IPv4     http://23.237.228.134/live6/guizhou.m3u8
-11   16.42      unknown    IPv4     http://23.237.228.134/live8/yunnan.m3u8
-12   16.45      unknown    IPv4     http://23.237.228.134/live8/neimenggu.m3u8
-13   16.50      unknown    IPv4     http://23.237.228.134/live3/CCTV14.m3u8
-14   16.50      unknown    IPv4     http://23.237.228.134/live8/anhui.m3u8
-15   16.81      unknown    IPv4     http://23.237.228.134/live8/jiangxi.m3u8
-16   16.87      unknown    IPv4     http://23.237.228.134/live5/CCTV1.m3u8
-17   16.87      unknown    IPv4     http://23.237.228.134/live8/qinghai.m3u8
-18   16.97      unknown    IPv4     http://23.237.228.134/live5/CCTV2.m3u8
-19   17.31      unknown    IPv4     http://23.237.228.134/live5/CCTV5.m3u8
-20   17.74      unknown    IPv4     http://23.237.228.134/live6/hainan.m3u8
-21   18.01      unknown    IPv4     http://23.237.228.134/live6/shenzhen.m3u8
-22   18.03      unknown    IPv4     http://23.237.228.134/live5/CCTV5p.m3u8
-23   19.20      unknown    IPv4     http://23.237.228.134/live5/CCTV7.m3u8
-24   19.52      1920x1080  IPv4     http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
-25   25.11      unknown    IPv4     http://23.237.228.134/live6/hunan.m3u8
-26   25.68      unknown    IPv4     http://23.237.228.134/live6/chongqing.m3u8
-27   31.64      unknown    IPv4     http://23.237.228.134/live8/gansu.m3u8
-28   32.61      unknown    IPv4     http://23.237.228.134/live6/guangxi.m3u8
-29   33.09      unknown    IPv4     http://23.237.228.134/live8/tianjing.m3u8
-30   34.67      unknown    IPv4     http://23.237.228.134/live8/jilin.m3u8
-31   35.62      unknown    IPv4     http://23.237.228.134/live6/zhejiang.m3u8
-32   36.04      unknown    IPv4     http://23.237.228.134/live8/hebei.m3u8
-33   38.94      unknown    IPv4     http://23.237.228.134/live6/guangdong.m3u8
-34   40.91      unknown    IPv4     http://23.237.228.134/live8/liaoning.m3u8
-35   47.49      unknown    IPv4     http://69.30.246.194/live/cctv14.m3u8
-36   47.51      unknown    IPv4     http://69.30.246.194/live/cctv16.m3u8
-37   47.55      unknown    IPv4     http://69.30.246.194/live/cctv12.m3u8
-38   47.57      unknown    IPv4     http://69.30.246.194/live/hnws.m3u8
-39   47.58      unknown    IPv4     http://69.30.246.194/live/cctv15.m3u8
-40   47.62      unknown    IPv4     http://69.30.246.194/live/jsws.m3u8
-41   47.63      unknown    IPv4     http://69.30.246.194/live/cctv11.m3u8
-42   58.29      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
-43   59.60      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
-44   59.94      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
-45   63.97      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub
-46   85.32      unknown    IPv4     http://23.237.228.134/live3/CCTV15.m3u8
-47   94.93      unknown    IPv4     http://69.30.246.194/live/dfws.m3u8
-48   95.07      unknown    IPv4     http://69.30.246.194/live/zjws.m3u8
-49   103.46     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
-50   103.66     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
-51   106.63     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
-52   107.14     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
-53   107.42     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
-54   113.13     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
-55   113.30     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub
-56   114.60     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
-57   167.80     unknown    IPv4     http://120.211.62.180:8000/hls/13/index.m3u8
-58   167.99     unknown    IPv4     http://120.211.62.180:8000/hls/37/index.m3u8
-59   168.43     unknown    IPv4     http://120.211.62.180:8000/hls/38/index.m3u8
-60   172.71     unknown    IPv4     https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8
-61   173.13     unknown    IPv4     http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8
-62   179.74     unknown    IPv4     http://120.211.62.180:8000/hls/18/index.m3u8
-63   180.97     unknown    IPv4     http://120.211.62.180:8000/hls/4/index.m3u8
-64   184.52     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1044_1.m3u8
-65   184.85     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1046_1.m3u8
-66   185.05     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1015_1.m3u8
-67   185.28     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1002_1.m3u8
-68   189.75     unknown    IPv4     http://120.211.62.180:8000/hls/10/index.m3u8
-69   193.57     unknown    IPv4     http://120.211.62.180:8000/hls/35/index.m3u8
-70   198.27     unknown    IPv4     http://120.211.62.180:8000/hls/17/index.m3u8
-71   200.89     unknown    IPv4     https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
-72   201.07     unknown    IPv4     http://27.41.245.32:801/hls/2/index.m3u8
-73   201.15     unknown    IPv4     http://27.41.245.32:801/hls/7/index.m3u8
-74   201.34     unknown    IPv4     http://27.41.245.32:801/hls/5/index.m3u8
-75   201.76     unknown    IPv4     http://27.41.245.32:801/hls/10/index.m3u8
-76   201.98     unknown    IPv4     http://27.41.245.32:801/hls/6/index.m3u8
-77   202.10     unknown    IPv4     http://27.41.245.32:801/hls/906/index.m3u8
-78   202.23     unknown    IPv4     http://27.41.245.32:801/hls/9/index.m3u8
-79   202.94     unknown    IPv4     http://27.41.245.32:801/hls/8/index.m3u8
-80   204.08     unknown    IPv4     http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
-81   204.76     unknown    IPv4     http://112.46.85.60:8009/hls/509/index.m3u8
-82   207.99     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1020_1.m3u8
-83   208.12     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
-84   208.15     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1042_1.m3u8
-85   208.31     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1014_1.m3u8
-86   208.41     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1013_1.m3u8
-87   208.43     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1040_1.m3u8
-88   208.49     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/0019_1.m3u8
-89   209.33     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1055_1.m3u8
-90   209.60     unknown    IPv4     http://112.46.85.60:8009/hls/507/index.m3u8
-91   209.64     unknown    IPv4     http://112.46.85.60:8009/hls/44/index.m3u8
-92   209.66     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
-93   209.79     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
-94   210.76     unknown    IPv4     http://60.16.0.216:5757/hls/45/index.m3u8
-95   213.75     unknown    IPv4     http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8
-96   213.88     unknown    IPv4     http://60.16.0.216:5757/hls/41/index.m3u8
-97   214.31     unknown    IPv4     http://60.16.0.216:5757/hls/37/index.m3u8
-98   214.44     unknown    IPv4     http://60.16.0.216:5757/hls/33/index.m3u8
-99   214.69     unknown    IPv4     http://120.211.62.180:8000/hls/14/index.m3u8
-100  215.37     unknown    IPv4     http://60.16.0.216:5757/hls/32/index.m3u8
-101  218.23     unknown    IPv4     http://183.11.239.36:808/hls/119/index.m3u8
-102  219.10     unknown    IPv4     http://183.11.239.36:808/hls/102/index.m3u8
-103  219.22     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1021_1.m3u8
-104  219.39     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1043_1.m3u8
-105  219.57     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
-106  219.58     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1048_1.m3u8
-107  219.60     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1032_1.m3u8
-108  219.67     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1060_1.m3u8
-109  219.90     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1038_1.m3u8
-110  219.91     unknown    IPv4     http://8.138.7.223/【公众号：榴芒电视】/cctv13.m3u8
-111  220.01     unknown    IPv4     http://8.138.7.223/tv/hxws.m3u8
-112  220.27     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1022_1.m3u8
-113  220.29     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1054_1.m3u8
-114  221.29     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1002_1.m3u8
-115  222.02     unknown    IPv4     https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8
-116  222.19     unknown    IPv4     http://183.11.239.36:808/hls/30/index.m3u8
-117  222.30     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1044_1.m3u8
-118  222.47     unknown    IPv4     http://183.11.239.36:808/hls/80/index.m3u8
-119  223.55     unknown    IPv4     http://183.11.239.36:808/hls/53/index.m3u8
-120  223.71     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000099.m3u8
-121  223.91     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000122.m3u8
-122  224.01     unknown    IPv4     http://183.11.239.36:808/hls/94/index.m3u8
-123  224.02     unknown    IPv4     http://120.211.62.180:8000/hls/40/index.m3u8
-124  224.13     unknown    IPv4     http://cssbyd.imwork.net:8082/hls/6/index.m3u8
-125  224.96     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000110.m3u8
-126  225.02     unknown    IPv4     http://gmxw.7766.org:808/hls/169/index.m3u8
-127  225.11     unknown    IPv4     http://183.11.239.36:808/hls/41/index.m3u8
-128  225.32     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
-129  226.53     unknown    IPv4     http://gmxw.7766.org:808/hls/91/index.m3u8
-130  228.21     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/1004_1.m3u8
-131  228.34     unknown    IPv4     http://183.11.239.36:808/hls/35/index.m3u8
-132  228.95     unknown    IPv4     http://gmxw.7766.org:808/hls/15/index.m3u8
-133  229.33     unknown    IPv4     http://183.11.239.36:808/hls/60/index.m3u8
-134  230.10     unknown    IPv4     http://183.11.239.36:808/hls/124/index.m3u8
-135  234.56     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1006_1.m3u8
-136  234.69     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1034_1.m3u8
-137  234.87     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1037_1.m3u8
-138  234.88     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1012_1.m3u8
-139  234.93     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1015_1.m3u8
-140  235.26     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1011_1.m3u8
-141  235.40     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1046_1.m3u8
-142  235.49     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1018_1.m3u8
-143  235.49     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1035_1.m3u8
-144  235.96     unknown    IPv4     http://218.13.170.98:9901/tsfile/live/0115_1.m3u8
-145  236.44     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000481.m3u8
-146  236.64     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1010_1.m3u8
-147  237.40     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1049_1.m3u8
-148  240.76     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000246.m3u8
-149  243.04     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
-150  243.21     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1008_1.m3u8
-151  243.21     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
-152  243.26     unknown    IPv4     https://liveout.xntv.tv/a65jur/96iln2.m3u8
-153  243.29     unknown    IPv4     https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http:/
-154  243.31     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1030_1.m3u8
-155  243.35     unknown    IPv4     https://liveout.xntv.tv/a65jur/90p2i1.m3u8
-156  243.47     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1056_1.m3u8
-157  243.56     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1036_1.m3u8
-158  243.60     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1003_1.m3u8
-159  244.23     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1000_1.m3u8
-160  247.99     unknown    IPv4     http://111.61.236.247:9081/hls/54/index.m3u8
-161  249.82     unknown    IPv4     http://222.169.85.8:9901/tsfile/live/0110_1.m3u8
-162  250.95     unknown    IPv4     http://111.61.236.247:9081/hls/35/index.m3u8
-163  255.47     unknown    IPv4     http://hmfs.f3322.net:3388/hls/29/index.m3u8
-164  261.40     unknown    IPv4     http://111.61.236.247:9081/hls/29/index.m3u8
-165  262.08     unknown    IPv4     http://222.169.85.8:9901/tsfile/live/0116_1.m3u8
-166  264.54     unknown    IPv4     http://120.238.94.82:9901/tsfile/live/1009_1.m3u8
-167  270.18     unknown    IPv4     http://111.61.236.247:9081/hls/51/index.m3u8
-168  271.49     unknown    IPv4     http://111.61.236.247:9081/hls/58/index.m3u8
-169  272.48     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/0143_1.m3u8
-170  274.51     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-171  276.16     unknown    IPv4     http://120.238.94.82:9901/tsfile/live/1030_1.m3u8
-172  276.30     unknown    IPv4     http://111.61.236.247:9081/hls/48/index.m3u8
-173  278.11     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/0123_1.m3u8
-174  280.50     unknown    IPv4     http://111.61.236.247:9081/hls/32/index.m3u8
-175  280.92     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0006_1.m3u8
-176  284.40     unknown    IPv4     http://111.61.236.247:9081/hls/38/index.m3u8
-177  285.63     unknown    IPv4     http://111.61.236.247:9081/hls/45/index.m3u8
-178  289.04     unknown    IPv4     http://111.61.236.247:9081/hls/49/index.m3u8
-179  319.98     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0143_1.m3u8
-180  333.81     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000111.m3u8
-181  337.09     unknown    IPv4     http://120.211.62.180:8000/hls/11/index.m3u8
-182  338.45     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000101.m3u8
-183  340.02     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/47/live.m3u8
-184  341.88     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/49/live.m3u8
-185  343.54     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000150.m3u8
-186  345.69     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000077.m3u8
-187  351.51     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/46/live.m3u8
-188  351.99     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/48/live.m3u8
-189  352.69     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000117.m3u8
-190  353.30     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0130_1.m3u8
-191  353.75     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000473.m3u8
-192  357.07     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0137_1.m3u8
-193  358.43     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/45/live.m3u8
-194  359.56     unknown    IPv4     http://120.211.62.180:8000/hls/19/index.m3u8
-195  363.42     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000124.m3u8
-196  366.51     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/31/live.m3u8
-197  369.42     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1024_1.m3u8
-198  372.19     unknown    IPv4     http://183.222.242.31:8088/hls/35/index.m3u8
-199  376.03     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8
-200  383.42     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/36/live.m3u8
-201  386.84     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/34/live.m3u8
-202  389.28     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1023_1.m3u8
-203  395.74     unknown    IPv4     http://27.41.245.32:801/hls/14/index.m3u8
-204  405.08     unknown    IPv4     http://27.41.245.32:801/hls/42/index.m3u8
-205  408.46     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1079_1.m3u8
-206  409.07     unknown    IPv4     http://112.46.85.60:8009/hls/501/index.m3u8
-207  409.41     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1076_1.m3u8
-208  409.89     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1008_1.m3u8
-209  409.90     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1069_1.m3u8
-210  411.38     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1090_1.m3u8
-211  414.14     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1050_1.m3u8
-212  417.21     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1028_1.m3u8
-213  419.72     unknown    IPv4     http://112.46.85.60:8009/hls/33/index.m3u8
-214  422.03     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1077_1.m3u8
-215  422.33     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1019_1.m3u8
-216  423.36     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1020_1.m3u8
-217  425.28     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1029_1.m3u8
-218  429.54     unknown    IPv4     http://60.16.0.216:5757/hls/24/index.m3u8
-219  431.43     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1026_1.m3u8
-220  435.25     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1021_1.m3u8
-221  435.72     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1096_1.m3u8
-222  435.75     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1048_1.m3u8
-223  436.18     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1057_1.m3u8
-224  439.62     unknown    IPv4     http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8
-225  439.73     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1037_1.m3u8
-226  441.28     unknown    IPv4     http://183.11.239.36:808/hls/31/index.m3u8
-227  447.18     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1055_1.m3u8
-228  448.46     unknown    IPv4     http://183.11.239.36:808/hls/64/index.m3u8
-229  448.79     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1025_1.m3u8
-230  451.48     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/0132_1.m3u8
-231  454.13     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1022_1.m3u8
-232  463.26     unknown    IPv4     http://218.13.170.98:9901/tsfile/live/1021_1.m3u8
-233  466.72     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
-234  483.65     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1028_1.m3u8
-235  484.45     unknown    IPv4     http://124.228.160.14:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
-236  496.85     unknown    IPv4     http://222.169.85.8:9901/tsfile/live/0131_1.m3u8
-237  505.64     unknown    IPv4     http://222.214.208.34:59901/tsfile/live/0126_1.m3u8
-238  517.78     unknown    IPv4     http://112.123.206.32:808/hls/2/index.m3u8
-239  541.59     unknown    IPv4     http://183.237.95.108:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0
-240  558.51     unknown    IPv4     http://120.211.62.180:8000/hls/15/index.m3u8
-241  562.07     unknown    IPv4     http://111.61.236.247:9081/hls/41/index.m3u8
-242  563.91     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000075.m3u8
-243  567.83     unknown    IPv4     http://111.61.236.247:9081/hls/17/index.m3u8
-244  571.77     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000098.m3u8
-245  589.81     unknown    IPv4     http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8#https://ali-m-l.cztv.com/channels/lant
-246  601.69     unknown    IPv4     http://iptv77.iptv66.eu.org:35455/gaoma/cctv8.m3u8
-247  649.78     unknown    IPv4     http://120.211.62.180:8000/hls/33/index.m3u8
-248  652.14     unknown    IPv4     https://piccpndali.v.myalicdn.com/audio/cctv16_2.m3u8
-249  685.72     unknown    IPv4     http://120.238.94.82:9901/tsfile/live/1065_1.m3u8
-250  688.64     unknown    IPv4     http://61.184.46.85:9901/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0
-251  708.70     unknown    IPv4     https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
-252  710.88     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0131_1.m3u8
-253  730.26     unknown    IPv4     http://gfr.x3322.net:9901/tsfile/live/1072_1.m3u8
-254  746.17     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8
-255  750.97     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/24/live.m3u8
-256  787.97     unknown    IPv4     https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd
-257  810.14     unknown    IPv4     https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
-258  826.59     unknown    IPv4     http://60.16.0.216:5757/hls/34/index.m3u8
-259  848.07     unknown    IPv4     http://183.11.239.36:808/hls/10/index.m3u8
-260  864.63     unknown    IPv4     http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#
-261  874.08     unknown    IPv4     http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8
-262  897.95     unknown    IPv4     http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8
-263  904.87     unknown    IPv4     http://183.11.239.36:808/hls/7/index.m3u8
-264  908.08     unknown    IPv4     http://111.221.137.234:44330/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
-265  911.32     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1031_1.m3u8
-266  914.72     unknown    IPv4     http://218.13.170.98:9901/tsfile/live/0111_1.m3u8
-267  921.58     unknown    IPv4     https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqing
-268  941.07     unknown    IPv4     http://183.11.239.36:808/hls/169/index.m3u8
-269  952.10     1920x1080  IPv4     https://hlscdn.liangtv.cn/live/de0f97348eb84f62aa6b7d8cf0430770/dd505d87880c478f901f38560ca4d4e6.m3u
-270  962.20     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1027_1.m3u8
-271  963.84     unknown    IPv4     http://hmfs.f3322.net:3388/hls/28/index.m3u8
-272  980.00     unknown    IPv4     http://iot-mqqt.111yao.cn:8080/live/diyp_fhdy.m3u8
+1    38.33      unknown    IPv4     http://69.30.246.194/live/cctv15.m3u8
+2    38.40      unknown    IPv4     http://69.30.246.194/live/jsws.m3u8
+3    38.43      unknown    IPv4     http://69.30.246.194/live/hnws.m3u8
+4    38.44      unknown    IPv4     http://69.30.246.194/live/cctv11.m3u8
+5    38.49      unknown    IPv4     http://69.30.246.194/live/cctv16.m3u8
+6    38.54      unknown    IPv4     http://69.30.246.194/live/cctv14.m3u8
+7    38.58      unknown    IPv4     http://69.30.246.194/live/cctv12.m3u8
+8    38.63      unknown    IPv4     http://69.30.246.194/live/zjws.m3u8
+9    59.27      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009
+10   59.40      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
+11   59.65      unknown    IPv4     http://23.237.228.134/live8/jilin.m3u8
+12   59.67      unknown    IPv4     http://23.237.228.134/live5/CCTV10.m3u8
+13   59.71      unknown    IPv4     http://23.237.228.134/live8/anhui.m3u8
+14   59.77      unknown    IPv4     http://23.237.228.134/live3/CCTV17.m3u8
+15   59.78      unknown    IPv4     http://23.237.228.134/live6/dongnan.m3u8
+16   59.79      unknown    IPv4     http://23.237.228.134/live6/hainan.m3u8
+17   59.79      unknown    IPv4     http://23.237.228.134/live5/CCTV7.m3u8
+18   59.84      unknown    IPv4     http://23.237.228.134/live5/CCTV9.m3u8
+19   59.89      unknown    IPv4     http://23.237.228.134/live5/CCTV5.m3u8
+20   59.91      unknown    IPv4     http://23.237.228.134/live6/guizhou.m3u8
+21   59.97      unknown    IPv4     http://23.237.228.134/live6/shenzhen.m3u8
+22   60.16      unknown    IPv4     http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
+23   60.22      unknown    IPv4     http://23.237.228.134/live6/chongqing.m3u8
+24   60.25      unknown    IPv4     http://23.237.228.134/live3/CCTV15.m3u8
+25   60.28      unknown    IPv4     http://23.237.228.134/live5/CCTV5p.m3u8
+26   60.43      unknown    IPv4     http://23.237.228.134/live6/zhejiang.m3u8
+27   60.43      unknown    IPv4     http://23.237.228.134/live3/CCTV14.m3u8
+28   60.46      unknown    IPv4     http://23.237.228.134/live5/CCTV1.m3u8
+29   60.46      unknown    IPv4     http://23.237.228.134/live8/qinghai.m3u8
+30   61.12      unknown    IPv4     http://23.237.228.134/live5/CCTV3.m3u8
+31   61.32      unknown    IPv4     http://23.237.228.134/live8/gansu.m3u8
+32   61.92      unknown    IPv4     http://23.237.228.134/live8/jiangxi.m3u8
+33   62.13      unknown    IPv4     http://23.237.228.134/live6/hunan.m3u8
+34   66.05      unknown    IPv4     http://23.237.228.134/live5/CCTV2.m3u8
+35   77.04      unknown    IPv4     http://69.30.246.194/live/dfws.m3u8
+36   77.17      unknown    IPv4     http://23.237.228.134/live8/hebei.m3u8
+37   77.28      unknown    IPv4     http://23.237.228.134/live8/neimenggu.m3u8
+38   77.57      unknown    IPv4     http://23.237.228.134/live6/guangdong.m3u8
+39   77.83      unknown    IPv4     http://23.237.228.134/live6/hubei.m3u8
+40   90.41      unknown    IPv4     http://23.237.228.134/live8/liaoning.m3u8
+41   98.58      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
+42   98.61      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
+43   98.65      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
+44   99.42      unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub
+45   99.53      unknown    IPv4     http://23.237.228.134/live8/yunnan.m3u8
+46   105.95     unknown    IPv4     https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
+47   107.61     unknown    IPv4     https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8
+48   119.63     unknown    IPv4     http://23.237.228.134/live6/guangxi.m3u8
+49   120.23     1920x1080  IPv4     http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
+50   120.26     unknown    IPv4     http://23.237.228.134/live8/tianjing.m3u8
+51   121.45     1920x1080  IPv4     http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
+52   136.50     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub
+53   136.79     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
+54   136.86     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
+55   137.45     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub
+56   137.58     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
+57   137.72     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
+58   138.99     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
+59   190.90     unknown    IPv4     https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8
+60   196.61     unknown    IPv4     http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
+61   224.84     unknown    IPv4     http://120.211.62.180:8000/hls/18/index.m3u8
+62   228.26     unknown    IPv4     http://120.211.62.180:8000/hls/10/index.m3u8
+63   231.15     unknown    IPv4     http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8
+64   240.12     unknown    IPv4     http://120.211.62.180:8000/hls/13/index.m3u8
+65   242.57     unknown    IPv4     http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
+66   244.98     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1002_1.m3u8
+67   245.21     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1015_1.m3u8
+68   250.03     unknown    IPv4     http://120.211.62.180:8000/hls/15/index.m3u8
+69   250.30     unknown    IPv4     http://27.41.245.32:801/hls/10/index.m3u8
+70   250.35     unknown    IPv4     http://27.41.245.32:801/hls/8/index.m3u8
+71   250.63     unknown    IPv4     http://27.41.245.32:801/hls/9/index.m3u8
+72   250.71     unknown    IPv4     http://27.41.245.32:801/hls/5/index.m3u8
+73   250.78     unknown    IPv4     http://27.41.245.32:801/hls/6/index.m3u8
+74   250.80     unknown    IPv4     http://27.41.245.32:801/hls/2/index.m3u8
+75   250.95     unknown    IPv4     http://27.41.245.32:801/hls/906/index.m3u8
+76   251.69     unknown    IPv4     http://27.41.245.32:801/hls/14/index.m3u8
+77   256.34     unknown    IPv4     http://sun135790.x3322.net:9901/tsfile/live/16035_1.m3u8?key=txiptv&playlive=1&authid=0
+78   256.73     unknown    IPv4     http://120.211.62.180:8000/hls/38/index.m3u8
+79   259.63     unknown    IPv4     http://112.46.85.60:8009/hls/44/index.m3u8
+80   259.65     unknown    IPv4     http://112.46.85.60:8009/hls/507/index.m3u8
+81   259.72     unknown    IPv4     http://112.46.85.60:8009/hls/509/index.m3u8
+82   259.97     unknown    IPv4     http://112.46.85.60:8009/hls/33/index.m3u8
+83   262.16     unknown    IPv4     http://60.16.0.216:5757/hls/34/index.m3u8
+84   262.18     unknown    IPv4     http://60.16.0.216:5757/hls/37/index.m3u8
+85   266.73     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0131_1.m3u8
+86   267.32     unknown    IPv4     http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8
+87   267.70     unknown    IPv4     http://8.138.7.223/tv/hxws.m3u8
+88   267.77     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0130_1.m3u8
+89   269.08     unknown    IPv4     http://60.16.0.216:5757/hls/33/index.m3u8
+90   269.21     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000481.m3u8
+91   269.52     unknown    IPv4     http://60.16.0.216:5757/hls/36/index.m3u8
+92   269.54     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000099.m3u8
+93   269.66     unknown    IPv4     http://60.16.0.216:5757/hls/41/index.m3u8
+94   269.70     unknown    IPv4     http://183.11.239.36:808/hls/40/index.m3u8
+95   269.79     unknown    IPv4     http://120.211.62.180:8000/hls/35/index.m3u8
+96   269.80     unknown    IPv4     http://183.11.239.36:808/hls/7/index.m3u8
+97   270.43     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000075.m3u8
+98   270.62     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000246.m3u8
+99   270.74     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000122.m3u8
+100  270.77     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0143_1.m3u8
+101  270.87     unknown    IPv4     http://cssbyd.imwork.net:8082/hls/48/index.m3u8
+102  271.78     unknown    IPv4     http://218.13.170.98:9901/tsfile/live/0111_1.m3u8
+103  271.80     unknown    IPv4     http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8
+104  271.90     unknown    IPv4     http://183.11.239.36:808/hls/96/index.m3u8
+105  272.04     unknown    IPv4     http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8
+106  272.39     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1035_1.m3u8
+107  272.66     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0137_1.m3u8
+108  272.73     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/0019_1.m3u8
+109  272.74     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
+110  272.79     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1022_1.m3u8
+111  272.90     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1007_1.m3u8
+112  273.42     unknown    IPv4     http://120.211.62.180:8000/hls/11/index.m3u8
+113  274.51     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1037_1.m3u8
+114  274.61     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1033_1.m3u8
+115  274.77     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1054_1.m3u8
+116  275.01     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1043_1.m3u8
+117  275.04     unknown    IPv4     http://hmfs.f3322.net:3388/hls/29/index.m3u8
+118  275.35     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
+119  275.53     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/0001_1.m3u8
+120  275.77     unknown    IPv4     http://gmxw.7766.org:808/hls/91/index.m3u8
+121  277.77     unknown    IPv4     http://183.11.239.36:808/hls/35/index.m3u8
+122  278.58     unknown    IPv4     http://183.11.239.36:808/hls/80/index.m3u8
+123  278.85     unknown    IPv4     http://183.11.239.36:808/hls/10/index.m3u8
+124  278.87     unknown    IPv4     http://183.11.239.36:808/hls/64/index.m3u8
+125  280.93     unknown    IPv4     http://183.11.239.36:808/hls/94/index.m3u8
+126  281.77     unknown    IPv4     http://120.238.94.82:9901/tsfile/live/1030_1.m3u8
+127  282.46     unknown    IPv4     http://cssbyd.imwork.net:8082/hls/6/index.m3u8
+128  282.91     unknown    IPv4     http://183.11.239.36:808/hls/169/index.m3u8
+129  283.30     unknown    IPv4     http://183.11.239.36:808/hls/60/index.m3u8
+130  283.37     unknown    IPv4     http://218.13.170.98:9901/tsfile/live/0115_1.m3u8
+131  283.63     unknown    IPv4     http://183.11.239.36:808/hls/30/index.m3u8
+132  283.71     unknown    IPv4     http://183.11.239.36:808/hls/19/index.m3u8
+133  284.78     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
+134  284.95     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1060_1.m3u8
+135  285.14     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1040_1.m3u8
+136  285.69     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1059_1.m3u8
+137  285.88     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1000_1.m3u8
+138  285.96     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
+139  286.04     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1014_1.m3u8
+140  286.20     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1038_1.m3u8
+141  286.43     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
+142  286.53     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1031_1.m3u8
+143  286.69     unknown    IPv4     http://183.11.239.36:808/hls/124/index.m3u8
+144  287.10     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1018_1.m3u8
+145  287.60     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1036_1.m3u8
+146  287.62     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1055_1.m3u8
+147  287.67     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1056_1.m3u8
+148  287.68     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1011_1.m3u8
+149  287.74     unknown    IPv4     http://nklive.nbs.cn/hls/9b2005c4-046c-422f-ba45-e6adc4f4de07/index.m3u8
+150  287.79     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1002_1.m3u8
+151  287.81     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1050_1.m3u8
+152  287.82     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
+153  287.89     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1057_1.m3u8
+154  288.21     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1012_1.m3u8
+155  288.51     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1044_1.m3u8
+156  288.66     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1008_1.m3u8
+157  288.79     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
+158  288.85     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1013_1.m3u8
+159  289.41     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1015_1.m3u8
+160  289.42     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1032_1.m3u8
+161  289.53     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1048_1.m3u8
+162  289.55     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1021_1.m3u8
+163  294.00     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1028_1.m3u8
+164  294.55     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1046_1.m3u8
+165  295.56     unknown    IPv4     https://liveout.xntv.tv/a65jur/96iln2.m3u8
+166  295.63     unknown    IPv4     https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqing
+167  306.39     unknown    IPv4     http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8
+168  309.51     unknown    IPv4     http://111.61.236.247:9081/hls/54/index.m3u8
+169  322.53     unknown    IPv4     http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8
+170  325.21     unknown    IPv4     http://111.61.236.247:9081/hls/17/index.m3u8
+171  326.90     unknown    IPv4     http://111.61.236.247:9081/hls/49/index.m3u8
+172  327.43     unknown    IPv4     http://111.61.236.247:9081/hls/29/index.m3u8
+173  335.89     unknown    IPv4     http://111.61.236.247:9081/hls/58/index.m3u8
+174  336.32     unknown    IPv4     http://111.61.236.247:9081/hls/35/index.m3u8
+175  336.96     unknown    IPv4     http://111.61.236.247:9081/hls/38/index.m3u8
+176  337.79     unknown    IPv4     http://111.61.236.247:9081/hls/41/index.m3u8
+177  339.68     unknown    IPv4     http://111.61.236.247:9081/hls/45/index.m3u8
+178  345.78     unknown    IPv4     http://111.61.236.247:9081/hls/51/index.m3u8
+179  351.16     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/0123_1.m3u8
+180  351.79     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+181  365.51     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/1004_1.m3u8
+182  372.81     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000101.m3u8
+183  373.94     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1026_1.m3u8
+184  386.06     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1089_1.m3u8
+185  391.10     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000124.m3u8
+186  391.53     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000150.m3u8
+187  401.13     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000473.m3u8
+188  401.35     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8
+189  401.45     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000098.m3u8
+190  402.37     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1029_1.m3u8
+191  408.63     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1037_1.m3u8
+192  409.15     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000111.m3u8
+193  410.43     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/34/live.m3u8
+194  416.36     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/31/live.m3u8
+195  417.99     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1073_1.m3u8
+196  418.24     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1027_1.m3u8
+197  420.34     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1018_1.m3u8
+198  422.85     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1030_1.m3u8
+199  432.27     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/36/live.m3u8
+200  434.47     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8
+201  437.91     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/48/live.m3u8
+202  448.07     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/46/live.m3u8
+203  448.67     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/47/live.m3u8
+204  449.24     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1096_1.m3u8
+205  454.09     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/24/live.m3u8
+206  455.93     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1020_1.m3u8
+207  458.78     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1068_1.m3u8
+208  459.02     unknown    IPv4     http://120.211.62.180:8000/hls/19/index.m3u8
+209  477.12     unknown    IPv4     http://120.211.62.180:8000/hls/17/index.m3u8
+210  478.59     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1076_1.m3u8
+211  479.69     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1021_1.m3u8
+212  481.27     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1046_1.m3u8
+213  485.12     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1048_1.m3u8
+214  485.14     unknown    IPv4     http://111.221.137.234:44330/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
+215  489.01     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1044_1.m3u8
+216  491.61     unknown    IPv4     http://120.211.62.180:8000/hls/14/index.m3u8
+217  499.94     unknown    IPv4     http://27.41.245.32:801/hls/7/index.m3u8
+218  500.58     unknown    IPv4     http://27.41.245.32:801/hls/42/index.m3u8
+219  506.17     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1022_1.m3u8
+220  518.09     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1025_1.m3u8
+221  518.50     unknown    IPv4     http://219.146.95.58:59902/tsfile/live/0110_1.m3u8
+222  519.35     unknown    IPv4     http://183.222.242.31:8088/hls/35/index.m3u8
+223  519.96     unknown    IPv4     http://112.46.85.60:8009/hls/501/index.m3u8
+224  523.01     unknown    IPv4     http://60.16.0.216:5757/hls/45/index.m3u8
+225  527.25     unknown    IPv4     http://ls.qingting.fm/live/60180.m3u8
+226  528.05     unknown    IPv4     http://120.238.94.82:9901/tsfile/live/1052_1.m3u8
+227  529.85     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0139_1.m3u8
+228  534.66     unknown    IPv4     http://221.226.51.220:50081/newlive/live/hls/4/live.m3u8
+229  534.84     unknown    IPv4     http://8.138.7.223/【公众号：榴芒电视】/cctv13.m3u8
+230  537.08     unknown    IPv4     http://112.123.206.32:808/hls/2/index.m3u8
+231  537.35     unknown    IPv4     http://39.152.103.17:8089/tsfile/live/1024_1.m3u8
+232  539.76     unknown    IPv4     http://60.16.0.216:5757/hls/24/index.m3u8
+233  540.07     unknown    IPv4     http://183.11.239.36:808/hls/53/index.m3u8
+234  542.26     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1034_1.m3u8
+235  547.60     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0011_1.m3u8
+236  549.66     unknown    IPv4     http://183.11.239.36:808/hls/41/index.m3u8
+237  550.01     unknown    IPv4     http://183.11.239.36:808/hls/17/index.m3u8
+238  557.10     unknown    IPv4     http://183.11.239.36:808/hls/31/index.m3u8
+239  557.65     unknown    IPv4     http://hmfs.f3322.net:3388/hls/28/index.m3u8
+240  567.20     unknown    IPv4     http://183.11.239.36:808/hls/102/index.m3u8
+241  585.70     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1020_1.m3u8
+242  606.50     unknown    IPv4     http://222.214.208.34:59901/tsfile/live/0126_1.m3u8
+243  648.90     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000110.m3u8
+244  652.10     unknown    IPv4     http://124.116.183.146:9901/tsfile/live/0143_1.m3u8
+245  660.26     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000077.m3u8
+246  671.32     unknown    IPv4     http://111.61.236.247:9081/hls/48/index.m3u8
+247  675.08     unknown    IPv4     http://120.76.248.139/live/bfgd/4200000117.m3u8
+248  700.22     unknown    IPv4     http://61.184.46.85:9901/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0
+249  756.23     unknown    IPv4     https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBf
+250  767.05     unknown    IPv4     https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
+251  773.38     unknown    IPv4     http://120.211.62.180:8000/hls/33/index.m3u8
+252  803.27     unknown    IPv4     http://120.211.62.180:8000/hls/37/index.m3u8
+253  812.76     unknown    IPv4     http://120.211.62.180:8000/hls/4/index.m3u8
+254  820.42     unknown    IPv4     https://piccpndali.v.myalicdn.com/audio/cctv16_2.m3u8
+255  825.66     unknown    IPv4     http://iptv77.iptv66.eu.org:35455/gaoma/cctv8.m3u8
+256  863.89     unknown    IPv4     http://61.136.172.236:9901/tsfile/live/0006_1.m3u8
+257  864.33     unknown    IPv4     http://58.57.40.22:9901/tsfile/live/1030_1.m3u8
+258  870.35     unknown    IPv4     http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8
+259  876.18     unknown    IPv4     http://183.11.239.36:808/hls/119/index.m3u8
+260  888.43     unknown    IPv4     http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8
+261  889.29     unknown    IPv4     http://ali-xwl.cztv.com/live/channel031080Plxw.m3u8
+262  894.65     unknown    IPv4     http://183.237.95.108:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0
+263  922.42     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/45/live.m3u8
+264  933.53     unknown    IPv4     http://36.32.174.67:60080/newlive/live/hls/49/live.m3u8
+265  952.55     unknown    IPv4     https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
+266  979.52     unknown    IPv4     http://120.238.94.10:9901/tsfile/live/1028_1.m3u8
 
 【失败URL列表】
 排名   失败原因            URL
 --------------------------------------------------------------------------------
-1    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/600/index.m3u8?msisdn=2026011408023
-2    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20251023080146a623
-3    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20250927080126244a
-4    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=20251023080141d
-5    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510250801048fff
-6    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=202510230801416
-7    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202601140802459e
-8    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=2025091908013
-9    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510260801019bd2
-10   HTTP状态码: 403    http://43.251.226.89:8080/play/1050.m3u8
-11   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=202509190801342
-12   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510240801014993
-13   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=202509190801349
-14   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202601180602404d
-15   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202601150802108f
-16   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=2025102308014
-17   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cetv2/50/20240709/index.m3u8?msisdn=202601140802
-18   HTTP状态码: 502    https://mgtv.ottiptv.cc/migu/838151753.m3u8?migutoken=e1c3c9e2e67541d90ea94c4c917f96ecf43c6c0ae7c616
-19   HTTP状态码: 502    https://mgtv.ottiptv.cc/migu/838153729.m3u8?migutoken=0427a8c0867765b66984ce8ef774d494eeb52a2d6a7eef
-20   HTTP状态码: 502    https://mgtv.ottiptv.cc/migu/838109047.m3u8?migutoken=d3d943815e6d6e9e9493a9b4b1d5a1d360bb5f3c04230f
-21   HTTP状态码: 502    https://yylunbo.ottiptv.cc/yy/1414812324
-22   HTTP状态码: 502    https://yylunbo.ottiptv.cc/yy/1352866135
+1    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/jxwshd/51/20190820/index.m3u8?msisdn=20260125171
+2    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/600/index.m3u8?msisdn=2026011408023
+3    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202601150802108f
+4    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/hubeiwshd/2000/index.m3u8?msisdn=20260125171
+5    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?msisdn=202601251726
+6    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/envivo_v/2018/SD/jilin/1000/index.m3u8?msisdn=2026012517174
+7    HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=2025102308014
+8    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/dongnanws/51/20230724/index.m3u8?msisdn=20260125
+9    HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cetv2/50/20240709/index.m3u8?msisdn=202601140802
+10   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510240801014993
+11   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510260801019bd2
+12   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20250927080126244a
+13   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510250801048fff
+14   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=20251023080141d
+15   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/bjws/51/20251127/index.m3u8?msisdn=2026012517191
+16   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/liaoningwshd/2000/index.m3u8?msisdn=20260125
+17   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=202509190801342
+18   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/jiangsuhd/1200/index.m3u8?msisdn=202601251720205
+19   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202601180602404d
+20   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=20251023080146a623
+21   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/haixiaws/51/20230724/index.m3u8?msisdn=202601251
+22   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/gdwshd265/54/20200407/index.m3u8?msisdn=20260125
+23   HTTP状态码: 403    http://43.251.226.89:8080/play/1050.m3u8
+24   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202601140802459e
+25   HTTP状态码: 660    http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=2025091908013
+26   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/btws/51/20250804/index.m3u8?msisdn=2026012517171
+27   HTTP状态码: 404    http://111.61.236.247:9081/hls/32/index.m3u8
+28   HTTP状态码: 403    http://hlsztemgsplive.miguvideo.com:8080/wd_r4/dfl/dongfangwshd/1200/index.m3u8?msisdn=2026012517205
+29   HTTP状态码: 502    https://mgtv.ottiptv.cc/migu/838153729.m3u8?migutoken=0427a8c0867765b66984ce8ef774d494eeb52a2d6a7eef
+30   HTTP状态码: 502    https://other.ottiptv.cc/cwjd.m3u8
+31   HTTP状态码: 502    https://yylunbo.ottiptv.cc/yy/1352866135
+32   HTTP状态码: 502    https://mgtv.ottiptv.cc/migu/838109047.m3u8?migutoken=d3d943815e6d6e9e9493a9b4b1d5a1d360bb5f3c04230f
+33   请求超时            http://gxlive.snrtv.com/nlws-SD.m3u8
