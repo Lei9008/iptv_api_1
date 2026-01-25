@@ -53,12 +53,12 @@ for dir_path in LOGO_DIRS:
 
 # 从config.py读取GitHub Logo配置
 GITHUB_LOGO_BASE_URL = getattr(config, 'GITHUB_LOGO_BASE_URL', 
-                              "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/")
+                              "https://raw.githubusercontent.com/fanmingming/live/main/tv")
 BACKUP_LOGO_BASE_URL = getattr(config, 'BACKUP_LOGO_BASE_URL',
-                              "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/")
+                              "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv")
 GITHUB_LOGO_API_URLS = getattr(config, 'GITHUB_LOGO_API_URLS', [
-    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/"
+    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
+    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
 ])
 
 # 测速配置（放宽门槛，保留更多URL）
@@ -74,6 +74,12 @@ CONFIG_DEFAULTS = {
     "ANNOUNCEMENTS": [],
     "SOURCE_URLS": []
 }
+
+# 支持的播放协议（扩展到非HTTP）
+SUPPORTED_PROTOCOLS = [
+    "http://", "https://", "rtmp://", "rtsp://", "udp://", "tcp://",
+    "mms://", "hls://", "dash://", "rtp://", "srt://"
+]
 
 # GitHub 镜像域名列表
 GITHUB_MIRRORS = [
@@ -195,32 +201,88 @@ def parse_m3u_attributes(line: str) -> Dict[str, str]:
     
     return attrs
 
+def extract_url_from_line(line: str) -> Optional[str]:
+    """
+    核心优化：从任意行中提取播放URL（兼容所有支持的协议）
+    处理各种混排格式，优先提取完整URL
+    """
+    if not line:
+        return None
+    
+    # 正则匹配所有支持的协议的URL
+    url_pattern = r'({}[^\s|,;]+)'.format('|'.join([proto.replace('//', '//') for proto in SUPPORTED_PROTOCOLS]))
+    matches = re.findall(url_pattern, line)
+    
+    if matches:
+        # 返回最长的匹配（避免截断）
+        return max(matches, key=len)
+    
+    return None
+
+def extract_channel_name_from_line(line: str, url: str) -> str:
+    """
+    从行中提取频道名（移除URL后剩余部分）
+    兼容各种分隔符：|、,、//、\t、空格等
+    """
+    if not line or not url:
+        return "未知频道"
+    
+    # 移除URL部分
+    name_part = line.replace(url, "").strip()
+    
+    # 移除常见分隔符
+    separators = ['|', ',', '//', '\\', '\t', ' ', ':', ';', '=']
+    for sep in separators:
+        # 按分隔符分割，取第一个非空部分
+        parts = [p.strip() for p in name_part.split(sep) if p.strip()]
+        if parts:
+            name_part = parts[0]
+            break
+    
+    # 清洗频道名
+    cleaned_name = clean_channel_name(name_part)
+    
+    # 如果提取的名称太短，用URL的一部分作为名称
+    if len(cleaned_name) < 2:
+        url_parts = url.split('/')
+        for part in url_parts:
+            if part and not part.startswith(('http', 'www', 'live', 'stream', '192', '10', '172')) and len(part) > 2:
+                cleaned_name = clean_channel_name(part)
+                break
+    
+    return cleaned_name or "未知频道"
+
 def extract_channels_from_content(content: str) -> List[ChannelInfo]:
     """
-    优化：减少过度去重，仅按URL去重（保留更多URL）
-    从直播源内容中提取频道信息，优先解析M3U标准字段
+    重大优化：重构解析逻辑，兼容所有非主流格式
+    解决 live.hacks.tools 等源解析出0频道的问题
     """
     channels = []
     # 仅按URL去重（放宽去重条件）
     seen_urls = set()
     
-    lines = content.splitlines()
+    # 预处理内容：移除不可见字符、合并折行
+    content = content.replace('\r', '\n').replace('\t', ' ')
+    # 按行分割，过滤空行和纯注释行
+    lines = [line.strip() for line in content.split('\n') if line.strip() and not line.strip().startswith(('#', '//', '--', '/*'))]
+    
+    logger.debug(f"预处理后有效行数：{len(lines)}")
+    
     current_attrs = {}
     
-    # 逐行解析M3U格式
-    for i, line in enumerate(lines):
-        line = line.strip()
-        if not line:
-            continue
-        
-        # 1. 匹配M3U属性行（优先解析）
-        if line.startswith('#EXTINF:'):
-            current_attrs = parse_m3u_attributes(line)
-            continue
-        
-        # 2. 匹配播放地址行（紧跟在EXTINF行后）
-        if line.startswith(('http://', 'https://', 'rtmp://', 'rtsp://')) and current_attrs:
-            url = line.strip()
+    # 逐行解析
+    for line_num, line in enumerate(lines):
+        try:
+            # 1. 匹配M3U属性行（优先解析）
+            if line.startswith('#EXTINF:'):
+                current_attrs = parse_m3u_attributes(line)
+                continue
+            
+            # 2. 提取URL（核心优化：兼容所有协议和格式）
+            url = extract_url_from_line(line)
+            if not url:
+                current_attrs = {}
+                continue
             
             # 新增：绕过简单防盗链
             if "migu" in url or "iptv" in url or "live" in url:
@@ -235,19 +297,22 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
                 continue
             seen_urls.add(url)
             
-            # 提取关键属性
-            tvg_name = current_attrs.get('tvg-name', '')
+            # 3. 提取频道名（优先级：M3U属性 > 行内提取 > 自动生成）
+            if current_attrs and '_channel_name' in current_attrs:
+                channel_name = current_attrs['_channel_name']
+            else:
+                channel_name = extract_channel_name_from_line(line, url)
+            
+            # 清洗频道名
+            cleaned_name = clean_channel_name(channel_name) or "未知频道"
+            
+            # 4. 提取M3U属性（如果有）
+            tvg_name = current_attrs.get('tvg-name', cleaned_name)
             group_title = current_attrs.get('group-title', current_attrs.get('group', '默认分类'))
             tvg_logo = current_attrs.get('tvg-logo', '')
             tvg_id = current_attrs.get('tvg-id', '')
-            channel_name = current_attrs.get('_channel_name', tvg_name or '未知频道')
             
-            # 清洗频道名
-            cleaned_name = clean_channel_name(channel_name)
-            if not cleaned_name:
-                cleaned_name = clean_channel_name(tvg_name) or '未知频道'
-            
-            # 创建频道信息对象
+            # 5. 创建频道信息对象
             channel_info = ChannelInfo(
                 name=cleaned_name,
                 url=url,
@@ -261,70 +326,34 @@ def extract_channels_from_content(content: str) -> List[ChannelInfo]:
             
             # 重置当前属性
             current_attrs = {}
+            
+        except Exception as e:
+            logger.debug(f"解析第{line_num+1}行失败：{str(e)[:50]} | 行内容：{line[:100]}")
+            current_attrs = {}
             continue
-        
-        # 3. 兼容旧格式（频道名,URL）
-        if ',' in line and not line.startswith('#'):
-            parts = line.split(',', 1)
-            if len(parts) == 2 and parts[1].strip().startswith(('http://', 'https://')):
-                name_part = parts[0].strip()
-                url_part = parts[1].strip()
-                
-                # 新增：绕过简单防盗链
-                if "migu" in url_part or "iptv" in url_part or "live" in url_part:
-                    if "?" in url_part:
-                        url_part += "&referer=https://www.iptv.com"
-                    else:
-                        url_part += "?referer=https://www.iptv.com"
-                
-                # 去重检查（仅按URL）
-                if url_part in seen_urls:
-                    continue
-                seen_urls.add(url_part)
-                
-                cleaned_name = clean_channel_name(name_part) or '未知频道'
-                
-                # 创建兼容模式的频道信息
-                channel_info = ChannelInfo(
-                    name=cleaned_name,
-                    url=url_part,
-                    group_title="默认分类"
-                )
-                channels.append(channel_info)
-                continue
-        
-        # 4. 单独的URL（无属性）
-        if line.startswith(('http://', 'https://')) and not current_attrs:
-            url = line.strip()
-            
-            # 新增：绕过简单防盗链
-            if "migu" in url or "iptv" in url or "live" in url:
-                if "?" in url:
-                    url += "&referer=https://www.iptv.com"
-                else:
-                    url += "?referer=https://www.iptv.com"
-            
-            # 去重检查（仅按URL）
+    
+    # 额外处理：如果解析结果为0，尝试暴力提取所有URL
+    if len(channels) == 0:
+        logger.warning("标准解析未提取到频道，尝试暴力提取所有URL")
+        # 正则提取所有支持的URL
+        all_urls = re.findall(r'({}[^\s]+)'.format('|'.join([proto.replace('//', '//') for proto in SUPPORTED_PROTOCOLS])), content)
+        for url in all_urls:
+            url = url.strip()
             if url in seen_urls:
                 continue
             seen_urls.add(url)
             
-            # 从URL提取简易名称
-            url_parts = url.split('/')
-            name_from_url = '未知频道'
-            for part in url_parts:
-                if part and not part.startswith(('http', 'www', 'live', 'stream')) and len(part) > 2:
-                    name_from_url = clean_channel_name(part)
-                    break
+            # 生成默认频道名
+            channel_name = extract_channel_name_from_line("", url)
             
             channel_info = ChannelInfo(
-                name=name_from_url,
+                name=channel_name,
                 url=url,
-                group_title="默认分类"
+                group_title="暴力提取"
             )
             channels.append(channel_info)
     
-    logger.info(f"从内容中提取到 {len(channels)} 个有效频道（仅按URL去重）")
+    logger.info(f"从内容中提取到 {len(channels)} 个有效频道（仅按URL去重），支持协议：{', '.join(SUPPORTED_PROTOCOLS[:5])}...")
     return channels
 
 def filter_invalid_urls(urls: List[str]) -> List[str]:
@@ -332,10 +361,13 @@ def filter_invalid_urls(urls: List[str]) -> List[str]:
     valid = []
     for url in urls:
         url = url.strip()
-        if not url.startswith(('http://', 'https://')):
+        if not any(url.startswith(proto) for proto in SUPPORTED_PROTOCOLS):
             continue
         # 仅排除明显的测试/占位链接
         if any(k in url.lower() for k in ['placeholder', 'test', 'null', 'example', '127.0.0.1', 'localhost']):
+            continue
+        # 排除过短的URL
+        if len(url) < 10:
             continue
         valid.append(url)
     logger.info(f"URL过滤前{len(urls)}个，过滤后{len(valid)}个（仅过滤极端无效URL）")
@@ -636,7 +668,7 @@ class SpeedTester:
                 
                 content = await response.content.read(2048)
                 # 提取m3u8里的真实播放链接
-                sub_urls = re.findall(rb"https?://[^\s#]+", content)
+                sub_urls = re.findall(rb"{}[^\s#]+".format(b'|'.join([proto.encode() for proto in SUPPORTED_PROTOCOLS])), content)
                 if not sub_urls:
                     return None
                 
@@ -651,6 +683,12 @@ class SpeedTester:
     async def measure_latency(self, url: str) -> SpeedTestResult:
         """测量单个URL的延迟和分辨率（新增m3u8子链接解析）"""
         result = SpeedTestResult(url=url)
+        
+        # 非HTTP协议跳过测速
+        if not url.startswith(('http://', 'https://')):
+            result.error = "非HTTP协议，跳过测速"
+            logger.debug(f"跳过非HTTP协议测速：{url[:60]}")
+            return result
         
         for attempt in range(self.retry_times + 1):
             try:
@@ -715,7 +753,16 @@ class SpeedTester:
         tasks = [worker(url) for url in urls if url.strip()]
         await asyncio.gather(*tasks)
         
+        # 统计协议类型
+        proto_stats = {}
+        for url in results.keys():
+            for proto in SUPPORTED_PROTOCOLS:
+                if url.startswith(proto):
+                    proto_stats[proto] = proto_stats.get(proto, 0) + 1
+                    break
+        
         logger.info(f"批量测速完成：共测试{len(results)}个URL，成功{len([r for r in results.values() if r.success])}个")
+        logger.info(f"协议分布：{'; '.join([f'{k}:{v}' for k, v in proto_stats.items()])}")
         return results
 
 # ===================== 模板解析与源抓取 =====================
@@ -755,7 +802,11 @@ def fetch_channels(url: str) -> Dict[str, List[ChannelInfo]]:
     try:
         content = fetch_url_with_retry(url)
         if content is None:
+            logger.warning(f"源 {url} 抓取内容为空")
             return categorized_channels
+        
+        # 调试：输出前500字节内容
+        logger.debug(f"源 {url} 内容预览：{content[:500]}...")
         
         # 提取带完整元数据的频道列表
         channel_list = extract_channels_from_content(content)
@@ -1112,13 +1163,21 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
         reason = result.error or "未知错误"
         fail_reasons[reason] = fail_reasons.get(reason, 0) + 1
     
+    # 统计协议类型
+    proto_stats = {}
+    for url in latency_results.keys():
+        for proto in SUPPORTED_PROTOCOLS:
+            if url.startswith(proto):
+                proto_stats[proto] = proto_stats.get(proto, 0) + 1
+                break
+    
     # 按延迟排序
     valid_urls.sort(key=lambda x: x.latency)
     success_urls.sort(key=lambda x: x.latency if x.latency else 9999)
     
     try:
         with open(report_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源测速报告（优化版）\n")
+            f.write("IPTV直播源测速报告（终极优化版）\n")
             f.write("="*80 + "\n")
             f.write(f"测试时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"延迟阈值：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s\n")
@@ -1128,6 +1187,7 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
             valid_rate = f"{len(valid_urls)/total_urls*100:.1f}%" if total_urls > 0 else "0.0%"
             f.write(f"有效URL数（延迟≤{latency_threshold}ms）：{len(valid_urls)} ({valid_rate})\n")
             f.write(f"失败URL数：{len(failed_urls)}\n")
+            f.write(f"协议分布：{'; '.join([f'{k}:{v}' for k, v in proto_stats.items()])}\n")
             f.write("="*80 + "\n\n")
             
             # 失败原因统计
@@ -1174,14 +1234,15 @@ async def main():
         # 配置加载
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源（终极优化版） =====")
+        logger.info("===== 开始处理直播源（终极优化版-兼容非主流格式） =====")
         logger.info(f"延迟阈值设置：{latency_threshold}ms | 超时时间：{CONFIG_DEFAULTS['TIMEOUT']}s")
+        logger.info(f"支持的播放协议：{', '.join(SUPPORTED_PROTOCOLS)}")
         
         # 预加载GitHub logo列表
         get_github_logo_list()
         
         # 抓取并匹配频道（返回所有抓取的频道）
-        logger.info("\n===== 1. 抓取并提取直播源频道（减少去重） =====")
+        logger.info("\n===== 1. 抓取并提取直播源频道（兼容非主流格式） =====")
         matched_channels, template_channels, all_channels = filter_source_urls(template_file)
         if not matched_channels and not all_channels:
             logger.error("无匹配的频道数据，终止流程")
