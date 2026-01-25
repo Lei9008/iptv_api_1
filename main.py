@@ -679,7 +679,7 @@ def fetch_channels(url: str) -> OrderedDict:
     """抓取频道"""
     channels = OrderedDict()
     default_category = "默认分类"
-    channels[default_category] = []
+    channels[default_category] = []  # 确保数据结构是 {分类名: [(频道名, URL), ...]}
     
     try:
         content = fetch_url_with_retry(url)
@@ -687,26 +687,33 @@ def fetch_channels(url: str) -> OrderedDict:
             return channels
         
         extracted_channels = extract_channels_from_content(content)
-        channels[default_category].extend(extracted_channels)
+        channels[default_category] = extracted_channels  # 直接赋值，确保数据结构正确
             
     except Exception as e:
         logger.error(f"处理 {url} 时发生异常：{str(e)}", exc_info=True)
 
     return channels
 
+# ========== 关键修复：merge_channels 函数 ==========
 def merge_channels(target: OrderedDict, source: OrderedDict):
-    """合并频道"""
+    """合并频道（修复解包错误）"""
     url_set = set()
-    for _, ch_list in target.values():
-        url_set.update([url for _, url in ch_list])
     
-    for category, channel_list in source.items():
-        if category not in target:
-            target[category] = []
+    # 第一步：收集已有的URL，避免重复
+    # 修复：正确遍历 target 字典（分类名 -> 频道列表）
+    for category_name, ch_list in target.items():
+        for name, url in ch_list:
+            url_set.add(url)
+    
+    # 第二步：合并源数据
+    for category_name, channel_list in source.items():
+        if category_name not in target:
+            target[category_name] = []
         
+        # 只添加新的URL
         for name, url in channel_list:
             if url not in url_set:
-                target[category].append((name, url))
+                target[category_name].append((name, url))
                 url_set.add(url)
 
 def match_channels(template_channels: OrderedDict, all_channels: OrderedDict) -> OrderedDict:
