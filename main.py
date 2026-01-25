@@ -26,13 +26,13 @@ class SpeedTestResult:
 
 @dataclass
 class ChannelMeta:
-    """频道元信息（M3U标签提取）"""
-    tvg_id: Optional[str] = None
-    tvg_name: Optional[str] = None
-    tvg_logo: Optional[str] = None
-    group_title: Optional[str] = None
-    url: str
-    channel_name: str  # 标准化后的频道名
+    """频道元信息（M3U标签提取）- 修复参数顺序：必填参数在前"""
+    url: str  # 必填：播放URL
+    channel_name: str  # 必填：标准化后的频道名
+    tvg_id: Optional[str] = None  # 可选：tvg-id
+    tvg_name: Optional[str] = None  # 可选：tvg-name
+    tvg_logo: Optional[str] = None  # 可选：tvg-logo
+    group_title: Optional[str] = None  # 可选：group-title
 
 # ===================== 初始化配置 =====================
 # 确保 output 文件夹存在
@@ -282,31 +282,44 @@ def extract_m3u_meta(content: str) -> List[ChannelMeta]:
         if not url or not url.startswith(("http://", "https://")):
             continue
         
-        # 初始化元信息
-        meta = ChannelMeta(url=url, channel_name="")
+        # 初始化元信息（必填参数在前）
+        channel_name = "未知频道"
+        tvg_id = None
+        tvg_name = None
+        tvg_logo = None
+        group_title = None
+        
         # 解析#EXTINF属性
         attr_matches = attr_pattern.findall(extinf_attrs)
         for attr1, attr2, value in attr_matches:
             attr_key = f"{attr1}-{attr2}".lower() if attr2 else attr1.lower()
             value = value.strip()
             if attr_key == "tvg-id":
-                meta.tvg_id = value
+                tvg_id = value
             elif attr_key == "tvg-name":
-                meta.tvg_name = value
-                meta.channel_name = clean_channel_name(value)
+                tvg_name = value
+                channel_name = clean_channel_name(value)
             elif attr_key == "tvg-logo":
-                meta.tvg_logo = value
+                tvg_logo = value
             elif attr_key == "group-title":
-                meta.group_title = value
+                group_title = value
         
         # 兜底：从EXTINF末尾提取频道名
-        if not meta.channel_name:
+        if channel_name == "未知频道":
             # 匹配#EXTINF:...最后一个逗号后的内容
             name_match = re.search(r',\s*([^,]+)\s*$', extinf_attrs)
             if name_match:
-                meta.channel_name = clean_channel_name(name_match.group(1).strip())
-            else:
-                meta.channel_name = "未知频道"
+                channel_name = clean_channel_name(name_match.group(1).strip())
+        
+        # 创建ChannelMeta实例（参数顺序匹配修复后的定义）
+        meta = ChannelMeta(
+            url=url,
+            channel_name=channel_name,
+            tvg_id=tvg_id,
+            tvg_name=tvg_name,
+            tvg_logo=tvg_logo,
+            group_title=group_title
+        )
         
         meta_list.append(meta)
         # 存入全局缓存（URL为键）
