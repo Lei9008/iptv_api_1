@@ -1003,7 +1003,7 @@ def write_to_files(f_m3u, f_txt, category, channel_info: ChannelInfo, index: int
     if channel_info.latency >= 9999.0:
         channel_display_name = f"{channel_info.name}(失败)"
     else:
-        channel_display_name = f"{channel_info.name}({channel_info.latency:.0f}ms)"
+        channel_display_name = f"{channel_info.name}"
     
     extinf_line = ' '.join(extinf_parts) + f',{channel_display_name}'
     
