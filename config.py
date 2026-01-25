@@ -3,7 +3,7 @@
 # 直播源链接配置
 source_urls = [
    
-    
+    "https://github.com/develop202/migu_video/blob/main/interface.txt",
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
    # "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
    # "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
