@@ -3,7 +3,6 @@ import requests
 import logging
 import asyncio
 import aiohttp
-import ssl
 import time
 from collections import OrderedDict
 from datetime import datetime
@@ -14,7 +13,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple, Any
 from functools import lru_cache
-from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
+from urllib.parse import urlparse, urlunparse
 
 # ===================== 数据结构 =====================
 @dataclass
@@ -119,24 +118,6 @@ def clean_channel_name(channel_name: str) -> str:
     # 数字标准化
     cleaned_name = re.sub(r'(\D*)(\d+)(\D*)', lambda m: m.group(1) + str(int(m.group(2))) + m.group(3), cleaned_name)
     return cleaned_name.upper()
-
-def clean_miguvideo_url(url: str) -> str:
-    """清理咪咕视频URL中的时效性参数，避免同频道重复"""
-    if not url or "miguvideo" not in url:
-        return url
-    
-    # 解析URL并移除指定参数
-    parsed = urlparse(url)
-    query_params = parsed.query.split('&')
-    clean_params = []
-    for param in query_params:
-        if not param.startswith(('msisdn=', 'timestamp=', 'sign=', 'key=')):
-            clean_params.append(param)
-    
-    # 重构URL
-    new_parsed = parsed._replace(query='&'.join(clean_params))
-    clean_url = urlunparse(new_parsed)
-    return clean_url
 
 def is_ipv6(url: str) -> bool:
     """判断URL是否为IPv6地址"""
@@ -430,19 +411,7 @@ def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, laten
 
 @lru_cache(maxsize=1)
 def get_github_logo_list() -> List[str]:
-    """获取GitHub仓库中的logo文件列表（带本地缓存）"""
-    # 本地缓存文件路径
-    cache_file = Path("logo_cache.txt")
-    # 优先读取本地缓存
-    if cache_file.exists():
-        try:
-            with open(cache_file, "r", encoding="utf-8") as f:
-                logo_files = [line.strip() for line in f if line.strip()]
-            logger.info(f"从本地缓存加载logo列表，共{len(logo_files)}个文件")
-            return logo_files
-        except Exception as e:
-            logger.warning(f"读取本地logo缓存失败：{str(e)}")
-    
+    """获取GitHub仓库中的logo文件列表"""
     headers = {"User-Agent": "Mozilla/5.0"}
     logo_files = []
     
@@ -470,13 +439,6 @@ def get_github_logo_list() -> List[str]:
             "CCTV12.png", "CCTV13.png", "CCTV14.png", "CCTV15.png", "湖南卫视.png", "浙江卫视.png",
             "江苏卫视.png", "东方卫视.png", "北京卫视.png", "安徽卫视.png"
         ]
-    
-    # 写入本地缓存
-    try:
-        with open(cache_file, "w", encoding="utf-8") as f:
-            f.write("\n".join(logo_files))
-    except Exception as e:
-        logger.warning(f"写入logo缓存失败：{str(e)}")
     
     return logo_files
 
@@ -619,12 +581,8 @@ def fetch_url_with_retry(url: str, timeout: int = 20) -> Optional[str]:
             if response.encoding is None:
                 response.encoding = 'utf-8'
             
-            # 读取内容（处理gzip压缩，分块读取避免内存溢出）
-            content = b""
-            for chunk in response.iter_content(chunk_size=1024*1024):  # 1MB分块
-                if chunk:
-                    content += chunk
-            content = content.decode(response.encoding, errors='ignore')
+            # 读取内容（处理gzip压缩）
+            content = response.content.decode(response.encoding, errors='ignore')
             
             logger.info(f"成功抓取：{candidate} (大小：{len(content)}字节)")
             return content
@@ -655,22 +613,13 @@ class SpeedTester:
         self.retry_times = getattr(config, 'RETRY_TIMES', CONFIG_DEFAULTS["RETRY_TIMES"])
     
     async def __aenter__(self):
-        """创建异步HTTP会话（添加SSL忽略）"""
+        """创建异步HTTP会话"""
         timeout = aiohttp.ClientTimeout(total=self.timeout)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
             "Referer": "https://www.iptv.com"  # 新增：添加referer绕过防盗链
         }
-        # 配置SSL上下文，忽略证书错误
-        ssl_context = ssl.create_default_context()
-        ssl_context.check_hostname = False
-        ssl_context.verify_mode = ssl.CERT_NONE
-        
-        self.session = aiohttp.ClientSession(
-            timeout=timeout, 
-            headers=headers,
-            connector=aiohttp.TCPConnector(ssl=ssl_context)
-        )
+        self.session = aiohttp.ClientSession(timeout=timeout, headers=headers)
         return self
     
     async def __aexit__(self, exc_type, exc_val, exc_tb):
@@ -752,28 +701,21 @@ class SpeedTester:
         return result
     
     async def batch_speed_test(self, urls: List[str]) -> Dict[str, SpeedTestResult]:
-        """批量测速（带进度显示）"""
+        """批量测速"""
         results = {}
         semaphore = asyncio.Semaphore(self.concurrent_limit)
-        total = len(urls)
-        completed = 0
         
         async def worker(url):
-            nonlocal completed
             async with semaphore:
                 result = await self.measure_latency(url)
                 results[url] = result
-                completed += 1
-                if completed % 10 == 0:  # 每完成10个打印一次进度
-                    logger.info(f"测速进度：{completed}/{total} ({completed/total*100:.1f}%)")
         
         # 过滤极端无效URL
         urls = filter_invalid_urls(urls)
         tasks = [worker(url) for url in urls if url.strip()]
         await asyncio.gather(*tasks)
         
-        success_count = len([r for r in results.values() if r.success])
-        logger.info(f"批量测速完成：共测试{len(results)}个URL，成功{success_count}个")
+        logger.info(f"批量测速完成：共测试{len(results)}个URL，成功{len([r for r in results.values() if r.success])}个")
         return results
 
 # ===================== 模板解析与源抓取 =====================
