@@ -88,13 +88,13 @@ ANNOUNCEMENTS = [
 
 # ===================== 台标配置 =====================
 # GitHub台标仓库基础URL
-GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
+GITHUB_LOGO_BASE_URL = "https://live.fanmingming.cn/tv/{name}.png"
 # 备用台标URL（GHProxy）
-BACKUP_LOGO_BASE_URL = "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv"
+BACKUP_LOGO_BASE_URL = "https://live.fanmingming.cn/tv/{name}.png"
 # GitHub API URL（获取台标列表）
 GITHUB_LOGO_API_URLS = [
-    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
+    "https://live.fanmingming.cn/tv/{name}.png",
+    "https://live.fanmingming.cn/tv/{name}.png"
 ]
 
 # ===================== 其他配置 =====================
