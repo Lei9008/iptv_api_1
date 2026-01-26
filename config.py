@@ -6,15 +6,15 @@ TEMPLATE_FILE = "demo.txt"
 
 # ===================== 测速配置 =====================
 # 延迟阈值（ms），超过该值仍保留但标注延迟
-LATENCY_THRESHOLD = 500
+LATENCY_THRESHOLD = 600
 # 异步并发数（根据服务器性能调整）
 CONCURRENT_LIMIT = 20
 # 超时时间（s）
-TIMEOUT = 15
+TIMEOUT = 12
 # 重试次数
 RETRY_TIMES = 2
 # 频道匹配阈值（默认 0.4）
-MATCH_CUTOFF = 0.7
+MATCH_CUTOFF = 0.8
 # IP版本优先级（ipv4/ipv6）
 IP_VERSION_PRIORITY = "ipv4"
 
@@ -45,6 +45,7 @@ URL_BLACKLIST = [
     "https://migu.188766.xyz",
     "https://epg.pw/stream/",
     "http://38.75.136.137:98/gslb/dsdqpub/scwshd",
+    "https://www.freetv.top",
 ]
 
 # ===================== EPG配置 =====================
