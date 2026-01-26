@@ -1,11 +1,11 @@
-
+# ===================== 导入依赖 =====================
 import re
 import requests
 import logging
 import asyncio
 import aiohttp
 import time
-import sys  # 必须添加这行！
+import sys
 from collections import OrderedDict
 from datetime import datetime
 from pathlib import Path
@@ -14,9 +14,35 @@ from typing import List, Dict, Optional, Tuple, Set
 from functools import lru_cache
 import warnings
 
+# ===================== 导入外部配置 =====================
+try:
+    import config
+except ImportError:
+    print("错误：未找到config.py配置文件！请确保config.py与main.py在同一目录")
+    sys.exit(1)
 
+# 构建配置字典（统一接口，兼容原有逻辑）
+CONFIG = {
+    "LATENCY_THRESHOLD": config.LATENCY_THRESHOLD,
+    "CONCURRENT_LIMIT": config.CONCURRENT_LIMIT,
+    "TIMEOUT": config.TIMEOUT,
+    "RETRY_TIMES": config.RETRY_TIMES,
+    "IP_VERSION_PRIORITY": config.IP_VERSION_PRIORITY,
+    "URL_BLACKLIST": config.URL_BLACKLIST,
+    "TEMPLATE_FILE": config.TEMPLATE_FILE,
+    "EPG_URLS": config.EPG_URLS,
+    "ANNOUNCEMENTS": config.ANNOUNCEMENTS,
+    "SOURCE_URLS": config.SOURCE_URLS,
+    "MATCH_CUTOFF": config.MATCH_CUTOFF,
+    "PROGRESS_INTERVAL": getattr(config, "PROGRESS_INTERVAL", 50)  # 兼容兜底
+}
 
-# ===================== 全局配置（独立配置，无需额外config.py） =====================
+# 导入台标相关配置（覆盖内置值）
+GITHUB_LOGO_BASE_URL = config.GITHUB_LOGO_BASE_URL
+BACKUP_LOGO_BASE_URL = config.BACKUP_LOGO_BASE_URL
+GITHUB_LOGO_API_URLS = config.GITHUB_LOGO_API_URLS
+
+# ===================== 全局配置初始化 =====================
 # 屏蔽SSL不安全请求警告
 warnings.filterwarnings('ignore', category=requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
@@ -28,30 +54,6 @@ OUTPUT_FOLDER.mkdir(exist_ok=True)
 LOGO_DIRS = [Path("./pic/logos"), Path("./pic/logo")]
 for dir_path in LOGO_DIRS:
     dir_path.mkdir(parents=True, exist_ok=True)
-
-# GitHub Logo配置
-GITHUB_LOGO_BASE_URL = "https://raw.githubusercontent.com/fanmingming/live/main/tv"
-BACKUP_LOGO_BASE_URL = "https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv"
-GITHUB_LOGO_API_URLS = [
-    "https://api.github.com/repos/fanmingming/live/contents/main/tv",
-    "https://ghproxy.com/https://api.github.com/repos/fanmingming/live/contents/main/tv"
-]
-
-# 核心配置（可直接修改）
-CONFIG = {
-    "LATENCY_THRESHOLD": 500,       # 延迟阈值（毫秒）
-    "CONCURRENT_LIMIT": 20,         # 并发数
-    "TIMEOUT": 10,                  # 超时时间（秒）
-    "RETRY_TIMES": 2,               # 重试次数
-    "IP_VERSION_PRIORITY": "ipv4",  # IP版本优先级
-    "URL_BLACKLIST": [],            # URL黑名单关键词（包含即过滤）
-    "TEMPLATE_FILE": "demo.txt",    # 模板文件路径
-    "EPG_URLS": [],                 # EPG地址
-    "ANNOUNCEMENTS": [],            # 公告频道
-    "SOURCE_URLS": [],              # 直播源地址列表
-    "MATCH_CUTOFF": 0.4,            # 模糊匹配阈值
-    "PROGRESS_INTERVAL": 50         # 进度打印间隔
-}
 
 # GitHub镜像/代理
 GITHUB_MIRRORS = [
@@ -103,7 +105,7 @@ class ChannelMeta:
     clean_channel_name: str = ""  # 标准化后的频道名
     source_url: str = ""  # 来源URL
 
-# ===================== 全局存储【核心优化：按频道名聚合】 =====================
+# ===================== 全局存储 =====================
 url_meta_mapping: Dict[str, ChannelMeta] = {}  # URL→原始ChannelMeta（追溯用）
 raw_extinf_mapping: Dict[str, str] = {}        # url -> 完整的原始#EXTINF行
 url_source_mapping: Dict[str, str] = {}        # url -> 来源URL
@@ -140,12 +142,7 @@ def clean_channel_name(channel_name: str) -> str:
     return cleaned_name.upper()
 
 def integrate_channel_meta(clean_name: str, new_meta: ChannelMeta) -> ChannelMeta:
-    """
-    整合同频道的元信息，为不完整的#EXTINF补全字段
-    :param clean_name: 标准化频道名（聚合key）
-    :param new_meta: 新提取的单URL元信息（可能不完整）
-    :return: 整合后的完整ChannelMeta
-    """
+    """整合同频道的元信息，为不完整的#EXTINF补全字段"""
     # 规则1：无聚合信息则直接初始化，有则基于已有信息互补
     if clean_name not in channel_agg_meta:
         agg_meta = ChannelMeta(
@@ -163,7 +160,7 @@ def integrate_channel_meta(clean_name: str, new_meta: ChannelMeta) -> ChannelMet
         logger.debug(f"初始化频道聚合信息：{clean_name}")
     else:
         agg_meta = channel_agg_meta[clean_name]
-        # 规则2：tvg-id - 非空优先，优先数字型ID（如CCTV1的1）
+        # 规则2：tvg-id - 非空优先，优先数字型ID
         if new_meta.tvg_id and (not agg_meta.tvg_id or new_meta.tvg_id.isdigit()):
             logger.debug(f"[{clean_name}] 补全tvg-id：{agg_meta.tvg_id} → {new_meta.tvg_id}")
             agg_meta.tvg_id = new_meta.tvg_id
@@ -171,26 +168,26 @@ def integrate_channel_meta(clean_name: str, new_meta: ChannelMeta) -> ChannelMet
         if new_meta.tvg_logo and (not agg_meta.tvg_logo or "pic/" in new_meta.tvg_logo):
             logger.debug(f"[{clean_name}] 补全tvg-logo：{agg_meta.tvg_logo[:50] if agg_meta.tvg_logo else ''} → {new_meta.tvg_logo[:50]}")
             agg_meta.tvg_logo = new_meta.tvg_logo
-        # 规则4：group-title - 非空覆盖，优先更精准的分类（如央视频道>未分类）
+        # 规则4：group-title - 非空覆盖，优先更精准的分类
         if new_meta.group_title and new_meta.group_title not in ["未分类", "默认分类"]:
             logger.debug(f"[{clean_name}] 补全分类：{agg_meta.group_title} → {new_meta.group_title}")
             agg_meta.group_title = new_meta.group_title
-        # 规则5：tvg-name/channel-name - 保留最完整的名称，避免缩写
+        # 规则5：tvg-name/channel-name - 保留最完整的名称
         if new_meta.tvg_name and len(new_meta.tvg_name) > len(agg_meta.tvg_name or ""):
             agg_meta.tvg_name = new_meta.tvg_name
         if new_meta.channel_name and len(new_meta.channel_name) > len(agg_meta.channel_name or ""):
             agg_meta.channel_name = new_meta.channel_name
-        # 规则6：source_url - 拼接所有来源，用|分隔（追溯多源）
+        # 规则6：source_url - 拼接所有来源
         if new_meta.source_url and new_meta.source_url not in agg_meta.source_url:
             agg_meta.source_url = f"{agg_meta.source_url}|{new_meta.source_url}" if agg_meta.source_url else new_meta.source_url
     
-    # 规则7：自动补全logo - 若聚合后logo仍为空，调用自动匹配
+    # 规则7：自动补全logo
     if not agg_meta.tvg_logo:
         agg_meta.tvg_logo = get_channel_logo_url(agg_meta.channel_name or clean_name)
         if agg_meta.tvg_logo:
             logger.debug(f"[{clean_name}] 自动匹配logo：{agg_meta.tvg_logo[:50]}")
     
-    # 规则8：自动补全分类 - 若分类仍为未分类，按频道名智能推断
+    # 规则8：自动补全分类
     if not agg_meta.group_title or agg_meta.group_title in ["未分类", "默认分类"]:
         if any(kw in clean_name for kw in ['CCTV', '央视', '中央']):
             agg_meta.group_title = "央视频道"
@@ -347,13 +344,13 @@ def get_github_logo_list() -> List[str]:
     return logo_files
 
 def get_channel_logo_url(channel_name: str) -> str:
-    """生成logo URL（修复超长文件名问题）"""
+    """生成logo URL"""
     if not channel_name:
         return ""
     
     clean_logo_name = clean_channel_name(channel_name)
     
-    # 限制文件名长度（最大100个字符）
+    # 限制文件名长度
     MAX_FILENAME_LENGTH = 100
     if len(clean_logo_name) > MAX_FILENAME_LENGTH:
         clean_logo_name = clean_logo_name[:MAX_FILENAME_LENGTH-3] + "..."
@@ -412,10 +409,7 @@ def get_channel_logo_url(channel_name: str) -> str:
 
 # ===================== M3U提取/生成函数 =====================
 def generate_basic_m3u(all_channels: OrderedDict):
-    """
-    抓取完成后立即生成基础M3U文件（100%保留原始M3U元信息 + 聚合补全）
-    :param all_channels: 所有抓取到的频道数据 {group-title: [(频道名, URL), ...]}
-    """
+    """生成基础M3U文件（100%保留原始M3U元信息 + 聚合补全）"""
     # 基础M3U文件路径
     basic_m3u_path = OUTPUT_FOLDER / "live_basic.m3u"
     basic_txt_path = OUTPUT_FOLDER / "live_basic.txt"
@@ -497,9 +491,7 @@ def generate_basic_m3u(all_channels: OrderedDict):
         logger.error(f"生成基础M3U文件失败：{str(e)}", exc_info=True)
 
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
-    """
-    提取M3U元信息（完整保留原始#EXTINF行 + 自动聚合整合不完整信息）
-    """
+    """提取M3U元信息（完整保留原始#EXTINF行 + 自动聚合整合）"""
     # 匹配完整的M3U条目：#EXTINF行 + URL
     m3u_pattern = re.compile(
         r"(#EXTINF:-?\d+.*?)\n\s*([^#\n\r\s].*?)(?=\s|#|$)",
@@ -578,9 +570,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
     return categorized_channels, meta_list
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
-    """
-    提取频道和URL（增强格式兼容，智能识别分类和元信息 + 聚合整合）
-    """
+    """提取频道和URL（增强格式兼容，智能识别分类和元信息 + 聚合整合）"""
     categorized_channels = OrderedDict()
     seen_urls = set()
     
@@ -1122,7 +1112,7 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
 
 # ===================== 文件生成函数 =====================
 def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version, latency):
-    """写入文件（核心优化：使用聚合后的完整元信息生成#EXTINF）"""
+    """写入文件（使用聚合后的完整元信息生成#EXTINF）"""
     if not url:
         return
     
@@ -1150,7 +1140,7 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         logger.warning(f"写入文件失败（频道：{channel_name}）：{str(e)[:50]}")
 
 def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str, SpeedTestResult]):
-    """更新频道URL到文件（优化版：新增测速后URL黑名单过滤 + 聚合元信息）"""
+    """更新频道URL到文件（含聚合元信息+黑名单过滤）"""
     latency_threshold = CONFIG["LATENCY_THRESHOLD"]
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
@@ -1387,8 +1377,6 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
     except Exception as e:
         logger.error(f"生成测速报告失败：{str(e)}", exc_info=True)
 
-
-
 # ===================== 主函数入口 =====================
 async def main():
     """主函数"""
@@ -1435,22 +1423,8 @@ async def main():
     logger.info(f"程序执行完成！所有文件已生成至 {OUTPUT_FOLDER.absolute()} 目录")
     logger.info("="*80)
 
-# ===================== 程序入口 =====================
 if __name__ == "__main__":
-    # 补充导入sys模块（修复核心错误）
-    import sys
     # 解决Windows系统asyncio事件循环问题
     try:
         if sys.platform == 'win32':
-            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-        # 运行主函数
-        asyncio.run(main())
-    except Exception as e:
-        # 兼容所有异常情况
-        logger.error(f"程序运行异常：{str(e)}", exc_info=True)
-    finally:
-        logger.info("程序已退出")
-
-
-
-
+            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy
