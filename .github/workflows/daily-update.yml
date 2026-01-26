@@ -1,0 +1,92 @@
+name: Daily Update IPTV Sources
+
+on:
+  schedule:
+    # 每3天UTC时间16:55执行（对应上海时间00:55）
+    - cron: '55 16 */3 * *'  
+  workflow_dispatch:  # 允许手动触发
+
+env:
+  TZ: Asia/Shanghai  # 设置时区为上海
+
+jobs:
+  update-iptv-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30  # 设置任务超时时间（避免无限运行）
+    permissions:
+      contents: write  # 授予提交代码的权限
+
+    steps:
+      - name: 检出代码库
+        uses: actions/checkout@v4  # 升级到最新版本
+        with:
+          fetch-depth: 0  # 拉取完整历史，避免rebase冲突
+
+      - name: 设置Python环境
+        uses: actions/setup-python@v5  # 升级到最新版本
+        with:
+          python-version: '3.10'
+          cache: 'pip'  # 自动缓存pip依赖（简化配置）
+
+      - name: 安装系统依赖
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          sudo apt-get clean  # 清理缓存，减少空间占用
+
+      - name: 安装Python依赖
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install requests aiohttp>=3.9.0  # 指定最低版本，保证兼容性
+          # 打印依赖版本，便于调试
+          pip list
+
+      - name: 执行IPTV脚本
+        run: |
+          # 打印系统信息
+          echo "Python版本: $(python --version)"
+          echo "工作目录: $(pwd)"
+          echo "当前时间: $(date)"
+          # 执行主脚本并输出日志
+          python main.py 2>&1 | tee iptv_run.log  # 保存执行日志
+
+      - name: 检查文件变更
+        id: check_changes
+        run: |
+          # 检查是否有文件变更
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "✅ 无文件变更，无需提交"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "🔄 检测到文件变更，准备提交"
+            # 显示变更的文件列表
+            git status --short
+          fi
+
+      - name: 提交并推送变更
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          # 配置Git用户信息
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          
+          # 添加所有变更文件
+          git add -A
+          
+          # 提交变更（包含时间戳）
+          git commit -m "Auto-update IPTV sources: $(date +'%Y-%m-%d %H:%M:%S')"
+          
+          # 安全推送（解决可能的冲突）
+          git pull --rebase origin main || git rebase --abort
+          git push origin main
+          
+          echo "✅ 变更已成功推送"
+
+      - name: 上传执行日志
+        if: always()  # 无论任务成功/失败都上传日志
+        uses: actions/upload-artifact@v4
+        with:
+          name: iptv-execution-log
+          path: iptv_run.log
+          retention-days: 7  # 日志保留7天
