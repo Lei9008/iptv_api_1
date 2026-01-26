@@ -2,3 +2,6 @@ pip freeze > requirements.txt
 requests>=2.31.0
 aiohttp>=3.9.1
 python-dotenv>=1.0.0  # 可选，用于环境变量配置
+pip install requests aiohttp
+
+
