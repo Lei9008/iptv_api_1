@@ -19,7 +19,7 @@ env:
 jobs:
   update-iptv-sources:
     runs-on: ubuntu-latest
-    timeout-minutes: 120  # 设置任务超时时间（避免无限运行）
+    timeout-minutes: 240  # 设置任务超时时间（避免无限运行）
     permissions:
       contents: write  # 授予提交代码的权限
       actions: write   # 授予管理workflow的权限（可选，用于清理旧运行记录）
