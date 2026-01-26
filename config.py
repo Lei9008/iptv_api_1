@@ -20,7 +20,7 @@ IP_VERSION_PRIORITY = "ipv4"
 
 # ===================== 核心源配置 =====================
 # 直播源URL列表（支持GitHub RAW/普通HTTP链接）
-source_urls = [
+"SOURCE_URLS":[
     # 替换为你自己的直播源链接
 
     
