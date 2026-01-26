@@ -68,7 +68,7 @@ CONFIG_DEFAULTS = {
     "TIMEOUT": 10,
     "RETRY_TIMES": 2,
     "IP_VERSION_PRIORITY": "ipv4",
-    "URL_BLACKLIST": [],
+    "URL_BLACKLIST": [],  # 新增：默认URL黑名单
     "TEMPLATE_FILE": "demo.txt",
     "EPG_URLS": [],
     "ANNOUNCEMENTS": [],
@@ -196,7 +196,7 @@ def sort_and_filter_urls(
         if not url or url in written_urls:
             continue
         
-        # 黑名单过滤
+        # 原有黑名单过滤
         blacklist_hit = False
         for blacklist in url_blacklist:
             if blacklist and blacklist in url:
@@ -1064,10 +1064,14 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         logger.warning(f"写入文件失败（频道：{channel_name}）：{str(e)[:50]}")
 
 def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str, SpeedTestResult]):
-    """更新频道URL到文件（优化版）"""
+    """更新频道URL到文件（优化版：新增测速后URL黑名单过滤）"""
     latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
+    
+    # 1. 从配置读取URL黑名单，转小写做不区分大小写匹配
+    url_blacklist_keywords = [kw.lower().strip() for kw in getattr(config, 'URL_BLACKLIST', CONFIG_DEFAULTS["URL_BLACKLIST"]) if kw.strip()]
+    total_blacklist_filtered = 0  # 统计黑名单过滤总数
 
     # 文件路径
     ipv4_m3u_path = OUTPUT_FOLDER / "live_ipv4.m3u"
@@ -1089,7 +1093,9 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
             # 写入头部
             epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
             header_note = f"# 延迟阈值：{latency_threshold}ms | 生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
-            
+            # 新增：头部写入黑名单信息
+            if url_blacklist_keywords:
+                header_note += f"# URL黑名单过滤关键词：{', '.join(url_blacklist_keywords)}\n"
             f_m3u_ipv4.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
             f_m3u_ipv6.write(f"#EXTM3U x-tvg-url={epg_str}\n{header_note}")
 
@@ -1109,6 +1115,12 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                     entry_logo = entry.get('logo', '')
                     
                     if not entry_url:
+                        continue
+                    
+                    # 公告频道也做黑名单过滤
+                    if url_blacklist_keywords and any(kw in entry_url.lower() for kw in url_blacklist_keywords):
+                        logger.debug(f"公告URL命中黑名单：{entry_url[:60]}（关键词：{[kw for kw in url_blacklist_keywords if kw in entry_url.lower()]}）")
+                        total_blacklist_filtered += 1
                         continue
                     
                     entry_result = latency_results.get(entry_url)
@@ -1152,14 +1164,35 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                     raw_urls = channels[category][channel_name]
                     
                     # 分离IPv4/IPv6
+                    ipv4_urls_raw = [u for u in raw_urls if not is_ipv6(u)]
+                    ipv6_urls_raw = [u for u in raw_urls if is_ipv6(u)]
+                    
+                    # 2. 新增：URL黑名单过滤（测速完成后）
+                    ipv4_urls_filtered = []
+                    for url in ipv4_urls_raw:
+                        if url_blacklist_keywords and any(kw in url.lower() for kw in url_blacklist_keywords):
+                            logger.debug(f"IPv4 URL命中黑名单：{url[:60]}（关键词：{[kw for kw in url_blacklist_keywords if kw in url.lower()]}）")
+                            total_blacklist_filtered += 1
+                            continue
+                        ipv4_urls_filtered.append(url)
+                    
+                    ipv6_urls_filtered = []
+                    for url in ipv6_urls_raw:
+                        if url_blacklist_keywords and any(kw in url.lower() for kw in url_blacklist_keywords):
+                            logger.debug(f"IPv6 URL命中黑名单：{url[:60]}（关键词：{[kw for kw in url_blacklist_keywords if kw in url.lower()]}）")
+                            total_blacklist_filtered += 1
+                            continue
+                        ipv6_urls_filtered.append(url)
+                    
+                    # 原有排序过滤逻辑
                     ipv4_urls = sort_and_filter_urls(
-                        [u for u in raw_urls if not is_ipv6(u)],
+                        ipv4_urls_filtered,
                         written_urls_ipv4,
                         latency_results,
                         latency_threshold
                     )
                     ipv6_urls = sort_and_filter_urls(
-                        [u for u in raw_urls if is_ipv6(u)],
+                        ipv6_urls_filtered,
                         written_urls_ipv6,
                         latency_results,
                         latency_threshold
@@ -1183,6 +1216,12 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
 
             # 生成报告
             generate_speed_report(latency_results, latency_threshold)
+            
+            # 新增：打印黑名单过滤统计
+            if url_blacklist_keywords:
+                logger.info(f"\n===== URL黑名单过滤统计 =====")
+                logger.info(f"  - 黑名单关键词：{', '.join(url_blacklist_keywords)}")
+                logger.info(f"  - 累计过滤URL数：{total_blacklist_filtered}")
             
             logger.info(f"\n===== 最终优化版文件生成完成 =====")
             logger.info(f"  - IPv4 M3U: {ipv4_m3u_path} (写入{ipv4_written}个URL)")
@@ -1212,6 +1251,10 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
             f.write("="*80 + "\n")
             f.write(f"测试时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"延迟阈值：{latency_threshold}ms | 并发数：{getattr(config, 'CONCURRENT_LIMIT', 20)}\n")
+            # 新增：报告中添加黑名单信息
+            url_blacklist_keywords = [kw.lower().strip() for kw in getattr(config, 'URL_BLACKLIST', CONFIG_DEFAULTS["URL_BLACKLIST"]) if kw.strip()]
+            if url_blacklist_keywords:
+                f.write(f"URL黑名单关键词：{', '.join(url_blacklist_keywords)}\n")
             f.write(f"总测试URL数：{total_urls}\n")
             success_rate = f"{len(success_urls)/total_urls*100:.1f}%" if total_urls > 0 else "0.0%"
             f.write(f"测试成功数：{len(success_urls)} ({success_rate})\n")
@@ -1302,7 +1345,7 @@ async def main():
             latency_results = await tester.batch_speed_test(all_urls)
         
         # 生成最终优化版文件
-        logger.info("\n===== 3. 生成最终优化版文件 =====")
+        logger.info("\n===== 3. 生成最终优化版文件（含URL黑名单过滤） =====")
         updateChannelUrlsM3U(channels, template_channels, latency_results)
         
         # 统计耗时
@@ -1310,8 +1353,8 @@ async def main():
         logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
         logger.info(f"\n文件说明：")
         logger.info(f"  - live_basic.m3u: 基础版（保留原始/智能提取的元信息，未测速筛选）")
-        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类）")
-        logger.info(f"  - speed_test_report.txt: 详细测速报告")
+        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类+URL黑名单过滤）")
+        logger.info(f"  - speed_test_report.txt: 详细测速报告（含黑名单信息）")
     
     except Exception as e:
         logger.critical(f"程序执行异常：{str(e)}", exc_info=True)
