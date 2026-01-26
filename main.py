@@ -1,9 +1,11 @@
+
 import re
 import requests
 import logging
 import asyncio
 import aiohttp
 import time
+import sys  # 必须添加这行！
 from collections import OrderedDict
 from datetime import datetime
 from pathlib import Path
@@ -11,6 +13,8 @@ from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple, Set
 from functools import lru_cache
 import warnings
+
+
 
 # ===================== 全局配置（独立配置，无需额外config.py） =====================
 # 屏蔽SSL不安全请求警告
@@ -1383,6 +1387,8 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
     except Exception as e:
         logger.error(f"生成测速报告失败：{str(e)}", exc_info=True)
 
+
+
 # ===================== 主函数入口 =====================
 async def main():
     """主函数"""
@@ -1414,7 +1420,7 @@ async def main():
     all_test_urls = list(dict.fromkeys(all_test_urls))
     logger.info(f"\n待测速URL总数：{len(all_test_urls)}")
     
-      # 3. 批量测速
+    # 3. 批量测速
     latency_results = {}
     if all_test_urls:
         async with SpeedTester() as tester:
@@ -1431,17 +1437,20 @@ async def main():
 
 # ===================== 程序入口 =====================
 if __name__ == "__main__":
+    # 补充导入sys模块（修复核心错误）
+    import sys
     # 解决Windows系统asyncio事件循环问题
     try:
-        import asyncio
         if sys.platform == 'win32':
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         # 运行主函数
         asyncio.run(main())
-    except ImportError:
-        # 兼容无sys模块环境
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        logger.info("用户手动终止程序")
     except Exception as e:
+        # 兼容所有异常情况
         logger.error(f"程序运行异常：{str(e)}", exc_info=True)
+    finally:
+        logger.info("程序已退出")
+
+
+
+
