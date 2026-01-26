@@ -63,9 +63,10 @@ source_urls = [
 # ===================== 过滤配置 =====================
 # URL黑名单（包含以下关键词的URL会被过滤）
 URL_BLACKLIST = [
-  "https://iptv.catvod.com/",
+"https://iptv.catvod.com/",
 "http://38.75.136.137:98/gslb/dsdqca",
 "https://migu.188766.xyz",
+"https://epg.pw/stream/",
     
     
 ]
