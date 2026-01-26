@@ -1427,4 +1427,13 @@ if __name__ == "__main__":
     # 解决Windows系统asyncio事件循环问题
     try:
         if sys.platform == 'win32':
-            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy
+            # 修复：补充闭合括号 ()
+            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        # 运行主函数
+        asyncio.run(main())
+    except Exception as e:
+        logger.error(f"程序运行异常：{str(e)}", exc_info=True)
+    finally:
+        logger.info("程序已退出")
+
+                                          
