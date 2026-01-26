@@ -178,6 +178,102 @@ def find_similar_name(target_name: str, name_list: List[str], cutoff: float = No
     matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=cutoff-0.1)
     return matches[0] if matches else None
 
+def replace_github_domain(url: str) -> List[str]:
+    """替换GitHub域名生成候选URL列表"""
+    if not url or "github.com" not in url:
+        return [url]
+    
+    candidate_urls = []
+    original_domain = None
+    
+    # 提取并替换域名
+    for mirror in GITHUB_MIRRORS:
+        if mirror in url:
+            original_domain = mirror
+            break
+    
+    if original_domain:
+        # 替换为其他镜像
+        for mirror in GITHUB_MIRRORS:
+            if mirror != original_domain:
+                candidate_urls.append(url.replace(original_domain, mirror))
+    else:
+        # 原始URL不含镜像，添加所有镜像
+        base_url = url
+        for mirror in GITHUB_MIRRORS:
+            if "raw.githubusercontent.com" in url:
+                candidate_urls.append(url.replace("raw.githubusercontent.com", mirror))
+            else:
+                candidate_urls.append(url)
+    
+    # 添加代理前缀
+    proxy_urls = []
+    for proxy in PROXY_PREFIXES:
+        for candidate in candidate_urls:
+            if not candidate.startswith(tuple(PROXY_PREFIXES)):
+                proxy_urls.append(proxy + candidate)
+    
+    # 去重并返回
+    all_candidates = list(OrderedDict.fromkeys(candidate_urls + proxy_urls))
+    return all_candidates[:10]  # 限制最多10个候选
+
+def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
+    """带重试的URL抓取（自动修复GitHub URL）"""
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/plain, text/html, application/xhtml+xml, application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8"
+    }
+    
+    # 核心优化：自动修复GitHub Blob URL为Raw格式
+    original_url = url
+    if "github.com" in url and "/blob/" in url:
+        url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+        logger.info(f"自动转换GitHub Blob URL：{original_url[:80]} → {url[:80]}")
+    
+    # 生成候选URL（镜像+代理）
+    candidate_urls = replace_github_domain(url)
+    
+    # 分级超时策略
+    timeouts = [5, 8, 10, 15, 15]
+    
+    for idx, candidate in enumerate(candidate_urls):
+        current_timeout = timeouts[min(idx, len(timeouts)-1)]
+        try:
+            logger.debug(f"尝试抓取 [{idx+1}/{len(candidate_urls)}]: {candidate[:80]} (超时：{current_timeout}s)")
+            response = requests.get(
+                candidate,
+                headers=headers,
+                timeout=current_timeout,
+                verify=False,
+                allow_redirects=True,
+                stream=True
+            )
+            response.raise_for_status()
+            
+            # 处理编码
+            if not response.encoding:
+                response.encoding = response.apparent_encoding or 'utf-8'
+            
+            # 读取内容（处理大文件）
+            content = response.text
+            logger.info(f"成功抓取：{candidate[:80]} (大小：{len(content)}字节)")
+            return content
+        
+        except requests.exceptions.Timeout:
+            logger.warning(f"抓取超时 [{idx+1}/{len(candidate_urls)}]: {candidate[:80]} (超时：{current_timeout}s)")
+        except requests.exceptions.HTTPError as e:
+            logger.warning(f"HTTP错误 [{idx+1}/{len(candidate_urls)}]: {candidate[:80]} | 状态码：{e.response.status_code if e.response else '未知'}")
+        except requests.exceptions.RequestException as e:
+            logger.warning(f"抓取失败 [{idx+1}/{len(candidate_urls)}]: {candidate[:80]} | 原因：{str(e)[:50]}")
+        except Exception as e:
+            logger.error(f"未知错误 [{idx+1}/{len(candidate_urls)}]: {candidate[:80]} | 原因：{str(e)[:50]}")
+        continue
+    
+    logger.error(f"所有候选链接都抓取失败：{original_url[:80]}")
+    return None
+
 def sort_and_filter_speedonly_urls(
     urls: List[str], 
     written_urls: set, 
@@ -851,11 +947,12 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
     except Exception as e:
         logger.error(f"生成测速报告失败：{str(e)}", exc_info=True)
 
-# ===================== M3U提取函数（补全缺失部分） =====================
+# ===================== M3U提取函数（增强解析容错） =====================
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
-    """提取M3U元信息（完整保留原始#EXTINF行）"""
+    """提取M3U元信息（完整保留原始#EXTINF行，增强容错）"""
+    # 增强正则：兼容换行、空格、大小写差异，修复匹配逻辑
     m3u_pattern = re.compile(
-        r"(#EXTINF:-?\d+.*?)\n\s*([^#\n\r\s].*?)(?=\s|#|$)",
+        r"(#EXTINF:-?\d+.*?)\r?\n\s*([^#\n\r\s].*?)(?=\s|#|\r?\n|$)",
         re.IGNORECASE | re.DOTALL | re.MULTILINE
     )
     attr_pattern = re.compile(r'(\w+)-(\w+)="([^"]*)"')
@@ -865,6 +962,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
     seen_urls = set()
     
     matches = m3u_pattern.findall(content)
+    logger.info(f"M3U正则匹配到 {len(matches)} 个潜在条目（来源：{source_url[:60]}）")
     
     for raw_extinf, url in matches:
         url = url.strip()
@@ -882,6 +980,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         group_title = None
         channel_name = "未知频道"
         
+        # 解析EXTINF属性
         attr_matches = attr_pattern.findall(raw_extinf)
         for attr1, attr2, value in attr_matches:
             if attr1 == "tvg" and attr2 == "id":
@@ -893,12 +992,14 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             elif attr1 == "group" and attr2 == "title":
                 group_title = value
         
+        # 解析频道名
         name_match = re.search(r',\s*(.+?)\s*$', raw_extinf)
         if name_match:
             channel_name = name_match.group(1).strip()
         
         group_title = group_title if group_title else "未分类"
         
+        # 创建元信息
         meta = ChannelMeta(
             url=url,
             raw_extinf=raw_extinf,
@@ -919,7 +1020,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             categorized_channels[group_title] = []
         categorized_channels[group_title].append((channel_name, url))
     
-    logger.info(f"M3U精准提取：{len(meta_list)}个频道（保留原始元信息）")
+    logger.info(f"M3U精准提取：{len(meta_list)}个有效频道（来源：{source_url[:60]}）")
     return categorized_channels, meta_list
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
@@ -928,12 +1029,14 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
     seen_urls = set()
     
     if "#EXTM3U" in content:
+        # M3U格式，优先精准提取
         m3u_categorized, _ = extract_m3u_meta(content, source_url)
         categorized_channels = m3u_categorized
         for _, ch_list in m3u_categorized.items():
             for _, url in ch_list:
                 seen_urls.add(url)
     else:
+        # 通用格式解析
         lines = content.split('\n')
         current_group = "默认分类"
         
@@ -979,10 +1082,11 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     categorized_channels[current_group] = []
                 categorized_channels[current_group].append((channel_name, url))
     
-    logger.info(f"通用格式提取：{sum(len(ch_list) for _, ch_list in categorized_channels.items())}个频道")
+    total_channels = sum(len(ch_list) for _, ch_list in categorized_channels.items())
+    logger.info(f"通用格式提取：{total_channels}个有效频道（来源：{source_url[:60]}）")
     return categorized_channels
 
-# ===================== 异步测速函数（补全核心执行逻辑） =====================
+# ===================== 异步测速函数 =====================
 async def test_url_latency(session: aiohttp.ClientSession, url: str, timeout: int, retry_times: int) -> SpeedTestResult:
     """异步测试单个URL的延迟"""
     result = SpeedTestResult(url=url)
@@ -1056,23 +1160,48 @@ def main():
         timeout = getattr(config, 'TIMEOUT', CONFIG_DEFAULTS["TIMEOUT"])
         retry_times = getattr(config, 'RETRY_TIMES', CONFIG_DEFAULTS["RETRY_TIMES"])
         
+        if not source_urls:
+            logger.error("配置文件中未设置SOURCE_URLS，程序退出")
+            return
+        
         # 2. 抓取所有频道
         all_channels = OrderedDict()
+        total_fetched_channels = 0
+        
         for source_url in source_urls:
             try:
-                logger.info(f"抓取源URL：{source_url}")
-                response = requests.get(source_url, timeout=10, verify=False)
-                response.raise_for_status()
-                content = response.text
+                logger.info(f"\n开始抓取源URL：{source_url}")
+                # 使用优化后的抓取函数（自动转换GitHub URL）
+                content = fetch_url_with_retry(source_url)
+                
+                if not content:
+                    logger.warning(f"源URL抓取为空：{source_url}")
+                    continue
+                
                 # 提取频道
                 source_channels = extract_channels_from_content(content, source_url)
+                source_channel_count = sum(len(ch_list) for _, ch_list in source_channels.items())
+                total_fetched_channels += source_channel_count
+                
                 # 合并到总频道
                 for group, ch_list in source_channels.items():
                     if group not in all_channels:
                         all_channels[group] = []
-                    all_channels[group].extend(ch_list)
+                    # 去重合并
+                    for ch_name, url in ch_list:
+                        if (ch_name, url) not in all_channels[group]:
+                            all_channels[group].append((ch_name, url))
+                
+                logger.info(f"源URL抓取完成：{source_url} | 提取到{source_channel_count}个频道")
+            
             except Exception as e:
-                logger.error(f"抓取源URL失败：{source_url} | 错误：{str(e)}")
+                logger.error(f"抓取源URL失败：{source_url} | 错误：{str(e)}", exc_info=True)
+        
+        if total_fetched_channels == 0:
+            logger.error("所有源URL都未提取到有效频道，程序退出")
+            return
+        
+        logger.info(f"\n所有源抓取完成：累计提取{total_fetched_channels}个频道，去重后{sum(len(ch_list) for _, ch_list in all_channels.items())}个")
         
         # 3. 生成基础版文件（未测速/未过滤）
         generate_basic_m3u(all_channels)
@@ -1080,20 +1209,25 @@ def main():
         # 4. 读取模板分类
         template_channels = OrderedDict()
         if os.path.exists(template_file):
-            with open(template_file, "r", encoding="utf-8") as f:
-                lines = f.readlines()
-                current_group = None
-                for line in lines:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    if line.endswith(",#genre#"):
-                        current_group = line.replace(",#genre#", "").strip()
-                        template_channels[current_group] = []
-                    elif current_group:
-                        template_channels[current_group].append(line.strip())
+            try:
+                with open(template_file, "r", encoding="utf-8") as f:
+                    lines = f.readlines()
+                    current_group = None
+                    for line in lines:
+                        line = line.strip()
+                        if not line:
+                            continue
+                        if line.endswith(",#genre#"):
+                            current_group = line.replace(",#genre#", "").strip()
+                            template_channels[current_group] = []
+                        elif current_group:
+                            template_channels[current_group].append(line.strip())
+                logger.info(f"成功读取模板文件：{template_file} | 分类数：{len(template_channels)}")
+            except Exception as e:
+                logger.error(f"读取模板文件失败：{template_file} | 错误：{str(e)}")
+                template_channels = all_channels
         else:
-            logger.warning(f"模板文件{template_file}不存在，使用默认分类")
+            logger.warning(f"模板文件{template_file}不存在，使用抓取到的分类")
             template_channels = all_channels
         
         # 5. 匹配频道（按模板分类）
@@ -1117,6 +1251,12 @@ def main():
             for _, urls in ch_dict.items():
                 all_test_urls.extend(urls)
         all_test_urls = list(set(all_test_urls))  # 去重
+        
+        if not all_test_urls:
+            logger.error("无可用URL进行测速，程序退出")
+            return
+        
+        logger.info(f"\n准备测速：共{len(all_test_urls)}个唯一URL")
         
         # 7. 异步测速
         latency_results = asyncio.run(batch_test_urls(all_test_urls, concurrent_limit, timeout, retry_times))
