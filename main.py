@@ -991,7 +991,7 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
         logger.error("模板解析为空，终止流程")
         return OrderedDict(), OrderedDict()
     
-    source_urls = getattr(config, 'source_urls', CONFIG_DEFAULTS["SOURCE_URLS"])
+    source_urls = getattr(config, 'SOURCE_URLS', CONFIG_DEFAULTS["SOURCE_URLS"])
     if not source_urls:
         logger.error("未配置source_urls，终止流程")
         return OrderedDict(), template_channels
