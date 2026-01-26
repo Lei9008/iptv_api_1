@@ -44,7 +44,7 @@ IP_VERSION_PRIORITY = "ipv4"
 URL_BLACKLIST = [
   "https://iptv.catvod.com/",
 "http://38.75.136.137:98/gslb/dsdqca",
-
+"https://migu.188766.xyz"',
     
     
 ]
