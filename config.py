@@ -46,6 +46,7 @@ URL_BLACKLIST = [
     "https://epg.pw/stream/",
     "http://38.75.136.137:98/gslb/dsdqpub/scwshd",
     "https://www.freetv.top",
+    "https://stream1.freetv.fun",
 ]
 
 # ===================== EPG配置 =====================
