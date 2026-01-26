@@ -1,4 +1,4 @@
-name: Daily Update IPTV Sources
+name: Update IPTV Sources（更新IPTV源）
 
 on:
   schedule:
