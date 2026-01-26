@@ -1,4 +1,5 @@
 import re
+import sys  # 新增：导入sys模块，解决平台判断报错
 import requests
 import logging
 import asyncio
