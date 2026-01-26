@@ -1,3 +1,4 @@
 #EXTM3U x-tvg-url=
-# 延迟阈值：500ms | 生成时间：2026-01-26 13:17:22
-# URL黑名单过滤关键词：https://iptv.catvod.com/, http://38.75.136.137:98/gslb/dsdqca, https://migu.188766.xyz, https://epg.pw/stream/
+# 最终优化版（测速筛选+URL黑名单过滤）
+# 生成时间：2026-01-26 14:51:38 | 延迟阈值：500ms
+# URL黑名单关键词：https://iptv.catvod.com/, http://38.75.136.137:98/gslb/dsdqca, https://migu.188766.xyz, https://epg.pw/stream/, http://38.75.136.137:98/gslb/dsdqpub/scwshd
