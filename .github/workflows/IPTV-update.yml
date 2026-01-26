@@ -153,7 +153,7 @@ jobs:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           keep_minimum_runs: 5  # 保留最近5条运行记录
-          retain_days: 7        # 保留7天内的运行记录
+          retain_days: 0        # 保留7天内的运行记录
           ignore_error: true    # 忽略清理错误
 
       - name: 任务失败通知（可选）
