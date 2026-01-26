@@ -1,5 +1,5 @@
 import re
-import sys  # 新增：导入sys模块，解决平台判断报错
+import sys  # 导入sys模块，解决平台判断报错
 import requests
 import logging
 import asyncio
@@ -227,40 +227,25 @@ def sort_and_filter_urls(
     latency_results: Dict[str, SpeedTestResult], 
     latency_threshold: float
 ) -> List[str]:
-    """排序和过滤URL（核心：URL黑名单过滤）"""
+    """排序和过滤URL（仅保留延迟/IP版本过滤，移除黑名单过滤）"""
     if not urls:
         return []
     
     filtered_urls = []
-    # 预处理黑名单关键词（转小写，去空）
-    url_blacklist = [kw.strip().lower() for kw in URL_BLACKLIST if kw.strip()]
-    blacklist_filter_count = 0
+    # 移除原有的黑名单过滤逻辑
 
     for url in urls:
         url = url.strip()
         if not url or url in written_urls:
             continue
         
-        # URL黑名单过滤：包含任意关键词即过滤
-        if url_blacklist:
-            url_lower = url.lower()
-            hit_kw = [kw for kw in url_blacklist if kw in url_lower]
-            if hit_kw:
-                blacklist_filter_count += 1
-                logger.debug(f"URL命中黑名单过滤：{url[:80]} | 命中关键词：{','.join(hit_kw)}")
-                continue
-        
-        # 延迟过滤
+        # 仅保留延迟过滤
         if latency_results:
             result = latency_results.get(url)
             if not result or not result.success or result.latency is None or result.latency > latency_threshold:
                 continue
         
         filtered_urls.append(url)
-    
-    # 输出黑名单过滤统计
-    if url_blacklist and blacklist_filter_count > 0:
-        logger.info(f"URL黑名单过滤完成：共过滤 {blacklist_filter_count} 个URL")
     
     # 按IP版本排序
     if IP_VERSION_PRIORITY == "ipv6":
@@ -273,6 +258,37 @@ def sort_and_filter_urls(
         filtered_urls.sort(key=lambda u: latency_results[u].latency if latency_results.get(u) else 9999)
     
     written_urls.update(filtered_urls)
+    return filtered_urls
+
+def filter_blacklist_urls(urls: List[str]) -> List[str]:
+    """新增：专门的URL黑名单过滤函数（仅在生成最终M3U时调用）"""
+    if not urls or not URL_BLACKLIST:
+        return urls
+    
+    filtered_urls = []
+    # 预处理黑名单关键词（转小写，去空）
+    url_blacklist = [kw.strip().lower() for kw in URL_BLACKLIST if kw.strip()]
+    blacklist_filter_count = 0
+
+    for url in urls:
+        url = url.strip()
+        if not url:
+            continue
+        
+        # URL黑名单过滤：包含任意关键词即过滤
+        url_lower = url.lower()
+        hit_kw = [kw for kw in url_blacklist if kw in url_lower]
+        if hit_kw:
+            blacklist_filter_count += 1
+            logger.debug(f"URL命中黑名单过滤：{url[:80]} | 命中关键词：{','.join(hit_kw)}")
+            continue
+        
+        filtered_urls.append(url)
+    
+    # 输出黑名单过滤统计
+    if blacklist_filter_count > 0:
+        logger.info(f"最终M3U URL黑名单过滤完成：共过滤 {blacklist_filter_count} 个URL")
+    
     return filtered_urls
 
 def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, latency: float) -> str:
@@ -341,7 +357,7 @@ def get_channel_logo_url(channel_name: str) -> str:
 
 # ===================== M3U处理函数 =====================
 def generate_basic_m3u(all_channels: OrderedDict):
-    """生成基础M3U文件"""
+    """生成基础M3U文件（完全不过滤黑名单）"""
     basic_m3u_path = OUTPUT_FOLDER / "live_basic.m3u"
     basic_txt_path = OUTPUT_FOLDER / "live_basic.txt"
     
@@ -378,7 +394,7 @@ def generate_basic_m3u(all_channels: OrderedDict):
                     f_txt.write(f"{channel_name},{url}\n")
                     total_written += 1
             
-            logger.info(f"基础M3U文件生成完成：{basic_m3u_path} (共{total_written}个频道)")
+            logger.info(f"基础M3U文件生成完成：{basic_m3u_path} (共{total_written}个频道，未过滤黑名单)")
     except Exception as e:
         logger.error(f"生成基础M3U失败：{str(e)}", exc_info=True)
 
@@ -792,7 +808,7 @@ def match_channels(template_channels: OrderedDict, all_channels: OrderedDict) ->
     return matched_channels
 
 def generate_final_m3u(matched_channels: OrderedDict, latency_results: Dict[str, SpeedTestResult]):
-    """生成最终的M3U文件"""
+    """生成最终的M3U文件（新增URL黑名单过滤步骤）"""
     final_m3u_path = OUTPUT_FOLDER / "live_final.m3u"
     written_urls = set()
     
@@ -811,13 +827,20 @@ def generate_final_m3u(matched_channels: OrderedDict, latency_results: Dict[str,
             f.write("\n")
             
             total_written = 0
+            # 新增：统计黑名单总过滤数
+            total_blacklist_filtered = 0
+            
             for category, channel_dict in matched_channels.items():
                 f.write(f"# ===== {category} =====\n")
                 
                 for channel_name, urls in channel_dict.items():
-                    # 过滤和排序URL
+                    # 步骤1：先过滤黑名单（新增核心逻辑）
+                    urls_after_blacklist = filter_blacklist_urls(urls)
+                    total_blacklist_filtered += len(urls) - len(urls_after_blacklist)
+                    
+                    # 步骤2：再进行延迟/IP版本过滤
                     filtered_urls = sort_and_filter_urls(
-                        urls, written_urls, latency_results, LATENCY_THRESHOLD
+                        urls_after_blacklist, written_urls, latency_results, LATENCY_THRESHOLD
                     )
                     
                     if not filtered_urls:
@@ -842,6 +865,9 @@ def generate_final_m3u(matched_channels: OrderedDict, latency_results: Dict[str,
                     
                     total_written += 1
             
+            # 输出总黑名单过滤统计
+            if total_blacklist_filtered > 0:
+                logger.info(f"最终M3U生成完成：累计过滤 {total_blacklist_filtered} 个黑名单URL")
             logger.info(f"\n最终M3U文件生成完成：{final_m3u_path} (共{total_written}个频道)")
     except Exception as e:
         logger.error(f"生成最终M3U失败：{str(e)}", exc_info=True)
@@ -870,7 +896,7 @@ async def main():
         fetched_channels = fetch_channels(url)
         merge_channels(all_channels, fetched_channels)
     
-    # 4. 生成基础M3U
+    # 4. 生成基础M3U（不过滤黑名单）
     generate_basic_m3u(all_channels)
     
     # 5. 匹配频道
@@ -889,7 +915,7 @@ async def main():
         async with SpeedTester() as tester:
             latency_results = await tester.batch_speed_test(all_test_urls)
     
-    # 8. 生成最终M3U
+    # 8. 生成最终M3U（仅此处过滤黑名单）
     generate_final_m3u(matched_channels, latency_results)
     
     logger.info("\n===== 所有处理完成 =====")
