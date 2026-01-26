@@ -32,6 +32,12 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt",
     "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
     "https://live.hacks.tools/tv/iptv4.txt",
+    "https://raw.kkgithub.com/sumingyd/Telecom-Shandong-IPTV-List/main/Telecom-Shandong-Multicast.m3u",
+    "https://github.com/kakaxi-1/IPTV/blob/main/ipv4.txt",
+"https://github.com/zilong7728/Collect-IPTV/blob/main/best_sorted.m3u",
+"https://github.com/skddyj/iptv/blob/main/IPTV.m3u",
+
+
  
     
     # 其他源链接...
