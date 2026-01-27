@@ -8,10 +8,9 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple, Set
 
-# ===================== 新增：央视频道名称标准化配置 =====================
+# ===================== 1. 央视频道名称标准化配置 =====================
 # 基础频道名称映射
 cntvNamesReverse = {
-    # 基础频道
     "CCTV1综合": "CCTV1",
     "CCTV2财经": "CCTV2",
     "CCTV3综艺": "CCTV3",
@@ -30,53 +29,25 @@ cntvNamesReverse = {
     "CCTV15音乐": "CCTV15",
     "CCTV16奥林匹克": "CCTV16",
     "CCTV17农业农村": "CCTV17",
-    # 海外频道
     "CCTV4中文国际(欧洲)": "CCTV4欧洲",
     "CCTV4中文国际(美洲)": "CCTV4美洲",
 }
 
-# 非规范名称的别名映射（增强模糊匹配）
+# 非规范名称的别名映射
 cctv_alias = {
-    "央视1套": "CCTV1",
-    "中央1套": "CCTV1",
-    "央视2套": "CCTV2",
-    "中央2套": "CCTV2",
-    "央视3套": "CCTV3",
-    "中央3套": "CCTV3",
-    "央视4套": "CCTV4",
-    "中央4套": "CCTV4",
-    "央视5套": "CCTV5",
-    "中央5套": "CCTV5",
-    "央视5+套": "CCTV5+",
-    "中央5+套": "CCTV5+",
-    "央视6套": "CCTV6",
-    "中央6套": "CCTV6",
-    "央视7套": "CCTV7",
-    "中央7套": "CCTV7",
-    "央视8套": "CCTV8",
-    "中央8套": "CCTV8",
-    "央视9套": "CCTV9",
-    "中央9套": "CCTV9",
-    "央视10套": "CCTV10",
-    "中央10套": "CCTV10",
-    "央视11套": "CCTV11",
-    "中央11套": "CCTV11",
-    "央视12套": "CCTV12",
-    "中央12套": "CCTV12",
-    "央视13套": "CCTV13",
-    "中央13套": "CCTV13",
-    "央视14套": "CCTV14",
-    "中央14套": "CCTV14",
-    "央视15套": "CCTV15",
-    "中央15套": "CCTV15",
-    "央视16套": "CCTV16",
-    "中央16套": "CCTV16",
-    "央视17套": "CCTV17",
-    "中央17套": "CCTV17",
+    "央视1套": "CCTV1", "中央1套": "CCTV1", "央视2套": "CCTV2", "中央2套": "CCTV2",
+    "央视3套": "CCTV3", "中央3套": "CCTV3", "央视4套": "CCTV4", "中央4套": "CCTV4",
+    "央视5套": "CCTV5", "中央5套": "CCTV5", "央视5+套": "CCTV5+", "中央5+套": "CCTV5+",
+    "央视6套": "CCTV6", "中央6套": "CCTV6", "央视7套": "CCTV7", "中央7套": "CCTV7",
+    "央视8套": "CCTV8", "中央8套": "CCTV8", "央视9套": "CCTV9", "中央9套": "CCTV9",
+    "央视10套": "CCTV10", "中央10套": "CCTV10", "央视11套": "CCTV11", "中央11套": "CCTV11",
+    "央视12套": "CCTV12", "中央12套": "CCTV12", "央视13套": "CCTV13", "中央13套": "CCTV13",
+    "央视14套": "CCTV14", "中央14套": "CCTV14", "央视15套": "CCTV15", "中央15套": "CCTV15",
+    "央视16套": "CCTV16", "中央16套": "CCTV16", "央视17套": "CCTV17", "中央17套": "CCTV17",
     "CCTV9纪录片": "CCTV9",
 }
 
-# 合并所有映射（方便查询）
+# 合并所有映射
 ALL_CCTV_MAPPING = {**cntvNamesReverse, **cctv_alias}
 
 def standardize_cctv_name(channel_name: str) -> str:
@@ -84,45 +55,37 @@ def standardize_cctv_name(channel_name: str) -> str:
     if not channel_name:
         return channel_name
     
-    # 第一步：精确匹配
+    # 精确匹配
     if channel_name in ALL_CCTV_MAPPING:
         return ALL_CCTV_MAPPING[channel_name]
     
-    # 第二步：模糊匹配（提取频道编号）
-    # 匹配CCTV+数字（含CCTV5+）
+    # 模糊匹配CCTV+数字
     cctv_match = re.search(r'CCTV(\d+\+?)', channel_name, re.IGNORECASE)
     if cctv_match:
         return f"CCTV{cctv_match.group(1)}"
     
-    # 匹配"央视X套"/"中央X套"
+    # 模糊匹配央视/中央X套
     tv_match = re.search(r'(央视|中央)(\d+\+?)套', channel_name)
     if tv_match:
         return f"CCTV{tv_match.group(2)}"
     
-    # 无匹配则返回原名称
     return channel_name
 
-# ===================== 基础配置 =====================
-# 屏蔽SSL不安全请求警告
+# ===================== 2. 基础配置 =====================
+# 屏蔽SSL警告
 warnings.filterwarnings('ignore', category=requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
-# 确保 output 文件夹存在
+# 输出文件夹
 OUTPUT_FOLDER = Path("output")
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
-# GitHub 镜像域名列表
+# GitHub镜像/代理配置
 GITHUB_MIRRORS = [
-    "raw.githubusercontent.com",
-    "raw.kkgithub.com",
-    "raw.githubusercontents.com",
-    "raw.fgit.cf",
-    "raw.fgithub.de"
+    "raw.githubusercontent.com", "raw.kkgithub.com",
+    "raw.githubusercontents.com", "raw.fgit.cf", "raw.fgithub.de"
 ]
-
-# 代理前缀列表
 PROXY_PREFIXES = [
-    "https://ghproxy.com/",
-    "https://mirror.ghproxy.com/",
+    "https://ghproxy.com/", "https://mirror.ghproxy.com/",
     "https://gh.api.99988866.xyz/"
 ]
 
@@ -139,32 +102,31 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# ===================== 数据结构 =====================
+# ===================== 3. 数据结构 =====================
 @dataclass
 class ChannelMeta:
-    """频道元信息（完整保留原始M3U标签）"""
-    url: str  # 必填：播放URL
-    raw_extinf: str = ""  # 完整的原始#EXTINF行
-    tvg_id: Optional[str] = None  # 原始tvg-id
-    tvg_name: Optional[str] = None  # 原始tvg-name
-    tvg_logo: Optional[str] = None  # 原始tvg-logo
-    group_title: Optional[str] = None  # 原始group-title
-    channel_name: Optional[str] = None  # 原始频道名（逗号后部分）
-    standardized_name: Optional[str] = None  # 标准化后的频道名
-    source_url: str = ""  # 来源URL
+    """频道元信息"""
+    url: str
+    raw_extinf: str = ""
+    tvg_id: Optional[str] = None
+    tvg_name: Optional[str] = None
+    tvg_logo: Optional[str] = None
+    group_title: Optional[str] = None
+    channel_name: Optional[str] = None
+    standardized_name: Optional[str] = None
+    source_url: str = ""
 
-# 全局存储
-channel_meta_cache: Dict[str, ChannelMeta] = {}  # key: url, value: ChannelMeta
-url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
+# 全局缓存
+channel_meta_cache: Dict[str, ChannelMeta] = {}
+url_source_mapping: Dict[str, str] = {}
 
-# ===================== 核心工具函数 =====================
+# ===================== 4. 核心工具函数 =====================
 def replace_github_domain(url: str) -> List[str]:
-    """替换GitHub域名（自动修复GitHub URL）"""
+    """替换GitHub域名，生成候选URL"""
     if not url or "github" not in url.lower():
         return [url]
     
     candidate_urls = [url]
-    
     # 替换镜像域名
     for mirror in GITHUB_MIRRORS:
         for original in GITHUB_MIRRORS:
@@ -172,7 +134,6 @@ def replace_github_domain(url: str) -> List[str]:
                 new_url = url.replace(original, mirror)
                 if new_url not in candidate_urls:
                     candidate_urls.append(new_url)
-    
     # 添加代理前缀
     proxy_urls = []
     for base_url in candidate_urls:
@@ -181,25 +142,22 @@ def replace_github_domain(url: str) -> List[str]:
                 proxy_url = proxy + base_url
                 if proxy_url not in proxy_urls:
                     proxy_urls.append(proxy_url)
-    
     # 去重并限制数量
     unique_urls = list(dict.fromkeys(candidate_urls + proxy_urls))
     return unique_urls[:5]
 
 def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
-    """带重试的URL抓取（自动修复GitHub URL）"""
+    """带重试的URL抓取"""
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
     
-    # 自动修复GitHub blob URL
+    # 修复GitHub blob URL
     original_url = url
     if "github.com" in url and "/blob/" in url:
         url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
         logger.info(f"自动修复GitHub URL：{original_url} → {url}")
     
-    # 获取候选URL列表
+    # 生成候选URL
     candidate_urls = replace_github_domain(url)
-    
-    # 分级超时
     timeouts = [5, 10, 15, 15, 15]
     
     for idx, candidate in enumerate(candidate_urls):
@@ -207,11 +165,8 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
         try:
             logger.debug(f"尝试抓取 [{idx+1}/{len(candidate_urls)}]: {candidate} (超时：{current_timeout}s)")
             response = requests.get(
-                candidate,
-                headers=headers,
-                timeout=current_timeout,
-                verify=False,
-                allow_redirects=True
+                candidate, headers=headers, timeout=current_timeout,
+                verify=False, allow_redirects=True
             )
             response.raise_for_status()
             response.encoding = response.apparent_encoding or 'utf-8'
@@ -225,17 +180,13 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
     return None
 
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
-    """
-    M3U精准提取（完整保留原始#EXTINF行）
-    :return: (按原始group-title分类的频道字典, 完整的ChannelMeta列表)
-    """
-    # 匹配完整的M3U条目：#EXTINF行 + URL
+    """解析M3U格式内容"""
+    # 匹配M3U条目
     m3u_pattern = re.compile(
         r"(#EXTINF:-?\d+.*?)\n\s*([^#\n\r\s].*?)(?=\s|#|$)",
         re.IGNORECASE | re.DOTALL | re.MULTILINE
     )
-    
-    # 匹配#EXTINF中的属性
+    # 匹配EXTINF属性
     attr_pattern = re.compile(r'(\w+)-(\w+)="([^"]*)"')
     
     categorized_channels = OrderedDict()
@@ -249,21 +200,17 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         url = url.strip()
         raw_extinf = raw_extinf.strip()
         
-        # 跳过无效URL或重复URL
+        # 跳过无效/重复URL
         if not url or not url.startswith(("http://", "https://")) or url in seen_urls:
             continue
         
         seen_urls.add(url)
         url_source_mapping[url] = source_url
         
-        # 解析#EXTINF属性
-        tvg_id = None
-        tvg_name = None
-        tvg_logo = None
-        group_title = None
+        # 解析属性
+        tvg_id = tvg_name = tvg_logo = group_title = None
         channel_name = "未知频道"
         
-        # 提取所有属性
         attr_matches = attr_pattern.findall(raw_extinf)
         for attr1, attr2, value in attr_matches:
             if attr1 == "tvg" and attr2 == "id":
@@ -275,57 +222,44 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             elif attr1 == "group" and attr2 == "title":
                 group_title = value
         
-        # 提取逗号后的频道名
+        # 提取频道名
         name_match = re.search(r',\s*(.+?)\s*$', raw_extinf)
         if name_match:
             channel_name = name_match.group(1).strip()
         
-        # 标准化央视频道名称
+        # 标准化名称
         standardized_name = standardize_cctv_name(channel_name)
-        
-        # 使用原始group-title，无则设为"未分类"
         group_title = group_title if group_title else "未分类"
         
-        # 创建完整的元信息对象
+        # 创建元信息
         meta = ChannelMeta(
-            url=url,
-            raw_extinf=raw_extinf,
-            tvg_id=tvg_id,
-            tvg_name=tvg_name,
-            tvg_logo=tvg_logo,
-            group_title=group_title,
-            channel_name=channel_name,
-            standardized_name=standardized_name,  # 新增：标准化名称
-            source_url=source_url
+            url=url, raw_extinf=raw_extinf, tvg_id=tvg_id, tvg_name=tvg_name,
+            tvg_logo=tvg_logo, group_title=group_title, channel_name=channel_name,
+            standardized_name=standardized_name, source_url=source_url
         )
-        
         meta_list.append(meta)
         channel_meta_cache[url] = meta
         
-        # 添加到分类字典（使用标准化名称）
+        # 加入分类
         display_name = standardized_name if "CCTV" in standardized_name else channel_name
         if group_title not in categorized_channels:
             categorized_channels[group_title] = []
         categorized_channels[group_title].append((display_name, url))
     
-    logger.info(f"M3U精准提取完成：{len(meta_list)}个有效频道")
-    logger.info(f"识别的M3U分类：{list(categorized_channels.keys())}")
-    
+    logger.info(f"M3U提取完成：{len(meta_list)}个有效频道")
+    logger.info(f"识别分类：{list(categorized_channels.keys())}")
     return categorized_channels, meta_list
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
-    """
-    智能提取频道（优先M3U格式，其次智能识别分类）
-    :return: 按分类整理的频道字典
-    """
+    """智能提取频道（M3U/文本）"""
     categorized_channels = OrderedDict()
     
-    # 优先处理M3U格式
+    # 优先处理M3U
     if "#EXTM3U" in content:
         m3u_categorized, _ = extract_m3u_meta(content, source_url)
         categorized_channels = m3u_categorized
     else:
-        # 智能识别普通文本中的频道和分类
+        # 处理普通文本
         lines = content.split('\n')
         current_group = "默认分类"
         seen_urls = set()
@@ -335,18 +269,16 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
             if not line or line.startswith(("//", "#", "/*", "*/")):
                 # 识别分类行
                 if any(keyword in line.lower() for keyword in ['#分类', '#genre', '分类:', 'genre:', '==', '---']):
-                    # 提取分类名称
                     group_match = re.search(r'[：:=](\S+)', line)
                     if group_match:
                         current_group = group_match.group(1).strip()
                     else:
                         current_group = re.sub(r'[#分类:genre:==\-—]', '', line).strip() or "默认分类"
-                    # 清理特殊字符
                     current_group = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9_()]', '', current_group)
-                    logger.debug(f"智能识别分类：{current_group}")
+                    logger.debug(f"识别分类：{current_group}")
                     continue
             
-            # 匹配频道名,URL格式
+            # 匹配频道名,URL
             pattern = r'([^,|#$]+)[,|#$]\s*(https?://[^\s,|#$]+)'
             matches = re.findall(pattern, line, re.IGNORECASE)
             if matches:
@@ -359,11 +291,11 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     seen_urls.add(url)
                     url_source_mapping[url] = source_url
                     
-                    # 标准化央视频道名称
+                    # 标准化名称
                     standardized_name = standardize_cctv_name(name)
                     display_name = standardized_name if "CCTV" in standardized_name else name
                     
-                    # 智能分类推断
+                    # 智能分类
                     group_title = current_group
                     if any(keyword in display_name for keyword in ['CCTV', '央视', '中央']):
                         group_title = "央视频道"
@@ -377,59 +309,47 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     # 创建元信息
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{display_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{display_name}"
                     meta = ChannelMeta(
-                        url=url,
-                        raw_extinf=raw_extinf,
-                        tvg_id="",
-                        tvg_name=display_name,
-                        tvg_logo="",
-                        group_title=group_title,
-                        channel_name=name,
-                        standardized_name=standardized_name,  # 新增：标准化名称
-                        source_url=source_url
+                        url=url, raw_extinf=raw_extinf, tvg_id="", tvg_name=display_name,
+                        tvg_logo="", group_title=group_title, channel_name=name,
+                        standardized_name=standardized_name, source_url=source_url
                     )
                     channel_meta_cache[url] = meta
                     
-                    # 添加到分类字典
+                    # 加入分类
                     if group_title not in categorized_channels:
                         categorized_channels[group_title] = []
                     categorized_channels[group_title].append((display_name, url))
         
-        logger.info(f"智能识别完成：{sum(len(v) for v in categorized_channels.values())}个有效频道")
-        logger.info(f"智能识别的分类：{list(categorized_channels.keys())}")
+        logger.info(f"文本提取完成：{sum(len(v) for v in categorized_channels.values())}个有效频道")
+        logger.info(f"识别分类：{list(categorized_channels.keys())}")
     
-    # 确保至少有一个分类
     if not categorized_channels:
         categorized_channels["未分类频道"] = []
-    
     return categorized_channels
 
 def merge_channels(target: OrderedDict, source: OrderedDict):
     """合并频道（URL去重）"""
     url_set = set()
-    
-    # 收集已有的URL
-    for category_name, ch_list in target.items():
+    # 收集已有URL
+    for ch_list in target.values():
         for _, url in ch_list:
             url_set.add(url)
-    
-    # 合并源数据（只添加新URL）
-    for category_name, channel_list in source.items():
-        if category_name not in target:
-            target[category_name] = []
-        
-        for name, url in channel_list:
+    # 合并新频道
+    for category, ch_list in source.items():
+        if category not in target:
+            target[category] = []
+        for name, url in ch_list:
             if url not in url_set:
-                target[category_name].append((name, url))
+                target[category].append((name, url))
                 url_set.add(url)
 
 def generate_summary(all_channels: OrderedDict):
     """生成汇总文件"""
-    # 汇总文件路径
     summary_path = OUTPUT_FOLDER / "live_source_summary.txt"
     m3u_path = OUTPUT_FOLDER / "live_source_merged.m3u"
     
     try:
-        # 生成汇总TXT
+        # 生成TXT汇总
         with open(summary_path, "w", encoding="utf-8") as f:
             f.write("IPTV直播源汇总（URL去重 + 央视频道标准化）\n")
             f.write("="*80 + "\n")
@@ -438,30 +358,28 @@ def generate_summary(all_channels: OrderedDict):
             f.write(f"分类数：{len(all_channels)}\n")
             f.write("="*80 + "\n\n")
             
-            # 按分类写入
-            for group_title, channel_list in all_channels.items():
-                f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
-                for idx, (name, url) in enumerate(channel_list, 1):
+            for group, ch_list in all_channels.items():
+                f.write(f"【{group}】（{len(ch_list)}个频道）\n")
+                for idx, (name, url) in enumerate(ch_list, 1):
                     source = url_source_mapping.get(url, "未知来源")
                     f.write(f"{idx:>3}. {name:<20} {url}\n")
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成合并后的M3U文件
+        # 生成M3U文件
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源合并文件（URL去重 + 央视频道标准化）\n")
             f.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
             
-            for group_title, channel_list in all_channels.items():
-                f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
-                for name, url in channel_list:
+            for group, ch_list in all_channels.items():
+                f.write(f"# ===== {group}（{len(ch_list)}个频道） =====\n")
+                for name, url in ch_list:
                     meta = channel_meta_cache.get(url)
                     if meta and meta.raw_extinf:
-                        # 替换原始名称为标准化名称
-                        standardized_extinf = meta.raw_extinf.replace(meta.channel_name, name) if meta.channel_name in meta.raw_extinf else meta.raw_extinf
-                        f.write(standardized_extinf + "\n")
+                        extinf = meta.raw_extinf.replace(meta.channel_name, name) if meta.channel_name in meta.raw_extinf else meta.raw_extinf
+                        f.write(extinf + "\n")
                     f.write(url + "\n\n")
         
         logger.info(f"\n汇总文件生成完成：")
@@ -471,9 +389,9 @@ def generate_summary(all_channels: OrderedDict):
     except Exception as e:
         logger.error(f"生成汇总文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序 =====================
+# ===================== 5. 主函数（内置配置，无需config.py） =====================
 def main():
-    """主函数：抓取、提取、去重、汇总直播源"""
+    """主程序入口"""
     try:
         # 清空缓存
         global channel_meta_cache, url_source_mapping
@@ -482,20 +400,27 @@ def main():
         
         logger.info("===== 开始处理直播源（支持央视频道标准化） =====")
         
-        # 从config.py获取源URL列表
-        source_urls = getattr(config, 'SOURCE_URLS', [])
-        if not source_urls:
-            logger.error("config.py中未配置SOURCE_URLS，程序终止")
+        # ========== 这里配置你的直播源URL ==========
+        SOURCE_URLS = [
+            # 示例URL（替换为你自己的）
+            "https://raw.githubusercontent.com/iptv-org/iptv/master/channels/cn.m3u",
+            # "https://example.com/your_iptv.txt",
+            # "https://another-source.com/iptv.m3u",
+        ]
+        # ==========================================
+        
+        if not SOURCE_URLS:
+            logger.error("未配置SOURCE_URLS，请在main函数中添加直播源URL")
             return
-        logger.info(f"从配置中读取到 {len(source_urls)} 个源URL")
+        logger.info(f"读取到 {len(SOURCE_URLS)} 个源URL")
         
         # 初始化总频道字典
         all_channels = OrderedDict()
         failed_urls = []
         
-        # 遍历所有源URL
-        for idx, url in enumerate(source_urls, 1):
-            logger.info(f"\n===== 处理第 {idx}/{len(source_urls)} 个源：{url} =====")
+        # 处理每个源URL
+        for idx, url in enumerate(SOURCE_URLS, 1):
+            logger.info(f"\n===== 处理第 {idx}/{len(SOURCE_URLS)} 个源：{url} =====")
             
             # 抓取内容
             content = fetch_url_with_retry(url)
@@ -506,13 +431,13 @@ def main():
             # 提取频道
             extracted_channels = extract_channels_from_content(content, url)
             
-            # 合并频道（自动去重）
+            # 合并频道
             merge_channels(all_channels, extracted_channels)
         
         # 统计结果
         total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
         logger.info(f"\n===== 处理完成统计 =====")
-        logger.info(f"  - 源URL总数：{len(source_urls)}")
+        logger.info(f"  - 源URL总数：{len(SOURCE_URLS)}")
         logger.info(f"  - 失败源数：{len(failed_urls)}")
         logger.info(f"  - 去重后总频道数：{total_channels}")
         logger.info(f"  - 分类数：{len(all_channels)}")
@@ -530,5 +455,10 @@ def main():
     except Exception as e:
         logger.critical(f"程序执行异常：{str(e)}", exc_info=True)
 
+# ===================== 6. 运行入口 =====================
 if __name__ == "__main__":
+    # 安装依赖（可选，首次运行可取消注释）
+    # import subprocess
+    # subprocess.check_call(["pip", "install", "requests"])
+    
     main()
