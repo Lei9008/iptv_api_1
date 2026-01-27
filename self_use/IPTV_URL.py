@@ -2,6 +2,7 @@
 import re
 import requests
 import difflib
+import os  # 新增：导入os模块处理目录
 from urllib.parse import unquote, urlparse, urlunparse
 import config
 
@@ -179,7 +180,17 @@ class M3UMerger:
         return sum(1 for v in channel.values() if v and v != channel["url"])
 
     def generate_m3u_file(self):
-        """生成最终的M3U文件，按group-title分组排序"""
+        """生成最终的M3U文件，按group-title分组排序（新增自动创建目录逻辑）"""
+        # ========== 新增：自动创建输出目录 ==========
+        output_dir = os.path.dirname(config.OUTPUT_FILE)
+        if output_dir and not os.path.exists(output_dir):
+            try:
+                os.makedirs(output_dir)  # 递归创建多级目录
+                print(f"📁 自动创建输出目录：{output_dir}")
+            except Exception as e:
+                print(f"❌ 创建目录失败 {output_dir}：{e}")
+                return
+        
         # 按group-title分组
         grouped_channels = {}
         for channel in self.channel_dict.values():
@@ -213,7 +224,7 @@ class M3UMerger:
                     f.write(" ".join(extinf_parts) + "\n")
                     f.write(chan["url"] + "\n\n")
             
-            print(f"\n✅ 生成成功！文件路径：{config.OUTPUT_FILE}")
+            print(f"\n✅ 生成成功！文件路径：{os.path.abspath(config.OUTPUT_FILE)}")  # 显示绝对路径
             print(f"📊 统计：原始去重后保留 {len(self.channel_dict)} 个有效频道")
         except Exception as e:
             print(f"❌ 写入文件失败：{e}")
