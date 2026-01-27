@@ -56,7 +56,7 @@ class ChannelMeta:
     tvg_id: Optional[str] = None  # 原始tvg-id
     tvg_name: Optional[str] = None  # 原始tvg-name
     tvg_logo: Optional[str] = None  # 原始tvg-logo
-    group_title: Optional[str] = None  # 原始group-title
+    group_title: Optional[str] = None  # 标准化后的group-title
     channel_name: Optional[str] = None  # 标准化后的频道名
     source_url: str = ""  # 来源URL
 
@@ -65,6 +65,29 @@ channel_meta_cache: Dict[str, ChannelMeta] = {}  # key: url, value: ChannelMeta
 url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
 
 # ===================== 核心工具函数 =====================
+def clean_group_title(group_title: str) -> str:
+    """
+    标准化group-title：提取中文、英文、数字核心内容，过滤emoji、特殊符号
+    :param group_title: 原始group-title（含emoji/特殊符号）
+    :return: 标准化后的纯文字group-title
+    """
+    if not group_title:
+        return "未分类"
+    
+    # 正则匹配：保留中文、英文、数字、下划线、括号（过滤emoji、特殊符号、空格）
+    # 匹配规则：[\u4e00-\u9fa5] 中文 | [a-zA-Z] 英文 | [0-9] 数字 | [_\(\)] 下划线和括号
+    cleaned = re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title)
+    
+    # 拼接结果，若为空则返回"未分类"
+    result = ''.join(cleaned).strip() or "未分类"
+    
+    # 额外处理：若结果过长（超过20字），截取前20字（避免异常长分类名）
+    if len(result) > 20:
+        result = result[:20]
+    
+    logger.debug(f"group-title标准化：{group_title} → {result}")
+    return result
+
 def global_replace_cctv_name(content: str) -> str:
     """
     对源内容做全局央视频道名称替换（先长后短，避免部分匹配）
@@ -178,8 +201,8 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
 
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
     """
-    M3U精准提取（完整保留原始#EXTINF行，使用标准化频道名）
-    :return: (按原始group-title分类的频道字典, 完整的ChannelMeta列表)
+    M3U精准提取（标准化group-title和频道名）
+    :return: (按标准化group-title分类的频道字典, 完整的ChannelMeta列表)
     """
     m3u_pattern = re.compile(
         r"(#EXTINF:-?\d+.*?)\n\s*([^#\n\r\s].*?)(?=\s|#|$)",
@@ -213,16 +236,18 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             elif attr1 == "tvg" and attr2 == "logo":
                 tvg_logo = value
             elif attr1 == "group" and attr2 == "title":
-                group_title = value
+                group_title = clean_group_title(value)  # 核心修改：标准化group-title
         
         # 提取并标准化逗号后的频道名
         name_match = re.search(r',\s*(.+?)\s*$', raw_extinf)
         if name_match:
             channel_name = name_match.group(1).strip()
             channel_name = standardize_cctv_name(channel_name)
-        group_title = group_title if group_title else "未分类"
         
-        # 创建元信息对象（存储标准化后的名称）
+        # 最终标准化group-title（兜底）
+        group_title = clean_group_title(group_title)
+        
+        # 创建元信息对象（存储标准化后的名称和分类）
         meta = ChannelMeta(
             url=url,
             raw_extinf=raw_extinf,
@@ -236,20 +261,20 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         meta_list.append(meta)
         channel_meta_cache[url] = meta
         
-        # 添加到分类字典
+        # 添加到分类字典（基于标准化后的group-title）
         if group_title not in categorized_channels:
             categorized_channels[group_title] = []
         categorized_channels[group_title].append((channel_name, url))
     
     logger.info(f"M3U精准提取完成：{len(meta_list)}个有效频道")
-    logger.info(f"识别的M3U分类：{list(categorized_channels.keys())}")
+    logger.info(f"识别的标准化分类：{list(categorized_channels.keys())}")
     return categorized_channels, meta_list
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
     """
-    智能提取频道（优先M3U格式，其次智能识别分类）
+    智能提取频道（标准化group-title和频道名）
     先全局替换源内容中的不规范名称，再解析
-    :return: 按分类整理的频道字典
+    :return: 按标准化分类整理的频道字典
     """
     categorized_channels = OrderedDict()
     # 优先处理M3U格式
@@ -264,15 +289,16 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
         for line in lines:
             line = line.strip()
             if not line or line.startswith(("//", "#", "/*", "*/")):
-                # 识别分类行
+                # 识别分类行并标准化
                 if any(keyword in line.lower() for keyword in ['#分类', '#genre', '分类:', 'genre:', '==', '---']):
                     group_match = re.search(r'[：:=](\S+)', line)
                     if group_match:
                         current_group = group_match.group(1).strip()
                     else:
                         current_group = re.sub(r'[#分类:genre:==\-—]', '', line).strip() or "默认分类"
-                    current_group = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9_()]', '', current_group)
-                    logger.debug(f"智能识别分类：{current_group}")
+                    # 核心修改：标准化智能识别的分类名
+                    current_group = clean_group_title(current_group)
+                    logger.debug(f"智能识别并标准化分类：{current_group}")
                     continue
             # 匹配频道名,URL格式
             pattern = r'([^,|#$]+)[,|#$]\s*(https?://[^\s,|#$]+)'
@@ -288,16 +314,18 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     seen_urls.add(url)
                     url_source_mapping[url] = source_url
                     
-                    # 智能分类推断（基于标准化名称）
+                    # 智能分类推断（基于标准化名称）+ 标准化分类名
                     group_title = current_group
                     if any(keyword in standard_name for keyword in ['CCTV', '央视', '中央']):
-                        group_title = "央视频道"
+                        group_title = "央视频道"  # 固定分类名，已标准化
                     elif any(keyword in standard_name for keyword in ['卫视', '江苏', '浙江', '湖南', '东方']):
-                        group_title = "卫视频道"
+                        group_title = "卫视频道"  # 固定分类名，已标准化
                     elif any(keyword in standard_name for keyword in ['电影', '影视']):
-                        group_title = "电影频道"
+                        group_title = "电影频道"  # 固定分类名，已标准化
                     elif any(keyword in standard_name for keyword in ['体育', 'CCTV5']):
-                        group_title = "体育频道"
+                        group_title = "体育频道"  # 固定分类名，已标准化
+                    # 最终标准化分类名（兜底）
+                    group_title = clean_group_title(group_title)
                     
                     # 创建元信息
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standard_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{standard_name}"
@@ -313,27 +341,27 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     )
                     channel_meta_cache[url] = meta
                     
-                    # 添加到分类字典
+                    # 添加到分类字典（基于标准化后的group-title）
                     if group_title not in categorized_channels:
                         categorized_channels[group_title] = []
                     categorized_channels[group_title].append((standard_name, url))
         
         logger.info(f"智能识别完成：{sum(len(v) for v in categorized_channels.values())}个有效频道")
-        logger.info(f"智能识别的分类：{list(categorized_channels.keys())}")
+        logger.info(f"识别的标准化分类：{list(categorized_channels.keys())}")
     
     # 确保至少有一个分类
     if not categorized_channels:
-        categorized_channels["未分类频道"] = []
+        categorized_channels["未分类"] = []
     return categorized_channels
 
 def merge_channels(target: OrderedDict, source: OrderedDict):
-    """合并频道（URL去重）"""
+    """合并频道（URL去重，基于标准化分类）"""
     url_set = set()
     # 收集已有的URL
     for category_name, ch_list in target.items():
         for _, url in ch_list:
             url_set.add(url)
-    # 合并源数据（只添加新URL）
+    # 合并源数据（只添加新URL，分类名已标准化，可直接合并）
     for category_name, channel_list in source.items():
         if category_name not in target:
             target[category_name] = []
@@ -343,19 +371,19 @@ def merge_channels(target: OrderedDict, source: OrderedDict):
                 url_set.add(url)
 
 def generate_summary(all_channels: OrderedDict):
-    """生成汇总文件（基于标准化后的频道名）"""
+    """生成汇总文件（基于标准化后的频道名和分类）"""
     summary_path = OUTPUT_FOLDER / "live_source_summary.txt"
     m3u_path = OUTPUT_FOLDER / "live_source_merged.m3u"
     try:
         # 生成汇总TXT
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（URL去重+频道名标准化）\n")
+            f.write("IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
             f.write(f"分类数：{len(all_channels)}\n")
             f.write("="*80 + "\n\n")
-            # 按分类写入
+            # 按分类写入（分类名已标准化）
             for group_title, channel_list in all_channels.items():
                 f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
@@ -363,10 +391,10 @@ def generate_summary(all_channels: OrderedDict):
                     f.write(f"{idx:>3}. {name:<20} {url}\n")
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
-        # 生成合并后的M3U文件
+        # 生成合并后的M3U文件（group-title已标准化）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
-            f.write(f"# IPTV直播源合并文件（URL去重+频道名标准化）\n")
+            f.write(f"# IPTV直播源合并文件（URL去重+频道名标准化+分类名标准化）\n")
             f.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
             for group_title, channel_list in all_channels.items():
@@ -374,8 +402,9 @@ def generate_summary(all_channels: OrderedDict):
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
                     if meta and meta.raw_extinf:
-                        # 替换原始EXTINF中的频道名为标准化名称
-                        standard_extinf = re.sub(r',\s*.+$', f', {name}', meta.raw_extinf)
+                        # 替换原始EXTINF中的频道名和group-title为标准化后的值
+                        standard_extinf = re.sub(r'group-title="[^"]*"', f'group-title="{group_title}"', meta.raw_extinf)
+                        standard_extinf = re.sub(r',\s*.+$', f', {name}', standard_extinf)
                         f.write(standard_extinf + "\n")
                     else:
                         f.write(f"#EXTINF:-1 tvg-name=\"{name}\" group-title=\"{group_title}\",{name}\n")
@@ -388,13 +417,13 @@ def generate_summary(all_channels: OrderedDict):
 
 # ===================== 主程序 =====================
 def main():
-    """主函数：抓取→全局替换名称→提取→去重→汇总直播源"""
+    """主函数：抓取→全局替换名称→提取（标准化分类+频道名）→去重→汇总直播源"""
     try:
         # 清空缓存
         global channel_meta_cache, url_source_mapping
         channel_meta_cache = {}
         url_source_mapping = {}
-        logger.info("===== 开始处理直播源（标准化版） =====")
+        logger.info("===== 开始处理直播源（全量标准化版） =====")
         
         # 从config.py获取源URL列表
         source_urls = getattr(config, 'SOURCE_URLS', [])
@@ -407,7 +436,7 @@ def main():
         all_channels = OrderedDict()
         failed_urls = []
         
-        # 遍历所有源URL：抓取→全局替换→提取→合并
+        # 遍历所有源URL：抓取→全局替换→提取（标准化）→合并
         for idx, url in enumerate(source_urls, 1):
             logger.info(f"\n===== 处理第 {idx}/{len(source_urls)} 个源：{url} =====")
             # 1. 抓取源内容
@@ -415,11 +444,11 @@ def main():
             if content is None:
                 failed_urls.append(url)
                 continue
-            # 2. 核心修改：全局替换源内容中的不规范央视频道名
+            # 2. 全局替换源内容中的不规范央视频道名
             content = global_replace_cctv_name(content)
-            # 3. 提取频道
+            # 3. 提取频道（同时标准化group-title和频道名）
             extracted_channels = extract_channels_from_content(content, url)
-            # 4. 合并频道（自动去重）
+            # 4. 合并频道（自动去重，分类已标准化）
             merge_channels(all_channels, extracted_channels)
         
         # 统计结果
@@ -428,8 +457,8 @@ def main():
         logger.info(f"  - 源URL总数：{len(source_urls)}")
         logger.info(f"  - 失败源数：{len(failed_urls)}")
         logger.info(f"  - 去重后总频道数：{total_channels}")
-        logger.info(f"  - 分类数：{len(all_channels)}")
-        logger.info(f"  - 分类列表：{list(all_channels.keys())}")
+        logger.info(f"  - 标准化分类数：{len(all_channels)}")
+        logger.info(f"  - 标准化分类列表：{list(all_channels.keys())}")
         if failed_urls:
             logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
         
