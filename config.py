@@ -10,15 +10,15 @@ MATCH_CUTOFF = 0.5
 # ===================== 测速配置 =====================
 LATENCY_THRESHOLD = 800
 CONCURRENT_LIMIT = 40
-TIMEOUT = 20
-RETRY_TIMES = 3
+TIMEOUT = 15
+RETRY_TIMES = 2
 IP_VERSION_PRIORITY = "ipv4"
 
 # ===================== 核心源配置 =====================
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt",
-    "https://raw.githubusercontent.com/cyh92/iptv-api-cctv/master/output/cctv.m3u",
-    "https://raw.githubusercontent.com/cyh92/iptv-api-weishi/master/output/weishi.m3u"
+    #"https://raw.githubusercontent.com/cyh92/iptv-api-cctv/master/output/cctv.m3u",
+    #"https://raw.githubusercontent.com/cyh92/iptv-api-weishi/master/output/weishi.m3u"
 ]
 
 # ===================== 过滤配置 =====================
