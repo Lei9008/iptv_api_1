@@ -4,7 +4,7 @@ import requests
 import difflib
 import os  # 新增：导入os模块处理目录
 from urllib.parse import unquote, urlparse, urlunparse
-import config
+import config1
 
 # 模拟浏览器请求头，避免被反爬
 HEADERS = {
@@ -16,14 +16,14 @@ HEADERS = {
 
 class M3UMerger:
     def __init__(self):
-        self.similarity_threshold = config.SIMILARITY_THRESHOLD
+        self.similarity_threshold = config1.SIMILARITY_THRESHOLD
         # 核心存储：key=标准化后的URL，value=整合后的频道信息
         self.channel_dict = {}
 
     def _replace_github_domain(self, url, new_domain):
         """替换GitHub RAW链接的域名"""
         parsed = urlparse(url)
-        if parsed.netloc in config.GITHUB_MIRRORS:
+        if parsed.netloc in config1.GITHUB_MIRRORS:
             new_parsed = parsed._replace(netloc=new_domain)
             return urlunparse(new_parsed)
         return url
@@ -31,7 +31,7 @@ class M3UMerger:
     def _add_github_proxy(self, url, proxy_prefix):
         """给GitHub RAW链接添加代理前缀"""
         parsed = urlparse(url)
-        if parsed.netloc in config.GITHUB_MIRRORS:
+        if parsed.netloc in config1.GITHUB_MIRRORS:
             return proxy_prefix + url
         return url
 
@@ -45,12 +45,12 @@ class M3UMerger:
         urls_to_try = [original_url]
         
         # 1. 生成镜像域名的URL（如果是GitHub RAW链接）
-        if any(mirror in original_url for mirror in config.GITHUB_MIRRORS):
-            for mirror in config.GITHUB_MIRRORS[1:]:  # 跳过第一个（原始域名）
+        if any(mirror in original_url for mirror in config1.GITHUB_MIRRORS):
+            for mirror in config1.GITHUB_MIRRORS[1:]:  # 跳过第一个（原始域名）
                 urls_to_try.append(self._replace_github_domain(original_url, mirror))
         
         # 2. 生成带代理前缀的URL
-        for proxy in config.PROXY_PREFIXES:
+        for proxy in config1.PROXY_PREFIXES:
             urls_to_try.append(self._add_github_proxy(original_url, proxy))
         
         # 去重（避免重复尝试相同URL）
@@ -62,7 +62,7 @@ class M3UMerger:
                 resp = requests.get(
                     url, 
                     headers=HEADERS, 
-                    timeout=config.REQUEST_TIMEOUT,
+                    timeout=config1.REQUEST_TIMEOUT,
                     allow_redirects=True  # 允许重定向
                 )
                 resp.raise_for_status()  # 抛出HTTP错误（4xx/5xx）
@@ -182,7 +182,7 @@ class M3UMerger:
     def generate_m3u_file(self):
         """生成最终的M3U文件，按group-title分组排序（新增自动创建目录逻辑）"""
         # ========== 新增：自动创建输出目录 ==========
-        output_dir = os.path.dirname(config.OUTPUT_FILE)
+        output_dir = os.path.dirname(config1.OUTPUT_FILE)
         if output_dir and not os.path.exists(output_dir):
             try:
                 os.makedirs(output_dir)  # 递归创建多级目录
@@ -201,7 +201,7 @@ class M3UMerger:
         
         # 写入M3U文件
         try:
-            with open(config.OUTPUT_FILE, "w", encoding="utf-8") as f:
+            with open(config1.OUTPUT_FILE, "w", encoding="utf-8") as f:
                 # M3U标准头部
                 f.write("#EXTM3U x-tvg-url=\"https://epg.112114.xyz/pp.xml\"\n\n")
                 
@@ -224,7 +224,7 @@ class M3UMerger:
                     f.write(" ".join(extinf_parts) + "\n")
                     f.write(chan["url"] + "\n\n")
             
-            print(f"\n✅ 生成成功！文件路径：{os.path.abspath(config.OUTPUT_FILE)}")  # 显示绝对路径
+            print(f"\n✅ 生成成功！文件路径：{os.path.abspath(config1.OUTPUT_FILE)}")  # 显示绝对路径
             print(f"📊 统计：原始去重后保留 {len(self.channel_dict)} 个有效频道")
         except Exception as e:
             print(f"❌ 写入文件失败：{e}")
@@ -235,8 +235,8 @@ class M3UMerger:
         total_parsed = 0
         
         # 遍历所有直播源URL
-        for idx, url in enumerate(config.LIVE_SOURCE_URLS, 1):
-            print(f"\n[{idx}/{len(config.LIVE_SOURCE_URLS)}] 处理：{url}")
+        for idx, url in enumerate(config1.LIVE_SOURCE_URLS, 1):
+            print(f"\n[{idx}/{len(config1.LIVE_SOURCE_URLS)}] 处理：{url}")
             # 下载M3U内容（自动重试镜像/代理）
             m3u_content = self.download_m3u(url)
             if not m3u_content:
