@@ -1,7 +1,6 @@
 # config.py
 # 直播源URL列表（支持GitHub RAW/普通HTTP链接）
 LIVE_SOURCE_URLS = [
-    # 示例：GitHub RAW链接（替换为你的实际链接）
     "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt",
 ]
 
@@ -14,10 +13,9 @@ OUTPUT_FILE = "self_use/output/merged_clean.m3u"
 # 请求超时时间（秒）
 REQUEST_TIMEOUT = 20
 
-# ========== 新增：GitHub镜像和代理配置 ==========
 # GitHub RAW镜像域名列表
 GITHUB_MIRRORS = [
-    "raw.githubusercontent.com",  # 原始域名（放第一个）
+    "raw.githubusercontent.com",
     "raw.kkgithub.com",
     "raw.githubusercontents.com",
     "raw.fgit.cf",
