@@ -1,11 +1,15 @@
 #EXTM3U x-tvg-url=
-# 延迟阈值：450ms | 生成时间：2026-01-27 08:50:03
+# 延迟阈值：450ms | 生成时间：2026-01-27 09:12:38
 # URL黑名单过滤关键词：https://iptv.catvod.com/, http://38.75.136.137:98/gslb/dsdqca, https://migu.188766.xyz, https://epg.pw/stream/, http://38.75.136.137:98/gslb/dsdqpub/scwshd, https://www.freetv.top, https://stream1.freetv.fun, epg.pw/stream/, 103.40.13.71:12390, [2409:8087:1a01:df::4077]/pltv/, http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/pltv/88888888/224/3221226419/index.m3u8, http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000006000233001/1.m3u8, 8.210.140.75:68, 154.12.50.54, yinhe.live_hls.zte.com, 8.137.59.151, [2409:8087:7000:20:1000::22]:6060, histar.zapi.us.kg, www.tfiplaytv.vip, dp.sxtv.top, 111.230.30.193, 148.135.93.213:81, live.goodiptv.club, iptv.luas.edu.cn, [2409:8087:2001:20:2800:0:df6e:eb22]:80, [2409:8087:2001:20:2800:0:df6e:eb23]:80, [2409:8087:2001:20:2800:0:df6e:eb1d]/ott.mobaibox.com/, [2409:8087:2001:20:2800:0:df6e:eb1d]:80, [2409:8087:2001:20:2800:0:df6e:eb24], 2409:8087:2001:20:2800:0:df6e:eb25]:80, stream1.freetv.fun, chinamobile, gaoma, [2409:8087:2001:20:2800:0:df6e:eb27]
-#EXTINF:-1 tvg-id="1" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8$ipv4•线路1(343ms)
-#EXTINF:-1 tvg-id="2" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8$ipv4•线路2(343ms)
-#EXTINF:-1 tvg-id="3" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8$ipv4•线路3(345ms)
-#EXTINF:-1 tvg-id="4" tvg-name="浙江卫视" tvg-logo="pic/logo/浙江卫视.png" group-title="┃卫视频道",浙江卫视
-http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8$ipv4•线路4(345ms)
+#EXTINF:-1 tvg-id="1" tvg-name="山东体育" tvg-logo="" group-title="┃山东频道",山东体育
+http://120.238.85.131:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0$ipv4•线路1(236ms)
+#EXTINF:-1 tvg-id="2" tvg-name="山东体育" tvg-logo="" group-title="┃山东频道",山东体育
+http://120.238.85.131:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0$ipv4•线路2(236ms)
+#EXTINF:-1 tvg-id="1" tvg-name="南京十八生活" tvg-logo="" group-title="┃江苏频道",南京十八生活
+http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8$ipv4•线路1(302ms)
+#EXTINF:-1 tvg-id="2" tvg-name="南京十八生活" tvg-logo="" group-title="┃江苏频道",南京十八生活
+http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8$ipv4•线路2(302ms)
+#EXTINF:-1 tvg-id="1" tvg-name="南京少儿" tvg-logo="" group-title="┃江苏频道",南京少儿
+http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8$ipv4•线路1(364ms)
+#EXTINF:-1 tvg-id="2" tvg-name="南京少儿" tvg-logo="" group-title="┃江苏频道",南京少儿
+http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8$ipv4•线路2(364ms)
