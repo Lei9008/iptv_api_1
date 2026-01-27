@@ -6,13 +6,13 @@ TEMPLATE_FILE = "demo.txt"
 
 # ===================== 测速配置 =====================
 # 延迟阈值（ms），超过该值仍保留但标注延迟
-LATENCY_THRESHOLD = 450
+LATENCY_THRESHOLD = 800
 # 异步并发数（根据服务器性能调整）
-CONCURRENT_LIMIT = 10
+CONCURRENT_LIMIT = 30
 # 超时时间（s）
-TIMEOUT = 8
+TIMEOUT = 15
 # 重试次数
-RETRY_TIMES = 2
+RETRY_TIMES = 3
 # 频道匹配阈值（默认 0.4）
 MATCH_CUTOFF = 0.8
 # IP版本优先级（ipv4/ipv6）
