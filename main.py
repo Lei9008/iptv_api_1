@@ -41,6 +41,82 @@ class ChannelMeta:
     clean_channel_name: str = ""  # 标准化后的频道名
     source_url: str = ""  # 来源URL
 
+# 央视频道别名映射（键：各种别名，值：标准化的完整频道名）
+CNTV_ALIASES = {
+    # 基础频道
+    "CCTV1": "CCTV1综合",
+    "CCTV2": "CCTV2财经",
+    "CCTV3": "CCTV3综艺",
+    "CCTV4": "CCTV4中文国际",
+    "CCTV5": "CCTV5体育",
+    "CCTV5+": "CCTV5+体育赛事",
+    "cctv5plus": "CCTV5+体育赛事",
+    "CCTV6": "CCTV6电影",
+    "CCTV7": "CCTV7国防军事",
+    "CCTV8": "CCTV8电视剧",
+    "CCTV9": "CCTV9纪录",
+    "cctvjilu": "CCTV9纪录",
+    "CCTV10": "CCTV10科教",
+    "CCTV11": "CCTV11戏曲",
+    "CCTV12": "CCTV12社会与法",
+    "CCTV13": "CCTV13新闻",
+    "CCTV14": "CCTV14少儿",
+    "cctvchild": "CCTV14少儿",
+    "CCTV15": "CCTV15音乐",
+    "CCTV16": "CCTV16奥林匹克",
+    "CCTV17": "CCTV17农业农村",
+    # 海外频道
+    "CCTV4欧洲": "CCTV4中文国际（欧洲版）",
+    "cctveurope": "CCTV4中文国际（欧洲版）",
+    "CCTV4美洲": "CCTV4中文国际（美洲版）",
+    "cctvamerica": "CCTV4中文国际（美洲版）"
+}
+
+# 反向映射：标准名 → 官方简写（用于生成logo/tvg-id）
+CNTV_STANDARD_TO_SHORT = {
+    "CCTV1综合": "cctv1",
+    "CCTV2财经": "cctv2",
+    "CCTV3综艺": "cctv3",
+    "CCTV4中文国际": "cctv4",
+    "CCTV5体育": "cctv5",
+    "CCTV5+体育赛事": "cctv5plus",
+    "CCTV6电影": "cctv6",
+    "CCTV7国防军事": "cctv7",
+    "CCTV8电视剧": "cctv8",
+    "CCTV9纪录": "cctvjilu",
+    "CCTV10科教": "cctv10",
+    "CCTV11戏曲": "cctv11",
+    "CCTV12社会与法": "cctv12",
+    "CCTV13新闻": "cctv13",
+    "CCTV14少儿": "cctvchild",
+    "CCTV15音乐": "cctv15",
+    "CCTV16奥林匹克": "cctv16",
+    "CCTV17农业农村": "cctv17",
+    "CCTV4中文国际（欧洲版）": "cctveurope",
+    "CCTV4中文国际（美洲版）": "cctvamerica"
+}
+
+# 工具函数：央视频道名转换
+def get_cctv_standard_name(alias: str) -> Optional[str]:
+    """根据任意别名获取央视标准频道名"""
+    if not alias:
+        return None
+    # 精确匹配
+    if alias in CNTV_ALIASES:
+        return CNTV_ALIASES[alias]
+    # 模糊匹配
+    alias_lower = alias.lower().strip()
+    for key, value in CNTV_ALIASES.items():
+        if key.lower() == alias_lower or key.lower() in alias_lower:
+            return value
+    return None
+
+def get_cctv_short_name(standard_name: str) -> Optional[str]:
+    """根据央视标准名获取官方简写"""
+    if not standard_name:
+        return None
+    return CNTV_STANDARD_TO_SHORT.get(standard_name)
+
 # ===================== 初始化配置（优化版） =====================
 # 确保 output 文件夹存在
 OUTPUT_FOLDER = Path("output")
@@ -117,8 +193,21 @@ def clean_channel_name(channel_name: str) -> str:
     if not channel_name:
         return ""
     
+    # ===== 优先匹配央视频道别名 =====
+    # 先尝试精确匹配
+    channel_name_lower = channel_name.lower().strip()
+    for alias, standard_name in CNTV_ALIASES.items():
+        if alias.lower() == channel_name_lower or alias in channel_name:
+            return standard_name
+    
+    # 模糊匹配（包含关键词）
+    for alias, standard_name in CNTV_ALIASES.items():
+        if alias.lower() in channel_name_lower and len(alias) > 2:
+            return standard_name
+    
+    # ===== 原有逻辑保留 =====
     # 保留特殊标识
-    channel_name = re.sub(r'CCTV-?5\+', 'CCTV5+', channel_name)
+    channel_name = re.sub(r'CCTV-?5', 'CCTV5', channel_name)
     channel_name = re.sub(r'CCTV5\+\s*(\S+)', 'CCTV5+', channel_name)
     
     # 港澳台/凤凰卫视特殊处理
@@ -276,19 +365,22 @@ def get_github_logo_list() -> List[str]:
     return logo_files
 
 def get_channel_logo_url(channel_name: str) -> str:
-    """生成logo URL（修复超长文件名问题）"""
+    """生成logo URL（修复超长文件名问题 + 集成央视映射）"""
     if not channel_name:
         return ""
     
     clean_logo_name = clean_channel_name(channel_name)
     
-    # 关键修复1：限制文件名长度（最大100个字符）
-    MAX_FILENAME_LENGTH = 100
-    if len(clean_logo_name) > MAX_FILENAME_LENGTH:
-        # 截取前97个字符 + 省略号
-        clean_logo_name = clean_logo_name[:MAX_FILENAME_LENGTH-3] + "..."
-    
-    logo_filename = f"{clean_logo_name}.png"
+    # ===== 优先使用央视标准名生成logo文件名 =====
+    if clean_logo_name in CNTV_STANDARD_TO_SHORT:
+        logo_filename = f"{CNTV_STANDARD_TO_SHORT[clean_logo_name]}.png"
+    else:
+        # 关键修复1：限制文件名长度（最大100个字符）
+        MAX_FILENAME_LENGTH = 100
+        if len(clean_logo_name) > MAX_FILENAME_LENGTH:
+            # 截取前97个字符 + 省略号
+            clean_logo_name = clean_logo_name[:MAX_FILENAME_LENGTH-3] + "..."
+        logo_filename = f"{clean_logo_name}.png"
     
     # 优先使用M3U提取的logo
     for meta in channel_meta_cache.values():
@@ -315,6 +407,15 @@ def get_channel_logo_url(channel_name: str) -> str:
             return f"{BACKUP_LOGO_BASE_URL}/{logo_filename}"
     except Exception as e:
         logger.debug(f"检查GitHub logo失败：{logo_filename} | 错误：{str(e)[:30]}")
+    
+    # 新增：尝试央视简写的logo文件
+    try:
+        if clean_logo_name in CNTV_STANDARD_TO_SHORT:
+            short_logo = f"{CNTV_STANDARD_TO_SHORT[clean_logo_name]}.png"
+            if short_logo in github_logo_files:
+                return f"{BACKUP_LOGO_BASE_URL}/{short_logo}"
+    except Exception as e:
+        logger.debug(f"检查央视简写logo失败：{logo_filename} | 错误：{str(e)[:30]}")
     
     # 特殊匹配
     special_mapping = {
@@ -577,8 +678,12 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     
                     # 生成更丰富的元信息
                     tvg_name = name
-                    # 提取数字作为tvg-id
-                    tvg_id = re.sub(r'\D', '', name) if re.search(r'\d', name) else ""
+                    # 提取数字作为tvg-id（优先使用央视映射）
+                    clean_name = clean_channel_name(name)
+                    if clean_name in CNTV_STANDARD_TO_SHORT:
+                        tvg_id = CNTV_STANDARD_TO_SHORT[clean_name]  # 使用央视简写作为tvg-id
+                    else:
+                        tvg_id = re.sub(r'\D', '', name) if re.search(r'\d', name) else ""
                     # 自动匹配logo（增加异常保护）
                     try:
                         tvg_logo = get_channel_logo_url(name)
@@ -633,12 +738,19 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
             elif any(keyword in channel_name for keyword in ['卫视']):
                 group_title = "卫视频道"
             
-            raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{channel_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}"
+            # 生成tvg-id（优先使用央视映射）
+            clean_name = clean_channel_name(channel_name)
+            if clean_name in CNTV_STANDARD_TO_SHORT:
+                tvg_id = CNTV_STANDARD_TO_SHORT[clean_name]
+            else:
+                tvg_id = ""
+            
+            raw_extinf = f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}"
             
             meta = ChannelMeta(
                 url=url,
                 raw_extinf=raw_extinf,
-                tvg_id="",
+                tvg_id=tvg_id,
                 tvg_name=channel_name,
                 tvg_logo="",
                 group_title=group_title,
@@ -1308,62 +1420,79 @@ async def main():
         global channel_meta_cache, raw_extinf_mapping, url_source_mapping
         channel_meta_cache = {}
         raw_extinf_mapping = {}
-        url_source_mapping = {}
-        
-        # 加载配置
+
+        # 1. 读取配置
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
-        latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
-        logger.info("===== 开始处理直播源（智能提取元信息版本） =====")
-        logger.info(f"配置信息：延迟阈值{latency_threshold}ms | 匹配阈值{getattr(config, 'MATCH_CUTOFF', 0.4)}")
+        logger.info(f"\n===== 开始IPTV直播源处理流程 =====")
+        logger.info(f"  - 模板文件：{template_file}")
+        logger.info(f"  - 输出目录：{OUTPUT_FOLDER.absolute()}")
+        logger.info(f"  - 延迟阈值：{getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS['LATENCY_THRESHOLD'])}ms")
+        logger.info(f"  - 并发数：{getattr(config, 'CONCURRENT_LIMIT', CONFIG_DEFAULTS['CONCURRENT_LIMIT'])}")
+        logger.info(f"  - 超时时间：{getattr(config, 'TIMEOUT', CONFIG_DEFAULTS['TIMEOUT'])}s")
         
-        # 预加载logo
-        get_github_logo_list()
-        
-        # 抓取匹配频道
-        logger.info("\n===== 1. 抓取并提取直播源频道（智能识别分类） =====")
-        channels, template_channels = filter_source_urls(template_file)
-        if not channels:
-            logger.error("无匹配的频道数据，终止流程")
+        # 2. 过滤源URL并匹配频道
+        matched_channels, template_channels = filter_source_urls(template_file)
+        if not matched_channels:
+            logger.error("频道匹配结果为空，终止流程")
             return
         
-        # 收集URL
-        all_urls = set()
-        for category in channels.values():
-            for urls in category.values():
-                all_urls.update(urls)
-        for group in getattr(config, 'announcements', []):
-            for entry in group.get('entries', []):
-                url = entry.get('url', '')
-                if url:
-                    all_urls.add(url)
+        # 3. 收集所有需要测速的URL
+        all_test_urls = []
+        for category in matched_channels.values():
+            for url_list in category.values():
+                all_test_urls.extend(url_list)
         
-        all_urls = list(all_urls)
-        logger.info(f"\n===== 2. 开始批量测速（共{len(all_urls)}个URL） =====")
+        # 去重
+        all_test_urls = list(dict.fromkeys(all_test_urls))
+        logger.info(f"\n===== 准备测速 =====")
+        logger.info(f"  - 待测速URL总数（去重后）：{len(all_test_urls)}")
         
-        # 测速
-        async with SpeedTester() as tester:
-            latency_results = await tester.batch_speed_test(all_urls)
+        # 4. 批量测速
+        latency_results = {}
+        if all_test_urls:
+            async with SpeedTester() as tester:
+                latency_results = await tester.batch_speed_test(all_test_urls)
+        else:
+            logger.warning("无URL需要测速")
         
-        # 生成最终优化版文件
-        logger.info("\n===== 3. 生成最终优化版文件（含URL黑名单过滤） =====")
-        updateChannelUrlsM3U(channels, template_channels, latency_results)
+        # 5. 生成最终文件（新增URL黑名单过滤）
+        updateChannelUrlsM3U(matched_channels, template_channels, latency_results)
         
-        # 统计耗时
+        # 6. 总耗时统计
         total_elapsed = time.time() - start_total
-        logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
-        logger.info(f"\n文件说明：")
-        logger.info(f"  - live_basic.m3u: 基础版（保留原始/智能提取的元信息，未测速筛选）")
-        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类+URL黑名单过滤）")
-        logger.info(f"  - speed_test_report.txt: 详细测速报告（含黑名单信息）")
-    
+        logger.info(f"\n===== 全部流程完成 =====")
+        logger.info(f"  - 总耗时：{total_elapsed:.1f}秒 ({total_elapsed/60:.1f}分钟)")
+        logger.info(f"  - 输出目录：{OUTPUT_FOLDER.absolute()}")
+        logger.info(f"  - 生成文件列表：")
+        logger.info(f"    • live_basic.m3u (基础版，保留原始元信息)")
+        logger.info(f"    • live_basic.txt (基础版文本格式)")
+        logger.info(f"    • live_ipv4.m3u (IPv4优化版)")
+        logger.info(f"    • live_ipv4.txt (IPv4文本格式)")
+        logger.info(f"    • live_ipv6.m3u (IPv6优化版)")
+        logger.info(f"    • live_ipv6.txt (IPv6文本格式)")
+        logger.info(f"    • speed_test_report.txt (测速报告)")
+        logger.info(f"    • function.log (运行日志)")
+        
     except Exception as e:
-        logger.critical(f"程序执行异常：{str(e)}", exc_info=True)
+        logger.error(f"主程序执行失败：{str(e)}", exc_info=True)
         raise
 
+
+# ===================== 运行入口 =====================
 if __name__ == "__main__":
-    # 兼容Windows
-    if os.name == "nt":
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    # 检查必要的依赖
+    try:
+        import requests
+        import aiohttp
+    except ImportError as e:
+        print("缺少必要依赖，请执行：pip install requests aiohttp")
+        exit(1)
     
-    # 运行
-    asyncio.run(main())
+    # 运行主程序
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("程序被用户中断")
+    except Exception as e:
+        logger.error(f"程序异常退出：{str(e)}", exc_info=True)
+        exit(1)
