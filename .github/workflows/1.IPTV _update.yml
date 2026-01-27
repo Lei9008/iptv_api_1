@@ -2,77 +2,73 @@ name: 1.IPTV 源汇总整合
 
 on:
   schedule:
-    # 每3天UTC时间16:55执行（对应上海时间00:55）
     - cron: '55 16 */3 * *'  
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
    
 env:
-  TZ: Asia/Shanghai  # 设置时区为上海
+  TZ: Asia/Shanghai
 
 jobs:
   run_script:
-    runs-on: ubuntu-latest  # 使用最新的Ubuntu运行器
-    timeout-minutes: 300  # 增加超时时间（避免脚本执行超时）
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
     - name: 检出代码库(Checkout repository)
-      uses: actions/checkout@v4  # 升级到v4版本（更稳定）
+      uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # 拉取完整历史，避免rebase冲突
+        fetch-depth: 0
 
     - name: 设置Python环境(Set up Python)
-      uses: actions/setup-python@v5  # 升级到v5版本
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        cache: 'pip'  # 自动缓存pip依赖（简化配置）
+        cache: 'pip'
 
     - name: 安装系统依赖(Install system dependencies)
       run: |
         sudo apt-get update -y
-        sudo apt-get install -y --no-install-recommends ffmpeg  # 减少冗余安装
-        sudo apt-get clean  # 清理缓存，减少空间占用
+        sudo apt-get install -y --no-install-recommends ffmpeg
+        sudo apt-get clean
 
     - name: 安装Python依赖(Install Python dependencies)
       run: |
         python -m pip install --upgrade pip setuptools wheel
-        # 按需安装依赖（匹配你的IPTV脚本）
-        pip install requests aiohttp logging pathlib  # 补充脚本用到的库
-        # 如果有requirements.txt，优先用这个：
-        # if [ -f "self_use/IPTV/requirements.txt" ]; then pip install -r self_use/IPTV/requirements.txt; fi
+        pip install requests aiohttp logging pathlib
 
     - name: 执行主脚本(Run Python script)
       run: |
-        # 进入脚本目录执行（避免路径问题）
         cd self_use/IPTV
         python main.py
       env:
-        # 可选：添加网络超时环境变量，适配你的脚本
         REQUESTS_TIMEOUT: 30
-        GITHUB_TOKEN: ${{ github.token }}  # 传递token，方便脚本访问GitHub API
+        GITHUB_TOKEN: ${{ github.token }}
 
     - name: 提交并推送更新(Commit and push if changed)
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        # 仅添加脚本生成的文件（避免误提交无关文件）
-        git add self_use/IPTV/output/*
-        # 检查是否有变更
+        
+        # 仅添加核心成果文件，跳过被忽略的日志
+        cd self_use/IPTV/output
+        git add live_source_merged.m3u live_source_summary.txt || true
+        
+        cd ../../..
         if ! git diff --staged --quiet; then
           git commit -m "Auto-update IPTV live files $(date +'%Y-%m-%d %H:%M:%S')"
-          # 安全推送（解决rebase冲突）
           git pull --rebase origin main || git rebase --abort
           git push origin main
         else
-          echo "No changes to commit"
+          echo "No changes to commit (ignored log files)"
         fi
-      continue-on-error: true  # 提交失败不终止流程
+      continue-on-error: true
 
     - name: 清理旧的Workflow运行记录
-      if: always()  # 无论前面步骤是否成功，都执行清理
+      if: always()
       uses: Mattraks/delete-workflow-runs@v2
       with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
-        keep_minimum_runs: 3  # 保留最近3条运行记录
-        retain_days: 0        # 0表示不按天数保留，仅按数量
-        ignore_error: true    # 忽略清理错误
+        keep_minimum_runs: 3
+        retain_days: 0
+        ignore_error: true
