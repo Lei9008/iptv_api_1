@@ -6,7 +6,7 @@ TEMPLATE_FILE = "demo.txt"
 
 # ===================== 测速配置 =====================
 # 延迟阈值（ms），超过该值仍保留但标注延迟
-LATENCY_THRESHOLD = 600
+LATENCY_THRESHOLD = 450
 # 异步并发数（根据服务器性能调整）
 CONCURRENT_LIMIT = 10
 # 超时时间（s）
@@ -23,52 +23,7 @@ IP_VERSION_PRIORITY = "ipv4"
 SOURCE_URLS = [
     # 替换为你自己的直播源链接
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
-    "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
-    "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
-    "https://github.com/8080713/iptv-api666/blob/main/output/result.m3u",
-    "https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
-    "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
-    "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
-    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt",
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
-    "https://live.hacks.tools/tv/iptv4.txt",
-    "https://raw.kkgithub.com/sumingyd/Telecom-Shandong-IPTV-List/main/Telecom-Shandong-Multicast.m3u",
-    "https://github.com/kakaxi-1/IPTV/blob/main/ipv4.txt",
-    "https://github.com/zilong7728/Collect-IPTV/blob/main/best_sorted.m3u",
-    "https://github.com/skddyj/iptv/blob/main/IPTV.m3u",
-    "https://github.com/best-fan/iptv-sources/blob/main/cn_all_status.m3u8",
-    "https://raw.githubusercontent.com/fuxinyi0505/Ku9-IPTV-source/refs/heads/main/Ku9-IPTV-source.txt",
-    "https://github.com/0610840119/iptv-api/blob/master/output/xp_result.m3u",
     
-    
-    
-    #"https://bc.188766.xyz/?url=https://live.iill.top&mishitong=true&mima=mianfeibuhuaqian",
-    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
-    "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
-    "https://cloud.7so.top/f/xv80ux/天浪.txt",
-    "https://cloud.7so.top/f/yr7BHL/HKTV.txt",
-    "https://gitee.com/main-stream/tv/raw/master/BOSS.json",
-    "https://raw.githubusercontent.com/alantang1977/iptv-auto/refs/heads/main/my.txt",
-    #"http://gg.7749.org//i/ds.txt",
-    #"https://gitee.com/alexkw/app/raw/master/kgk.txt",
-    #"https://d.kstore.dev/download/15114/HKTV.txt",
-    #"http://go8.myartsonline.com/zx/0/TVBTV28.txt",
-    #"http://gg.7749.org/z/i/gdss.txt",
-    #"https://raw.githubusercontent.com/iodata999/frxz751113-IPTVzb1/refs/heads/main/结果.m3u",
-    #"https://raw.githubusercontent.com/alantang1977/jtv/refs/heads/main/网络收集.txt",
-    #"https://bc.188766.xyz/?url=http://tv123.top:35455&mishitong=true&mima=bingchawusifengxian",
-    #"https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/gqds+.txt",
-    "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt", 
-    #"https://live.izbds.com/tv/iptv4.txt",
-    #"http://rihou.cc:555/gggg.nzk",
-    #"http://1.94.31.214/live/livelite.txt",
-    #"http://api.mytv666.top/lives/free.php?type=txt",
-    #"http://zhibo.feylen.top/fltv/js/ku9live.php?tpye=fl.txt",
-    #"http://lisha521.dynv6.net.fh4u.org/tv.txt",
-    #"https://iptv.catvod.com/tv.m3u",
-    #"https://live.zbds.top/tv/iptv4.txt",
-    #"https://gitee.com/xxy002/zhiboyuan/raw/master/dsy",
-
 
  
     
