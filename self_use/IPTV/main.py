@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple, Set
-# import config  # 保持原有导入，需确保config.py存在
+import config
 import os
 
 # ===================== 基础配置 =====================
@@ -63,110 +63,6 @@ class ChannelMeta:
 # 全局存储
 channel_meta_cache: Dict[str, ChannelMeta] = {}  # key: url, value: ChannelMeta
 url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
-
-# ===================== 央视频道名称标准化配置（对调版） =====================
-# 对调后的央视频道名称映射表：规范全称 → 简洁标识
-cntvNamesReverse = {
-    # 基础频道
-    "CCTV1综合": "CCTV1",
-    "CCTV2财经": "CCTV2",
-    "CCTV3综艺": "CCTV3",
-    "CCTV4中文国际": "CCTV4",
-    "CCTV5体育": "CCTV5",
-    "CCTV5+体育赛事": "CCTV5+",
-    "CCTV6电影": "CCTV6",
-    "CCTV7国防军事": "CCTV7",
-    "CCTV8电视剧": "CCTV8",
-    "CCTV9纪录": "CCTV9",
-    "CCTV10科教": "CCTV10",
-    "CCTV11戏曲": "CCTV11",
-    "CCTV12社会与法": "CCTV12",
-    "CCTV13新闻": "CCTV13",
-    "CCTV14少儿": "CCTV14",
-    "CCTV15音乐": "CCTV15",
-    "CCTV16奥林匹克": "CCTV16",
-    "CCTV17农业农村": "CCTV17",
-    # 海外频道
-    "CCTV4中文国际(欧洲)": "CCTV4欧洲",
-    "CCTV4中文国际(美洲)": "CCTV4美洲",
-}
-
-# 补充：非规范名称的别名映射（增强模糊匹配）
-cctv_alias = {
-    "央视1套": "CCTV1",
-    "中央1套": "CCTV1",
-    "央视2套": "CCTV2",
-    "中央2套": "CCTV2",
-    "央视3套": "CCTV3",
-    "中央3套": "CCTV3",
-    "央视4套": "CCTV4",
-    "中央4套": "CCTV4",
-    "央视5套": "CCTV5",
-    "中央5套": "CCTV5",
-    "央视5+套": "CCTV5+",
-    "中央5+套": "CCTV5+",
-    "央视6套": "CCTV6",
-    "中央6套": "CCTV6",
-    "央视7套": "CCTV7",
-    "中央7套": "CCTV7",
-    "央视8套": "CCTV8",
-    "中央8套": "CCTV8",
-    "央视9套": "CCTV9",
-    "中央9套": "CCTV9",
-    "央视10套": "CCTV10",
-    "中央10套": "CCTV10",
-    "央视11套": "CCTV11",
-    "中央11套": "CCTV11",
-    "央视12套": "CCTV12",
-    "中央12套": "CCTV12",
-    "央视13套": "CCTV13",
-    "中央13套": "CCTV13",
-    "央视14套": "CCTV14",
-    "中央14套": "CCTV14",
-    "央视15套": "CCTV15",
-    "中央15套": "CCTV15",
-    "央视16套": "CCTV16",
-    "中央16套": "CCTV16",
-    "央视17套": "CCTV17",
-    "中央17套": "CCTV17",
-    "CCTV9纪录片": "CCTV9",
-}
-
-def standardize_cctv_name(channel_name: str) -> str:
-    """
-    基于对调后的映射表标准化央视频道名：规范全称→简洁标识
-    :param channel_name: 原始频道名（如CCTV5体育、CCTV4中文国际(欧洲)高清）
-    :return: 简洁标识（未匹配则返回原名称）
-    """
-    if not channel_name:
-        return channel_name
-    
-    raw_name = channel_name.strip()
-    # 定义需要保留的后缀（高清/4K等，不参与匹配）
-    suffix_pattern = re.compile(r'(高清|标清|4K|HD|SD|超清)$', re.IGNORECASE)
-    suffix_match = suffix_pattern.search(raw_name)
-    suffix = suffix_match.group(1).upper() if suffix_match else ""  # 统一后缀大写
-    # 去除后缀后的纯名称（用于匹配）
-    name_for_match = suffix_pattern.sub('', raw_name).strip()
-    
-    # 1. 精确匹配（优先）
-    if name_for_match in cntvNamesReverse:
-        standard_name = cntvNamesReverse[name_for_match]
-        return f"{standard_name}{suffix}" if suffix else standard_name
-    
-    # 2. 模糊匹配（处理带多余字符的情况，如"CCTV5体育-直播"）
-    for full_name, short_tag in cntvNamesReverse.items():
-        if full_name in name_for_match:
-            standard_name = short_tag
-            return f"{standard_name}{suffix}" if suffix else standard_name
-    
-    # 3. 补充别名匹配（如"央视5套"→"CCTV5"）
-    for alias, short_tag in cctv_alias.items():
-        if alias in raw_name:
-            return f"{short_tag}{suffix}" if suffix else short_tag
-    
-    # 4. 未匹配到央视频道，返回原始名称
-    return raw_name
 
 # ===================== 核心工具函数 =====================
 def replace_github_domain(url: str) -> List[str]:
@@ -291,12 +187,6 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         if name_match:
             channel_name = name_match.group(1).strip()
         
-        # ========== 核心修改：使用对调版标准化函数 ==========
-        channel_name = standardize_cctv_name(channel_name)
-        # 如果tvg_name存在，也同步标准化
-        if tvg_name:
-            tvg_name = standardize_cctv_name(tvg_name)
-        
         # 使用原始group-title，无则设为"未分类"
         group_title = group_title if group_title else "未分类"
         
@@ -308,7 +198,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             tvg_name=tvg_name,
             tvg_logo=tvg_logo,
             group_title=group_title,
-            channel_name=channel_name,  # 已标准化为简洁标识
+            channel_name=channel_name,
             source_url=source_url
         )
         
@@ -318,7 +208,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
         # 添加到分类字典
         if group_title not in categorized_channels:
             categorized_channels[group_title] = []
-        categorized_channels[group_title].append((channel_name, url))  # 已标准化
+        categorized_channels[group_title].append((channel_name, url))
     
     logger.info(f"M3U精准提取完成：{len(meta_list)}个有效频道")
     logger.info(f"识别的M3U分类：{list(categorized_channels.keys())}")
@@ -371,12 +261,9 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     seen_urls.add(url)
                     url_source_mapping[url] = source_url
                     
-                    # ========== 核心修改：使用对调版标准化函数 ==========
-                    name = standardize_cctv_name(name)
-                    
-                    # 智能分类推断（基于标准化后的简洁名称，匹配更精准）
+                    # 智能分类推断
                     group_title = current_group
-                    if "CCTV" in name:  # 标准化后名称都带CCTV前缀，匹配更精准
+                    if any(keyword in name for keyword in ['CCTV', '央视', '中央']):
                         group_title = "央视频道"
                     elif any(keyword in name for keyword in ['卫视', '江苏', '浙江', '湖南', '东方']):
                         group_title = "卫视频道"
@@ -385,16 +272,16 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     elif any(keyword in name for keyword in ['体育', 'CCTV5']):
                         group_title = "体育频道"
                     
-                    # 创建元信息（使用标准化后的简洁名称）
+                    # 创建元信息
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{name}\" tvg-logo=\"\" group-title=\"{group_title}\",{name}"
                     meta = ChannelMeta(
                         url=url,
                         raw_extinf=raw_extinf,
                         tvg_id="",
-                        tvg_name=name,  # 已标准化为简洁标识
+                        tvg_name=name,
                         tvg_logo="",
                         group_title=group_title,
-                        channel_name=name,  # 已标准化为简洁标识
+                        channel_name=name,
                         source_url=source_url
                     )
                     channel_meta_cache[url] = meta
@@ -402,7 +289,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     # 添加到分类字典
                     if group_title not in categorized_channels:
                         categorized_channels[group_title] = []
-                    categorized_channels[group_title].append((name, url))  # 已标准化
+                    categorized_channels[group_title].append((name, url))
         
         logger.info(f"智能识别完成：{sum(len(v) for v in categorized_channels.values())}个有效频道")
         logger.info(f"智能识别的分类：{list(categorized_channels.keys())}")
@@ -491,12 +378,7 @@ def main():
         logger.info("===== 开始处理直播源（精简版） =====")
         
         # 从config.py获取源URL列表
-        source_urls = getattr(config, 'SOURCE_URLS', [])  # 需确保config.py存在
-        # 测试用：如果没有config.py，可临时取消下面注释并添加测试URL
-        # source_urls = [
-        #     "https://raw.githubusercontent.com/xxx/iptv/main/live.m3u",
-        # ]
-        
+        source_urls = getattr(config, 'SOURCE_URLS', [])
         if not source_urls:
             logger.error("config.py中未配置SOURCE_URLS，程序终止")
             return
