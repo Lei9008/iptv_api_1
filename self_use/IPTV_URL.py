@@ -2,8 +2,8 @@
 import re
 import requests
 import difflib
-from urllib.parse import unquote
-import config1
+from urllib.parse import unquote, urlparse, urlunparse
+import config
 
 # 模拟浏览器请求头，避免被反爬
 HEADERS = {
@@ -15,26 +15,77 @@ HEADERS = {
 
 class M3UMerger:
     def __init__(self):
-        self.similarity_threshold = config1.SIMILARITY_THRESHOLD
+        self.similarity_threshold = config.SIMILARITY_THRESHOLD
         # 核心存储：key=标准化后的URL，value=整合后的频道信息
         self.channel_dict = {}
 
-    def download_m3u(self, url):
-        """下载M3U内容，处理编码和网络异常"""
-        try:
-            resp = requests.get(
-                url, 
-                headers=HEADERS, 
-                timeout=config1.REQUEST_TIMEOUT,
-                allow_redirects=True  # 允许重定向
-            )
-            resp.raise_for_status()  # 抛出HTTP错误（4xx/5xx）
-            # 自动识别编码，避免乱码
-            resp.encoding = resp.apparent_encoding if not resp.encoding else resp.encoding
-            return resp.text
-        except requests.exceptions.RequestException as e:
-            print(f"❌ 下载失败 {url}: {str(e)[:50]}")
-            return None
+    def _replace_github_domain(self, url, new_domain):
+        """替换GitHub RAW链接的域名"""
+        parsed = urlparse(url)
+        if parsed.netloc in config.GITHUB_MIRRORS:
+            new_parsed = parsed._replace(netloc=new_domain)
+            return urlunparse(new_parsed)
+        return url
+
+    def _add_github_proxy(self, url, proxy_prefix):
+        """给GitHub RAW链接添加代理前缀"""
+        parsed = urlparse(url)
+        if parsed.netloc in config.GITHUB_MIRRORS:
+            return proxy_prefix + url
+        return url
+
+    def download_m3u(self, original_url):
+        """
+        下载M3U内容，支持GitHub镜像/代理自动重试
+        :param original_url: 原始直播源URL
+        :return: M3U内容字符串 | None
+        """
+        # 构建待尝试的URL列表
+        urls_to_try = [original_url]
+        
+        # 1. 生成镜像域名的URL（如果是GitHub RAW链接）
+        if any(mirror in original_url for mirror in config.GITHUB_MIRRORS):
+            for mirror in config.GITHUB_MIRRORS[1:]:  # 跳过第一个（原始域名）
+                urls_to_try.append(self._replace_github_domain(original_url, mirror))
+        
+        # 2. 生成带代理前缀的URL
+        for proxy in config.PROXY_PREFIXES:
+            urls_to_try.append(self._add_github_proxy(original_url, proxy))
+        
+        # 去重（避免重复尝试相同URL）
+        urls_to_try = list(dict.fromkeys(urls_to_try))
+        
+        # 依次尝试每个URL
+        for idx, url in enumerate(urls_to_try):
+            try:
+                resp = requests.get(
+                    url, 
+                    headers=HEADERS, 
+                    timeout=config.REQUEST_TIMEOUT,
+                    allow_redirects=True  # 允许重定向
+                )
+                resp.raise_for_status()  # 抛出HTTP错误（4xx/5xx）
+                # 自动识别编码，避免乱码
+                resp.encoding = resp.apparent_encoding if not resp.encoding else resp.encoding
+                content = resp.text
+                
+                # 检测是否为M3U内容
+                if "#EXTINF" not in content and "#EXTM3U" not in content:
+                    if idx < len(urls_to_try)-1:
+                        print(f"⚠️ {url} 下载的内容非M3U格式，尝试下一个链接...")
+                        continue
+                    else:
+                        print(f"❌ 所有链接均未下载到有效M3U内容：{original_url}")
+                        return None
+                
+                print(f"✅ 成功下载（尝试{idx+1}次）：{url}")
+                return content
+            except requests.exceptions.RequestException as e:
+                if idx < len(urls_to_try)-1:
+                    print(f"⚠️ 下载失败（尝试{idx+1}次）{url}: {str(e)[:30]}，重试下一个...")
+                else:
+                    print(f"❌ 所有链接均下载失败：{original_url}，错误：{str(e)[:50]}")
+                    return None
 
     def parse_extinf_tags(self, m3u_content):
         """
@@ -68,6 +119,12 @@ class M3UMerger:
             # 过滤无效URL
             if channel["url"] and not channel["url"].startswith("#"):
                 channels.append(channel)
+        
+        # 输出解析详情
+        if len(channels) == 0:
+            print("⚠️ 未提取到任何EXTINF信息（可能源文件格式不规范）")
+        else:
+            print(f"   解析出 {len(channels)} 个原始频道")
         return channels
 
     def calculate_similarity(self, chan1, chan2):
@@ -133,7 +190,7 @@ class M3UMerger:
         
         # 写入M3U文件
         try:
-            with open(config1.OUTPUT_FILE, "w", encoding="utf-8") as f:
+            with open(config.OUTPUT_FILE, "w", encoding="utf-8") as f:
                 # M3U标准头部
                 f.write("#EXTM3U x-tvg-url=\"https://epg.112114.xyz/pp.xml\"\n\n")
                 
@@ -156,7 +213,7 @@ class M3UMerger:
                     f.write(" ".join(extinf_parts) + "\n")
                     f.write(chan["url"] + "\n\n")
             
-            print(f"\n✅ 生成成功！文件路径：{config1.OUTPUT_FILE}")
+            print(f"\n✅ 生成成功！文件路径：{config.OUTPUT_FILE}")
             print(f"📊 统计：原始去重后保留 {len(self.channel_dict)} 个有效频道")
         except Exception as e:
             print(f"❌ 写入文件失败：{e}")
@@ -167,16 +224,15 @@ class M3UMerger:
         total_parsed = 0
         
         # 遍历所有直播源URL
-        for idx, url in enumerate(config1.LIVE_SOURCE_URLS, 1):
-            print(f"\n[{idx}/{len(config1.LIVE_SOURCE_URLS)}] 处理：{url}")
-            # 下载M3U内容
+        for idx, url in enumerate(config.LIVE_SOURCE_URLS, 1):
+            print(f"\n[{idx}/{len(config.LIVE_SOURCE_URLS)}] 处理：{url}")
+            # 下载M3U内容（自动重试镜像/代理）
             m3u_content = self.download_m3u(url)
             if not m3u_content:
                 continue
             
             # 解析EXTINF标签
             channels = self.parse_extinf_tags(m3u_content)
-            print(f"   解析出 {len(channels)} 个原始频道")
             total_parsed += len(channels)
             
             # 逐个合并（去重+整合信息）
