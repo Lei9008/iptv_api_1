@@ -1,4 +1,4 @@
-name: IPTV 源汇总整合
+name: 1.IPTV 源汇总整合
 
 on:
   schedule:
@@ -6,6 +6,8 @@ on:
     - cron: '55 16 */3 * *'  
   workflow_dispatch:  # 允许手动触发
    
+env:
+  TZ: Asia/Shanghai  # 设置时区为上海
 
 jobs:
   run_script:
