@@ -152,14 +152,8 @@ jobs:
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          keep_minimum_runs: 3  # 保留最近5条运行记录
+          keep_minimum_runs: 3  # 保留最近3条运行记录
           retain_days: 0        # 保留7天内的运行记录
           ignore_error: true    # 忽略清理错误
 
-      - name: 任务失败通知（可选）
-        if: failure()
-        run: |
-          echo "❌ IPTV源更新任务执行失败！"
-          # 可添加钉钉/企业微信/邮件通知逻辑
-          # 示例：钉钉机器人通知
-          # curl -H "Content-Type: application/json" -X POST -d '{"msgtype":"text","text":{"content":"IPTV源更新失败：${{ github.run_url }}"}}' https://oapi.dingtalk.com/robot/send?access_token=你的token
+     
