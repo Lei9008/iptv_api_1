@@ -2,73 +2,59 @@ name: 1.IPTV 源汇总整合
 
 on:
   schedule:
+    # 每3天UTC时间16:55执行（对应上海时间00:55）
     - cron: '55 16 */3 * *'  
-  workflow_dispatch:
+  workflow_dispatch:  # 允许手动触发
    
 env:
-  TZ: Asia/Shanghai
+  TZ: Asia/Shanghai  # 设置时区为上海
 
 jobs:
   run_script:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    runs-on: ubuntu-latest  # 使用最新的Ubuntu运行器
 
     steps:
-    - name: 检出代码库(Checkout repository)
-      uses: actions/checkout@v4
+    - name: 检出代码库(Checkout repository)  # 检出代码库
+      uses: actions/checkout@v3
+
+    - name: 设置Python环境(Set up Python)  # 设置Python环境
+      uses: actions/setup-python@v4
       with:
-        fetch-depth: 0
+        python-version: '3.10'  # 使用Python 3.10
 
-    - name: 设置Python环境(Set up Python)
-      uses: actions/setup-python@v5
+    - name: 缓存pip依赖项(Cache dependencies)  # 缓存pip依赖项
+      uses: actions/cache@v4
       with:
-        python-version: '3.10'
-        cache: 'pip'
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
 
-    - name: 安装系统依赖(Install system dependencies)
+    - name: 安装系统依赖(Install system dependencies)  # 安装系统依赖
       run: |
-        sudo apt-get update -y
-        sudo apt-get install -y --no-install-recommends ffmpeg
-        sudo apt-get clean
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
 
-    - name: 安装Python依赖(Install Python dependencies)
+    - name: 安装Python依赖(Install Python dependencies)  # 安装Python依赖
       run: |
-        python -m pip install --upgrade pip setuptools wheel
-        pip install requests aiohttp logging pathlib
+        python -m pip install --upgrade pip
+        pip install requests aiohttp
 
-    - name: 执行主脚本(Run Python script)
+    - name: 执行主脚本(Run Python script)  # 执行主脚本
       run: |
-        cd self_use/IPTV
-        python main.py
-      env:
-        REQUESTS_TIMEOUT: 30
-        GITHUB_TOKEN: ${{ github.token }}
-
-    - name: 提交并推送更新(Commit and push if changed)
+        python  self_use/IPTV/main.py
+        
+    - name: 如果有更改，则提交并推送(Commit and push if changed)  # 如果有更改，则提交并推送
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
-        # 仅添加核心成果文件，跳过被忽略的日志
-        cd self_use/IPTV/output
-        git add live_source_merged.m3u live_source_summary.txt || true
-        
-        cd ../../..
+        git add -A
         if ! git diff --staged --quiet; then
-          git commit -m "Auto-update IPTV live files $(date +'%Y-%m-%d %H:%M:%S')"
-          git pull --rebase origin main || git rebase --abort
-          git push origin main
-        else
-          echo "No changes to commit (ignored log files)"
+          git commit -m "Auto-update live files"
+          git pull --rebase
+          git push
         fi
-      continue-on-error: true
+        
 
-    - name: 清理旧的Workflow运行记录
-      if: always()
-      uses: Mattraks/delete-workflow-runs@v2
-      with:
-        token: ${{ github.token }}
-        repository: ${{ github.repository }}
-        keep_minimum_runs: 3
-        retain_days: 0
-        ignore_error: true
+
+   
