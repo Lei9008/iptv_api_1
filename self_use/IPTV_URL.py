@@ -3,7 +3,7 @@ import re
 import requests
 import difflib
 from urllib.parse import unquote
-import config
+import config1
 
 # 模拟浏览器请求头，避免被反爬
 HEADERS = {
