@@ -11,15 +11,15 @@ import warnings
 
 # 导入配置文件
 try:
-    import config
+    import config1
 except ImportError:
-    # 如果没有config.py，创建默认配置
-    class config:
+    # 如果没有config1.py，创建默认配置
+    class config1:
         SOURCE_URLS = []
         # 默认配置
         FETCH_TIMEOUT = 15
         LOG_LEVEL = "INFO"
-    logging.warning("未找到config.py，使用默认配置")
+    logging.warning("未找到config1.py，使用默认配置")
 
 # 屏蔽SSL不安全请求警告
 warnings.filterwarnings('ignore', category=requests.packages.urllib3.exceptions.InsecureRequestWarning)
@@ -59,11 +59,11 @@ PROXY_PREFIXES = [
     "https://gh.api.99988866.xyz/"
 ]
 
-# 日志配置（修正拼写错误：basicConfig 而非 basicconfig1）
+# 日志配置（修正拼写错误：basicconfig1 而非 basicconfig11）
 LOG_FILE_PATH = OUTPUT_FOLDER / "iptv_process.log"
 # 从配置读取日志级别
-log_level = getattr(config, 'LOG_LEVEL', "INFO").upper()
-logging.basicConfig(  # 关键修正：将basicconfig1改为basicConfig
+log_level = getattr(config1, 'LOG_LEVEL', "INFO").upper()
+logging.basicconfig1(  # 关键修正：将basicconfig11改为basicconfig1
     level=getattr(logging, log_level, logging.INFO),
     format='%(asctime)s.%(msecs)03d - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
@@ -146,7 +146,7 @@ def replace_github_domain(url: str) -> List[str]:
 def fetch_url_with_retry(url: str) -> Optional[str]:
     """带重试的URL抓取（自动修复GitHub URL）"""
     # 从配置读取超时时间
-    fetch_timeout = getattr(config, 'FETCH_TIMEOUT', 15)
+    fetch_timeout = getattr(config1, 'FETCH_TIMEOUT', 15)
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
     
     # 自动修复GitHub blob URL
@@ -539,11 +539,11 @@ def main():
     """主函数：处理IPTV源，去重汇总"""
     start_time = time.time()
     
-    # 从config.py读取源URL列表
-    SOURCE_URLS = getattr(config, 'SOURCE_URLS', [])
+    # 从config1.py读取源URL列表
+    SOURCE_URLS = getattr(config1, 'SOURCE_URLS', [])
     
     if not SOURCE_URLS:
-        logger.warning("config.py中未配置SOURCE_URLS，使用测试内容演示...")
+        logger.warning("config1.py中未配置SOURCE_URLS，使用测试内容演示...")
         # 演示用：创建测试内容
         test_content = """#EXTM3U
 #EXTINF:-1 tvg-id="cctv1" tvg-name="CCTV1" tvg-logo="" group-title="央视频道",CCTV1
@@ -557,7 +557,7 @@ http://test.com/hunan.m3u8$IPv4(100ms)
         test_channels, _ = extract_m3u_meta(test_content, "test_source")
         all_sources = [test_channels]
     else:
-        logger.info(f"从config.py读取到 {len(SOURCE_URLS)} 个源URL")
+        logger.info(f"从config1.py读取到 {len(SOURCE_URLS)} 个源URL")
         # 抓取并处理所有源
         all_sources = []
         for url in SOURCE_URLS:
