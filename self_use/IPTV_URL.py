@@ -15,7 +15,7 @@ HEADERS = {
 
 class M3UMerger:
     def __init__(self):
-        self.similarity_threshold = config.SIMILARITY_THRESHOLD
+        self.similarity_threshold = config1.SIMILARITY_THRESHOLD
         # 核心存储：key=标准化后的URL，value=整合后的频道信息
         self.channel_dict = {}
 
@@ -25,7 +25,7 @@ class M3UMerger:
             resp = requests.get(
                 url, 
                 headers=HEADERS, 
-                timeout=config.REQUEST_TIMEOUT,
+                timeout=config1.REQUEST_TIMEOUT,
                 allow_redirects=True  # 允许重定向
             )
             resp.raise_for_status()  # 抛出HTTP错误（4xx/5xx）
@@ -133,7 +133,7 @@ class M3UMerger:
         
         # 写入M3U文件
         try:
-            with open(config.OUTPUT_FILE, "w", encoding="utf-8") as f:
+            with open(config1.OUTPUT_FILE, "w", encoding="utf-8") as f:
                 # M3U标准头部
                 f.write("#EXTM3U x-tvg-url=\"https://epg.112114.xyz/pp.xml\"\n\n")
                 
@@ -156,7 +156,7 @@ class M3UMerger:
                     f.write(" ".join(extinf_parts) + "\n")
                     f.write(chan["url"] + "\n\n")
             
-            print(f"\n✅ 生成成功！文件路径：{config.OUTPUT_FILE}")
+            print(f"\n✅ 生成成功！文件路径：{config1.OUTPUT_FILE}")
             print(f"📊 统计：原始去重后保留 {len(self.channel_dict)} 个有效频道")
         except Exception as e:
             print(f"❌ 写入文件失败：{e}")
@@ -167,8 +167,8 @@ class M3UMerger:
         total_parsed = 0
         
         # 遍历所有直播源URL
-        for idx, url in enumerate(config.LIVE_SOURCE_URLS, 1):
-            print(f"\n[{idx}/{len(config.LIVE_SOURCE_URLS)}] 处理：{url}")
+        for idx, url in enumerate(config1.LIVE_SOURCE_URLS, 1):
+            print(f"\n[{idx}/{len(config1.LIVE_SOURCE_URLS)}] 处理：{url}")
             # 下载M3U内容
             m3u_content = self.download_m3u(url)
             if not m3u_content:
