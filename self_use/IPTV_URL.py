@@ -1,10 +1,17 @@
-# main.py
+import os
+import sys
+# 将当前文件所在目录加入Python路径
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# 然后再导入其他模块
 import re
 import requests
 import difflib
-import os  # 新增：导入os模块处理目录
 from urllib.parse import unquote, urlparse, urlunparse
-import config1
+import config1  # 现在能正确导入同级的config.py
+
+
+
 
 # 模拟浏览器请求头，避免被反爬
 HEADERS = {
