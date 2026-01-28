@@ -1081,7 +1081,7 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         # 写入M3U
         f_m3u.write(
             f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{tvg_name}\" "
-            f"tvg-logo=\"{logo_url}\" group-title=\"{group_title}\",{channel_name}({latency:.0f}ms)\n"
+            f"tvg-logo=\"{logo_url}\" group-title=\"{group_title}\",{channel_name}\n"
         )
         f_m3u.write(url + "\n")
         # 写入TXT
