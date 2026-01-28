@@ -154,7 +154,7 @@ group_title_mapping = {
     '重庆频道': ['重庆地区'],
     
     # 特殊分类
-    '港澳台频道': ['港澳台','港澳代理'],  # 港澳台/港澳代理→港澳台频道
+    '港澳台频道': ['港澳台','港澳代理','湾区频道'],  # 港澳台/港澳代理→港澳台频道
     '央视频道': ['央视台'],              # 央视台→央视频道
     '卫视频道': ['卫视台'],              # 卫视台→卫视频道
     '4K超高清': ['超清频道', '4K频道'],  # 超清频道/4K频道→4K超高清
@@ -166,6 +166,7 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
+
 
 
 
