@@ -42,8 +42,6 @@ SOURCE_URLS = [
     "https://live.izbds.com/tv/iptv4.txt",
     "http://rihou.cc:555/gggg.nzk",
     "http://1.94.31.214/live/livelite.txt",
-    "http://api.mytv666.top/lives/free.php?type=txt",
-    "http://zhibo.feylen.top/fltv/js/ku9live.php?tpye=fl.txt",
     "http://lisha521.dynv6.net.fh4u.org/tv.txt",
     "https://iptv.catvod.com/tv.m3u",
     "https://live.zbds.top/tv/iptv4.txt",
@@ -117,4 +115,5 @@ cctv_alias = {
     "中央17套": "CCTV17",
     "CCTV9纪录片": "CCTV9",
 }
+
 
