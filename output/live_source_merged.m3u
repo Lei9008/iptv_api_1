@@ -1,7 +1,7 @@
 #EXTM3U x-tvg-url=""
-# 仅保留demo.txt匹配内容 | 按demo.txt分类顺序排列
-# 生成时间：2026-01-28 21:32:45
-# 总频道数：503
+# 仅保留demo.txt明确定义的频道 | 按demo.txt分类顺序排列
+# 生成时间：2026-01-28 22:02:56
+# 有效demo频道数：503
 
 # ===== 央视频道（190个频道） =====
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV1.png" group-title="央视频道",CCTV1
