@@ -1,123 +1,4911 @@
 IPTV直播源测速报告
 ==================================================
-测试时间: 2026-01-28 12:11:46
+测试时间: 2026-01-28 18:03:27
 延迟阈值: 550ms
 排序规则: group-title升序 → name升序 → 延迟升序
-总测试数: 1217 | 成功数: 62 | 有效数: 29
+总测试数: 6588 | 成功数: 2032 | 有效数: 1226
 
-1. 分组: ┃卫视频道 | 名称: 东方卫视
-   URL: http://go.bkpcp.top/mg/dfws$IPV4•线路6
-   延迟: 319.23ms | 分辨率: unknown | 状态: 成功
+1. 分组: 卫视频道 | 名称: 三沙卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
+   延迟: 117.13ms | 分辨率: unknown | 状态: 成功
 
-2. 分组: ┃卫视频道 | 名称: 云南卫视
-   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovL3d3dy5kc2suY2MvcGhwL3N4Z2QucGhwP2lkPXlud3M=$IPV4•线路2
-   延迟: 373.32ms | 分辨率: unknown | 状态: 成功
+2. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=dongnan&P2PChannelID=pd://cctv_p2p_dongnan
+   延迟: 9.07ms | 分辨率: unknown | 状态: 成功
 
-3. 分组: ┃卫视频道 | 名称: 北京卫视
-   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=bjws$IPV4•线路6
-   延迟: 45.18ms | 分辨率: unknown | 状态: 成功
+3. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub
+   延迟: 60.63ms | 分辨率: unknown | 状态: 成功
 
-4. 分组: ┃卫视频道 | 名称: 宁夏卫视
-   URL: http://120.76.248.139/live/bfgd/4200000118.m3u8$IPV4•线路2
-   延迟: 285.40ms | 分辨率: unknown | 状态: 成功
+4. 分组: 卫视频道 | 名称: 东南卫视
+   URL: https://smt.858.qzz.io/Smart.php?id=fujian
+   延迟: 61.72ms | 分辨率: unknown | 状态: 成功
 
-5. 分组: ┃卫视频道 | 名称: 安徽卫视
-   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=ahws$IPV4•线路6
-   延迟: 44.11ms | 分辨率: unknown | 状态: 成功
+5. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://23.237.228.134/live8/gansu.m3u8
+   延迟: 64.61ms | 分辨率: unknown | 状态: 成功
 
-6. 分组: ┃卫视频道 | 名称: 山东卫视
-   URL: http://go.bkpcp.top/mg/sdws$IPV4•线路6
-   延迟: 203.69ms | 分辨率: unknown | 状态: 成功
+6. 分组: 卫视频道 | 名称: 东南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E4%B8%9C%E5%8D%97%E5%8D%AB%E8%A7%86
+   延迟: 101.90ms | 分辨率: unknown | 状态: 成功
 
-7. 分组: ┃卫视频道 | 名称: 山东卫视
-   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=sdws$IPV4•线路7
-   延迟: 388.71ms | 分辨率: unknown | 状态: 成功
+7. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/jjt15bvbl7a/index.m3u8
+   延迟: 116.67ms | 分辨率: unknown | 状态: 成功
 
-8. 分组: ┃卫视频道 | 名称: 广东卫视
-   URL: http://61.156.228.12:8154/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路36
-   延迟: 525.84ms | 分辨率: unknown | 状态: 成功
+8. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0113_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 234.60ms | 分辨率: unknown | 状态: 成功
 
-9. 分组: ┃卫视频道 | 名称: 广东卫视
-   URL: http://www.3344.uk:8888/rtp/239.77.1.2:5146$IPV4•线路20
-   延迟: 536.26ms | 分辨率: unknown | 状态: 成功
+9. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 243.62ms | 分辨率: unknown | 状态: 成功
 
-10. 分组: ┃卫视频道 | 名称: 广东卫视
-   URL: http://183.47.2.156:16883/udp/239.77.0.84:5146$IPV4•线路10
-   延迟: 538.34ms | 分辨率: unknown | 状态: 成功
+10. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 252.86ms | 分辨率: unknown | 状态: 成功
 
-11. 分组: ┃卫视频道 | 名称: 延边卫视
-   URL: http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
-   延迟: 408.35ms | 分辨率: unknown | 状态: 成功
+11. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 256.10ms | 分辨率: unknown | 状态: 成功
 
-12. 分组: ┃卫视频道 | 名称: 江苏卫视
-   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=jsws$IPV4•线路7
-   延迟: 308.69ms | 分辨率: unknown | 状态: 成功
+12. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=483
+   延迟: 256.25ms | 分辨率: unknown | 状态: 成功
 
-13. 分组: ┃卫视频道 | 名称: 江苏卫视
-   URL: http://go.bkpcp.top/mg/jsws$IPV4•线路6
-   延迟: 350.25ms | 分辨率: unknown | 状态: 成功
+13. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0137_1.m3u8
+   延迟: 258.10ms | 分辨率: unknown | 状态: 成功
 
-14. 分组: ┃卫视频道 | 名称: 浙江卫视
-   URL: https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8$IPV4•线路11
-   延迟: 301.58ms | 分辨率: unknown | 状态: 成功
+14. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0137_1.m3u8
+   延迟: 266.55ms | 分辨率: unknown | 状态: 成功
 
-15. 分组: ┃卫视频道 | 名称: 湖南卫视
-   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=hunws$IPV4•线路7
-   延迟: 42.00ms | 分辨率: unknown | 状态: 成功
+15. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://111.61.236.247:9081/hls/42/index.m3u8
+   延迟: 294.65ms | 分辨率: unknown | 状态: 成功
 
-16. 分组: ┃卫视频道 | 名称: 湖南卫视
-   URL: http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub$IPV4•线路5
-   延迟: 120.46ms | 分辨率: unknown | 状态: 成功
+16. 分组: 卫视频道 | 名称: 东南卫视
+   URL: https://www.freetv.top/migu/849116810.m3u8?migutoken=820d1dfe311ed9d88634dc040a64adbd8f30c96a6aec221a9807061025c02cc5be8e21cca6eb021eb76ad7333303e5dbe8e3ef24ad4aa58a274dc33ec25a3b373ddb6aee551e16ba35b3a9143a
+   延迟: 309.27ms | 分辨率: unknown | 状态: 成功
 
-17. 分组: ┃卫视频道 | 名称: 湖南卫视
-   URL: http://go.bkpcp.top/mg/hunws$IPV4•线路6
-   延迟: 396.06ms | 分辨率: unknown | 状态: 成功
+17. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://112.27.235.94:8000/hls/38/index.m3u8
+   延迟: 378.04ms | 分辨率: unknown | 状态: 成功
 
-18. 分组: ┃央视频道 | 名称: CCTV12
-   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub$IPV4•线路3
-   延迟: 121.33ms | 分辨率: unknown | 状态: 成功
+18. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://120.76.248.139/live/bfgd/4200000483.m3u8
+   延迟: 387.89ms | 分辨率: unknown | 状态: 成功
 
-19. 分组: ┃央视频道 | 名称: CCTV16
-   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$IPV4•线路4
-   延迟: 120.78ms | 分辨率: unknown | 状态: 成功
+19. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://111.43.126.240:9003/hls/47/index.m3u8
+   延迟: 455.62ms | 分辨率: unknown | 状态: 成功
 
-20. 分组: ┃央视频道 | 名称: CCTV16
-   URL: http://p.ytelc.com/169l/0/cctv.php?id=cctv16$IPV4•线路6
-   延迟: 499.10ms | 分辨率: unknown | 状态: 成功
+20. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 486.08ms | 分辨率: unknown | 状态: 成功
 
-21. 分组: ┃央视频道 | 名称: CCTV17
-   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$IPV4•线路3
-   延迟: 60.41ms | 分辨率: unknown | 状态: 成功
+21. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://43.251.226.89:8080/play/1019.m3u8
+   延迟: 521.25ms | 分辨率: unknown | 状态: 成功
 
-22. 分组: ┃央视频道 | 名称: CCTV17
-   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv17$IPV4•线路5
-   延迟: 318.31ms | 分辨率: unknown | 状态: 成功
+22. 分组: 卫视频道 | 名称: 东南卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1037_1.m3u8
+   延迟: 531.32ms | 分辨率: unknown | 状态: 成功
 
-23. 分组: ┃央视频道 | 名称: CCTV17
-   URL: http://go.bkpcp.top/mg/cctv17$IPV4•线路4
-   延迟: 413.77ms | 分辨率: unknown | 状态: 成功
+23. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://69.30.246.194/live/dfws.m3u8
+   延迟: 26.47ms | 分辨率: unknown | 状态: 成功
 
-24. 分组: ┃央视频道 | 名称: CCTV5
-   URL: http://112.254.55.106:22222/udp/239.253.254.192:8000$IPV4•线路8
-   延迟: 501.39ms | 分辨率: unknown | 状态: 成功
+24. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8?auth=testpub
+   延迟: 65.08ms | 分辨率: unknown | 状态: 成功
 
-25. 分组: ┃央视频道 | 名称: CCTV5+
-   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub$IPV4•线路3
-   延迟: 121.13ms | 分辨率: unknown | 状态: 成功
+25. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://23.237.228.134/live6/dongnan.m3u8
+   延迟: 67.21ms | 分辨率: unknown | 状态: 成功
 
-26. 分组: ┃央视频道 | 名称: CCTV5+
-   URL: http://112.254.55.106:22222/udp/239.253.254.80:8000$IPV4•线路9
-   延迟: 501.31ms | 分辨率: unknown | 状态: 成功
+26. 分组: 卫视频道 | 名称: 东方卫视
+   URL: https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8
+   延迟: 69.66ms | 分辨率: unknown | 状态: 成功
 
-27. 分组: ┃少儿频道 | 名称: 广东少儿
-   URL: http://www.3344.uk:8888/rtp/239.77.0.12:5146$IPV4•线路4
-   延迟: 534.33ms | 分辨率: unknown | 状态: 成功
+27. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://23.237.228.134/live3/dongfang.m3u8
+   延迟: 136.08ms | 分辨率: unknown | 状态: 成功
 
-28. 分组: ┃湾区频道 | 名称: 凤凰香港
-   URL: http://cdn3.132.us.kg/live/fhhk/stream.m3u8$IPV4•线路8
-   延迟: 82.31ms | 分辨率: unknown | 状态: 成功
+28. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009
+   延迟: 155.99ms | 分辨率: unknown | 状态: 成功
 
-29. 分组: ┃湾区频道 | 名称: 翡翠台
-   URL: https://migu.188766.xyz/?migutoken=fab294f829b1591c0264f239567ce461&id=hk_fct&type=dy$IPV4•线路19
-   延迟: 294.33ms | 分辨率: unknown | 状态: 成功
+29. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://112.27.235.94:8000/hls/28/index.m3u8
+   延迟: 194.96ms | 分辨率: unknown | 状态: 成功
+
+30. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1036_1.m3u8
+   延迟: 216.04ms | 分辨率: unknown | 状态: 成功
+
+31. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0124_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 230.51ms | 分辨率: unknown | 状态: 成功
+
+32. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0107_1.m3u8
+   延迟: 235.67ms | 分辨率: unknown | 状态: 成功
+
+33. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1030_1.m3u8
+   延迟: 243.79ms | 分辨率: unknown | 状态: 成功
+
+34. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0126_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 244.39ms | 分辨率: unknown | 状态: 成功
+
+35. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 250.09ms | 分辨率: unknown | 状态: 成功
+
+36. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 250.70ms | 分辨率: unknown | 状态: 成功
+
+37. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://112.46.85.60:8009/hls/31/index.m3u8
+   延迟: 257.19ms | 分辨率: unknown | 状态: 成功
+
+38. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://218.13.170.98:9901/tsfile/live/1010_1.m3u8
+   延迟: 272.00ms | 分辨率: unknown | 状态: 成功
+
+39. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://ygbh.site/php/bfgd.php?id=093
+   延迟: 304.01ms | 分辨率: unknown | 状态: 成功
+
+40. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://111.61.236.247:9081/hls/40/index.m3u8
+   延迟: 344.68ms | 分辨率: unknown | 状态: 成功
+
+41. 分组: 卫视频道 | 名称: 东方卫视
+   URL: https://iptv.catvod.com/live.php?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86
+   延迟: 380.89ms | 分辨率: unknown | 状态: 成功
+
+42. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://111.43.126.240:9003/hls/39/index.m3u8
+   延迟: 434.48ms | 分辨率: unknown | 状态: 成功
+
+43. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 482.44ms | 分辨率: unknown | 状态: 成功
+
+44. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 490.81ms | 分辨率: unknown | 状态: 成功
+
+45. 分组: 卫视频道 | 名称: 东方卫视
+   URL: http://113.15.109.216:59901/tsfile/live/1009_1.m3u8
+   延迟: 521.86ms | 分辨率: unknown | 状态: 成功
+
+46. 分组: 卫视频道 | 名称: 东方卫视
+   URL: https://epg.pw/stream/6aec3ea636542c53729b5c9dd290864ab04d4a69d2b9cb7864a9898779915898.m3u8
+   延迟: 543.25ms | 分辨率: unknown | 状态: 成功
+
+47. 分组: 卫视频道 | 名称: 云南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E4%BA%91%E5%8D%97%E5%8D%AB%E8%A7%86
+   延迟: 51.57ms | 分辨率: unknown | 状态: 成功
+
+48. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://23.237.228.134/live8/yunnan.m3u8
+   延迟: 64.27ms | 分辨率: unknown | 状态: 成功
+
+49. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub
+   延迟: 118.74ms | 分辨率: unknown | 状态: 成功
+
+50. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/jwvhleddq5/index.m3u8
+   延迟: 153.22ms | 分辨率: unknown | 状态: 成功
+
+51. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://120.211.62.180:8000/hls/39/index.m3u8
+   延迟: 200.90ms | 分辨率: unknown | 状态: 成功
+
+52. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://111.43.126.240:9003/hls/60/index.m3u8
+   延迟: 223.13ms | 分辨率: unknown | 状态: 成功
+
+53. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0118_2.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 228.46ms | 分辨率: unknown | 状态: 成功
+
+54. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.04ms | 分辨率: unknown | 状态: 成功
+
+55. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://218.92.37.174:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 252.13ms | 分辨率: unknown | 状态: 成功
+
+56. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 255.79ms | 分辨率: unknown | 状态: 成功
+
+57. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=482
+   延迟: 258.74ms | 分辨率: unknown | 状态: 成功
+
+58. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1047_1.m3u8
+   延迟: 263.47ms | 分辨率: unknown | 状态: 成功
+
+59. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=115
+   延迟: 268.83ms | 分辨率: unknown | 状态: 成功
+
+60. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0119_1.m3u8
+   延迟: 325.96ms | 分辨率: unknown | 状态: 成功
+
+61. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1069_1.m3u8
+   延迟: 416.48ms | 分辨率: unknown | 状态: 成功
+
+62. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0117_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 460.27ms | 分辨率: unknown | 状态: 成功
+
+63. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0119_1.m3u8
+   延迟: 520.17ms | 分辨率: unknown | 状态: 成功
+
+64. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://183.11.239.36:808/hls/52/index.m3u8
+   延迟: 522.89ms | 分辨率: unknown | 状态: 成功
+
+65. 分组: 卫视频道 | 名称: 云南卫视
+   URL: http://cssbyd.imwork.net:8082/hls/36/index.m3u8
+   延迟: 547.09ms | 分辨率: unknown | 状态: 成功
+
+66. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%85%B5%E5%9B%A2%E5%8D%AB%E8%A7%86
+   延迟: 55.20ms | 分辨率: unknown | 状态: 成功
+
+67. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://111.43.126.240:9003/hls/66/index.m3u8
+   延迟: 217.88ms | 分辨率: unknown | 状态: 成功
+
+68. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0112_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 232.13ms | 分辨率: unknown | 状态: 成功
+
+69. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0115_1.m3u8
+   延迟: 287.07ms | 分辨率: unknown | 状态: 成功
+
+70. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0015_1.m3u8
+   延迟: 287.54ms | 分辨率: unknown | 状态: 成功
+
+71. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://ygbh.site/php/bfgd.php?id=124
+   延迟: 338.43ms | 分辨率: unknown | 状态: 成功
+
+72. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://120.76.248.139/live/bfgd/4200000124.m3u8
+   延迟: 373.15ms | 分辨率: unknown | 状态: 成功
+
+73. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://218.13.170.98:9901/tsfile/live/0115_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 503.43ms | 分辨率: unknown | 状态: 成功
+
+74. 分组: 卫视频道 | 名称: 兵团卫视
+   URL: http://218.13.170.98:9901/tsfile/live/0115_1.m3u8
+   延迟: 523.39ms | 分辨率: unknown | 状态: 成功
+
+75. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%86%85%E8%92%99%E5%8F%A4%E5%8D%AB%E8%A7%86
+   延迟: 57.57ms | 分辨率: unknown | 状态: 成功
+
+76. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://23.237.228.134/live8/neimenggu.m3u8
+   延迟: 65.57ms | 分辨率: unknown | 状态: 成功
+
+77. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://112.27.235.94:8000/hls/49/index.m3u8
+   延迟: 188.80ms | 分辨率: unknown | 状态: 成功
+
+78. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://111.43.126.240:9003/hls/63/index.m3u8
+   延迟: 223.93ms | 分辨率: unknown | 状态: 成功
+
+79. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0118_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 234.72ms | 分辨率: unknown | 状态: 成功
+
+80. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0109_1.m3u8
+   延迟: 242.80ms | 分辨率: unknown | 状态: 成功
+
+81. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://183.11.239.36:808/hls/60/index.m3u8
+   延迟: 247.64ms | 分辨率: unknown | 状态: 成功
+
+82. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://ygbh.site/php/bfgd.php?id=110
+   延迟: 252.25ms | 分辨率: unknown | 状态: 成功
+
+83. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 255.28ms | 分辨率: unknown | 状态: 成功
+
+84. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://222.134.245.16:9901/tsfile/live/0109_1.m3u8
+   延迟: 283.63ms | 分辨率: unknown | 状态: 成功
+
+85. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0109_1.m3u8
+   延迟: 322.13ms | 分辨率: unknown | 状态: 成功
+
+86. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://111.61.236.247:9081/hls/48/index.m3u8
+   延迟: 332.22ms | 分辨率: unknown | 状态: 成功
+
+87. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0109_1.m3u8?key=txiptv
+   延迟: 501.89ms | 分辨率: unknown | 状态: 成功
+
+88. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://cssbyd.imwork.net:8082/hls/44/index.m3u8
+   延迟: 525.16ms | 分辨率: unknown | 状态: 成功
+
+89. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: http://60.16.0.216:5757/hls/41/index.m3u8
+   延迟: 528.49ms | 分辨率: unknown | 状态: 成功
+
+90. 分组: 卫视频道 | 名称: 内蒙古卫视
+   URL: https://stream1.freetv.fun/5449f2d57a27706d5b13071efab41c175da68c2cc31af7c2734df6d796390d65.m3u8
+   延迟: 546.12ms | 分辨率: unknown | 状态: 成功
+
+91. 分组: 卫视频道 | 名称: 农林卫视
+   URL: http://124.116.183.146:9901/tsfile/live/1004_1.m3u8
+   延迟: 348.68ms | 分辨率: unknown | 状态: 成功
+
+92. 分组: 卫视频道 | 名称: 农林卫视
+   URL: http://ygbh.site/php/bfgd.php?id=122
+   延迟: 350.90ms | 分辨率: unknown | 状态: 成功
+
+93. 分组: 卫视频道 | 名称: 农林卫视
+   URL: http://tvlist.top/jd/index.php?id=live3843&qt=183.224.122.114:8014
+   延迟: 479.54ms | 分辨率: unknown | 状态: 成功
+
+94. 分组: 卫视频道 | 名称: 农林卫视
+   URL: http://120.76.248.139/live/bfgd/4200000122.m3u8
+   延迟: 502.91ms | 分辨率: unknown | 状态: 成功
+
+95. 分组: 卫视频道 | 名称: 农林卫视
+   URL: http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8
+   延迟: 505.94ms | 分辨率: unknown | 状态: 成功
+
+96. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://23.237.228.134/live3/beijing.m3u8
+   延迟: 64.13ms | 分辨率: unknown | 状态: 成功
+
+97. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub
+   延迟: 75.73ms | 分辨率: unknown | 状态: 成功
+
+98. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009
+   延迟: 150.51ms | 分辨率: unknown | 状态: 成功
+
+99. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://120.202.94.181:9446/tsfile/live/0122_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 228.83ms | 分辨率: unknown | 状态: 成功
+
+100. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1032_1.m3u8
+   延迟: 248.16ms | 分辨率: unknown | 状态: 成功
+
+101. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0122_2.m3u8
+   延迟: 249.52ms | 分辨率: unknown | 状态: 成功
+
+102. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 256.43ms | 分辨率: unknown | 状态: 成功
+
+103. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0122_1.m3u8
+   延迟: 284.15ms | 分辨率: unknown | 状态: 成功
+
+104. 分组: 卫视频道 | 名称: 北京卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86
+   延迟: 292.17ms | 分辨率: unknown | 状态: 成功
+
+105. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://ygbh.site/php/bfgd.php?id=083
+   延迟: 369.86ms | 分辨率: unknown | 状态: 成功
+
+106. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://112.27.235.94:8000/hls/27/index.m3u8
+   延迟: 377.75ms | 分辨率: unknown | 状态: 成功
+
+107. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://120.211.62.180:8000/hls/35/index.m3u8
+   延迟: 415.90ms | 分辨率: unknown | 状态: 成功
+
+108. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1034_1.m3u8
+   延迟: 445.38ms | 分辨率: unknown | 状态: 成功
+
+109. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://111.43.126.240:9003/hls/41/index.m3u8
+   延迟: 453.66ms | 分辨率: unknown | 状态: 成功
+
+110. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://218.3.138.25:1111/tsfile/live/1021_1.m3u8
+   延迟: 454.25ms | 分辨率: unknown | 状态: 成功
+
+111. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 475.32ms | 分辨率: unknown | 状态: 成功
+
+112. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 515.15ms | 分辨率: unknown | 状态: 成功
+
+113. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 515.41ms | 分辨率: unknown | 状态: 成功
+
+114. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 519.82ms | 分辨率: unknown | 状态: 成功
+
+115. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://43.251.226.89:8080/play/1010.m3u8
+   延迟: 530.22ms | 分辨率: unknown | 状态: 成功
+
+116. 分组: 卫视频道 | 名称: 北京卫视
+   URL: http://120.76.248.139/live/bfgd/4200000083.m3u8
+   延迟: 535.23ms | 分辨率: unknown | 状态: 成功
+
+117. 分组: 卫视频道 | 名称: 厦门卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
+   延迟: 71.74ms | 分辨率: unknown | 状态: 成功
+
+118. 分组: 卫视频道 | 名称: 厦门卫视
+   URL: http://183.11.239.36:808/hls/17/index.m3u8
+   延迟: 248.98ms | 分辨率: unknown | 状态: 成功
+
+119. 分组: 卫视频道 | 名称: 厦门卫视
+   URL: http://tvlist.top/jd/index.php?id=xmws&qt=183.224.122.114:8014
+   延迟: 477.02ms | 分辨率: unknown | 状态: 成功
+
+120. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180919.swf?v=180.171.5.8.9.6.3.9&ChannelID=jilin&videoTVChannel=jilin&P2PChannelID=pd://cctv_p2p_hdjilin&tai=jilin&VideoName=jilin&channelID=jilin
+   延迟: 7.67ms | 分辨率: unknown | 状态: 成功
+
+121. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%90%89%E6%9E%97%E5%8D%AB%E8%A7%86
+   延迟: 56.78ms | 分辨率: unknown | 状态: 成功
+
+122. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://23.237.228.134/live8/jilin.m3u8
+   延迟: 66.99ms | 分辨率: unknown | 状态: 成功
+
+123. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub
+   延迟: 123.69ms | 分辨率: unknown | 状态: 成功
+
+124. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/b6dl8yuvu/index.m3u8
+   延迟: 126.27ms | 分辨率: unknown | 状态: 成功
+
+125. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0116_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 239.40ms | 分辨率: unknown | 状态: 成功
+
+126. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 244.58ms | 分辨率: unknown | 状态: 成功
+
+127. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://183.11.239.36:808/hls/10/index.m3u8
+   延迟: 257.06ms | 分辨率: unknown | 状态: 成功
+
+128. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0116_1.m3u8
+   延迟: 257.54ms | 分辨率: unknown | 状态: 成功
+
+129. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://111.43.126.240:9003/hls/45/index.m3u8
+   延迟: 260.09ms | 分辨率: unknown | 状态: 成功
+
+130. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://60.16.0.216:5757/hls/44/index.m3u8
+   延迟: 260.59ms | 分辨率: unknown | 状态: 成功
+
+131. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: https://www.freetv.top/migu/947472500.m3u8?migutoken=3ea6f853b75f0ffefb45361abd4f4afde99a41c67eb1d480a3e4e1d7fb1a0dd6f93e6011475330b929d27f5b3fed5ab892298676a54c05a9741d9a11dc442899f4101d60bec353f2a25c1c2c78
+   延迟: 271.70ms | 分辨率: unknown | 状态: 成功
+
+132. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://ygbh.site/php/bfgd.php?id=097
+   延迟: 293.63ms | 分辨率: unknown | 状态: 成功
+
+133. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/44/index.m3u8
+   延迟: 338.32ms | 分辨率: unknown | 状态: 成功
+
+134. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://111.61.236.247:9081/hls/45/index.m3u8
+   延迟: 345.98ms | 分辨率: unknown | 状态: 成功
+
+135. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://120.76.248.139/live/bfgd/4200000097.m3u8
+   延迟: 386.17ms | 分辨率: unknown | 状态: 成功
+
+136. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://36.32.174.67:60080/newlive/live/hls/40/live.m3u8
+   延迟: 437.20ms | 分辨率: unknown | 状态: 成功
+
+137. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://cssbyd.imwork.net:8082/hls/41/index.m3u8
+   延迟: 492.36ms | 分辨率: unknown | 状态: 成功
+
+138. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1050_1.m3u8
+   延迟: 492.80ms | 分辨率: unknown | 状态: 成功
+
+139. 分组: 卫视频道 | 名称: 吉林卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0116_1.m3u8
+   延迟: 521.58ms | 分辨率: unknown | 状态: 成功
+
+140. 分组: 卫视频道 | 名称: 四川卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%9B%9B%E5%B7%9D%E5%8D%AB%E8%A7%86
+   延迟: 55.61ms | 分辨率: unknown | 状态: 成功
+
+141. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://23.237.228.134/live6/sichuan.m3u8
+   延迟: 64.61ms | 分辨率: unknown | 状态: 成功
+
+142. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1044_1.m3u8
+   延迟: 217.28ms | 分辨率: unknown | 状态: 成功
+
+143. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1046_1.m3u8
+   延迟: 247.45ms | 分辨率: unknown | 状态: 成功
+
+144. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0123_1.m3u8?key=txiptv
+   延迟: 248.21ms | 分辨率: unknown | 状态: 成功
+
+145. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0123_1.m3u8
+   延迟: 259.88ms | 分辨率: unknown | 状态: 成功
+
+146. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 260.72ms | 分辨率: unknown | 状态: 成功
+
+147. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 261.64ms | 分辨率: unknown | 状态: 成功
+
+148. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://ygbh.site/php/bfgd.php?id=103
+   延迟: 265.40ms | 分辨率: unknown | 状态: 成功
+
+149. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0123_1.m3u8
+   延迟: 282.64ms | 分辨率: unknown | 状态: 成功
+
+150. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://222.134.245.16:9901/tsfile/live/0123_1.m3u8
+   延迟: 289.06ms | 分辨率: unknown | 状态: 成功
+
+151. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://111.61.236.247:9081/hls/35/index.m3u8
+   延迟: 351.00ms | 分辨率: unknown | 状态: 成功
+
+152. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://112.27.235.94:8000/hls/35/index.m3u8
+   延迟: 383.31ms | 分辨率: unknown | 状态: 成功
+
+153. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1058_1.m3u8
+   延迟: 428.68ms | 分辨率: unknown | 状态: 成功
+
+154. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://111.43.126.240:9003/hls/50/index.m3u8
+   延迟: 463.14ms | 分辨率: unknown | 状态: 成功
+
+155. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://tvlist.top/jd/index.php?id=scws&qt=183.224.122.114:8014
+   延迟: 463.73ms | 分辨率: unknown | 状态: 成功
+
+156. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0139_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 467.18ms | 分辨率: unknown | 状态: 成功
+
+157. 分组: 卫视频道 | 名称: 四川卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0137_2.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 495.02ms | 分辨率: unknown | 状态: 成功
+
+158. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
+   延迟: 46.22ms | 分辨率: unknown | 状态: 成功
+
+159. 分组: 卫视频道 | 名称: 天津卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%A4%A9%E6%B4%A5%E5%8D%AB%E8%A7%86
+   延迟: 57.32ms | 分辨率: unknown | 状态: 成功
+
+160. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://23.237.228.134/live8/tianjing.m3u8
+   延迟: 86.58ms | 分辨率: unknown | 状态: 成功
+
+161. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub
+   延迟: 122.91ms | 分辨率: unknown | 状态: 成功
+
+162. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/z2lkdkrb4w/index.m3u8
+   延迟: 143.06ms | 分辨率: unknown | 状态: 成功
+
+163. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1035_1.m3u8
+   延迟: 223.45ms | 分辨率: unknown | 状态: 成功
+
+164. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1034_1.m3u8
+   延迟: 242.33ms | 分辨率: unknown | 状态: 成功
+
+165. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 264.04ms | 分辨率: unknown | 状态: 成功
+
+166. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://60.16.0.216:5757/hls/34/index.m3u8
+   延迟: 266.00ms | 分辨率: unknown | 状态: 成功
+
+167. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 266.78ms | 分辨率: unknown | 状态: 成功
+
+168. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0135_1.m3u8
+   延迟: 271.63ms | 分辨率: unknown | 状态: 成功
+
+169. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0135_1.m3u8
+   延迟: 279.73ms | 分辨率: unknown | 状态: 成功
+
+170. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0135_1.m3u8
+   延迟: 323.97ms | 分辨率: unknown | 状态: 成功
+
+171. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/25/index.m3u8
+   延迟: 338.91ms | 分辨率: unknown | 状态: 成功
+
+172. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://111.61.236.247:9081/hls/29/index.m3u8
+   延迟: 351.48ms | 分辨率: unknown | 状态: 成功
+
+173. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://112.27.235.94:8000/hls/42/index.m3u8
+   延迟: 383.04ms | 分辨率: unknown | 状态: 成功
+
+174. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://120.211.62.180:8000/hls/36/index.m3u8
+   延迟: 401.43ms | 分辨率: unknown | 状态: 成功
+
+175. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://111.43.126.240:9003/hls/46/index.m3u8
+   延迟: 445.72ms | 分辨率: unknown | 状态: 成功
+
+176. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 455.21ms | 分辨率: unknown | 状态: 成功
+
+177. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://111.221.137.155:44330/tsfile/live/0132_2.m3u8?key=txiptv
+   延迟: 466.31ms | 分辨率: unknown | 状态: 成功
+
+178. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://112.46.85.60:8009/hls/44/index.m3u8
+   延迟: 471.31ms | 分辨率: unknown | 状态: 成功
+
+179. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://tvlist.top/jd/index.php?id=tjws&qt=183.224.122.114:8014
+   延迟: 481.52ms | 分辨率: unknown | 状态: 成功
+
+180. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 499.44ms | 分辨率: unknown | 状态: 成功
+
+181. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://183.11.239.36:808/hls/42/index.m3u8
+   延迟: 503.19ms | 分辨率: unknown | 状态: 成功
+
+182. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://ygbh.site/php/bfgd.php?id=084
+   延迟: 524.48ms | 分辨率: unknown | 状态: 成功
+
+183. 分组: 卫视频道 | 名称: 天津卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0135_1.m3u8
+   延迟: 533.82ms | 分辨率: unknown | 状态: 成功
+
+184. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%AE%81%E5%A4%8F%E5%8D%AB%E8%A7%86
+   延迟: 99.86ms | 分辨率: unknown | 状态: 成功
+
+185. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub
+   延迟: 117.92ms | 分辨率: unknown | 状态: 成功
+
+186. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://111.43.126.240:9003/hls/67/index.m3u8
+   延迟: 218.96ms | 分辨率: unknown | 状态: 成功
+
+187. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0125_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 233.61ms | 分辨率: unknown | 状态: 成功
+
+188. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1054_1.m3u8
+   延迟: 239.96ms | 分辨率: unknown | 状态: 成功
+
+189. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://cssbyd.imwork.net:8082/hls/45/index.m3u8
+   延迟: 246.77ms | 分辨率: unknown | 状态: 成功
+
+190. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://183.11.239.36:808/hls/106/index.m3u8
+   延迟: 248.98ms | 分辨率: unknown | 状态: 成功
+
+191. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0016_1.m3u8
+   延迟: 249.27ms | 分辨率: unknown | 状态: 成功
+
+192. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0112_1.m3u8
+   延迟: 259.74ms | 分辨率: unknown | 状态: 成功
+
+193. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://ygbh.site/php/bfgd.php?id=118
+   延迟: 274.44ms | 分辨率: unknown | 状态: 成功
+
+194. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0112_1.m3u8
+   延迟: 296.04ms | 分辨率: unknown | 状态: 成功
+
+195. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://111.61.236.247:9081/hls/51/index.m3u8
+   延迟: 316.32ms | 分辨率: unknown | 状态: 成功
+
+196. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/45/index.m3u8
+   延迟: 337.33ms | 分辨率: unknown | 状态: 成功
+
+197. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://120.76.248.139/live/bfgd/4200000118.m3u8
+   延迟: 368.41ms | 分辨率: unknown | 状态: 成功
+
+198. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1076_1.m3u8
+   延迟: 465.05ms | 分辨率: unknown | 状态: 成功
+
+199. 分组: 卫视频道 | 名称: 宁夏卫视
+   URL: http://tvlist.top/jd/index.php?id=linxws&qt=183.224.122.114:8014
+   延迟: 473.54ms | 分辨率: unknown | 状态: 成功
+
+200. 分组: 卫视频道 | 名称: 安多卫视
+   URL: https://stream1.freetv.fun/52d0df257c5c3cec42f2ae19268dbbc261256ff391b27bd83553bea941d0c186.m3u8
+   延迟: 139.11ms | 分辨率: unknown | 状态: 成功
+
+201. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://23.237.228.134/live8/anhui.m3u8
+   延迟: 64.13ms | 分辨率: unknown | 状态: 成功
+
+202. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%AE%89%E5%BE%BD%E5%8D%AB%E8%A7%86
+   延迟: 142.08ms | 分辨率: unknown | 状态: 成功
+
+203. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/ahwshd.m3u8?auth=testpub
+   延迟: 178.29ms | 分辨率: unknown | 状态: 成功
+
+204. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1039_1.m3u8
+   延迟: 219.62ms | 分辨率: unknown | 状态: 成功
+
+205. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 237.68ms | 分辨率: unknown | 状态: 成功
+
+206. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://183.11.239.36:808/hls/40/index.m3u8
+   延迟: 247.67ms | 分辨率: unknown | 状态: 成功
+
+207. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0130_2.m3u8
+   延迟: 249.44ms | 分辨率: unknown | 状态: 成功
+
+208. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 252.14ms | 分辨率: unknown | 状态: 成功
+
+209. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 255.81ms | 分辨率: unknown | 状态: 成功
+
+210. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0130_1.m3u8
+   延迟: 258.69ms | 分辨率: unknown | 状态: 成功
+
+211. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.56ms | 分辨率: unknown | 状态: 成功
+
+212. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1033_1.m3u8
+   延迟: 261.54ms | 分辨率: unknown | 状态: 成功
+
+213. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://60.16.0.216:5757/hls/31/index.m3u8
+   延迟: 267.60ms | 分辨率: unknown | 状态: 成功
+
+214. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0130_1.m3u8
+   延迟: 294.90ms | 分辨率: unknown | 状态: 成功
+
+215. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://ygbh.site/php/bfgd.php?id=096
+   延迟: 302.59ms | 分辨率: unknown | 状态: 成功
+
+216. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://111.61.236.247:9081/hls/27/index.m3u8
+   延迟: 329.27ms | 分辨率: unknown | 状态: 成功
+
+217. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://112.27.235.94:8000/hls/26/index.m3u8
+   延迟: 393.83ms | 分辨率: unknown | 状态: 成功
+
+218. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://120.211.62.180:8000/hls/33/index.m3u8
+   延迟: 403.09ms | 分辨率: unknown | 状态: 成功
+
+219. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://111.43.126.240:9003/hls/43/index.m3u8
+   延迟: 444.41ms | 分辨率: unknown | 状态: 成功
+
+220. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0120_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 451.40ms | 分辨率: unknown | 状态: 成功
+
+221. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0130_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 501.23ms | 分辨率: unknown | 状态: 成功
+
+222. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0130_1.m3u8
+   延迟: 510.51ms | 分辨率: unknown | 状态: 成功
+
+223. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 526.55ms | 分辨率: unknown | 状态: 成功
+
+224. 分组: 卫视频道 | 名称: 安徽卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0130_1.m3u8
+   延迟: 537.63ms | 分辨率: unknown | 状态: 成功
+
+225. 分组: 卫视频道 | 名称: 山东卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%B1%B1%E4%B8%9C%E5%8D%AB%E8%A7%86
+   延迟: 52.67ms | 分辨率: unknown | 状态: 成功
+
+226. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub
+   延迟: 118.36ms | 分辨率: unknown | 状态: 成功
+
+227. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/6gcdai13om5/index.m3u8
+   延迟: 205.68ms | 分辨率: unknown | 状态: 成功
+
+228. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://120.211.62.180:8000/hls/38/index.m3u8
+   延迟: 222.35ms | 分辨率: unknown | 状态: 成功
+
+229. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1018_1.m3u8
+   延迟: 224.85ms | 分辨率: unknown | 状态: 成功
+
+230. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0122_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 229.64ms | 分辨率: unknown | 状态: 成功
+
+231. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0131_1.m3u8
+   延迟: 250.01ms | 分辨率: unknown | 状态: 成功
+
+232. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://60.16.0.216:5757/hls/27/index.m3u8
+   延迟: 260.41ms | 分辨率: unknown | 状态: 成功
+
+233. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0131_1.m3u8
+   延迟: 260.42ms | 分辨率: unknown | 状态: 成功
+
+234. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0131_1.m3u8
+   延迟: 286.71ms | 分辨率: unknown | 状态: 成功
+
+235. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 300.29ms | 分辨率: unknown | 状态: 成功
+
+236. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 309.56ms | 分辨率: unknown | 状态: 成功
+
+237. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/27/index.m3u8
+   延迟: 321.46ms | 分辨率: unknown | 状态: 成功
+
+238. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://111.61.236.247:9081/hls/31/index.m3u8
+   延迟: 321.49ms | 分辨率: unknown | 状态: 成功
+
+239. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://ygbh.site/php/bfgd.php?id=099
+   延迟: 331.07ms | 分辨率: unknown | 状态: 成功
+
+240. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://120.76.248.139/live/bfgd/4200000099.m3u8
+   延迟: 363.32ms | 分辨率: unknown | 状态: 成功
+
+241. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://112.27.235.94:8000/hls/34/index.m3u8
+   延迟: 381.19ms | 分辨率: unknown | 状态: 成功
+
+242. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://61.184.46.85:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 384.08ms | 分辨率: unknown | 状态: 成功
+
+243. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNDMvaW5kZXgubTN1OA==
+   延迟: 428.33ms | 分辨率: unknown | 状态: 成功
+
+244. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0121_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 456.55ms | 分辨率: unknown | 状态: 成功
+
+245. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://tvlist.top/jd/index.php?id=sdws&qt=183.224.122.114:8014
+   延迟: 462.34ms | 分辨率: unknown | 状态: 成功
+
+246. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0131_1.m3u8
+   延迟: 484.29ms | 分辨率: unknown | 状态: 成功
+
+247. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://183.11.239.36:808/hls/43/index.m3u8
+   延迟: 507.04ms | 分辨率: unknown | 状态: 成功
+
+248. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 509.59ms | 分辨率: unknown | 状态: 成功
+
+249. 分组: 卫视频道 | 名称: 山东卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0131_1.m3u8
+   延迟: 519.46ms | 分辨率: unknown | 状态: 成功
+
+250. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
+   延迟: 62.19ms | 分辨率: unknown | 状态: 成功
+
+251. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://23.237.228.134/live6/guangdong.m3u8
+   延迟: 128.78ms | 分辨率: unknown | 状态: 成功
+
+252. 分组: 卫视频道 | 名称: 广东卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%B9%BF%E4%B8%9C%E5%8D%AB%E8%A7%86
+   延迟: 146.96ms | 分辨率: unknown | 状态: 成功
+
+253. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://112.27.235.94:8000/hls/30/index.m3u8
+   延迟: 197.19ms | 分辨率: unknown | 状态: 成功
+
+254. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://120.202.94.181:9446/tsfile/live/0125_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 232.07ms | 分辨率: unknown | 状态: 成功
+
+255. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 233.91ms | 分辨率: unknown | 状态: 成功
+
+256. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0125_1.m3u8
+   延迟: 250.44ms | 分辨率: unknown | 状态: 成功
+
+257. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
+   延迟: 254.23ms | 分辨率: unknown | 状态: 成功
+
+258. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 255.77ms | 分辨率: unknown | 状态: 成功
+
+259. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0125_1.m3u8
+   延迟: 266.90ms | 分辨率: unknown | 状态: 成功
+
+260. 分组: 卫视频道 | 名称: 广东卫视
+   URL: https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4
+   延迟: 272.97ms | 分辨率: unknown | 状态: 成功
+
+261. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://222.214.208.34:59901/tsfile/live/0125_1.m3u8
+   延迟: 274.40ms | 分辨率: unknown | 状态: 成功
+
+262. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://222.169.85.8:9901/tsfile/live/0125_1.m3u8
+   延迟: 283.44ms | 分辨率: unknown | 状态: 成功
+
+263. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0125_1.m3u8
+   延迟: 285.07ms | 分辨率: unknown | 状态: 成功
+
+264. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://ygbh.site/php/bfgd.php?id=092
+   延迟: 305.42ms | 分辨率: unknown | 状态: 成功
+
+265. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 316.21ms | 分辨率: unknown | 状态: 成功
+
+266. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0125_1.m3u8
+   延迟: 342.91ms | 分辨率: unknown | 状态: 成功
+
+267. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://120.76.248.139/live/bfgd/4200000092.m3u8
+   延迟: 374.24ms | 分辨率: unknown | 状态: 成功
+
+268. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1042_1.m3u8
+   延迟: 433.15ms | 分辨率: unknown | 状态: 成功
+
+269. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://111.43.126.240:9003/hls/42/index.m3u8
+   延迟: 453.43ms | 分辨率: unknown | 状态: 成功
+
+270. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://43.251.226.89:8080/play/35.m3u8
+   延迟: 466.81ms | 分辨率: unknown | 状态: 成功
+
+271. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 490.19ms | 分辨率: unknown | 状态: 成功
+
+272. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://183.47.2.156:16883/udp/239.77.0.84:5146
+   延迟: 493.29ms | 分辨率: unknown | 状态: 成功
+
+273. 分组: 卫视频道 | 名称: 广东卫视
+   URL: http://60.16.0.216:5757/hls/20/index.m3u8
+   延迟: 519.91ms | 分辨率: unknown | 状态: 成功
+
+274. 分组: 卫视频道 | 名称: 广西卫视
+   URL: https://iptv.catvod.com/live.php?id=%E5%B9%BF%E8%A5%BF%E5%8D%AB%E8%A7%86
+   延迟: 57.32ms | 分辨率: unknown | 状态: 成功
+
+275. 分组: 卫视频道 | 名称: 广西卫视
+   URL: https://smt.858.qzz.io/Smart.php?id=guangxi
+   延迟: 62.52ms | 分辨率: unknown | 状态: 成功
+
+276. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://23.237.228.134/live6/guizhou.m3u8
+   延迟: 64.39ms | 分辨率: unknown | 状态: 成功
+
+277. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://23.237.228.134/live6/guangxi.m3u8
+   延迟: 69.73ms | 分辨率: unknown | 状态: 成功
+
+278. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub
+   延迟: 75.00ms | 分辨率: unknown | 状态: 成功
+
+279. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/yvz4ndj9dqb/index.m3u8
+   延迟: 127.08ms | 分辨率: unknown | 状态: 成功
+
+280. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://111.43.126.240:9003/hls/62/index.m3u8
+   延迟: 218.36ms | 分辨率: unknown | 状态: 成功
+
+281. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1077_1.m3u8
+   延迟: 222.22ms | 分辨率: unknown | 状态: 成功
+
+282. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://ygbh.site/php/bfgd.php?id=116
+   延迟: 253.88ms | 分辨率: unknown | 状态: 成功
+
+283. 分组: 卫视频道 | 名称: 广西卫视
+   URL: https://hlscdn.liangtv.cn/live/de0f97348eb84f62aa6b7d8cf0430770/dd505d87880c478f901f38560ca4d4e6.m3u8
+   延迟: 257.80ms | 分辨率: 1920x1080 | 状态: 成功
+
+284. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0113_1.m3u8
+   延迟: 259.58ms | 分辨率: unknown | 状态: 成功
+
+285. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0113_1.m3u8
+   延迟: 273.95ms | 分辨率: unknown | 状态: 成功
+
+286. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://111.61.236.247:9081/hls/44/index.m3u8
+   延迟: 321.59ms | 分辨率: unknown | 状态: 成功
+
+287. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/39/index.m3u8
+   延迟: 335.75ms | 分辨率: unknown | 状态: 成功
+
+288. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://113.25.252.226:9901/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 360.59ms | 分辨率: unknown | 状态: 成功
+
+289. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://183.11.239.36:808/hls/56/index.m3u8
+   延迟: 495.40ms | 分辨率: unknown | 状态: 成功
+
+290. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 499.18ms | 分辨率: unknown | 状态: 成功
+
+291. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1049_1.m3u8
+   延迟: 500.58ms | 分辨率: unknown | 状态: 成功
+
+292. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://60.16.0.216:5757/hls/45/index.m3u8
+   延迟: 505.02ms | 分辨率: unknown | 状态: 成功
+
+293. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://cssbyd.imwork.net:8082/hls/33/index.m3u8
+   延迟: 506.70ms | 分辨率: unknown | 状态: 成功
+
+294. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://120.76.248.139/live/bfgd/4200000116.m3u8
+   延迟: 508.00ms | 分辨率: unknown | 状态: 成功
+
+295. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://218.92.37.174:9901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 513.46ms | 分辨率: unknown | 状态: 成功
+
+296. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 517.76ms | 分辨率: unknown | 状态: 成功
+
+297. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://222.134.245.16:9901/tsfile/live/0113_1.m3u8
+   延迟: 528.52ms | 分辨率: unknown | 状态: 成功
+
+298. 分组: 卫视频道 | 名称: 广西卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0113_1.m3u8
+   延迟: 530.04ms | 分辨率: unknown | 状态: 成功
+
+299. 分组: 卫视频道 | 名称: 延边卫视
+   URL: http://111.43.126.240:9003/hls/65/index.m3u8
+   延迟: 223.52ms | 分辨率: unknown | 状态: 成功
+
+300. 分组: 卫视频道 | 名称: 延边卫视
+   URL: http://ygbh.site/php/bfgd.php?id=117
+   延迟: 259.17ms | 分辨率: unknown | 状态: 成功
+
+301. 分组: 卫视频道 | 名称: 延边卫视
+   URL: https://stream1.freetv.fun/yan-bian-wei-shi-15.m3u8
+   延迟: 446.31ms | 分辨率: unknown | 状态: 成功
+
+302. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%96%B0%E7%96%86%E5%8D%AB%E8%A7%86
+   延迟: 51.82ms | 分辨率: unknown | 状态: 成功
+
+303. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
+   延迟: 75.66ms | 分辨率: unknown | 状态: 成功
+
+304. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/vr12qgtucx/index.m3u8
+   延迟: 101.47ms | 分辨率: unknown | 状态: 成功
+
+305. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://111.43.126.240:9003/hls/64/index.m3u8
+   延迟: 222.85ms | 分辨率: unknown | 状态: 成功
+
+306. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0143_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 230.86ms | 分辨率: unknown | 状态: 成功
+
+307. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://183.11.239.36:808/hls/65/index.m3u8
+   延迟: 252.88ms | 分辨率: unknown | 状态: 成功
+
+308. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://60.16.0.216:5757/hls/47/index.m3u8
+   延迟: 253.35ms | 分辨率: unknown | 状态: 成功
+
+309. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1055_1.m3u8
+   延迟: 256.93ms | 分辨率: unknown | 状态: 成功
+
+310. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0018_1.m3u8
+   延迟: 261.04ms | 分辨率: unknown | 状态: 成功
+
+311. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 262.05ms | 分辨率: unknown | 状态: 成功
+
+312. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://ygbh.site/php/bfgd.php?id=150
+   延迟: 326.72ms | 分辨率: unknown | 状态: 成功
+
+313. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0110_1.m3u8
+   延迟: 330.18ms | 分辨率: unknown | 状态: 成功
+
+314. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/47/index.m3u8
+   延迟: 342.27ms | 分辨率: unknown | 状态: 成功
+
+315. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://120.76.248.139/live/bfgd/4200000150.m3u8
+   延迟: 371.07ms | 分辨率: unknown | 状态: 成功
+
+316. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://tvlist.top/jd/index.php?id=xjws&qt=183.224.122.114:8014
+   延迟: 477.64ms | 分辨率: unknown | 状态: 成功
+
+317. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://219.146.95.58:59902/tsfile/live/0110_1.m3u8?txiptv
+   延迟: 491.80ms | 分辨率: unknown | 状态: 成功
+
+318. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0110_1.m3u8?key=txiptv
+   延迟: 495.01ms | 分辨率: unknown | 状态: 成功
+
+319. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0110_1.m3u8
+   延迟: 503.04ms | 分辨率: unknown | 状态: 成功
+
+320. 分组: 卫视频道 | 名称: 新疆卫视
+   URL: http://219.146.95.58:59902/tsfile/live/0110_1.m3u8
+   延迟: 521.33ms | 分辨率: unknown | 状态: 成功
+
+321. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://69.30.246.194/live/jsws.m3u8
+   延迟: 12.89ms | 分辨率: unknown | 状态: 成功
+
+322. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub
+   延迟: 125.23ms | 分辨率: unknown | 状态: 成功
+
+323. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://23.237.228.134/live3/jiangsu.m3u8
+   延迟: 128.31ms | 分辨率: unknown | 状态: 成功
+
+324. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/g1upm1u239/index.m3u8
+   延迟: 149.41ms | 分辨率: unknown | 状态: 成功
+
+325. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://120.211.62.180:8000/hls/32/index.m3u8
+   延迟: 198.41ms | 分辨率: unknown | 状态: 成功
+
+326. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1038_1.m3u8
+   延迟: 222.73ms | 分辨率: unknown | 状态: 成功
+
+327. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://111.43.126.240:9003/hls/38/index.m3u8
+   延迟: 227.71ms | 分辨率: unknown | 状态: 成功
+
+328. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://120.202.94.181:9446/tsfile/live/0127_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 229.69ms | 分辨率: unknown | 状态: 成功
+
+329. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://218.3.138.25:1111/tsfile/live/1017_1.m3u8
+   延迟: 230.19ms | 分辨率: unknown | 状态: 成功
+
+330. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0017_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 234.09ms | 分辨率: unknown | 状态: 成功
+
+331. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 241.90ms | 分辨率: unknown | 状态: 成功
+
+332. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 242.64ms | 分辨率: unknown | 状态: 成功
+
+333. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.22ms | 分辨率: unknown | 状态: 成功
+
+334. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1031_1.m3u8
+   延迟: 263.38ms | 分辨率: unknown | 状态: 成功
+
+335. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://60.16.0.216:5757/hls/24/index.m3u8
+   延迟: 265.89ms | 分辨率: unknown | 状态: 成功
+
+336. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0127_1.m3u8
+   延迟: 279.31ms | 分辨率: unknown | 状态: 成功
+
+337. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 289.27ms | 分辨率: unknown | 状态: 成功
+
+338. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0127_1.m3u8
+   延迟: 296.31ms | 分辨率: unknown | 状态: 成功
+
+339. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://111.61.236.247:9081/hls/26/index.m3u8
+   延迟: 348.84ms | 分辨率: unknown | 状态: 成功
+
+340. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://112.27.235.94:8000/hls/32/index.m3u8
+   延迟: 388.34ms | 分辨率: unknown | 状态: 成功
+
+341. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://112.46.85.60:8009/hls/33/index.m3u8
+   延迟: 497.71ms | 分辨率: unknown | 状态: 成功
+
+342. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://27.41.245.32:801/hls/42/index.m3u8
+   延迟: 498.98ms | 分辨率: unknown | 状态: 成功
+
+343. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0127_1.m3u8
+   延迟: 500.19ms | 分辨率: unknown | 状态: 成功
+
+344. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B1%9F%E8%8B%8F%E5%8D%AB%E8%A7%86
+   延迟: 528.71ms | 分辨率: unknown | 状态: 成功
+
+345. 分组: 卫视频道 | 名称: 江苏卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0127_1.m3u8
+   延迟: 535.89ms | 分辨率: unknown | 状态: 成功
+
+346. 分组: 卫视频道 | 名称: 江西卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B1%9F%E8%A5%BF%E5%8D%AB%E8%A7%86
+   延迟: 53.35ms | 分辨率: unknown | 状态: 成功
+
+347. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://23.237.228.134/live8/jiangxi.m3u8
+   延迟: 64.34ms | 分辨率: unknown | 状态: 成功
+
+348. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub
+   延迟: 118.49ms | 分辨率: unknown | 状态: 成功
+
+349. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1078_1.m3u8
+   延迟: 220.95ms | 分辨率: unknown | 状态: 成功
+
+350. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0137_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 228.17ms | 分辨率: unknown | 状态: 成功
+
+351. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 232.67ms | 分辨率: unknown | 状态: 成功
+
+352. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 247.60ms | 分辨率: unknown | 状态: 成功
+
+353. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1043_1.m3u8
+   延迟: 247.76ms | 分辨率: unknown | 状态: 成功
+
+354. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0138_2.m3u8
+   延迟: 249.25ms | 分辨率: unknown | 状态: 成功
+
+355. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.82ms | 分辨率: unknown | 状态: 成功
+
+356. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://60.16.0.216:5757/hls/26/index.m3u8
+   延迟: 267.60ms | 分辨率: unknown | 状态: 成功
+
+357. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0138_1.m3u8
+   延迟: 281.43ms | 分辨率: unknown | 状态: 成功
+
+358. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://ygbh.site/php/bfgd.php?id=098
+   延迟: 287.72ms | 分辨率: unknown | 状态: 成功
+
+359. 分组: 卫视频道 | 名称: 江西卫视
+   URL: https://www.freetv.top/migu/783847495.m3u8?migutoken=fddcc05dc0245329d3208607a5b1f5a1980bc31a7ced510e345af6cc68f5b86d2d9178b45706a0b6a0ceddc82ce06e53375cfedbc96fd0b00c12195c7d77b6f23811a67970bcfeb47629aa5aa6
+   延迟: 297.59ms | 分辨率: unknown | 状态: 成功
+
+360. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://111.61.236.247:9081/hls/36/index.m3u8
+   延迟: 349.98ms | 分辨率: unknown | 状态: 成功
+
+361. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://113.25.252.226:9901/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 360.14ms | 分辨率: unknown | 状态: 成功
+
+362. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://120.76.248.139/live/bfgd/4200000098.m3u8
+   延迟: 365.71ms | 分辨率: unknown | 状态: 成功
+
+363. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://112.27.235.94:8000/hls/44/index.m3u8
+   延迟: 383.22ms | 分辨率: unknown | 状态: 成功
+
+364. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://111.43.126.240:9003/hls/49/index.m3u8
+   延迟: 463.35ms | 分辨率: unknown | 状态: 成功
+
+365. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0138_1.m3u8?key=txiptv
+   延迟: 496.50ms | 分辨率: unknown | 状态: 成功
+
+366. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://183.11.239.36:808/hls/44/index.m3u8
+   延迟: 500.22ms | 分辨率: unknown | 状态: 成功
+
+367. 分组: 卫视频道 | 名称: 江西卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 507.81ms | 分辨率: unknown | 状态: 成功
+
+368. 分组: 卫视频道 | 名称: 河北卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B2%B3%E5%8C%97%E5%8D%AB%E8%A7%86
+   延迟: 51.50ms | 分辨率: unknown | 状态: 成功
+
+369. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180919.swf?v=180.171.5.8.9.6.3.9&ChannelID=hebei&videoTVChannel=hebei&P2PChannelID=pd://cctv_p2p_hebei&tai=hebei&VideoName=hebei&channelID=hebei
+   延迟: 56.08ms | 分辨率: unknown | 状态: 成功
+
+370. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://23.237.228.134/live8/hebei.m3u8
+   延迟: 66.66ms | 分辨率: unknown | 状态: 成功
+
+371. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1079_1.m3u8
+   延迟: 223.46ms | 分辨率: unknown | 状态: 成功
+
+372. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://111.43.126.240:9003/hls/56/index.m3u8
+   延迟: 225.10ms | 分辨率: unknown | 状态: 成功
+
+373. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://183.11.239.36:808/hls/54/index.m3u8
+   延迟: 251.98ms | 分辨率: unknown | 状态: 成功
+
+374. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0117_1.m3u8
+   延迟: 256.22ms | 分辨率: unknown | 状态: 成功
+
+375. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://60.16.0.216:5757/hls/38/index.m3u8
+   延迟: 262.09ms | 分辨率: unknown | 状态: 成功
+
+376. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0117_1.m3u8
+   延迟: 264.14ms | 分辨率: unknown | 状态: 成功
+
+377. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1044_1.m3u8
+   延迟: 267.08ms | 分辨率: unknown | 状态: 成功
+
+378. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://111.61.236.247:9081/hls/17/index.m3u8
+   延迟: 313.37ms | 分辨率: unknown | 状态: 成功
+
+379. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/15/index.m3u8
+   延迟: 337.39ms | 分辨率: unknown | 状态: 成功
+
+380. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://ygbh.site/php/bfgd.php?id=108
+   延迟: 352.02ms | 分辨率: unknown | 状态: 成功
+
+381. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://112.27.235.94:8000/hls/39/index.m3u8
+   延迟: 380.02ms | 分辨率: unknown | 状态: 成功
+
+382. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://120.76.248.139/live/bfgd/4200000108.m3u8
+   延迟: 414.43ms | 分辨率: unknown | 状态: 成功
+
+383. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://120.211.62.180:8000/hls/19/index.m3u8
+   延迟: 423.38ms | 分辨率: unknown | 状态: 成功
+
+384. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0018_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 457.49ms | 分辨率: unknown | 状态: 成功
+
+385. 分组: 卫视频道 | 名称: 河北卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0117_1.m3u8
+   延迟: 543.50ms | 分辨率: unknown | 状态: 成功
+
+386. 分组: 卫视频道 | 名称: 河南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B2%B3%E5%8D%97%E5%8D%AB%E8%A7%86
+   延迟: 68.27ms | 分辨率: unknown | 状态: 成功
+
+387. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://23.237.228.134/live6/henan.m3u8
+   延迟: 86.02ms | 分辨率: unknown | 状态: 成功
+
+388. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://112.27.235.94:8000/hls/37/index.m3u8
+   延迟: 196.72ms | 分辨率: unknown | 状态: 成功
+
+389. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://120.211.62.180:8000/hls/40/index.m3u8
+   延迟: 201.54ms | 分辨率: unknown | 状态: 成功
+
+390. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1080_1.m3u8
+   延迟: 216.15ms | 分辨率: unknown | 状态: 成功
+
+391. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 237.89ms | 分辨率: unknown | 状态: 成功
+
+392. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.06ms | 分辨率: unknown | 状态: 成功
+
+393. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 242.30ms | 分辨率: unknown | 状态: 成功
+
+394. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=339
+   延迟: 248.64ms | 分辨率: unknown | 状态: 成功
+
+395. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1048_1.m3u8
+   延迟: 263.31ms | 分辨率: unknown | 状态: 成功
+
+396. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://60.16.0.216:5757/hls/42/index.m3u8
+   延迟: 268.01ms | 分辨率: unknown | 状态: 成功
+
+397. 分组: 卫视频道 | 名称: 河南卫视
+   URL: https://www.freetv.top/migu/790187291.m3u8?migutoken=8cfda6b4bd8593bb9739434fecdd1cd097ab9b9609ed72d6de4ca14196c33fbc5ea88d4dae5a4c8a359213f9affc7ab2cf675a934561839e4060ba75bd56e43da713a62e3ebabc4ced1c770bca
+   延迟: 279.41ms | 分辨率: unknown | 状态: 成功
+
+398. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0139_1.m3u8
+   延迟: 294.00ms | 分辨率: unknown | 状态: 成功
+
+399. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0139_1.m3u8
+   延迟: 295.04ms | 分辨率: unknown | 状态: 成功
+
+400. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/28/index.m3u8
+   延迟: 340.45ms | 分辨率: unknown | 状态: 成功
+
+401. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://111.61.236.247:9081/hls/33/index.m3u8
+   延迟: 343.12ms | 分辨率: unknown | 状态: 成功
+
+402. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=104
+   延迟: 393.79ms | 分辨率: unknown | 状态: 成功
+
+403. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://36.32.174.67:60080/newlive/live/hls/35/live.m3u8
+   延迟: 398.37ms | 分辨率: unknown | 状态: 成功
+
+404. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMjcvaW5kZXgubTN1OA==
+   延迟: 431.38ms | 分辨率: unknown | 状态: 成功
+
+405. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1068_1.m3u8
+   延迟: 439.97ms | 分辨率: unknown | 状态: 成功
+
+406. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://111.221.137.155:44330/tsfile/live/0123_1.m3u8?key=txiptv
+   延迟: 449.47ms | 分辨率: unknown | 状态: 成功
+
+407. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0121_1.m3u8
+   延迟: 457.93ms | 分辨率: unknown | 状态: 成功
+
+408. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://111.43.126.240:9003/hls/44/index.m3u8
+   延迟: 458.49ms | 分辨率: unknown | 状态: 成功
+
+409. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://183.222.242.31:8088/hls/35/index.m3u8
+   延迟: 459.77ms | 分辨率: unknown | 状态: 成功
+
+410. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://221.13.234.185:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 467.66ms | 分辨率: unknown | 状态: 成功
+
+411. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://cssbyd.imwork.net:8082/hls/37/index.m3u8
+   延迟: 492.94ms | 分辨率: unknown | 状态: 成功
+
+412. 分组: 卫视频道 | 名称: 河南卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0139_1.m3u8
+   延迟: 512.50ms | 分辨率: unknown | 状态: 成功
+
+413. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://69.30.246.194/live/zjws.m3u8
+   延迟: 25.45ms | 分辨率: unknown | 状态: 成功
+
+414. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: https://stream1.freetv.fun/3bcf99d2946ccf8b6feabbc8298a4630913b805d5965a209a4d2de2ae9ffc79f.m3u8
+   延迟: 28.74ms | 分辨率: unknown | 状态: 成功
+
+415. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8
+   延迟: 34.25ms | 分辨率: unknown | 状态: 成功
+
+416. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/zjwshd.m3u8?auth=testpub
+   延迟: 60.65ms | 分辨率: unknown | 状态: 成功
+
+417. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://23.237.228.134/live6/zhejiang.m3u8
+   延迟: 85.13ms | 分辨率: unknown | 状态: 成功
+
+418. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=12da06&tk=822270345d4c
+   延迟: 200.08ms | 分辨率: unknown | 状态: 成功
+
+419. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+   延迟: 205.28ms | 分辨率: unknown | 状态: 成功
+
+420. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://120.202.94.181:9446/tsfile/live/0124_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 225.85ms | 分辨率: unknown | 状态: 成功
+
+421. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
+   延迟: 241.04ms | 分辨率: unknown | 状态: 成功
+
+422. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://ali-m-l.cztv.com:80/channels/lantian/channel001/1080p.m3u8
+   延迟: 249.97ms | 分辨率: unknown | 状态: 成功
+
+423. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0124_1.m3u8
+   延迟: 250.92ms | 分辨率: unknown | 状态: 成功
+
+424. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 251.85ms | 分辨率: unknown | 状态: 成功
+
+425. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 254.16ms | 分辨率: unknown | 状态: 成功
+
+426. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 258.46ms | 分辨率: unknown | 状态: 成功
+
+427. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 261.26ms | 分辨率: unknown | 状态: 成功
+
+428. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://cssbyd.imwork.net:8082/hls/22/index.m3u8
+   延迟: 264.48ms | 分辨率: unknown | 状态: 成功
+
+429. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0124_1.m3u8
+   延迟: 291.29ms | 分辨率: unknown | 状态: 成功
+
+430. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0124_1.m3u8
+   延迟: 294.84ms | 分辨率: unknown | 状态: 成功
+
+431. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8$LR•IPV4『线路105』
+   延迟: 295.25ms | 分辨率: unknown | 状态: 成功
+
+432. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://ygbh.site/php/bfgd.php?id=094
+   延迟: 310.35ms | 分辨率: unknown | 状态: 成功
+
+433. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://112.27.235.94:8000/hls/29/index.m3u8
+   延迟: 415.53ms | 分辨率: unknown | 状态: 成功
+
+434. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1037_1.m3u8
+   延迟: 443.93ms | 分辨率: unknown | 状态: 成功
+
+435. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://111.43.126.240:9003/hls/40/index.m3u8
+   延迟: 456.57ms | 分辨率: unknown | 状态: 成功
+
+436. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://tvlist.top/jd/index.php?id=zjws&qt=183.224.122.114:8014
+   延迟: 470.05ms | 分辨率: unknown | 状态: 成功
+
+437. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0124_1.m3u8
+   延迟: 471.88ms | 分辨率: unknown | 状态: 成功
+
+438. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8$LR•IPV4『线路166』
+   延迟: 486.21ms | 分辨率: unknown | 状态: 成功
+
+439. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://112.46.85.60:8009/hls/34/index.m3u8
+   延迟: 514.75ms | 分辨率: unknown | 状态: 成功
+
+440. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://218.3.138.25:1111/tsfile/live/1019_1.m3u8
+   延迟: 534.80ms | 分辨率: unknown | 状态: 成功
+
+441. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: http://60.16.0.216:5757/hls/22/index.m3u8
+   延迟: 534.91ms | 分辨率: unknown | 状态: 成功
+
+442. 分组: 卫视频道 | 名称: 浙江卫视
+   URL: https://play-qukan.cztv.com/live/1746687519046362.m3u8
+   延迟: 535.83ms | 分辨率: unknown | 状态: 成功
+
+443. 分组: 卫视频道 | 名称: 海南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B5%B7%E5%8D%97%E5%8D%AB%E8%A7%86
+   延迟: 108.42ms | 分辨率: unknown | 状态: 成功
+
+444. 分组: 卫视频道 | 名称: 海南卫视
+   URL: https://www.freetv.top/migu/947472502.m3u8?migutoken=b49395c0adad3f977a69d9555b7ec0e60a9f6076a9bd17687472774c39f5e60c68b55ab46fdf0d73b68a871b71b438163c9ae6604499693eb260ed04ebe98df3f12124410b199e0741f3429b11
+   延迟: 309.13ms | 分辨率: unknown | 状态: 成功
+
+445. 分组: 卫视频道 | 名称: 海南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=473
+   延迟: 414.09ms | 分辨率: unknown | 状态: 成功
+
+446. 分组: 卫视频道 | 名称: 海南卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1046_1.m3u8
+   延迟: 433.31ms | 分辨率: unknown | 状态: 成功
+
+447. 分组: 卫视频道 | 名称: 海南卫视
+   URL: http://111.43.126.240:9003/hls/53/index.m3u8
+   延迟: 465.82ms | 分辨率: unknown | 状态: 成功
+
+448. 分组: 卫视频道 | 名称: 海南卫视
+   URL: http://cssbyd.imwork.net:8082/hls/31/index.m3u8
+   延迟: 496.43ms | 分辨率: unknown | 状态: 成功
+
+449. 分组: 卫视频道 | 名称: 海南卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1000_1.m3u8
+   延迟: 497.17ms | 分辨率: unknown | 状态: 成功
+
+450. 分组: 卫视频道 | 名称: 海南卫视
+   URL: http://183.11.239.36:808/hls/124/index.m3u8
+   延迟: 497.83ms | 分辨率: unknown | 状态: 成功
+
+451. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: https://t.freetv.fun/live/hai-xia-wei-shi.m3u8
+   延迟: 21.40ms | 分辨率: 640x360 | 状态: 成功
+
+452. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: https://t.freetv.fun/live/hai-xia-wei-shi-4.m3u8
+   延迟: 27.96ms | 分辨率: 640x360 | 状态: 成功
+
+453. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B5%B7%E5%B3%A1%E5%8D%AB%E8%A7%86
+   延迟: 53.77ms | 分辨率: unknown | 状态: 成功
+
+454. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
+   延迟: 103.71ms | 分辨率: unknown | 状态: 成功
+
+455. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
+   延迟: 104.00ms | 分辨率: 1920x1080 | 状态: 成功
+
+456. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: https://t.freetv.fun/live/hai-xia-wei-shi-5.m3u8
+   延迟: 181.10ms | 分辨率: 640x360 | 状态: 成功
+
+457. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: https://t.freetv.fun/live/hai-xia-wei-shi-1.m3u8
+   延迟: 437.49ms | 分辨率: 640x360 | 状态: 成功
+
+458. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: http://cdn3.163189.xyz/163189/hxws
+   延迟: 453.75ms | 分辨率: unknown | 状态: 成功
+
+459. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: http://43.251.226.89:8080/play/1021.m3u8
+   延迟: 517.08ms | 分辨率: unknown | 状态: 成功
+
+460. 分组: 卫视频道 | 名称: 海峡卫视
+   URL: http://8.138.7.223/tv/hxws.m3u8
+   延迟: 529.97ms | 分辨率: unknown | 状态: 成功
+
+461. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://23.237.228.134/live6/shenzhen.m3u8
+   延迟: 64.34ms | 分辨率: unknown | 状态: 成功
+
+462. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
+   延迟: 98.74ms | 分辨率: 1920x1080 | 状态: 成功
+
+463. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub
+   延迟: 123.36ms | 分辨率: unknown | 状态: 成功
+
+464. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: https://smt.858.qzz.io/Smart.php?id=shenzhen
+   延迟: 124.73ms | 分辨率: unknown | 状态: 成功
+
+465. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B7%B1%E5%9C%B3%E5%8D%AB%E8%A7%86
+   延迟: 153.71ms | 分辨率: unknown | 状态: 成功
+
+466. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/iftsd32ykm/index.m3u8
+   延迟: 155.66ms | 分辨率: unknown | 状态: 成功
+
+467. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1049_1.m3u8
+   延迟: 218.11ms | 分辨率: unknown | 状态: 成功
+
+468. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://120.202.94.181:9446/tsfile/live/0126_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 224.54ms | 分辨率: unknown | 状态: 成功
+
+469. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 225.30ms | 分辨率: unknown | 状态: 成功
+
+470. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.91ms | 分辨率: unknown | 状态: 成功
+
+471. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://ygbh.site/php/bfgd.php?id=100
+   延迟: 243.79ms | 分辨率: unknown | 状态: 成功
+
+472. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://120.76.248.139/live/bfgd/4200000100.m3u8
+   延迟: 252.06ms | 分辨率: unknown | 状态: 成功
+
+473. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 252.22ms | 分辨率: unknown | 状态: 成功
+
+474. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0126_1.m3u8
+   延迟: 257.92ms | 分辨率: unknown | 状态: 成功
+
+475. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.03ms | 分辨率: unknown | 状态: 成功
+
+476. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 260.05ms | 分辨率: unknown | 状态: 成功
+
+477. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://60.16.0.216:5757/hls/19/index.m3u8
+   延迟: 267.41ms | 分辨率: unknown | 状态: 成功
+
+478. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://111.61.236.247:9081/hls/38/index.m3u8
+   延迟: 335.69ms | 分辨率: unknown | 状态: 成功
+
+479. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0126_1.m3u8
+   延迟: 341.67ms | 分辨率: unknown | 状态: 成功
+
+480. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://112.27.235.94:8000/hls/33/index.m3u8
+   延迟: 381.91ms | 分辨率: unknown | 状态: 成功
+
+481. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://116.76.254.170:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 457.83ms | 分辨率: unknown | 状态: 成功
+
+482. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://112.123.243.37:50085/tsfile/live/1000_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 464.61ms | 分辨率: unknown | 状态: 成功
+
+483. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://tvlist.top/jd/index.php?id=szws&qt=183.224.122.114:8014
+   延迟: 481.80ms | 分辨率: unknown | 状态: 成功
+
+484. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://111.221.137.155:44330/tsfile/live/1013_1.m3u8?key=txiptv
+   延迟: 492.88ms | 分辨率: unknown | 状态: 成功
+
+485. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1036_1.m3u8
+   延迟: 504.66ms | 分辨率: unknown | 状态: 成功
+
+486. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 528.64ms | 分辨率: unknown | 状态: 成功
+
+487. 分组: 卫视频道 | 名称: 深圳卫视
+   URL: http://120.238.94.82:9901/tsfile/live/1065_1.m3u8
+   延迟: 547.13ms | 分辨率: unknown | 状态: 成功
+
+488. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: https://smt.858.qzz.io/Smart.php?id=hubei
+   延迟: 62.68ms | 分辨率: unknown | 状态: 成功
+
+489. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://23.237.228.134/live6/hubei.m3u8
+   延迟: 65.05ms | 分辨率: unknown | 状态: 成功
+
+490. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://112.27.235.94:8000/hls/41/index.m3u8
+   延迟: 188.84ms | 分辨率: unknown | 状态: 成功
+
+491. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://111.43.126.240:9003/hls/54/index.m3u8
+   延迟: 224.97ms | 分辨率: unknown | 状态: 成功
+
+492. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1043_1.m3u8
+   延迟: 225.06ms | 分辨率: unknown | 状态: 成功
+
+493. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 238.02ms | 分辨率: unknown | 状态: 成功
+
+494. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1038_1.m3u8
+   延迟: 244.02ms | 分辨率: unknown | 状态: 成功
+
+495. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://ygbh.site/php/bfgd.php?id=102
+   延迟: 246.92ms | 分辨率: unknown | 状态: 成功
+
+496. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 250.56ms | 分辨率: unknown | 状态: 成功
+
+497. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0132_1.m3u8?key=txiptv
+   延迟: 253.19ms | 分辨率: unknown | 状态: 成功
+
+498. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://183.11.239.36:808/hls/46/index.m3u8
+   延迟: 254.67ms | 分辨率: unknown | 状态: 成功
+
+499. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.34ms | 分辨率: unknown | 状态: 成功
+
+500. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0132_1.m3u8
+   延迟: 260.29ms | 分辨率: unknown | 状态: 成功
+
+501. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0132_1.m3u8
+   延迟: 286.82ms | 分辨率: unknown | 状态: 成功
+
+502. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B9%96%E5%8C%97%E5%8D%AB%E8%A7%86
+   延迟: 322.83ms | 分辨率: unknown | 状态: 成功
+
+503. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0132_1.m3u8
+   延迟: 328.42ms | 分辨率: unknown | 状态: 成功
+
+504. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://120.202.94.181:9446/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 424.31ms | 分辨率: unknown | 状态: 成功
+
+505. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0139_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 489.16ms | 分辨率: unknown | 状态: 成功
+
+506. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://60.16.0.216:5757/hls/33/index.m3u8
+   延迟: 489.32ms | 分辨率: unknown | 状态: 成功
+
+507. 分组: 卫视频道 | 名称: 湖北卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0132_1.m3u8
+   延迟: 498.27ms | 分辨率: unknown | 状态: 成功
+
+508. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://69.30.246.194/live/hnws.m3u8
+   延迟: 12.92ms | 分辨率: unknown | 状态: 成功
+
+509. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://23.237.228.134/live6/hunan.m3u8
+   延迟: 64.45ms | 分辨率: unknown | 状态: 成功
+
+510. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009
+   延迟: 99.53ms | 分辨率: unknown | 状态: 成功
+
+511. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
+   延迟: 122.66ms | 分辨率: unknown | 状态: 成功
+
+512. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: https://txmov2.a.kwimgs.com/bs3/video-hls/5199687338554291078_hlsb.m3u8
+   延迟: 132.16ms | 分辨率: unknown | 状态: 成功
+
+513. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0122_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 228.53ms | 分辨率: unknown | 状态: 成功
+
+514. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 243.96ms | 分辨率: unknown | 状态: 成功
+
+515. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://183.215.134.239:19901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 265.85ms | 分辨率: unknown | 状态: 成功
+
+516. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1028_1.m3u8
+   延迟: 267.26ms | 分辨率: unknown | 状态: 成功
+
+517. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0128_1.m3u8
+   延迟: 276.16ms | 分辨率: unknown | 状态: 成功
+
+518. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://222.214.208.34:59901/tsfile/live/0128_1.m3u8
+   延迟: 287.35ms | 分辨率: unknown | 状态: 成功
+
+519. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 306.48ms | 分辨率: unknown | 状态: 成功
+
+520. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://112.27.235.94:8000/hls/31/index.m3u8
+   延迟: 375.83ms | 分辨率: unknown | 状态: 成功
+
+521. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: https://iptv.catvod.com/live.php?id=%E6%B9%96%E5%8D%97%E5%8D%AB%E8%A7%86
+   延迟: 384.50ms | 分辨率: unknown | 状态: 成功
+
+522. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://120.211.62.180:8000/hls/30/index.m3u8
+   延迟: 396.96ms | 分辨率: unknown | 状态: 成功
+
+523. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1040_1.m3u8
+   延迟: 437.72ms | 分辨率: unknown | 状态: 成功
+
+524. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://111.43.126.240:9003/hls/37/index.m3u8
+   延迟: 450.29ms | 分辨率: unknown | 状态: 成功
+
+525. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://112.123.243.37:50085/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 466.65ms | 分辨率: unknown | 状态: 成功
+
+526. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://221.13.235.66:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 481.52ms | 分辨率: unknown | 状态: 成功
+
+527. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 483.50ms | 分辨率: unknown | 状态: 成功
+
+528. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://61.163.181.78:85/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 495.31ms | 分辨率: unknown | 状态: 成功
+
+529. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://218.3.138.25:1111/tsfile/live/1018_1.m3u8
+   延迟: 500.54ms | 分辨率: unknown | 状态: 成功
+
+530. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://60.16.0.216:5757/hls/21/index.m3u8
+   延迟: 506.65ms | 分辨率: unknown | 状态: 成功
+
+531. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 507.73ms | 分辨率: unknown | 状态: 成功
+
+532. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 516.36ms | 分辨率: unknown | 状态: 成功
+
+533. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://218.13.170.98:9901/tsfile/live/1001_1.m3u8
+   延迟: 516.77ms | 分辨率: unknown | 状态: 成功
+
+534. 分组: 卫视频道 | 名称: 湖南卫视
+   URL: http://ygbh.site/php/bfgd.php?id=086
+   延迟: 518.48ms | 分辨率: unknown | 状态: 成功
+
+535. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: https://iptv.catvod.com/live.php?id=%E7%94%98%E8%82%83%E5%8D%AB%E8%A7%86
+   延迟: 56.58ms | 分辨率: unknown | 状态: 成功
+
+536. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub
+   延迟: 60.14ms | 分辨率: unknown | 状态: 成功
+
+537. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://111.43.126.240:9003/hls/70/index.m3u8
+   延迟: 224.13ms | 分辨率: unknown | 状态: 成功
+
+538. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0141_1.m3u8?key=txiptv
+   延迟: 247.81ms | 分辨率: unknown | 状态: 成功
+
+539. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://ygbh.site/php/bfgd.php?id=119
+   延迟: 259.77ms | 分辨率: unknown | 状态: 成功
+
+540. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://218.13.170.98:9901/tsfile/live/0141_1.m3u8
+   延迟: 260.09ms | 分辨率: unknown | 状态: 成功
+
+541. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 261.91ms | 分辨率: unknown | 状态: 成功
+
+542. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0141_1.m3u8
+   延迟: 267.04ms | 分辨率: unknown | 状态: 成功
+
+543. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://111.61.236.247:9081/hls/54/index.m3u8
+   延迟: 330.05ms | 分辨率: unknown | 状态: 成功
+
+544. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1079_1.m3u8
+   延迟: 431.24ms | 分辨率: unknown | 状态: 成功
+
+545. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0123_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 461.61ms | 分辨率: unknown | 状态: 成功
+
+546. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1056_1.m3u8
+   延迟: 478.70ms | 分辨率: unknown | 状态: 成功
+
+547. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://cssbyd.imwork.net:8082/hls/48/index.m3u8
+   延迟: 504.86ms | 分辨率: unknown | 状态: 成功
+
+548. 分组: 卫视频道 | 名称: 甘肃卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 533.01ms | 分辨率: unknown | 状态: 成功
+
+549. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: https://iptv.catvod.com/live.php?id=%E8%A5%BF%E8%97%8F%E5%8D%AB%E8%A7%86
+   延迟: 140.43ms | 分辨率: unknown | 状态: 成功
+
+550. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://111.43.126.240:9003/hls/58/index.m3u8
+   延迟: 225.14ms | 分辨率: unknown | 状态: 成功
+
+551. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0141_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 234.67ms | 分辨率: unknown | 状态: 成功
+
+552. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://ygbh.site/php/bfgd.php?id=121
+   延迟: 247.74ms | 分辨率: unknown | 状态: 成功
+
+553. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 251.62ms | 分辨率: unknown | 状态: 成功
+
+554. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://120.76.248.139/live/bfgd/4200000121.m3u8
+   延迟: 253.77ms | 分辨率: unknown | 状态: 成功
+
+555. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://218.13.170.98:9901/tsfile/live/0111_1.m3u8
+   延迟: 258.39ms | 分辨率: unknown | 状态: 成功
+
+556. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://219.146.95.58:59902/tsfile/live/0111_1.m3u8
+   延迟: 260.94ms | 分辨率: unknown | 状态: 成功
+
+557. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0111_1.m3u8
+   延迟: 287.18ms | 分辨率: unknown | 状态: 成功
+
+558. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1077_1.m3u8
+   延迟: 415.59ms | 分辨率: unknown | 状态: 成功
+
+559. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://tvlist.top/jd/index.php?id=xzws&qt=183.224.122.114:8014
+   延迟: 472.47ms | 分辨率: unknown | 状态: 成功
+
+560. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://183.11.239.36:808/hls/64/index.m3u8
+   延迟: 501.75ms | 分辨率: unknown | 状态: 成功
+
+561. 分组: 卫视频道 | 名称: 西藏卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0111_1.m3u8
+   延迟: 529.68ms | 分辨率: unknown | 状态: 成功
+
+562. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: https://iptv.catvod.com/live.php?id=%E8%B4%B5%E5%B7%9E%E5%8D%AB%E8%A7%86
+   延迟: 52.69ms | 分辨率: unknown | 状态: 成功
+
+563. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://23.237.228.134/live6/hainan.m3u8
+   延迟: 64.27ms | 分辨率: unknown | 状态: 成功
+
+564. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub
+   延迟: 122.61ms | 分辨率: unknown | 状态: 成功
+
+565. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1041_1.m3u8
+   延迟: 219.79ms | 分辨率: unknown | 状态: 成功
+
+566. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0130_2.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 233.90ms | 分辨率: unknown | 状态: 成功
+
+567. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://183.11.239.36:808/hls/49/index.m3u8
+   延迟: 247.69ms | 分辨率: unknown | 状态: 成功
+
+568. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1042_1.m3u8
+   延迟: 251.86ms | 分辨率: unknown | 状态: 成功
+
+569. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://cssbyd.imwork.net:8082/hls/39/index.m3u8
+   延迟: 253.46ms | 分辨率: unknown | 状态: 成功
+
+570. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://ygbh.site/php/bfgd.php?id=101
+   延迟: 258.06ms | 分辨率: unknown | 状态: 成功
+
+571. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://60.16.0.216:5757/hls/37/index.m3u8
+   延迟: 265.77ms | 分辨率: unknown | 状态: 成功
+
+572. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://222.214.208.34:59901/tsfile/live/0120_1.m3u8
+   延迟: 274.48ms | 分辨率: unknown | 状态: 成功
+
+573. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://111.61.236.247:9081/hls/37/index.m3u8
+   延迟: 333.43ms | 分辨率: unknown | 状态: 成功
+
+574. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://shijiazhuangjingshi-b.synology.me:8092/hls/40/index.m3u8
+   延迟: 342.01ms | 分辨率: unknown | 状态: 成功
+
+575. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://120.76.248.139/live/bfgd/4200000101.m3u8
+   延迟: 393.02ms | 分辨率: unknown | 状态: 成功
+
+576. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMTYvaW5kZXgubTN1OA==
+   延迟: 435.55ms | 分辨率: unknown | 状态: 成功
+
+577. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://111.43.126.240:9003/hls/52/index.m3u8
+   延迟: 466.58ms | 分辨率: unknown | 状态: 成功
+
+578. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 484.36ms | 分辨率: unknown | 状态: 成功
+
+579. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0120_1.m3u8
+   延迟: 522.72ms | 分辨率: unknown | 状态: 成功
+
+580. 分组: 卫视频道 | 名称: 贵州卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 527.16ms | 分辨率: unknown | 状态: 成功
+
+581. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://23.237.228.134/live8/liaoning.m3u8
+   延迟: 68.16ms | 分辨率: unknown | 状态: 成功
+
+582. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: https://iptv.catvod.com/live.php?id=%E8%BE%BD%E5%AE%81%E5%8D%AB%E8%A7%86
+   延迟: 70.58ms | 分辨率: unknown | 状态: 成功
+
+583. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub
+   延迟: 122.19ms | 分辨率: unknown | 状态: 成功
+
+584. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://112.27.235.94:8000/hls/47/index.m3u8
+   延迟: 197.41ms | 分辨率: unknown | 状态: 成功
+
+585. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://120.211.62.180:8000/hls/37/index.m3u8
+   延迟: 207.87ms | 分辨率: unknown | 状态: 成功
+
+586. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1024_1.m3u8
+   延迟: 217.44ms | 分辨率: unknown | 状态: 成功
+
+587. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://111.43.126.240:9003/hls/57/index.m3u8
+   延迟: 227.52ms | 分辨率: unknown | 状态: 成功
+
+588. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0126_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 230.35ms | 分辨率: unknown | 状态: 成功
+
+589. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://60.16.0.216:5757/hls/32/index.m3u8
+   延迟: 245.15ms | 分辨率: unknown | 状态: 成功
+
+590. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://218.17.33.178:53290/tsfile/live/0121_1.m3u8?key=txiptv
+   延迟: 247.64ms | 分辨率: unknown | 状态: 成功
+
+591. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 251.48ms | 分辨率: unknown | 状态: 成功
+
+592. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0123_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 251.86ms | 分辨率: unknown | 状态: 成功
+
+593. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 253.34ms | 分辨率: unknown | 状态: 成功
+
+594. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1035_1.m3u8
+   延迟: 256.63ms | 分辨率: unknown | 状态: 成功
+
+595. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://182.114.49.75:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 257.02ms | 分辨率: unknown | 状态: 成功
+
+596. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 261.78ms | 分辨率: unknown | 状态: 成功
+
+597. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0121_1.m3u8
+   延迟: 288.30ms | 分辨率: unknown | 状态: 成功
+
+598. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://111.61.236.247:9081/hls/30/index.m3u8
+   延迟: 341.14ms | 分辨率: unknown | 状态: 成功
+
+599. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://183.220.107.138:4022/rtp/239.11.0.118:5140
+   延迟: 464.90ms | 分辨率: unknown | 状态: 成功
+
+600. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://120.76.248.139/live/bfgd/4200000058.m3u8
+   延迟: 506.67ms | 分辨率: unknown | 状态: 成功
+
+601. 分组: 卫视频道 | 名称: 辽宁卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0121_1.m3u8
+   延迟: 531.02ms | 分辨率: unknown | 状态: 成功
+
+602. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: https://iptv.catvod.com/live.php?id=%E9%87%8D%E5%BA%86%E5%8D%AB%E8%A7%86
+   延迟: 53.59ms | 分辨率: unknown | 状态: 成功
+
+603. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://23.237.228.134/live6/chongqing.m3u8
+   延迟: 64.35ms | 分辨率: unknown | 状态: 成功
+
+604. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://111.43.126.240:9003/hls/55/index.m3u8
+   延迟: 217.06ms | 分辨率: unknown | 状态: 成功
+
+605. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1048_1.m3u8
+   延迟: 224.71ms | 分辨率: unknown | 状态: 成功
+
+606. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://183.11.239.36:808/hls/53/index.m3u8
+   延迟: 249.91ms | 分辨率: unknown | 状态: 成功
+
+607. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 250.92ms | 分辨率: unknown | 状态: 成功
+
+608. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0142_1.m3u8
+   延迟: 257.93ms | 分辨率: unknown | 状态: 成功
+
+609. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 260.51ms | 分辨率: unknown | 状态: 成功
+
+610. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0142_1.m3u8
+   延迟: 267.33ms | 分辨率: unknown | 状态: 成功
+
+611. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://ygbh.site/php/bfgd.php?id=107
+   延迟: 274.18ms | 分辨率: unknown | 状态: 成功
+
+612. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://110.80.17.38:9999/tsfile/live/0142_1.m3u8
+   延迟: 275.28ms | 分辨率: unknown | 状态: 成功
+
+613. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0142_1.m3u8
+   延迟: 276.16ms | 分辨率: unknown | 状态: 成功
+
+614. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://124.116.183.146:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 280.67ms | 分辨率: unknown | 状态: 成功
+
+615. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://111.61.236.247:9081/hls/41/index.m3u8
+   延迟: 351.39ms | 分辨率: unknown | 状态: 成功
+
+616. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180919.swf?v=180.171.5.8.9.6.3.9&ChannelID=chongqing&videoTVChannel=chongqing&P2PChannelID=pd://cctv_p2p_hdchongqing&tai=chongqing&VideoName=chongqing&channelID=chongqing
+   延迟: 355.94ms | 分辨率: unknown | 状态: 成功
+
+617. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://112.27.235.94:8000/hls/36/index.m3u8
+   延迟: 373.95ms | 分辨率: unknown | 状态: 成功
+
+618. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://111.221.137.234:44330/tsfile/live/0142_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 455.73ms | 分辨率: unknown | 状态: 成功
+
+619. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://112.123.243.37:50085/tsfile/live/0131_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 459.49ms | 分辨率: unknown | 状态: 成功
+
+620. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 473.05ms | 分辨率: unknown | 状态: 成功
+
+621. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://58.57.40.22:9901/tsfile/live/0142_1.m3u8
+   延迟: 500.93ms | 分辨率: unknown | 状态: 成功
+
+622. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0142_1.m3u8
+   延迟: 513.41ms | 分辨率: unknown | 状态: 成功
+
+623. 分组: 卫视频道 | 名称: 重庆卫视
+   URL: http://43.251.226.89:8080/play/1025.m3u8
+   延迟: 525.98ms | 分辨率: unknown | 状态: 成功
+
+624. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://23.237.228.134/live8/qinghai.m3u8
+   延迟: 64.35ms | 分辨率: unknown | 状态: 成功
+
+625. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://23.237.228.134/live8/shandong.m3u8
+   延迟: 93.20ms | 分辨率: unknown | 状态: 成功
+
+626. 分组: 卫视频道 | 名称: 青海卫视
+   URL: https://iptv.catvod.com/live.php?id=%E9%9D%92%E6%B5%B7%E5%8D%AB%E8%A7%86
+   延迟: 100.16ms | 分辨率: unknown | 状态: 成功
+
+627. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub
+   延迟: 119.36ms | 分辨率: unknown | 状态: 成功
+
+628. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://111.43.126.240:9003/hls/59/index.m3u8
+   延迟: 220.44ms | 分辨率: unknown | 状态: 成功
+
+629. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 251.22ms | 分辨率: unknown | 状态: 成功
+
+630. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://60.16.0.216:5757/hls/43/index.m3u8
+   延迟: 254.26ms | 分辨率: unknown | 状态: 成功
+
+631. 分组: 卫视频道 | 名称: 青海卫视
+   URL: https://www.freetv.top/migu/947472506.m3u8?migutoken=c740fc58e518a315b254873398c630ca506a9de327397b5e27a668d9c1e170b6512a1834dab3229ddc39b5a61c2ea42fae6d196a11c6d0e5e212522e6edf197f65ad9addf0b540aa6c9d4fcd3e
+   延迟: 272.44ms | 分辨率: unknown | 状态: 成功
+
+632. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://ygbh.site/php/bfgd.php?id=111
+   延迟: 316.03ms | 分辨率: unknown | 状态: 成功
+
+633. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://111.61.236.247:9081/hls/49/index.m3u8
+   延迟: 344.89ms | 分辨率: unknown | 状态: 成功
+
+634. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://120.76.248.139/live/bfgd/4200000111.m3u8
+   延迟: 400.37ms | 分辨率: unknown | 状态: 成功
+
+635. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://120.238.94.10:9901/tsfile/live/1073_1.m3u8
+   延迟: 456.09ms | 分辨率: unknown | 状态: 成功
+
+636. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://36.136.38.87:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 479.47ms | 分辨率: unknown | 状态: 成功
+
+637. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1057_1.m3u8
+   延迟: 521.38ms | 分辨率: unknown | 状态: 成功
+
+638. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://113.15.109.216:59901/tsfile/live/0140_1.m3u8
+   延迟: 534.91ms | 分辨率: unknown | 状态: 成功
+
+639. 分组: 卫视频道 | 名称: 青海卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0140_1.m3u8
+   延迟: 538.02ms | 分辨率: unknown | 状态: 成功
+
+640. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: https://iptv.catvod.com/live.php?id=%E9%BB%91%E9%BE%99%E6%B1%9F%E5%8D%AB%E8%A7%86
+   延迟: 57.84ms | 分辨率: unknown | 状态: 成功
+
+641. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub
+   延迟: 119.20ms | 分辨率: unknown | 状态: 成功
+
+642. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://23.237.228.134/live6/heilongjiang.m3u8
+   延迟: 128.47ms | 分辨率: unknown | 状态: 成功
+
+643. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://api.kkitv.itv888.cn:8080/hls/2a24lcvser/index.m3u8
+   延迟: 140.43ms | 分辨率: unknown | 状态: 成功
+
+644. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://112.27.235.94:8000/hls/48/index.m3u8
+   延迟: 187.78ms | 分辨率: unknown | 状态: 成功
+
+645. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://39.152.103.17:8089/tsfile/live/1055_1.m3u8
+   延迟: 222.33ms | 分辨率: unknown | 状态: 成功
+
+646. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://58.57.40.22:9901/tsfile/live/1040_1.m3u8
+   延迟: 239.62ms | 分辨率: unknown | 状态: 成功
+
+647. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 243.34ms | 分辨率: unknown | 状态: 成功
+
+648. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://123.130.84.106:8154/tsfile/live/0143_1.m3u8
+   延迟: 245.49ms | 分辨率: unknown | 状态: 成功
+
+649. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://221.2.148.205:8154/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 246.01ms | 分辨率: unknown | 状态: 成功
+
+650. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://183.11.239.36:808/hls/48/index.m3u8
+   延迟: 252.34ms | 分辨率: unknown | 状态: 成功
+
+651. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://60.16.0.216:5757/hls/35/index.m3u8
+   延迟: 261.46ms | 分辨率: unknown | 状态: 成功
+
+652. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://113.26.202.52:1299/tsfile/live/0143_1.m3u8
+   延迟: 289.15ms | 分辨率: unknown | 状态: 成功
+
+653. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://ygbh.site/php/bfgd.php?id=095
+   延迟: 315.86ms | 分辨率: unknown | 状态: 成功
+
+654. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://111.61.236.247:9081/hls/34/index.m3u8
+   延迟: 335.45ms | 分辨率: unknown | 状态: 成功
+
+655. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: https://epg.pw/stream/c6c1262d0b35e59eac22bf513395f00f8b60cc5eab41f598412cdf8269312f32.m3u8
+   延迟: 379.72ms | 分辨率: unknown | 状态: 成功
+
+656. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://61.184.46.85:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 383.19ms | 分辨率: unknown | 状态: 成功
+
+657. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://218.13.170.98:9901/tsfile/live/1006_1.m3u8
+   延迟: 508.55ms | 分辨率: unknown | 状态: 成功
+
+658. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://153.0.171.163:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 511.96ms | 分辨率: unknown | 状态: 成功
+
+659. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://61.136.172.236:9901/tsfile/live/0143_1.m3u8
+   延迟: 524.12ms | 分辨率: unknown | 状态: 成功
+
+660. 分组: 卫视频道 | 名称: 黑龙江卫视
+   URL: http://123.129.70.178:9901/tsfile/live/0143_1.m3u8
+   延迟: 524.51ms | 分辨率: unknown | 状态: 成功
+
+661. 分组: 央视付费频道 | 名称: 世界地理
+   URL: http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub
+   延迟: 72.02ms | 分辨率: unknown | 状态: 成功
+
+662. 分组: 央视付费频道 | 名称: 兵器科技
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
+   延迟: 75.75ms | 分辨率: unknown | 状态: 成功
+
+663. 分组: 央视付费频道 | 名称: 怀旧剧场
+   URL: http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
+   延迟: 61.70ms | 分辨率: unknown | 状态: 成功
+
+664. 分组: 央视付费频道 | 名称: 怀旧剧场
+   URL: http://61.184.46.85:9901/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 381.99ms | 分辨率: unknown | 状态: 成功
+
+665. 分组: 央视付费频道 | 名称: 怀旧剧场
+   URL: http://171.83.103.119:9999/rtp/239.69.1.89:10174
+   延迟: 532.78ms | 分辨率: unknown | 状态: 成功
+
+666. 分组: 央视付费频道 | 名称: 第一剧场
+   URL: http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub
+   延迟: 59.16ms | 分辨率: unknown | 状态: 成功
+
+667. 分组: 央视付费频道 | 名称: 第一剧场
+   URL: http://hmfs.f3322.net:3388/hls/21/index.m3u8
+   延迟: 255.01ms | 分辨率: unknown | 状态: 成功
+
+668. 分组: 央视付费频道 | 名称: 第一剧场
+   URL: https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8
+   延迟: 320.59ms | 分辨率: unknown | 状态: 成功
+
+669. 分组: 央视付费频道 | 名称: 第一剧场
+   URL: http://171.83.103.119:9999/rtp/239.69.1.74:10084
+   延迟: 522.39ms | 分辨率: unknown | 状态: 成功
+
+670. 分组: 央视付费频道 | 名称: 风云剧场
+   URL: http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
+   延迟: 80.49ms | 分辨率: unknown | 状态: 成功
+
+671. 分组: 央视付费频道 | 名称: 风云足球
+   URL: http://173.208.187.18:82/live/fyzq.m3u8?jsbt=1760496962&jsbk=5b91869c876cff30aa885075cffa7b45
+   延迟: 13.34ms | 分辨率: unknown | 状态: 成功
+
+672. 分组: 央视付费频道 | 名称: 风云足球
+   URL: http://173.208.187.18:82/live/fyzq.m3u8?jsbt=1760355398&jsbk=d838949ce8ba43fabfa8e16a02449bcf
+   延迟: 31.58ms | 分辨率: unknown | 状态: 成功
+
+673. 分组: 央视付费频道 | 名称: 风云足球
+   URL: http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
+   延迟: 74.18ms | 分辨率: unknown | 状态: 成功
+
+674. 分组: 央视付费频道 | 名称: 风云足球
+   URL: https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
+   延迟: 420.05ms | 分辨率: unknown | 状态: 成功
+
+675. 分组: 央视付费频道 | 名称: 风云足球
+   URL: http://27.41.245.32:801/hls/906/index.m3u8
+   延迟: 462.86ms | 分辨率: unknown | 状态: 成功
+
+676. 分组: 央视付费频道 | 名称: 风云音乐
+   URL: http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
+   延迟: 122.02ms | 分辨率: unknown | 状态: 成功
+
+677. 分组: 央视付费频道 | 名称: 风云音乐
+   URL: http://171.83.103.119:9999/rtp/239.69.1.90:10180
+   延迟: 487.22ms | 分辨率: unknown | 状态: 成功
+
+678. 分组: 央视付费频道 | 名称: 高尔夫网球
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
+   延迟: 116.34ms | 分辨率: unknown | 状态: 成功
+
+679. 分组: 央视频道 | 名称: CCTV1
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=rthk33
+   延迟: 64.17ms | 分辨率: unknown | 状态: 成功
+
+680. 分组: 央视频道 | 名称: CCTV1
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv1hd.m3u8?auth=testpub
+   延迟: 71.63ms | 分辨率: unknown | 状态: 成功
+
+681. 分组: 央视频道 | 名称: CCTV1
+   URL: http://23.237.228.134/live5/CCTV1.m3u8
+   延迟: 127.82ms | 分辨率: unknown | 状态: 成功
+
+682. 分组: 央视频道 | 名称: CCTV1
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009
+   延迟: 197.91ms | 分辨率: unknown | 状态: 成功
+
+683. 分组: 央视频道 | 名称: CCTV1
+   URL: http://183.11.239.36:808/hls/19/index.m3u8
+   延迟: 249.31ms | 分辨率: unknown | 状态: 成功
+
+684. 分组: 央视频道 | 名称: CCTV1
+   URL: http://58.57.40.22:9901/tsfile/live/0001_1.m3u8
+   延迟: 262.29ms | 分辨率: unknown | 状态: 成功
+
+685. 分组: 央视频道 | 名称: CCTV1
+   URL: http://61.136.172.236:9901/tsfile/live/0001_1.m3u8
+   延迟: 265.38ms | 分辨率: unknown | 状态: 成功
+
+686. 分组: 央视频道 | 名称: CCTV1
+   URL: http://ygbh.site/php/bfgd.php?id=489
+   延迟: 365.27ms | 分辨率: unknown | 状态: 成功
+
+687. 分组: 央视频道 | 名称: CCTV1
+   URL: http://112.27.235.94:8000/hls/1/index.m3u8
+   延迟: 394.35ms | 分辨率: unknown | 状态: 成功
+
+688. 分组: 央视频道 | 名称: CCTV1
+   URL: http://ygbh.site/php/bfgd.php?id=201
+   延迟: 405.96ms | 分辨率: unknown | 状态: 成功
+
+689. 分组: 央视频道 | 名称: CCTV1
+   URL: http://ygbh.site/php/bfgd.php?id=488
+   延迟: 407.78ms | 分辨率: unknown | 状态: 成功
+
+690. 分组: 央视频道 | 名称: CCTV1
+   URL: http://ygbh.site/php/bfgd.php?id=484
+   延迟: 416.04ms | 分辨率: unknown | 状态: 成功
+
+691. 分组: 央视频道 | 名称: CCTV1
+   URL: http://120.202.94.181:9446/tsfile/live/0001_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 420.28ms | 分辨率: unknown | 状态: 成功
+
+692. 分组: 央视频道 | 名称: CCTV1
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMS9pbmRleC5tM3U4
+   延迟: 429.04ms | 分辨率: unknown | 状态: 成功
+
+693. 分组: 央视频道 | 名称: CCTV1
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNDAvaW5kZXgubTN1OA==
+   延迟: 436.49ms | 分辨率: unknown | 状态: 成功
+
+694. 分组: 央视频道 | 名称: CCTV1
+   URL: http://111.43.126.240:9003/hls/13/index.m3u8
+   延迟: 445.07ms | 分辨率: unknown | 状态: 成功
+
+695. 分组: 央视频道 | 名称: CCTV1
+   URL: http://120.211.62.180:8000/hls/1/index.m3u8
+   延迟: 446.56ms | 分辨率: unknown | 状态: 成功
+
+696. 分组: 央视频道 | 名称: CCTV1
+   URL: http://221.13.234.185:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 471.60ms | 分辨率: unknown | 状态: 成功
+
+697. 分组: 央视频道 | 名称: CCTV1
+   URL: http://112.46.85.60:8009/hls/501/index.m3u8
+   延迟: 471.88ms | 分辨率: unknown | 状态: 成功
+
+698. 分组: 央视频道 | 名称: CCTV1
+   URL: http://221.13.235.66:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 483.64ms | 分辨率: unknown | 状态: 成功
+
+699. 分组: 央视频道 | 名称: CCTV1
+   URL: http://153.0.171.163:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 493.11ms | 分辨率: unknown | 状态: 成功
+
+700. 分组: 央视频道 | 名称: CCTV1
+   URL: http://120.76.248.139/live/bfgd/4200000488.m3u8
+   延迟: 506.47ms | 分辨率: unknown | 状态: 成功
+
+701. 分组: 央视频道 | 名称: CCTV1
+   URL: http://120.76.248.139/live/bfgd/4200000484.m3u8
+   延迟: 513.89ms | 分辨率: unknown | 状态: 成功
+
+702. 分组: 央视频道 | 名称: CCTV1
+   URL: http://218.3.138.25:1111/tsfile/live/1000_1.m3u8
+   延迟: 518.87ms | 分辨率: unknown | 状态: 成功
+
+703. 分组: 央视频道 | 名称: CCTV1
+   URL: http://101.74.28.240:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 524.26ms | 分辨率: unknown | 状态: 成功
+
+704. 分组: 央视频道 | 名称: CCTV1
+   URL: https://iptv.catvod.com/live.php?id=CCTV1
+   延迟: 533.18ms | 分辨率: unknown | 状态: 成功
+
+705. 分组: 央视频道 | 名称: CCTV10
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv10hd
+   延迟: 52.60ms | 分辨率: unknown | 状态: 成功
+
+706. 分组: 央视频道 | 名称: CCTV10
+   URL: https://iptv.catvod.com/live.php?id=CCTV10
+   延迟: 108.25ms | 分辨率: unknown | 状态: 成功
+
+707. 分组: 央视频道 | 名称: CCTV10
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv10hd.m3u8?auth=testpub
+   延迟: 121.14ms | 分辨率: unknown | 状态: 成功
+
+708. 分组: 央视频道 | 名称: CCTV10
+   URL: http://23.237.228.134/live5/CCTV10.m3u8
+   延迟: 128.00ms | 分辨率: unknown | 状态: 成功
+
+709. 分组: 央视频道 | 名称: CCTV10
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009
+   延迟: 191.01ms | 分辨率: unknown | 状态: 成功
+
+710. 分组: 央视频道 | 名称: CCTV10
+   URL: http://120.211.62.180:8000/hls/10/index.m3u8
+   延迟: 203.07ms | 分辨率: unknown | 状态: 成功
+
+711. 分组: 央视频道 | 名称: CCTV10
+   URL: http://120.202.94.181:9446/tsfile/live/0010_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 230.33ms | 分辨率: unknown | 状态: 成功
+
+712. 分组: 央视频道 | 名称: CCTV10
+   URL: http://27.41.245.32:801/hls/10/index.m3u8
+   延迟: 237.43ms | 分辨率: unknown | 状态: 成功
+
+713. 分组: 央视频道 | 名称: CCTV10
+   URL: http://221.13.234.185:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.82ms | 分辨率: unknown | 状态: 成功
+
+714. 分组: 央视频道 | 名称: CCTV10
+   URL: http://221.13.235.66:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 251.80ms | 分辨率: unknown | 状态: 成功
+
+715. 分组: 央视频道 | 名称: CCTV10
+   URL: http://58.57.40.22:9901/tsfile/live/1010_1.m3u8
+   延迟: 254.31ms | 分辨率: unknown | 状态: 成功
+
+716. 分组: 央视频道 | 名称: CCTV10
+   URL: http://182.114.49.75:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 254.90ms | 分辨率: unknown | 状态: 成功
+
+717. 分组: 央视频道 | 名称: CCTV10
+   URL: http://ygbh.site/php/bfgd.php?id=129
+   延迟: 256.35ms | 分辨率: unknown | 状态: 成功
+
+718. 分组: 央视频道 | 名称: CCTV10
+   URL: http://113.15.109.216:59901/tsfile/live/0010_1.m3u8
+   延迟: 264.27ms | 分辨率: unknown | 状态: 成功
+
+719. 分组: 央视频道 | 名称: CCTV10
+   URL: http://61.136.172.236:9901/tsfile/live/0010_1.m3u8
+   延迟: 290.94ms | 分辨率: unknown | 状态: 成功
+
+720. 分组: 央视频道 | 名称: CCTV10
+   URL: http://1.24.39.180:9003/hls/10/index.m3u8
+   延迟: 352.49ms | 分辨率: unknown | 状态: 成功
+
+721. 分组: 央视频道 | 名称: CCTV10
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIxOC4yMy4xOTIuMzM6OTk5OS9uZXdsaXZlL2xpdmUvaGxzLzExL2xpdmUubTN1OA==
+   延迟: 381.94ms | 分辨率: unknown | 状态: 成功
+
+722. 分组: 央视频道 | 名称: CCTV10
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvOS9pbmRleC5tM3U4
+   延迟: 438.57ms | 分辨率: unknown | 状态: 成功
+
+723. 分组: 央视频道 | 名称: CCTV10
+   URL: http://111.43.126.240:9003/hls/23/index.m3u8
+   延迟: 459.28ms | 分辨率: unknown | 状态: 成功
+
+724. 分组: 央视频道 | 名称: CCTV10
+   URL: http://111.221.137.234:44330/tsfile/live/0010_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 498.89ms | 分辨率: unknown | 状态: 成功
+
+725. 分组: 央视频道 | 名称: CCTV10
+   URL: http://120.238.94.10:9901/tsfile/live/1028_1.m3u8
+   延迟: 514.41ms | 分辨率: unknown | 状态: 成功
+
+726. 分组: 央视频道 | 名称: CCTV10
+   URL: http://www.kaniptv.cn/mk.php?ip=sdxztest1.abcnic.com:&id=live1017
+   延迟: 531.95ms | 分辨率: unknown | 状态: 成功
+
+727. 分组: 央视频道 | 名称: CCTV10
+   URL: http://43.251.226.89:8080/play/981.m3u8
+   延迟: 534.30ms | 分辨率: unknown | 状态: 成功
+
+728. 分组: 央视频道 | 名称: CCTV11
+   URL: http://69.30.246.194/live/cctv11.m3u8
+   延迟: 29.48ms | 分辨率: unknown | 状态: 成功
+
+729. 分组: 央视频道 | 名称: CCTV11
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv11
+   延迟: 57.91ms | 分辨率: unknown | 状态: 成功
+
+730. 分组: 央视频道 | 名称: CCTV11
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv11hd.m3u8?auth=testpub
+   延迟: 122.95ms | 分辨率: unknown | 状态: 成功
+
+731. 分组: 央视频道 | 名称: CCTV11
+   URL: https://iptv.catvod.com/live.php?id=CCTV11
+   延迟: 173.20ms | 分辨率: unknown | 状态: 成功
+
+732. 分组: 央视频道 | 名称: CCTV11
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009
+   延迟: 202.29ms | 分辨率: unknown | 状态: 成功
+
+733. 分组: 央视频道 | 名称: CCTV11
+   URL: http://112.27.235.94:8000/hls/12/index.m3u8
+   延迟: 207.36ms | 分辨率: unknown | 状态: 成功
+
+734. 分组: 央视频道 | 名称: CCTV11
+   URL: http://120.202.94.181:9446/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 233.67ms | 分辨率: unknown | 状态: 成功
+
+735. 分组: 央视频道 | 名称: CCTV11
+   URL: http://221.13.234.185:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 235.22ms | 分辨率: unknown | 状态: 成功
+
+736. 分组: 央视频道 | 名称: CCTV11
+   URL: http://ygbh.site/php/bfgd.php?id=130
+   延迟: 255.29ms | 分辨率: unknown | 状态: 成功
+
+737. 分组: 央视频道 | 名称: CCTV11
+   URL: http://www.kaniptv.cn/mk.php?ip=sdxztest1.abcnic.com:&id=live1018
+   延迟: 275.44ms | 分辨率: unknown | 状态: 成功
+
+738. 分组: 央视频道 | 名称: CCTV11
+   URL: http://1.24.39.180:9003/hls/11/index.m3u8
+   延迟: 348.36ms | 分辨率: unknown | 状态: 成功
+
+739. 分组: 央视频道 | 名称: CCTV11
+   URL: http://111.43.126.240:9003/hls/24/index.m3u8
+   延迟: 455.32ms | 分辨率: unknown | 状态: 成功
+
+740. 分组: 央视频道 | 名称: CCTV11
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv11_2.m3u8
+   延迟: 475.92ms | 分辨率: unknown | 状态: 成功
+
+741. 分组: 央视频道 | 名称: CCTV11
+   URL: http://182.114.49.75:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 478.58ms | 分辨率: unknown | 状态: 成功
+
+742. 分组: 央视频道 | 名称: CCTV11
+   URL: http://183.11.239.36:808/hls/29/index.m3u8
+   延迟: 505.50ms | 分辨率: unknown | 状态: 成功
+
+743. 分组: 央视频道 | 名称: CCTV11
+   URL: http://58.57.40.22:9901/tsfile/live/1011_1.m3u8
+   延迟: 509.98ms | 分辨率: unknown | 状态: 成功
+
+744. 分组: 央视频道 | 名称: CCTV11
+   URL: http://61.136.172.236:9901/tsfile/live/0011_1.m3u8
+   延迟: 528.88ms | 分辨率: unknown | 状态: 成功
+
+745. 分组: 央视频道 | 名称: CCTV12
+   URL: http://69.30.246.194/live/cctv12.m3u8
+   延迟: 12.73ms | 分辨率: unknown | 状态: 成功
+
+746. 分组: 央视频道 | 名称: CCTV12
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv12
+   延迟: 60.45ms | 分辨率: unknown | 状态: 成功
+
+747. 分组: 央视频道 | 名称: CCTV12
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub
+   延迟: 61.60ms | 分辨率: unknown | 状态: 成功
+
+748. 分组: 央视频道 | 名称: CCTV12
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv12hd.m3u8?auth=test20251009
+   延迟: 95.89ms | 分辨率: unknown | 状态: 成功
+
+749. 分组: 央视频道 | 名称: CCTV12
+   URL: https://iptv.catvod.com/live.php?id=CCTV12
+   延迟: 104.11ms | 分辨率: unknown | 状态: 成功
+
+750. 分组: 央视频道 | 名称: CCTV12
+   URL: http://23.237.228.134/live3/CCTV12.m3u8
+   延迟: 128.09ms | 分辨率: unknown | 状态: 成功
+
+751. 分组: 央视频道 | 名称: CCTV12
+   URL: http://120.211.62.180:8000/hls/12/index.m3u8
+   延迟: 197.55ms | 分辨率: unknown | 状态: 成功
+
+752. 分组: 央视频道 | 名称: CCTV12
+   URL: http://112.27.235.94:8000/hls/13/index.m3u8
+   延迟: 198.06ms | 分辨率: unknown | 状态: 成功
+
+753. 分组: 央视频道 | 名称: CCTV12
+   URL: http://120.202.94.181:9446/tsfile/live/0012_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 235.20ms | 分辨率: unknown | 状态: 成功
+
+754. 分组: 央视频道 | 名称: CCTV12
+   URL: http://221.13.234.185:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 251.82ms | 分辨率: unknown | 状态: 成功
+
+755. 分组: 央视频道 | 名称: CCTV12
+   URL: http://221.13.235.66:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 253.79ms | 分辨率: unknown | 状态: 成功
+
+756. 分组: 央视频道 | 名称: CCTV12
+   URL: http://113.15.109.216:59901/tsfile/live/0012_1.m3u8
+   延迟: 258.48ms | 分辨率: unknown | 状态: 成功
+
+757. 分组: 央视频道 | 名称: CCTV12
+   URL: http://182.114.49.75:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.08ms | 分辨率: unknown | 状态: 成功
+
+758. 分组: 央视频道 | 名称: CCTV12
+   URL: http://www.kaniptv.cn/mk.php?ip=sdxztest1.abcnic.com:&id=live1019
+   延迟: 266.68ms | 分辨率: unknown | 状态: 成功
+
+759. 分组: 央视频道 | 名称: CCTV12
+   URL: http://58.57.40.22:9901/tsfile/live/1012_1.m3u8
+   延迟: 267.30ms | 分辨率: unknown | 状态: 成功
+
+760. 分组: 央视频道 | 名称: CCTV12
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIxOC4yMy4xOTIuMzM6OTk5OS9uZXdsaXZlL2xpdmUvaGxzLzEyL2xpdmUubTN1OA==
+   延迟: 383.77ms | 分辨率: unknown | 状态: 成功
+
+761. 分组: 央视频道 | 名称: CCTV12
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMTEvaW5kZXgubTN1OA==
+   延迟: 445.49ms | 分辨率: unknown | 状态: 成功
+
+762. 分组: 央视频道 | 名称: CCTV12
+   URL: http://ygbh.site/php/bfgd.php?id=131
+   延迟: 450.18ms | 分辨率: unknown | 状态: 成功
+
+763. 分组: 央视频道 | 名称: CCTV12
+   URL: http://111.43.126.240:9003/hls/25/index.m3u8
+   延迟: 479.16ms | 分辨率: unknown | 状态: 成功
+
+764. 分组: 央视频道 | 名称: CCTV12
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv12_2.m3u8
+   延迟: 488.35ms | 分辨率: unknown | 状态: 成功
+
+765. 分组: 央视频道 | 名称: CCTV12
+   URL: http://112.46.85.60:8009/hls/507/index.m3u8
+   延迟: 489.90ms | 分辨率: unknown | 状态: 成功
+
+766. 分组: 央视频道 | 名称: CCTV12
+   URL: http://124.165.251.82:85/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 540.20ms | 分辨率: unknown | 状态: 成功
+
+767. 分组: 央视频道 | 名称: CCTV13
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv13
+   延迟: 52.33ms | 分辨率: unknown | 状态: 成功
+
+768. 分组: 央视频道 | 名称: CCTV13
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv13hd.m3u8?auth=testpub
+   延迟: 72.34ms | 分辨率: unknown | 状态: 成功
+
+769. 分组: 央视频道 | 名称: CCTV13
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009
+   延迟: 147.03ms | 分辨率: unknown | 状态: 成功
+
+770. 分组: 央视频道 | 名称: CCTV13
+   URL: https://iptv.catvod.com/live.php?id=CCTV13
+   延迟: 208.51ms | 分辨率: unknown | 状态: 成功
+
+771. 分组: 央视频道 | 名称: CCTV13
+   URL: http://111.43.126.240:9003/hls/26/index.m3u8
+   延迟: 223.12ms | 分辨率: unknown | 状态: 成功
+
+772. 分组: 央视频道 | 名称: CCTV13
+   URL: http://221.13.234.185:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.55ms | 分辨率: unknown | 状态: 成功
+
+773. 分组: 央视频道 | 名称: CCTV13
+   URL: http://120.202.94.181:9446/tsfile/live/0013_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 240.00ms | 分辨率: unknown | 状态: 成功
+
+774. 分组: 央视频道 | 名称: CCTV13
+   URL: http://221.13.235.66:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 240.14ms | 分辨率: unknown | 状态: 成功
+
+775. 分组: 央视频道 | 名称: CCTV13
+   URL: http://182.114.49.75:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 242.88ms | 分辨率: unknown | 状态: 成功
+
+776. 分组: 央视频道 | 名称: CCTV13
+   URL: http://111.221.137.234:44330/tsfile/live/0013_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 244.74ms | 分辨率: unknown | 状态: 成功
+
+777. 分组: 央视频道 | 名称: CCTV13
+   URL: http://ygbh.site/php/bfgd.php?id=067
+   延迟: 246.92ms | 分辨率: unknown | 状态: 成功
+
+778. 分组: 央视频道 | 名称: CCTV13
+   URL: http://1.24.39.180:9003/hls/13/index.m3u8
+   延迟: 247.25ms | 分辨率: unknown | 状态: 成功
+
+779. 分组: 央视频道 | 名称: CCTV13
+   URL: http://113.15.109.216:59901/tsfile/live/0013_1.m3u8
+   延迟: 259.70ms | 分辨率: unknown | 状态: 成功
+
+780. 分组: 央视频道 | 名称: CCTV13
+   URL: https://epg.pw/stream/5d3d047c64e44d0a24dc33e5700e579457201d2960036b43819bd930a0bb76a7.m3u8
+   延迟: 371.06ms | 分辨率: unknown | 状态: 成功
+
+781. 分组: 央视频道 | 名称: CCTV13
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIxOC4yMy4xOTIuMzM6OTk5OS9uZXdsaXZlL2xpdmUvaGxzLzEzL2xpdmUubTN1OA==
+   延迟: 380.53ms | 分辨率: unknown | 状态: 成功
+
+782. 分组: 央视频道 | 名称: CCTV13
+   URL: http://112.27.235.94:8000/hls/14/index.m3u8
+   延迟: 388.06ms | 分辨率: unknown | 状态: 成功
+
+783. 分组: 央视频道 | 名称: CCTV13
+   URL: http://cdn3.163189.xyz/163189/cctv13
+   延迟: 397.05ms | 分辨率: unknown | 状态: 成功
+
+784. 分组: 央视频道 | 名称: CCTV13
+   URL: https://cdn3.163189.xyz/163189/cctv13
+   延迟: 397.28ms | 分辨率: unknown | 状态: 成功
+
+785. 分组: 央视频道 | 名称: CCTV13
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMTIvaW5kZXgubTN1OA==
+   延迟: 445.28ms | 分辨率: unknown | 状态: 成功
+
+786. 分组: 央视频道 | 名称: CCTV13
+   URL: http://120.238.94.10:9901/tsfile/live/1031_1.m3u8
+   延迟: 449.28ms | 分辨率: unknown | 状态: 成功
+
+787. 分组: 央视频道 | 名称: CCTV13
+   URL: http://112.123.243.37:50085/tsfile/live/0014_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 466.31ms | 分辨率: unknown | 状态: 成功
+
+788. 分组: 央视频道 | 名称: CCTV13
+   URL: http://183.215.134.239:19901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 486.89ms | 分辨率: unknown | 状态: 成功
+
+789. 分组: 央视频道 | 名称: CCTV13
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv13_2.m3u8
+   延迟: 501.27ms | 分辨率: unknown | 状态: 成功
+
+790. 分组: 央视频道 | 名称: CCTV13
+   URL: http://58.57.40.22:9901/tsfile/live/1013_1.m3u8
+   延迟: 507.14ms | 分辨率: unknown | 状态: 成功
+
+791. 分组: 央视频道 | 名称: CCTV13
+   URL: http://120.76.248.139/live/bfgd/4200000067.m3u8
+   延迟: 507.84ms | 分辨率: unknown | 状态: 成功
+
+792. 分组: 央视频道 | 名称: CCTV13
+   URL: http://218.3.138.25:1111/tsfile/live/1012_1.m3u8
+   延迟: 518.54ms | 分辨率: unknown | 状态: 成功
+
+793. 分组: 央视频道 | 名称: CCTV13
+   URL: https://stream1.freetv.fun/45f42d1a050cf53e2d50d82e9c5091876cc2c2a46d16ada78a48b171e214bba7.m3u8
+   延迟: 525.73ms | 分辨率: unknown | 状态: 成功
+
+794. 分组: 央视频道 | 名称: CCTV15
+   URL: http://69.30.246.194/live/cctv15.m3u8
+   延迟: 26.24ms | 分辨率: unknown | 状态: 成功
+
+795. 分组: 央视频道 | 名称: CCTV15
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv15
+   延迟: 57.46ms | 分辨率: unknown | 状态: 成功
+
+796. 分组: 央视频道 | 名称: CCTV15
+   URL: http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891
+   延迟: 89.27ms | 分辨率: unknown | 状态: 成功
+
+797. 分组: 央视频道 | 名称: CCTV15
+   URL: http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009
+   延迟: 89.87ms | 分辨率: unknown | 状态: 成功
+
+798. 分组: 央视频道 | 名称: CCTV15
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv15hd.m3u8?auth=testpub
+   延迟: 108.59ms | 分辨率: unknown | 状态: 成功
+
+799. 分组: 央视频道 | 名称: CCTV15
+   URL: http://23.237.228.134/live3/CCTV15.m3u8
+   延迟: 122.98ms | 分辨率: unknown | 状态: 成功
+
+800. 分组: 央视频道 | 名称: CCTV15
+   URL: https://iptv.catvod.com/live.php?id=CCTV15
+   延迟: 150.59ms | 分辨率: unknown | 状态: 成功
+
+801. 分组: 央视频道 | 名称: CCTV15
+   URL: http://112.27.235.94:8000/hls/16/index.m3u8
+   延迟: 188.92ms | 分辨率: unknown | 状态: 成功
+
+802. 分组: 央视频道 | 名称: CCTV15
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009
+   延迟: 191.02ms | 分辨率: unknown | 状态: 成功
+
+803. 分组: 央视频道 | 名称: CCTV15
+   URL: http://120.211.62.180:8000/hls/15/index.m3u8
+   延迟: 201.33ms | 分辨率: unknown | 状态: 成功
+
+804. 分组: 央视频道 | 名称: CCTV15
+   URL: http://120.202.94.181:9446/tsfile/live/0015_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 238.28ms | 分辨率: unknown | 状态: 成功
+
+805. 分组: 央视频道 | 名称: CCTV15
+   URL: http://58.57.40.22:9901/tsfile/live/1015_1.m3u8
+   延迟: 239.56ms | 分辨率: unknown | 状态: 成功
+
+806. 分组: 央视频道 | 名称: CCTV15
+   URL: http://221.13.234.185:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.77ms | 分辨率: unknown | 状态: 成功
+
+807. 分组: 央视频道 | 名称: CCTV15
+   URL: http://221.13.235.66:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 242.41ms | 分辨率: unknown | 状态: 成功
+
+808. 分组: 央视频道 | 名称: CCTV15
+   URL: http://ygbh.site/php/bfgd.php?id=133
+   延迟: 258.22ms | 分辨率: unknown | 状态: 成功
+
+809. 分组: 央视频道 | 名称: CCTV15
+   URL: http://113.15.109.216:59901/tsfile/live/0015_1.m3u8
+   延迟: 274.23ms | 分辨率: unknown | 状态: 成功
+
+810. 分组: 央视频道 | 名称: CCTV15
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMTQvaW5kZXgubTN1OA==
+   延迟: 442.86ms | 分辨率: unknown | 状态: 成功
+
+811. 分组: 央视频道 | 名称: CCTV15
+   URL: http://112.123.243.37:50085/tsfile/live/0016_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 458.20ms | 分辨率: unknown | 状态: 成功
+
+812. 分组: 央视频道 | 名称: CCTV15
+   URL: http://111.43.126.240:9003/hls/28/index.m3u8
+   延迟: 460.80ms | 分辨率: unknown | 状态: 成功
+
+813. 分组: 央视频道 | 名称: CCTV15
+   URL: http://153.0.171.163:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 473.97ms | 分辨率: unknown | 状态: 成功
+
+814. 分组: 央视频道 | 名称: CCTV15
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv15_2.m3u8
+   延迟: 480.72ms | 分辨率: unknown | 状态: 成功
+
+815. 分组: 央视频道 | 名称: CCTV15
+   URL: http://1.24.39.180:9003/hls/15/index.m3u8
+   延迟: 493.32ms | 分辨率: unknown | 状态: 成功
+
+816. 分组: 央视频道 | 名称: CCTV15
+   URL: http://183.11.239.36:808/hls/102/index.m3u8
+   延迟: 501.82ms | 分辨率: unknown | 状态: 成功
+
+817. 分组: 央视频道 | 名称: CCTV15
+   URL: http://120.76.248.139/live/bfgd/4200000133.m3u8
+   延迟: 506.12ms | 分辨率: unknown | 状态: 成功
+
+818. 分组: 央视频道 | 名称: CCTV16
+   URL: http://69.30.246.194/live/cctv16.m3u8
+   延迟: 26.51ms | 分辨率: unknown | 状态: 成功
+
+819. 分组: 央视频道 | 名称: CCTV16
+   URL: http://69.197.146.138:82/live/cctv16.m3u8?jsbt=1760967373&jsbk=66c5c68a5342c6e3855ee213be777df7
+   延迟: 26.65ms | 分辨率: unknown | 状态: 成功
+
+820. 分组: 央视频道 | 名称: CCTV16
+   URL: https://iptv.catvod.com/live.php?id=CCTV16
+   延迟: 52.34ms | 分辨率: unknown | 状态: 成功
+
+821. 分组: 央视频道 | 名称: CCTV16
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
+   延迟: 58.73ms | 分辨率: unknown | 状态: 成功
+
+822. 分组: 央视频道 | 名称: CCTV16
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
+   延迟: 192.57ms | 分辨率: unknown | 状态: 成功
+
+823. 分组: 央视频道 | 名称: CCTV16
+   URL: http://111.43.126.240:9003/hls/29/index.m3u8
+   延迟: 224.56ms | 分辨率: unknown | 状态: 成功
+
+824. 分组: 央视频道 | 名称: CCTV16
+   URL: http://183.11.239.36:808/hls/169/index.m3u8
+   延迟: 254.10ms | 分辨率: unknown | 状态: 成功
+
+825. 分组: 央视频道 | 名称: CCTV16
+   URL: http://1.24.39.180:9003/hls/60/index.m3u8
+   延迟: 339.28ms | 分辨率: unknown | 状态: 成功
+
+826. 分组: 央视频道 | 名称: CCTV16
+   URL: https://epg.pw/stream/c1beb2abcba5aef09c2f58efc3ca84b76de2c7b9cf60762b0d79772d9e70d454.m3u8
+   延迟: 376.75ms | 分辨率: unknown | 状态: 成功
+
+827. 分组: 央视频道 | 名称: CCTV17
+   URL: http://38.75.136.137:98/gslb/jsbtv/cctv17hd.m3u8?tm=1760967397&key=d367ea1eef8815852b3fe27a6ccefb4c
+   延迟: 44.98ms | 分辨率: unknown | 状态: 成功
+
+828. 分组: 央视频道 | 名称: CCTV17
+   URL: https://iptv.catvod.com/live.php?id=CCTV17
+   延迟: 57.03ms | 分辨率: unknown | 状态: 成功
+
+829. 分组: 央视频道 | 名称: CCTV17
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub
+   延迟: 58.49ms | 分辨率: unknown | 状态: 成功
+
+830. 分组: 央视频道 | 名称: CCTV17
+   URL: http://23.237.228.134/live3/CCTV17.m3u8
+   延迟: 127.76ms | 分辨率: unknown | 状态: 成功
+
+831. 分组: 央视频道 | 名称: CCTV17
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009
+   延迟: 149.39ms | 分辨率: unknown | 状态: 成功
+
+832. 分组: 央视频道 | 名称: CCTV17
+   URL: http://111.43.126.240:9003/hls/30/index.m3u8
+   延迟: 226.21ms | 分辨率: unknown | 状态: 成功
+
+833. 分组: 央视频道 | 名称: CCTV17
+   URL: http://183.11.239.36:808/hls/35/index.m3u8
+   延迟: 251.61ms | 分辨率: unknown | 状态: 成功
+
+834. 分组: 央视频道 | 名称: CCTV17
+   URL: http://1.24.39.180:9003/hls/61/index.m3u8
+   延迟: 340.77ms | 分辨率: unknown | 状态: 成功
+
+835. 分组: 央视频道 | 名称: CCTV17
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIxOC4yMy4xOTIuMzM6OTk5OS9uZXdsaXZlL2xpdmUvaGxzLzE2L2xpdmUubTN1OA==
+   延迟: 401.86ms | 分辨率: unknown | 状态: 成功
+
+836. 分组: 央视频道 | 名称: CCTV17
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMTUvaW5kZXgubTN1OA==
+   延迟: 430.86ms | 分辨率: unknown | 状态: 成功
+
+837. 分组: 央视频道 | 名称: CCTV17
+   URL: http://ygbh.site/php/bfgd.php?id=204
+   延迟: 440.79ms | 分辨率: unknown | 状态: 成功
+
+838. 分组: 央视频道 | 名称: CCTV17
+   URL: http://120.238.94.10:9901/tsfile/live/1048_1.m3u8
+   延迟: 497.47ms | 分辨率: unknown | 状态: 成功
+
+839. 分组: 央视频道 | 名称: CCTV17
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv17_2.m3u8
+   延迟: 499.64ms | 分辨率: unknown | 状态: 成功
+
+840. 分组: 央视频道 | 名称: CCTV17
+   URL: http://58.57.40.22:9901/tsfile/live/0019_1.m3u8
+   延迟: 522.16ms | 分辨率: unknown | 状态: 成功
+
+841. 分组: 央视频道 | 名称: CCTV2
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv2hd.m3u8?auth=testpub
+   延迟: 73.05ms | 分辨率: unknown | 状态: 成功
+
+842. 分组: 央视频道 | 名称: CCTV2
+   URL: http://23.237.228.134/live5/CCTV2.m3u8
+   延迟: 128.70ms | 分辨率: unknown | 状态: 成功
+
+843. 分组: 央视频道 | 名称: CCTV2
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20251009
+   延迟: 148.61ms | 分辨率: unknown | 状态: 成功
+
+844. 分组: 央视频道 | 名称: CCTV2
+   URL: http://112.27.235.94:8000/hls/2/index.m3u8
+   延迟: 197.11ms | 分辨率: unknown | 状态: 成功
+
+845. 分组: 央视频道 | 名称: CCTV2
+   URL: http://221.13.234.185:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 235.98ms | 分辨率: unknown | 状态: 成功
+
+846. 分组: 央视频道 | 名称: CCTV2
+   URL: http://221.13.235.66:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 248.82ms | 分辨率: unknown | 状态: 成功
+
+847. 分组: 央视频道 | 名称: CCTV2
+   URL: http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
+   延迟: 267.71ms | 分辨率: unknown | 状态: 成功
+
+848. 分组: 央视频道 | 名称: CCTV2
+   URL: http://ygbh.site/php/bfgd.php?id=061
+   延迟: 316.20ms | 分辨率: unknown | 状态: 成功
+
+849. 分组: 央视频道 | 名称: CCTV2
+   URL: http://120.211.62.180:8000/hls/2/index.m3u8
+   延迟: 392.78ms | 分辨率: unknown | 状态: 成功
+
+850. 分组: 央视频道 | 名称: CCTV2
+   URL: https://iptv.catvod.com/live.php?id=CCTV2
+   延迟: 417.96ms | 分辨率: unknown | 状态: 成功
+
+851. 分组: 央视频道 | 名称: CCTV2
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMi9pbmRleC5tM3U4
+   延迟: 433.46ms | 分辨率: unknown | 状态: 成功
+
+852. 分组: 央视频道 | 名称: CCTV2
+   URL: http://120.202.94.181:9446/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 437.63ms | 分辨率: unknown | 状态: 成功
+
+853. 分组: 央视频道 | 名称: CCTV2
+   URL: http://111.43.126.240:9003/hls/14/index.m3u8
+   延迟: 447.63ms | 分辨率: unknown | 状态: 成功
+
+854. 分组: 央视频道 | 名称: CCTV2
+   URL: http://27.41.245.32:801/hls/2/index.m3u8
+   延迟: 497.93ms | 分辨率: unknown | 状态: 成功
+
+855. 分组: 央视频道 | 名称: CCTV2
+   URL: http://182.114.49.75:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 520.70ms | 分辨率: unknown | 状态: 成功
+
+856. 分组: 央视频道 | 名称: CCTV2
+   URL: http://218.13.170.98:9901/tsfile/live/0002_1.m3u8
+   延迟: 535.16ms | 分辨率: unknown | 状态: 成功
+
+857. 分组: 央视频道 | 名称: CCTV2
+   URL: http://218.3.138.25:1111/tsfile/live/1001_1.m3u8
+   延迟: 536.20ms | 分辨率: unknown | 状态: 成功
+
+858. 分组: 央视频道 | 名称: CCTV2
+   URL: http://61.136.172.236:9901/tsfile/live/0002_1.m3u8
+   延迟: 537.18ms | 分辨率: unknown | 状态: 成功
+
+859. 分组: 央视频道 | 名称: CCTV3
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv3hd.m3u8?auth=testpub
+   延迟: 118.42ms | 分辨率: unknown | 状态: 成功
+
+860. 分组: 央视频道 | 名称: CCTV3
+   URL: http://23.237.228.134/live5/CCTV3.m3u8
+   延迟: 127.79ms | 分辨率: unknown | 状态: 成功
+
+861. 分组: 央视频道 | 名称: CCTV3
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv3hd.m3u8?auth=test20251009
+   延迟: 155.69ms | 分辨率: unknown | 状态: 成功
+
+862. 分组: 央视频道 | 名称: CCTV3
+   URL: http://112.27.235.94:8000/hls/3/index.m3u8
+   延迟: 197.01ms | 分辨率: unknown | 状态: 成功
+
+863. 分组: 央视频道 | 名称: CCTV3
+   URL: https://iptv.catvod.com/live.php?id=CCTV3
+   延迟: 207.65ms | 分辨率: unknown | 状态: 成功
+
+864. 分组: 央视频道 | 名称: CCTV3
+   URL: http://112.46.85.60:8009/hls/3/index.m3u8
+   延迟: 233.02ms | 分辨率: unknown | 状态: 成功
+
+865. 分组: 央视频道 | 名称: CCTV3
+   URL: http://112.132.10.54:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 238.04ms | 分辨率: unknown | 状态: 成功
+
+866. 分组: 央视频道 | 名称: CCTV3
+   URL: http://218.3.138.25:1111/tsfile/live/1002_1.m3u8
+   延迟: 263.57ms | 分辨率: unknown | 状态: 成功
+
+867. 分组: 央视频道 | 名称: CCTV3
+   URL: http://1.24.39.180:9003/hls/3/index.m3u8
+   延迟: 272.25ms | 分辨率: unknown | 状态: 成功
+
+868. 分组: 央视频道 | 名称: CCTV3
+   URL: http://ygbh.site/php/bfgd.php?id=062
+   延迟: 296.71ms | 分辨率: unknown | 状态: 成功
+
+869. 分组: 央视频道 | 名称: CCTV3
+   URL: http://120.202.94.181:9446/tsfile/live/0003_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 426.64ms | 分辨率: unknown | 状态: 成功
+
+870. 分组: 央视频道 | 名称: CCTV3
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMy9pbmRleC5tM3U4
+   延迟: 436.23ms | 分辨率: unknown | 状态: 成功
+
+871. 分组: 央视频道 | 名称: CCTV3
+   URL: http://39.152.103.17:8089/tsfile/live/1002_1.m3u8
+   延迟: 442.39ms | 分辨率: unknown | 状态: 成功
+
+872. 分组: 央视频道 | 名称: CCTV3
+   URL: http://111.43.126.240:9003/hls/15/index.m3u8
+   延迟: 459.48ms | 分辨率: unknown | 状态: 成功
+
+873. 分组: 央视频道 | 名称: CCTV3
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv3_2.m3u8
+   延迟: 459.90ms | 分辨率: unknown | 状态: 成功
+
+874. 分组: 央视频道 | 名称: CCTV3
+   URL: http://221.13.235.66:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 478.13ms | 分辨率: unknown | 状态: 成功
+
+875. 分组: 央视频道 | 名称: CCTV3
+   URL: http://183.215.134.239:19901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 486.57ms | 分辨率: unknown | 状态: 成功
+
+876. 分组: 央视频道 | 名称: CCTV3
+   URL: http://221.13.234.185:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 505.27ms | 分辨率: unknown | 状态: 成功
+
+877. 分组: 央视频道 | 名称: CCTV3
+   URL: http://58.57.40.22:9901/tsfile/live/1002_1.m3u8
+   延迟: 505.42ms | 分辨率: unknown | 状态: 成功
+
+878. 分组: 央视频道 | 名称: CCTV3
+   URL: http://182.114.49.75:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 509.88ms | 分辨率: unknown | 状态: 成功
+
+879. 分组: 央视频道 | 名称: CCTV4
+   URL: https://smt.858.qzz.io/Smart.php?id=Cctv4
+   延迟: 58.18ms | 分辨率: unknown | 状态: 成功
+
+880. 分组: 央视频道 | 名称: CCTV4
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv4hd.m3u8?auth=testpub
+   延迟: 72.69ms | 分辨率: unknown | 状态: 成功
+
+881. 分组: 央视频道 | 名称: CCTV4
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009
+   延迟: 153.20ms | 分辨率: unknown | 状态: 成功
+
+882. 分组: 央视频道 | 名称: CCTV4
+   URL: http://120.202.94.181:9446/tsfile/live/0004_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 210.93ms | 分辨率: unknown | 状态: 成功
+
+883. 分组: 央视频道 | 名称: CCTV4
+   URL: http://221.13.234.185:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 235.53ms | 分辨率: unknown | 状态: 成功
+
+884. 分组: 央视频道 | 名称: CCTV4
+   URL: http://153.0.171.163:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 238.96ms | 分辨率: unknown | 状态: 成功
+
+885. 分组: 央视频道 | 名称: CCTV4
+   URL: http://1.24.39.180:9003/hls/4/index.m3u8
+   延迟: 246.43ms | 分辨率: unknown | 状态: 成功
+
+886. 分组: 央视频道 | 名称: CCTV4
+   URL: https://iptv.catvod.com/live.php?id=CCTV4
+   延迟: 273.41ms | 分辨率: unknown | 状态: 成功
+
+887. 分组: 央视频道 | 名称: CCTV4
+   URL: http://ygbh.site/php/bfgd.php?id=063
+   延迟: 316.54ms | 分辨率: unknown | 状态: 成功
+
+888. 分组: 央视频道 | 名称: CCTV4
+   URL: http://112.27.235.94:8000/hls/4/index.m3u8
+   延迟: 415.30ms | 分辨率: unknown | 状态: 成功
+
+889. 分组: 央视频道 | 名称: CCTV4
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNC9pbmRleC5tM3U4
+   延迟: 430.58ms | 分辨率: unknown | 状态: 成功
+
+890. 分组: 央视频道 | 名称: CCTV4
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovL3R2dGouanh3bHR4LmNvbTo4MDAzL2NjdHY0Lm0zdTg=
+   延迟: 447.15ms | 分辨率: unknown | 状态: 成功
+
+891. 分组: 央视频道 | 名称: CCTV4
+   URL: https://piccpndali.v.myalicdn.com/audio/cctveurope_2.m3u8
+   延迟: 464.79ms | 分辨率: unknown | 状态: 成功
+
+892. 分组: 央视频道 | 名称: CCTV4
+   URL: http://111.43.126.240:9003/hls/16/index.m3u8
+   延迟: 477.16ms | 分辨率: unknown | 状态: 成功
+
+893. 分组: 央视频道 | 名称: CCTV4
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv4_2.m3u8
+   延迟: 478.58ms | 分辨率: unknown | 状态: 成功
+
+894. 分组: 央视频道 | 名称: CCTV4
+   URL: https://piccpndali.v.myalicdn.com/audio/cctvamerica_2.m3u8
+   延迟: 480.15ms | 分辨率: unknown | 状态: 成功
+
+895. 分组: 央视频道 | 名称: CCTV4
+   URL: http://221.13.235.66:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 500.85ms | 分辨率: unknown | 状态: 成功
+
+896. 分组: 央视频道 | 名称: CCTV4
+   URL: http://113.218.204.144:9002/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 505.95ms | 分辨率: unknown | 状态: 成功
+
+897. 分组: 央视频道 | 名称: CCTV4
+   URL: https://global.cgtn.cicc.media.caton.cloud/master/cgtn-america.m3u8
+   延迟: 511.12ms | 分辨率: 1920x1080 | 状态: 成功
+
+898. 分组: 央视频道 | 名称: CCTV4
+   URL: http://221.226.51.220:50081/newlive/live/hls/4/live.m3u8
+   延迟: 512.58ms | 分辨率: unknown | 状态: 成功
+
+899. 分组: 央视频道 | 名称: CCTV4
+   URL: http://58.57.40.22:9901/tsfile/live/1003_1.m3u8
+   延迟: 530.22ms | 分辨率: unknown | 状态: 成功
+
+900. 分组: 央视频道 | 名称: CCTV5
+   URL: http://74.91.26.218:82/live/cctv5hd.m3u8
+   延迟: 55.49ms | 分辨率: unknown | 状态: 成功
+
+901. 分组: 央视频道 | 名称: CCTV5
+   URL: http://23.237.228.134/live5/CCTV5p.m3u8
+   延迟: 64.55ms | 分辨率: unknown | 状态: 成功
+
+902. 分组: 央视频道 | 名称: CCTV5
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv5hd.m3u8?auth=testpub
+   延迟: 72.66ms | 分辨率: unknown | 状态: 成功
+
+903. 分组: 央视频道 | 名称: CCTV5
+   URL: https://iptv.catvod.com/live.php?id=CCTV5
+   延迟: 103.16ms | 分辨率: unknown | 状态: 成功
+
+904. 分组: 央视频道 | 名称: CCTV5
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv5
+   延迟: 118.21ms | 分辨率: unknown | 状态: 成功
+
+905. 分组: 央视频道 | 名称: CCTV5
+   URL: http://23.237.228.134/live5/CCTV5.m3u8
+   延迟: 128.71ms | 分辨率: unknown | 状态: 成功
+
+906. 分组: 央视频道 | 名称: CCTV5
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv5hd.m3u8?auth=test20251009
+   延迟: 196.77ms | 分辨率: unknown | 状态: 成功
+
+907. 分组: 央视频道 | 名称: CCTV5
+   URL: http://112.27.235.94:8000/hls/5/index.m3u8
+   延迟: 196.81ms | 分辨率: unknown | 状态: 成功
+
+908. 分组: 央视频道 | 名称: CCTV5
+   URL: http://120.202.94.181:9446/tsfile/live/0005_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 223.76ms | 分辨率: unknown | 状态: 成功
+
+909. 分组: 央视频道 | 名称: CCTV5
+   URL: http://111.43.126.240:9003/hls/17/index.m3u8
+   延迟: 224.61ms | 分辨率: unknown | 状态: 成功
+
+910. 分组: 央视频道 | 名称: CCTV5
+   URL: http://1.24.39.180:9003/hls/5/index.m3u8
+   延迟: 257.20ms | 分辨率: unknown | 状态: 成功
+
+911. 分组: 央视频道 | 名称: CCTV5
+   URL: http://218.3.138.25:1111/tsfile/live/1004_1.m3u8
+   延迟: 271.86ms | 分辨率: unknown | 状态: 成功
+
+912. 分组: 央视频道 | 名称: CCTV5
+   URL: http://ygbh.site/php/bfgd.php?id=064
+   延迟: 287.24ms | 分辨率: unknown | 状态: 成功
+
+913. 分组: 央视频道 | 名称: CCTV5
+   URL: http://120.76.248.139/live/bfgd/4200000064.m3u8
+   延迟: 379.61ms | 分辨率: unknown | 状态: 成功
+
+914. 分组: 央视频道 | 名称: CCTV5
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNS9pbmRleC5tM3U4
+   延迟: 429.99ms | 分辨率: unknown | 状态: 成功
+
+915. 分组: 央视频道 | 名称: CCTV5
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv5_2.m3u8
+   延迟: 462.69ms | 分辨率: unknown | 状态: 成功
+
+916. 分组: 央视频道 | 名称: CCTV5
+   URL: http://27.41.245.32:801/hls/5/index.m3u8
+   延迟: 463.72ms | 分辨率: unknown | 状态: 成功
+
+917. 分组: 央视频道 | 名称: CCTV5
+   URL: http://112.254.55.106:22222/udp/239.253.254.192:8000
+   延迟: 476.79ms | 分辨率: unknown | 状态: 成功
+
+918. 分组: 央视频道 | 名称: CCTV5
+   URL: http://221.13.234.185:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 479.62ms | 分辨率: unknown | 状态: 成功
+
+919. 分组: 央视频道 | 名称: CCTV5
+   URL: http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
+   延迟: 488.22ms | 分辨率: unknown | 状态: 成功
+
+920. 分组: 央视频道 | 名称: CCTV5
+   URL: http://112.132.10.54:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 499.40ms | 分辨率: unknown | 状态: 成功
+
+921. 分组: 央视频道 | 名称: CCTV5
+   URL: http://221.13.235.66:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 504.28ms | 分辨率: unknown | 状态: 成功
+
+922. 分组: 央视频道 | 名称: CCTV5
+   URL: http://61.136.172.236:9901/tsfile/live/0005_1.m3u8
+   延迟: 524.97ms | 分辨率: unknown | 状态: 成功
+
+923. 分组: 央视频道 | 名称: CCTV5+
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv5plus
+   延迟: 53.02ms | 分辨率: unknown | 状态: 成功
+
+924. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://74.91.26.218:82/live/cctv5p.m3u8
+   延迟: 54.84ms | 分辨率: unknown | 状态: 成功
+
+925. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009
+   延迟: 98.47ms | 分辨率: unknown | 状态: 成功
+
+926. 分组: 央视频道 | 名称: CCTV5+
+   URL: https://iptv.catvod.com/live.php?id=CCTV5%2B
+   延迟: 197.01ms | 分辨率: unknown | 状态: 成功
+
+927. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://112.27.235.94:8000/hls/6/index.m3u8
+   延迟: 197.22ms | 分辨率: unknown | 状态: 成功
+
+928. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://111.43.126.240:9003/hls/18/index.m3u8
+   延迟: 226.68ms | 分辨率: unknown | 状态: 成功
+
+929. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://183.215.134.239:19901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 246.02ms | 分辨率: unknown | 状态: 成功
+
+930. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://120.76.248.139/live/bfgd/4200000246.m3u8
+   延迟: 253.71ms | 分辨率: unknown | 状态: 成功
+
+931. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
+   延迟: 265.20ms | 分辨率: unknown | 状态: 成功
+
+932. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://ygbh.site/php/bfgd.php?id=246
+   延迟: 287.43ms | 分辨率: unknown | 状态: 成功
+
+933. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://112.254.55.106:22222/udp/239.253.254.80:8000
+   延迟: 467.82ms | 分辨率: unknown | 状态: 成功
+
+934. 分组: 央视频道 | 名称: CCTV5+
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv5plus_2.m3u8
+   延迟: 509.42ms | 分辨率: unknown | 状态: 成功
+
+935. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://61.136.172.236:9901/tsfile/live/0016_1.m3u8
+   延迟: 526.24ms | 分辨率: unknown | 状态: 成功
+
+936. 分组: 央视频道 | 名称: CCTV5+
+   URL: http://120.238.94.10:9901/tsfile/live/1023_1.m3u8
+   延迟: 548.79ms | 分辨率: unknown | 状态: 成功
+
+937. 分组: 央视频道 | 名称: CCTV6
+   URL: https://iptv.catvod.com/live.php?id=CCTV6
+   延迟: 57.61ms | 分辨率: unknown | 状态: 成功
+
+938. 分组: 央视频道 | 名称: CCTV6
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv6
+   延迟: 57.93ms | 分辨率: unknown | 状态: 成功
+
+939. 分组: 央视频道 | 名称: CCTV6
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv6hd.m3u8?auth=testpub
+   延迟: 61.93ms | 分辨率: unknown | 状态: 成功
+
+940. 分组: 央视频道 | 名称: CCTV6
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009
+   延迟: 98.81ms | 分辨率: unknown | 状态: 成功
+
+941. 分组: 央视频道 | 名称: CCTV6
+   URL: http://120.202.94.181:9446/tsfile/live/0006_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 227.29ms | 分辨率: unknown | 状态: 成功
+
+942. 分组: 央视频道 | 名称: CCTV6
+   URL: http://221.13.235.66:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 242.03ms | 分辨率: unknown | 状态: 成功
+
+943. 分组: 央视频道 | 名称: CCTV6
+   URL: http://111.43.126.240:9003/hls/19/index.m3u8
+   延迟: 245.70ms | 分辨率: unknown | 状态: 成功
+
+944. 分组: 央视频道 | 名称: CCTV6
+   URL: http://1.24.39.180:9003/hls/6/index.m3u8
+   延迟: 246.12ms | 分辨率: unknown | 状态: 成功
+
+945. 分组: 央视频道 | 名称: CCTV6
+   URL: http://218.3.138.25:1111/tsfile/live/1005_1.m3u8
+   延迟: 254.52ms | 分辨率: unknown | 状态: 成功
+
+946. 分组: 央视频道 | 名称: CCTV6
+   URL: http://182.114.49.75:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 259.23ms | 分辨率: unknown | 状态: 成功
+
+947. 分组: 央视频道 | 名称: CCTV6
+   URL: http://58.57.40.22:9901/tsfile/live/1006_1.m3u8
+   延迟: 267.72ms | 分辨率: unknown | 状态: 成功
+
+948. 分组: 央视频道 | 名称: CCTV6
+   URL: http://ygbh.site/php/bfgd.php?id=065
+   延迟: 374.20ms | 分辨率: unknown | 状态: 成功
+
+949. 分组: 央视频道 | 名称: CCTV6
+   URL: http://112.27.235.94:8000/hls/7/index.m3u8
+   延迟: 377.83ms | 分辨率: unknown | 状态: 成功
+
+950. 分组: 央视频道 | 名称: CCTV6
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNi9pbmRleC5tM3U4
+   延迟: 427.03ms | 分辨率: unknown | 状态: 成功
+
+951. 分组: 央视频道 | 名称: CCTV6
+   URL: http://27.41.245.32:801/hls/6/index.m3u8
+   延迟: 462.89ms | 分辨率: unknown | 状态: 成功
+
+952. 分组: 央视频道 | 名称: CCTV6
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv6_2.m3u8
+   延迟: 468.48ms | 分辨率: unknown | 状态: 成功
+
+953. 分组: 央视频道 | 名称: CCTV6
+   URL: http://221.13.234.185:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 480.28ms | 分辨率: unknown | 状态: 成功
+
+954. 分组: 央视频道 | 名称: CCTV6
+   URL: http://111.221.137.234:44330/tsfile/live/0006_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 489.04ms | 分辨率: unknown | 状态: 成功
+
+955. 分组: 央视频道 | 名称: CCTV6
+   URL: http://183.11.239.36:808/hls/94/index.m3u8
+   延迟: 500.11ms | 分辨率: unknown | 状态: 成功
+
+956. 分组: 央视频道 | 名称: CCTV6
+   URL: http://61.136.172.236:9901/tsfile/live/0006_1.m3u8
+   延迟: 525.12ms | 分辨率: unknown | 状态: 成功
+
+957. 分组: 央视频道 | 名称: CCTV6
+   URL: http://120.76.248.139/live/bfgd/4200000065.m3u8
+   延迟: 547.97ms | 分辨率: unknown | 状态: 成功
+
+958. 分组: 央视频道 | 名称: CCTV7
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv7
+   延迟: 52.90ms | 分辨率: unknown | 状态: 成功
+
+959. 分组: 央视频道 | 名称: CCTV7
+   URL: https://iptv.catvod.com/live.php?id=CCTV7
+   延迟: 60.49ms | 分辨率: unknown | 状态: 成功
+
+960. 分组: 央视频道 | 名称: CCTV7
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv7hd.m3u8?auth=testpub
+   延迟: 108.34ms | 分辨率: unknown | 状态: 成功
+
+961. 分组: 央视频道 | 名称: CCTV7
+   URL: http://23.237.228.134/live5/CCTV7.m3u8
+   延迟: 127.70ms | 分辨率: unknown | 状态: 成功
+
+962. 分组: 央视频道 | 名称: CCTV7
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv7hd.m3u8?auth=test20251009
+   延迟: 152.68ms | 分辨率: unknown | 状态: 成功
+
+963. 分组: 央视频道 | 名称: CCTV7
+   URL: http://120.211.62.180:8000/hls/7/index.m3u8
+   延迟: 202.31ms | 分辨率: unknown | 状态: 成功
+
+964. 分组: 央视频道 | 名称: CCTV7
+   URL: http://112.27.235.94:8000/hls/8/index.m3u8
+   延迟: 207.22ms | 分辨率: unknown | 状态: 成功
+
+965. 分组: 央视频道 | 名称: CCTV7
+   URL: http://111.43.126.240:9003/hls/20/index.m3u8
+   延迟: 231.91ms | 分辨率: unknown | 状态: 成功
+
+966. 分组: 央视频道 | 名称: CCTV7
+   URL: http://120.202.94.181:9446/tsfile/live/0007_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 233.97ms | 分辨率: unknown | 状态: 成功
+
+967. 分组: 央视频道 | 名称: CCTV7
+   URL: http://221.13.234.185:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 235.52ms | 分辨率: unknown | 状态: 成功
+
+968. 分组: 央视频道 | 名称: CCTV7
+   URL: http://221.13.235.66:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.46ms | 分辨率: unknown | 状态: 成功
+
+969. 分组: 央视频道 | 名称: CCTV7
+   URL: http://183.11.239.36:808/hls/25/index.m3u8
+   延迟: 250.06ms | 分辨率: unknown | 状态: 成功
+
+970. 分组: 央视频道 | 名称: CCTV7
+   URL: http://182.114.49.75:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 254.68ms | 分辨率: unknown | 状态: 成功
+
+971. 分组: 央视频道 | 名称: CCTV7
+   URL: http://1.24.39.180:9003/hls/7/index.m3u8
+   延迟: 344.32ms | 分辨率: unknown | 状态: 成功
+
+972. 分组: 央视频道 | 名称: CCTV7
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNy9pbmRleC5tM3U4
+   延迟: 429.89ms | 分辨率: unknown | 状态: 成功
+
+973. 分组: 央视频道 | 名称: CCTV7
+   URL: http://27.41.245.32:801/hls/7/index.m3u8
+   延迟: 464.71ms | 分辨率: unknown | 状态: 成功
+
+974. 分组: 央视频道 | 名称: CCTV7
+   URL: http://ygbh.site/php/bfgd.php?id=127
+   延迟: 479.85ms | 分辨率: unknown | 状态: 成功
+
+975. 分组: 央视频道 | 名称: CCTV7
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv7_2.m3u8
+   延迟: 492.26ms | 分辨率: unknown | 状态: 成功
+
+976. 分组: 央视频道 | 名称: CCTV7
+   URL: http://8.138.7.223/tv/cctv7.m3u8
+   延迟: 493.84ms | 分辨率: unknown | 状态: 成功
+
+977. 分组: 央视频道 | 名称: CCTV7
+   URL: http://58.57.40.22:9901/tsfile/live/1007_1.m3u8
+   延迟: 496.90ms | 分辨率: unknown | 状态: 成功
+
+978. 分组: 央视频道 | 名称: CCTV7
+   URL: http://120.238.94.10:9901/tsfile/live/1025_1.m3u8
+   延迟: 537.91ms | 分辨率: unknown | 状态: 成功
+
+979. 分组: 央视频道 | 名称: CCTV8
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv8hd
+   延迟: 64.59ms | 分辨率: unknown | 状态: 成功
+
+980. 分组: 央视频道 | 名称: CCTV8
+   URL: https://iptv.catvod.com/live.php?id=CCTV8
+   延迟: 67.00ms | 分辨率: unknown | 状态: 成功
+
+981. 分组: 央视频道 | 名称: CCTV8
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv8hd.m3u8?auth=testpub
+   延迟: 71.89ms | 分辨率: unknown | 状态: 成功
+
+982. 分组: 央视频道 | 名称: CCTV8
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009
+   延迟: 195.83ms | 分辨率: unknown | 状态: 成功
+
+983. 分组: 央视频道 | 名称: CCTV8
+   URL: http://112.27.235.94:8000/hls/9/index.m3u8
+   延迟: 197.01ms | 分辨率: unknown | 状态: 成功
+
+984. 分组: 央视频道 | 名称: CCTV8
+   URL: http://111.43.126.240:9003/hls/21/index.m3u8
+   延迟: 226.94ms | 分辨率: unknown | 状态: 成功
+
+985. 分组: 央视频道 | 名称: CCTV8
+   URL: http://221.13.235.66:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 242.29ms | 分辨率: unknown | 状态: 成功
+
+986. 分组: 央视频道 | 名称: CCTV8
+   URL: http://120.202.94.181:9446/tsfile/live/0008_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 242.38ms | 分辨率: unknown | 状态: 成功
+
+987. 分组: 央视频道 | 名称: CCTV8
+   URL: http://111.221.137.234:44330/tsfile/live/0008_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 244.46ms | 分辨率: unknown | 状态: 成功
+
+988. 分组: 央视频道 | 名称: CCTV8
+   URL: http://183.11.239.36:808/hls/96/index.m3u8
+   延迟: 248.67ms | 分辨率: unknown | 状态: 成功
+
+989. 分组: 央视频道 | 名称: CCTV8
+   URL: http://221.13.234.185:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 252.56ms | 分辨率: unknown | 状态: 成功
+
+990. 分组: 央视频道 | 名称: CCTV8
+   URL: http://ygbh.site/php/bfgd.php?id=066
+   延迟: 308.53ms | 分辨率: unknown | 状态: 成功
+
+991. 分组: 央视频道 | 名称: CCTV8
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvOC9pbmRleC5tM3U4
+   延迟: 433.87ms | 分辨率: unknown | 状态: 成功
+
+992. 分组: 央视频道 | 名称: CCTV8
+   URL: http://27.41.245.32:801/hls/8/index.m3u8
+   延迟: 464.76ms | 分辨率: unknown | 状态: 成功
+
+993. 分组: 央视频道 | 名称: CCTV8
+   URL: http://112.132.10.54:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 470.13ms | 分辨率: unknown | 状态: 成功
+
+994. 分组: 央视频道 | 名称: CCTV8
+   URL: http://124.165.251.82:85/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 476.45ms | 分辨率: unknown | 状态: 成功
+
+995. 分组: 央视频道 | 名称: CCTV8
+   URL: http://182.114.49.75:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 481.49ms | 分辨率: unknown | 状态: 成功
+
+996. 分组: 央视频道 | 名称: CCTV8
+   URL: http://183.215.134.239:19901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 491.78ms | 分辨率: unknown | 状态: 成功
+
+997. 分组: 央视频道 | 名称: CCTV8
+   URL: http://58.57.40.22:9901/tsfile/live/1008_1.m3u8
+   延迟: 510.46ms | 分辨率: unknown | 状态: 成功
+
+998. 分组: 央视频道 | 名称: CCTV8
+   URL: http://1.24.39.180:9003/hls/8/index.m3u8
+   延迟: 515.22ms | 分辨率: unknown | 状态: 成功
+
+999. 分组: 央视频道 | 名称: CCTV8
+   URL: http://43.251.226.89:8080/play/979.m3u8
+   延迟: 533.46ms | 分辨率: unknown | 状态: 成功
+
+1000. 分组: 央视频道 | 名称: CCTV8
+   URL: http://120.76.248.139/live/bfgd/4200000066.m3u8
+   延迟: 534.50ms | 分辨率: unknown | 状态: 成功
+
+1001. 分组: 央视频道 | 名称: CCTV8
+   URL: http://218.3.138.25:1111/tsfile/live/1007_1.m3u8
+   延迟: 534.75ms | 分辨率: unknown | 状态: 成功
+
+1002. 分组: 央视频道 | 名称: CCTV8
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv8_2.m3u8
+   延迟: 545.26ms | 分辨率: unknown | 状态: 成功
+
+1003. 分组: 央视频道 | 名称: CCTV9
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv9hd.m3u8?auth=testpub
+   延迟: 59.28ms | 分辨率: unknown | 状态: 成功
+
+1004. 分组: 央视频道 | 名称: CCTV9
+   URL: https://smt.858.qzz.io/Smart.php?id=cctv9hd
+   延迟: 60.40ms | 分辨率: unknown | 状态: 成功
+
+1005. 分组: 央视频道 | 名称: CCTV9
+   URL: http://23.237.228.134/live5/CCTV9.m3u8
+   延迟: 127.45ms | 分辨率: unknown | 状态: 成功
+
+1006. 分组: 央视频道 | 名称: CCTV9
+   URL: https://iptv.catvod.com/live.php?id=CCTV9
+   延迟: 178.24ms | 分辨率: unknown | 状态: 成功
+
+1007. 分组: 央视频道 | 名称: CCTV9
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv9hd.m3u8?auth=test20251009
+   延迟: 196.72ms | 分辨率: unknown | 状态: 成功
+
+1008. 分组: 央视频道 | 名称: CCTV9
+   URL: http://120.202.94.181:9446/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 226.65ms | 分辨率: unknown | 状态: 成功
+
+1009. 分组: 央视频道 | 名称: CCTV9
+   URL: http://27.41.245.32:801/hls/9/index.m3u8
+   延迟: 237.30ms | 分辨率: unknown | 状态: 成功
+
+1010. 分组: 央视频道 | 名称: CCTV9
+   URL: http://221.13.234.185:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 239.53ms | 分辨率: unknown | 状态: 成功
+
+1011. 分组: 央视频道 | 名称: CCTV9
+   URL: http://1.24.39.180:9003/hls/9/index.m3u8
+   延迟: 246.90ms | 分辨率: unknown | 状态: 成功
+
+1012. 分组: 央视频道 | 名称: CCTV9
+   URL: http://182.114.49.75:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 258.79ms | 分辨率: unknown | 状态: 成功
+
+1013. 分组: 央视频道 | 名称: CCTV9
+   URL: http://61.136.172.236:9901/tsfile/live/0009_1.m3u8
+   延迟: 262.96ms | 分辨率: unknown | 状态: 成功
+
+1014. 分组: 央视频道 | 名称: CCTV9
+   URL: http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
+   延迟: 263.53ms | 分辨率: unknown | 状态: 成功
+
+1015. 分组: 央视频道 | 名称: CCTV9
+   URL: http://112.27.235.94:8000/hls/10/index.m3u8
+   延迟: 375.77ms | 分辨率: unknown | 状态: 成功
+
+1016. 分组: 央视频道 | 名称: CCTV9
+   URL: http://ygbh.site/php/bfgd.php?id=128
+   延迟: 385.65ms | 分辨率: unknown | 状态: 成功
+
+1017. 分组: 央视频道 | 名称: CCTV9
+   URL: http://111.43.126.240:9003/hls/22/index.m3u8
+   延迟: 486.15ms | 分辨率: unknown | 状态: 成功
+
+1018. 分组: 央视频道 | 名称: CCTV9
+   URL: http://120.76.248.139/live/bfgd/4200000128.m3u8
+   延迟: 502.38ms | 分辨率: unknown | 状态: 成功
+
+1019. 分组: 央视频道 | 名称: CCTV9
+   URL: https://piccpndali.v.myalicdn.com/audio/cctv9_2.m3u8
+   延迟: 508.69ms | 分辨率: unknown | 状态: 成功
+
+1020. 分组: 央视频道 | 名称: CCTV9
+   URL: http://113.15.109.216:59901/tsfile/live/0009_1.m3u8
+   延迟: 533.91ms | 分辨率: unknown | 状态: 成功
+
+1021. 分组: 央视频道 | 名称: CETV1
+   URL: http://120.76.248.139/live/bfgd/4200000135.m3u8
+   延迟: 367.24ms | 分辨率: unknown | 状态: 成功
+
+1022. 分组: 央视频道 | 名称: CETV1
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv1&videoTVChannel=cetv1&P2PChannelID=pd://cctv_p2p_hdcetv1&tai=cetv1&VideoName=cetv1&channelID=cetv1
+   延迟: 398.77ms | 分辨率: unknown | 状态: 成功
+
+1023. 分组: 央视频道 | 名称: CETV1
+   URL: http://ygbh.site/php/bfgd.php?id=135
+   延迟: 458.64ms | 分辨率: unknown | 状态: 成功
+
+1024. 分组: 央视频道 | 名称: CETV1
+   URL: http://39.152.103.17:8089/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&down=1
+   延迟: 486.64ms | 分辨率: unknown | 状态: 成功
+
+1025. 分组: 央视频道 | 名称: CETV2
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv2&videoTVChannel=cetv2&P2PChannelID=pd://cctv_p2p_hdcetv2&tai=cetv2&VideoName=cetv2&channelID=cetv2
+   延迟: 257.79ms | 分辨率: unknown | 状态: 成功
+
+1026. 分组: 央视频道 | 名称: CETV2
+   URL: http://120.76.248.139/live/bfgd/4200000492.m3u8
+   延迟: 371.34ms | 分辨率: unknown | 状态: 成功
+
+1027. 分组: 央视频道 | 名称: CETV2
+   URL: http://ygbh.site/php/bfgd.php?id=492
+   延迟: 404.93ms | 分辨率: unknown | 状态: 成功
+
+1028. 分组: 央视频道 | 名称: CETV4
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&videoTVChannel=cetv4&P2PChannelID=pd://cctv_p2p_hdcetv4&tai=cetv4&VideoName=cetv4&channelID=cetv4
+   延迟: 295.07ms | 分辨率: unknown | 状态: 成功
+
+1029. 分组: 央视频道 | 名称: CETV4
+   URL: http://39.152.103.17:8089/tsfile/live/1092_1.m3u8?key=txiptv&playlive=1&down=1
+   延迟: 441.90ms | 分辨率: unknown | 状态: 成功
+
+1030. 分组: 央视频道 | 名称: CETV4
+   URL: http://183.11.239.36:808/hls/73/index.m3u8
+   延迟: 514.81ms | 分辨率: unknown | 状态: 成功
+
+1031. 分组: 央视频道 | 名称: 重温经典
+   URL: http://69.30.246.194/live/cwjd.m3u8
+   延迟: 13.35ms | 分辨率: unknown | 状态: 成功
+
+1032. 分组: 央视频道 | 名称: 重温经典
+   URL: http://php.jdshipin.com/PLTV/iptv.php?id=cwjd
+   延迟: 75.96ms | 分辨率: unknown | 状态: 成功
+
+1033. 分组: 央视频道 | 名称: 重温经典
+   URL: http://cdn3.163189.xyz/live/cwjd/stream.m3u8
+   延迟: 132.35ms | 分辨率: unknown | 状态: 成功
+
+1034. 分组: 央视频道 | 名称: 重温经典
+   URL: http://112.27.235.94:8000/hls/50/index.m3u8
+   延迟: 207.44ms | 分辨率: unknown | 状态: 成功
+
+1035. 分组: 央视频道 | 名称: 重温经典
+   URL: http://111.221.137.234:44330/tsfile/live/0143_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 245.07ms | 分辨率: unknown | 状态: 成功
+
+1036. 分组: 央视频道 | 名称: 重温经典
+   URL: http://120.76.248.139/live/bfgd/4200000635.m3u8
+   延迟: 366.27ms | 分辨率: unknown | 状态: 成功
+
+1037. 分组: 央视频道 | 名称: 重温经典
+   URL: https://cdn3.163189.xyz/live/cwjd/stream.m3u8
+   延迟: 444.31ms | 分辨率: unknown | 状态: 成功
+
+1038. 分组: 央视频道 | 名称: 重温经典
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=cwjd
+   延迟: 457.19ms | 分辨率: unknown | 状态: 成功
+
+1039. 分组: 央视频道 | 名称: 重温经典
+   URL: http://183.215.134.239:19901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 489.21ms | 分辨率: unknown | 状态: 成功
+
+1040. 分组: 央视频道 | 名称: 重温经典
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=cwjd
+   延迟: 501.30ms | 分辨率: unknown | 状态: 成功
+
+1041. 分组: 央视频道 | 名称: 重温经典
+   URL: http://ygbh.site/php/bfgd.php?id=636
+   延迟: 531.76ms | 分辨率: unknown | 状态: 成功
+
+1042. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://69.30.246.194/live/cctv14.m3u8
+   延迟: 27.46ms | 分辨率: unknown | 状态: 成功
+
+1043. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub
+   延迟: 72.81ms | 分辨率: unknown | 状态: 成功
+
+1044. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://23.237.228.134/live3/CCTV14.m3u8
+   延迟: 128.61ms | 分辨率: unknown | 状态: 成功
+
+1045. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009
+   延迟: 193.55ms | 分辨率: unknown | 状态: 成功
+
+1046. 分组: 少儿频道 | 名称: CCTV14
+   URL: https://iptv.catvod.com/live.php?id=CCTV14
+   延迟: 298.83ms | 分辨率: unknown | 状态: 成功
+
+1047. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://120.202.94.181:9446/tsfile/live/0014_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 440.04ms | 分辨率: unknown | 状态: 成功
+
+1048. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://27.41.245.32:801/hls/14/index.m3u8
+   延迟: 462.74ms | 分辨率: unknown | 状态: 成功
+
+1049. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMTMvaW5kZXgubTN1OA==
+   延迟: 468.48ms | 分辨率: unknown | 状态: 成功
+
+1050. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://120.211.62.180:8000/hls/14/index.m3u8
+   延迟: 476.27ms | 分辨率: unknown | 状态: 成功
+
+1051. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://111.43.126.240:9003/hls/27/index.m3u8
+   延迟: 481.85ms | 分辨率: unknown | 状态: 成功
+
+1052. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://221.13.234.185:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 484.63ms | 分辨率: unknown | 状态: 成功
+
+1053. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://153.0.171.163:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 499.27ms | 分辨率: unknown | 状态: 成功
+
+1054. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://61.136.172.236:9901/tsfile/live/0014_1.m3u8
+   延迟: 506.12ms | 分辨率: unknown | 状态: 成功
+
+1055. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://182.114.49.75:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 508.49ms | 分辨率: unknown | 状态: 成功
+
+1056. 分组: 少儿频道 | 名称: CCTV14
+   URL: https://stream1.freetv.fun/83461ebfd58cb4e8f2b1f8582cec3c09dfaf945443cc97f13750342a92d55b41.m3u8
+   延迟: 513.93ms | 分辨率: unknown | 状态: 成功
+
+1057. 分组: 少儿频道 | 名称: CCTV14
+   URL: http://58.57.40.22:9901/tsfile/live/1014_1.m3u8
+   延迟: 523.30ms | 分辨率: unknown | 状态: 成功
+
+1058. 分组: 少儿频道 | 名称: 优漫卡通
+   URL: http://111.43.126.240:9003/hls/74/index.m3u8
+   延迟: 258.58ms | 分辨率: unknown | 状态: 成功
+
+1059. 分组: 少儿频道 | 名称: 动漫秀场
+   URL: https://stream1.freetv.fun/dong-man-xiu-chang-12.ctv
+   延迟: 269.85ms | 分辨率: unknown | 状态: 成功
+
+1060. 分组: 少儿频道 | 名称: 动漫秀场
+   URL: https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-9.m3u8
+   延迟: 270.64ms | 分辨率: unknown | 状态: 成功
+
+1061. 分组: 少儿频道 | 名称: 动漫秀场
+   URL: https://stream1.freetv.fun/dong-man-xiu-chang-9.ctv
+   延迟: 294.84ms | 分辨率: unknown | 状态: 成功
+
+1062. 分组: 少儿频道 | 名称: 动漫秀场
+   URL: https://stream1.freetv.fun/dong-man-xiu-chang-7.m3u8
+   延迟: 402.26ms | 分辨率: unknown | 状态: 成功
+
+1063. 分组: 少儿频道 | 名称: 动漫秀场
+   URL: https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-11.m3u8
+   延迟: 509.19ms | 分辨率: unknown | 状态: 成功
+
+1064. 分组: 少儿频道 | 名称: 卡酷少儿
+   URL: http://111.43.126.240:9003/hls/71/index.m3u8
+   延迟: 224.60ms | 分辨率: unknown | 状态: 成功
+
+1065. 分组: 少儿频道 | 名称: 卡酷少儿
+   URL: http://58.57.40.22:9901/tsfile/live/1060_1.m3u8
+   延迟: 239.25ms | 分辨率: unknown | 状态: 成功
+
+1066. 分组: 少儿频道 | 名称: 卡酷少儿
+   URL: http://218.13.170.98:9901/tsfile/live/1021_1.m3u8
+   延迟: 524.92ms | 分辨率: unknown | 状态: 成功
+
+1067. 分组: 少儿频道 | 名称: 哈哈炫动
+   URL: https://stream1.freetv.fun/ha-ha-xuan-dong-8.m3u8
+   延迟: 446.59ms | 分辨率: unknown | 状态: 成功
+
+1068. 分组: 少儿频道 | 名称: 哈哈炫动
+   URL: https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-8.m3u8
+   延迟: 451.56ms | 分辨率: unknown | 状态: 成功
+
+1069. 分组: 少儿频道 | 名称: 哈哈炫动
+   URL: https://stream1.freetv.fun/ha-ha-xuan-dong-29.m3u8
+   延迟: 496.89ms | 分辨率: unknown | 状态: 成功
+
+1070. 分组: 少儿频道 | 名称: 山东少儿
+   URL: https://stream1.freetv.fun/shan-dong-shao-er-5.m3u8
+   延迟: 260.09ms | 分辨率: unknown | 状态: 成功
+
+1071. 分组: 少儿频道 | 名称: 山东少儿
+   URL: https://stream1.freetv.fun/shan-dong-shao-er-8.m3u8
+   延迟: 260.75ms | 分辨率: unknown | 状态: 成功
+
+1072. 分组: 少儿频道 | 名称: 山东少儿
+   URL: https://stream1.freetv.fun/shan-dong-shao-er-2.m3u8
+   延迟: 264.72ms | 分辨率: unknown | 状态: 成功
+
+1073. 分组: 少儿频道 | 名称: 山东少儿
+   URL: https://stream1.freetv.fun/shan-dong-shao-er-4.m3u8
+   延迟: 268.41ms | 分辨率: unknown | 状态: 成功
+
+1074. 分组: 少儿频道 | 名称: 山东少儿
+   URL: https://stream1.freetv.fun/shan-dong-shao-er-1.m3u8
+   延迟: 385.01ms | 分辨率: unknown | 状态: 成功
+
+1075. 分组: 少儿频道 | 名称: 山东少儿
+   URL: https://stream1.freetv.fun/shan-dong-shao-er-6.m3u8
+   延迟: 460.85ms | 分辨率: unknown | 状态: 成功
+
+1076. 分组: 少儿频道 | 名称: 山东少儿
+   URL: http://58.57.40.22:9901/tsfile/live/1024_1.m3u8
+   延迟: 477.95ms | 分辨率: unknown | 状态: 成功
+
+1077. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing.m3u8
+   延迟: 9.24ms | 分辨率: 640x360 | 状态: 成功
+
+1078. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er.m3u8
+   延迟: 9.68ms | 分辨率: 640x360 | 状态: 成功
+
+1079. 分组: 少儿频道 | 名称: 广东少儿
+   URL: http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub
+   延迟: 73.46ms | 分辨率: unknown | 状态: 成功
+
+1080. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-9.m3u8
+   延迟: 136.81ms | 分辨率: 640x360 | 状态: 成功
+
+1081. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-7.m3u8
+   延迟: 165.56ms | 分辨率: 640x360 | 状态: 成功
+
+1082. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-4.m3u8
+   延迟: 165.86ms | 分辨率: 640x360 | 状态: 成功
+
+1083. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-10.m3u8
+   延迟: 166.33ms | 分辨率: 640x360 | 状态: 成功
+
+1084. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-1.m3u8
+   延迟: 166.57ms | 分辨率: 640x360 | 状态: 成功
+
+1085. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-2.m3u8
+   延迟: 167.28ms | 分辨率: 640x360 | 状态: 成功
+
+1086. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-19.m3u8
+   延迟: 167.46ms | 分辨率: 640x360 | 状态: 成功
+
+1087. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-3.m3u8
+   延迟: 170.19ms | 分辨率: 640x360 | 状态: 成功
+
+1088. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-8.m3u8
+   延迟: 171.26ms | 分辨率: 640x360 | 状态: 成功
+
+1089. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-21.m3u8
+   延迟: 330.80ms | 分辨率: 640x360 | 状态: 成功
+
+1090. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-8.m3u8
+   延迟: 367.52ms | 分辨率: 640x360 | 状态: 成功
+
+1091. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-15.m3u8
+   延迟: 370.27ms | 分辨率: 640x360 | 状态: 成功
+
+1092. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-5.m3u8
+   延迟: 371.22ms | 分辨率: 640x360 | 状态: 成功
+
+1093. 分组: 少儿频道 | 名称: 广东少儿
+   URL: https://t.freetv.fun/live/yan-dong-shao-er-24.m3u8
+   延迟: 372.33ms | 分辨率: 640x360 | 状态: 成功
+
+1094. 分组: 少儿频道 | 名称: 广东少儿
+   URL: http://120.238.85.131:9901/tsfile/live/1018_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 514.06ms | 分辨率: unknown | 状态: 成功
+
+1095. 分组: 少儿频道 | 名称: 广东少儿
+   URL: http://www.3344.uk:8888/rtp/239.77.0.12:5146
+   延迟: 537.14ms | 分辨率: unknown | 状态: 成功
+
+1096. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://111.43.126.240:9003/hls/73/index.m3u8
+   延迟: 230.18ms | 分辨率: unknown | 状态: 成功
+
+1097. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-32.ctv
+   延迟: 273.41ms | 分辨率: unknown | 状态: 成功
+
+1098. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-34.m3u8
+   延迟: 315.07ms | 分辨率: unknown | 状态: 成功
+
+1099. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-11.m3u8
+   延迟: 396.32ms | 分辨率: unknown | 状态: 成功
+
+1100. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-19.m3u8
+   延迟: 400.31ms | 分辨率: unknown | 状态: 成功
+
+1101. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-gao-qing-1.m3u8
+   延迟: 408.33ms | 分辨率: unknown | 状态: 成功
+
+1102. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-13.m3u8
+   延迟: 460.67ms | 分辨率: unknown | 状态: 成功
+
+1103. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://221.13.234.185:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 479.62ms | 分辨率: unknown | 状态: 成功
+
+1104. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://221.13.235.66:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 482.71ms | 分辨率: unknown | 状态: 成功
+
+1105. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://58.57.40.22:9901/tsfile/live/1059_1.m3u8
+   延迟: 499.95ms | 分辨率: unknown | 状态: 成功
+
+1106. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://124.228.160.14:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 513.30ms | 分辨率: unknown | 状态: 成功
+
+1107. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://113.15.109.216:59901/tsfile/live/1012_1.m3u8
+   延迟: 516.95ms | 分辨率: unknown | 状态: 成功
+
+1108. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: http://110.80.17.38:9999/tsfile/live/0016_2.m3u8
+   延迟: 530.73ms | 分辨率: unknown | 状态: 成功
+
+1109. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-22.m3u8
+   延迟: 535.17ms | 分辨率: unknown | 状态: 成功
+
+1110. 分组: 少儿频道 | 名称: 金鹰卡通
+   URL: https://stream1.freetv.fun/jin-ying-qia-tong-39.m3u8
+   延迟: 543.27ms | 分辨率: unknown | 状态: 成功
+
+1111. 分组: 山东频道 | 名称: 山东体育
+   URL: https://stream1.freetv.fun/shan-dong-ti-yu-6.m3u8
+   延迟: 314.63ms | 分辨率: unknown | 状态: 成功
+
+1112. 分组: 山东频道 | 名称: 山东体育
+   URL: https://stream1.freetv.fun/shan-dong-ti-yu-7.m3u8
+   延迟: 319.09ms | 分辨率: unknown | 状态: 成功
+
+1113. 分组: 山东频道 | 名称: 山东体育
+   URL: https://stream1.freetv.fun/shan-dong-ti-yu-19.m3u8
+   延迟: 481.77ms | 分辨率: unknown | 状态: 成功
+
+1114. 分组: 山东频道 | 名称: 山东体育
+   URL: http://58.57.40.22:9901/tsfile/live/1020_1.m3u8
+   延迟: 529.64ms | 分辨率: unknown | 状态: 成功
+
+1115. 分组: 山东频道 | 名称: 山东农科
+   URL: http://112.254.55.106:22222/rtp/239.253.254.24:8000
+   延迟: 475.74ms | 分辨率: unknown | 状态: 成功
+
+1116. 分组: 山东频道 | 名称: 山东农科
+   URL: http://58.57.40.22:9901/tsfile/live/1022_1.m3u8
+   延迟: 493.76ms | 分辨率: unknown | 状态: 成功
+
+1117. 分组: 山东频道 | 名称: 山东教育
+   URL: http://183.11.239.36:808/hls/72/index.m3u8
+   延迟: 499.92ms | 分辨率: unknown | 状态: 成功
+
+1118. 分组: 山东频道 | 名称: 山东文旅
+   URL: http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
+   延迟: 262.17ms | 分辨率: unknown | 状态: 成功
+
+1119. 分组: 山东频道 | 名称: 山东文旅
+   URL: http://1.94.31.214/php/sdtv.php?id=sdwl
+   延迟: 503.92ms | 分辨率: unknown | 状态: 成功
+
+1120. 分组: 山东频道 | 名称: 山东新闻
+   URL: https://stream1.freetv.fun/shan-dong-xin-wen-2.m3u8
+   延迟: 275.28ms | 分辨率: unknown | 状态: 成功
+
+1121. 分组: 山东频道 | 名称: 山东新闻
+   URL: https://stream1.freetv.fun/shan-dong-xin-wen-6.m3u8
+   延迟: 311.07ms | 分辨率: unknown | 状态: 成功
+
+1122. 分组: 山东频道 | 名称: 山东生活
+   URL: http://1.94.31.214/php/sdtv.php?id=sdsh
+   延迟: 500.64ms | 分辨率: unknown | 状态: 成功
+
+1123. 分组: 山东频道 | 名称: 山东生活
+   URL: http://58.57.40.22:9901/tsfile/live/1018_1.m3u8
+   延迟: 524.61ms | 分辨率: unknown | 状态: 成功
+
+1124. 分组: 山东频道 | 名称: 山东综艺
+   URL: http://58.57.40.22:9901/tsfile/live/1021_1.m3u8
+   延迟: 256.16ms | 分辨率: unknown | 状态: 成功
+
+1125. 分组: 山东频道 | 名称: 山东齐鲁
+   URL: http://112.254.55.106:22222/rtp/239.253.254.114:8000
+   延迟: 471.52ms | 分辨率: unknown | 状态: 成功
+
+1126. 分组: 山东频道 | 名称: 山东齐鲁
+   URL: http://61.156.228.12:8154/tsfile/live/1001_1.m3u8
+   延迟: 477.69ms | 分辨率: unknown | 状态: 成功
+
+1127. 分组: 山东频道 | 名称: 菏泽经济生活
+   URL: http://live.hznet.tv:1935/live/live2/500K/tzwj_video.m3u8?shandd
+   延迟: 488.06ms | 分辨率: unknown | 状态: 成功
+
+1128. 分组: 影视频道 | 名称: CHC动作电影
+   URL: http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub
+   延迟: 63.06ms | 分辨率: unknown | 状态: 成功
+
+1129. 分组: 影视频道 | 名称: CHC动作电影
+   URL: https://iptv.catvod.com/live.php?id=CHC%E5%8A%A8%E4%BD%9C%E7%94%B5%E5%BD%B1
+   延迟: 100.52ms | 分辨率: unknown | 状态: 成功
+
+1130. 分组: 影视频道 | 名称: CHC动作电影
+   URL: https://t.freetv.fun/live/chcdong-zuo-dian-ying.m3u8
+   延迟: 138.76ms | 分辨率: 640x360 | 状态: 成功
+
+1131. 分组: 影视频道 | 名称: CHC动作电影
+   URL: https://www.freetv.top/migu/644368714.m3u8?migutoken=fb9ef80443f06c3612ddd35545ec1054b5bcab3941fc46ecf84808bdd512d7b2cf16d34fdf955bff71bf01f818f6918ba2d7f536dc5451d1519d15cf8a5671bf16ea8a3bbc71db4477476e211d
+   延迟: 300.36ms | 分辨率: unknown | 状态: 成功
+
+1132. 分组: 影视频道 | 名称: CHC动作电影
+   URL: https://www.freetv.top/migu/644368714.m3u8?migutoken=2e48d18419793654f347e8ca29e0028ce9f3eaaa7a108b006304178b8f790f34908f8a09bbb8f4b8b8abcf36e2341f1043dde8719cf4927fcd0dcde4667f8b91e68e820314791d9b70452862c9
+   延迟: 302.41ms | 分辨率: unknown | 状态: 成功
+
+1133. 分组: 影视频道 | 名称: CHC动作电影
+   URL: http://183.237.95.108:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 504.33ms | 分辨率: unknown | 状态: 成功
+
+1134. 分组: 影视频道 | 名称: CHC家庭影院
+   URL: http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
+   延迟: 117.92ms | 分辨率: unknown | 状态: 成功
+
+1135. 分组: 影视频道 | 名称: CHC家庭影院
+   URL: https://t.freetv.fun/live/chcjia-ting-ying-yuan.m3u8
+   延迟: 124.83ms | 分辨率: 640x360 | 状态: 成功
+
+1136. 分组: 影视频道 | 名称: CHC家庭影院
+   URL: https://iptv.catvod.com/live.php?id=CHC%E5%AE%B6%E5%BA%AD%E5%BD%B1%E9%99%A2
+   延迟: 209.67ms | 分辨率: unknown | 状态: 成功
+
+1137. 分组: 影视频道 | 名称: CHC家庭影院
+   URL: https://stream1.freetv.fun/chcjia-ting-ying-yuan-15.ctv
+   延迟: 256.38ms | 分辨率: unknown | 状态: 成功
+
+1138. 分组: 影视频道 | 名称: CHC家庭影院
+   URL: http://61.162.52.6:8088/newlive/live/hls/60/live.m3u8
+   延迟: 514.62ms | 分辨率: unknown | 状态: 成功
+
+1139. 分组: 影视频道 | 名称: CHC家庭影院
+   URL: http://43.251.226.89:8080/play/1067.m3u8
+   延迟: 529.01ms | 分辨率: unknown | 状态: 成功
+
+1140. 分组: 影视频道 | 名称: CHC高清电影
+   URL: http://183.237.95.108:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0
+   延迟: 259.96ms | 分辨率: unknown | 状态: 成功
+
+1141. 分组: 江苏频道 | 名称: 南京十八生活
+   URL: http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8
+   延迟: 427.78ms | 分辨率: unknown | 状态: 成功
+
+1142. 分组: 江苏频道 | 名称: 南京少儿
+   URL: http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8
+   延迟: 342.50ms | 分辨率: unknown | 状态: 成功
+
+1143. 分组: 江苏频道 | 名称: 南京少儿
+   URL: http://221.226.51.220:50080/newlive/live/hls/46/live.m3u8
+   延迟: 506.29ms | 分辨率: unknown | 状态: 成功
+
+1144. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://cdn6.163189.xyz/163189/fhzw
+   延迟: 11.37ms | 分辨率: unknown | 状态: 成功
+
+1145. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8654&tk=e503191f8e20
+   延迟: 50.84ms | 分辨率: unknown | 状态: 成功
+
+1146. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzw
+   延迟: 69.16ms | 分辨率: unknown | 状态: 成功
+
+1147. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fhzw
+   延迟: 75.95ms | 分辨率: unknown | 状态: 成功
+
+1148. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://php.jdshipin.com:8880/iptv.php?id=fhzw
+   延迟: 84.54ms | 分辨率: unknown | 状态: 成功
+
+1149. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://cdn5.1678520.xyz/live/live2.1.php?id=fhzw
+   延迟: 115.85ms | 分辨率: unknown | 状态: 成功
+
+1150. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://cdn5.1678520.xyz/live/?id=fhzw
+   延迟: 119.60ms | 分辨率: unknown | 状态: 成功
+
+1151. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: https://stream1.freetv.fun/2b657a181daa345025199e7d6b8de95a1a87b19abceafbd16e2499a49da33c6f.m3u8
+   延迟: 127.87ms | 分辨率: unknown | 状态: 成功
+
+1152. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: https://stream1.freetv.fun/4e695e885cc20b20b7e3ec874fe52ed75e27443778c8ff29e498c4c9d7cec4a0.m3u8
+   延迟: 166.91ms | 分辨率: unknown | 状态: 成功
+
+1153. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://playtv-live.ifeng.com/live/06OLEGEGM4G_audio.m3u8
+   延迟: 257.34ms | 分辨率: unknown | 状态: 成功
+
+1154. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: https://smt.1678520.xyz/smt3.2.1.php?id=phoenixtv_hd
+   延迟: 278.85ms | 分辨率: unknown | 状态: 成功
+
+1155. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: https://stream1.freetv.fun/feng-huang-zhong-wen-18.m3u8
+   延迟: 374.97ms | 分辨率: unknown | 状态: 成功
+
+1156. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: https://cdn.163189.xyz/live/fhzw/stream.m3u8
+   延迟: 425.15ms | 分辨率: unknown | 状态: 成功
+
+1157. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://27.41.245.32:801/hls/205/index.m3u8
+   延迟: 461.73ms | 分辨率: unknown | 状态: 成功
+
+1158. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://cdn.163189.xyz/live/fhzw/stream.m3u8
+   延迟: 464.36ms | 分辨率: unknown | 状态: 成功
+
+1159. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://vapi.91kds.cc/live2/ifeng.m3u8?id=fhzwhd&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 478.31ms | 分辨率: unknown | 状态: 成功
+
+1160. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: https://stream1.freetv.fun/feng-huang-zhong-wen-12.m3u8
+   延迟: 482.60ms | 分辨率: unknown | 状态: 成功
+
+1161. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://vapi.91kds.cc/live1/jdtv2.m3u8?id=fhzw&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 513.15ms | 分辨率: unknown | 状态: 成功
+
+1162. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://vapi.91kds.cc/live1/jdtv2.m3u8?id=fhzwhd&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 516.27ms | 分辨率: unknown | 状态: 成功
+
+1163. 分组: 湾区频道 | 名称: 凤凰中文
+   URL: http://49.234.31.101:7033/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
+   延迟: 532.08ms | 分辨率: unknown | 状态: 成功
+
+1164. 分组: 湾区频道 | 名称: 凤凰卫视
+   URL: http://122.152.202.33/s/81a8a44f/index.m3u8?id=15
+   延迟: 289.10ms | 分辨率: unknown | 状态: 成功
+
+1165. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://cdn6.163189.xyz/163189/fhzx
+   延迟: 6.58ms | 分辨率: unknown | 状态: 成功
+
+1166. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzx
+   延迟: 47.25ms | 分辨率: unknown | 状态: 成功
+
+1167. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://php.jdshipin.com/PLTV/iptv.php?id=fhzx
+   延迟: 54.15ms | 分辨率: unknown | 状态: 成功
+
+1168. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fhzx
+   延迟: 103.05ms | 分辨率: unknown | 状态: 成功
+
+1169. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: https://cdn3.163189.xyz/live/fhzx/stream.m3u8
+   延迟: 112.54ms | 分辨率: unknown | 状态: 成功
+
+1170. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://cdn5.1678520.xyz/live/live2.1.php?id=fhzx
+   延迟: 114.97ms | 分辨率: unknown | 状态: 成功
+
+1171. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://cdn5.1678520.xyz/live/?id=fhzx
+   延迟: 116.09ms | 分辨率: unknown | 状态: 成功
+
+1172. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: https://stream1.freetv.fun/a5857ad51b58a0f7a8c9cbdf291571692b0eed9f5ab2cfce97a211260533c0d8.m3u8
+   延迟: 126.80ms | 分辨率: unknown | 状态: 成功
+
+1173. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://cdn3.163189.xyz/live/fhzx/stream.m3u8
+   延迟: 128.36ms | 分辨率: unknown | 状态: 成功
+
+1174. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: https://cdn9.163189.xyz/smt3.1.1.php?id=phoenixinfo_hd
+   延迟: 145.54ms | 分辨率: unknown | 状态: 成功
+
+1175. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://vapi.91kds.cc/live1/jdtv2.m3u8?id=fhzxhd&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 238.72ms | 分辨率: unknown | 状态: 成功
+
+1176. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://vapi.91kds.cc/live2/ifeng.m3u8?id=fhzxhd&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 240.13ms | 分辨率: unknown | 状态: 成功
+
+1177. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://vapi.91kds.cc/live1/jdtv2.m3u8?id=fhzx&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 260.70ms | 分辨率: unknown | 状态: 成功
+
+1178. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://cdn5.1678520.xyz:80/live/live2.1.php?id=fhzx
+   延迟: 335.36ms | 分辨率: unknown | 状态: 成功
+
+1179. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=5282&tk=2aca1ad9a849
+   延迟: 372.50ms | 分辨率: unknown | 状态: 成功
+
+1180. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://playtv-live.ifeng.com/live/06OLEEWQKN4_audio.m3u8
+   延迟: 401.94ms | 分辨率: unknown | 状态: 成功
+
+1181. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://playtv-live.ifeng.com/live/06OLEEWQKN4.m3u8
+   延迟: 510.32ms | 分辨率: 0x540 | 状态: 成功
+
+1182. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://61.221.215.25:8800/hls/47/index.m3u8
+   延迟: 515.65ms | 分辨率: unknown | 状态: 成功
+
+1183. 分组: 湾区频道 | 名称: 凤凰资讯
+   URL: http://php.jdshipin.com:8880/smt.php?id=phoenixinfo_hd
+   延迟: 519.15ms | 分辨率: unknown | 状态: 成功
+
+1184. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://cdn6.163189.xyz/163189/fhhk
+   延迟: 6.09ms | 分辨率: unknown | 状态: 成功
+
+1185. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhhk
+   延迟: 48.69ms | 分辨率: unknown | 状态: 成功
+
+1186. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=3523&tk=7877e7cc41c7
+   延迟: 49.56ms | 分辨率: unknown | 状态: 成功
+
+1187. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fhhk
+   延迟: 65.72ms | 分辨率: unknown | 状态: 成功
+
+1188. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://php.jdshipin.com/PLTV/iptv.php?id=fhhk
+   延迟: 72.00ms | 分辨率: unknown | 状态: 成功
+
+1189. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: https://smt.1678520.xyz/smt3.2.1.php?id=hkphoenix_twn
+   延迟: 271.28ms | 分辨率: unknown | 状态: 成功
+
+1190. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://122.152.202.33/s/81a8a44f/index.m3u8?id=fhhk
+   延迟: 293.19ms | 分辨率: unknown | 状态: 成功
+
+1191. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: https://epg.pw/stream/8770e89223a086eb1b8a0c931e42296d772a8069ad3eb72540e0c434e7cb3e93.m3u8
+   延迟: 330.31ms | 分辨率: unknown | 状态: 成功
+
+1192. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://r.jdshipin.com/yDoTN
+   延迟: 404.14ms | 分辨率: unknown | 状态: 成功
+
+1193. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: https://cdn9.163189.xyz/smt3.1.1.php?id=hkphoenix_twn
+   延迟: 417.46ms | 分辨率: unknown | 状态: 成功
+
+1194. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: https://cdn.iptv8k.top/dl/jrys.php?id=18&time=20240926215313&ip=111.229.253.40
+   延迟: 467.34ms | 分辨率: unknown | 状态: 成功
+
+1195. 分组: 湾区频道 | 名称: 凤凰香港
+   URL: http://vapi.91kds.cc/live2/ifeng.m3u8?id=fhxghd&apiKey=73c963d13814ce7d0e4743c5e7d033cc
+   延迟: 471.48ms | 分辨率: unknown | 状态: 成功
+
+1196. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
+   延迟: 50.52ms | 分辨率: unknown | 状态: 成功
+
+1197. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=0401&tk=2aca1ad9a849
+   延迟: 53.80ms | 分辨率: unknown | 状态: 成功
+
+1198. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fct
+   延迟: 64.11ms | 分辨率: unknown | 状态: 成功
+
+1199. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct4
+   延迟: 67.80ms | 分辨率: 3840x2160 | 状态: 成功
+
+1200. 分组: 湾区频道 | 名称: 翡翠台
+   URL: https://cdn3.163189.xyz/live/fct/stream.m3u8
+   延迟: 74.94ms | 分辨率: unknown | 状态: 成功
+
+1201. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/qClQf
+   延迟: 79.00ms | 分辨率: unknown | 状态: 成功
+
+1202. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fct2
+   延迟: 82.16ms | 分辨率: 1920x1080 | 状态: 成功
+
+1203. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/GeWKr?id=fct720
+   延迟: 106.51ms | 分辨率: unknown | 状态: 成功
+
+1204. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com:8880/PLTV/iptv.php?id=fct3
+   延迟: 108.03ms | 分辨率: unknown | 状态: 成功
+
+1205. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fct4
+   延迟: 114.09ms | 分辨率: 3840x2160 | 状态: 成功
+
+1206. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://cdn5.1678520.xyz/live/?id=fct
+   延迟: 115.88ms | 分辨率: unknown | 状态: 成功
+
+1207. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=fct3
+   延迟: 124.16ms | 分辨率: unknown | 状态: 成功
+
+1208. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/qrfbg
+   延迟: 132.93ms | 分辨率: 1920x1080 | 状态: 成功
+
+1209. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://mytv.cdn.loc.cc/o12.php?id=fct
+   延迟: 137.02ms | 分辨率: unknown | 状态: 成功
+
+1210. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/n90gt
+   延迟: 150.28ms | 分辨率: 3840x2160 | 状态: 成功
+
+1211. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/GeWKr?id=fct406
+   延迟: 175.15ms | 分辨率: unknown | 状态: 成功
+
+1212. 分组: 湾区频道 | 名称: 翡翠台
+   URL: https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40『线路08』
+   延迟: 182.08ms | 分辨率: unknown | 状态: 成功
+
+1213. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
+   延迟: 199.50ms | 分辨率: unknown | 状态: 成功
+
+1214. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com:8880/smt.php?id=jade_twn
+   延迟: 230.12ms | 分辨率: unknown | 状态: 成功
+
+1215. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/thuYX
+   延迟: 236.51ms | 分辨率: 1920x1080 | 状态: 成功
+
+1216. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://php.jdshipin.com/TVOD/iptv.php?id=huali2
+   延迟: 240.17ms | 分辨率: 1280x720 | 状态: 成功
+
+1217. 分组: 湾区频道 | 名称: 翡翠台
+   URL: https://migu.188766.xyz/?migutoken=fab294f829b1591c0264f239567ce461&id=hk_fct&type=dy
+   延迟: 289.59ms | 分辨率: unknown | 状态: 成功
+
+1218. 分组: 湾区频道 | 名称: 翡翠台
+   URL: https://smt.1678520.xyz/smt3.2.1.php?id=jade_twn
+   延迟: 458.99ms | 分辨率: unknown | 状态: 成功
+
+1219. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://r.jdshipin.com/GeWKr
+   延迟: 538.03ms | 分辨率: unknown | 状态: 成功
+
+1220. 分组: 湾区频道 | 名称: 翡翠台
+   URL: http://cdn9.163189.xyz/smt1.1.php?id=jade_twn
+   延迟: 549.36ms | 分辨率: unknown | 状态: 成功
+
+1221. 分组: 湾区频道 | 名称: 香港卫视
+   URL: https://stream1.freetv.fun/5335c88a9a7d8b74173b491f480d4f94e8d3bd596af54478106aa2399e6c7917.m3u8
+   延迟: 122.75ms | 分辨率: unknown | 状态: 成功
+
+1222. 分组: 湾区频道 | 名称: 香港卫视
+   URL: https://stream1.freetv.fun/xiang-gang-wei-shi-7.m3u8
+   延迟: 294.54ms | 分辨率: unknown | 状态: 成功
+
+1223. 分组: 湾区频道 | 名称: 香港卫视
+   URL: http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=xianggangweishi&P2PChannelID=pd://cctv_p2p_hdxianggangweishi
+   延迟: 298.25ms | 分辨率: unknown | 状态: 成功
+
+1224. 分组: 湾区频道 | 名称: 香港卫视
+   URL: https://stream1.freetv.fun/c751876ae5ceaa0d82b5cf2badc152342aa92a4b45bf504d12ee45966b2fc644.ctv
+   延迟: 363.83ms | 分辨率: unknown | 状态: 成功
+
+1225. 分组: 湾区频道 | 名称: 香港卫视
+   URL: http://anren.live/HK/BSJDUFpB.m3u8
+   延迟: 406.33ms | 分辨率: unknown | 状态: 成功
+
+1226. 分组: 湾区频道 | 名称: 香港卫视
+   URL: https://stream1.freetv.fun/ae7eaf28d8610cdc1651ef6a1f7dbb24b49c5a87627d0d881330afaea37a1616.m3u8
+   延迟: 421.90ms | 分辨率: unknown | 状态: 成功
 
