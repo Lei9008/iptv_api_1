@@ -117,7 +117,9 @@ demo_channel_to_group, demo_all_groups, demo_group_order, demo_all_channels = pa
 # ===================== 工具函数（核心强化：严格校验demo频道） =====================
 def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
     """
-    强化过滤：仅保留demo.txt中明确存在的频道对应的分类
+    强化过滤：
+    1. 先标准化分类名（基于config中的group_title_reverse_mapping）
+    2. 仅保留demo.txt中明确存在的频道对应的分类
     非demo频道直接返回空，后续过滤丢弃
     """
     group_title = group_title or ""
@@ -125,12 +127,25 @@ def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = 
     original_title = group_title.strip()
     result_title = original_title
 
-    # 强化三重校验：1.频道名非空 2.频道在demo.txt的频道列表中 3.频道有对应分类
+    # 步骤1：分类名标准化（基于config中的映射）
+    if original_title in config.group_title_reverse_mapping:
+        result_title = config.group_title_reverse_mapping[original_title]
+        logger.debug(f"分类名标准化：{original_title} → {result_title}")
+    # 模糊匹配（可选，提升匹配率）
+    else:
+        for original, target in config.group_title_reverse_mapping.items():
+            if original in original_title:
+                result_title = target
+                logger.debug(f"分类名模糊标准化：{original_title} → {result_title}（匹配{original}）")
+                break
+
+    # 步骤2：强化三重校验：1.频道名非空 2.频道在demo.txt的频道列表中 3.频道有对应分类
     if channel_name and channel_name in demo_all_channels and channel_name in demo_channel_to_group:
-        result_title = demo_channel_to_group[channel_name]
-        logger.debug(f"demo匹配通过：{channel_name} → {result_title}")
+        # 最终以demo.txt中的分类为准（核心规则，不改变）
+        final_demo_group = demo_channel_to_group[channel_name]
+        logger.debug(f"demo匹配通过：{channel_name} → {final_demo_group}")
         # 过滤非法字符，截断长度避免异常
-        final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', result_title)).strip() or ""
+        final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', final_demo_group)).strip() or ""
         return final_title[:20] if final_title else ""
 
     # 非demo匹配的内容返回空（后续过滤），增加日志记录丢弃原因
@@ -517,3 +532,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
