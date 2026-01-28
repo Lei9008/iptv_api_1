@@ -1,0 +1,123 @@
+IPTV直播源测速报告
+==================================================
+测试时间: 2026-01-28 12:11:46
+延迟阈值: 550ms
+排序规则: group-title升序 → name升序 → 延迟升序
+总测试数: 1217 | 成功数: 62 | 有效数: 29
+
+1. 分组: ┃卫视频道 | 名称: 东方卫视
+   URL: http://go.bkpcp.top/mg/dfws$IPV4•线路6
+   延迟: 319.23ms | 分辨率: unknown | 状态: 成功
+
+2. 分组: ┃卫视频道 | 名称: 云南卫视
+   URL: http://nn.7x9d.cn/xzc2.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovL3d3dy5kc2suY2MvcGhwL3N4Z2QucGhwP2lkPXlud3M=$IPV4•线路2
+   延迟: 373.32ms | 分辨率: unknown | 状态: 成功
+
+3. 分组: ┃卫视频道 | 名称: 北京卫视
+   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=bjws$IPV4•线路6
+   延迟: 45.18ms | 分辨率: unknown | 状态: 成功
+
+4. 分组: ┃卫视频道 | 名称: 宁夏卫视
+   URL: http://120.76.248.139/live/bfgd/4200000118.m3u8$IPV4•线路2
+   延迟: 285.40ms | 分辨率: unknown | 状态: 成功
+
+5. 分组: ┃卫视频道 | 名称: 安徽卫视
+   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=ahws$IPV4•线路6
+   延迟: 44.11ms | 分辨率: unknown | 状态: 成功
+
+6. 分组: ┃卫视频道 | 名称: 山东卫视
+   URL: http://go.bkpcp.top/mg/sdws$IPV4•线路6
+   延迟: 203.69ms | 分辨率: unknown | 状态: 成功
+
+7. 分组: ┃卫视频道 | 名称: 山东卫视
+   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=sdws$IPV4•线路7
+   延迟: 388.71ms | 分辨率: unknown | 状态: 成功
+
+8. 分组: ┃卫视频道 | 名称: 广东卫视
+   URL: http://61.156.228.12:8154/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路36
+   延迟: 525.84ms | 分辨率: unknown | 状态: 成功
+
+9. 分组: ┃卫视频道 | 名称: 广东卫视
+   URL: http://www.3344.uk:8888/rtp/239.77.1.2:5146$IPV4•线路20
+   延迟: 536.26ms | 分辨率: unknown | 状态: 成功
+
+10. 分组: ┃卫视频道 | 名称: 广东卫视
+   URL: http://183.47.2.156:16883/udp/239.77.0.84:5146$IPV4•线路10
+   延迟: 538.34ms | 分辨率: unknown | 状态: 成功
+
+11. 分组: ┃卫视频道 | 名称: 延边卫视
+   URL: http://120.76.248.139/live/bfgd/4200000117.m3u8$IPV4•线路1
+   延迟: 408.35ms | 分辨率: unknown | 状态: 成功
+
+12. 分组: ┃卫视频道 | 名称: 江苏卫视
+   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=jsws$IPV4•线路7
+   延迟: 308.69ms | 分辨率: unknown | 状态: 成功
+
+13. 分组: ┃卫视频道 | 名称: 江苏卫视
+   URL: http://go.bkpcp.top/mg/jsws$IPV4•线路6
+   延迟: 350.25ms | 分辨率: unknown | 状态: 成功
+
+14. 分组: ┃卫视频道 | 名称: 浙江卫视
+   URL: https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8$IPV4•线路11
+   延迟: 301.58ms | 分辨率: unknown | 状态: 成功
+
+15. 分组: ┃卫视频道 | 名称: 湖南卫视
+   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=hunws$IPV4•线路7
+   延迟: 42.00ms | 分辨率: unknown | 状态: 成功
+
+16. 分组: ┃卫视频道 | 名称: 湖南卫视
+   URL: http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub$IPV4•线路5
+   延迟: 120.46ms | 分辨率: unknown | 状态: 成功
+
+17. 分组: ┃卫视频道 | 名称: 湖南卫视
+   URL: http://go.bkpcp.top/mg/hunws$IPV4•线路6
+   延迟: 396.06ms | 分辨率: unknown | 状态: 成功
+
+18. 分组: ┃央视频道 | 名称: CCTV12
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub$IPV4•线路3
+   延迟: 121.33ms | 分辨率: unknown | 状态: 成功
+
+19. 分组: ┃央视频道 | 名称: CCTV16
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$IPV4•线路4
+   延迟: 120.78ms | 分辨率: unknown | 状态: 成功
+
+20. 分组: ┃央视频道 | 名称: CCTV16
+   URL: http://p.ytelc.com/169l/0/cctv.php?id=cctv16$IPV4•线路6
+   延迟: 499.10ms | 分辨率: unknown | 状态: 成功
+
+21. 分组: ┃央视频道 | 名称: CCTV17
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$IPV4•线路3
+   延迟: 60.41ms | 分辨率: unknown | 状态: 成功
+
+22. 分组: ┃央视频道 | 名称: CCTV17
+   URL: http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv17$IPV4•线路5
+   延迟: 318.31ms | 分辨率: unknown | 状态: 成功
+
+23. 分组: ┃央视频道 | 名称: CCTV17
+   URL: http://go.bkpcp.top/mg/cctv17$IPV4•线路4
+   延迟: 413.77ms | 分辨率: unknown | 状态: 成功
+
+24. 分组: ┃央视频道 | 名称: CCTV5
+   URL: http://112.254.55.106:22222/udp/239.253.254.192:8000$IPV4•线路8
+   延迟: 501.39ms | 分辨率: unknown | 状态: 成功
+
+25. 分组: ┃央视频道 | 名称: CCTV5+
+   URL: http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub$IPV4•线路3
+   延迟: 121.13ms | 分辨率: unknown | 状态: 成功
+
+26. 分组: ┃央视频道 | 名称: CCTV5+
+   URL: http://112.254.55.106:22222/udp/239.253.254.80:8000$IPV4•线路9
+   延迟: 501.31ms | 分辨率: unknown | 状态: 成功
+
+27. 分组: ┃少儿频道 | 名称: 广东少儿
+   URL: http://www.3344.uk:8888/rtp/239.77.0.12:5146$IPV4•线路4
+   延迟: 534.33ms | 分辨率: unknown | 状态: 成功
+
+28. 分组: ┃湾区频道 | 名称: 凤凰香港
+   URL: http://cdn3.132.us.kg/live/fhhk/stream.m3u8$IPV4•线路8
+   延迟: 82.31ms | 分辨率: unknown | 状态: 成功
+
+29. 分组: ┃湾区频道 | 名称: 翡翠台
+   URL: https://migu.188766.xyz/?migutoken=fab294f829b1591c0264f239567ce461&id=hk_fct&type=dy$IPV4•线路19
+   延迟: 294.33ms | 分辨率: unknown | 状态: 成功
+
