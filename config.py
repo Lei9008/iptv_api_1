@@ -6,7 +6,7 @@ TEMPLATE_FILE = "demo.txt"
 
 # ===================== 测速配置 =====================
 # 延迟阈值（ms），超过该值仍保留但标注延迟
-LATENCY_THRESHOLD = 400
+LATENCY_THRESHOLD = 350
 # 异步并发数（根据服务器性能调整）
 CONCURRENT_LIMIT = 20
 # 超时时间（s）
@@ -112,7 +112,19 @@ URL_BLACKLIST = [
     "stream1.freetv.fun",
     "chinamobile",
     "gaoma",
-    "[2409:8087:2001:20:2800:0:df6e:eb27]"
+    "[2409:8087:2001:20:2800:0:df6e:eb27]",
+    
+    "http://ygbh.site/php/bfgd.php?",
+    "http://23.237.228.134/live8",
+    "https://smt.858.qzz.io/Smart.php",
+    "http://23.237.228.134/live6",
+    "http://23.237.228.134/live6/dongnan.m3u8",
+    "http://player.cntv.cn/standard/live_HLSDRM20180524.swf?",
+
+
+
+
+
 ]
 
 # ===================== EPG配置 =====================
