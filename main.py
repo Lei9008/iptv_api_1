@@ -832,75 +832,7 @@ class SpeedTester:
         
         return results
 
-# ===================== 文件生成与处理（整合版） =====================
-def generate_basic_m3u(all_channels: OrderedDict):
-    """生成基础M3U文件（保留原始元信息+标准化分类）"""
-    basic_m3u_path = OUTPUT_FOLDER / "live_basic.m3u"
-    basic_txt_path = OUTPUT_FOLDER / "live_basic.txt"
-    
-    try:
-        with open(basic_m3u_path, "w", encoding="utf-8", buffering=1024*1024) as f_m3u, \
-             open(basic_txt_path, "w", encoding="utf-8", buffering=1024*1024) as f_txt:
-            
-            # 写入头部
-            epg_urls = getattr(config, 'epg_urls', CONFIG_DEFAULTS["EPG_URLS"])
-            epg_str = ",".join(f'"{url}"' for url in epg_urls) if epg_urls else ""
-            f_m3u.write(f"#EXTM3U x-tvg-url={epg_str}\n")
-            f_m3u.write(f"# 基础版直播源（标准化分类+保留原始元信息）\n")
-            f_m3u.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f_m3u.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
-            f_m3u.write(f"# 分类数：{len(all_channels)}\n\n")
-            
-            # 按标准化分类写入
-            total_written = 0
-            category_stats = {}
-            
-            for group_title, channel_list in all_channels.items():
-                category_stats[group_title] = len(channel_list)
-                
-                f_m3u.write(f"# ===== 分类：{group_title}（{len(channel_list)}个频道） =====\n")
-                f_txt.write(f"{group_title},#genre#\n")
-                
-                for _, url in channel_list:
-                    if not url or not url.startswith(("http://", "https://")):
-                        continue
-                    
-                    # 获取元信息
-                    meta = channel_meta_cache.get(url)
-                    if meta and meta.raw_extinf:
-                        # 替换分类名为标准化后的名称
-                        standard_extinf = meta.raw_extinf
-                        if 'group-title="' in standard_extinf:
-                            start_idx = standard_extinf.find('group-title="') + len('group-title="')
-                            end_idx = standard_extinf.find('"', start_idx)
-                            if end_idx > start_idx:
-                                standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
-                        f_m3u.write(standard_extinf + "\n")
-                    else:
-                        channel_name = meta.clean_channel_name if (meta and meta.clean_channel_name) else "未知频道"
-                        f_m3u.write(
-                            f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{channel_name}\" "
-                            f"tvg-logo=\"\" group-title=\"{group_title}\",{channel_name}\n"
-                        )
-                    
-                    f_m3u.write(url + "\n\n")
-                    channel_name = meta.clean_channel_name if (meta and meta.clean_channel_name) else "未知频道"
-                    f_txt.write(f"{channel_name},{url}\n")
-                    total_written += 1
-            
-            # 写入统计
-            f_m3u.write(f"\n# ===== 分类统计 =====\n")
-            for cat, count in category_stats.items():
-                f_m3u.write(f"# {cat}: {count}个频道\n")
-            
-            logger.info(f"\n基础M3U文件生成完成：")
-            logger.info(f"  - 基础M3U: {basic_m3u_path} (写入{total_written}个频道)")
-            logger.info(f"  - 基础TXT: {basic_txt_path}")
-            logger.info(f"  - 分类统计：{category_stats}")
-            
-    except Exception as e:
-        logger.error(f"生成基础M3U文件失败：{str(e)}", exc_info=True)
-
+# ===================== 文件生成与处理（整合版，已移除基础版文件相关逻辑） =====================
 def parse_template(template_file: str) -> OrderedDict:
     """解析模板文件"""
     template_channels = OrderedDict()
@@ -1008,7 +940,7 @@ def match_channels(template_channels: OrderedDict, all_channels: OrderedDict) ->
     return matched_channels
 
 def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
-    """抓取并过滤源URL（整合版）"""
+    """抓取并过滤源URL（整合版，已移除基础版文件生成调用）"""
     template_channels = parse_template(template_file)
     if not template_channels:
         logger.error("模板解析为空，终止流程")
@@ -1058,10 +990,7 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
     if failed_urls:
         logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
     
-    # 生成基础M3U
-    generate_basic_m3u(all_channels)
-    
-    # 匹配频道
+    # 匹配频道（移除了generate_basic_m3u()调用）
     matched_channels = match_channels(template_channels, all_channels)
     
     return matched_channels, template_channels
@@ -1326,7 +1255,7 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
     except Exception as e:
         logger.error(f"生成最终文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序（整合版） =====================
+# ===================== 主程序（整合版，已移除基础版文件相关说明） =====================
 async def main():
     """整合版主函数"""
     start_total = time.time()
@@ -1379,7 +1308,6 @@ async def main():
         total_elapsed = time.time() - start_total
         logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
         logger.info(f"\n文件说明：")
-        logger.info(f"  - live_basic.m3u: 基础版（标准化分类+保留原始元信息）")
         logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类+黑名单过滤）")
         logger.info(f"  - speed_test_report.txt: 详细测速报告")
     
