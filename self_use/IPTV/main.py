@@ -47,6 +47,12 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# ===================== 全局变量（demo.txt映射） =====================
+# 从demo.txt生成的：频道名 → 标准化分类 映射（最高优先级）
+demo_channel_to_group: Dict[str, str] = {}
+# 从demo.txt提取的所有标准化分类
+demo_all_groups: Set[str] = set()
+
 # ===================== 数据结构 =====================
 @dataclass
 class ChannelMeta:
@@ -64,34 +70,90 @@ class ChannelMeta:
 channel_meta_cache: Dict[str, ChannelMeta] = {}  # key: url, value: ChannelMeta
 url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
 
+# ===================== 新增：demo.txt解析核心函数 =====================
+def parse_demo_txt() -> Tuple[Dict[str, str], Set[str]]:
+    """
+    解析demo.txt，生成频道名→标准化分类的映射字典
+    demo.txt格式：┃分类名,#genre#  下行为该分类的频道名（每行一个，逗号结尾可忽略）
+    :return: (channel_to_group: 频道名→分类, all_groups: 所有分类集合)
+    """
+    channel_to_group = {}
+    all_groups = set()
+    demo_path = Path(config.DEMO_TXT_PATH)
+    
+    # 检查文件是否存在
+    if not demo_path.exists():
+        logger.error(f"demo.txt文件不存在，路径：{demo_path.absolute()}，将跳过demo匹配")
+        return channel_to_group, all_groups
+    
+    # 读取并解析文件
+    try:
+        with open(demo_path, "r", encoding="utf-8") as f:
+            lines = [line.strip() for line in f if line.strip()]
+        
+        current_group = None
+        for line in lines:
+            # 匹配分类行：┃分类名,#genre#
+            if line.startswith("┃") and ",#genre#" in line:
+                current_group = line.replace("┃", "").replace(",#genre#", "").strip()
+                if current_group:
+                    all_groups.add(current_group)
+                    logger.debug(f"从demo.txt解析到分类：{current_group}")
+                continue
+            # 匹配频道行：频道名, 或 频道名
+            if current_group and line:
+                # 移除行尾逗号和空白字符
+                channel_name = line.rstrip(",").strip()
+                if channel_name:
+                    channel_to_group[channel_name] = current_group
+                    logger.debug(f"demo.txt映射：{channel_name} → {current_group}")
+        
+        logger.info(f"demo.txt解析完成：共{len(all_groups)}个分类，{len(channel_to_group)}个频道映射")
+    except Exception as e:
+        logger.error(f"解析demo.txt失败：{str(e)}", exc_info=True)
+    
+    return channel_to_group, all_groups
+
+# 程序启动时立即解析demo.txt，生成全局映射
+demo_channel_to_group, demo_all_groups = parse_demo_txt()
+
 # ===================== 核心工具函数 =====================
-def clean_group_title(group_title: str) -> str:
+def clean_group_title(group_title: str, channel_name: str = "") -> str:
     """
-    标准化group-title：
-    1. 优先匹配config中的多对一映射（支持模糊匹配）
-    2. 过滤emoji、特殊符号，保留核心文字
-    :param group_title: 原始group-title（含emoji/特殊符号/地区名称）
-    :return: 标准化后的纯文字group-title
+    标准化group-title（新增demo.txt高优先级匹配）：
+    1. 最高优先级：通过频道名匹配demo.txt的分类映射
+    2. 第二优先级：匹配config中的group-title多对一映射（精确+模糊+关键词）
+    3. 第三优先级：过滤emoji、特殊符号，保留核心文字
+    :param group_title: 原始group-title
+    :param channel_name: 标准化后的频道名（用于demo.txt匹配）
+    :return: 标准化后的group-title
     """
-    if not group_title:
+    if not group_title and not channel_name:
         return "未分类"
     
     original_title = group_title.strip()
     result_title = original_title
-    
-    # 步骤1：匹配多对一映射（精确+模糊）
-    # 1.1 精确匹配原始名称
+
+    # 步骤1：最高优先级 - 频道名匹配demo.txt的分类映射（精准匹配）
+    if channel_name and channel_name in demo_channel_to_group:
+        result_title = demo_channel_to_group[channel_name]
+        logger.debug(f"demo.txt高优先级匹配：频道[{channel_name}] → 分类[{result_title}]（覆盖原始group-title：{original_title}）")
+        # 匹配到demo分类后，直接跳过后续映射（最高优先级）
+        final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', result_title)).strip() or "未分类"
+        return final_title[:20] if len(final_title) >20 else final_title
+
+    # 步骤2：第二优先级 - 匹配config中的group-title多对一映射
     if original_title in config.group_title_reverse_mapping:
         result_title = config.group_title_reverse_mapping[original_title]
         logger.debug(f"group-title精确映射：{original_title} → {result_title}")
     else:
-        # 1.2 模糊匹配（提取纯文字后匹配）
+        # 模糊匹配（提取纯文字后匹配）
         pure_text = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9]+', original_title))
         if pure_text in config.group_title_reverse_mapping:
             result_title = config.group_title_reverse_mapping[pure_text]
             logger.debug(f"group-title模糊映射：{original_title} → {result_title}")
         else:
-            # 1.3 关键词匹配（如包含"超清"则匹配4K超高清）
+            # 关键词匹配
             for target, originals in config.group_title_mapping.items():
                 for original in originals:
                     if original in pure_text:
@@ -101,11 +163,11 @@ def clean_group_title(group_title: str) -> str:
                 if result_title != original_title:
                     break
     
-    # 步骤2：过滤emoji、特殊符号，保留核心文字
+    # 步骤3：第三优先级 - 过滤emoji、特殊符号，保留核心文字
     cleaned = re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', result_title)
     final_title = ''.join(cleaned).strip() or "未分类"
     
-    # 步骤3：长度兜底（超过20字截取）
+    # 长度兜底（超过20字截取）
     if len(final_title) > 20:
         final_title = final_title[:20]
     
@@ -225,7 +287,7 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
 
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
     """
-    M3U精准提取（标准化group-title和频道名）
+    M3U精准提取（标准化group-title和频道名，新增demo.txt分类匹配）
     :return: (按标准化group-title分类的频道字典, 完整的ChannelMeta列表)
     """
     m3u_pattern = re.compile(
@@ -260,7 +322,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             elif attr1 == "tvg" and attr2 == "logo":
                 tvg_logo = value
             elif attr1 == "group" and attr2 == "title":
-                group_title = clean_group_title(value)  # 核心修改：标准化group-title
+                group_title = value  # 先保留原始group-title，后续统一标准化
         
         # 提取并标准化逗号后的频道名
         name_match = re.search(r',\s*(.+?)\s*$', raw_extinf)
@@ -268,8 +330,8 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             channel_name = name_match.group(1).strip()
             channel_name = standardize_cctv_name(channel_name)
         
-        # 最终标准化group-title（兜底）
-        group_title = clean_group_title(group_title)
+        # 核心修改：传入频道名，执行含demo.txt匹配的group-title标准化
+        group_title = clean_group_title(group_title, channel_name)
         
         # 创建元信息对象（存储标准化后的名称和分类）
         meta = ChannelMeta(
@@ -296,7 +358,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
     """
-    智能提取频道（标准化group-title和频道名）
+    智能提取频道（标准化group-title和频道名，新增demo.txt分类匹配）
     先全局替换源内容中的不规范名称，再解析
     :return: 按标准化分类整理的频道字典
     """
@@ -313,16 +375,14 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
         for line in lines:
             line = line.strip()
             if not line or line.startswith(("//", "#", "/*", "*/")):
-                # 识别分类行并标准化
+                # 识别分类行并暂存原始分类名
                 if any(keyword in line.lower() for keyword in ['#分类', '#genre', '分类:', 'genre:', '==', '---']):
                     group_match = re.search(r'[：:=](\S+)', line)
                     if group_match:
                         current_group = group_match.group(1).strip()
                     else:
                         current_group = re.sub(r'[#分类:genre:==\-—]', '', line).strip() or "默认分类"
-                    # 核心修改：标准化智能识别的分类名（含映射匹配）
-                    current_group = clean_group_title(current_group)
-                    logger.debug(f"智能识别并标准化分类：{current_group}")
+                    logger.debug(f"智能识别原始分类：{current_group}")
                     continue
             # 匹配频道名,URL格式
             pattern = r'([^,|#$]+)[,|#$]\s*(https?://[^\s,|#$]+)'
@@ -338,18 +398,8 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     seen_urls.add(url)
                     url_source_mapping[url] = source_url
                     
-                    # 智能分类推断（基于标准化名称）+ 标准化分类名
-                    group_title = current_group
-                    if any(keyword in standard_name for keyword in ['CCTV', '央视', '中央']):
-                        group_title = "央视频道"  # 固定分类名，已标准化
-                    elif any(keyword in standard_name for keyword in ['卫视', '江苏', '浙江', '湖南', '东方']):
-                        group_title = "卫视频道"  # 固定分类名，已标准化
-                    elif any(keyword in standard_name for keyword in ['电影', '影视']):
-                        group_title = "电影频道"  # 固定分类名，已标准化
-                    elif any(keyword in standard_name for keyword in ['体育', 'CCTV5']):
-                        group_title = "体育频道"  # 固定分类名，已标准化
-                    # 最终标准化分类名（兜底，含映射匹配）
-                    group_title = clean_group_title(group_title)
+                    # 核心修改：传入频道名，执行含demo.txt匹配的group-title标准化
+                    group_title = clean_group_title(current_group, standard_name)
                     
                     # 创建元信息
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standard_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{standard_name}"
@@ -401,11 +451,12 @@ def generate_summary(all_channels: OrderedDict):
     try:
         # 生成汇总TXT
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）\n")
+            f.write("IPTV直播源汇总（demo.txt高优先级分类+URL去重+频道名标准化）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
             f.write(f"分类数：{len(all_channels)}\n")
+            f.write(f"demo.txt映射分类数：{len(demo_all_groups)}\n")
             f.write("="*80 + "\n\n")
             # 按分类写入（分类名已标准化）
             for group_title, channel_list in all_channels.items():
@@ -419,9 +470,10 @@ def generate_summary(all_channels: OrderedDict):
         # 生成合并后的M3U文件（修复正则转义问题）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
-            f.write(f"# IPTV直播源合并文件（URL去重+频道名标准化+分类名标准化）\n")
+            f.write(f"# IPTV直播源合并文件（demo.txt高优先级分类+URL去重+频道名标准化）\n")
             f.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
+            f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
+            f.write(f"# demo.txt映射分类数：{len(demo_all_groups)}\n\n")
             
             for group_title, channel_list in all_channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
@@ -457,13 +509,13 @@ def generate_summary(all_channels: OrderedDict):
 
 # ===================== 主程序 =====================
 def main():
-    """主函数：抓取→全局替换名称→提取（标准化分类+频道名）→去重→汇总直播源"""
+    """主函数：demo.txt解析→抓取→全局替换→提取→demo分类匹配→去重→汇总"""
     try:
         # 清空缓存
         global channel_meta_cache, url_source_mapping
         channel_meta_cache = {}
         url_source_mapping = {}
-        logger.info("===== 开始处理直播源（全量标准化版） =====")
+        logger.info("===== 开始处理直播源（demo.txt高优先级分类版） =====")
         
         # 从config.py获取源URL列表
         source_urls = getattr(config, 'SOURCE_URLS', [])
@@ -476,7 +528,7 @@ def main():
         all_channels = OrderedDict()
         failed_urls = []
         
-        # 遍历所有源URL：抓取→全局替换→提取（标准化）→合并
+        # 遍历所有源URL：抓取→全局替换→提取（demo分类匹配）→合并
         for idx, url in enumerate(source_urls, 1):
             logger.info(f"\n===== 处理第 {idx}/{len(source_urls)} 个源：{url} =====")
             # 1. 抓取源内容
@@ -486,7 +538,7 @@ def main():
                 continue
             # 2. 全局替换源内容中的不规范央视频道名
             content = global_replace_cctv_name(content)
-            # 3. 提取频道（同时标准化group-title和频道名）
+            # 3. 提取频道（含demo.txt高优先级分类匹配）
             extracted_channels = extract_channels_from_content(content, url)
             # 4. 合并频道（自动去重，分类已标准化）
             merge_channels(all_channels, extracted_channels)
