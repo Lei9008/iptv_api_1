@@ -1,11 +1,12 @@
-IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
+IPTV直播源汇总（仅保留demo.txt匹配内容+按demo顺序）
 ================================================================================
-生成时间：2026-01-28 22:29:26
-总频道数：1096
-分类数：23
+生成时间：2026-01-28 22:36:44
+总频道数：503
+分类数：8
+demo.txt分类总数：8
 ================================================================================
 
-【央视频道】（215个频道）
+【央视频道】（190个频道）
   1. CCTV1                http://cdn6.veryfast.filegear-sg.me/live/cctv1/stream.m3u8$ipv4•线路1(193ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
   2. CCTV1                http://cdn6.veryfast.filegear-sg.me/live/cctv1/stream.m3u8$ipv4•线路2(193ms)
@@ -240,204 +241,154 @@ IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
 117. CCTV13               http://cdn3.veryfast.filegear-sg.me/live/cctv13/stream.m3u8$ipv4•线路12(347ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-118. CCTV14               http://69.30.246.194/live/cctv14.m3u8$ipv4•线路1(26ms)
+118. CCTV15               http://69.30.246.194/live/cctv15.m3u8$ipv4•线路1(27ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-119. CCTV14               http://69.30.246.194/live/cctv14.m3u8$ipv4•线路2(26ms)
+119. CCTV15               http://69.30.246.194/live/cctv15.m3u8$ipv4•线路2(27ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-120. CCTV14               http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub$ipv4•线路3(77ms)
+120. CCTV15               http://38.75.136.137:98/gslb/dsdqpub/cctv15hd.m3u8?auth=testpub$ipv4•线路3(74ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-121. CCTV14               http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub$ipv4•线路4(77ms)
+121. CCTV15               http://38.75.136.137:98/gslb/dsdqpub/cctv15hd.m3u8?auth=testpub$ipv4•线路4(74ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-122. CCTV14               http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路5(124ms)
+122. CCTV15               http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891$ipv4•线路5(108ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-123. CCTV14               http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路6(124ms)
+123. CCTV15               http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891$ipv4•线路6(108ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-124. CCTV14               http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009$ipv4•线路7(193ms)
+124. CCTV15               http://23.237.228.134/live3/CCTV15.m3u8$ipv4•线路7(123ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-125. CCTV14               http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009$ipv4•线路8(193ms)
+125. CCTV15               http://23.237.228.134/live3/CCTV15.m3u8$ipv4•线路8(123ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-126. CCTV14               http://221.13.234.185:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路9(238ms)
+126. CCTV15               http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009$ipv4•线路9(154ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-127. CCTV14               http://221.13.234.185:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路10(238ms)
+127. CCTV15               http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009$ipv4•线路10(154ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-128. CCTV14               http://58.57.40.22:9901/tsfile/live/1014_1.m3u8$ipv4•线路11(262ms)
+128. CCTV15               http://120.76.248.139/live/bfgd/4200000133.m3u8$ipv4•线路11(272ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-129. CCTV14               http://58.57.40.22:9901/tsfile/live/1014_1.m3u8$ipv4•线路12(262ms)
+129. CCTV15               http://120.76.248.139/live/bfgd/4200000133.m3u8$ipv4•线路12(272ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-130. CCTV14               http://182.150.23.74:808/hls/14/index.m3u8$ipv4•线路13(319ms)
+130. CCTV16               http://69.30.246.194/live/cctv16.m3u8$ipv4•线路1(26ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-131. CCTV14               http://182.150.23.74:808/hls/14/index.m3u8$ipv4•线路14(319ms)
+131. CCTV16               http://69.30.246.194/live/cctv16.m3u8$ipv4•线路2(26ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-132. CCTV15               http://69.30.246.194/live/cctv15.m3u8$ipv4•线路1(27ms)
+132. CCTV16               http://69.197.146.138:82/live/cctv16.m3u8?jsbt=1760967373&jsbk=66c5c68a5342c6e3855ee213be777df7$ipv4•线路3(27ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-133. CCTV15               http://69.30.246.194/live/cctv15.m3u8$ipv4•线路2(27ms)
+133. CCTV16               http://69.197.146.138:82/live/cctv16.m3u8?jsbt=1760967373&jsbk=66c5c68a5342c6e3855ee213be777df7$ipv4•线路4(27ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-134. CCTV15               http://38.75.136.137:98/gslb/dsdqpub/cctv15hd.m3u8?auth=testpub$ipv4•线路3(74ms)
+134. CCTV16               http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$ipv4•线路5(120ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-135. CCTV15               http://38.75.136.137:98/gslb/dsdqpub/cctv15hd.m3u8?auth=testpub$ipv4•线路4(74ms)
+135. CCTV16               http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$ipv4•线路6(120ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-136. CCTV15               http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891$ipv4•线路5(108ms)
+136. CCTV16               http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$ipv4•线路7(154ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-137. CCTV15               http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891$ipv4•线路6(108ms)
+137. CCTV16               http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$ipv4•线路8(154ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-138. CCTV15               http://23.237.228.134/live3/CCTV15.m3u8$ipv4•线路7(123ms)
+138. CCTV16               http://1.24.39.180:9003/hls/60/index.m3u8$ipv4•线路9(251ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-139. CCTV15               http://23.237.228.134/live3/CCTV15.m3u8$ipv4•线路8(123ms)
+139. CCTV16               http://1.24.39.180:9003/hls/60/index.m3u8$ipv4•线路10(251ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-140. CCTV15               http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009$ipv4•线路9(154ms)
+140. CCTV17               http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$ipv4•线路1(76ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-141. CCTV15               http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009$ipv4•线路10(154ms)
+141. CCTV17               http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$ipv4•线路2(76ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-142. CCTV15               http://120.76.248.139/live/bfgd/4200000133.m3u8$ipv4•线路11(272ms)
+142. CCTV17               http://38.75.136.137:98/gslb/jsbtv/cctv17hd.m3u8?tm=1760967397&key=d367ea1eef8815852b3fe27a6ccefb4c$ipv4•线路3(97ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-143. CCTV15               http://120.76.248.139/live/bfgd/4200000133.m3u8$ipv4•线路12(272ms)
+143. CCTV17               http://38.75.136.137:98/gslb/jsbtv/cctv17hd.m3u8?tm=1760967397&key=d367ea1eef8815852b3fe27a6ccefb4c$ipv4•线路4(97ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-144. CCTV16               http://69.30.246.194/live/cctv16.m3u8$ipv4•线路1(26ms)
+144. CCTV17               http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路5(122ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-145. CCTV16               http://69.30.246.194/live/cctv16.m3u8$ipv4•线路2(26ms)
+145. CCTV17               http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路6(122ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-146. CCTV16               http://69.197.146.138:82/live/cctv16.m3u8?jsbt=1760967373&jsbk=66c5c68a5342c6e3855ee213be777df7$ipv4•线路3(27ms)
+146. 重温经典                 http://69.30.246.194/live/cwjd.m3u8$ipv4•线路1(27ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-147. CCTV16               http://69.197.146.138:82/live/cctv16.m3u8?jsbt=1760967373&jsbk=66c5c68a5342c6e3855ee213be777df7$ipv4•线路4(27ms)
+147. 重温经典                 http://69.30.246.194/live/cwjd.m3u8$ipv4•线路2(27ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-148. CCTV16               http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$ipv4•线路5(120ms)
+148. 重温经典                 http://cdn6.veryfast.filegear-sg.me/live/cwjd/stream.m3u8$ipv4•线路3(136ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-149. CCTV16               http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub$ipv4•线路6(120ms)
+149. 重温经典                 http://cdn6.veryfast.filegear-sg.me/live/cwjd/stream.m3u8$ipv4•线路4(136ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-150. CCTV16               http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$ipv4•线路7(154ms)
+150. 重温经典                 http://cdn3.163189.xyz/live/cwjd/stream.m3u8$ipv4•线路5(195ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-151. CCTV16               http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$ipv4•线路8(154ms)
+151. 重温经典                 http://cdn3.163189.xyz/live/cwjd/stream.m3u8$ipv4•线路6(195ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-152. CCTV16               http://1.24.39.180:9003/hls/60/index.m3u8$ipv4•线路9(251ms)
+152. 重温经典                 http://php.jdshipin.com/PLTV/iptv.php?id=cwjd$ipv4•线路7(220ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-153. CCTV16               http://1.24.39.180:9003/hls/60/index.m3u8$ipv4•线路10(251ms)
+153. 重温经典                 http://php.jdshipin.com/PLTV/iptv.php?id=cwjd$ipv4•线路8(220ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-154. CCTV17               http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$ipv4•线路1(76ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-155. CCTV17               http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub$ipv4•线路2(76ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-156. CCTV17               http://38.75.136.137:98/gslb/jsbtv/cctv17hd.m3u8?tm=1760967397&key=d367ea1eef8815852b3fe27a6ccefb4c$ipv4•线路3(97ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-157. CCTV17               http://38.75.136.137:98/gslb/jsbtv/cctv17hd.m3u8?tm=1760967397&key=d367ea1eef8815852b3fe27a6ccefb4c$ipv4•线路4(97ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-158. CCTV17               http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路5(122ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-159. CCTV17               http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路6(122ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-160. 重温经典                 http://69.30.246.194/live/cwjd.m3u8$ipv4•线路1(27ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-161. 重温经典                 http://69.30.246.194/live/cwjd.m3u8$ipv4•线路2(27ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-162. 重温经典                 http://cdn6.veryfast.filegear-sg.me/live/cwjd/stream.m3u8$ipv4•线路3(136ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-163. 重温经典                 http://cdn6.veryfast.filegear-sg.me/live/cwjd/stream.m3u8$ipv4•线路4(136ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-164. 重温经典                 http://cdn3.163189.xyz/live/cwjd/stream.m3u8$ipv4•线路5(195ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-165. 重温经典                 http://cdn3.163189.xyz/live/cwjd/stream.m3u8$ipv4•线路6(195ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-166. 重温经典                 http://php.jdshipin.com/PLTV/iptv.php?id=cwjd$ipv4•线路7(220ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-167. 重温经典                 http://php.jdshipin.com/PLTV/iptv.php?id=cwjd$ipv4•线路8(220ms)
-      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-168. CCTV1                http://192.168.0.1:5140/rtp/239.253.244.77:8000?fcc=124.132.240.66:15970
+154. CCTV1                http://192.168.0.1:5140/rtp/239.253.244.77:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-169. CCTV2                http://192.168.0.1:5140/rtp/239.253.244.232:8000?fcc=124.132.240.66:15970
+155. CCTV2                http://192.168.0.1:5140/rtp/239.253.244.232:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-170. CCTV3                http://192.168.0.1:5140/rtp/239.253.244.191:8000?fcc=124.132.240.66:15970
+156. CCTV3                http://192.168.0.1:5140/rtp/239.253.244.191:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-171. CCTV4                http://192.168.0.1:5140/rtp/239.253.244.111:8000?fcc=124.132.240.66:15970
+157. CCTV4                http://192.168.0.1:5140/rtp/239.253.244.111:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-172. CCTV4欧洲              http://192.168.0.1:5140/rtp/239.253.244.186:8000?fcc=124.132.240.66:15970
+158. CCTV5                http://192.168.0.1:5140/rtp/239.253.244.192:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-173. CCTV4美洲              http://192.168.0.1:5140/rtp/239.253.244.187:8000?fcc=124.132.240.66:15970
+159. CCTV5+               http://192.168.0.1:5140/rtp/239.253.244.80:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-174. CCTV5                http://192.168.0.1:5140/rtp/239.253.244.192:8000?fcc=124.132.240.66:15970
+160. CCTV6                http://192.168.0.1:5140/rtp/239.253.244.193:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-175. CCTV5+               http://192.168.0.1:5140/rtp/239.253.244.80:8000?fcc=124.132.240.66:15970
+161. CCTV7                http://192.168.0.1:5140/rtp/239.253.244.233:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-176. CCTV6                http://192.168.0.1:5140/rtp/239.253.244.193:8000?fcc=124.132.240.66:15970
+162. CCTV8                http://192.168.0.1:5140/rtp/239.253.244.194:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-177. CCTV7                http://192.168.0.1:5140/rtp/239.253.244.233:8000?fcc=124.132.240.66:15970
+163. CCTV9                http://192.168.0.1:5140/rtp/239.253.244.79:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-178. CCTV8                http://192.168.0.1:5140/rtp/239.253.244.194:8000?fcc=124.132.240.66:15970
+164. CCTV10               http://192.168.0.1:5140/rtp/239.253.244.234:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-179. CCTV9                http://192.168.0.1:5140/rtp/239.253.244.79:8000?fcc=124.132.240.66:15970
+165. CCTV11               http://192.168.0.1:5140/rtp/239.253.244.169:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-180. CCTV10               http://192.168.0.1:5140/rtp/239.253.244.234:8000?fcc=124.132.240.66:15970
+166. CCTV12               http://192.168.0.1:5140/rtp/239.253.244.235:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-181. CCTV11               http://192.168.0.1:5140/rtp/239.253.244.169:8000?fcc=124.132.240.66:15970
+167. CCTV13               http://192.168.0.1:5140/rtp/239.253.244.175:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-182. CCTV12               http://192.168.0.1:5140/rtp/239.253.244.235:8000?fcc=124.132.240.66:15970
+168. CCTV15               http://192.168.0.1:5140/rtp/239.253.244.170:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-183. CCTV13               http://192.168.0.1:5140/rtp/239.253.244.175:8000?fcc=124.132.240.66:15970
+169. CCTV17               http://192.168.0.1:5140/rtp/239.253.244.168:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-184. CCTV14               http://192.168.0.1:5140/rtp/239.253.244.236:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-185. CCTV15               http://192.168.0.1:5140/rtp/239.253.244.170:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-186. CCTV17               http://192.168.0.1:5140/rtp/239.253.244.168:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-187. CCTV4K               http://192.168.0.1:5140/rtp/239.253.244.122:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-188. CGTN                 http://192.168.0.1:5140/rtp/239.253.244.189:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-189. CGTN纪录               http://192.168.0.1:5140/rtp/239.253.244.188:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-190. CGTN西语               http://192.168.0.1:5140/rtp/239.253.244.182:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-191. CGTN法语               http://192.168.0.1:5140/rtp/239.253.244.183:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-192. CGTN阿语               http://192.168.0.1:5140/rtp/239.253.244.184:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-193. CGTN俄语               http://192.168.0.1:5140/rtp/239.253.244.185:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-194. CCTV1                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173035400df1ae54fc4e99837c730e17d9c8c5&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173035&Channel_ID=0116_2600001300-99000-201600010013575&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=123.188.239.83&SecurityKey=20260128173035&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=17d9fc40beff6c7994b23edd363e2291
+170. CCTV1                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173035400df1ae54fc4e99837c730e17d9c8c5&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173035&Channel_ID=0116_2600001300-99000-201600010013575&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=123.188.239.83&SecurityKey=20260128173035&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=17d9fc40beff6c7994b23edd363e2291
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-195. CCTV1                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173106cf19885ab1ae41b1b5677d1534759503&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173106&Channel_ID=0116_2600001300-99000-201600010013576&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=123.188.239.126&SecurityKey=20260128173106&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=ab490bc24e59ae8b53efee7504faa2a6
+171. CCTV1                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173106cf19885ab1ae41b1b5677d1534759503&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173106&Channel_ID=0116_2600001300-99000-201600010013576&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=123.188.239.126&SecurityKey=20260128173106&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=ab490bc24e59ae8b53efee7504faa2a6
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-196. CCTV1                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173137e9cfa475297b409594f8fad0b00016e8&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173137&Channel_ID=0116_2600001300-99000-201600010013577&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=61.189.20.6&SecurityKey=20260128173137&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=710f2e8dd6a72691d6ebae6b6788b48f
+172. CCTV1                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173137e9cfa475297b409594f8fad0b00016e8&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173137&Channel_ID=0116_2600001300-99000-201600010013577&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=61.189.20.6&SecurityKey=20260128173137&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=710f2e8dd6a72691d6ebae6b6788b48f
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-197. CCTV1                http://play.kankanlive.com/live/1698234869325962.m3u8
+173. CCTV1                http://play.kankanlive.com/live/1698234869325962.m3u8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-198. CCTV2                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv2hd/1500/index.m3u8?msisdn=20260128172658a81b061def754d319ce064df0147c11b&mdspid=&spid=699004&netType=4&sid=5500346945&pid=2028597139&timestamp=20260128172658&Channel_ID=0116_2600001300-99000-201600010013568&ProgramID=631780532&ParentNodeID=-99&assertID=5500346945&client_ip=218.60.52.56&SecurityKey=20260128172658&promotionId=&mvid=5101064231&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=f5449351c24e08b9b84924fd684b1303
+174. CCTV2                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv2hd/1500/index.m3u8?msisdn=20260128172658a81b061def754d319ce064df0147c11b&mdspid=&spid=699004&netType=4&sid=5500346945&pid=2028597139&timestamp=20260128172658&Channel_ID=0116_2600001300-99000-201600010013568&ProgramID=631780532&ParentNodeID=-99&assertID=5500346945&client_ip=218.60.52.56&SecurityKey=20260128172658&promotionId=&mvid=5101064231&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=f5449351c24e08b9b84924fd684b1303
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-199. CCTV3                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv3hd/2000/index.m3u8?msisdn=20260128172628f0ac6f50bdf84cda991869b2e5fb9fac&mdspid=&spid=699004&netType=4&sid=5500212864&pid=2028597139&timestamp=20260128172628&Channel_ID=0116_2600001300-99000-201600010013567&ProgramID=624878271&ParentNodeID=-99&assertID=5500212864&client_ip=218.60.52.197&SecurityKey=20260128172628&promotionId=&mvid=5100001683&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e01a6a7d81e04bd2212bcfea406ac287
+175. CCTV3                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv3hd/2000/index.m3u8?msisdn=20260128172628f0ac6f50bdf84cda991869b2e5fb9fac&mdspid=&spid=699004&netType=4&sid=5500212864&pid=2028597139&timestamp=20260128172628&Channel_ID=0116_2600001300-99000-201600010013567&ProgramID=624878271&ParentNodeID=-99&assertID=5500212864&client_ip=218.60.52.197&SecurityKey=20260128172628&promotionId=&mvid=5100001683&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e01a6a7d81e04bd2212bcfea406ac287
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-200. CCTV4                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv4hd/1500/index.m3u8?msisdn=202601281725570d82d8ecb9ea418fb8bdf735c2728baa&mdspid=&spid=699004&netType=4&sid=5500346947&pid=2028597139&timestamp=20260128172557&Channel_ID=0116_2600001300-99000-201600010013566&ProgramID=631780421&ParentNodeID=-99&assertID=5500346947&client_ip=218.60.52.196&SecurityKey=20260128172557&promotionId=&mvid=5101064235&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d0d191af733e38d8365adb9a47e05ba0
+176. CCTV4                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv4hd/1500/index.m3u8?msisdn=202601281725570d82d8ecb9ea418fb8bdf735c2728baa&mdspid=&spid=699004&netType=4&sid=5500346947&pid=2028597139&timestamp=20260128172557&Channel_ID=0116_2600001300-99000-201600010013566&ProgramID=631780421&ParentNodeID=-99&assertID=5500346947&client_ip=218.60.52.196&SecurityKey=20260128172557&promotionId=&mvid=5101064235&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d0d191af733e38d8365adb9a47e05ba0
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-201. CCTV5                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5hdnew/1200/index.m3u8?msisdn=20260128172455404d0ea1dcd045a8b92d506fbc8baf66&mdspid=&spid=699004&netType=4&sid=5500516171&pid=2028597139&timestamp=20260128172455&Channel_ID=0116_2600001300-99000-201600010013564&ProgramID=641886683&ParentNodeID=-99&assertID=5500516171&client_ip=221.202.205.186&SecurityKey=20260128172455&promotionId=&mvid=5102048712&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=a095e131d6ca50fa5f46ec15d3795b2b
+177. CCTV5                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5hdnew/1200/index.m3u8?msisdn=20260128172455404d0ea1dcd045a8b92d506fbc8baf66&mdspid=&spid=699004&netType=4&sid=5500516171&pid=2028597139&timestamp=20260128172455&Channel_ID=0116_2600001300-99000-201600010013564&ProgramID=641886683&ParentNodeID=-99&assertID=5500516171&client_ip=221.202.205.186&SecurityKey=20260128172455&promotionId=&mvid=5102048712&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=a095e131d6ca50fa5f46ec15d3795b2b
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-202. CCTV6                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv6hd/2000/index.m3u8?msisdn=2026012817242460d159a96453437899cb638f18646265&mdspid=&spid=699004&netType=4&sid=5500212872&pid=2028597139&timestamp=20260128172424&Channel_ID=0116_2600001300-99000-201600010013563&ProgramID=624878396&ParentNodeID=-99&assertID=5500212872&client_ip=221.202.205.198&SecurityKey=20260128172424&promotionId=&mvid=5100001694&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d6f869552742905010a76e85ca4afbe8
+178. CCTV6                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv6hd/2000/index.m3u8?msisdn=2026012817242460d159a96453437899cb638f18646265&mdspid=&spid=699004&netType=4&sid=5500212872&pid=2028597139&timestamp=20260128172424&Channel_ID=0116_2600001300-99000-201600010013563&ProgramID=624878396&ParentNodeID=-99&assertID=5500212872&client_ip=221.202.205.198&SecurityKey=20260128172424&promotionId=&mvid=5100001694&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d6f869552742905010a76e85ca4afbe8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-203. CCTV7                http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv7hd/51/index.m3u8?msisdn=20260128172353816ba0f21e99414aa06c8b4a9fec08fb&mdspid=&spid=699004&netType=4&sid=5501083622&pid=2028597139&timestamp=20260128172353&Channel_ID=0116_2600001300-99000-201600010013562&ProgramID=673168121&ParentNodeID=-99&assertID=5501083622&client_ip=221.202.205.26&SecurityKey=20260128172353&promotionId=&mvid=5102910278&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e494665339d9974762e362a7b2ebb58f
+179. CCTV7                http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv7hd/51/index.m3u8?msisdn=20260128172353816ba0f21e99414aa06c8b4a9fec08fb&mdspid=&spid=699004&netType=4&sid=5501083622&pid=2028597139&timestamp=20260128172353&Channel_ID=0116_2600001300-99000-201600010013562&ProgramID=673168121&ParentNodeID=-99&assertID=5501083622&client_ip=221.202.205.26&SecurityKey=20260128172353&promotionId=&mvid=5102910278&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e494665339d9974762e362a7b2ebb58f
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-204. CCTV8                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv8hd/2000/index.m3u8?msisdn=20260128172322715ff7ec2f17412ab42b398e75c53515&mdspid=&spid=699004&netType=4&sid=5500212868&pid=2028597139&timestamp=20260128172322&Channel_ID=0116_2600001300-99000-201600010013561&ProgramID=624878356&ParentNodeID=-99&assertID=5500212868&client_ip=39.152.102.105&SecurityKey=20260128172322&promotionId=&mvid=5100001695&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=36c2915eb02198e31993ffbea7852daa
+180. CCTV8                http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv8hd/2000/index.m3u8?msisdn=20260128172322715ff7ec2f17412ab42b398e75c53515&mdspid=&spid=699004&netType=4&sid=5500212868&pid=2028597139&timestamp=20260128172322&Channel_ID=0116_2600001300-99000-201600010013561&ProgramID=624878356&ParentNodeID=-99&assertID=5500212868&client_ip=39.152.102.105&SecurityKey=20260128172322&promotionId=&mvid=5100001695&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=36c2915eb02198e31993ffbea7852daa
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-205. CCTV9                http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv9hd/51/index.m3u8?msisdn=20260128172250b41048c27dc6404b8ae4f2182f726abd&mdspid=&spid=699004&netType=4&sid=5501083624&pid=2028597139&timestamp=20260128172250&Channel_ID=0116_2600001300-99000-201600010013560&ProgramID=673168140&ParentNodeID=-99&assertID=5501083624&client_ip=39.152.102.106&SecurityKey=20260128172250&promotionId=&mvid=5102910384&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e72f542e34ee8ce833b05833d4166ae7
+181. CCTV9                http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv9hd/51/index.m3u8?msisdn=20260128172250b41048c27dc6404b8ae4f2182f726abd&mdspid=&spid=699004&netType=4&sid=5501083624&pid=2028597139&timestamp=20260128172250&Channel_ID=0116_2600001300-99000-201600010013560&ProgramID=673168140&ParentNodeID=-99&assertID=5501083624&client_ip=39.152.102.106&SecurityKey=20260128172250&promotionId=&mvid=5102910384&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e72f542e34ee8ce833b05833d4166ae7
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-206. CCTV5+               http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?msisdn=20260128172526199b18a2f6794e0abdd5155259b3bf3b&mdspid=&spid=699004&netType=4&sid=5500516288&pid=2028597139&timestamp=20260128172526&Channel_ID=0116_2600001300-99000-201600010013565&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=221.202.205.63&SecurityKey=20260128172526&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=285709c1ceb3a83846f476038e1d4792
+182. CCTV5+               http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?msisdn=20260128172526199b18a2f6794e0abdd5155259b3bf3b&mdspid=&spid=699004&netType=4&sid=5500516288&pid=2028597139&timestamp=20260128172526&Channel_ID=0116_2600001300-99000-201600010013565&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=221.202.205.63&SecurityKey=20260128172526&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=285709c1ceb3a83846f476038e1d4792
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-207. CCTV10               http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv10hd/2000/index.m3u8?msisdn=20260128172219fb1f222286f446e29660040212e31bb4&mdspid=&spid=699004&netType=4&sid=5500212874&pid=2028597139&timestamp=20260128172219&Channel_ID=0116_2600001300-99000-201600010013559&ProgramID=624878405&ParentNodeID=-99&assertID=5500212874&client_ip=39.152.102.106&SecurityKey=20260128172219&promotionId=&mvid=5100001696&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4e50b835e34a6bb08147fd5b61a893f6
+183. CCTV10               http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv10hd/2000/index.m3u8?msisdn=20260128172219fb1f222286f446e29660040212e31bb4&mdspid=&spid=699004&netType=4&sid=5500212874&pid=2028597139&timestamp=20260128172219&Channel_ID=0116_2600001300-99000-201600010013559&ProgramID=624878405&ParentNodeID=-99&assertID=5500212874&client_ip=39.152.102.106&SecurityKey=20260128172219&promotionId=&mvid=5100001696&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4e50b835e34a6bb08147fd5b61a893f6
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-208. CCTV11               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cctv11hd/51/20200103/index.m3u8?msisdn=20260128172148d3ac1c2168e74c44b01671a9a0888cdf&mdspid=&spid=699004&netType=4&sid=5500988610&pid=2028597139&timestamp=20260128172148&Channel_ID=0116_2600001300-99000-201600010013558&ProgramID=667987558&ParentNodeID=-99&assertID=5500988610&client_ip=42.178.17.191&SecurityKey=20260128172148&promotionId=&mvid=5102751362&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6c976f99435de7a81a6d4d1b294205fc
+184. CCTV11               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/cctv11hd/51/20200103/index.m3u8?msisdn=20260128172148d3ac1c2168e74c44b01671a9a0888cdf&mdspid=&spid=699004&netType=4&sid=5500988610&pid=2028597139&timestamp=20260128172148&Channel_ID=0116_2600001300-99000-201600010013558&ProgramID=667987558&ParentNodeID=-99&assertID=5500988610&client_ip=42.178.17.191&SecurityKey=20260128172148&promotionId=&mvid=5102751362&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6c976f99435de7a81a6d4d1b294205fc
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-209. CCTV12               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv12hd/51/index.m3u8?msisdn=202601281721172540044211be46348b346f777350406b&mdspid=&spid=699004&netType=4&sid=5501083627&pid=2028597139&timestamp=20260128172117&Channel_ID=0116_2600001300-99000-201600010013557&ProgramID=673168185&ParentNodeID=-99&assertID=5501083627&client_ip=42.178.17.192&SecurityKey=20260128172117&promotionId=&mvid=5102910389&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=c0b0405a666e350b68261c231862b30c
+185. CCTV12               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv12hd/51/index.m3u8?msisdn=202601281721172540044211be46348b346f777350406b&mdspid=&spid=699004&netType=4&sid=5501083627&pid=2028597139&timestamp=20260128172117&Channel_ID=0116_2600001300-99000-201600010013557&ProgramID=673168185&ParentNodeID=-99&assertID=5501083627&client_ip=42.178.17.192&SecurityKey=20260128172117&promotionId=&mvid=5102910389&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=c0b0405a666e350b68261c231862b30c
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-210. CCTV13               http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=20260128172729d3bf5399e7ff415a8f291a58dec041f0&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172729&Channel_ID=0116_2600001300-99000-201600010013569&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.52.175&SecurityKey=20260128172729&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=951bce9c8eaa0164277358e231d6adff
+186. CCTV13               http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=20260128172729d3bf5399e7ff415a8f291a58dec041f0&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172729&Channel_ID=0116_2600001300-99000-201600010013569&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.52.175&SecurityKey=20260128172729&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=951bce9c8eaa0164277358e231d6adff
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-211. CCTV13               http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=20260128172800f4669d8f74924644a225ff49f4043794&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172800&Channel_ID=0116_2600001300-99000-201600010013570&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.117.207&SecurityKey=20260128172800&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=738bac3038292e737e6a10efaa08b3cf
+187. CCTV13               http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=20260128172800f4669d8f74924644a225ff49f4043794&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172800&Channel_ID=0116_2600001300-99000-201600010013570&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.117.207&SecurityKey=20260128172800&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=738bac3038292e737e6a10efaa08b3cf
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-212. CCTV13               http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=2026012817283183d5a05adffb4d8292479f1dc7846917&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172831&Channel_ID=0116_2600001300-99000-201600010013571&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.117.66&SecurityKey=20260128172831&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6c1a4d5db207d554e97f19ce48b3139e
+188. CCTV13               http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=2026012817283183d5a05adffb4d8292479f1dc7846917&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172831&Channel_ID=0116_2600001300-99000-201600010013571&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.117.66&SecurityKey=20260128172831&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6c1a4d5db207d554e97f19ce48b3139e
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-213. CCTV14               http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv14hd/2000/index.m3u8?msisdn=202601281720464f6e76145f154130aa7cf57634bef12b&mdspid=&spid=699004&netType=4&sid=5500212875&pid=2028597139&timestamp=20260128172046&Channel_ID=0116_2600001300-99000-201600010013556&ProgramID=624878440&ParentNodeID=-99&assertID=5500212875&client_ip=42.178.17.38&SecurityKey=20260128172046&promotionId=&mvid=5100001697&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=939972d7b4b83e83f35bca91e17a436d
+189. CCTV15               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv15hd/51/index.m3u8?msisdn=202601281720151392e8aff5b445cb898fea20661d8bc8&mdspid=&spid=699004&netType=4&sid=5501083628&pid=2028597139&timestamp=20260128172015&Channel_ID=0116_2600001300-99000-201600010013555&ProgramID=673168223&ParentNodeID=-99&assertID=5501083628&client_ip=42.178.17.198&SecurityKey=20260128172015&promotionId=&mvid=5102910391&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1b62056025df951b2f3c1a3115825d00
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-214. CCTV15               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv15hd/51/index.m3u8?msisdn=202601281720151392e8aff5b445cb898fea20661d8bc8&mdspid=&spid=699004&netType=4&sid=5501083628&pid=2028597139&timestamp=20260128172015&Channel_ID=0116_2600001300-99000-201600010013555&ProgramID=673168223&ParentNodeID=-99&assertID=5501083628&client_ip=42.178.17.198&SecurityKey=20260128172015&promotionId=&mvid=5102910391&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1b62056025df951b2f3c1a3115825d00
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-215. CCTV17               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv17hd/51/index.m3u8?msisdn=20260128171944fb47188d0c1b4918ab03b7f6684ddf82&mdspid=&spid=699004&netType=4&sid=5501083631&pid=2028597139&timestamp=20260128171944&Channel_ID=0116_2600001300-99000-201600010013554&ProgramID=673168256&ParentNodeID=-99&assertID=5501083631&client_ip=61.243.159.121&SecurityKey=20260128171944&promotionId=&mvid=5102910396&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6eb9f63e7afe990aaaa5f57e787f6a9b
+190. CCTV17               http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/20200324/cctv17hd/51/index.m3u8?msisdn=20260128171944fb47188d0c1b4918ab03b7f6684ddf82&mdspid=&spid=699004&netType=4&sid=5501083631&pid=2028597139&timestamp=20260128171944&Channel_ID=0116_2600001300-99000-201600010013554&ProgramID=673168256&ParentNodeID=-99&assertID=5501083631&client_ip=61.243.159.121&SecurityKey=20260128171944&promotionId=&mvid=5102910396&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6eb9f63e7afe990aaaa5f57e787f6a9b
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
 
-【央视付费频道】（20个频道）
+【央视付费频道】（22个频道）
   1. 第一剧场                 http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$ipv4•线路1(119ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
   2. 第一剧场                 http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$ipv4•线路2(119ms)
@@ -478,8 +429,12 @@ IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
  20. 兵器科技                 http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$ipv4•线路2(118ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 21. 中学生                  http://192.168.0.1:5140/rtp/239.253.244.163:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 22. 老故事                  http://192.168.0.1:5140/rtp/239.253.244.164:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
 
-【卫视频道】（210个频道）
+【卫视频道】（205个频道）
   1. 山东卫视                 http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub$ipv4•线路1(119ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
   2. 山东卫视                 http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub$ipv4•线路2(119ms)
@@ -788,120 +743,128 @@ IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
 154. 三沙卫视                 http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$ipv4•线路2(119ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-155. 江苏卫视4K               http://192.168.0.1:5140/rtp/239.253.244.133:8000?fcc=124.132.240.66:15970
+155. 山东卫视                 http://192.168.0.1:5140/rtp/239.253.244.78:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-156. 湖南卫视4K               http://192.168.0.1:5140/rtp/239.253.244.28:8000?fcc=124.132.240.66:15970
+156. 北京卫视                 http://192.168.0.1:5140/rtp/239.253.244.85:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-157. 浙江卫视4K               http://192.168.0.1:5140/rtp/239.253.244.27:8000?fcc=124.132.240.66:15970
+157. 湖南卫视                 http://192.168.0.1:5140/rtp/239.253.244.82:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-158. 东方卫视4K               http://192.168.0.1:5140/rtp/239.253.244.176:8000?fcc=124.132.240.66:15970
+158. 河南卫视                 http://192.168.0.1:5140/rtp/239.253.244.190:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-159. 四川卫视4K               http://192.168.0.1:5140/rtp/239.253.244.123:8000?fcc=124.132.240.66:15970
+159. 浙江卫视                 http://192.168.0.1:5140/rtp/239.253.244.84:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-160. 北京卫视4K               http://192.168.0.1:5140/rtp/239.253.244.200:8000?fcc=124.132.240.66:15970
+160. 东方卫视                 http://192.168.0.1:5140/rtp/239.253.244.86:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-161. 深圳卫视4K               http://192.168.0.1:5140/rtp/239.253.244.61:8000?fcc=124.132.240.66:15970
+161. 江苏卫视                 http://192.168.0.1:5140/rtp/239.253.244.83:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-162. 广东卫视4K               http://192.168.0.1:5140/rtp/239.253.244.108:8000?fcc=124.132.240.66:15970
+162. 安徽卫视                 http://192.168.0.1:5140/rtp/239.253.244.87:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-163. 北京卫视                 http://192.168.0.1:5140/rtp/239.253.244.85:8000?fcc=124.132.240.66:15970
+163. 天津卫视                 http://192.168.0.1:5140/rtp/239.253.244.89:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-164. 湖南卫视                 http://192.168.0.1:5140/rtp/239.253.244.82:8000?fcc=124.132.240.66:15970
+164. 辽宁卫视                 http://192.168.0.1:5140/rtp/239.253.244.92:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-165. 河南卫视                 http://192.168.0.1:5140/rtp/239.253.244.190:8000?fcc=124.132.240.66:15970
+165. 深圳卫视                 http://192.168.0.1:5140/rtp/239.253.244.91:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-166. 浙江卫视                 http://192.168.0.1:5140/rtp/239.253.244.84:8000?fcc=124.132.240.66:15970
+166. 东南卫视                 http://192.168.0.1:5140/rtp/239.253.244.105:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-167. 东方卫视                 http://192.168.0.1:5140/rtp/239.253.244.86:8000?fcc=124.132.240.66:15970
+167. 湖北卫视                 http://192.168.0.1:5140/rtp/239.253.244.88:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-168. 江苏卫视                 http://192.168.0.1:5140/rtp/239.253.244.83:8000?fcc=124.132.240.66:15970
+168. 广东卫视                 http://192.168.0.1:5140/rtp/239.253.244.90:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-169. 安徽卫视                 http://192.168.0.1:5140/rtp/239.253.244.87:8000?fcc=124.132.240.66:15970
+169. 黑龙江卫视                http://192.168.0.1:5140/rtp/239.253.244.93:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-170. 天津卫视                 http://192.168.0.1:5140/rtp/239.253.244.89:8000?fcc=124.132.240.66:15970
+170. 贵州卫视                 http://192.168.0.1:5140/rtp/239.253.244.113:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-171. 辽宁卫视                 http://192.168.0.1:5140/rtp/239.253.244.92:8000?fcc=124.132.240.66:15970
+171. 河北卫视                 http://192.168.0.1:5140/rtp/239.253.244.112:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-172. 深圳卫视                 http://192.168.0.1:5140/rtp/239.253.244.91:8000?fcc=124.132.240.66:15970
+172. 重庆卫视                 http://192.168.0.1:5140/rtp/239.253.244.38:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-173. 东南卫视                 http://192.168.0.1:5140/rtp/239.253.244.105:8000?fcc=124.132.240.66:15970
+173. 海南卫视                 http://192.168.0.1:5140/rtp/239.253.244.179:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-174. 湖北卫视                 http://192.168.0.1:5140/rtp/239.253.244.88:8000?fcc=124.132.240.66:15970
+174. 四川卫视                 http://192.168.0.1:5140/rtp/239.253.244.180:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-175. 广东卫视                 http://192.168.0.1:5140/rtp/239.253.244.90:8000?fcc=124.132.240.66:15970
+175. 江西卫视                 http://192.168.0.1:5140/rtp/239.253.244.47:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-176. 黑龙江卫视                http://192.168.0.1:5140/rtp/239.253.244.93:8000?fcc=124.132.240.66:15970
+176. 广西卫视                 http://192.168.0.1:5140/rtp/239.253.244.197:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-177. 贵州卫视                 http://192.168.0.1:5140/rtp/239.253.244.113:8000?fcc=124.132.240.66:15970
+177. 吉林卫视                 http://192.168.0.1:5140/rtp/239.253.244.173:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-178. 河北卫视                 http://192.168.0.1:5140/rtp/239.253.244.112:8000?fcc=124.132.240.66:15970
+178. 云南卫视                 http://192.168.0.1:5140/rtp/239.253.244.196:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-179. 重庆卫视                 http://192.168.0.1:5140/rtp/239.253.244.38:8000?fcc=124.132.240.66:15970
+179. 新疆卫视                 http://192.168.0.1:5140/rtp/239.253.244.60:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-180. 海南卫视                 http://192.168.0.1:5140/rtp/239.253.244.179:8000?fcc=124.132.240.66:15970
+180. 甘肃卫视                 http://192.168.0.1:5140/rtp/239.253.244.74:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-181. 四川卫视                 http://192.168.0.1:5140/rtp/239.253.244.180:8000?fcc=124.132.240.66:15970
+181. 青海卫视                 http://192.168.0.1:5140/rtp/239.253.244.195:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-182. 江西卫视                 http://192.168.0.1:5140/rtp/239.253.244.47:8000?fcc=124.132.240.66:15970
+182. 西藏卫视                 http://192.168.0.1:5140/rtp/239.253.244.56:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-183. 广西卫视                 http://192.168.0.1:5140/rtp/239.253.244.197:8000?fcc=124.132.240.66:15970
+183. 兵团卫视                 http://192.168.0.1:5140/rtp/239.253.244.57:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-184. 吉林卫视                 http://192.168.0.1:5140/rtp/239.253.244.173:8000?fcc=124.132.240.66:15970
+184. 宁夏卫视                 http://192.168.0.1:5140/rtp/239.253.244.150:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-185. 云南卫视                 http://192.168.0.1:5140/rtp/239.253.244.196:8000?fcc=124.132.240.66:15970
+185. 山西卫视                 http://192.168.0.1:5140/rtp/239.253.244.48:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-186. 新疆卫视                 http://192.168.0.1:5140/rtp/239.253.244.60:8000?fcc=124.132.240.66:15970
+186. 内蒙古卫视                http://192.168.0.1:5140/rtp/239.253.244.58:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-187. 甘肃卫视                 http://192.168.0.1:5140/rtp/239.253.244.74:8000?fcc=124.132.240.66:15970
+187. 农林卫视                 http://192.168.0.1:5140/rtp/239.253.244.70:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-188. 青海卫视                 http://192.168.0.1:5140/rtp/239.253.244.195:8000?fcc=124.132.240.66:15970
+188. 厦门卫视                 http://192.168.0.1:5140/rtp/239.253.244.106:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-189. 西藏卫视                 http://192.168.0.1:5140/rtp/239.253.244.56:8000?fcc=124.132.240.66:15970
+189. 延边卫视                 http://192.168.0.1:5140/rtp/239.253.244.121:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-190. 兵团卫视                 http://192.168.0.1:5140/rtp/239.253.244.57:8000?fcc=124.132.240.66:15970
+190. 三沙卫视                 http://192.168.0.1:5140/rtp/239.253.244.171:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-191. 宁夏卫视                 http://192.168.0.1:5140/rtp/239.253.244.150:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-192. 山西卫视                 http://192.168.0.1:5140/rtp/239.253.244.48:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-193. 陕西卫视                 http://192.168.0.1:5140/rtp/239.253.244.49:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-194. 内蒙古卫视                http://192.168.0.1:5140/rtp/239.253.244.58:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-195. 农林卫视                 http://192.168.0.1:5140/rtp/239.253.244.70:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-196. 厦门卫视                 http://192.168.0.1:5140/rtp/239.253.244.106:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-197. 延边卫视                 http://192.168.0.1:5140/rtp/239.253.244.121:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-198. 三沙卫视                 http://192.168.0.1:5140/rtp/239.253.244.171:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-199. 浙江卫视                 http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8
+191. 山东卫视                 https://iqilu.vercel.app/api/iqilu?orgid=225&num=0
+      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
+192. 浙江卫视                 http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-200. 浙江卫视                 http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8
+193. 浙江卫视                 http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-201. 江苏卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/jiangsuhd/1200/index.m3u8?msisdn=20260128171843454f0d7facf44cceb39da4ad8f39bda8&mdspid=&spid=699067&netType=4&sid=5500199408&pid=2028597139&timestamp=20260128171843&Channel_ID=0116_2600001300-99000-201600010013552&ProgramID=623899368&ParentNodeID=-99&assertID=5500199408&client_ip=61.243.159.250&SecurityKey=20260128171843&promotionId=&mvid=5100156802&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=92104a283fc3870b6844393caffda29f
+194. 江苏卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/jiangsuhd/1200/index.m3u8?msisdn=20260128171843454f0d7facf44cceb39da4ad8f39bda8&mdspid=&spid=699067&netType=4&sid=5500199408&pid=2028597139&timestamp=20260128171843&Channel_ID=0116_2600001300-99000-201600010013552&ProgramID=623899368&ParentNodeID=-99&assertID=5500199408&client_ip=61.243.159.250&SecurityKey=20260128171843&promotionId=&mvid=5100156802&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=92104a283fc3870b6844393caffda29f
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-202. 东方卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r4/dfl/dongfangwshd/1200/index.m3u8?msisdn=20260128171914df19dd1d43394af998ae86cf29832f98&mdspid=&spid=600697&netType=4&sid=5910022185&pid=2028597139&timestamp=20260128171914&Channel_ID=0116_2600001300-99000-201600010013553&ProgramID=651632648&ParentNodeID=-99&assertID=5910022185&client_ip=61.243.159.236&SecurityKey=20260128171914&promotionId=&mvid=5100043384&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=2d5bce7acc6fb5b89224fe4d1e862228
+195. 东方卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r4/dfl/dongfangwshd/1200/index.m3u8?msisdn=20260128171914df19dd1d43394af998ae86cf29832f98&mdspid=&spid=600697&netType=4&sid=5910022185&pid=2028597139&timestamp=20260128171914&Channel_ID=0116_2600001300-99000-201600010013553&ProgramID=651632648&ParentNodeID=-99&assertID=5910022185&client_ip=61.243.159.236&SecurityKey=20260128171914&promotionId=&mvid=5100043384&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=2d5bce7acc6fb5b89224fe4d1e862228
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-203. 广东卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/gdwshd265/54/20200407/index.m3u8?msisdn=202601281835310d1a280ef1ef45b69de2c583638b4d55&mdspid=&spid=699054&netType=4&sid=2202428795&pid=2028597139&timestamp=20260128183531&Channel_ID=0116_2600001300-99000-201600010013583&ProgramID=608831231&ParentNodeID=-99&assertID=2202428795&client_ip=42.177.95.51&SecurityKey=20260128183531&promotionId=&mvid=2202428795&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1e22d59d2f0a92b600bb5ffd7fd12b30
+196. 广东卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/gdwshd265/54/20200407/index.m3u8?msisdn=202601281835310d1a280ef1ef45b69de2c583638b4d55&mdspid=&spid=699054&netType=4&sid=2202428795&pid=2028597139&timestamp=20260128183531&Channel_ID=0116_2600001300-99000-201600010013583&ProgramID=608831231&ParentNodeID=-99&assertID=2202428795&client_ip=42.177.95.51&SecurityKey=20260128183531&promotionId=&mvid=2202428795&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1e22d59d2f0a92b600bb5ffd7fd12b30
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-204. 北京卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/bjws/51/20251127/index.m3u8?msisdn=20260128171812417b14a49c98484c8f438138458e3d6f&mdspid=&spid=600697&netType=4&sid=5910022306&pid=2028597139&timestamp=20260128171812&Channel_ID=0116_2600001300-99000-201600010013551&ProgramID=630287636&ParentNodeID=-99&assertID=5910022306&client_ip=61.243.159.184&SecurityKey=20260128171812&promotionId=&mvid=5101042960&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=a5450e9da336176b6d3c4addbf213eb3
+197. 北京卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/bjws/51/20251127/index.m3u8?msisdn=20260128171812417b14a49c98484c8f438138458e3d6f&mdspid=&spid=600697&netType=4&sid=5910022306&pid=2028597139&timestamp=20260128171812&Channel_ID=0116_2600001300-99000-201600010013551&ProgramID=630287636&ParentNodeID=-99&assertID=5910022306&client_ip=61.243.159.184&SecurityKey=20260128171812&promotionId=&mvid=5101042960&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=a5450e9da336176b6d3c4addbf213eb3
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-205. 湖北卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/hubeiwshd/2000/index.m3u8?msisdn=20260128171710caecaa7ac58d493f95b41a4306ae827a&mdspid=&spid=600633&netType=4&sid=5910022163&pid=2028597139&timestamp=20260128171710&Channel_ID=0116_2600001300-99000-201600010013549&ProgramID=947472496&ParentNodeID=-99&assertID=5910022163&client_ip=61.243.159.109&SecurityKey=20260128171710&promotionId=&mvid=5900004355&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e5e620d6f85df62021d7542834a3158d
+198. 湖北卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/hubeiwshd/2000/index.m3u8?msisdn=20260128171710caecaa7ac58d493f95b41a4306ae827a&mdspid=&spid=600633&netType=4&sid=5910022163&pid=2028597139&timestamp=20260128171710&Channel_ID=0116_2600001300-99000-201600010013549&ProgramID=947472496&ParentNodeID=-99&assertID=5910022163&client_ip=61.243.159.109&SecurityKey=20260128171710&promotionId=&mvid=5900004355&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e5e620d6f85df62021d7542834a3158d
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-206. 辽宁卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/liaoningwshd/2000/index.m3u8?msisdn=2026012817153781b5c51a14bf4d068cd97e337e13c2ab&mdspid=&spid=600572&netType=4&sid=5910022198&pid=2028597139&timestamp=20260128171537&Channel_ID=0116_2600001300-99000-201600010013546&ProgramID=630291707&ParentNodeID=-99&assertID=5910022198&client_ip=42.178.17.56&SecurityKey=20260128171537&promotionId=&mvid=5101043014&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1b0bd60855773ae0e598597cc56b4017
+199. 辽宁卫视                 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/liaoningwshd/2000/index.m3u8?msisdn=2026012817153781b5c51a14bf4d068cd97e337e13c2ab&mdspid=&spid=600572&netType=4&sid=5910022198&pid=2028597139&timestamp=20260128171537&Channel_ID=0116_2600001300-99000-201600010013546&ProgramID=630291707&ParentNodeID=-99&assertID=5910022198&client_ip=42.178.17.56&SecurityKey=20260128171537&promotionId=&mvid=5101043014&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=1b0bd60855773ae0e598597cc56b4017
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-207. 东南卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/dongnanws/51/20230724/index.m3u8?msisdn=20260128183413b95068be3e2f4db9aae9e95ebba6406a&mdspid=&spid=600717&netType=4&sid=5910022182&pid=2028597139&timestamp=20260128183413&Channel_ID=0116_2600001300-99000-201600010013582&ProgramID=849116810&ParentNodeID=-99&assertID=5910022182&client_ip=42.177.95.36&SecurityKey=20260128183413&promotionId=&mvid=5900006229&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=c22c0ccf5a0e66391c4b8d5e3becdffa
+200. 东南卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/dongnanws/51/20230724/index.m3u8?msisdn=20260128183413b95068be3e2f4db9aae9e95ebba6406a&mdspid=&spid=600717&netType=4&sid=5910022182&pid=2028597139&timestamp=20260128183413&Channel_ID=0116_2600001300-99000-201600010013582&ProgramID=849116810&ParentNodeID=-99&assertID=5910022182&client_ip=42.177.95.36&SecurityKey=20260128183413&promotionId=&mvid=5900006229&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=c22c0ccf5a0e66391c4b8d5e3becdffa
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-208. 吉林卫视                 http://hlsztemgsplive.miguvideo.com:8080/envivo_v/2018/SD/jilin/1000/index.m3u8?msisdn=202601281716409d4d1149018a42c98bb61023afbdd416&mdspid=&spid=600633&netType=4&sid=5910022164&pid=2028597139&timestamp=20260128171640&Channel_ID=0116_2600001300-99000-201600010013548&ProgramID=947472500&ParentNodeID=-99&assertID=5910022164&client_ip=42.178.17.20&SecurityKey=20260128171640&promotionId=&mvid=5900004357&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e6c425698e0d2c8f0972dc671c6ff60a
+201. 吉林卫视                 http://hlsztemgsplive.miguvideo.com:8080/envivo_v/2018/SD/jilin/1000/index.m3u8?msisdn=202601281716409d4d1149018a42c98bb61023afbdd416&mdspid=&spid=600633&netType=4&sid=5910022164&pid=2028597139&timestamp=20260128171640&Channel_ID=0116_2600001300-99000-201600010013548&ProgramID=947472500&ParentNodeID=-99&assertID=5910022164&client_ip=42.178.17.20&SecurityKey=20260128171640&promotionId=&mvid=5900004357&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e6c425698e0d2c8f0972dc671c6ff60a
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-209. 江西卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/jxwshd/51/20190820/index.m3u8?msisdn=202601281717411e1bf121b59241c9b440dce79cd038c0&mdspid=&spid=600633&netType=4&sid=5910021492&pid=2028597139&timestamp=20260128171741&Channel_ID=0116_2600001300-99000-201600010013550&ProgramID=783847495&ParentNodeID=-99&assertID=5910021492&client_ip=61.243.159.174&SecurityKey=20260128171741&promotionId=&mvid=5900004351&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4cc3d523bca5e4b706b84749167c12cb
+202. 江西卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/jxwshd/51/20190820/index.m3u8?msisdn=202601281717411e1bf121b59241c9b440dce79cd038c0&mdspid=&spid=600633&netType=4&sid=5910021492&pid=2028597139&timestamp=20260128171741&Channel_ID=0116_2600001300-99000-201600010013550&ProgramID=783847495&ParentNodeID=-99&assertID=5910021492&client_ip=61.243.159.174&SecurityKey=20260128171741&promotionId=&mvid=5900004351&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4cc3d523bca5e4b706b84749167c12cb
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-210. 兵团卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/btws/51/20250804/index.m3u8?msisdn=202601281716098a49302e6749437eaf60a2ee525c0970&mdspid=&spid=600697&netType=4&sid=5910022192&pid=2028597139&timestamp=20260128171609&Channel_ID=0116_2600001300-99000-201600010013547&ProgramID=956923145&ParentNodeID=-99&assertID=5910022192&client_ip=42.178.17.20&SecurityKey=20260128171609&promotionId=&mvid=5900006716&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4e54780d2536f7414d1363c074b7dd4a
+203. 兵团卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/btws/51/20250804/index.m3u8?msisdn=202601281716098a49302e6749437eaf60a2ee525c0970&mdspid=&spid=600697&netType=4&sid=5910022192&pid=2028597139&timestamp=20260128171609&Channel_ID=0116_2600001300-99000-201600010013547&ProgramID=956923145&ParentNodeID=-99&assertID=5910022192&client_ip=42.178.17.20&SecurityKey=20260128171609&promotionId=&mvid=5900006716&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4e54780d2536f7414d1363c074b7dd4a
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+204. 农林卫视                 http://gxlive.snrtv.com/nlws-SD.m3u8
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+205. 海峡卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/haixiaws/51/20230724/index.m3u8?msisdn=20260128173341b3c4f5734d004e7eaa8316e84d01c6d4&mdspid=&spid=600717&netType=4&sid=5910022183&pid=2028597139&timestamp=20260128173341&Channel_ID=0116_2600001300-99000-201600010013581&ProgramID=849119120&ParentNodeID=-99&assertID=5910022183&client_ip=42.6.115.25&SecurityKey=20260128173341&promotionId=&mvid=5900006231&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=ae10ffb8dffaad84fa408da016689f74
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
 
-【江苏频道】（13个频道）
+【山东频道】（8个频道）
+  1. 山东齐鲁                 http://192.168.0.1:5140/rtp/239.253.244.114:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  2. 山东文旅                 http://192.168.0.1:5140/rtp/239.253.244.160:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  3. 山东生活                 http://192.168.0.1:5140/rtp/239.253.244.151:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  4. 山东综艺                 http://192.168.0.1:5140/rtp/239.253.244.159:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  5. 山东体育                 http://192.168.0.1:5140/rtp/239.253.244.22:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  6. 山东新闻                 http://192.168.0.1:5140/rtp/239.253.244.23:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  7. 山东农科                 http://192.168.0.1:5140/rtp/239.253.244.24:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+  8. 山东教育                 http://192.168.0.1:5140/rtp/239.253.244.59:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+
+【江苏频道】（6个频道）
   1. 南京新闻综合               http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8$ipv4•线路1(315ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
   2. 南京新闻综合               http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8$ipv4•线路2(315ms)
@@ -910,82 +873,116 @@ IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
   4. 南京教科                 http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 南京文旅纪录               http://nklive.nbs.cn/hls/9b2005c4-046c-422f-ba45-e6adc4f4de07/index.m3u8
+  5. 南京十八生活               http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 南京十八生活               http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 南京少儿                 http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 无锡新闻综合               http://stream.thmz.com/wxtv1/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 无锡都市资讯               http://stream.thmz.com/wxtv3/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 无锡生活                 http://stream.thmz.com/wxtv4/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 无锡娱乐                 http://stream.thmz.com/wxtv2/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 12. 无锡经济                 http://stream.thmz.com/wxtv5/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 13. 宜兴新闻综合               http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8
+  6. 南京少儿                 http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8
       来源：https://github.com/develop202/migu_video/blob/main/interface.txt
 
-【动漫频道】（28个频道）
-  1. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er.m3u8$ipv4•线路1(10ms)
+【动漫频道】（52个频道）
+  1. CCTV14               http://69.30.246.194/live/cctv14.m3u8$ipv4•线路1(26ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  2. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er.m3u8$ipv4•线路2(10ms)
+  2. CCTV14               http://69.30.246.194/live/cctv14.m3u8$ipv4•线路2(26ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  3. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-3.m3u8$ipv4•线路3(24ms)
+  3. CCTV14               http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub$ipv4•线路3(77ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  4. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-3.m3u8$ipv4•线路4(24ms)
+  4. CCTV14               http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub$ipv4•线路4(77ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  5. 广东少儿                 http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub$ipv4•线路5(76ms)
+  5. CCTV14               http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路5(124ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  6. 广东少儿                 http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub$ipv4•线路6(76ms)
+  6. CCTV14               http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路6(124ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  7. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing.m3u8$ipv4•线路7(144ms)
+  7. CCTV14               http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009$ipv4•线路7(193ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  8. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing.m3u8$ipv4•线路8(144ms)
+  8. CCTV14               http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009$ipv4•线路8(193ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-  9. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-4.m3u8$ipv4•线路9(147ms)
+  9. CCTV14               http://221.13.234.185:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路9(238ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 10. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-4.m3u8$ipv4•线路10(147ms)
+ 10. CCTV14               http://221.13.234.185:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路10(238ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 11. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-8.m3u8$ipv4•线路11(162ms)
+ 11. CCTV14               http://58.57.40.22:9901/tsfile/live/1014_1.m3u8$ipv4•线路11(262ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 12. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-8.m3u8$ipv4•线路12(162ms)
+ 12. CCTV14               http://58.57.40.22:9901/tsfile/live/1014_1.m3u8$ipv4•线路12(262ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 13. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-1.m3u8$ipv4•线路13(167ms)
+ 13. CCTV14               http://182.150.23.74:808/hls/14/index.m3u8$ipv4•线路13(319ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 14. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-1.m3u8$ipv4•线路14(167ms)
+ 14. CCTV14               http://182.150.23.74:808/hls/14/index.m3u8$ipv4•线路14(319ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 15. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-2.m3u8$ipv4•线路15(170ms)
+ 15. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er.m3u8$ipv4•线路1(10ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 16. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-2.m3u8$ipv4•线路16(170ms)
+ 16. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er.m3u8$ipv4•线路2(10ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 17. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-10.m3u8$ipv4•线路17(187ms)
+ 17. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-3.m3u8$ipv4•线路3(24ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 18. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-10.m3u8$ipv4•线路18(187ms)
+ 18. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-3.m3u8$ipv4•线路4(24ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 19. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-2.m3u8$ipv4•线路19(203ms)
+ 19. 广东少儿                 http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub$ipv4•线路5(76ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 20. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-2.m3u8$ipv4•线路20(203ms)
+ 20. 广东少儿                 http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub$ipv4•线路6(76ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 21. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-5.m3u8$ipv4•线路21(223ms)
+ 21. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing.m3u8$ipv4•线路7(144ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 22. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-5.m3u8$ipv4•线路22(223ms)
+ 22. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing.m3u8$ipv4•线路8(144ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 23. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-3.m3u8$ipv4•线路23(231ms)
+ 23. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-4.m3u8$ipv4•线路9(147ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 24. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-3.m3u8$ipv4•线路24(231ms)
+ 24. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-4.m3u8$ipv4•线路10(147ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 25. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-21.m3u8$ipv4•线路25(247ms)
+ 25. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-8.m3u8$ipv4•线路11(162ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 26. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-21.m3u8$ipv4•线路26(247ms)
+ 26. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-8.m3u8$ipv4•线路12(162ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 27. 浙江少儿                 http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=b22b66&tk=822270345d4c$ipv4•线路1(95ms)
+ 27. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-1.m3u8$ipv4•线路13(167ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
- 28. 浙江少儿                 http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=b22b66&tk=822270345d4c$ipv4•线路2(95ms)
+ 28. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-1.m3u8$ipv4•线路14(167ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 29. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-2.m3u8$ipv4•线路15(170ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 30. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-2.m3u8$ipv4•线路16(170ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 31. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-10.m3u8$ipv4•线路17(187ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 32. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-10.m3u8$ipv4•线路18(187ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 33. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-2.m3u8$ipv4•线路19(203ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 34. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-2.m3u8$ipv4•线路20(203ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 35. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-5.m3u8$ipv4•线路21(223ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 36. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-gao-qing-5.m3u8$ipv4•线路22(223ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 37. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-3.m3u8$ipv4•线路23(231ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 38. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-3.m3u8$ipv4•线路24(231ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 39. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-21.m3u8$ipv4•线路25(247ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 40. 广东少儿                 https://t.freetv.fun/live/yan-dong-shao-er-21.m3u8$ipv4•线路26(247ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 41. 浙江少儿                 http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=b22b66&tk=822270345d4c$ipv4•线路1(95ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 42. 浙江少儿                 http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=b22b66&tk=822270345d4c$ipv4•线路2(95ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 43. CCTV14               http://192.168.0.1:5140/rtp/239.253.244.236:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 44. 山东少儿                 http://192.168.0.1:5140/rtp/239.253.244.25:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 45. 卡酷少儿                 http://192.168.0.1:5140/rtp/239.253.244.66:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 46. 金鹰卡通                 http://192.168.0.1:5140/rtp/239.253.244.117:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 47. 动漫秀场                 http://192.168.0.1:5140/rtp/239.253.244.115:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 48. 优漫卡通                 http://192.168.0.1:5140/rtp/239.253.244.64:8000?fcc=124.132.240.66:15970
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
+ 49. CCTV14               http://hlsztemgsplive.miguvideo.com:8080/wd_r2/2018/ocn/cctv14hd/2000/index.m3u8?msisdn=202601281720464f6e76145f154130aa7cf57634bef12b&mdspid=&spid=699004&netType=4&sid=5500212875&pid=2028597139&timestamp=20260128172046&Channel_ID=0116_2600001300-99000-201600010013556&ProgramID=624878440&ParentNodeID=-99&assertID=5500212875&client_ip=42.178.17.38&SecurityKey=20260128172046&promotionId=&mvid=5100001697&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=939972d7b4b83e83f35bca91e17a436d
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+ 50. 广东少儿                 http://120.238.85.131:9901/tsfile/live/1018_1.m3u8?key=txiptv&playlive=0&authid=0
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+ 51. 浙江少儿                 http://ali-xwl.cztv.com/live/channel081080Plxw.m3u8
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+ 52. 浙江少儿                 http://ali-xwl.cztv.com/live/channel08720Plxw.m3u8
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
 
 【港澳台频道】（8个频道）
   1. 凤凰中文                 http://cdn5.1678520.xyz/live/live2.1.php?id=fhzw$ipv4•线路1(188ms)
@@ -1005,7 +1002,7 @@ IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
   8. 翡翠台                  https://t.freetv.fun/live/fei-cui-7.m3u8$ipv4•线路6(276ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
 
-【影视频道】（10个频道）
+【影视频道】（12个频道）
   1. CHC动作电影              http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub$ipv4•线路1(74ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
   2. CHC动作电影              http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub$ipv4•线路2(74ms)
@@ -1026,1220 +1023,8 @@ IPTV直播源汇总（URL去重+频道名标准化+分类名标准化）
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
  10. CHC家庭影院              http://eastscreen.tv/ooooo.php?id=chcjt$ipv4•线路6(286ms)
       来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
-
-【未分类】（245个频道）
-  1. 昌乐电视台                https://iqilu.vercel.app/api/iqilu?orgid=1&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  2. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=5&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  3. 生活频道                 https://iqilu.vercel.app/api/iqilu?orgid=5&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  4. 看个球吧                 https://iqilu.vercel.app/api/iqilu?orgid=7&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  5. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=11&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  6. 民生频道                 https://iqilu.vercel.app/api/iqilu?orgid=11&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  7. 曲阜综合频道               https://iqilu.vercel.app/api/iqilu?orgid=13&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  8. 博山新闻频道               https://iqilu.vercel.app/api/iqilu?orgid=17&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-  9. 博山图文频道               https://iqilu.vercel.app/api/iqilu?orgid=17&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 10. 平原综合                 https://iqilu.vercel.app/api/iqilu?orgid=19&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 11. 桓台电视台第一套节目           https://iqilu.vercel.app/api/iqilu?orgid=23&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 12. 桓台电视台第二套节目           https://iqilu.vercel.app/api/iqilu?orgid=23&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 13. 定陶综合频道               https://iqilu.vercel.app/api/iqilu?orgid=27&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 14. 定陶综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=27&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 15. 茌平综合                 https://iqilu.vercel.app/api/iqilu?orgid=31&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 16. 茌平生活                 https://iqilu.vercel.app/api/iqilu?orgid=31&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 17. 武城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=33&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 18. 武城综艺影视频道             https://iqilu.vercel.app/api/iqilu?orgid=33&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 19. 薛城新闻综合频道             https://iqilu.vercel.app/api/iqilu?orgid=37&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 20. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=39&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 21. 高唐综合频道               https://iqilu.vercel.app/api/iqilu?orgid=43&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 22. 高唐综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=43&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 23. 昌邑新闻综合               https://iqilu.vercel.app/api/iqilu?orgid=47&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 24. 昌邑经济生活               https://iqilu.vercel.app/api/iqilu?orgid=47&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 25. 临邑一                  https://iqilu.vercel.app/api/iqilu?orgid=49&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 26. 肥城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=51&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 27. 肥城生活频道               https://iqilu.vercel.app/api/iqilu?orgid=51&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 28. 微山电视综合频道             https://iqilu.vercel.app/api/iqilu?orgid=53&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 29. 微山电视第二频道             https://iqilu.vercel.app/api/iqilu?orgid=53&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 30. 招远综合频道               https://iqilu.vercel.app/api/iqilu?orgid=55&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 31. 招远综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=55&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 32. 龙口综合                 https://iqilu.vercel.app/api/iqilu?orgid=57&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 33. 龙口生活                 https://iqilu.vercel.app/api/iqilu?orgid=57&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 34. 新泰综合频道               https://iqilu.vercel.app/api/iqilu?orgid=59&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 35. 新泰乡村频道               https://iqilu.vercel.app/api/iqilu?orgid=59&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 36. 鱼台综合频道               https://iqilu.vercel.app/api/iqilu?orgid=63&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 37. 鱼台生活频道               https://iqilu.vercel.app/api/iqilu?orgid=63&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 38. 临清综合频道               https://iqilu.vercel.app/api/iqilu?orgid=65&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 39. 临清经济信息               https://iqilu.vercel.app/api/iqilu?orgid=65&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 40. 兰陵综合                 https://iqilu.vercel.app/api/iqilu?orgid=69&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 41. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=71&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 42. 党建农科                 https://iqilu.vercel.app/api/iqilu?orgid=71&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 43. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=73&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 44. 影视娱乐                 https://iqilu.vercel.app/api/iqilu?orgid=73&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 45. 荣成综合                 https://iqilu.vercel.app/api/iqilu?orgid=77&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 46. 荣成生活                 https://iqilu.vercel.app/api/iqilu?orgid=77&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 47. 阳谷综合频道               https://iqilu.vercel.app/api/iqilu?orgid=81&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 48. 阳谷影视频道               https://iqilu.vercel.app/api/iqilu?orgid=81&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 49. 新闻发布会                https://iqilu.vercel.app/api/iqilu?orgid=81&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 50. 郯城TV-1               https://iqilu.vercel.app/api/iqilu?orgid=83&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 51. 郯城TV-2               https://iqilu.vercel.app/api/iqilu?orgid=83&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 52. 济阳综合                 https://iqilu.vercel.app/api/iqilu?orgid=85&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 53. 济阳影视                 https://iqilu.vercel.app/api/iqilu?orgid=85&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 54. 曹县融媒体中心综合频道          https://iqilu.vercel.app/api/iqilu?orgid=87&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 55. 梁山综合                 https://iqilu.vercel.app/api/iqilu?orgid=89&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 56. 文登一台                 https://iqilu.vercel.app/api/iqilu?orgid=91&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 57. 文登二台                 https://iqilu.vercel.app/api/iqilu?orgid=91&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 58. 电台直播                 https://iqilu.vercel.app/api/iqilu?orgid=91&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 59. 商河综合频道               https://iqilu.vercel.app/api/iqilu?orgid=97&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 60. 商河影视频道               https://iqilu.vercel.app/api/iqilu?orgid=97&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 61. ZDTV-1               https://iqilu.vercel.app/api/iqilu?orgid=101&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 62. ZDTV-2               https://iqilu.vercel.app/api/iqilu?orgid=101&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 63. 滕州新闻综合频道             https://iqilu.vercel.app/api/iqilu?orgid=103&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 64. 滕州民生频道               https://iqilu.vercel.app/api/iqilu?orgid=103&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 65. 莒南综合频道               https://iqilu.vercel.app/api/iqilu?orgid=105&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 66. 莒南影视频道               https://iqilu.vercel.app/api/iqilu?orgid=105&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 67. 蓬莱区融媒体中心综合频道         https://iqilu.vercel.app/api/iqilu?orgid=109&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 68. 蓬莱区融媒体中心综艺频道         https://iqilu.vercel.app/api/iqilu?orgid=109&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 69. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=111&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 70. 兰陵综合                 https://iqilu.vercel.app/api/iqilu?orgid=113&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 71. 兰陵公共                 https://iqilu.vercel.app/api/iqilu?orgid=113&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 72. 听广播                  https://iqilu.vercel.app/api/iqilu?orgid=113&num=3
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 73. FM100.1              https://iqilu.vercel.app/api/iqilu?orgid=113&num=5
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 74. 诸城新闻综合               https://iqilu.vercel.app/api/iqilu?orgid=115&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 75. 诸城生活娱乐               https://iqilu.vercel.app/api/iqilu?orgid=115&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 76. 党风政风监督热线             https://iqilu.vercel.app/api/iqilu?orgid=115&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 77. 潍坊新闻综合               https://iqilu.vercel.app/api/iqilu?orgid=115&num=3
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 78. 潍坊经济生活               https://iqilu.vercel.app/api/iqilu?orgid=115&num=4
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 79. 潍坊影视综艺               https://iqilu.vercel.app/api/iqilu?orgid=115&num=5
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 80. 慢直播│直播中国精编直播         https://iqilu.vercel.app/api/iqilu?orgid=115&num=6
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 81. 泗水综合                 https://iqilu.vercel.app/api/iqilu?orgid=117&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 82. 泗水生活                 https://iqilu.vercel.app/api/iqilu?orgid=117&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 83. 宁阳综合频道               https://iqilu.vercel.app/api/iqilu?orgid=123&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 84. 宁阳-2                 https://iqilu.vercel.app/api/iqilu?orgid=123&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 85. 【青州】综合               https://iqilu.vercel.app/api/iqilu?orgid=125&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 86. 【青州】文化旅游             https://iqilu.vercel.app/api/iqilu?orgid=125&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 87. 奎文电视台                https://iqilu.vercel.app/api/iqilu?orgid=127&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 88. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=129&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 89. 生活频道                 https://iqilu.vercel.app/api/iqilu?orgid=129&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 90. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=131&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 91. 综艺频道                 https://iqilu.vercel.app/api/iqilu?orgid=131&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 92. 寒亭新闻频道               https://iqilu.vercel.app/api/iqilu?orgid=133&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 93. 郓城综合                 https://iqilu.vercel.app/api/iqilu?orgid=135&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 94. 民生综艺                 https://iqilu.vercel.app/api/iqilu?orgid=135&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 95. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=137&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 96. 民生频道                 https://iqilu.vercel.app/api/iqilu?orgid=137&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 97. 新闻频道                 https://iqilu.vercel.app/api/iqilu?orgid=139&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 98. 鄄城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=141&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
- 99. 鄄城综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=141&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-100. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=143&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-101. 生活频道                 https://iqilu.vercel.app/api/iqilu?orgid=143&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-102. 沂水综合                 https://iqilu.vercel.app/api/iqilu?orgid=145&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-103. 沂水生活                 https://iqilu.vercel.app/api/iqilu?orgid=145&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-104. 罗庄综合                 https://iqilu.vercel.app/api/iqilu?orgid=147&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-105. 罗庄影视                 https://iqilu.vercel.app/api/iqilu?orgid=147&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-106. LZTV-1新闻综合频道         https://iqilu.vercel.app/api/iqilu?orgid=151&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-107. LZTV-2生活服务频道         https://iqilu.vercel.app/api/iqilu?orgid=151&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-108. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=153&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-109. 文化生活频道               https://iqilu.vercel.app/api/iqilu?orgid=153&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-110. 利津广播电台               https://iqilu.vercel.app/api/iqilu?orgid=153&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-111. 经典剧场                 https://iqilu.vercel.app/api/iqilu?orgid=155&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-112. 单县新闻综合频道             https://iqilu.vercel.app/api/iqilu?orgid=155&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-113. 莒县综合                 https://iqilu.vercel.app/api/iqilu?orgid=159&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-114. 莒县生活                 https://iqilu.vercel.app/api/iqilu?orgid=159&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-115. FM97-Live            https://iqilu.vercel.app/api/iqilu?orgid=159&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-116. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=163&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-117. 科教影视频道               https://iqilu.vercel.app/api/iqilu?orgid=163&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-118. 临沭TV-1               https://iqilu.vercel.app/api/iqilu?orgid=167&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-119. 临沭TV-2               https://iqilu.vercel.app/api/iqilu?orgid=167&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-120. 慢直播                  https://iqilu.vercel.app/api/iqilu?orgid=167&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-121. 无棣综合频道               https://iqilu.vercel.app/api/iqilu?orgid=169&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-122. 无棣综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=169&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-123. 无棣广播直播回放             https://iqilu.vercel.app/api/iqilu?orgid=169&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-124. 长清综合                 https://iqilu.vercel.app/api/iqilu?orgid=171&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-125. 长清生活                 https://iqilu.vercel.app/api/iqilu?orgid=171&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-126. QTV-李沧               https://iqilu.vercel.app/api/iqilu?orgid=173&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-127. 长岛电视台                https://iqilu.vercel.app/api/iqilu?orgid=175&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-128. 沂南综合频道               https://iqilu.vercel.app/api/iqilu?orgid=177&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-129. 沂南红色影视               https://iqilu.vercel.app/api/iqilu?orgid=177&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-130. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-131. 经济生活频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-132. 图文频道                 https://iqilu.vercel.app/api/iqilu?orgid=179&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-133. 夏津综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=3
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-134. 夏津公共频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=4
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-135. 齐河综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=5
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-136. 平原综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=6
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-137. 陵城区综合频道              https://iqilu.vercel.app/api/iqilu?orgid=179&num=7
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-138. 禹城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=8
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-139. 禹城综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=9
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-140. 临邑综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=10
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-141. 武城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=11
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-142. 武城综艺影视               https://iqilu.vercel.app/api/iqilu?orgid=179&num=12
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-143. 宁津综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=13
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-144. 庆云综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=14
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-145. 庆云生活频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=15
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-146. 乐陵综合频道               https://iqilu.vercel.app/api/iqilu?orgid=179&num=16
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-147. 乐陵城市生活               https://iqilu.vercel.app/api/iqilu?orgid=179&num=17
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-148. 邹城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=181&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-149. 邹城文化生活频道             https://iqilu.vercel.app/api/iqilu?orgid=181&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-150. 莘县综合                 https://iqilu.vercel.app/api/iqilu?orgid=183&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-151. 莘县二台                 https://iqilu.vercel.app/api/iqilu?orgid=183&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-152. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=185&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-153. 东平综合                 https://iqilu.vercel.app/api/iqilu?orgid=187&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-154. 东平民生                 https://iqilu.vercel.app/api/iqilu?orgid=187&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-155. 福山综合频道               https://iqilu.vercel.app/api/iqilu?orgid=189&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-156. 福山生活频道               https://iqilu.vercel.app/api/iqilu?orgid=189&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-157. 河东综合频道               https://iqilu.vercel.app/api/iqilu?orgid=191&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-158. 河东影视频道               https://iqilu.vercel.app/api/iqilu?orgid=191&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-159. 宁津融媒体中心综合频道          https://iqilu.vercel.app/api/iqilu?orgid=193&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-160. 宁津县融媒体中心综合广播视频直播     https://iqilu.vercel.app/api/iqilu?orgid=193&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-161. 章丘综合                 https://iqilu.vercel.app/api/iqilu?orgid=195&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-162. 章丘TV-2               https://iqilu.vercel.app/api/iqilu?orgid=195&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-163. 滨海新闻综合频道             https://iqilu.vercel.app/api/iqilu?orgid=199&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-164. 兰山电视                 https://iqilu.vercel.app/api/iqilu?orgid=201&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-165. 沂源综合频道               https://iqilu.vercel.app/api/iqilu?orgid=203&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-166. 沂源生活频道               https://iqilu.vercel.app/api/iqilu?orgid=203&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-167. 临朐新闻                 https://iqilu.vercel.app/api/iqilu?orgid=205&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-168. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=207&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-169. 生活频道                 https://iqilu.vercel.app/api/iqilu?orgid=207&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-170. 环翠综合频道               https://iqilu.vercel.app/api/iqilu?orgid=213&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-171. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=215&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-172. 阳信新闻                 https://iqilu.vercel.app/api/iqilu?orgid=217&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-173. 会场直播                 https://iqilu.vercel.app/api/iqilu?orgid=217&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-174. 牡丹电视台—新闻综合           https://iqilu.vercel.app/api/iqilu?orgid=219&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-175. 牡丹电视台—综艺             https://iqilu.vercel.app/api/iqilu?orgid=219&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-176. 即墨融媒【综合频道】           https://iqilu.vercel.app/api/iqilu?orgid=221&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-177. 即墨融媒【生活服务频道】         https://iqilu.vercel.app/api/iqilu?orgid=221&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-178. 即墨融媒【综合广播】           https://iqilu.vercel.app/api/iqilu?orgid=221&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-179. 路口直播                 https://iqilu.vercel.app/api/iqilu?orgid=221&num=3
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-180. 夏津电视台综合频道            https://iqilu.vercel.app/api/iqilu?orgid=223&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-181. 夏津电视台公共频道            https://iqilu.vercel.app/api/iqilu?orgid=223&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-182. 山东卫视                 https://iqilu.vercel.app/api/iqilu?orgid=225&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-183. 少儿频道                 https://iqilu.vercel.app/api/iqilu?orgid=225&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-184. 兖州综合频道               https://iqilu.vercel.app/api/iqilu?orgid=231&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-185. 兖州生活频道               https://iqilu.vercel.app/api/iqilu?orgid=231&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-186. 市中电视台                https://iqilu.vercel.app/api/iqilu?orgid=233&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-187. 禹城综合频道               https://iqilu.vercel.app/api/iqilu?orgid=235&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-188. 禹城综艺频道               https://iqilu.vercel.app/api/iqilu?orgid=235&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-189. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=237&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-190. 科教文艺                 https://iqilu.vercel.app/api/iqilu?orgid=237&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-191. 莱州综合频道               https://iqilu.vercel.app/api/iqilu?orgid=239&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-192. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=241&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-193. 民生综艺                 https://iqilu.vercel.app/api/iqilu?orgid=241&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-194. 综合广播                 https://iqilu.vercel.app/api/iqilu?orgid=241&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-195. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=243&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-196. 莱山综合                 https://iqilu.vercel.app/api/iqilu?orgid=245&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-197. 莱山影视                 https://iqilu.vercel.app/api/iqilu?orgid=245&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-198. 滨城TV                 https://iqilu.vercel.app/api/iqilu?orgid=249&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-199. 齐河综合频道               https://iqilu.vercel.app/api/iqilu?orgid=251&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-200. 莱西综合频道               https://iqilu.vercel.app/api/iqilu?orgid=253&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-201. 莱西生活频道               https://iqilu.vercel.app/api/iqilu?orgid=253&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-202. 海阳综合                 https://iqilu.vercel.app/api/iqilu?orgid=255&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-203. 平阴综合频道               https://iqilu.vercel.app/api/iqilu?orgid=257&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-204. 平阴乡村振兴               https://iqilu.vercel.app/api/iqilu?orgid=257&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-205. 周村新闻                 https://iqilu.vercel.app/api/iqilu?orgid=259&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-206. 周村生活                 https://iqilu.vercel.app/api/iqilu?orgid=259&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-207. 历城新闻综合               https://iqilu.vercel.app/api/iqilu?orgid=261&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-208. 泰山频道                 https://iqilu.vercel.app/api/iqilu?orgid=263&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-209. 东昌综合                 https://iqilu.vercel.app/api/iqilu?orgid=265&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-210. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=267&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-211. 城市生活频道               https://iqilu.vercel.app/api/iqilu?orgid=267&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-212. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=269&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-213. 嘉祥新闻综合频道             https://iqilu.vercel.app/api/iqilu?orgid=273&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-214. 嘉祥生活频道               https://iqilu.vercel.app/api/iqilu?orgid=273&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-215. 沾化综合                 https://iqilu.vercel.app/api/iqilu?orgid=277&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-216. 沾化综艺                 https://iqilu.vercel.app/api/iqilu?orgid=277&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-217. 寿光综合频道               https://iqilu.vercel.app/api/iqilu?orgid=279&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-218. 寿光蔬菜频道               https://iqilu.vercel.app/api/iqilu?orgid=279&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-219. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=281&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-220. 岚山电视频道               https://iqilu.vercel.app/api/iqilu?orgid=289&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-221. 崂山频道                 https://iqilu.vercel.app/api/iqilu?orgid=295&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-222. 五莲综合频道               https://iqilu.vercel.app/api/iqilu?orgid=299&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-223. 文化旅游频道               https://iqilu.vercel.app/api/iqilu?orgid=299&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-224. 汶上综合频道               https://iqilu.vercel.app/api/iqilu?orgid=301&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-225. 济铁频道                 https://iqilu.vercel.app/api/iqilu?orgid=303&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-226. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=305&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-227. 生活频道                 https://iqilu.vercel.app/api/iqilu?orgid=305&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-228. 济铁频道                 https://iqilu.vercel.app/api/iqilu?orgid=353&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-229. 潍坊高新区                https://iqilu.vercel.app/api/iqilu?orgid=421&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-230. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=423&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-231. 新闻频道                 https://iqilu.vercel.app/api/iqilu?orgid=423&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-232. 娱乐频道                 https://iqilu.vercel.app/api/iqilu?orgid=423&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-233. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=519&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-234. 经济生活频道               https://iqilu.vercel.app/api/iqilu?orgid=519&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-235. 图文频道                 https://iqilu.vercel.app/api/iqilu?orgid=519&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-236. 枣庄高新区                https://iqilu.vercel.app/api/iqilu?orgid=623&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-237. 新闻综合                 https://iqilu.vercel.app/api/iqilu?orgid=635&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-238. 经济生活                 https://iqilu.vercel.app/api/iqilu?orgid=635&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-239. 影视综艺                 https://iqilu.vercel.app/api/iqilu?orgid=635&num=2
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-240. 科教文旅                 https://iqilu.vercel.app/api/iqilu?orgid=635&num=3
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-241. 生活频道                 https://iqilu.vercel.app/api/iqilu?orgid=672&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-242. 综合频道                 https://iqilu.vercel.app/api/iqilu?orgid=672&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-243. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=686&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-244. 文旅教育频道               https://iqilu.vercel.app/api/iqilu?orgid=686&num=1
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-245. 新闻综合频道               https://iqilu.vercel.app/api/iqilu?orgid=689&num=0
-      来源：https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u
-
-【山东频道】（13个频道）
-  1. 山东卫视4K               http://192.168.0.1:5140/rtp/239.253.244.172:8000?fcc=124.132.240.66:15970
+ 11. CHC家庭影院              http://192.168.0.1:5140/rtp/239.253.244.152:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  2. 山东卫视                 http://192.168.0.1:5140/rtp/239.253.244.78:8000?fcc=124.132.240.66:15970
+ 12. CHC动作电影              http://192.168.0.1:5140/rtp/239.253.244.153:8000?fcc=124.132.240.66:15970
       来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  3. 山东齐鲁                 http://192.168.0.1:5140/rtp/239.253.244.114:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  4. 山东文旅                 http://192.168.0.1:5140/rtp/239.253.244.160:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  5. 山东生活                 http://192.168.0.1:5140/rtp/239.253.244.151:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  6. 山东综艺                 http://192.168.0.1:5140/rtp/239.253.244.159:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  7. 山东体育                 http://192.168.0.1:5140/rtp/239.253.244.22:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  8. 山东新闻                 http://192.168.0.1:5140/rtp/239.253.244.23:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  9. 山东农科                 http://192.168.0.1:5140/rtp/239.253.244.24:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 10. 山东少儿                 http://192.168.0.1:5140/rtp/239.253.244.25:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 11. 山东教育                 http://192.168.0.1:5140/rtp/239.253.244.59:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 12. 山东经济广播               http://192.168.0.1:5140/rtp/239.253.244.166:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 13. 山东海洋频道               http://192.168.0.1:5140/rtp/239.253.244.67:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-
-【其他频道】（40个频道）
-  1. 爱上4K测试体验             http://192.168.0.1:5140/rtp/239.253.244.102:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  2. CHC家庭影院              http://192.168.0.1:5140/rtp/239.253.244.152:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  3. CHC动作电影              http://192.168.0.1:5140/rtp/239.253.244.153:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  4. CHC影迷电影              http://192.168.0.1:5140/rtp/239.253.244.154:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  5. 北京纪实科教               http://192.168.0.1:5140/rtp/239.253.244.165:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  6. 卡酷少儿                 http://192.168.0.1:5140/rtp/239.253.244.66:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  7. 金鹰纪实                 http://192.168.0.1:5140/rtp/239.253.244.103:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  8. 茶                    http://192.168.0.1:5140/rtp/239.253.244.143:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  9. 快乐垂钓                 http://192.168.0.1:5140/rtp/239.253.244.144:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 10. 金鹰卡通                 http://192.168.0.1:5140/rtp/239.253.244.117:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 11. 梨园                   http://192.168.0.1:5140/rtp/239.253.244.139:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 12. 武术世界                 http://192.168.0.1:5140/rtp/239.253.244.140:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 13. 文物宝库                 http://192.168.0.1:5140/rtp/239.253.244.141:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 14. 中国教育1                http://192.168.0.1:5140/rtp/239.253.244.110:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 15. 中国教育2                http://192.168.0.1:5140/rtp/239.253.244.107:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 16. 中国教育4                http://192.168.0.1:5140/rtp/239.253.244.116:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 17. 四海钓鱼                 http://192.168.0.1:5140/rtp/239.253.244.118:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 18. 汽摩                   http://192.168.0.1:5140/rtp/239.253.244.161:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 19. 生态环境                 http://192.168.0.1:5140/rtp/239.253.244.119:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 20. 中华特产                 http://192.168.0.1:5140/rtp/239.253.244.76:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 21. 中国交通                 http://192.168.0.1:5140/rtp/239.253.244.177:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 22. 动漫秀场                 http://192.168.0.1:5140/rtp/239.253.244.115:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 23. 金色学堂                 http://192.168.0.1:5140/rtp/239.253.244.101:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 24. 生活时尚                 http://192.168.0.1:5140/rtp/239.253.244.99:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 25. 都市剧场                 http://192.168.0.1:5140/rtp/239.253.244.98:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 26. 乐游                   http://192.168.0.1:5140/rtp/239.253.244.97:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 27. 法治天地                 http://192.168.0.1:5140/rtp/239.253.244.96:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 28. 游戏风云                 http://192.168.0.1:5140/rtp/239.253.244.95:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 29. 东方财经                 http://192.168.0.1:5140/rtp/239.253.244.94:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 30. 精彩影视                 http://192.168.0.1:5140/rtp/239.253.244.142:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 31. 求索纪录                 http://192.168.0.1:5140/rtp/239.253.244.231:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 32. 书画                   http://192.168.0.1:5140/rtp/239.253.244.146:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 33. 优优宝贝                 http://192.168.0.1:5140/rtp/239.253.244.72:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 34. 优漫卡通                 http://192.168.0.1:5140/rtp/239.253.244.64:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 35. 嘉佳卡通                 http://192.168.0.1:5140/rtp/239.253.244.65:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 36. 发现之旅                 http://192.168.0.1:5140/rtp/239.253.244.162:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 37. 中学生                  http://192.168.0.1:5140/rtp/239.253.244.163:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 38. 老故事                  http://192.168.0.1:5140/rtp/239.253.244.164:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 39. 新动漫                  http://192.168.0.1:5140/rtp/239.253.244.157:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 40. 环球旅游                 http://192.168.0.1:5140/rtp/239.253.244.71:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-
-【轮播频道】（43个频道）
-  1. 谍战剧场                 http://192.168.0.1:5140/rtp/239.253.244.135:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  2. 城市剧场                 http://192.168.0.1:5140/rtp/239.253.244.201:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  3. 军旅剧场                 http://192.168.0.1:5140/rtp/239.253.244.203:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  4. 古装剧场                 http://192.168.0.1:5140/rtp/239.253.244.205:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  5. 经典剧场                 http://192.168.0.1:5140/rtp/239.253.244.211:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  6. 武侠剧场                 http://192.168.0.1:5140/rtp/239.253.244.212:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  7. 热播剧场                 http://192.168.0.1:5140/rtp/239.253.244.125:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  8. 红色影院                 http://192.168.0.1:5140/rtp/239.253.244.209:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-  9. 家庭影院                 http://192.168.0.1:5140/rtp/239.253.244.218:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 10. 喜剧影院                 http://192.168.0.1:5140/rtp/239.253.244.220:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 11. 动作影院                 http://192.168.0.1:5140/rtp/239.253.244.221:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 12. 足球                   http://192.168.0.1:5140/rtp/239.253.244.204:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 13. 军事                   http://192.168.0.1:5140/rtp/239.253.244.207:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 14. 地理                   http://192.168.0.1:5140/rtp/239.253.244.208:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 15. 精选                   http://192.168.0.1:5140/rtp/239.253.244.210:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 16. 美人                   http://192.168.0.1:5140/rtp/239.253.244.213:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 17. 鉴赏                   http://192.168.0.1:5140/rtp/239.253.244.214:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 18. 国学                   http://192.168.0.1:5140/rtp/239.253.244.215:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 19. 星影                   http://192.168.0.1:5140/rtp/239.253.244.216:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 20. 早教                   http://192.168.0.1:5140/rtp/239.253.244.217:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 21. 墨宝                   http://192.168.0.1:5140/rtp/239.253.244.222:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 22. 光影                   http://192.168.0.1:5140/rtp/239.253.244.223:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 23. 戏曲                   http://192.168.0.1:5140/rtp/239.253.244.224:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 24. 解密                   http://192.168.0.1:5140/rtp/239.253.244.226:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 25. 武术                   http://192.168.0.1:5140/rtp/239.253.244.227:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 26. 美妆                   http://192.168.0.1:5140/rtp/239.253.244.228:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 27. 动画                   http://192.168.0.1:5140/rtp/239.253.244.229:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 28. 好学生                  http://192.168.0.1:5140/rtp/239.253.244.219:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 29. 音乐现场                 http://192.168.0.1:5140/rtp/239.253.244.202:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 30. 经典电影                 http://192.168.0.1:5140/rtp/239.253.244.126:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 31. 少儿动画                 http://192.168.0.1:5140/rtp/239.253.244.127:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 32. 相声小品                 http://192.168.0.1:5140/rtp/239.253.244.136:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 33. 魅力时尚                 http://192.168.0.1:5140/rtp/239.253.244.130:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 34. IPTV野外               http://192.168.0.1:5140/rtp/239.253.244.137:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 35. IPTV法治               http://192.168.0.1:5140/rtp/239.253.244.138:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 36. 爱体育                  http://192.168.0.1:5140/rtp/239.253.244.109:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 37. 爱生活                  http://192.168.0.1:5140/rtp/239.253.244.225:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 38. 爱综艺                  http://192.168.0.1:5140/rtp/239.253.244.129:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 39. 爱体育                  http://192.168.0.1:5140/rtp/239.253.244.131:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 40. 爱电影                  http://192.168.0.1:5140/rtp/239.253.244.128:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 41. 爱大剧                  http://192.168.0.1:5140/rtp/239.253.244.132:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 42. 海看演艺                 http://192.168.0.1:5140/rtp/239.253.244.158:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 43. 收视指南                 http://192.168.0.1:5140/rtp/239.253.244.124:8000?fcc=124.132.240.66:15970
-      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-
-【广东频道】（5个频道）
-  1. 广东民生                 http://183.11.239.36:808/hls/18/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 广东体育                 http://120.238.85.131:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 广东少儿                 http://120.238.85.131:9901/tsfile/live/1018_1.m3u8?key=txiptv&playlive=0&authid=0
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 广东影视                 http://120.238.85.131:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=0&authid=0
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 广东4K超高清              http://183.11.239.36:808/hls/9/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【浙江频道】（31个频道）
-  1. 浙江少儿                 http://ali-xwl.cztv.com/live/channel081080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 浙江少儿                 http://ali-xwl.cztv.com/live/channel08720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 浙江钱江都市               http://ali-xwl.cztv.com/live/channel021080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 浙江钱江都市               http://ali-xwl.cztv.com/live/channel02720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 浙江经济生活               http://ali-xwl.cztv.com/live/channel031080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 浙江经济生活               http://ali-xwl.cztv.com/live/channel03720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 浙江民生休闲               http://ali-xwl.cztv.com/live/channel061080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 浙江民生休闲               http://ali-xwl.cztv.com/live/channel06720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 浙江新闻                 http://ali-xwl.cztv.com/live/channel071080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 浙江新闻                 http://ali-xwl.cztv.com/live/channel07720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 浙江教科影视               http://ali-xwl.cztv.com/live/channel041080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 12. 浙江教科影视               http://ali-xwl.cztv.com/live/channel04720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 13. 浙江国际                 http://ali-xwl.cztv.com/live/channel101080Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 14. 浙江国际                 http://ali-xwl.cztv.com/live/channel10720Plxw.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 15. 嵊州综合                 http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 16. 象山综合                 http://l.cztvcloud.com/channels/lantian/SXxiangshan1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 17. 新昌综合                 http://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 18. 平湖新闻综合               http://l.cztvcloud.com/channels/lantian/SXpinghu1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 19. 平湖民生休闲               http://l.cztvcloud.com/channels/lantian/SXpinghu2/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 20. 青田电视台                http://l.cztvcloud.com/channels/lantian/SXqingtian1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 21. 余姚新闻综合               http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 22. 萧山综合                 http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 23. 萧山生活                 http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 24. 上虞新闻综合               http://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 25. 上虞文化影视               http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 26. 普陀电视台                http://l.cztvcloud.com/channels/lantian/SXputuo1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 27. 庆元电视台                http://l.cztvcloud.com/channels/lantian/SXqingyuan1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 28. 东阳影视生活               http://l.cztvcloud.com/channels/lantian/SXdongyang1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 29. 兰溪新闻综合               http://l.cztvcloud.com/channels/lantian/SXlanxi1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 30. 缙云新闻综合               http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 31. 龙泉电视台                http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【黑龙江频道】（8个频道）
-  1. 哈尔滨新闻综合              https://stream.hrbtv.net/xwzh/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 哈尔滨新闻综合              http://stream.hrbtv.net/xwzh/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 哈尔滨生活                https://stream.hrbtv.net/shpd/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 哈尔滨生活                http://stream.hrbtv.net/shpd/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 哈尔滨资讯                https://stream.hrbtv.net/zxpd/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 哈尔滨娱乐                http://stream.hrbtv.net/ylpd/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 哈尔滨影视                https://stream.hrbtv.net/yspd/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 哈尔滨影视                http://stream.hrbtv.net/yspd/sd/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【江西频道】（8个频道）
-  1. 崇仁电视台                http://play-a2.quklive.com/live/1744277411242065.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 崇仁电视台                http://play-a2.quklive.com/live/1744277411242065.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 宁都综合                 http://play-a2.quklive.com/live/1749084198822069.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 宁都综合                 http://play-a2.quklive.com/live/1749084198822069.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 万载电视台1               http://play-a2.quklive.com/live/1739162440932308.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 万载电视台1               http://play-a2.quklive.com/live/1739162440932308.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 广丰电视台                https://play-a2.quklive.com/live/1754033359790055.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 广丰电视台                https://play-a2.quklive.com/live/1754033359790055.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【陕西频道】（7个频道）
-  1. 陕西新闻资讯               http://gxlive.snrtv.com/sx1-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 陕西都市青春               http://gxlive.snrtv.com/sx2-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 陕西银龄                 http://gxlive.snrtv.com/sx3-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 陕西秦腔                 http://gxlive.snrtv.com/sx5-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 陕西体育休闲               http://gxlive.snrtv.com/sx7-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 农林卫视                 http://gxlive.snrtv.com/nlws-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 陕西西部电影               http://gxlive.snrtv.com/sx8-SD.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【重庆频道】（1个频道）
-  1. 万州三峡移民               http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【云南频道】（22个频道）
-  1. 文山综合                 http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 腾冲综合                 http://live.ynurl.com/video/s10012-TCTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 文山市电视台               http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel17/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 砚山县电视台               http://live.ynurl.com/video/s10020-ystv-zb/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 砚山县电视台               http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel16/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 西畴县电视台               http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel11/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 西畴县电视台               http://live.ynurl.com/video/s10060-XCTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 马关县电视台               http://live.ynurl.com/video/s10046-001/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 麻栗坡电视台               http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel18/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 丘北县电视台               http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel14/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 广南县电视台               http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel19/playlist.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 12. 广南县电视台               http://live.ynurl.com/video/s10031-gnxgbds/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 13. 芒市综合                 http://live.ynurl.com/video/s10001-mstv1/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 14. 盈江综合                 http://live.ynurl.com/video/s10016-yjtv1hd/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 15. 开远综合                 http://live.ynurl.com/video/s10044-KYTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 16. 绿春综合                 http://live.ynurl.com/video/s10042-LCTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 17. 施甸综合                 http://live.ynurl.com/video/s10048-SDTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 18. 金平综合                 http://live.ynurl.com/video/s10041-JPTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 19. 建水综合                 http://live.ynurl.com/video/s10045-JSTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 20. 石屏综合                 http://live.ynurl.com/video/s10059-SPTV/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 21. 蒙自电视台                http://live.ynurl.com/video/s10019-mzdst/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 22. 昌宁县电视台               http://live.ynurl.com/video/s10047-cntv/index.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【河北频道】（11个频道）
-  1. 保定1                  http://jwcdnqx.hebyun.com.cn/live/jybd/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 保定2                  http://jwcdnqx.hebyun.com.cn/live/bdxw1/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 保定3                  http://jwcdnqx.hebyun.com.cn/live/bddst/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 邯郸新闻                 https://jwcdnqx.hebyun.com.cn/live/hdxwzh/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 邯郸公共                 https://jwcdnqx.hebyun.com.cn/live/hdgg/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 邯郸科教                 https://jwcdnqx.hebyun.com.cn/live/hdkj/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 兴隆综合                 https://jwcdnqx.hebyun.com.cn/live/xlzh/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 兴隆影视                 https://jwcdnqx.hebyun.com.cn/live/xlys/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 迁西综合                 https://jwcdnqx.hebyun.com.cn/live/qxzhpd/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 迁西农业                 https://jwcdnqx.hebyun.com.cn/live/qxny/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 青县综合                 http://jwcdnqx.hebyun.com.cn/live/qxtvlive1/1500k/tzwj_video.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【福建频道】（1个频道）
-  1. 海峡卫视                 http://hlsztemgsplive.miguvideo.com:8080/migu/kailu/haixiaws/51/20230724/index.m3u8?msisdn=20260128173341b3c4f5734d004e7eaa8316e84d01c6d4&mdspid=&spid=600717&netType=4&sid=5910022183&pid=2028597139&timestamp=20260128173341&Channel_ID=0116_2600001300-99000-201600010013581&ProgramID=849119120&ParentNodeID=-99&assertID=5910022183&client_ip=42.6.115.25&SecurityKey=20260128173341&promotionId=&mvid=5900006231&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=ae10ffb8dffaad84fa408da016689f74
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【河南频道】（111个频道）
-  1. 济源综合                 http://tvpull.dxhmt.cn:9081/tv/19001-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 济源综合                 http://live.dxhmt.cn:9081/tv/19001-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 兰考综合                 http://tvpull.dxhmt.cn:9081/tv/10225-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 兰考综合                 http://live.dxhmt.cn:9081/tv/10225-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 伊川综合                 http://tvpull.dxhmt.cn:9081/tv/10329-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 伊川综合                 http://live.dxhmt.cn:9081/tv/10329-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 长垣综合                 http://tvpull.dxhmt.cn:9081/tv/10728-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 长垣综合                 http://live.dxhmt.cn:9081/tv/10728-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 开封新闻                 http://tvpull.dxhmt.cn:9081/tv/10200-2.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 开封新闻                 http://live.dxhmt.cn:9081/tv/10200-2.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 开封文化旅游               http://tvpull.dxhmt.cn:9081/tv/10200-3.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 12. 开封文化旅游               http://live.dxhmt.cn:9081/tv/10200-3.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 13. 内黄综合                 http://tvpull.dxhmt.cn:9081/tv/10527-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 14. 内黄综合                 http://live.dxhmt.cn:9081/tv/10527-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 15. 新县电视台                http://tvpull.dxhmt.cn:9081/tv/11523-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 16. 新县电视台                http://live.dxhmt.cn:9081/tv/11523-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 17. 淇县电视台                http://tvpull.dxhmt.cn:9081/tv/10622-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 18. 淇县电视台                http://live.dxhmt.cn:9081/tv/10622-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 19. 汤阴综合                 http://tvpull.dxhmt.cn:9081/tv/10523-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 20. 汤阴综合                 http://live.dxhmt.cn:9081/tv/10523-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 21. 新乡县综合                http://tvpull.dxhmt.cn:9081/tv/10721-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 22. 新乡县综合                http://live.dxhmt.cn:9081/tv/10721-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 23. 舞钢综合                 http://tvpull.dxhmt.cn:9081/tv/10481-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 24. 舞钢综合                 http://live.dxhmt.cn:9081/tv/10481-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 25. 灵宝新闻综合               http://tvpull.dxhmt.cn:9081/tv/11282-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 26. 灵宝新闻综合               http://live.dxhmt.cn:9081/tv/11282-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 27. 淮滨综合                 http://tvpull.dxhmt.cn:9081/tv/11527-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 28. 淮滨综合                 http://live.dxhmt.cn:9081/tv/11527-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 29. 光山综合                 http://tvpull.dxhmt.cn:9081/tv/11522-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 30. 光山综合                 http://live.dxhmt.cn:9081/tv/11522-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 31. 滑县TV1                http://tvpull.dxhmt.cn:9081/tv/10526-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 32. 滑县TV1                http://live.dxhmt.cn:9081/tv/10526-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 33. 滑县TV2                http://tvpull.dxhmt.cn:9081/tv/10526-2.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 34. 滑县TV2                http://live.dxhmt.cn:9081/tv/10526-2.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 35. 清丰电视台                http://tvpull.dxhmt.cn:9081/tv/10922-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 36. 清丰电视台                http://live.dxhmt.cn:9081/tv/10922-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 37. 通许综合                 http://tvpull.dxhmt.cn:9081/tv/10222-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 38. 通许综合                 http://live.dxhmt.cn:9081/tv/10222-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 39. 沈丘新闻综合               http://tvpull.dxhmt.cn:9081/tv/11624-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 40. 沈丘新闻综合               http://live.dxhmt.cn:9081/tv/11624-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 41. 桐柏新闻综合               http://tvpull.dxhmt.cn:9081/tv/11330-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 42. 桐柏新闻综合               http://live.dxhmt.cn:9081/tv/11330-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 43. 夏邑综合                 http://tvpull.dxhmt.cn:9081/tv/11426-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 44. 夏邑综合                 http://live.dxhmt.cn:9081/tv/11426-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 45. 平兴新闻综合               http://tvpull.dxhmt.cn:9081/tv/11723-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 46. 平兴新闻综合               http://live.dxhmt.cn:9081/tv/11723-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 47. 偃师新闻                 http://tvpull.dxhmt.cn:9081/tv/10381-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 48. 偃师新闻                 http://live.dxhmt.cn:9081/tv/10381-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 49. 上街电视台                http://tvpull.dxhmt.cn:9081/tv/10106-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 50. 上街电视台                http://live.dxhmt.cn:9081/tv/10106-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 51. 沁阳新闻综合               http://tvpull.dxhmt.cn:9081/tv/10882-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 52. 沁阳新闻综合               http://live.dxhmt.cn:9081/tv/10882-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 53. 项城电视台                http://tvpull.dxhmt.cn:9081/tv/11681-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 54. 项城电视台                http://live.dxhmt.cn:9081/tv/11681-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 55. 汝阳新闻综合               http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 56. 汝阳新闻综合               http://live.dxhmt.cn:9081/tv/10326-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 57. 新安新闻综合               http://tvpull.dxhmt.cn:9081/tv/10323-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 58. 新安新闻综合               http://live.dxhmt.cn:9081/tv/10323-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 59. 罗山电视台                http://tvpull.dxhmt.cn:9081/tv/11521-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 60. 罗山电视台                http://live.dxhmt.cn:9081/tv/11521-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 61. 潢川电视台                http://tvpull.dxhmt.cn:9081/tv/11526-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 62. 潢川电视台                http://live.dxhmt.cn:9081/tv/11526-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 63. 上蔡1                  http://tvpull.dxhmt.cn:9081/tv/11722-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 64. 上蔡1                  http://live.dxhmt.cn:9081/tv/11722-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 65. 确山电视台1               http://live.dxhmt.cn:9081/tv/11725-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 66. 荥阳1                  http://tvpull.dxhmt.cn:9081/tv/10182-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 67. 荥阳1                  http://live.dxhmt.cn:9081/tv/10182-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 68. 温县融媒                 http://tvpull.dxhmt.cn:9081/tv/10825-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 69. 温县融媒                 http://live.dxhmt.cn:9081/tv/10825-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 70. 建安新闻                 http://tvpull.dxhmt.cn:9081/tv/11003-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 71. 建安新闻                 http://live.dxhmt.cn:9081/tv/11003-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 72. 封丘新闻综合               http://tvpull.dxhmt.cn:9081/tv/10727-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 73. 封丘新闻综合               http://live.dxhmt.cn:9081/tv/10727-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 74. 林州电视台                http://tvpull.dxhmt.cn:9081/tv/10581-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 75. 林州电视台                http://live.dxhmt.cn:9081/tv/10581-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 76. 鄢陵综合                 http://tvpull.dxhmt.cn:9081/tv/11024-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 77. 鄢陵综合                 http://live.dxhmt.cn:9081/tv/11024-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 78. 邓州新闻                 http://tvpull.dxhmt.cn:9081/tv/11381-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 79. 邓州新闻                 http://live.dxhmt.cn:9081/tv/11381-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 80. 社旗电视台                http://tvpull.dxhmt.cn:9081/tv/11327-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 81. 社旗电视台                http://live.dxhmt.cn:9081/tv/11327-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 82. 镇平新闻综合               http://tvpull.dxhmt.cn:9081/tv/11324-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 83. 镇平新闻综合               http://live.dxhmt.cn:9081/tv/11324-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 84. 孟州1                  http://tvpull.dxhmt.cn:9081/tv/10883-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 85. 孟州1                  http://live.dxhmt.cn:9081/tv/10883-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 86. 郏县综合                 http://tvpull.dxhmt.cn:9081/tv/10425-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 87. 郏县综合                 http://live.dxhmt.cn:9081/tv/10425-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 88. 浚县电视台                http://tvpull.dxhmt.cn:9081/tv/10621-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 89. 浚县电视台                http://live.dxhmt.cn:9081/tv/10621-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 90. 舞阳新闻综合               http://tvpull.dxhmt.cn:9081/tv/11121-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 91. 舞阳新闻综合               http://live.dxhmt.cn:9081/tv/11121-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 92. 渑池新闻综合               http://tvpull.dxhmt.cn:9081/tv/11221-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 93. 渑池新闻综合               http://live.dxhmt.cn:9081/tv/11221-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 94. 武陟新闻综合               http://tvpull.dxhmt.cn:9081/tv/10823-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 95. 武陟新闻综合               http://live.dxhmt.cn:9081/tv/10823-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 96. 新郑1                  http://tvpull.dxhmt.cn:9081/tv/10184-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 97. 新郑1                  http://live.dxhmt.cn:9081/tv/10184-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 98. 辉县新闻综合               http://tvpull.dxhmt.cn:9081/tv/10782-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 99. 辉县新闻综合               http://live.dxhmt.cn:9081/tv/10782-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-100. 永城新闻                 http://tvpull.dxhmt.cn:9081/tv/11481-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-101. 永城新闻                 http://live.dxhmt.cn:9081/tv/11481-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-102. 禹州综合                 http://tvpull.dxhmt.cn:9081/tv/11081-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-103. 禹州综合                 http://live.dxhmt.cn:9081/tv/11081-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-104. 杞县新闻综合               http://tvpull.dxhmt.cn:9081/tv/10221-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-105. 杞县新闻综合               http://live.dxhmt.cn:9081/tv/10221-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-106. 林颖综合                 http://tvpull.dxhmt.cn:9081/tv/11122-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-107. 林颖综合                 http://live.dxhmt.cn:9081/tv/11122-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-108. 宝丰1                  http://tvpull.dxhmt.cn:9081/tv/10421-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-109. 宝丰1                  http://live.dxhmt.cn:9081/tv/10421-1.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-110. 新密新闻频道               http://tvpull.dxhmt.cn:9081/tv/10183-2.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-111. 新密新闻频道               http://live.dxhmt.cn:9081/tv/10183-2.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【甘肃频道】（35个频道）
-  1. 嘉峪关综合                https://play.kankanlive.com/live/1658978094528926.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. 嘉峪关公共                https://play.kankanlive.com/live/1658978141553927.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. 金昌综合                 http://play.kankanlive.com/live/1660096574549900.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. 金昌综合                 http://play.kankanlive.com/live/1660096574549900.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. 张掖新闻                 http://play.kankanlive.com/live/1675849013180979.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. 张掖新闻                 http://play.kankanlive.com/live/1675849013180979.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 定西综合                 https://play.kankanlive.com/live/1675303871634928.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 定西综合                 http://play.kankanlive.com/live/1675303871634928.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 定西文旅生活               http://play.kankanlive.com/live/1675303983674929.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 定西文旅生活               http://play.kankanlive.com/live/1675303983674929.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 天祝电视台                https://play.kankanlive.com/live/1656487214793905.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 12. 泰安综合                 http://play.kankanlive.com/live/1680577080200944.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 13. 泰安综合                 http://play.kankanlive.com/live/1680577080200944.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 14. 静宁新闻综合               https://play.kankanlive.com/live/1658194434596952.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 15. 景泰电视台                https://play.kankanlive.com/live/1624439143745981.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 16. 西和综合                 https://play.kankanlive.com/live/1659926941626981.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 17. 古浪综合                 http://play.kankanlive.com/live/1647934328544907.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 18. 古浪综合                 http://play.kankanlive.com/live/1647934328544907.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 19. 永昌电视台                https://play.kankanlive.com/live/1652755738635915.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 20. 陇西电视台                https://play.kankanlive.com/live/1669881644081970.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 21. 平川电视台                http://play.kankanlive.com/live/1658907556249918.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 22. 平川电视台                http://play.kankanlive.com/live/1658907556249918.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 23. 岷县电视台                http://play.kankanlive.com/live/1672715401874967.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 24. 岷县电视台                http://play.kankanlive.com/live/1672715401874967.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 25. 庄浪电视台                https://play.kankanlive.com/live/1655107221272926.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 26. 金川电视台                http://play.kankanlive.com/live/1657360567739997.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 27. 金川电视台                http://play.kankanlive.com/live/1657360567739997.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 28. 安定电视台                https://play.kankanlive.com/live/1672881652415978.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 29. 安定电视台                http://play.kankanlive.com/live/1672881652415978.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 30. 靖远电视台                https://play.kankanlive.com/live/1658390970673988.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 31. 天祝电视台                http://play.kankanlive.com/live/1656487214793905.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 32. 天祝电视台                http://play.kankanlive.com/live/1656487214793905.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 33. 通渭电视台                http://play.kankanlive.com/live/1661761962676984.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 34. 通渭电视台                http://play.kankanlive.com/live/1661761962676984.flv
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 35. 秦安电视台                https://play.kankanlive.com/live/1680577080200944.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-
-【4K超高清】（11个频道）
-  1. CCTV1超清              http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173208aff2fbf0f2de494d8e87694f8dd26ea7&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173208&Channel_ID=0116_2600001300-99000-201600010013578&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=61.189.20.8&SecurityKey=20260128173208&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=2c70c9397dacc5af2f5d1c107fe9cb03
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  2. CCTV1超清              http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=202601281732396f074aa8276d4b8898293374c50cde07&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173239&Channel_ID=0116_2600001300-99000-201600010013579&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=61.189.20.8&SecurityKey=20260128173239&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=bac21a9e3b8ba352ab3ce93243efddd3
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  3. CCTV1超清              http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=20260128173310ba241783786b433596c93dbb7f179998&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128173310&Channel_ID=0116_2600001300-99000-201600010013580&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=42.6.115.117&SecurityKey=20260128173310&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=a7faba745a3aeca3cd6e3721fd47ef2c
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  4. CCTV13超清             http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=202601281729027387a15c63f04bf5853d6fdbe8095690&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172902&Channel_ID=0116_2600001300-99000-201600010013572&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.117.26&SecurityKey=20260128172902&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=6c6d131e19d481b3215a1d3f1be3d463
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  5. CCTV13超清             http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=2026012817293376dc2e8784c94946b189e7b6eb96dbc0&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128172933&Channel_ID=0116_2600001300-99000-201600010013573&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=218.60.117.229&SecurityKey=20260128172933&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=3aa13f7a43558821e52b4fcca9000cd2
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  6. CCTV13超清             http://hlsztemgsplive.miguvideo.com:8080/envivo_x/2018/SD/cctv13/2000/index.m3u8?msisdn=2026012817300439cf08816a294b02a80bd42ce52f893d&mdspid=&spid=699004&netType=4&sid=2202208864&pid=2028597139&timestamp=20260128173004&Channel_ID=0116_2600001300-99000-201600010013574&ProgramID=608807423&ParentNodeID=-99&assertID=2202208864&client_ip=123.188.239.74&SecurityKey=20260128173004&promotionId=&mvid=2202208864&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=f32908fa393eaba7a5f2117e21834014
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  7. 湖南卫视4K               http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  8. 湖南卫视4K               http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
-  9. 浙江卫视4K               http://ali-xwl.cztv.com/live/channel4k2160p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 10. 浙江卫视4K               https://bd-xwl.cztv.com/live/channel4k2160p.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
- 11. 浙江卫视4K               http://play-qukan.cztv.com/live/1758879019692345.m3u8
-      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
 
