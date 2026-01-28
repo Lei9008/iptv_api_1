@@ -1,0 +1,159 @@
+name: 1.Update IPTV Sources（更新IPTV源）
+
+on:
+  schedule:
+    # 每3天UTC时间16:55执行（对应上海时间00:55）
+    - cron: '55 16 */3 * *'  
+  workflow_dispatch:  # 允许手动触发
+    inputs:
+      force_update:
+        description: '强制更新（即使无文件变更）'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  TZ: Asia/Shanghai  # 设置时区为上海
+  PYTHONUNBUFFERED: "1"  # 禁用Python输出缓冲，实时打印日志
+
+jobs:
+  update-iptv-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240  # 设置任务超时时间（避免无限运行）
+    permissions:
+      contents: write  # 授予提交代码的权限
+      actions: write   # 授予管理workflow的权限（可选，用于清理旧运行记录）
+
+    steps:
+      - name: 检出代码库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 拉取完整历史，避免rebase冲突
+          ref: main       # 明确指定主分支
+
+      - name: 系统环境准备
+        run: |
+          # 更新系统并安装依赖
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends ffmpeg curl wget
+          sudo apt-get clean
+          # 检查磁盘空间（避免空间不足）
+          df -h
+          # 检查网络连通性
+          curl -I https://raw.githubusercontent.com -m 10
+
+      - name: 设置Python环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'  # 自动缓存pip依赖
+          cache-dependency-path: |
+            **/requirements.txt
+            *.txt
+
+      - name: 安装Python依赖
+        run: |
+          # 升级pip并安装依赖
+          python -m pip install --upgrade pip setuptools wheel
+          pip install requests>=2.31.0 aiohttp>=3.9.0 python-dotenv
+          # 打印依赖版本，便于调试
+          pip list
+          # 验证依赖安装
+          python -c "import requests, aiohttp; print('依赖安装成功')"
+
+      - name: 执行IPTV脚本
+        id: run_script
+        continue-on-error: false  # 脚本执行失败则终止任务
+        run: |
+          # 打印系统信息
+          echo "========== 系统信息 =========="
+          echo "Python版本: $(python --version)"
+          echo "工作目录: $(pwd)"
+          echo "当前时间: $(date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "磁盘空间: $(df -h . | awk 'NR==2 {print $4}') 可用"
+          echo "========== 执行脚本 =========="
+          # 执行主脚本并保存详细日志
+          python main.py 2>&1 | tee iptv_run.log
+          # 检查脚本执行结果
+          if [ ${PIPESTATUS[0]} -ne 0 ]; then
+            echo "脚本执行失败！"
+            cat iptv_run.log
+            exit 1
+          fi
+          echo "script_exit_code=0" >> $GITHUB_OUTPUT
+
+      - name: 检查文件变更
+        id: check_changes
+        run: |
+          # 检查输出目录是否存在
+          if [ -d "output" ]; then
+            echo "输出目录存在，文件列表："
+            ls -l output/
+          fi
+          # 检查是否有文件变更
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "✅ 无文件变更"
+            # 强制更新逻辑
+            if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
+              echo "⚠️ 检测到强制更新标记，将创建空提交"
+              echo "changed=true" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "🔄 检测到文件变更，变更列表："
+            git status --short
+            # 显示变更内容摘要
+            git diff --stat
+          fi
+
+      - name: 提交并推送变更
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          # 配置Git用户信息
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git config --local pull.rebase true  # 默认使用rebase
+
+          # 添加所有变更文件
+          git add -A
+
+          # 构建提交信息
+          if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
+            commit_msg="Force update IPTV sources: $(date '+%Y-%m-%d %H:%M:%S')"
+          else
+            commit_msg="Auto-update IPTV sources: $(date '+%Y-%m-%d %H:%M:%S')"
+          fi
+
+          # 提交变更
+          git commit -m "$commit_msg"
+
+          # 安全推送（解决冲突）
+          echo "🔄 推送变更到远程仓库..."
+          git pull origin main --rebase || (git rebase --abort && git pull origin main)
+          git push origin main --force-with-lease  # 安全强制推送
+
+          echo "✅ 变更已成功推送！"
+
+      - name: 上传执行日志
+        if: always()  # 无论任务成功/失败都上传日志
+        uses: actions/upload-artifact@v4
+        with:
+          name: iptv-execution-log-${{ github.run_id }}
+          path: |
+            iptv_run.log
+            output/*.log
+            function.log
+          retention-days: 7  # 日志保留7天
+
+      - name: 清理旧的Workflow运行记录（可选）
+        if: always()
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          keep_minimum_runs: 3  # 保留最近3条运行记录
+          retain_days: 0        # 保留7天内的运行记录
+          ignore_error: true    # 忽略清理错误
+
+     
