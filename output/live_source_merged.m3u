@@ -1,9 +1,9 @@
 #EXTM3U x-tvg-url=""
 # 仅保留demo.txt匹配内容 | 按demo.txt分类顺序排列
-# 生成时间：2026-01-28 13:17:26
-# 总频道数：6611
+# 生成时间：2026-01-28 13:26:42
+# 总频道数：6588
 
-# ===== 央视频道（2153个频道） =====
+# ===== 央视频道（2150个频道） =====
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="" group-title="央视频道",CCTV1
 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv1hd/1200/index.m3u8?msisdn=202601281135267bd2143ab405460ebdece66a5dbe9e48&mdspid=&spid=699004&netType=4&sid=2201057821&pid=2028597139&timestamp=20260128113526&Channel_ID=0116_2600001300-99000-201600010013538&ProgramID=608807420&ParentNodeID=-99&assertID=2201057821&client_ip=106.74.25.169&SecurityKey=20260128113526&promotionId=&mvid=2201057821&mcid=500020&playurlVersion=ZQ-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d4463fa784abbdefce8dbacd96728c48
 
@@ -3836,15 +3836,6 @@ http://183.215.134.239:19901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authi
 http://nas.home.plugintool.top:2333/udp/239.76.253.61:9000
 
 #EXTINF:-1 tvg-id="" tvg-name="CCTV1" tvg-logo="" group-title="央视频道",CCTV1
-http://cdn6.veryfast.filegear-sg.me/live/cctv1/stream.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="CCTV13" tvg-logo="" group-title="央视频道",CCTV13
-http://cdn3.veryfast.filegear-sg.me/live/cctv13/stream.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="重温经典" tvg-logo="" group-title="央视频道",重温经典
-http://cdn6.veryfast.filegear-sg.me/live/cwjd/stream.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="CCTV1" tvg-logo="" group-title="央视频道",CCTV1
 http://111.170.157.210:1081/?id=608807420&auth=95d4c11f9a4bc430bf05d5da4ace7ccb7b891049106baf6eb75d2b839bd66740540a16966d07620b019220384a4f0be5
 
 #EXTINF:-1 tvg-id="" tvg-name="CCTV1" tvg-logo="" group-title="央视频道",CCTV1
@@ -6863,7 +6854,7 @@ http://121.29.169.134:2082/rtp/239.253.93.252:6430
 #EXTINF:-1 tvg-id="" tvg-name="第一剧场" tvg-logo="" group-title="央视付费频道",第一剧场
 http://121.29.169.134:2082/rtp/239.253.93.138:6428
 
-# ===== 卫视频道（3540个频道） =====
+# ===== 卫视频道（3529个频道） =====
 #EXTINF:-1 tvg-id="" tvg-name="浙江卫视" tvg-logo="" group-title="卫视频道",浙江卫视
 http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8
 
@@ -13255,39 +13246,6 @@ http://api.kkitv.itv888.cn:8080/hls/iftsd32ykm/index.m3u8
 http://api.kkitv.itv888.cn:8080/hls/vr12qgtucx/index.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="湖南卫视" tvg-logo="" group-title="卫视频道",湖南卫视
-https://smart.946985.filegear-sg.me/smart.php?id=hunan_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="浙江卫视" tvg-logo="" group-title="卫视频道",浙江卫视
-https://smart.946985.filegear-sg.me/smart.php?id=zhejiang_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="江苏卫视" tvg-logo="" group-title="卫视频道",江苏卫视
-https://smart.946985.filegear-sg.me/smart.php?id=jiangsu_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="东方卫视" tvg-logo="" group-title="卫视频道",东方卫视
-https://smart.946985.filegear-sg.me/smart.php?id=dongfangweishi_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="北京卫视" tvg-logo="" group-title="卫视频道",北京卫视
-https://smart.946985.filegear-sg.me/smart.php?id=beijing
-
-#EXTINF:-1 tvg-id="" tvg-name="深圳卫视" tvg-logo="" group-title="卫视频道",深圳卫视
-https://smart.946985.filegear-sg.me/smart.php?id=shenzhen
-
-#EXTINF:-1 tvg-id="" tvg-name="广东卫视" tvg-logo="" group-title="卫视频道",广东卫视
-https://smart.946985.filegear-sg.me/smart.php?id=guangdongweishi_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="东南卫视" tvg-logo="" group-title="卫视频道",东南卫视
-https://smart.946985.filegear-sg.me/smart.php?id=fujian
-
-#EXTINF:-1 tvg-id="" tvg-name="广西卫视" tvg-logo="" group-title="卫视频道",广西卫视
-https://smart.946985.filegear-sg.me/smart.php?id=guangxi
-
-#EXTINF:-1 tvg-id="" tvg-name="湖北卫视" tvg-logo="" group-title="卫视频道",湖北卫视
-https://smart.946985.filegear-sg.me/smart.php?id=hubei
-
-#EXTINF:-1 tvg-id="" tvg-name="四川卫视" tvg-logo="" group-title="卫视频道",四川卫视
-https://smart.946985.filegear-sg.me/smart.php?id=sichuan_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="湖南卫视" tvg-logo="" group-title="卫视频道",湖南卫视
 http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
 
 #EXTINF:-1 tvg-id="" tvg-name="江苏卫视" tvg-logo="" group-title="卫视频道",江苏卫视
@@ -18806,7 +18764,7 @@ http://221.226.4.10:9901/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="少儿频道",优漫卡通
 http://58.221.214.82:9901/tsfile/live/0008_2.m3u8?key=txiptv
 
-# ===== 湾区频道（276个频道） =====
+# ===== 湾区频道（267个频道） =====
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/翡翠台.png" group-title="湾区频道",翡翠台
 http://cdn9.163189.xyz/smt1.1.php?id=jade_twn
 
@@ -19400,33 +19358,6 @@ http://free.cnlive.club/channel/n49654430.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="凤凰资讯" tvg-logo="" group-title="湾区频道",凤凰资讯
 http://www.kaniptv.cn/mk.php?ip=node-111-20-163-124.speedtest.cn:8001&id=live1200
-
-#EXTINF:-1 tvg-id="" tvg-name="翡翠台" tvg-logo="" group-title="湾区频道",翡翠台
-https://smart.946985.filegear-sg.me/smart.php?id=jade_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="翡翠台" tvg-logo="" group-title="湾区频道",翡翠台
-https://smart.946985.filegear-sg.me/smart.php?id=Jade_xue
-
-#EXTINF:-1 tvg-id="" tvg-name="翡翠台" tvg-logo="" group-title="湾区频道",翡翠台
-http://mytv.veryfast.filegear-sg.me/hls/fct/playlist.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="凤凰中文" tvg-logo="" group-title="湾区频道",凤凰中文
-https://smart.946985.filegear-sg.me/smart.php?id=phoenixtv_hd
-
-#EXTINF:-1 tvg-id="" tvg-name="凤凰中文" tvg-logo="" group-title="湾区频道",凤凰中文
-http://cdn6.veryfast.filegear-sg.me/live/fhzw/stream.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="凤凰资讯" tvg-logo="" group-title="湾区频道",凤凰资讯
-https://smart.946985.filegear-sg.me/smart.php?id=phoenixinfo_hd
-
-#EXTINF:-1 tvg-id="" tvg-name="凤凰资讯" tvg-logo="" group-title="湾区频道",凤凰资讯
-http://cdn6.veryfast.filegear-sg.me/live/fhzx/stream.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="凤凰香港" tvg-logo="" group-title="湾区频道",凤凰香港
-https://smart.946985.filegear-sg.me/smart.php?id=hkphoenix_twn
-
-#EXTINF:-1 tvg-id="" tvg-name="凤凰香港" tvg-logo="" group-title="湾区频道",凤凰香港
-http://cdn6.veryfast.filegear-sg.me/live/fhhk/stream.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="凤凰中文" tvg-logo="" group-title="湾区频道",凤凰中文
 http://rihou.cc:555/tv/[PL]凤凰中文
