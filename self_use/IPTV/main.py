@@ -371,7 +371,7 @@ def merge_channels(target: OrderedDict, source: OrderedDict):
                 url_set.add(url)
 
 def generate_summary(all_channels: OrderedDict):
-    """生成汇总文件（基于标准化后的频道名和分类）"""
+    """生成汇总文件（修复正则转义问题，兼容特殊字符）"""
     summary_path = OUTPUT_FOLDER / "live_source_summary.txt"
     m3u_path = OUTPUT_FOLDER / "live_source_merged.m3u"
     try:
@@ -391,27 +391,45 @@ def generate_summary(all_channels: OrderedDict):
                     f.write(f"{idx:>3}. {name:<20} {url}\n")
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
-        # 生成合并后的M3U文件（group-title已标准化）
+        
+        # 生成合并后的M3U文件（修复正则转义问题）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源合并文件（URL去重+频道名标准化+分类名标准化）\n")
             f.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
+            
             for group_title, channel_list in all_channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
                     if meta and meta.raw_extinf:
-                        # 替换原始EXTINF中的频道名和group-title为标准化后的值
-                        standard_extinf = re.sub(r'group-title="[^"]*"', f'group-title="{group_title}"', meta.raw_extinf)
-                        standard_extinf = re.sub(r',\s*.+$', f', {name}', standard_extinf)
+                        # 修复点1：先替换group-title（避免转义问题）
+                        standard_extinf = meta.raw_extinf
+                        # 使用字符串替换而非正则替换group-title，避免转义
+                        if 'group-title="' in standard_extinf:
+                            # 提取group-title部分并替换
+                            start_idx = standard_extinf.find('group-title="') + len('group-title="')
+                            end_idx = standard_extinf.find('"', start_idx)
+                            if end_idx > start_idx:
+                                standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
+                        
+                        # 修复点2：替换频道名（使用字符串分割+拼接，避免正则转义）
+                        if ',' in standard_extinf:
+                            extinf_part, old_name = standard_extinf.rsplit(',', 1)
+                            # 转义频道名中的特殊字符（如\n、\u、$等）
+                            safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
+                            standard_extinf = extinf_part + ',' + safe_name
                         f.write(standard_extinf + "\n")
                     else:
+                        # 直接生成标准化的EXTINF行，避免正则
                         f.write(f"#EXTINF:-1 tvg-name=\"{name}\" group-title=\"{group_title}\",{name}\n")
                     f.write(url + "\n\n")
+        
         logger.info(f"\n汇总文件生成完成：")
         logger.info(f"  - 汇总信息：{summary_path}")
         logger.info(f"  - 合并M3U：{m3u_path}")
+        
     except Exception as e:
         logger.error(f"生成汇总文件失败：{str(e)}", exc_info=True)
 
