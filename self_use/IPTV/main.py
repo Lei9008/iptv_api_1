@@ -68,7 +68,7 @@ url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
 def clean_group_title(group_title: str) -> str:
     """
     标准化group-title：
-    1. 优先匹配config中的地区→频道映射
+    1. 优先匹配config中的多对一映射（支持模糊匹配）
     2. 过滤emoji、特殊符号，保留核心文字
     :param group_title: 原始group-title（含emoji/特殊符号/地区名称）
     :return: 标准化后的纯文字group-title
@@ -76,31 +76,41 @@ def clean_group_title(group_title: str) -> str:
     if not group_title:
         return "未分类"
     
-    # 步骤1：优先匹配config中的group-title映射（精确匹配）
     original_title = group_title.strip()
-    if original_title in config.group_title_mapping:
-        mapped_title = config.group_title_mapping[original_title]
-        logger.debug(f"group-title映射匹配：{original_title} → {mapped_title}")
-        group_title = mapped_title
+    result_title = original_title
+    
+    # 步骤1：匹配多对一映射（精确+模糊）
+    # 1.1 精确匹配原始名称
+    if original_title in config.group_title_reverse_mapping:
+        result_title = config.group_title_reverse_mapping[original_title]
+        logger.debug(f"group-title精确映射：{original_title} → {result_title}")
     else:
-        # 模糊匹配（处理带emoji/特殊符号的情况，如"🔥安徽地区"）
-        # 提取纯文字部分再匹配映射
+        # 1.2 模糊匹配（提取纯文字后匹配）
         pure_text = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9]+', original_title))
-        if pure_text in config.group_title_mapping:
-            mapped_title = config.group_title_mapping[pure_text]
-            logger.debug(f"group-title模糊映射匹配：{original_title} → {mapped_title}")
-            group_title = mapped_title
+        if pure_text in config.group_title_reverse_mapping:
+            result_title = config.group_title_reverse_mapping[pure_text]
+            logger.debug(f"group-title模糊映射：{original_title} → {result_title}")
+        else:
+            # 1.3 关键词匹配（如包含"超清"则匹配4K超高清）
+            for target, originals in config.group_title_mapping.items():
+                for original in originals:
+                    if original in pure_text:
+                        result_title = target
+                        logger.debug(f"group-title关键词映射：{original_title} → {result_title}")
+                        break
+                if result_title != original_title:
+                    break
     
     # 步骤2：过滤emoji、特殊符号，保留核心文字
-    cleaned = re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title)
-    result = ''.join(cleaned).strip() or "未分类"
+    cleaned = re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', result_title)
+    final_title = ''.join(cleaned).strip() or "未分类"
     
     # 步骤3：长度兜底（超过20字截取）
-    if len(result) > 20:
-        result = result[:20]
+    if len(final_title) > 20:
+        final_title = final_title[:20]
     
-    logger.debug(f"group-title最终标准化：{original_title} → {result}")
-    return result
+    logger.debug(f"group-title最终标准化：{original_title} → {final_title}")
+    return final_title
 
 def global_replace_cctv_name(content: str) -> str:
     """
