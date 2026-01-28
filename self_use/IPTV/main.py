@@ -118,18 +118,20 @@ def parse_demo_txt() -> Tuple[Dict[str, str], Set[str]]:
 demo_channel_to_group, demo_all_groups = parse_demo_txt()
 
 # ===================== 核心工具函数 =====================
-def clean_group_title(group_title: str, channel_name: str = "") -> str:
+def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
     """
-    标准化group-title（新增demo.txt高优先级匹配）：
-    1. 最高优先级：通过频道名匹配demo.txt的分类映射
-    2. 第二优先级：匹配config中的group-title多对一映射（精确+模糊+关键词）
-    3. 第三优先级：过滤emoji、特殊符号，保留核心文字
-    :param group_title: 原始group-title
-    :param channel_name: 标准化后的频道名（用于demo.txt匹配）
+    标准化group-title（新增空值校验+demo.txt高优先级匹配）：
+    1. 空值兜底：group_title/channel_name为None时转为空字符串
+    2. 最高优先级：通过频道名匹配demo.txt的分类映射
+    3. 第二优先级：匹配config中的group-title多对一映射（精确+模糊+关键词）
+    4. 第三优先级：过滤emoji、特殊符号，保留核心文字
+    :param group_title: 原始group-title（可能为None）
+    :param channel_name: 标准化后的频道名（用于demo.txt匹配，可能为None）
     :return: 标准化后的group-title
     """
-    if not group_title and not channel_name:
-        return "未分类"
+    # 关键修复1：空值兜底，避免None调用strip()
+    group_title = group_title or ""
+    channel_name = channel_name or ""
     
     original_title = group_title.strip()
     result_title = original_title
@@ -201,14 +203,15 @@ def global_replace_cctv_name(content: str) -> str:
     
     return replaced_content
 
-def standardize_cctv_name(channel_name: str) -> str:
+def standardize_cctv_name(channel_name: Optional[str]) -> str:
     """
-    标准化单个央视频道名称（兜底处理，防止全局替换遗漏）
-    :param channel_name: 原始频道名称
+    标准化单个央视频道名称（新增空值校验，兜底处理）
+    :param channel_name: 原始频道名称（可能为None）
     :return: 标准化后的名称
     """
+    # 关键修复2：空值兜底
     if not channel_name:
-        return channel_name
+        return "未知频道"
     
     # 先匹配基础映射
     if channel_name in config.cntvNamesReverse:
@@ -287,7 +290,7 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
 
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[ChannelMeta]]:
     """
-    M3U精准提取（标准化group-title和频道名，新增demo.txt分类匹配）
+    M3U精准提取（标准化group-title和频道名，新增空值校验）
     :return: (按标准化group-title分类的频道字典, 完整的ChannelMeta列表)
     """
     m3u_pattern = re.compile(
@@ -318,19 +321,20 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
             if attr1 == "tvg" and attr2 == "id":
                 tvg_id = value
             elif attr1 == "tvg" and attr2 == "name":
-                tvg_name = standardize_cctv_name(value)  # 标准化tvg-name
+                tvg_name = standardize_cctv_name(value)  # 标准化tvg-name（已做空值校验）
             elif attr1 == "tvg" and attr2 == "logo":
                 tvg_logo = value
             elif attr1 == "group" and attr2 == "title":
-                group_title = value  # 先保留原始group-title，后续统一标准化
+                group_title = value  # 先保留原始group-title（可能为None）
         
         # 提取并标准化逗号后的频道名
         name_match = re.search(r',\s*(.+?)\s*$', raw_extinf)
         if name_match:
-            channel_name = name_match.group(1).strip()
-            channel_name = standardize_cctv_name(channel_name)
+            channel_name = standardize_cctv_name(name_match.group(1).strip())  # 已做空值校验
+        else:
+            channel_name = "未知频道"
         
-        # 核心修改：传入频道名，执行含demo.txt匹配的group-title标准化
+        # 核心修改：传入可能为None的group-title，函数内部已做空值兜底
         group_title = clean_group_title(group_title, channel_name)
         
         # 创建元信息对象（存储标准化后的名称和分类）
@@ -358,7 +362,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDict, List[C
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
     """
-    智能提取频道（标准化group-title和频道名，新增demo.txt分类匹配）
+    智能提取频道（标准化group-title和频道名，新增空值校验）
     先全局替换源内容中的不规范名称，再解析
     :return: 按标准化分类整理的频道字典
     """
@@ -393,12 +397,12 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                     url = url.strip()
                     if not url or url in seen_urls:
                         continue
-                    # 标准化名称（兜底）
+                    # 标准化名称（已做空值校验）
                     standard_name = standardize_cctv_name(name)
                     seen_urls.add(url)
                     url_source_mapping[url] = source_url
                     
-                    # 核心修改：传入频道名，执行含demo.txt匹配的group-title标准化
+                    # 核心修改：传入可能为None的current_group，函数内部已做空值兜底
                     group_title = clean_group_title(current_group, standard_name)
                     
                     # 创建元信息
@@ -515,7 +519,7 @@ def main():
         global channel_meta_cache, url_source_mapping
         channel_meta_cache = {}
         url_source_mapping = {}
-        logger.info("===== 开始处理直播源（demo.txt高优先级分类版） =====")
+        logger.info("===== 开始处理直播源（demo.txt高优先级分类+空值校验版） =====")
         
         # 从config.py获取源URL列表
         source_urls = getattr(config, 'SOURCE_URLS', [])
@@ -538,7 +542,7 @@ def main():
                 continue
             # 2. 全局替换源内容中的不规范央视频道名
             content = global_replace_cctv_name(content)
-            # 3. 提取频道（含demo.txt高优先级分类匹配）
+            # 3. 提取频道（含demo.txt高优先级分类匹配+空值校验）
             extracted_channels = extract_channels_from_content(content, url)
             # 4. 合并频道（自动去重，分类已标准化）
             merge_channels(all_channels, extracted_channels)
