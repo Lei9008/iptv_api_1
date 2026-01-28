@@ -2,8 +2,8 @@ name: 2.IPTV 源汇总(IPTV Source Summary)
 
 on:
   schedule:
-    # 每3天UTC时间1:35执行（对应上海时间9:35）
-    - cron: '35 1 */3 * *'  
+    # 每3天UTC时间2:00执行（对应上海时间10:28）
+    - cron: '00 2 */3 * *'  
   workflow_dispatch:  # 允许手动触发
    
 env:
