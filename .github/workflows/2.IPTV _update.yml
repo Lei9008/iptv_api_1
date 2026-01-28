@@ -2,8 +2,8 @@ name: 2.IPTV 源汇总整合(IPTV Source Summary and Integration)
 
 on:
   schedule:
-    # 每3天UTC时间22:55执行（对应上海时间22:55）
-    - cron: '55 14 */3 * *'  
+    # 每3天UTC时间22:35执行（对应上海时间22:35）
+    - cron: '35 14 */3 * *'  
   workflow_dispatch:  # 允许手动触发
    
 env:
