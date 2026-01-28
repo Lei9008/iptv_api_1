@@ -13,7 +13,7 @@ SOURCE_URLS = [
 ]
 
 # demo.txt分类映射文件路径（可修改为你的实际路径，相对/绝对路径均可）
-DEMO_TXT_PATH = "demo.txt"
+DEMO_TXT_PATH = "demo.txt"  # 你的demo.txt文件路径
 
 # 基础频道名称映射
 cntvNamesReverse = {
@@ -133,6 +133,7 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
+
 
 
 
