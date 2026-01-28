@@ -119,7 +119,7 @@ URL_BLACKLIST = [
     "https://smt.858.qzz.io/Smart.php",
     "http://23.237.228.134/live6",
     "http://23.237.228.134/live6/dongnan.m3u8",
-    "http://player.cntv.cn/standard/live_HLSDRM20180524.swf?",
+    "http://player.cntv.cn/standard",
     "http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8",
 
 
