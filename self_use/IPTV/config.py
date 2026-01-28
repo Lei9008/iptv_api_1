@@ -32,7 +32,6 @@ SOURCE_URLS = [
     "http://gg.7749.org//i/ds.txt",
     "https://gitee.com/alexkw/app/raw/master/kgk.txt",
     "https://d.kstore.dev/download/15114/HKTV.txt",
-    "http://go8.myartsonline.com/zx/0/TVBTV28.txt",
     "http://gg.7749.org/z/i/gdss.txt",
     "https://raw.githubusercontent.com/iodata999/frxz751113-IPTVzb1/refs/heads/main/结果.m3u",
     "https://raw.githubusercontent.com/alantang1977/jtv/refs/heads/main/网络收集.txt",
@@ -164,6 +163,7 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
+
 
 
 
