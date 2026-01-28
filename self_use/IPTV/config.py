@@ -3,6 +3,7 @@
 # 源URL列表（请替换为你自己的直播源链接）
 SOURCE_URLS = [
     # 示例链接，替换为实际的直播源URL
+    "https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u",
     "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
     "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u",
     "https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u",
@@ -129,6 +130,7 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
+
 
 
 
