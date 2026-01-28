@@ -2,7 +2,7 @@ name: 1.Update IPTV Sources（更新IPTV源）
 
 on:
   schedule:
-    # 每3天UTC时间3:15执行（对应上海时间3:15）
+    # 每3天UTC时间19:15执行（对应上海时间3:15）
     - cron: '15 19 */3 * *'  
   workflow_dispatch:  # 允许手动触发
     inputs:
