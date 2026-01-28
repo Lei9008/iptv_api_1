@@ -67,25 +67,39 @@ url_source_mapping: Dict[str, str] = {}  # url -> 来源URL
 # ===================== 核心工具函数 =====================
 def clean_group_title(group_title: str) -> str:
     """
-    标准化group-title：提取中文、英文、数字核心内容，过滤emoji、特殊符号
-    :param group_title: 原始group-title（含emoji/特殊符号）
+    标准化group-title：
+    1. 优先匹配config中的地区→频道映射
+    2. 过滤emoji、特殊符号，保留核心文字
+    :param group_title: 原始group-title（含emoji/特殊符号/地区名称）
     :return: 标准化后的纯文字group-title
     """
     if not group_title:
         return "未分类"
     
-    # 正则匹配：保留中文、英文、数字、下划线、括号（过滤emoji、特殊符号、空格）
-    # 匹配规则：[\u4e00-\u9fa5] 中文 | [a-zA-Z] 英文 | [0-9] 数字 | [_\(\)] 下划线和括号
-    cleaned = re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title)
+    # 步骤1：优先匹配config中的group-title映射（精确匹配）
+    original_title = group_title.strip()
+    if original_title in config.group_title_mapping:
+        mapped_title = config.group_title_mapping[original_title]
+        logger.debug(f"group-title映射匹配：{original_title} → {mapped_title}")
+        group_title = mapped_title
+    else:
+        # 模糊匹配（处理带emoji/特殊符号的情况，如"🔥安徽地区"）
+        # 提取纯文字部分再匹配映射
+        pure_text = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9]+', original_title))
+        if pure_text in config.group_title_mapping:
+            mapped_title = config.group_title_mapping[pure_text]
+            logger.debug(f"group-title模糊映射匹配：{original_title} → {mapped_title}")
+            group_title = mapped_title
     
-    # 拼接结果，若为空则返回"未分类"
+    # 步骤2：过滤emoji、特殊符号，保留核心文字
+    cleaned = re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title)
     result = ''.join(cleaned).strip() or "未分类"
     
-    # 额外处理：若结果过长（超过20字），截取前20字（避免异常长分类名）
+    # 步骤3：长度兜底（超过20字截取）
     if len(result) > 20:
         result = result[:20]
     
-    logger.debug(f"group-title标准化：{group_title} → {result}")
+    logger.debug(f"group-title最终标准化：{original_title} → {result}")
     return result
 
 def global_replace_cctv_name(content: str) -> str:
@@ -296,7 +310,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                         current_group = group_match.group(1).strip()
                     else:
                         current_group = re.sub(r'[#分类:genre:==\-—]', '', line).strip() or "默认分类"
-                    # 核心修改：标准化智能识别的分类名
+                    # 核心修改：标准化智能识别的分类名（含映射匹配）
                     current_group = clean_group_title(current_group)
                     logger.debug(f"智能识别并标准化分类：{current_group}")
                     continue
@@ -324,7 +338,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDict:
                         group_title = "电影频道"  # 固定分类名，已标准化
                     elif any(keyword in standard_name for keyword in ['体育', 'CCTV5']):
                         group_title = "体育频道"  # 固定分类名，已标准化
-                    # 最终标准化分类名（兜底）
+                    # 最终标准化分类名（兜底，含映射匹配）
                     group_title = clean_group_title(group_title)
                     
                     # 创建元信息
@@ -404,25 +418,23 @@ def generate_summary(all_channels: OrderedDict):
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
                     if meta and meta.raw_extinf:
-                        # 修复点1：先替换group-title（避免转义问题）
+                        # 替换group-title（字符串操作，避免正则转义）
                         standard_extinf = meta.raw_extinf
-                        # 使用字符串替换而非正则替换group-title，避免转义
                         if 'group-title="' in standard_extinf:
-                            # 提取group-title部分并替换
                             start_idx = standard_extinf.find('group-title="') + len('group-title="')
                             end_idx = standard_extinf.find('"', start_idx)
                             if end_idx > start_idx:
                                 standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
                         
-                        # 修复点2：替换频道名（使用字符串分割+拼接，避免正则转义）
+                        # 替换频道名（字符串分割+拼接，避免正则转义）
                         if ',' in standard_extinf:
                             extinf_part, old_name = standard_extinf.rsplit(',', 1)
-                            # 转义频道名中的特殊字符（如\n、\u、$等）
+                            # 转义频道名中的特殊字符
                             safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
                             standard_extinf = extinf_part + ',' + safe_name
                         f.write(standard_extinf + "\n")
                     else:
-                        # 直接生成标准化的EXTINF行，避免正则
+                        # 直接生成标准化的EXTINF行
                         f.write(f"#EXTINF:-1 tvg-name=\"{name}\" group-title=\"{group_title}\",{name}\n")
                     f.write(url + "\n\n")
         
