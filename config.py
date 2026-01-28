@@ -23,6 +23,9 @@ IP_VERSION_PRIORITY = "ipv4"
 SOURCE_URLS = [
     # 替换为你自己的直播源链接
     "https://github.com/develop202/migu_video/blob/main/interface.txt",
+    "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
+    "https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u",
+    "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u",
     "https://github.com/cyh92/iptv-api-weishi/blob/master/output/weishi.m3u",
     "https://github.com/cyh92/iptv-api-cctv/blob/master/output/cctv.m3u",
     "https://github.com/8080713/iptv-api666/blob/main/output/result.m3u",
