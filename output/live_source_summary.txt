@@ -1,8 +1,8 @@
-IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持跨分类重复）
+IPTV直播源汇总（白名单模式+标准化+多协议支持+EXTINF补全+支持跨分类重复）
 ================================================================================
-生成时间：2026-01-29 16:20:51
-总频道数：2905（含跨分类重复）
-分类数：23
+生成时间：2026-01-29 16:25:56
+总频道数：2905（仅模板内有效频道，含跨分类重复）
+分类数：23（与模板分类一致）
 支持协议：HTTP, HTTPS, RTSP, RTMP, M3U8, HLS
 ================================================================================
 
@@ -3569,27 +3569,27 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23122814382128126762.rsc/99912_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-874. CGTN                 [RTSP] TVG-ID: auto_23527075
+874. CGTN                 [RTSP] TVG-ID: auto_46034317
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15050914501799552135.rsc/70003_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-875. CGTN纪录               [RTSP] TVG-ID: auto_90811485
+875. CGTN纪录               [RTSP] TVG-ID: auto_61377486
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch21062215405197977873.rsc/91702_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN纪录.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-876. CGTN西语               [RTSP] TVG-ID: auto_10384936
+876. CGTN西语               [RTSP] TVG-ID: auto_40111374
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch21062215411249555526.rsc/91514_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN西语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-877. CGTN法语               [RTSP] TVG-ID: auto_46410450
+877. CGTN法语               [RTSP] TVG-ID: auto_17358270
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch21062215412921826390.rsc/91584_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN法语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-878. CGTN阿语               [RTSP] TVG-ID: auto_27688726
+878. CGTN阿语               [RTSP] TVG-ID: auto_12388435
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch21062215414116185265.rsc/91594_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN阿语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-879. CGTN俄语               [RTSP] TVG-ID: auto_80166016
+879. CGTN俄语               [RTSP] TVG-ID: auto_82582461
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch21062215415309865050.rsc/91606_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN俄语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -3673,27 +3673,27 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.122:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-900. CGTN                 [HTTP] TVG-ID: auto_23527075
+900. CGTN                 [HTTP] TVG-ID: auto_46034317
       URL：http://192.168.0.1:5140/rtp/239.253.244.189:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-901. CGTN纪录               [HTTP] TVG-ID: auto_90811485
+901. CGTN纪录               [HTTP] TVG-ID: auto_61377486
       URL：http://192.168.0.1:5140/rtp/239.253.244.188:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN纪录.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-902. CGTN西语               [HTTP] TVG-ID: auto_10384936
+902. CGTN西语               [HTTP] TVG-ID: auto_40111374
       URL：http://192.168.0.1:5140/rtp/239.253.244.182:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN西语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-903. CGTN法语               [HTTP] TVG-ID: auto_46410450
+903. CGTN法语               [HTTP] TVG-ID: auto_17358270
       URL：http://192.168.0.1:5140/rtp/239.253.244.183:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN法语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-904. CGTN阿语               [HTTP] TVG-ID: auto_27688726
+904. CGTN阿语               [HTTP] TVG-ID: auto_12388435
       URL：http://192.168.0.1:5140/rtp/239.253.244.184:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN阿语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-905. CGTN俄语               [HTTP] TVG-ID: auto_80166016
+905. CGTN俄语               [HTTP] TVG-ID: auto_82582461
       URL：http://192.168.0.1:5140/rtp/239.253.244.185:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CGTN俄语.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -7941,7 +7941,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://113.26.202.52:1299/tsfile/live/0115_1.m3u8$ipv4•线路10(485ms)
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/兵团卫视.png
       来源：https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/output/live_ipv4.m3u
-1013. 江苏卫视4K               [RTSP] TVG-ID: auto_69018935
+1013. 江苏卫视4K               [RTSP] TVG-ID: auto_63950761
       URL：rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch25092214081313070909.rsc/103254_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江苏卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -7957,7 +7957,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch25092214082801723362.rsc/103278_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1017. 四川卫视4K               [RTSP] TVG-ID: auto_67023065
+1017. 四川卫视4K               [RTSP] TVG-ID: auto_47947236
       URL：rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch25092214084431033201.rsc/103302_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四川卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -7965,7 +7965,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch25032514071097767315.rsc/102825_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/北京卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1019. 深圳卫视4K               [RTSP] TVG-ID: auto_61389600
+1019. 深圳卫视4K               [RTSP] TVG-ID: auto_60086759
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch25061910020901468282.rsc/103007_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/深圳卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -7993,23 +7993,23 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch15050917541568689826.rsc/69963_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1026. 江苏卫视                 [RTSP] TVG-ID: auto_69252825
+1026. 江苏卫视                 [RTSP] TVG-ID: auto_35596700
       URL：rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch12051116384379542816.rsc/69997_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江苏卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1027. 安徽卫视                 [RTSP] TVG-ID: auto_53083788
+1027. 安徽卫视                 [RTSP] TVG-ID: auto_41507034
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15050917541532308683.rsc/70014_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/安徽卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1028. 天津卫视                 [RTSP] TVG-ID: auto_19731756
+1028. 天津卫视                 [RTSP] TVG-ID: auto_32049273
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15050917541659846769.rsc/69974_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/天津卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1029. 辽宁卫视                 [RTSP] TVG-ID: auto_89240656
+1029. 辽宁卫视                 [RTSP] TVG-ID: auto_30406452
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15050917541756096231.rsc/69996_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/辽宁卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1030. 深圳卫视                 [RTSP] TVG-ID: auto_38461472
+1030. 深圳卫视                 [RTSP] TVG-ID: auto_58883745
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch12051116392957055081.rsc/70071_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/深圳卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -8017,7 +8017,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch17082318094203998689.rsc/71682_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东南卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1032. 湖北卫视                 [RTSP] TVG-ID: auto_63143043
+1032. 湖北卫视                 [RTSP] TVG-ID: auto_37911313
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15050917541519800547.rsc/69933_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/湖北卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -8029,15 +8029,15 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch12051116400952898093.rsc/70052_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/黑龙江卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1035. 贵州卫视                 [RTSP] TVG-ID: auto_28358143
+1035. 贵州卫视                 [RTSP] TVG-ID: auto_48078736
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch17121814402415050847.rsc/75837_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/贵州卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1036. 河北卫视                 [RTSP] TVG-ID: auto_36547442
+1036. 河北卫视                 [RTSP] TVG-ID: auto_72147216
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch17121814385494126166.rsc/75853_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/河北卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1037. 重庆卫视                 [RTSP] TVG-ID: auto_11501307
+1037. 重庆卫视                 [RTSP] TVG-ID: auto_40890842
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120118293449046768.rsc/70020_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/重庆卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -8045,19 +8045,19 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120116181598810422.rsc/70001_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/海南卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1039. 四川卫视                 [RTSP] TVG-ID: auto_28084452
+1039. 四川卫视                 [RTSP] TVG-ID: auto_37764612
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch11122400393964414144.rsc/69962_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四川卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1040. 江西卫视                 [RTSP] TVG-ID: auto_42861517
+1040. 江西卫视                 [RTSP] TVG-ID: auto_11364907
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118345500084693.rsc/69999_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1041. 广西卫视                 [RTSP] TVG-ID: auto_45172029
+1041. 广西卫视                 [RTSP] TVG-ID: auto_88595786
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120114524702485505.rsc/69956_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/广西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1042. 吉林卫视                 [RTSP] TVG-ID: auto_67815673
+1042. 吉林卫视                 [RTSP] TVG-ID: auto_78572202
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120116035123677506.rsc/69989_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/吉林卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -8065,59 +8065,59 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch10120116144658191615.rsc/69926_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/云南卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1044. 新疆卫视                 [RTSP] TVG-ID: auto_40870105
+1044. 新疆卫视                 [RTSP] TVG-ID: auto_89629894
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120118204473437661.rsc/69942_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/新疆卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1045. 甘肃卫视                 [RTSP] TVG-ID: auto_17203648
+1045. 甘肃卫视                 [RTSP] TVG-ID: auto_71302027
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch21092610332476918454.rsc/92476_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/甘肃卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1046. 青海卫视                 [RTSP] TVG-ID: auto_72411078
+1046. 青海卫视                 [RTSP] TVG-ID: auto_44611051
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118273518671654.rsc/69945_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/青海卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1047. 西藏卫视                 [RTSP] TVG-ID: auto_73383001
+1047. 西藏卫视                 [RTSP] TVG-ID: auto_52778356
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120116213780720306.rsc/69953_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/西藏卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1048. 兵团卫视                 [RTSP] TVG-ID: auto_74373315
+1048. 兵团卫视                 [RTSP] TVG-ID: auto_51429034
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120116250568011708.rsc/69935_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/兵团卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1049. 宁夏卫视                 [RTSP] TVG-ID: auto_47879380
+1049. 宁夏卫视                 [RTSP] TVG-ID: auto_23032266
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch25072809435815201156.rsc/103092_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/宁夏卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1050. 山西卫视                 [RTSP] TVG-ID: auto_65854180
+1050. 山西卫视                 [RTSP] TVG-ID: auto_22869575
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120118303484157828.rsc/70039_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1051. 陕西卫视                 [RTSP] TVG-ID: auto_56542794
+1051. 陕西卫视                 [RTSP] TVG-ID: auto_80040626
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120118332130518297.rsc/70017_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/陕西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1052. 内蒙古卫视                [RTSP] TVG-ID: auto_68749873
+1052. 内蒙古卫视                [RTSP] TVG-ID: auto_47462321
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120118290217488762.rsc/70041_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/内蒙古卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1053. 农林卫视                 [RTSP] TVG-ID: auto_79878250
+1053. 农林卫视                 [RTSP] TVG-ID: auto_69764458
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch10120118335748437793.rsc/69961_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/农林卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1054. 厦门卫视                 [RTSP] TVG-ID: auto_22060142
+1054. 厦门卫视                 [RTSP] TVG-ID: auto_61229198
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch17120418140581348001.rsc/74165_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/厦门卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1055. 延边卫视                 [RTSP] TVG-ID: auto_60057826
+1055. 延边卫视                 [RTSP] TVG-ID: auto_91121843
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch23072116063432685915.rsc/98595_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/延边卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1056. 三沙卫视                 [RTSP] TVG-ID: auto_29989884
+1056. 三沙卫视                 [RTSP] TVG-ID: auto_36688298
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch19120615372589393337.rsc/89705_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/三沙卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-1057. 江苏卫视4K               [HTTP] TVG-ID: auto_69018935
+1057. 江苏卫视4K               [HTTP] TVG-ID: auto_63950761
       URL：http://192.168.0.1:5140/rtp/239.253.244.133:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江苏卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8133,7 +8133,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.176:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1061. 四川卫视4K               [HTTP] TVG-ID: auto_67023065
+1061. 四川卫视4K               [HTTP] TVG-ID: auto_47947236
       URL：http://192.168.0.1:5140/rtp/239.253.244.123:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四川卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8141,7 +8141,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.200:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/北京卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1063. 深圳卫视4K               [HTTP] TVG-ID: auto_61389600
+1063. 深圳卫视4K               [HTTP] TVG-ID: auto_60086759
       URL：http://192.168.0.1:5140/rtp/239.253.244.61:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/深圳卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8169,23 +8169,23 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.86:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1070. 江苏卫视                 [HTTP] TVG-ID: auto_69252825
+1070. 江苏卫视                 [HTTP] TVG-ID: auto_35596700
       URL：http://192.168.0.1:5140/rtp/239.253.244.83:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江苏卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1071. 安徽卫视                 [HTTP] TVG-ID: auto_53083788
+1071. 安徽卫视                 [HTTP] TVG-ID: auto_41507034
       URL：http://192.168.0.1:5140/rtp/239.253.244.87:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/安徽卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1072. 天津卫视                 [HTTP] TVG-ID: auto_19731756
+1072. 天津卫视                 [HTTP] TVG-ID: auto_32049273
       URL：http://192.168.0.1:5140/rtp/239.253.244.89:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/天津卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1073. 辽宁卫视                 [HTTP] TVG-ID: auto_89240656
+1073. 辽宁卫视                 [HTTP] TVG-ID: auto_30406452
       URL：http://192.168.0.1:5140/rtp/239.253.244.92:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/辽宁卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1074. 深圳卫视                 [HTTP] TVG-ID: auto_38461472
+1074. 深圳卫视                 [HTTP] TVG-ID: auto_58883745
       URL：http://192.168.0.1:5140/rtp/239.253.244.91:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/深圳卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8193,7 +8193,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.105:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东南卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1076. 湖北卫视                 [HTTP] TVG-ID: auto_63143043
+1076. 湖北卫视                 [HTTP] TVG-ID: auto_37911313
       URL：http://192.168.0.1:5140/rtp/239.253.244.88:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/湖北卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8205,15 +8205,15 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.93:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/黑龙江卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1079. 贵州卫视                 [HTTP] TVG-ID: auto_28358143
+1079. 贵州卫视                 [HTTP] TVG-ID: auto_48078736
       URL：http://192.168.0.1:5140/rtp/239.253.244.113:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/贵州卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1080. 河北卫视                 [HTTP] TVG-ID: auto_36547442
+1080. 河北卫视                 [HTTP] TVG-ID: auto_72147216
       URL：http://192.168.0.1:5140/rtp/239.253.244.112:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/河北卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1081. 重庆卫视                 [HTTP] TVG-ID: auto_11501307
+1081. 重庆卫视                 [HTTP] TVG-ID: auto_40890842
       URL：http://192.168.0.1:5140/rtp/239.253.244.38:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/重庆卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8221,19 +8221,19 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.179:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/海南卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1083. 四川卫视                 [HTTP] TVG-ID: auto_28084452
+1083. 四川卫视                 [HTTP] TVG-ID: auto_37764612
       URL：http://192.168.0.1:5140/rtp/239.253.244.180:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四川卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1084. 江西卫视                 [HTTP] TVG-ID: auto_42861517
+1084. 江西卫视                 [HTTP] TVG-ID: auto_11364907
       URL：http://192.168.0.1:5140/rtp/239.253.244.47:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1085. 广西卫视                 [HTTP] TVG-ID: auto_45172029
+1085. 广西卫视                 [HTTP] TVG-ID: auto_88595786
       URL：http://192.168.0.1:5140/rtp/239.253.244.197:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/广西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1086. 吉林卫视                 [HTTP] TVG-ID: auto_67815673
+1086. 吉林卫视                 [HTTP] TVG-ID: auto_78572202
       URL：http://192.168.0.1:5140/rtp/239.253.244.173:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/吉林卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8241,55 +8241,55 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.196:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/云南卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1088. 新疆卫视                 [HTTP] TVG-ID: auto_40870105
+1088. 新疆卫视                 [HTTP] TVG-ID: auto_89629894
       URL：http://192.168.0.1:5140/rtp/239.253.244.60:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/新疆卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1089. 甘肃卫视                 [HTTP] TVG-ID: auto_17203648
+1089. 甘肃卫视                 [HTTP] TVG-ID: auto_71302027
       URL：http://192.168.0.1:5140/rtp/239.253.244.74:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/甘肃卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1090. 青海卫视                 [HTTP] TVG-ID: auto_72411078
+1090. 青海卫视                 [HTTP] TVG-ID: auto_44611051
       URL：http://192.168.0.1:5140/rtp/239.253.244.195:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/青海卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1091. 西藏卫视                 [HTTP] TVG-ID: auto_73383001
+1091. 西藏卫视                 [HTTP] TVG-ID: auto_52778356
       URL：http://192.168.0.1:5140/rtp/239.253.244.56:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/西藏卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1092. 兵团卫视                 [HTTP] TVG-ID: auto_74373315
+1092. 兵团卫视                 [HTTP] TVG-ID: auto_51429034
       URL：http://192.168.0.1:5140/rtp/239.253.244.57:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/兵团卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1093. 宁夏卫视                 [HTTP] TVG-ID: auto_47879380
+1093. 宁夏卫视                 [HTTP] TVG-ID: auto_23032266
       URL：http://192.168.0.1:5140/rtp/239.253.244.150:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/宁夏卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1094. 山西卫视                 [HTTP] TVG-ID: auto_65854180
+1094. 山西卫视                 [HTTP] TVG-ID: auto_22869575
       URL：http://192.168.0.1:5140/rtp/239.253.244.48:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1095. 陕西卫视                 [HTTP] TVG-ID: auto_56542794
+1095. 陕西卫视                 [HTTP] TVG-ID: auto_80040626
       URL：http://192.168.0.1:5140/rtp/239.253.244.49:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/陕西卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1096. 内蒙古卫视                [HTTP] TVG-ID: auto_68749873
+1096. 内蒙古卫视                [HTTP] TVG-ID: auto_47462321
       URL：http://192.168.0.1:5140/rtp/239.253.244.58:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/内蒙古卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1097. 农林卫视                 [HTTP] TVG-ID: auto_79878250
+1097. 农林卫视                 [HTTP] TVG-ID: auto_69764458
       URL：http://192.168.0.1:5140/rtp/239.253.244.70:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/农林卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1098. 厦门卫视                 [HTTP] TVG-ID: auto_22060142
+1098. 厦门卫视                 [HTTP] TVG-ID: auto_61229198
       URL：http://192.168.0.1:5140/rtp/239.253.244.106:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/厦门卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1099. 延边卫视                 [HTTP] TVG-ID: auto_60057826
+1099. 延边卫视                 [HTTP] TVG-ID: auto_91121843
       URL：http://192.168.0.1:5140/rtp/239.253.244.121:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/延边卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
-1100. 三沙卫视                 [HTTP] TVG-ID: auto_29989884
+1100. 三沙卫视                 [HTTP] TVG-ID: auto_36688298
       URL：http://192.168.0.1:5140/rtp/239.253.244.171:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/三沙卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8427,7 +8427,7 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://58.57.40.22:9901/tsfile/live/1023_1.m3u8$ipv4•线路2(444ms)
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东文旅.png
       来源：https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/output/live_ipv4.m3u
- 21. 山东卫视4K               [RTSP] TVG-ID: auto_20242340
+ 21. 山东卫视4K               [RTSP] TVG-ID: auto_58110710
       URL：rtsp://112.245.125.44:1554/iptv/import/Tvod/iptv/001/001/ch25081411425529721444.rsc/103166_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
@@ -8435,51 +8435,51 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch15050916441119736372.rsc/70010_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 23. 山东齐鲁                 [RTSP] TVG-ID: auto_24992206
+ 23. 山东齐鲁                 [RTSP] TVG-ID: auto_41790288
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117223157422538.rsc/70061_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东齐鲁.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 24. 山东文旅                 [RTSP] TVG-ID: auto_65377597
+ 24. 山东文旅                 [RTSP] TVG-ID: auto_72684547
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch10120117133527564831.rsc/70048_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东文旅.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 25. 山东生活                 [RTSP] TVG-ID: auto_68537159
+ 25. 山东生活                 [RTSP] TVG-ID: auto_35634873
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120117100570561699.rsc/70011_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东生活.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 26. 山东综艺                 [RTSP] TVG-ID: auto_46161750
+ 26. 山东综艺                 [RTSP] TVG-ID: auto_61038058
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11012815051671532768.rsc/69938_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东综艺.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 27. 山东体育                 [RTSP] TVG-ID: auto_42193659
+ 27. 山东体育                 [RTSP] TVG-ID: auto_21713405
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch10111720502861127519.rsc/70066_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东体育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 28. 山东新闻                 [RTSP] TVG-ID: auto_85363790
+ 28. 山东新闻                 [RTSP] TVG-ID: auto_49388596
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117023986249401.rsc/70005_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东新闻.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 29. 山东农科                 [RTSP] TVG-ID: auto_15488400
+ 29. 山东农科                 [RTSP] TVG-ID: auto_82772464
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11012815072111657053.rsc/70046_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东农科.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 30. 山东少儿                 [RTSP] TVG-ID: auto_80770018
+ 30. 山东少儿                 [RTSP] TVG-ID: auto_33711210
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11012815083626567264.rsc/69988_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东少儿.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 31. 山东教育                 [RTSP] TVG-ID: auto_25633576
+ 31. 山东教育                 [RTSP] TVG-ID: auto_40736921
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch10120118342495301658.rsc/69990_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东教育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 32. 山东经济广播               [RTSP] TVG-ID: auto_20804778
+ 32. 山东经济广播               [RTSP] TVG-ID: auto_92190363
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch24040915081276788638.rsc/100010_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东经济广播.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 33. 山东海洋频道               [RTSP] TVG-ID: auto_67970512
+ 33. 山东海洋频道               [RTSP] TVG-ID: auto_71506014
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch22111116270462496793.rsc/96159_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东海洋频道.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 34. 山东卫视4K               [HTTP] TVG-ID: auto_20242340
+ 34. 山东卫视4K               [HTTP] TVG-ID: auto_58110710
       URL：http://192.168.0.1:5140/rtp/239.253.244.172:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东卫视4K.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -8487,47 +8487,47 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       URL：http://192.168.0.1:5140/rtp/239.253.244.78:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东卫视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 36. 山东齐鲁                 [HTTP] TVG-ID: auto_24992206
+ 36. 山东齐鲁                 [HTTP] TVG-ID: auto_41790288
       URL：http://192.168.0.1:5140/rtp/239.253.244.114:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东齐鲁.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 37. 山东文旅                 [HTTP] TVG-ID: auto_65377597
+ 37. 山东文旅                 [HTTP] TVG-ID: auto_72684547
       URL：http://192.168.0.1:5140/rtp/239.253.244.160:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东文旅.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 38. 山东生活                 [HTTP] TVG-ID: auto_68537159
+ 38. 山东生活                 [HTTP] TVG-ID: auto_35634873
       URL：http://192.168.0.1:5140/rtp/239.253.244.151:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东生活.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 39. 山东综艺                 [HTTP] TVG-ID: auto_46161750
+ 39. 山东综艺                 [HTTP] TVG-ID: auto_61038058
       URL：http://192.168.0.1:5140/rtp/239.253.244.159:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东综艺.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 40. 山东体育                 [HTTP] TVG-ID: auto_42193659
+ 40. 山东体育                 [HTTP] TVG-ID: auto_21713405
       URL：http://192.168.0.1:5140/rtp/239.253.244.22:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东体育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 41. 山东新闻                 [HTTP] TVG-ID: auto_85363790
+ 41. 山东新闻                 [HTTP] TVG-ID: auto_49388596
       URL：http://192.168.0.1:5140/rtp/239.253.244.23:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东新闻.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 42. 山东农科                 [HTTP] TVG-ID: auto_15488400
+ 42. 山东农科                 [HTTP] TVG-ID: auto_82772464
       URL：http://192.168.0.1:5140/rtp/239.253.244.24:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东农科.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 43. 山东少儿                 [HTTP] TVG-ID: auto_80770018
+ 43. 山东少儿                 [HTTP] TVG-ID: auto_33711210
       URL：http://192.168.0.1:5140/rtp/239.253.244.25:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东少儿.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 44. 山东教育                 [HTTP] TVG-ID: auto_25633576
+ 44. 山东教育                 [HTTP] TVG-ID: auto_40736921
       URL：http://192.168.0.1:5140/rtp/239.253.244.59:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东教育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 45. 山东经济广播               [HTTP] TVG-ID: auto_20804778
+ 45. 山东经济广播               [HTTP] TVG-ID: auto_92190363
       URL：http://192.168.0.1:5140/rtp/239.253.244.166:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东经济广播.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 46. 山东海洋频道               [HTTP] TVG-ID: auto_67970512
+ 46. 山东海洋频道               [HTTP] TVG-ID: auto_71506014
       URL：http://192.168.0.1:5140/rtp/239.253.244.67:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东海洋频道.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
@@ -9045,1647 +9045,1647 @@ IPTV直播源汇总（自动提取+标准化+多协议支持+EXTINF补全+支持
       来源：https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/output/live_ipv4.m3u
 
 【其他频道】（80个频道）
-  1. 爱上4K测试体验             [RTSP] TVG-ID: auto_26365872
+  1. 爱上4K测试体验             [RTSP] TVG-ID: auto_85188226
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch16062014270602375204.rsc/70019_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱上4K测试体验.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  2. CHC家庭影院              [RTSP] TVG-ID: auto_63351038
+  2. CHC家庭影院              [RTSP] TVG-ID: auto_55545852
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch18120514091718394256.rsc/81481_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC家庭影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  3. CHC动作电影              [RTSP] TVG-ID: auto_67945418
+  3. CHC动作电影              [RTSP] TVG-ID: auto_76908998
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch18120514100139517699.rsc/81477_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC动作电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  4. CHC影迷电影              [RTSP] TVG-ID: auto_21956215
+  4. CHC影迷电影              [RTSP] TVG-ID: auto_86246181
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch18120514102191199606.rsc/81478_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC影迷电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  5. 北京纪实科教               [RTSP] TVG-ID: auto_41188576
+  5. 北京纪实科教               [RTSP] TVG-ID: auto_45873926
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch24020510150834566089.rsc/99953_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/北京纪实科教.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  6. 卡酷少儿                 [RTSP] TVG-ID: auto_26513513
+  6. 卡酷少儿                 [RTSP] TVG-ID: auto_80610485
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120118400576795406.rsc/69993_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/卡酷少儿.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  7. 金鹰纪实                 [RTSP] TVG-ID: auto_52152226
+  7. 金鹰纪实                 [RTSP] TVG-ID: auto_59592829
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15050917541337365144.rsc/70053_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金鹰纪实.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  8. 茶                    [RTSP] TVG-ID: auto_54771351
+  8. 茶                    [RTSP] TVG-ID: auto_84190779
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610324607482092.rsc/92499_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/茶.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  9. 快乐垂钓                 [RTSP] TVG-ID: auto_61995344
+  9. 快乐垂钓                 [RTSP] TVG-ID: auto_87260616
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch21082717343948936881.rsc/96392_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/快乐垂钓.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 10. 金鹰卡通                 [RTSP] TVG-ID: auto_78317754
+ 10. 金鹰卡通                 [RTSP] TVG-ID: auto_14332504
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch11122400412227153064.rsc/70028_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金鹰卡通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 11. 梨园                   [RTSP] TVG-ID: auto_13454861
+ 11. 梨园                   [RTSP] TVG-ID: auto_27720141
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610314667739520.rsc/92523_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/梨园.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 12. 武术世界                 [RTSP] TVG-ID: auto_76469114
+ 12. 武术世界                 [RTSP] TVG-ID: auto_82153535
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch21092610320200462249.rsc/96396_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/武术世界.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 13. 文物宝库                 [RTSP] TVG-ID: auto_81286277
+ 13. 文物宝库                 [RTSP] TVG-ID: auto_67051710
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch21092610321303262159.rsc/92509_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/文物宝库.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 14. 中国教育1                [RTSP] TVG-ID: auto_53334310
+ 14. 中国教育1                [RTSP] TVG-ID: auto_52714926
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch17120418204481298161.rsc/74278_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国教育1.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 15. 中国教育2                [RTSP] TVG-ID: auto_79596391
+ 15. 中国教育2                [RTSP] TVG-ID: auto_63679455
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch17120417211408620162.rsc/74298_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国教育2.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 16. 中国教育4                [RTSP] TVG-ID: auto_70087279
+ 16. 中国教育4                [RTSP] TVG-ID: auto_18157506
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch17120418055568047747.rsc/74289_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国教育4.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 17. 四海钓鱼                 [RTSP] TVG-ID: auto_91759938
+ 17. 四海钓鱼                 [RTSP] TVG-ID: auto_48237263
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch22121315043920146188.rsc/96497_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四海钓鱼.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 18. 汽摩                   [RTSP] TVG-ID: auto_72490369
+ 18. 汽摩                   [RTSP] TVG-ID: auto_12884989
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch23112715323902470603.rsc/99884_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/汽摩.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 19. 生态环境                 [RTSP] TVG-ID: auto_74019180
+ 19. 生态环境                 [RTSP] TVG-ID: auto_41930415
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch24111213061931833007.rsc/101604_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/生态环境.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 20. 中华特产                 [RTSP] TVG-ID: auto_83352986
+ 20. 中华特产                 [RTSP] TVG-ID: auto_44765631
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch22122209144768479365.rsc/98231_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中华特产.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 21. 中国交通                 [RTSP] TVG-ID: auto_93101738
+ 21. 中国交通                 [RTSP] TVG-ID: auto_74910718
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch20110221445820405906.rsc/90479_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国交通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 22. 动漫秀场                 [RTSP] TVG-ID: auto_51314044
+ 22. 动漫秀场                 [RTSP] TVG-ID: auto_77262601
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch17121814421621825244.rsc/96206_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动漫秀场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 23. 金色学堂                 [RTSP] TVG-ID: auto_84306410
+ 23. 金色学堂                 [RTSP] TVG-ID: auto_70860541
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch16051316370413715540.rsc/70002_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金色学堂.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 24. 生活时尚                 [RTSP] TVG-ID: auto_28493292
+ 24. 生活时尚                 [RTSP] TVG-ID: auto_26273352
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch16051316300118213959.rsc/69982_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/生活时尚.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 25. 都市剧场                 [RTSP] TVG-ID: auto_87570376
+ 25. 都市剧场                 [RTSP] TVG-ID: auto_42277039
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch16051316281593708406.rsc/69947_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/都市剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 26. 乐游                   [RTSP] TVG-ID: auto_84547562
+ 26. 乐游                   [RTSP] TVG-ID: auto_25122746
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch16051316264757381898.rsc/69991_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/乐游.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 27. 法治天地                 [RTSP] TVG-ID: auto_26454587
+ 27. 法治天地                 [RTSP] TVG-ID: auto_42951787
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch16051316234089749497.rsc/96400_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/法治天地.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 28. 游戏风云                 [RTSP] TVG-ID: auto_35024658
+ 28. 游戏风云                 [RTSP] TVG-ID: auto_57713204
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch16051316213602697345.rsc/70026_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/游戏风云.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 29. 东方财经                 [RTSP] TVG-ID: auto_48782898
+ 29. 东方财经                 [RTSP] TVG-ID: auto_19840743
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch16051316174673479081.rsc/96398_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方财经.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 30. 精彩影视                 [RTSP] TVG-ID: auto_51054738
+ 30. 精彩影视                 [RTSP] TVG-ID: auto_78834859
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610322847858391.rsc/92512_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/精彩影视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 31. 求索纪录                 [RTSP] TVG-ID: auto_69604886
+ 31. 求索纪录                 [RTSP] TVG-ID: auto_79125099
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch25041514142600797103.rsc/102871_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/求索纪录.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 32. 书画                   [RTSP] TVG-ID: auto_82236574
+ 32. 书画                   [RTSP] TVG-ID: auto_68699360
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610331127874295.rsc/92486_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/书画.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 33. 优优宝贝                 [RTSP] TVG-ID: auto_84584735
+ 33. 优优宝贝                 [RTSP] TVG-ID: auto_28194867
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch22122209132553924896.rsc/98132_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/优优宝贝.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 34. 优漫卡通                 [RTSP] TVG-ID: auto_55230772
+ 34. 优漫卡通                 [RTSP] TVG-ID: auto_33356791
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch11042914374730524823.rsc/69927_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/优漫卡通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 35. 嘉佳卡通                 [RTSP] TVG-ID: auto_49410676
+ 35. 嘉佳卡通                 [RTSP] TVG-ID: auto_26986307
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15050917541249689380.rsc/69983_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/嘉佳卡通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 36. 发现之旅                 [RTSP] TVG-ID: auto_70690809
+ 36. 发现之旅                 [RTSP] TVG-ID: auto_34718924
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch24012314294218176484.rsc/100102_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/发现之旅.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 37. 中学生                  [RTSP] TVG-ID: auto_94399236
+ 37. 中学生                  [RTSP] TVG-ID: auto_68689714
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314300175015886.rsc/100054_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中学生.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 38. 老故事                  [RTSP] TVG-ID: auto_39621813
+ 38. 老故事                  [RTSP] TVG-ID: auto_47121942
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314302384136112.rsc/100078_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/老故事.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 39. 新动漫                  [RTSP] TVG-ID: auto_70329330
+ 39. 新动漫                  [RTSP] TVG-ID: auto_11993874
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch18120514112382335432.rsc/81475_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/新动漫.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 40. 环球旅游                 [RTSP] TVG-ID: auto_93082304
+ 40. 环球旅游                 [RTSP] TVG-ID: auto_81007996
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch22122209125585392509.rsc/98106_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/环球旅游.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 41. 爱上4K测试体验             [HTTP] TVG-ID: auto_26365872
+ 41. 爱上4K测试体验             [HTTP] TVG-ID: auto_85188226
       URL：http://192.168.0.1:5140/rtp/239.253.244.102:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱上4K测试体验.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 42. CHC家庭影院              [HTTP] TVG-ID: auto_63351038
+ 42. CHC家庭影院              [HTTP] TVG-ID: auto_55545852
       URL：http://192.168.0.1:5140/rtp/239.253.244.152:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC家庭影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 43. CHC动作电影              [HTTP] TVG-ID: auto_67945418
+ 43. CHC动作电影              [HTTP] TVG-ID: auto_76908998
       URL：http://192.168.0.1:5140/rtp/239.253.244.153:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC动作电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 44. CHC影迷电影              [HTTP] TVG-ID: auto_21956215
+ 44. CHC影迷电影              [HTTP] TVG-ID: auto_86246181
       URL：http://192.168.0.1:5140/rtp/239.253.244.154:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC影迷电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 45. 北京纪实科教               [HTTP] TVG-ID: auto_41188576
+ 45. 北京纪实科教               [HTTP] TVG-ID: auto_45873926
       URL：http://192.168.0.1:5140/rtp/239.253.244.165:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/北京纪实科教.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 46. 卡酷少儿                 [HTTP] TVG-ID: auto_26513513
+ 46. 卡酷少儿                 [HTTP] TVG-ID: auto_80610485
       URL：http://192.168.0.1:5140/rtp/239.253.244.66:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/卡酷少儿.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 47. 金鹰纪实                 [HTTP] TVG-ID: auto_52152226
+ 47. 金鹰纪实                 [HTTP] TVG-ID: auto_59592829
       URL：http://192.168.0.1:5140/rtp/239.253.244.103:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金鹰纪实.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 48. 茶                    [HTTP] TVG-ID: auto_54771351
+ 48. 茶                    [HTTP] TVG-ID: auto_84190779
       URL：http://192.168.0.1:5140/rtp/239.253.244.143:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/茶.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 49. 快乐垂钓                 [HTTP] TVG-ID: auto_61995344
+ 49. 快乐垂钓                 [HTTP] TVG-ID: auto_87260616
       URL：http://192.168.0.1:5140/rtp/239.253.244.144:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/快乐垂钓.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 50. 金鹰卡通                 [HTTP] TVG-ID: auto_78317754
+ 50. 金鹰卡通                 [HTTP] TVG-ID: auto_14332504
       URL：http://192.168.0.1:5140/rtp/239.253.244.117:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金鹰卡通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 51. 梨园                   [HTTP] TVG-ID: auto_13454861
+ 51. 梨园                   [HTTP] TVG-ID: auto_27720141
       URL：http://192.168.0.1:5140/rtp/239.253.244.139:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/梨园.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 52. 武术世界                 [HTTP] TVG-ID: auto_76469114
+ 52. 武术世界                 [HTTP] TVG-ID: auto_82153535
       URL：http://192.168.0.1:5140/rtp/239.253.244.140:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/武术世界.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 53. 文物宝库                 [HTTP] TVG-ID: auto_81286277
+ 53. 文物宝库                 [HTTP] TVG-ID: auto_67051710
       URL：http://192.168.0.1:5140/rtp/239.253.244.141:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/文物宝库.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 54. 中国教育1                [HTTP] TVG-ID: auto_53334310
+ 54. 中国教育1                [HTTP] TVG-ID: auto_52714926
       URL：http://192.168.0.1:5140/rtp/239.253.244.110:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国教育1.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 55. 中国教育2                [HTTP] TVG-ID: auto_79596391
+ 55. 中国教育2                [HTTP] TVG-ID: auto_63679455
       URL：http://192.168.0.1:5140/rtp/239.253.244.107:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国教育2.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 56. 中国教育4                [HTTP] TVG-ID: auto_70087279
+ 56. 中国教育4                [HTTP] TVG-ID: auto_18157506
       URL：http://192.168.0.1:5140/rtp/239.253.244.116:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国教育4.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 57. 四海钓鱼                 [HTTP] TVG-ID: auto_91759938
+ 57. 四海钓鱼                 [HTTP] TVG-ID: auto_48237263
       URL：http://192.168.0.1:5140/rtp/239.253.244.118:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四海钓鱼.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 58. 汽摩                   [HTTP] TVG-ID: auto_72490369
+ 58. 汽摩                   [HTTP] TVG-ID: auto_12884989
       URL：http://192.168.0.1:5140/rtp/239.253.244.161:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/汽摩.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 59. 生态环境                 [HTTP] TVG-ID: auto_74019180
+ 59. 生态环境                 [HTTP] TVG-ID: auto_41930415
       URL：http://192.168.0.1:5140/rtp/239.253.244.119:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/生态环境.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 60. 中华特产                 [HTTP] TVG-ID: auto_83352986
+ 60. 中华特产                 [HTTP] TVG-ID: auto_44765631
       URL：http://192.168.0.1:5140/rtp/239.253.244.76:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中华特产.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 61. 中国交通                 [HTTP] TVG-ID: auto_93101738
+ 61. 中国交通                 [HTTP] TVG-ID: auto_74910718
       URL：http://192.168.0.1:5140/rtp/239.253.244.177:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中国交通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 62. 动漫秀场                 [HTTP] TVG-ID: auto_51314044
+ 62. 动漫秀场                 [HTTP] TVG-ID: auto_77262601
       URL：http://192.168.0.1:5140/rtp/239.253.244.115:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动漫秀场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 63. 金色学堂                 [HTTP] TVG-ID: auto_84306410
+ 63. 金色学堂                 [HTTP] TVG-ID: auto_70860541
       URL：http://192.168.0.1:5140/rtp/239.253.244.101:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金色学堂.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 64. 生活时尚                 [HTTP] TVG-ID: auto_28493292
+ 64. 生活时尚                 [HTTP] TVG-ID: auto_26273352
       URL：http://192.168.0.1:5140/rtp/239.253.244.99:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/生活时尚.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 65. 都市剧场                 [HTTP] TVG-ID: auto_87570376
+ 65. 都市剧场                 [HTTP] TVG-ID: auto_42277039
       URL：http://192.168.0.1:5140/rtp/239.253.244.98:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/都市剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 66. 乐游                   [HTTP] TVG-ID: auto_84547562
+ 66. 乐游                   [HTTP] TVG-ID: auto_25122746
       URL：http://192.168.0.1:5140/rtp/239.253.244.97:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/乐游.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 67. 法治天地                 [HTTP] TVG-ID: auto_26454587
+ 67. 法治天地                 [HTTP] TVG-ID: auto_42951787
       URL：http://192.168.0.1:5140/rtp/239.253.244.96:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/法治天地.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 68. 游戏风云                 [HTTP] TVG-ID: auto_35024658
+ 68. 游戏风云                 [HTTP] TVG-ID: auto_57713204
       URL：http://192.168.0.1:5140/rtp/239.253.244.95:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/游戏风云.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 69. 东方财经                 [HTTP] TVG-ID: auto_48782898
+ 69. 东方财经                 [HTTP] TVG-ID: auto_19840743
       URL：http://192.168.0.1:5140/rtp/239.253.244.94:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方财经.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 70. 精彩影视                 [HTTP] TVG-ID: auto_51054738
+ 70. 精彩影视                 [HTTP] TVG-ID: auto_78834859
       URL：http://192.168.0.1:5140/rtp/239.253.244.142:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/精彩影视.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 71. 求索纪录                 [HTTP] TVG-ID: auto_69604886
+ 71. 求索纪录                 [HTTP] TVG-ID: auto_79125099
       URL：http://192.168.0.1:5140/rtp/239.253.244.231:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/求索纪录.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 72. 书画                   [HTTP] TVG-ID: auto_82236574
+ 72. 书画                   [HTTP] TVG-ID: auto_68699360
       URL：http://192.168.0.1:5140/rtp/239.253.244.146:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/书画.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 73. 优优宝贝                 [HTTP] TVG-ID: auto_84584735
+ 73. 优优宝贝                 [HTTP] TVG-ID: auto_28194867
       URL：http://192.168.0.1:5140/rtp/239.253.244.72:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/优优宝贝.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 74. 优漫卡通                 [HTTP] TVG-ID: auto_55230772
+ 74. 优漫卡通                 [HTTP] TVG-ID: auto_33356791
       URL：http://192.168.0.1:5140/rtp/239.253.244.64:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/优漫卡通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 75. 嘉佳卡通                 [HTTP] TVG-ID: auto_49410676
+ 75. 嘉佳卡通                 [HTTP] TVG-ID: auto_26986307
       URL：http://192.168.0.1:5140/rtp/239.253.244.65:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/嘉佳卡通.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 76. 发现之旅                 [HTTP] TVG-ID: auto_70690809
+ 76. 发现之旅                 [HTTP] TVG-ID: auto_34718924
       URL：http://192.168.0.1:5140/rtp/239.253.244.162:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/发现之旅.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 77. 中学生                  [HTTP] TVG-ID: auto_94399236
+ 77. 中学生                  [HTTP] TVG-ID: auto_68689714
       URL：http://192.168.0.1:5140/rtp/239.253.244.163:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中学生.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 78. 老故事                  [HTTP] TVG-ID: auto_39621813
+ 78. 老故事                  [HTTP] TVG-ID: auto_47121942
       URL：http://192.168.0.1:5140/rtp/239.253.244.164:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/老故事.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 79. 新动漫                  [HTTP] TVG-ID: auto_70329330
+ 79. 新动漫                  [HTTP] TVG-ID: auto_11993874
       URL：http://192.168.0.1:5140/rtp/239.253.244.157:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/新动漫.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 80. 环球旅游                 [HTTP] TVG-ID: auto_93082304
+ 80. 环球旅游                 [HTTP] TVG-ID: auto_81007996
       URL：http://192.168.0.1:5140/rtp/239.253.244.71:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/环球旅游.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
 
 【轮播频道】（86个频道）
-  1. 谍战剧场                 [RTSP] TVG-ID: auto_77275484
+  1. 谍战剧场                 [RTSP] TVG-ID: auto_77455833
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch13031310523562855603.rsc/69987_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/谍战剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  2. 城市剧场                 [RTSP] TVG-ID: auto_70329063
+  2. 城市剧场                 [RTSP] TVG-ID: auto_82172399
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15090914573308932938.rsc/70029_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/城市剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  3. 军旅剧场                 [RTSP] TVG-ID: auto_55957095
+  3. 军旅剧场                 [RTSP] TVG-ID: auto_71128813
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15090915023023311866.rsc/69969_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/军旅剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  4. 古装剧场                 [RTSP] TVG-ID: auto_76364915
+  4. 古装剧场                 [RTSP] TVG-ID: auto_64437109
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090915062673403232.rsc/70072_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/古装剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  5. 经典剧场                 [RTSP] TVG-ID: auto_33978435
+  5. 经典剧场                 [RTSP] TVG-ID: auto_55839974
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090915512437000823.rsc/70022_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/经典剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  6. 武侠剧场                 [RTSP] TVG-ID: auto_85656614
+  6. 武侠剧场                 [RTSP] TVG-ID: auto_71898271
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15090915591653040173.rsc/69952_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/武侠剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  7. 热播剧场                 [RTSP] TVG-ID: auto_64041952
+  7. 热播剧场                 [RTSP] TVG-ID: auto_84640844
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch11060317301148954080.rsc/70000_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/热播剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  8. 红色影院                 [RTSP] TVG-ID: auto_28905422
+  8. 红色影院                 [RTSP] TVG-ID: auto_24826628
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090915431474482038.rsc/70060_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/红色影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
-  9. 家庭影院                 [RTSP] TVG-ID: auto_62969487
+  9. 家庭影院                 [RTSP] TVG-ID: auto_67625659
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090916215642164569.rsc/70055_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/家庭影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 10. 喜剧影院                 [RTSP] TVG-ID: auto_17877027
+ 10. 喜剧影院                 [RTSP] TVG-ID: auto_59668461
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090916165898699737.rsc/70008_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/喜剧影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 11. 动作影院                 [RTSP] TVG-ID: auto_91481723
+ 11. 动作影院                 [RTSP] TVG-ID: auto_83892476
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090916164124642866.rsc/70004_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动作影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 12. 足球                   [RTSP] TVG-ID: auto_62243778
+ 12. 足球                   [RTSP] TVG-ID: auto_74281843
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15090915041757410943.rsc/69998_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/足球.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 13. 军事                   [RTSP] TVG-ID: auto_71839388
+ 13. 军事                   [RTSP] TVG-ID: auto_67420305
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090915223200641077.rsc/70054_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/军事.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 14. 地理                   [RTSP] TVG-ID: auto_23773921
+ 14. 地理                   [RTSP] TVG-ID: auto_13658952
       URL：rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15090915235866760733.rsc/70036_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/地理.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 15. 精选                   [RTSP] TVG-ID: auto_57314015
+ 15. 精选                   [RTSP] TVG-ID: auto_36267140
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090915484219614929.rsc/69955_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/精选.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 16. 美人                   [RTSP] TVG-ID: auto_15184021
+ 16. 美人                   [RTSP] TVG-ID: auto_72296276
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090916040665863835.rsc/69934_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/美人.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 17. 鉴赏                   [RTSP] TVG-ID: auto_15274921
+ 17. 鉴赏                   [RTSP] TVG-ID: auto_19501235
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090916075722072184.rsc/69924_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/鉴赏.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 18. 国学                   [RTSP] TVG-ID: auto_81548084
+ 18. 国学                   [RTSP] TVG-ID: auto_12776398
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090916181970967371.rsc/69985_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/国学.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 19. 星影                   [RTSP] TVG-ID: auto_83000131
+ 19. 星影                   [RTSP] TVG-ID: auto_98778015
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15090916302647677604.rsc/69967_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/星影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 20. 早教                   [RTSP] TVG-ID: auto_59336913
+ 20. 早教                   [RTSP] TVG-ID: auto_15821525
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15090916274339587371.rsc/69944_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/早教.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 21. 墨宝                   [RTSP] TVG-ID: auto_20360268
+ 21. 墨宝                   [RTSP] TVG-ID: auto_55109802
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15090916235097407367.rsc/70062_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/墨宝.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 22. 光影                   [RTSP] TVG-ID: auto_51747960
+ 22. 光影                   [RTSP] TVG-ID: auto_25323765
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090916254772284807.rsc/69940_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/光影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 23. 戏曲                   [RTSP] TVG-ID: auto_45338841
+ 23. 戏曲                   [RTSP] TVG-ID: auto_72884929
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090915581648434862.rsc/70031_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/戏曲.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 24. 解密                   [RTSP] TVG-ID: auto_42601756
+ 24. 解密                   [RTSP] TVG-ID: auto_65326236
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15090915530786226072.rsc/70033_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/解密.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 25. 武术                   [RTSP] TVG-ID: auto_61273522
+ 25. 武术                   [RTSP] TVG-ID: auto_36555649
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15090915491066711905.rsc/69984_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/武术.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 26. 美妆                   [RTSP] TVG-ID: auto_35703433
+ 26. 美妆                   [RTSP] TVG-ID: auto_20457401
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15090915493052938184.rsc/70015_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/美妆.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 27. 动画                   [RTSP] TVG-ID: auto_87507536
+ 27. 动画                   [RTSP] TVG-ID: auto_19182236
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090915451711071162.rsc/70065_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动画.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 28. 好学生                  [RTSP] TVG-ID: auto_59249779
+ 28. 好学生                  [RTSP] TVG-ID: auto_18210673
       URL：rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15090916191459347432.rsc/70050_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/好学生.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 29. 音乐现场                 [RTSP] TVG-ID: auto_36336830
+ 29. 音乐现场                 [RTSP] TVG-ID: auto_57854689
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090914592145596821.rsc/70070_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/音乐现场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 30. 经典电影                 [RTSP] TVG-ID: auto_72421723
+ 30. 经典电影                 [RTSP] TVG-ID: auto_17502230
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11060317313622161494.rsc/69976_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/经典电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 31. 少儿动画                 [RTSP] TVG-ID: auto_78558272
+ 31. 少儿动画                 [RTSP] TVG-ID: auto_32125935
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11061217221377842336.rsc/70047_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/少儿动画.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 32. 相声小品                 [RTSP] TVG-ID: auto_74723700
+ 32. 相声小品                 [RTSP] TVG-ID: auto_68006163
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch13031310531244319435.rsc/70013_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/相声小品.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 33. 魅力时尚                 [RTSP] TVG-ID: auto_23923250
+ 33. 魅力时尚                 [RTSP] TVG-ID: auto_56577668
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch11061217095691862636.rsc/70009_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/魅力时尚.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 34. IPTV野外               [RTSP] TVG-ID: auto_25528595
+ 34. IPTV野外               [RTSP] TVG-ID: auto_97216101
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch13031310535009021862.rsc/70024_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/IPTV野外.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 35. IPTV法治               [RTSP] TVG-ID: auto_10034205
+ 35. IPTV法治               [RTSP] TVG-ID: auto_47947294
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch13031310542255942002.rsc/70032_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/IPTV法治.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 36. 爱体育                  [RTSP] TVG-ID: auto_71086564
+ 36. 爱体育                  [RTSP] TVG-ID: auto_12443400
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch17120418224162657206.rsc/74292_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱体育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 37. 爱生活                  [RTSP] TVG-ID: auto_20076049
+ 37. 爱生活                  [RTSP] TVG-ID: auto_89779621
       URL：rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15090915560951747742.rsc/69929_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱生活.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 38. 爱综艺                  [RTSP] TVG-ID: auto_82434267
+ 38. 爱综艺                  [RTSP] TVG-ID: auto_30957088
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch11061217211688091136.rsc/69970_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱综艺.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 39. 爱体育                  [RTSP] TVG-ID: auto_71086564
+ 39. 爱体育                  [RTSP] TVG-ID: auto_12443400
       URL：rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11060317323358720349.rsc/69939_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱体育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 40. 爱电影                  [RTSP] TVG-ID: auto_18800372
+ 40. 爱电影                  [RTSP] TVG-ID: auto_20697074
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch11061217105732492560.rsc/69994_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 41. 爱大剧                  [RTSP] TVG-ID: auto_67049416
+ 41. 爱大剧                  [RTSP] TVG-ID: auto_22893012
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch11061217231007675294.rsc/70034_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱大剧.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 42. 海看演艺                 [RTSP] TVG-ID: auto_88447715
+ 42. 海看演艺                 [RTSP] TVG-ID: auto_56678900
       URL：rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch23112315513709014787.rsc/99848_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/海看演艺.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 43. 收视指南                 [RTSP] TVG-ID: auto_74944641
+ 43. 收视指南                 [RTSP] TVG-ID: auto_58055067
       URL：rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch11061217035832697899.rsc/70025_Uni.sdp
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/收视指南.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
- 44. 谍战剧场                 [HTTP] TVG-ID: auto_77275484
+ 44. 谍战剧场                 [HTTP] TVG-ID: auto_77455833
       URL：http://192.168.0.1:5140/rtp/239.253.244.135:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/谍战剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 45. 城市剧场                 [HTTP] TVG-ID: auto_70329063
+ 45. 城市剧场                 [HTTP] TVG-ID: auto_82172399
       URL：http://192.168.0.1:5140/rtp/239.253.244.201:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/城市剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 46. 军旅剧场                 [HTTP] TVG-ID: auto_55957095
+ 46. 军旅剧场                 [HTTP] TVG-ID: auto_71128813
       URL：http://192.168.0.1:5140/rtp/239.253.244.203:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/军旅剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 47. 古装剧场                 [HTTP] TVG-ID: auto_76364915
+ 47. 古装剧场                 [HTTP] TVG-ID: auto_64437109
       URL：http://192.168.0.1:5140/rtp/239.253.244.205:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/古装剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 48. 经典剧场                 [HTTP] TVG-ID: auto_33978435
+ 48. 经典剧场                 [HTTP] TVG-ID: auto_55839974
       URL：http://192.168.0.1:5140/rtp/239.253.244.211:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/经典剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 49. 武侠剧场                 [HTTP] TVG-ID: auto_85656614
+ 49. 武侠剧场                 [HTTP] TVG-ID: auto_71898271
       URL：http://192.168.0.1:5140/rtp/239.253.244.212:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/武侠剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 50. 热播剧场                 [HTTP] TVG-ID: auto_64041952
+ 50. 热播剧场                 [HTTP] TVG-ID: auto_84640844
       URL：http://192.168.0.1:5140/rtp/239.253.244.125:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/热播剧场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 51. 红色影院                 [HTTP] TVG-ID: auto_28905422
+ 51. 红色影院                 [HTTP] TVG-ID: auto_24826628
       URL：http://192.168.0.1:5140/rtp/239.253.244.209:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/红色影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 52. 家庭影院                 [HTTP] TVG-ID: auto_62969487
+ 52. 家庭影院                 [HTTP] TVG-ID: auto_67625659
       URL：http://192.168.0.1:5140/rtp/239.253.244.218:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/家庭影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 53. 喜剧影院                 [HTTP] TVG-ID: auto_17877027
+ 53. 喜剧影院                 [HTTP] TVG-ID: auto_59668461
       URL：http://192.168.0.1:5140/rtp/239.253.244.220:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/喜剧影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 54. 动作影院                 [HTTP] TVG-ID: auto_91481723
+ 54. 动作影院                 [HTTP] TVG-ID: auto_83892476
       URL：http://192.168.0.1:5140/rtp/239.253.244.221:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动作影院.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 55. 足球                   [HTTP] TVG-ID: auto_62243778
+ 55. 足球                   [HTTP] TVG-ID: auto_74281843
       URL：http://192.168.0.1:5140/rtp/239.253.244.204:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/足球.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 56. 军事                   [HTTP] TVG-ID: auto_71839388
+ 56. 军事                   [HTTP] TVG-ID: auto_67420305
       URL：http://192.168.0.1:5140/rtp/239.253.244.207:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/军事.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 57. 地理                   [HTTP] TVG-ID: auto_23773921
+ 57. 地理                   [HTTP] TVG-ID: auto_13658952
       URL：http://192.168.0.1:5140/rtp/239.253.244.208:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/地理.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 58. 精选                   [HTTP] TVG-ID: auto_57314015
+ 58. 精选                   [HTTP] TVG-ID: auto_36267140
       URL：http://192.168.0.1:5140/rtp/239.253.244.210:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/精选.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 59. 美人                   [HTTP] TVG-ID: auto_15184021
+ 59. 美人                   [HTTP] TVG-ID: auto_72296276
       URL：http://192.168.0.1:5140/rtp/239.253.244.213:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/美人.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 60. 鉴赏                   [HTTP] TVG-ID: auto_15274921
+ 60. 鉴赏                   [HTTP] TVG-ID: auto_19501235
       URL：http://192.168.0.1:5140/rtp/239.253.244.214:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/鉴赏.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 61. 国学                   [HTTP] TVG-ID: auto_81548084
+ 61. 国学                   [HTTP] TVG-ID: auto_12776398
       URL：http://192.168.0.1:5140/rtp/239.253.244.215:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/国学.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 62. 星影                   [HTTP] TVG-ID: auto_83000131
+ 62. 星影                   [HTTP] TVG-ID: auto_98778015
       URL：http://192.168.0.1:5140/rtp/239.253.244.216:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/星影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 63. 早教                   [HTTP] TVG-ID: auto_59336913
+ 63. 早教                   [HTTP] TVG-ID: auto_15821525
       URL：http://192.168.0.1:5140/rtp/239.253.244.217:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/早教.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 64. 墨宝                   [HTTP] TVG-ID: auto_20360268
+ 64. 墨宝                   [HTTP] TVG-ID: auto_55109802
       URL：http://192.168.0.1:5140/rtp/239.253.244.222:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/墨宝.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 65. 光影                   [HTTP] TVG-ID: auto_51747960
+ 65. 光影                   [HTTP] TVG-ID: auto_25323765
       URL：http://192.168.0.1:5140/rtp/239.253.244.223:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/光影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 66. 戏曲                   [HTTP] TVG-ID: auto_45338841
+ 66. 戏曲                   [HTTP] TVG-ID: auto_72884929
       URL：http://192.168.0.1:5140/rtp/239.253.244.224:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/戏曲.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 67. 解密                   [HTTP] TVG-ID: auto_42601756
+ 67. 解密                   [HTTP] TVG-ID: auto_65326236
       URL：http://192.168.0.1:5140/rtp/239.253.244.226:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/解密.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 68. 武术                   [HTTP] TVG-ID: auto_61273522
+ 68. 武术                   [HTTP] TVG-ID: auto_36555649
       URL：http://192.168.0.1:5140/rtp/239.253.244.227:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/武术.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 69. 美妆                   [HTTP] TVG-ID: auto_35703433
+ 69. 美妆                   [HTTP] TVG-ID: auto_20457401
       URL：http://192.168.0.1:5140/rtp/239.253.244.228:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/美妆.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 70. 动画                   [HTTP] TVG-ID: auto_87507536
+ 70. 动画                   [HTTP] TVG-ID: auto_19182236
       URL：http://192.168.0.1:5140/rtp/239.253.244.229:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动画.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 71. 好学生                  [HTTP] TVG-ID: auto_59249779
+ 71. 好学生                  [HTTP] TVG-ID: auto_18210673
       URL：http://192.168.0.1:5140/rtp/239.253.244.219:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/好学生.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 72. 音乐现场                 [HTTP] TVG-ID: auto_36336830
+ 72. 音乐现场                 [HTTP] TVG-ID: auto_57854689
       URL：http://192.168.0.1:5140/rtp/239.253.244.202:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/音乐现场.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 73. 经典电影                 [HTTP] TVG-ID: auto_72421723
+ 73. 经典电影                 [HTTP] TVG-ID: auto_17502230
       URL：http://192.168.0.1:5140/rtp/239.253.244.126:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/经典电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 74. 少儿动画                 [HTTP] TVG-ID: auto_78558272
+ 74. 少儿动画                 [HTTP] TVG-ID: auto_32125935
       URL：http://192.168.0.1:5140/rtp/239.253.244.127:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/少儿动画.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 75. 相声小品                 [HTTP] TVG-ID: auto_74723700
+ 75. 相声小品                 [HTTP] TVG-ID: auto_68006163
       URL：http://192.168.0.1:5140/rtp/239.253.244.136:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/相声小品.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 76. 魅力时尚                 [HTTP] TVG-ID: auto_23923250
+ 76. 魅力时尚                 [HTTP] TVG-ID: auto_56577668
       URL：http://192.168.0.1:5140/rtp/239.253.244.130:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/魅力时尚.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 77. IPTV野外               [HTTP] TVG-ID: auto_25528595
+ 77. IPTV野外               [HTTP] TVG-ID: auto_97216101
       URL：http://192.168.0.1:5140/rtp/239.253.244.137:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/IPTV野外.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 78. IPTV法治               [HTTP] TVG-ID: auto_10034205
+ 78. IPTV法治               [HTTP] TVG-ID: auto_47947294
       URL：http://192.168.0.1:5140/rtp/239.253.244.138:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/IPTV法治.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 79. 爱体育                  [HTTP] TVG-ID: auto_71086564
+ 79. 爱体育                  [HTTP] TVG-ID: auto_12443400
       URL：http://192.168.0.1:5140/rtp/239.253.244.109:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱体育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 80. 爱生活                  [HTTP] TVG-ID: auto_20076049
+ 80. 爱生活                  [HTTP] TVG-ID: auto_89779621
       URL：http://192.168.0.1:5140/rtp/239.253.244.225:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱生活.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 81. 爱综艺                  [HTTP] TVG-ID: auto_82434267
+ 81. 爱综艺                  [HTTP] TVG-ID: auto_30957088
       URL：http://192.168.0.1:5140/rtp/239.253.244.129:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱综艺.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 82. 爱体育                  [HTTP] TVG-ID: auto_71086564
+ 82. 爱体育                  [HTTP] TVG-ID: auto_12443400
       URL：http://192.168.0.1:5140/rtp/239.253.244.131:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱体育.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 83. 爱电影                  [HTTP] TVG-ID: auto_18800372
+ 83. 爱电影                  [HTTP] TVG-ID: auto_20697074
       URL：http://192.168.0.1:5140/rtp/239.253.244.128:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱电影.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 84. 爱大剧                  [HTTP] TVG-ID: auto_67049416
+ 84. 爱大剧                  [HTTP] TVG-ID: auto_22893012
       URL：http://192.168.0.1:5140/rtp/239.253.244.132:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/爱大剧.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 85. 海看演艺                 [HTTP] TVG-ID: auto_88447715
+ 85. 海看演艺                 [HTTP] TVG-ID: auto_56678900
       URL：http://192.168.0.1:5140/rtp/239.253.244.158:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/海看演艺.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
- 86. 收视指南                 [HTTP] TVG-ID: auto_74944641
+ 86. 收视指南                 [HTTP] TVG-ID: auto_58055067
       URL：http://192.168.0.1:5140/rtp/239.253.244.124:8000?fcc=124.132.240.66:15970
       LOGO：https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/收视指南.png
       来源：https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u
 
 【未分类】（244个频道）
-  1. 昌乐电视台                [HTTPS] TVG-ID: auto_29546875
+  1. 昌乐电视台                [HTTPS] TVG-ID: auto_59426514
       URL：https://iqilu.vercel.app/api/iqilu?orgid=1&num=0
       LOGO：http://app.iqilu.com/public/upload/2019/06/12/c1563a7a4423ee69fc8ac6a4475f1084.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  2. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+  2. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=5&num=0
       LOGO：http://img11.iqilu.com/5/2019/09/03/ff67cfd99253443739258b4e88363b76.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  3. 生活频道                 [HTTPS] TVG-ID: auto_24599238
+  3. 生活频道                 [HTTPS] TVG-ID: auto_83989134
       URL：https://iqilu.vercel.app/api/iqilu?orgid=5&num=1
       LOGO：http://img11.iqilu.com/5/2019/09/03/633dced0a8375b1cf08a53a7c35cd469.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  4. 看个球吧                 [HTTPS] TVG-ID: auto_41504195
+  4. 看个球吧                 [HTTPS] TVG-ID: auto_41310465
       URL：https://iqilu.vercel.app/api/iqilu?orgid=7&num=1
       LOGO：http://img11.iqilu.com/7/2019/08/14/e6a737f4d2ed5a7c731d9d4fc24654b5.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  5. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+  5. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=11&num=0
       LOGO：http://img11.iqilu.com/11/2019/08/28/bd6f535960315f5488eb2a957ce97e6e.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  6. 民生频道                 [HTTPS] TVG-ID: auto_32193598
+  6. 民生频道                 [HTTPS] TVG-ID: auto_92380284
       URL：https://iqilu.vercel.app/api/iqilu?orgid=11&num=1
       LOGO：http://img11.iqilu.com/11/2019/08/29/50b008d8be584471e155a710795fcbbb.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  7. 曲阜综合频道               [HTTPS] TVG-ID: auto_61271113
+  7. 曲阜综合频道               [HTTPS] TVG-ID: auto_31673089
       URL：https://iqilu.vercel.app/api/iqilu?orgid=13&num=0
       LOGO：http://img11.iqilu.com/13/2019/07/22/5b8aa4ab7981769f0e32017e8efdc8fc.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  8. 博山新闻频道               [HTTPS] TVG-ID: auto_60112764
+  8. 博山新闻频道               [HTTPS] TVG-ID: auto_17854884
       URL：https://iqilu.vercel.app/api/iqilu?orgid=17&num=0
       LOGO：https://img11.iqilu.com/17/2020/08/10/e731f9f2c66d3b403fa93de20bbe709e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-  9. 博山图文频道               [HTTPS] TVG-ID: auto_16885745
+  9. 博山图文频道               [HTTPS] TVG-ID: auto_68461090
       URL：https://iqilu.vercel.app/api/iqilu?orgid=17&num=1
       LOGO：http://img11.iqilu.com/17/2019/09/04/246c68b34e5354cbcfb540ead9b79d15.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 10. 平原综合                 [HTTPS] TVG-ID: auto_89782739
+ 10. 平原综合                 [HTTPS] TVG-ID: auto_49586160
       URL：https://iqilu.vercel.app/api/iqilu?orgid=19&num=0
       LOGO：http://img11.iqilu.com/19/2019/07/08/092e36be28d17e3853267b6964316971.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 11. 桓台电视台第一套节目           [HTTPS] TVG-ID: auto_55668384
+ 11. 桓台电视台第一套节目           [HTTPS] TVG-ID: auto_29784048
       URL：https://iqilu.vercel.app/api/iqilu?orgid=23&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 12. 桓台电视台第二套节目           [HTTPS] TVG-ID: auto_12242838
+ 12. 桓台电视台第二套节目           [HTTPS] TVG-ID: auto_28450994
       URL：https://iqilu.vercel.app/api/iqilu?orgid=23&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 13. 定陶综合频道               [HTTPS] TVG-ID: auto_37331175
+ 13. 定陶综合频道               [HTTPS] TVG-ID: auto_68129597
       URL：https://iqilu.vercel.app/api/iqilu?orgid=27&num=0
       LOGO：http://img11.iqilu.com/27/2019/08/13/61316178e7253c638afd7701278185a5.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 14. 定陶综艺频道               [HTTPS] TVG-ID: auto_49197525
+ 14. 定陶综艺频道               [HTTPS] TVG-ID: auto_13243215
       URL：https://iqilu.vercel.app/api/iqilu?orgid=27&num=1
       LOGO：http://img11.iqilu.com/27/2019/08/13/68e6240eb2245dec5f06f5031381f319.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 15. 茌平综合                 [HTTPS] TVG-ID: auto_60029426
+ 15. 茌平综合                 [HTTPS] TVG-ID: auto_91190038
       URL：https://iqilu.vercel.app/api/iqilu?orgid=31&num=0
       LOGO：http://img11.iqilu.com/31/2019/07/31/d68d8dbd61ef2687dee9c21e295065c3.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 16. 茌平生活                 [HTTPS] TVG-ID: auto_13873720
+ 16. 茌平生活                 [HTTPS] TVG-ID: auto_26256309
       URL：https://iqilu.vercel.app/api/iqilu?orgid=31&num=1
       LOGO：http://img11.iqilu.com/31/2019/07/31/58f4f5b2c533d578f2abdd6336da806d.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 17. 武城综合频道               [HTTPS] TVG-ID: auto_99934972
+ 17. 武城综合频道               [HTTPS] TVG-ID: auto_89137224
       URL：https://iqilu.vercel.app/api/iqilu?orgid=33&num=0
       LOGO：http://img11.iqilu.com/33/2019/07/12/40537df10c71a8407002000f63f21f1b.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 18. 武城综艺影视频道             [HTTPS] TVG-ID: auto_72983469
+ 18. 武城综艺影视频道             [HTTPS] TVG-ID: auto_43977796
       URL：https://iqilu.vercel.app/api/iqilu?orgid=33&num=1
       LOGO：http://img11.iqilu.com/33/2019/07/12/f74dfa6d223fb23afc9371f565f1bbd1.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 19. 薛城新闻综合频道             [HTTPS] TVG-ID: auto_24002040
+ 19. 薛城新闻综合频道             [HTTPS] TVG-ID: auto_87343522
       URL：https://iqilu.vercel.app/api/iqilu?orgid=37&num=0
       LOGO：https://img11.iqilu.com/37/2020/09/07/a4fbb22f6fc7e0b4c7da05c43833d5bd.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 20. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+ 20. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=39&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 21. 高唐综合频道               [HTTPS] TVG-ID: auto_85042600
+ 21. 高唐综合频道               [HTTPS] TVG-ID: auto_41817181
       URL：https://iqilu.vercel.app/api/iqilu?orgid=43&num=0
       LOGO：https://img11.iqilu.com/43/2022/05/27/32d796b4985a0d3200699348e16e8eb2.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 22. 高唐综艺频道               [HTTPS] TVG-ID: auto_41512036
+ 22. 高唐综艺频道               [HTTPS] TVG-ID: auto_21450844
       URL：https://iqilu.vercel.app/api/iqilu?orgid=43&num=1
       LOGO：https://img11.iqilu.com/43/2020/06/11/66b2002fa234a36ffba474667f499aa6.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 23. 昌邑新闻综合               [HTTPS] TVG-ID: auto_72131293
+ 23. 昌邑新闻综合               [HTTPS] TVG-ID: auto_58052837
       URL：https://iqilu.vercel.app/api/iqilu?orgid=47&num=0
       LOGO：https://img11.iqilu.com/47/2022/12/05/2d76b52e06345d29703d7c31a0335fc4.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 24. 昌邑经济生活               [HTTPS] TVG-ID: auto_77811797
+ 24. 昌邑经济生活               [HTTPS] TVG-ID: auto_19952634
       URL：https://iqilu.vercel.app/api/iqilu?orgid=47&num=1
       LOGO：https://img11.iqilu.com/47/2022/12/05/40db1284d3d921756120d71f27921775.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 25. 临邑一                  [HTTPS] TVG-ID: auto_81112211
+ 25. 临邑一                  [HTTPS] TVG-ID: auto_74025989
       URL：https://iqilu.vercel.app/api/iqilu?orgid=49&num=0
       LOGO：http://img11.iqilu.com/49/2019/08/09/77f6f089c6491887264da26d740f787f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 26. 肥城综合频道               [HTTPS] TVG-ID: auto_64317179
+ 26. 肥城综合频道               [HTTPS] TVG-ID: auto_44628250
       URL：https://iqilu.vercel.app/api/iqilu?orgid=51&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 27. 肥城生活频道               [HTTPS] TVG-ID: auto_44858392
+ 27. 肥城生活频道               [HTTPS] TVG-ID: auto_62670165
       URL：https://iqilu.vercel.app/api/iqilu?orgid=51&num=1
       LOGO：https://img11.iqilu.com/51/2020/10/21/7a8e9cead2c6b4b8fda6dfee8de5e73a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 28. 微山电视综合频道             [HTTPS] TVG-ID: auto_52553024
+ 28. 微山电视综合频道             [HTTPS] TVG-ID: auto_57750293
       URL：https://iqilu.vercel.app/api/iqilu?orgid=53&num=0
       LOGO：https://img11.iqilu.com/53/2019/11/05/3a37dd2d1c644e7d22083668095f04ec.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 29. 微山电视第二频道             [HTTPS] TVG-ID: auto_64371279
+ 29. 微山电视第二频道             [HTTPS] TVG-ID: auto_42033337
       URL：https://iqilu.vercel.app/api/iqilu?orgid=53&num=1
       LOGO：https://img11.iqilu.com/53/2019/11/05/7eadc253cdeb83765cc0619d543c8f31.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 30. 招远综合频道               [HTTPS] TVG-ID: auto_49248107
+ 30. 招远综合频道               [HTTPS] TVG-ID: auto_21575249
       URL：https://iqilu.vercel.app/api/iqilu?orgid=55&num=0
       LOGO：http://img11.iqilu.com/55/2019/08/14/eb2df86cac178b0f56a65c579c9f3c07.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 31. 招远综艺频道               [HTTPS] TVG-ID: auto_42467767
+ 31. 招远综艺频道               [HTTPS] TVG-ID: auto_67680407
       URL：https://iqilu.vercel.app/api/iqilu?orgid=55&num=1
       LOGO：https://img11.iqilu.com/55/2022/09/27/f6cf264a2f0ef068908f7eb25c252ff8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 32. 龙口综合                 [HTTPS] TVG-ID: auto_46530347
+ 32. 龙口综合                 [HTTPS] TVG-ID: auto_30180683
       URL：https://iqilu.vercel.app/api/iqilu?orgid=57&num=0
       LOGO：https://img11.iqilu.com/57/2020/04/02/d2f122979640616e5b3e56a28bc5ba3f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 33. 龙口生活                 [HTTPS] TVG-ID: auto_85017246
+ 33. 龙口生活                 [HTTPS] TVG-ID: auto_36610384
       URL：https://iqilu.vercel.app/api/iqilu?orgid=57&num=1
       LOGO：https://img11.iqilu.com/57/2020/04/02/a2ae029ad7a3ed35bb0dc8d2353fb374.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 34. 新泰综合频道               [HTTPS] TVG-ID: auto_37361267
+ 34. 新泰综合频道               [HTTPS] TVG-ID: auto_23260001
       URL：https://iqilu.vercel.app/api/iqilu?orgid=59&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 35. 新泰乡村频道               [HTTPS] TVG-ID: auto_71468544
+ 35. 新泰乡村频道               [HTTPS] TVG-ID: auto_63599322
       URL：https://iqilu.vercel.app/api/iqilu?orgid=59&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 36. 鱼台综合频道               [HTTPS] TVG-ID: auto_14431559
+ 36. 鱼台综合频道               [HTTPS] TVG-ID: auto_30987835
       URL：https://iqilu.vercel.app/api/iqilu?orgid=63&num=0
       LOGO：http://img11.iqilu.com/63/2019/10/22/ee1e4080c5e91c2291d0d97fa5972f59.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 37. 鱼台生活频道               [HTTPS] TVG-ID: auto_27189458
+ 37. 鱼台生活频道               [HTTPS] TVG-ID: auto_11471577
       URL：https://iqilu.vercel.app/api/iqilu?orgid=63&num=1
       LOGO：http://img11.iqilu.com/63/2019/10/22/c32cf58cfebc6f0c6f3a577da015f29c.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 38. 临清综合频道               [HTTPS] TVG-ID: auto_13464002
+ 38. 临清综合频道               [HTTPS] TVG-ID: auto_45455717
       URL：https://iqilu.vercel.app/api/iqilu?orgid=65&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 39. 临清经济信息               [HTTPS] TVG-ID: auto_20139614
+ 39. 临清经济信息               [HTTPS] TVG-ID: auto_16760842
       URL：https://iqilu.vercel.app/api/iqilu?orgid=65&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 40. 兰陵综合                 [HTTPS] TVG-ID: auto_88590113
+ 40. 兰陵综合                 [HTTPS] TVG-ID: auto_17924935
       URL：https://iqilu.vercel.app/api/iqilu?orgid=69&num=1
       LOGO：http://img11.iqilu.com/69/2019/10/07/f7efaee95d53ead5fbd2b81a3bf7b957.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 41. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+ 41. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=71&num=0
       LOGO：https://img11.iqilu.com/71/2021/04/18/016dce0ffb08811432ccde33ec6118c8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 42. 党建农科                 [HTTPS] TVG-ID: auto_75216301
+ 42. 党建农科                 [HTTPS] TVG-ID: auto_72193854
       URL：https://iqilu.vercel.app/api/iqilu?orgid=71&num=1
       LOGO：https://img11.iqilu.com/71/2021/04/18/016dce0ffb08811432ccde33ec6118c8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 43. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+ 43. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=73&num=0
       LOGO：http://img11.iqilu.com/73/2019/10/28/01b9a482dad69c1438fdf43004a3f55c.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 44. 影视娱乐                 [HTTPS] TVG-ID: auto_11770599
+ 44. 影视娱乐                 [HTTPS] TVG-ID: auto_41324687
       URL：https://iqilu.vercel.app/api/iqilu?orgid=73&num=1
       LOGO：http://img11.iqilu.com/73/2019/10/28/4b3ee74f6156d7bffbb6d7cf1a9b40ae.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 45. 荣成综合                 [HTTPS] TVG-ID: auto_80987739
+ 45. 荣成综合                 [HTTPS] TVG-ID: auto_60247766
       URL：https://iqilu.vercel.app/api/iqilu?orgid=77&num=0
       LOGO：https://img11.iqilu.com/77/2020/04/13/2be38427caccbfcdc66d942d13d01404.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 46. 荣成生活                 [HTTPS] TVG-ID: auto_80593408
+ 46. 荣成生活                 [HTTPS] TVG-ID: auto_17836826
       URL：https://iqilu.vercel.app/api/iqilu?orgid=77&num=1
       LOGO：https://img11.iqilu.com/77/2020/04/13/d8f9b0205fc23d1cda757345ccfe004d.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 47. 阳谷综合频道               [HTTPS] TVG-ID: auto_45483723
+ 47. 阳谷综合频道               [HTTPS] TVG-ID: auto_38418663
       URL：https://iqilu.vercel.app/api/iqilu?orgid=81&num=0
       LOGO：https://img11.iqilu.com/81/2020/06/03/f6b573279c82ccea0edbc094092e944b.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 48. 阳谷影视频道               [HTTPS] TVG-ID: auto_60788548
+ 48. 阳谷影视频道               [HTTPS] TVG-ID: auto_85939388
       URL：https://iqilu.vercel.app/api/iqilu?orgid=81&num=1
       LOGO：https://img11.iqilu.com/81/2021/05/10/4a0c3458485adee3c3d2eed5550609e4.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 49. 新闻发布会                [HTTPS] TVG-ID: auto_51056735
+ 49. 新闻发布会                [HTTPS] TVG-ID: auto_27530378
       URL：https://iqilu.vercel.app/api/iqilu?orgid=81&num=2
       LOGO：https://img11.iqilu.com/81/2022/07/14/8810e34917e479444b2d214b4521bda2.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 50. 郯城TV-1               [HTTPS] TVG-ID: auto_69104288
+ 50. 郯城TV-1               [HTTPS] TVG-ID: auto_76340285
       URL：https://iqilu.vercel.app/api/iqilu?orgid=83&num=0
       LOGO：http://img11.iqilu.com/83/2019/09/16/6e02837c443df92d8a834485d9df323f.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 51. 郯城TV-2               [HTTPS] TVG-ID: auto_26114684
+ 51. 郯城TV-2               [HTTPS] TVG-ID: auto_50057101
       URL：https://iqilu.vercel.app/api/iqilu?orgid=83&num=1
       LOGO：http://img11.iqilu.com/83/2019/09/16/3ac28dcb76c5662f2d56fd42cd2891cd.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 52. 济阳综合                 [HTTPS] TVG-ID: auto_41660073
+ 52. 济阳综合                 [HTTPS] TVG-ID: auto_59470866
       URL：https://iqilu.vercel.app/api/iqilu?orgid=85&num=0
       LOGO：http://img11.iqilu.com/85/2019/09/20/b01e3a145ebb3bf45c3be7f6a5eb5563.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 53. 济阳影视                 [HTTPS] TVG-ID: auto_33711417
+ 53. 济阳影视                 [HTTPS] TVG-ID: auto_60921990
       URL：https://iqilu.vercel.app/api/iqilu?orgid=85&num=1
       LOGO：https://img11.iqilu.com/85/2019/11/04/16f811e37834aa6920557211b5bcdd03.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 54. 曹县融媒体中心综合频道          [HTTPS] TVG-ID: auto_26177558
+ 54. 曹县融媒体中心综合频道          [HTTPS] TVG-ID: auto_45448293
       URL：https://iqilu.vercel.app/api/iqilu?orgid=87&num=0
       LOGO：http://img11.iqilu.com/87/2019/09/20/27e5f82087162733038d42dd51e31c9a.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 55. 梁山综合                 [HTTPS] TVG-ID: auto_54454775
+ 55. 梁山综合                 [HTTPS] TVG-ID: auto_28993881
       URL：https://iqilu.vercel.app/api/iqilu?orgid=89&num=0
       LOGO：https://img11.iqilu.com/89/2021/06/22/50ade81b4e4ae5626f182bac7d504e1b.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 56. 文登一台                 [HTTPS] TVG-ID: auto_80261562
+ 56. 文登一台                 [HTTPS] TVG-ID: auto_17795494
       URL：https://iqilu.vercel.app/api/iqilu?orgid=91&num=0
       LOGO：http://img11.iqilu.com/91/2019/09/23/b1ce271fdfe56bbf19903bab8fd5257f.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 57. 文登二台                 [HTTPS] TVG-ID: auto_39983543
+ 57. 文登二台                 [HTTPS] TVG-ID: auto_36154102
       URL：https://iqilu.vercel.app/api/iqilu?orgid=91&num=1
       LOGO：http://img11.iqilu.com/91/2019/09/23/78f22c7dfcdc0becef63d652450d7887.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 58. 电台直播                 [HTTPS] TVG-ID: auto_46722896
+ 58. 电台直播                 [HTTPS] TVG-ID: auto_80151977
       URL：https://iqilu.vercel.app/api/iqilu?orgid=91&num=2
       LOGO：https://img11.litenews.cn/91/2023/05/10/cfca53779ef767bfe50941a0271427df.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 59. 商河综合频道               [HTTPS] TVG-ID: auto_89906764
+ 59. 商河综合频道               [HTTPS] TVG-ID: auto_69907518
       URL：https://iqilu.vercel.app/api/iqilu?orgid=97&num=0
       LOGO：https://img11.iqilu.com/97/2022/04/28/f2df22ef9401d4e9a6317d8bce36541c.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 60. 商河影视频道               [HTTPS] TVG-ID: auto_73378082
+ 60. 商河影视频道               [HTTPS] TVG-ID: auto_77806538
       URL：https://iqilu.vercel.app/api/iqilu?orgid=97&num=1
       LOGO：https://img11.iqilu.com/97/2022/04/28/3ee219f867bd346f35efb27e60baf4b9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 61. ZDTV-1               [HTTPS] TVG-ID: auto_62224767
+ 61. ZDTV-1               [HTTPS] TVG-ID: auto_27084924
       URL：https://iqilu.vercel.app/api/iqilu?orgid=101&num=0
       LOGO：http://img11.iqilu.com/101/2019/10/11/cac3a6d980a083b956f32af413efc02f.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 62. ZDTV-2               [HTTPS] TVG-ID: auto_34910487
+ 62. ZDTV-2               [HTTPS] TVG-ID: auto_82867391
       URL：https://iqilu.vercel.app/api/iqilu?orgid=101&num=1
       LOGO：http://img11.iqilu.com/101/2019/10/11/b1f16c2c98d409daeffcc3a220d9a736.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 63. 滕州新闻综合频道             [HTTPS] TVG-ID: auto_66388648
+ 63. 滕州新闻综合频道             [HTTPS] TVG-ID: auto_10620933
       URL：https://iqilu.vercel.app/api/iqilu?orgid=103&num=0
       LOGO：https://img11.iqilu.com/103/2019/11/28/e920129c09d677aefd403e272d379d70.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 64. 滕州民生频道               [HTTPS] TVG-ID: auto_35988444
+ 64. 滕州民生频道               [HTTPS] TVG-ID: auto_10032386
       URL：https://iqilu.vercel.app/api/iqilu?orgid=103&num=1
       LOGO：https://img11.iqilu.com/103/2019/11/28/4c4fbcf0e96a9850b01171365bcc9aa0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 65. 莒南综合频道               [HTTPS] TVG-ID: auto_52313233
+ 65. 莒南综合频道               [HTTPS] TVG-ID: auto_13276816
       URL：https://iqilu.vercel.app/api/iqilu?orgid=105&num=0
       LOGO：https://img11.iqilu.com/105/2019/11/27/f523d212792fac8d2236470ee3b3eae2.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 66. 莒南影视频道               [HTTPS] TVG-ID: auto_66677988
+ 66. 莒南影视频道               [HTTPS] TVG-ID: auto_48794536
       URL：https://iqilu.vercel.app/api/iqilu?orgid=105&num=1
       LOGO：https://img11.iqilu.com/105/2019/11/27/ab74ba3dbe9402bda353df438808e21a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 67. 蓬莱区融媒体中心综合频道         [HTTPS] TVG-ID: auto_52077427
+ 67. 蓬莱区融媒体中心综合频道         [HTTPS] TVG-ID: auto_88869572
       URL：https://iqilu.vercel.app/api/iqilu?orgid=109&num=0
       LOGO：https://img11.iqilu.com/109/2019/11/21/bb4ab04199fe6803e7fdc8251bc782e9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 68. 蓬莱区融媒体中心综艺频道         [HTTPS] TVG-ID: auto_76324274
+ 68. 蓬莱区融媒体中心综艺频道         [HTTPS] TVG-ID: auto_68333803
       URL：https://iqilu.vercel.app/api/iqilu?orgid=109&num=1
       LOGO：https://img11.iqilu.com/109/2019/11/21/c84694367f7297b58b286c6658c32bb0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 69. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+ 69. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=111&num=0
       LOGO：https://img11.iqilu.com/111/2020/02/21/973752d4ed7ac0ce07e3b0bebc3ae09e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 70. 兰陵综合                 [HTTPS] TVG-ID: auto_88590113
+ 70. 兰陵综合                 [HTTPS] TVG-ID: auto_17924935
       URL：https://iqilu.vercel.app/api/iqilu?orgid=113&num=0
       LOGO：https://img11.litenews.cn/113/2024/08/19/1f07b4f5b8749820a9f59d010a3f8fed.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 71. 兰陵公共                 [HTTPS] TVG-ID: auto_63448142
+ 71. 兰陵公共                 [HTTPS] TVG-ID: auto_16117039
       URL：https://iqilu.vercel.app/api/iqilu?orgid=113&num=1
       LOGO：https://img11.litenews.cn/113/2024/08/19/1f07b4f5b8749820a9f59d010a3f8fed.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 72. 听广播                  [HTTPS] TVG-ID: auto_58512015
+ 72. 听广播                  [HTTPS] TVG-ID: auto_88903310
       URL：https://iqilu.vercel.app/api/iqilu?orgid=113&num=3
       LOGO：https://img11.litenews.cn/113/2023/08/15/40d9e4478ba2de8211df8ee0fc02143c.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 73. FM100.1              [HTTPS] TVG-ID: auto_78559405
+ 73. FM100.1              [HTTPS] TVG-ID: auto_40618534
       URL：https://iqilu.vercel.app/api/iqilu?orgid=113&num=5
       LOGO：https://img11.iqilu.com/113/2023/01/19/1729c427905094acc4c187f4d91cd192.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 74. 诸城新闻综合               [HTTPS] TVG-ID: auto_85111845
+ 74. 诸城新闻综合               [HTTPS] TVG-ID: auto_88682486
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=0
       LOGO：https://img11.iqilu.com/115/2020/04/17/e1074de915f68092198eaf851edd20e9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 75. 诸城生活娱乐               [HTTPS] TVG-ID: auto_42790932
+ 75. 诸城生活娱乐               [HTTPS] TVG-ID: auto_35521280
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=1
       LOGO：https://img11.iqilu.com/115/2021/11/22/d502a170c690601477ac32e836db60f7.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 76. 党风政风监督热线             [HTTPS] TVG-ID: auto_54034181
+ 76. 党风政风监督热线             [HTTPS] TVG-ID: auto_21707522
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=2
       LOGO：https://img11.iqilu.com/115/2020/04/17/e1074de915f68092198eaf851edd20e9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 77. 潍坊新闻综合               [HTTPS] TVG-ID: auto_63993533
+ 77. 潍坊新闻综合               [HTTPS] TVG-ID: auto_65760072
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=3
       LOGO：https://img11.iqilu.com/115/2020/06/08/5454a2418cc2895f46f2a7bb22205dad.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 78. 潍坊经济生活               [HTTPS] TVG-ID: auto_30697074
+ 78. 潍坊经济生活               [HTTPS] TVG-ID: auto_10761994
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=4
       LOGO：https://img11.iqilu.com/115/2020/06/08/5454a2418cc2895f46f2a7bb22205dad.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 79. 潍坊影视综艺               [HTTPS] TVG-ID: auto_88487610
+ 79. 潍坊影视综艺               [HTTPS] TVG-ID: auto_87751703
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=5
       LOGO：https://img11.iqilu.com/115/2020/06/08/5454a2418cc2895f46f2a7bb22205dad.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 80. 慢直播│直播中国精编直播         [HTTPS] TVG-ID: auto_88458812
+ 80. 慢直播│直播中国精编直播         [HTTPS] TVG-ID: auto_82550632
       URL：https://iqilu.vercel.app/api/iqilu?orgid=115&num=6
       LOGO：https://img11.iqilu.com/115/2022/08/03/ad9c773991972ec52e2bc64face91cda.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 81. 泗水综合                 [HTTPS] TVG-ID: auto_51860922
+ 81. 泗水综合                 [HTTPS] TVG-ID: auto_63875205
       URL：https://iqilu.vercel.app/api/iqilu?orgid=117&num=0
       LOGO：https://img11.iqilu.com/117/2020/01/14/45c05e6539761ed14351947b342656a9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 82. 泗水生活                 [HTTPS] TVG-ID: auto_31433435
+ 82. 泗水生活                 [HTTPS] TVG-ID: auto_59403882
       URL：https://iqilu.vercel.app/api/iqilu?orgid=117&num=1
       LOGO：https://img11.iqilu.com/117/2020/01/14/3e341326dd9cf5d2ab4ec237ed3a9b31.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 83. 宁阳综合频道               [HTTPS] TVG-ID: auto_68716331
+ 83. 宁阳综合频道               [HTTPS] TVG-ID: auto_47428278
       URL：https://iqilu.vercel.app/api/iqilu?orgid=123&num=0
       LOGO：https://img11.iqilu.com/123/2020/03/13/242cdc084f028417f3b231396b890e79.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 84. 宁阳-2                 [HTTPS] TVG-ID: auto_12302954
+ 84. 宁阳-2                 [HTTPS] TVG-ID: auto_45127729
       URL：https://iqilu.vercel.app/api/iqilu?orgid=123&num=1
       LOGO：https://img11.iqilu.com/123/2020/03/13/364336f843474d52af46361bc3d168eb.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 85. 【青州】综合               [HTTPS] TVG-ID: auto_19761536
+ 85. 【青州】综合               [HTTPS] TVG-ID: auto_77450595
       URL：https://iqilu.vercel.app/api/iqilu?orgid=125&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 86. 【青州】文化旅游             [HTTPS] TVG-ID: auto_60614818
+ 86. 【青州】文化旅游             [HTTPS] TVG-ID: auto_18591810
       URL：https://iqilu.vercel.app/api/iqilu?orgid=125&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 87. 奎文电视台                [HTTPS] TVG-ID: auto_90698548
+ 87. 奎文电视台                [HTTPS] TVG-ID: auto_41574154
       URL：https://iqilu.vercel.app/api/iqilu?orgid=127&num=0
       LOGO：https://img11.iqilu.com/127/2020/04/07/a3bec6ca8416f29cfb77093bb81bef54.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 88. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+ 88. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=129&num=0
       LOGO：http://img11.iqilu.com/129/2019/10/17/3bc1df8c48a2bbb67ea8b6591b10648a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 89. 生活频道                 [HTTPS] TVG-ID: auto_24599238
+ 89. 生活频道                 [HTTPS] TVG-ID: auto_83989134
       URL：https://iqilu.vercel.app/api/iqilu?orgid=129&num=1
       LOGO：http://img11.iqilu.com/129/2019/10/17/fb1c2f3edc7b66510242cdd5038ad43b.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 90. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+ 90. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=131&num=0
       LOGO：http://img11.iqilu.com/131/2019/10/18/03c33962287c444c6da6c8d654a3814e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 91. 综艺频道                 [HTTPS] TVG-ID: auto_31200899
+ 91. 综艺频道                 [HTTPS] TVG-ID: auto_27883198
       URL：https://iqilu.vercel.app/api/iqilu?orgid=131&num=1
       LOGO：http://img11.iqilu.com/131/2019/10/18/89010ea387ffa2079662899715859ae4.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 92. 寒亭新闻频道               [HTTPS] TVG-ID: auto_71898681
+ 92. 寒亭新闻频道               [HTTPS] TVG-ID: auto_67423998
       URL：https://iqilu.vercel.app/api/iqilu?orgid=133&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 93. 郓城综合                 [HTTPS] TVG-ID: auto_48923545
+ 93. 郓城综合                 [HTTPS] TVG-ID: auto_73185184
       URL：https://iqilu.vercel.app/api/iqilu?orgid=135&num=0
       LOGO：http://img11.iqilu.com/135/2019/10/28/bf458f19cccb791a4397ae4986986459.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 94. 民生综艺                 [HTTPS] TVG-ID: auto_89857713
+ 94. 民生综艺                 [HTTPS] TVG-ID: auto_17997116
       URL：https://iqilu.vercel.app/api/iqilu?orgid=135&num=1
       LOGO：http://img11.iqilu.com/135/2019/10/28/3f4b3c85fec131b0fd7ad0610aef4180.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 95. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+ 95. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=137&num=0
       LOGO：http://img11.iqilu.com/137/2019/10/29/3e8ff94691a06f9b9dccc9c0f9ef0c5f.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 96. 民生频道                 [HTTPS] TVG-ID: auto_32193598
+ 96. 民生频道                 [HTTPS] TVG-ID: auto_92380284
       URL：https://iqilu.vercel.app/api/iqilu?orgid=137&num=1
       LOGO：http://img11.iqilu.com/137/2019/10/29/50179260359a51bb7c2da20aed87a036.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 97. 新闻频道                 [HTTPS] TVG-ID: auto_23654073
+ 97. 新闻频道                 [HTTPS] TVG-ID: auto_49299880
       URL：https://iqilu.vercel.app/api/iqilu?orgid=139&num=0
       LOGO：https://img11.iqilu.com/139/2019/10/30/01d116e5ab4bcf2bb0d8c84586887949.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 98. 鄄城综合频道               [HTTPS] TVG-ID: auto_72438023
+ 98. 鄄城综合频道               [HTTPS] TVG-ID: auto_30099778
       URL：https://iqilu.vercel.app/api/iqilu?orgid=141&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
- 99. 鄄城综艺频道               [HTTPS] TVG-ID: auto_69405980
+ 99. 鄄城综艺频道               [HTTPS] TVG-ID: auto_47117915
       URL：https://iqilu.vercel.app/api/iqilu?orgid=141&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-100. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+100. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=143&num=0
       LOGO：https://img11.iqilu.com/143/2019/12/04/b83105d67d795a22f10e9c5a2a4a70bd.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-101. 生活频道                 [HTTPS] TVG-ID: auto_24599238
+101. 生活频道                 [HTTPS] TVG-ID: auto_83989134
       URL：https://iqilu.vercel.app/api/iqilu?orgid=143&num=1
       LOGO：https://img11.iqilu.com/143/2019/12/04/92a8f8eee69d466928bdf95fa94e9306.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-102. 沂水综合                 [HTTPS] TVG-ID: auto_86889711
+102. 沂水综合                 [HTTPS] TVG-ID: auto_72670798
       URL：https://iqilu.vercel.app/api/iqilu?orgid=145&num=0
       LOGO：https://img11.iqilu.com/145/2022/10/18/551742b29526d69ea3eeeef44bb0dc79.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-103. 沂水生活                 [HTTPS] TVG-ID: auto_89427634
+103. 沂水生活                 [HTTPS] TVG-ID: auto_70867015
       URL：https://iqilu.vercel.app/api/iqilu?orgid=145&num=1
       LOGO：https://img11.iqilu.com/145/2022/10/18/352a862dceb2fda3f271761ac2d267fe.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-104. 罗庄综合                 [HTTPS] TVG-ID: auto_68380680
+104. 罗庄综合                 [HTTPS] TVG-ID: auto_56293758
       URL：https://iqilu.vercel.app/api/iqilu?orgid=147&num=0
       LOGO：https://img11.iqilu.com/147/2019/12/18/66453af311ed1ea8a1bdfabec4d40145.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-105. 罗庄影视                 [HTTPS] TVG-ID: auto_90672370
+105. 罗庄影视                 [HTTPS] TVG-ID: auto_52828849
       URL：https://iqilu.vercel.app/api/iqilu?orgid=147&num=1
       LOGO：https://img11.iqilu.com/147/2022/01/21/de7869a1982a2054835b4591e1421721.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-106. LZTV-1新闻综合频道         [HTTPS] TVG-ID: auto_17093994
+106. LZTV-1新闻综合频道         [HTTPS] TVG-ID: auto_39235919
       URL：https://iqilu.vercel.app/api/iqilu?orgid=151&num=0
       LOGO：https://img11.iqilu.com/151/2019/12/12/94061cbdc6f8f2afe2a690340d67be19.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-107. LZTV-2生活服务频道         [HTTPS] TVG-ID: auto_55952036
+107. LZTV-2生活服务频道         [HTTPS] TVG-ID: auto_46393513
       URL：https://iqilu.vercel.app/api/iqilu?orgid=151&num=1
       LOGO：https://img11.iqilu.com/151/2019/12/12/f901bf72ce0667bc5bd6483fe8e9412d.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-108. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+108. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=153&num=0
       LOGO：https://img11.iqilu.com/153/2020/09/18/9455b1d78c6beadd88fe4d41d94f943a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-109. 文化生活频道               [HTTPS] TVG-ID: auto_19328997
+109. 文化生活频道               [HTTPS] TVG-ID: auto_87915280
       URL：https://iqilu.vercel.app/api/iqilu?orgid=153&num=1
       LOGO：https://img11.iqilu.com/153/2020/09/18/ab9930d5ab27b4c9d4f1842595884885.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-110. 利津广播电台               [HTTPS] TVG-ID: auto_51789894
+110. 利津广播电台               [HTTPS] TVG-ID: auto_10167434
       URL：https://iqilu.vercel.app/api/iqilu?orgid=153&num=2
       LOGO：https://img11.iqilu.com/153/2020/10/27/4f8ba642f656de3e92596cc19fe91dd0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-111. 经典剧场                 [HTTPS] TVG-ID: auto_33978435
+111. 经典剧场                 [HTTPS] TVG-ID: auto_55839974
       URL：https://iqilu.vercel.app/api/iqilu?orgid=155&num=0
       LOGO：https://img11.litenews.cn/155/2025/07/19/1db97407e6df41848140de9a6ab4466e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-112. 单县新闻综合频道             [HTTPS] TVG-ID: auto_78417858
+112. 单县新闻综合频道             [HTTPS] TVG-ID: auto_34333749
       URL：https://iqilu.vercel.app/api/iqilu?orgid=155&num=1
       LOGO：https://img11.iqilu.com/155/2019/12/30/c7a1f4297e54deeedec8f6eba6ee77b3.jpeg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-113. 莒县综合                 [HTTPS] TVG-ID: auto_22214799
+113. 莒县综合                 [HTTPS] TVG-ID: auto_42051706
       URL：https://iqilu.vercel.app/api/iqilu?orgid=159&num=0
       LOGO：https://img11.iqilu.com/159/2021/12/08/1220317e6ab11c7d1ca8848ad4e44187.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-114. 莒县生活                 [HTTPS] TVG-ID: auto_53202421
+114. 莒县生活                 [HTTPS] TVG-ID: auto_24896968
       URL：https://iqilu.vercel.app/api/iqilu?orgid=159&num=1
       LOGO：https://img11.iqilu.com/159/2021/12/08/464ecab2bf54fe36e92471046607cda8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-115. FM97-Live            [HTTPS] TVG-ID: auto_47853805
+115. FM97-Live            [HTTPS] TVG-ID: auto_82610569
       URL：https://iqilu.vercel.app/api/iqilu?orgid=159&num=2
       LOGO：https://img11.iqilu.com/159/2021/12/08/67bcbab2f163d20628174455a3da288a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-116. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+116. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=163&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-117. 科教影视频道               [HTTPS] TVG-ID: auto_98677984
+117. 科教影视频道               [HTTPS] TVG-ID: auto_42926780
       URL：https://iqilu.vercel.app/api/iqilu?orgid=163&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-118. 临沭TV-1               [HTTPS] TVG-ID: auto_87507732
+118. 临沭TV-1               [HTTPS] TVG-ID: auto_26258486
       URL：https://iqilu.vercel.app/api/iqilu?orgid=167&num=0
       LOGO：https://img11.iqilu.com/167/2019/11/25/d4f3e007b40c092521f388a90e52ce89.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-119. 临沭TV-2               [HTTPS] TVG-ID: auto_68201158
+119. 临沭TV-2               [HTTPS] TVG-ID: auto_28547659
       URL：https://iqilu.vercel.app/api/iqilu?orgid=167&num=1
       LOGO：https://img11.iqilu.com/167/2019/11/25/b6232ac766c2ed3e8394336399789f60.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-120. 慢直播                  [HTTPS] TVG-ID: auto_52838696
+120. 慢直播                  [HTTPS] TVG-ID: auto_79897104
       URL：https://iqilu.vercel.app/api/iqilu?orgid=167&num=2
       LOGO：https://img11.iqilu.com/167/2022/03/23/1d056f4aceb0f103ac98367da68a7b2a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-121. 无棣综合频道               [HTTPS] TVG-ID: auto_36718134
+121. 无棣综合频道               [HTTPS] TVG-ID: auto_11741400
       URL：https://iqilu.vercel.app/api/iqilu?orgid=169&num=0
       LOGO：https://img11.iqilu.com/169/2021/08/02/c39df294341be6ac9b65b96b4cada1e2.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-122. 无棣综艺频道               [HTTPS] TVG-ID: auto_12509172
+122. 无棣综艺频道               [HTTPS] TVG-ID: auto_10360923
       URL：https://iqilu.vercel.app/api/iqilu?orgid=169&num=1
       LOGO：https://img11.iqilu.com/169/2021/08/02/da88715c4ac73b748a2738e2b64b22e8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-123. 无棣广播直播回放             [HTTPS] TVG-ID: auto_73524058
+123. 无棣广播直播回放             [HTTPS] TVG-ID: auto_73031553
       URL：https://iqilu.vercel.app/api/iqilu?orgid=169&num=2
       LOGO： https://img11.iqilu.com/169/2021/07/26/9b885db513fed694f0ae257850fb316f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-124. 长清综合                 [HTTPS] TVG-ID: auto_61004403
+124. 长清综合                 [HTTPS] TVG-ID: auto_71213633
       URL：https://iqilu.vercel.app/api/iqilu?orgid=171&num=0
       LOGO：https://img11.iqilu.com/171/2019/12/04/fd4b8088a20fee0fe02b46c31c91e87c.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-125. 长清生活                 [HTTPS] TVG-ID: auto_25384229
+125. 长清生活                 [HTTPS] TVG-ID: auto_71588569
       URL：https://iqilu.vercel.app/api/iqilu?orgid=171&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-126. QTV-李沧               [HTTPS] TVG-ID: auto_81640122
+126. QTV-李沧               [HTTPS] TVG-ID: auto_40255711
       URL：https://iqilu.vercel.app/api/iqilu?orgid=173&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-127. 长岛电视台                [HTTPS] TVG-ID: auto_72899073
+127. 长岛电视台                [HTTPS] TVG-ID: auto_44153254
       URL：https://iqilu.vercel.app/api/iqilu?orgid=175&num=0
       LOGO：https://img11.iqilu.com/175/2021/04/22/c2b48fd7e114905ce8ca97a56236ac5f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-128. 沂南综合频道               [HTTPS] TVG-ID: auto_63573618
+128. 沂南综合频道               [HTTPS] TVG-ID: auto_13261426
       URL：https://iqilu.vercel.app/api/iqilu?orgid=177&num=0
       LOGO：https://img11.iqilu.com/177/2020/01/01/5e3270a9bad58efbffd74af2b9142654.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-129. 沂南红色影视               [HTTPS] TVG-ID: auto_84327780
+129. 沂南红色影视               [HTTPS] TVG-ID: auto_13443974
       URL：https://iqilu.vercel.app/api/iqilu?orgid=177&num=1
       LOGO：https://img11.iqilu.com/177/2020/01/01/f296fc2db31f96d712896b94876cfaae.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-130. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+130. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=0
       LOGO：https://img11.iqilu.com/179/2019/12/10/8203f05252f2875d46a5d74ec804cf43.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-131. 经济生活频道               [HTTPS] TVG-ID: auto_49340110
+131. 经济生活频道               [HTTPS] TVG-ID: auto_17705424
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=1
       LOGO：https://img11.iqilu.com/179/2019/12/10/b1a10dda1e3a2b59265641d0a20a10b7.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-132. 图文频道                 [HTTPS] TVG-ID: auto_63102362
+132. 图文频道                 [HTTPS] TVG-ID: auto_32967374
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=2
       LOGO：https://img11.iqilu.com/179/2020/12/30/0ea68ecfb36ae47e4a6f78f03b40fbfd.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-133. 夏津综合频道               [HTTPS] TVG-ID: auto_86775211
+133. 夏津综合频道               [HTTPS] TVG-ID: auto_31002331
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=3
       LOGO：https://img11.litenews.cn/179/2024/03/19/525d09a2f73d416d80ab0066a4b8afd0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-134. 夏津公共频道               [HTTPS] TVG-ID: auto_37031280
+134. 夏津公共频道               [HTTPS] TVG-ID: auto_72640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=4
       LOGO：https://img11.litenews.cn/179/2024/03/19/525d09a2f73d416d80ab0066a4b8afd0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-135. 齐河综合频道               [HTTPS] TVG-ID: auto_73695161
+135. 齐河综合频道               [HTTPS] TVG-ID: auto_13193819
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=5
       LOGO：https://img11.litenews.cn/179/2024/03/19/2e03fc2617472fe2ab9eb82c33802808.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-136. 平原综合频道               [HTTPS] TVG-ID: auto_25949790
+136. 平原综合频道               [HTTPS] TVG-ID: auto_31018662
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=6
       LOGO：https://img11.litenews.cn/179/2024/03/19/87da928ab62aca14fc2be26413537461.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-137. 陵城区综合频道              [HTTPS] TVG-ID: auto_34486579
+137. 陵城区综合频道              [HTTPS] TVG-ID: auto_65764386
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=7
       LOGO：https://img11.litenews.cn/179/2024/03/25/4345b329c6db8b7e2a025b08e9f2dcd8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-138. 禹城综合频道               [HTTPS] TVG-ID: auto_29875371
+138. 禹城综合频道               [HTTPS] TVG-ID: auto_55554329
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=8
       LOGO：https://img11.litenews.cn/179/2024/04/07/7df4e4980a99fbd1099939a82bd4366e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-139. 禹城综艺频道               [HTTPS] TVG-ID: auto_29062423
+139. 禹城综艺频道               [HTTPS] TVG-ID: auto_91396324
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=9
       LOGO：https://img11.litenews.cn/179/2024/04/07/7df4e4980a99fbd1099939a82bd4366e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-140. 临邑综合频道               [HTTPS] TVG-ID: auto_12165233
+140. 临邑综合频道               [HTTPS] TVG-ID: auto_45295413
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=10
       LOGO：https://img11.litenews.cn/179/2024/04/07/ec9bf6068b7aa69f987cf7208d66f435.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-141. 武城综合频道               [HTTPS] TVG-ID: auto_99934972
+141. 武城综合频道               [HTTPS] TVG-ID: auto_89137224
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=11
       LOGO：https://img11.litenews.cn/179/2024/04/07/13dcd0d680da2d11cf8bd32df1f4a4f9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-142. 武城综艺影视               [HTTPS] TVG-ID: auto_17194000
+142. 武城综艺影视               [HTTPS] TVG-ID: auto_93471627
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=12
       LOGO：https://img11.litenews.cn/179/2024/04/07/13dcd0d680da2d11cf8bd32df1f4a4f9.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-143. 宁津综合频道               [HTTPS] TVG-ID: auto_60915110
+143. 宁津综合频道               [HTTPS] TVG-ID: auto_75693581
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=13
       LOGO：https://img11.litenews.cn/179/2024/04/07/b33fc8d3f2f53998eee81815525a29c2.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-144. 庆云综合频道               [HTTPS] TVG-ID: auto_10774482
+144. 庆云综合频道               [HTTPS] TVG-ID: auto_12106827
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=14
       LOGO：https://img11.litenews.cn/179/2024/04/08/ba23c9c646be059f8c66a1e90dbeb841.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-145. 庆云生活频道               [HTTPS] TVG-ID: auto_41292721
+145. 庆云生活频道               [HTTPS] TVG-ID: auto_42022291
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=15
       LOGO：https://img11.litenews.cn/179/2024/04/08/ba23c9c646be059f8c66a1e90dbeb841.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-146. 乐陵综合频道               [HTTPS] TVG-ID: auto_69209163
+146. 乐陵综合频道               [HTTPS] TVG-ID: auto_68998360
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=16
       LOGO：https://img11.litenews.cn/179/2024/04/08/3adadfb40e8bb5443244e66357543405.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-147. 乐陵城市生活               [HTTPS] TVG-ID: auto_66436698
+147. 乐陵城市生活               [HTTPS] TVG-ID: auto_23336587
       URL：https://iqilu.vercel.app/api/iqilu?orgid=179&num=17
       LOGO：https://img11.litenews.cn/179/2024/04/08/3adadfb40e8bb5443244e66357543405.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-148. 邹城综合频道               [HTTPS] TVG-ID: auto_17999870
+148. 邹城综合频道               [HTTPS] TVG-ID: auto_67591864
       URL：https://iqilu.vercel.app/api/iqilu?orgid=181&num=0
       LOGO：https://elivealone302.litenews.cn/181/BpNavSc84bahjgR5rAN6d6FCKGh7sKJN/playlist.m3u8
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-149. 邹城文化生活频道             [HTTPS] TVG-ID: auto_30178814
+149. 邹城文化生活频道             [HTTPS] TVG-ID: auto_83151751
       URL：https://iqilu.vercel.app/api/iqilu?orgid=181&num=1
       LOGO：https://img11.iqilu.com/181/2020/04/08/7fddab13949d229dd7da516a5ef0e53a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-150. 莘县综合                 [HTTPS] TVG-ID: auto_10794825
+150. 莘县综合                 [HTTPS] TVG-ID: auto_41374285
       URL：https://iqilu.vercel.app/api/iqilu?orgid=183&num=0
       LOGO：https://img11.iqilu.com/183/2022/12/07/558d8dd73d3917138e19f1b0557fbcbb.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-151. 莘县二台                 [HTTPS] TVG-ID: auto_77276487
+151. 莘县二台                 [HTTPS] TVG-ID: auto_61826979
       URL：https://iqilu.vercel.app/api/iqilu?orgid=183&num=1
       LOGO：https://img11.iqilu.com/183/2022/12/07/5496a4bc425ed0f6a01e89ba34299657.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-152. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+152. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=185&num=0
       LOGO：https://img11.iqilu.com/185/2020/04/15/49959dd6a1f4079e861fb59aa610314b.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-153. 东平综合                 [HTTPS] TVG-ID: auto_63294117
+153. 东平综合                 [HTTPS] TVG-ID: auto_17167233
       URL：https://iqilu.vercel.app/api/iqilu?orgid=187&num=0
       LOGO：https://img11.iqilu.com/187/2022/10/04/1dd7542be5181cb3b7dcbc9298005740.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-154. 东平民生                 [HTTPS] TVG-ID: auto_27252619
+154. 东平民生                 [HTTPS] TVG-ID: auto_39730143
       URL：https://iqilu.vercel.app/api/iqilu?orgid=187&num=1
       LOGO：https://img11.iqilu.com/187/2021/01/20/51351221cff29862755d6e84897c11d0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-155. 福山综合频道               [HTTPS] TVG-ID: auto_73554428
+155. 福山综合频道               [HTTPS] TVG-ID: auto_86403245
       URL：https://iqilu.vercel.app/api/iqilu?orgid=189&num=0
       LOGO：https://img11.iqilu.com/189/2020/05/22/14bbb5e1f3c097119bb31e4b42ba035a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-156. 福山生活频道               [HTTPS] TVG-ID: auto_49495216
+156. 福山生活频道               [HTTPS] TVG-ID: auto_86287820
       URL：https://iqilu.vercel.app/api/iqilu?orgid=189&num=1
       LOGO：https://img11.iqilu.com/189/2020/05/22/c484fc67fc8210e2e23416b32c901b5e.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-157. 河东综合频道               [HTTPS] TVG-ID: auto_74463594
+157. 河东综合频道               [HTTPS] TVG-ID: auto_57449810
       URL：https://iqilu.vercel.app/api/iqilu?orgid=191&num=0
       LOGO：https://img11.iqilu.com/191/2020/05/18/93e05cf96912049bc9ac5f9cd801e37f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-158. 河东影视频道               [HTTPS] TVG-ID: auto_86184351
+158. 河东影视频道               [HTTPS] TVG-ID: auto_67290895
       URL：https://iqilu.vercel.app/api/iqilu?orgid=191&num=1
       LOGO：https://img11.iqilu.com/191/2020/05/18/93e05cf96912049bc9ac5f9cd801e37f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-159. 宁津融媒体中心综合频道          [HTTPS] TVG-ID: auto_58185232
+159. 宁津融媒体中心综合频道          [HTTPS] TVG-ID: auto_43010366
       URL：https://iqilu.vercel.app/api/iqilu?orgid=193&num=0
       LOGO：https://img11.iqilu.com/193/2020/05/07/d48e62ef6bd3a8c00a3bb162e03f5710.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-160. 宁津县融媒体中心综合广播视频直播     [HTTPS] TVG-ID: auto_15490403
+160. 宁津县融媒体中心综合广播视频直播     [HTTPS] TVG-ID: auto_58515665
       URL：https://iqilu.vercel.app/api/iqilu?orgid=193&num=1
       LOGO：https://img11.iqilu.com/193/2020/05/07/499713fd013bab483da8311714f4f726.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-161. 章丘综合                 [HTTPS] TVG-ID: auto_51672052
+161. 章丘综合                 [HTTPS] TVG-ID: auto_18678410
       URL：https://iqilu.vercel.app/api/iqilu?orgid=195&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-162. 章丘TV-2               [HTTPS] TVG-ID: auto_25959416
+162. 章丘TV-2               [HTTPS] TVG-ID: auto_67714669
       URL：https://iqilu.vercel.app/api/iqilu?orgid=195&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-163. 滨海新闻综合频道             [HTTPS] TVG-ID: auto_41052376
+163. 滨海新闻综合频道             [HTTPS] TVG-ID: auto_23181035
       URL：https://iqilu.vercel.app/api/iqilu?orgid=199&num=0
       LOGO：https://img11.iqilu.com/199/2020/04/28/1c96cd9c400393fb54b82e21c6f8676d.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-164. 兰山电视                 [HTTPS] TVG-ID: auto_84304302
+164. 兰山电视                 [HTTPS] TVG-ID: auto_22699597
       URL：https://iqilu.vercel.app/api/iqilu?orgid=201&num=0
       LOGO：https://img11.iqilu.com/201/2020/07/21/1a71813c745b988a54a087562aad5f3a.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-165. 沂源综合频道               [HTTPS] TVG-ID: auto_11805052
+165. 沂源综合频道               [HTTPS] TVG-ID: auto_81853894
       URL：https://iqilu.vercel.app/api/iqilu?orgid=203&num=0
       LOGO：https://img11.iqilu.com/203/2020/07/11/ba94fb07621913c2b59bdb6273325e3e.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-166. 沂源生活频道               [HTTPS] TVG-ID: auto_53865937
+166. 沂源生活频道               [HTTPS] TVG-ID: auto_62153903
       URL：https://iqilu.vercel.app/api/iqilu?orgid=203&num=1
       LOGO：https://img11.iqilu.com/203/2020/07/11/c64adee3422bdfbc90167112d5502782.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-167. 临朐新闻                 [HTTPS] TVG-ID: auto_57069553
+167. 临朐新闻                 [HTTPS] TVG-ID: auto_12592198
       URL：https://iqilu.vercel.app/api/iqilu?orgid=205&num=0
       LOGO：https://img11.iqilu.com/205/2022/10/16/c707f013c7f42984f4bc76b98f42f570.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-168. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+168. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=207&num=0
       LOGO：https://img11.iqilu.com/207/2022/05/29/f78263b27214674cecaaf9a09ce6720b.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-169. 生活频道                 [HTTPS] TVG-ID: auto_24599238
+169. 生活频道                 [HTTPS] TVG-ID: auto_83989134
       URL：https://iqilu.vercel.app/api/iqilu?orgid=207&num=1
       LOGO：https://img11.iqilu.com/207/2021/01/16/1e6d79d9549ba147584a1699aba752b5.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-170. 环翠综合频道               [HTTPS] TVG-ID: auto_48091229
+170. 环翠综合频道               [HTTPS] TVG-ID: auto_51308829
       URL：https://iqilu.vercel.app/api/iqilu?orgid=213&num=0
       LOGO：https://img11.litenews.cn/213/2023/09/08/24e79918c64f25acc1aab5593ccb20e9.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-171. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+171. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=215&num=0
       LOGO：https://img11.iqilu.com/215/2020/03/10/0ef7e1059e45042c075bd7b0fd50c4d4.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-172. 阳信新闻                 [HTTPS] TVG-ID: auto_51600824
+172. 阳信新闻                 [HTTPS] TVG-ID: auto_20942691
       URL：https://iqilu.vercel.app/api/iqilu?orgid=217&num=0
       LOGO：https://img11.iqilu.com/217/2021/12/03/76a0a9a52870f813980b84449f65cc0c.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-173. 会场直播                 [HTTPS] TVG-ID: auto_60203300
+173. 会场直播                 [HTTPS] TVG-ID: auto_19065577
       URL：https://iqilu.vercel.app/api/iqilu?orgid=217&num=1
       LOGO：https://img11.litenews.cn/217/2023/10/26/a52c8e969ed1a83ce796fa3021fb2baa.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-174. 牡丹电视台—新闻综合           [HTTPS] TVG-ID: auto_28384221
+174. 牡丹电视台—新闻综合           [HTTPS] TVG-ID: auto_75134202
       URL：https://iqilu.vercel.app/api/iqilu?orgid=219&num=0
       LOGO：https://img11.iqilu.com/219/2020/06/22/a5a45f80e34beb493b2c35d181bb4946.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-175. 牡丹电视台—综艺             [HTTPS] TVG-ID: auto_61996465
+175. 牡丹电视台—综艺             [HTTPS] TVG-ID: auto_77650664
       URL：https://iqilu.vercel.app/api/iqilu?orgid=219&num=1
       LOGO：https://img11.iqilu.com/219/2020/09/21/152fd555a2b120e076bc508246891ddd.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-176. 即墨融媒【综合频道】           [HTTPS] TVG-ID: auto_59340594
+176. 即墨融媒【综合频道】           [HTTPS] TVG-ID: auto_56033343
       URL：https://iqilu.vercel.app/api/iqilu?orgid=221&num=0
       LOGO：https://img11.iqilu.com/221/2020/07/03/310871e97488d186fad037dc65d29ba0.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-177. 即墨融媒【生活服务频道】         [HTTPS] TVG-ID: auto_40702660
+177. 即墨融媒【生活服务频道】         [HTTPS] TVG-ID: auto_14658942
       URL：https://iqilu.vercel.app/api/iqilu?orgid=221&num=1
       LOGO：https://img11.iqilu.com/221/2020/07/03/bcd78e244fd15dbbc66fa96c4fc0d7ef.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-178. 即墨融媒【综合广播】           [HTTPS] TVG-ID: auto_85720683
+178. 即墨融媒【综合广播】           [HTTPS] TVG-ID: auto_69857566
       URL：https://iqilu.vercel.app/api/iqilu?orgid=221&num=2
       LOGO：https://img11.litenews.cn/221/2025/04/03/88c48b9bc70d451da3c7715d5572bf14.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-179. 路口直播                 [HTTPS] TVG-ID: auto_91937898
+179. 路口直播                 [HTTPS] TVG-ID: auto_20923846
       URL：https://iqilu.vercel.app/api/iqilu?orgid=221&num=3
       LOGO：https://alivealone302.litenews.cn/221/c7f05e98509a4ac786eba2340adfa7af/playlist.m3u8
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-180. 夏津电视台综合频道            [HTTPS] TVG-ID: auto_69904673
+180. 夏津电视台综合频道            [HTTPS] TVG-ID: auto_82667908
       URL：https://iqilu.vercel.app/api/iqilu?orgid=223&num=0
       LOGO：https://img11.iqilu.com/223/2020/03/04/a37f8cc297e44b58d76b984d2f60d0b2.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-181. 夏津电视台公共频道            [HTTPS] TVG-ID: auto_56611991
+181. 夏津电视台公共频道            [HTTPS] TVG-ID: auto_54901772
       URL：https://iqilu.vercel.app/api/iqilu?orgid=223&num=1
       LOGO：https://img11.iqilu.com/223/2020/03/04/84a8fd5139ce955aede3da26931adb2c.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-182. 少儿频道                 [HTTPS] TVG-ID: auto_52838584
+182. 少儿频道                 [HTTPS] TVG-ID: auto_41670613
       URL：https://iqilu.vercel.app/api/iqilu?orgid=225&num=1
       LOGO：https://img11.iqilu.com/225/2020/03/15/2699d829cda5f13d8846d48cc349ae08.jpeg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-183. 兖州综合频道               [HTTPS] TVG-ID: auto_91464577
+183. 兖州综合频道               [HTTPS] TVG-ID: auto_62190563
       URL：https://iqilu.vercel.app/api/iqilu?orgid=231&num=0
       LOGO：https://img11.iqilu.com/231/2020/04/09/4bdc5406a4ba168922e0c57dc45816fb.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-184. 兖州生活频道               [HTTPS] TVG-ID: auto_54491714
+184. 兖州生活频道               [HTTPS] TVG-ID: auto_44875457
       URL：https://iqilu.vercel.app/api/iqilu?orgid=231&num=1
       LOGO：https://img11.iqilu.com/231/2020/04/09/f177ef6e6b618fd085840b185a7fb125.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-185. 市中电视台                [HTTPS] TVG-ID: auto_92935820
+185. 市中电视台                [HTTPS] TVG-ID: auto_67831792
       URL：https://iqilu.vercel.app/api/iqilu?orgid=233&num=0
       LOGO：https://img11.litenews.cn/233/2023/05/10/25618ac7d580f68e56e28ce4206e903f.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-186. 禹城综合频道               [HTTPS] TVG-ID: auto_29875371
+186. 禹城综合频道               [HTTPS] TVG-ID: auto_55554329
       URL：https://iqilu.vercel.app/api/iqilu?orgid=235&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-187. 禹城综艺频道               [HTTPS] TVG-ID: auto_29062423
+187. 禹城综艺频道               [HTTPS] TVG-ID: auto_91396324
       URL：https://iqilu.vercel.app/api/iqilu?orgid=235&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-188. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+188. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=237&num=0
       LOGO：https://img11.iqilu.com/237/2020/05/14/ca1aa64d991317572d915590b6ee60c0.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-189. 科教文艺                 [HTTPS] TVG-ID: auto_67732225
+189. 科教文艺                 [HTTPS] TVG-ID: auto_37282231
       URL：https://iqilu.vercel.app/api/iqilu?orgid=237&num=1
       LOGO：https://img11.iqilu.com/237/2020/05/14/c5a150ff636020e45e4fe7ecf9ae106e.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-190. 莱州综合频道               [HTTPS] TVG-ID: auto_10807492
+190. 莱州综合频道               [HTTPS] TVG-ID: auto_61696063
       URL：https://iqilu.vercel.app/api/iqilu?orgid=239&num=0
       LOGO：https://img11.iqilu.com/239/2021/03/18/2c85f04cee479849df3f9681d1892155.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-191. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+191. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=241&num=0
       LOGO：https://img11.iqilu.com/241/2020/06/16/e5944e5e1a026c9f44e8602db7981268.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-192. 民生综艺                 [HTTPS] TVG-ID: auto_89857713
+192. 民生综艺                 [HTTPS] TVG-ID: auto_17997116
       URL：https://iqilu.vercel.app/api/iqilu?orgid=241&num=1
       LOGO：https://img11.iqilu.com/241/2020/06/16/e5944e5e1a026c9f44e8602db7981268.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-193. 综合广播                 [HTTPS] TVG-ID: auto_72829628
+193. 综合广播                 [HTTPS] TVG-ID: auto_38197863
       URL：https://iqilu.vercel.app/api/iqilu?orgid=241&num=2
       LOGO：https://img11.iqilu.com/241/2021/06/03/01d8714c2fb564eac2ac13198274ff42.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-194. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+194. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=243&num=0
       LOGO：https://img11.iqilu.com/243/2020/05/28/8ab306737cde382909862430af226a7a.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-195. 莱山综合                 [HTTPS] TVG-ID: auto_26551639
+195. 莱山综合                 [HTTPS] TVG-ID: auto_23369708
       URL：https://iqilu.vercel.app/api/iqilu?orgid=245&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-196. 莱山影视                 [HTTPS] TVG-ID: auto_20357260
+196. 莱山影视                 [HTTPS] TVG-ID: auto_92126422
       URL：https://iqilu.vercel.app/api/iqilu?orgid=245&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-197. 滨城TV                 [HTTPS] TVG-ID: auto_83095164
+197. 滨城TV                 [HTTPS] TVG-ID: auto_24163900
       URL：https://iqilu.vercel.app/api/iqilu?orgid=249&num=0
       LOGO：https://img11.iqilu.com/249/2020/06/17/000c49aa42a82e45f6a0d8106d61c435.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-198. 齐河综合频道               [HTTPS] TVG-ID: auto_73695161
+198. 齐河综合频道               [HTTPS] TVG-ID: auto_13193819
       URL：https://iqilu.vercel.app/api/iqilu?orgid=251&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-199. 莱西综合频道               [HTTPS] TVG-ID: auto_34212332
+199. 莱西综合频道               [HTTPS] TVG-ID: auto_17821158
       URL：https://iqilu.vercel.app/api/iqilu?orgid=253&num=0
       LOGO：https://img11.iqilu.com/253/2020/09/22/ba2ef2676fa90b581f6dc4f5e9d31000.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-200. 莱西生活频道               [HTTPS] TVG-ID: auto_83869577
+200. 莱西生活频道               [HTTPS] TVG-ID: auto_69640215
       URL：https://iqilu.vercel.app/api/iqilu?orgid=253&num=1
       LOGO：https://img11.iqilu.com/253/2020/09/22/ba2ef2676fa90b581f6dc4f5e9d31000.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-201. 海阳综合                 [HTTPS] TVG-ID: auto_82106603
+201. 海阳综合                 [HTTPS] TVG-ID: auto_57300611
       URL：https://iqilu.vercel.app/api/iqilu?orgid=255&num=0
       LOGO：https://img11.iqilu.com/255/2020/09/11/f0f09708823f26f18ed265505a8b8e8d.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-202. 平阴综合频道               [HTTPS] TVG-ID: auto_71873276
+202. 平阴综合频道               [HTTPS] TVG-ID: auto_21748344
       URL：https://iqilu.vercel.app/api/iqilu?orgid=257&num=0
       LOGO：https://img11.iqilu.com/257/2020/09/10/6a7387caf50497e50862030c58425164.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-203. 平阴乡村振兴               [HTTPS] TVG-ID: auto_56129568
+203. 平阴乡村振兴               [HTTPS] TVG-ID: auto_51617552
       URL：https://iqilu.vercel.app/api/iqilu?orgid=257&num=1
       LOGO：https://img11.iqilu.com/257/2020/09/10/d1507e1b5c265e5cab92c0e7f73e0bdf.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-204. 周村新闻                 [HTTPS] TVG-ID: auto_12373384
+204. 周村新闻                 [HTTPS] TVG-ID: auto_61722519
       URL：https://iqilu.vercel.app/api/iqilu?orgid=259&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-205. 周村生活                 [HTTPS] TVG-ID: auto_41003225
+205. 周村生活                 [HTTPS] TVG-ID: auto_22637006
       URL：https://iqilu.vercel.app/api/iqilu?orgid=259&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-206. 历城新闻综合               [HTTPS] TVG-ID: auto_50251651
+206. 历城新闻综合               [HTTPS] TVG-ID: auto_72209387
       URL：https://iqilu.vercel.app/api/iqilu?orgid=261&num=0
       LOGO：https://img11.iqilu.com/261/2020/11/09/ea53f6aaf20cf7b3523b5529e29f7b42.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-207. 泰山频道                 [HTTPS] TVG-ID: auto_47371669
+207. 泰山频道                 [HTTPS] TVG-ID: auto_34896627
       URL：https://iqilu.vercel.app/api/iqilu?orgid=263&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-208. 东昌综合                 [HTTPS] TVG-ID: auto_57491543
+208. 东昌综合                 [HTTPS] TVG-ID: auto_64775833
       URL：https://iqilu.vercel.app/api/iqilu?orgid=265&num=0
       LOGO：https://img11.iqilu.com/265/2020/08/18/52fc7e8f67102248ce0972741cb5ded3.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-209. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+209. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=267&num=0
       LOGO：https://img11.iqilu.com/267/2020/08/24/1eb4d42873fdc9a16a15328cb2c1f5c7.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-210. 城市生活频道               [HTTPS] TVG-ID: auto_31381839
+210. 城市生活频道               [HTTPS] TVG-ID: auto_70754058
       URL：https://iqilu.vercel.app/api/iqilu?orgid=267&num=1
       LOGO：https://img11.iqilu.com/267/2020/08/24/66fd3ca212a2ab38cce61082653ac3e4.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-211. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+211. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=269&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-212. 嘉祥新闻综合频道             [HTTPS] TVG-ID: auto_52761221
+212. 嘉祥新闻综合频道             [HTTPS] TVG-ID: auto_84644140
       URL：https://iqilu.vercel.app/api/iqilu?orgid=273&num=0
       LOGO：https://img11.iqilu.com/273/2020/09/15/312889d23498e6ea20e925ebcca8132d.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-213. 嘉祥生活频道               [HTTPS] TVG-ID: auto_14584015
+213. 嘉祥生活频道               [HTTPS] TVG-ID: auto_89139832
       URL：https://iqilu.vercel.app/api/iqilu?orgid=273&num=1
       LOGO：https://img11.iqilu.com/273/2020/09/15/312889d23498e6ea20e925ebcca8132d.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-214. 沾化综合                 [HTTPS] TVG-ID: auto_55084882
+214. 沾化综合                 [HTTPS] TVG-ID: auto_59677027
       URL：https://iqilu.vercel.app/api/iqilu?orgid=277&num=0
       LOGO：https://img11.iqilu.com/277/2022/07/15/242e42f9973465848034645f998d9327.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-215. 沾化综艺                 [HTTPS] TVG-ID: auto_63051005
+215. 沾化综艺                 [HTTPS] TVG-ID: auto_72549716
       URL：https://iqilu.vercel.app/api/iqilu?orgid=277&num=1
       LOGO：https://img11.iqilu.com/277/2023/02/25/6d1101d5bc84fdfeba7631838fbd7668.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-216. 寿光综合频道               [HTTPS] TVG-ID: auto_33892704
+216. 寿光综合频道               [HTTPS] TVG-ID: auto_77117118
       URL：https://iqilu.vercel.app/api/iqilu?orgid=279&num=0
       LOGO：https://img11.litenews.cn/279/2024/12/30/96f484ae3d1bbd760b9ba98b3bf24668.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-217. 寿光蔬菜频道               [HTTPS] TVG-ID: auto_91705256
+217. 寿光蔬菜频道               [HTTPS] TVG-ID: auto_62695086
       URL：https://iqilu.vercel.app/api/iqilu?orgid=279&num=1
       LOGO：https://img11.litenews.cn/279/2024/03/22/290ffe2bb88416d72e692fbd65824714.jpeg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-218. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+218. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=281&num=0
       LOGO：https://img11.litenews.cn/281/2023/07/26/a85175f364fcc6bb79e3ed12e9ea9a7b.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-219. 岚山电视频道               [HTTPS] TVG-ID: auto_67639689
+219. 岚山电视频道               [HTTPS] TVG-ID: auto_80104177
       URL：https://iqilu.vercel.app/api/iqilu?orgid=289&num=0
       LOGO：https://img11.iqilu.com/289/2020/11/13/3e6a590716f29be8f8f43d448a5d7cd8.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-220. 崂山频道                 [HTTPS] TVG-ID: auto_54529873
+220. 崂山频道                 [HTTPS] TVG-ID: auto_86465023
       URL：https://iqilu.vercel.app/api/iqilu?orgid=295&num=0
       LOGO：https://img11.iqilu.com/295/2020/12/09/1f6f501893b381654c79bcb53154e6c0.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-221. 五莲综合频道               [HTTPS] TVG-ID: auto_60441089
+221. 五莲综合频道               [HTTPS] TVG-ID: auto_31742032
       URL：https://iqilu.vercel.app/api/iqilu?orgid=299&num=0
       LOGO：https://img11.iqilu.com/299/2022/10/21/80b3944f40cada547249b8b7be835f3e.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-222. 文化旅游频道               [HTTPS] TVG-ID: auto_84992720
+222. 文化旅游频道               [HTTPS] TVG-ID: auto_10499102
       URL：https://iqilu.vercel.app/api/iqilu?orgid=299&num=1
       LOGO：https://img11.iqilu.com/299/2020/12/09/1a2f0d14de381981d77c149b649167e3.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-223. 汶上综合频道               [HTTPS] TVG-ID: auto_21960727
+223. 汶上综合频道               [HTTPS] TVG-ID: auto_12423802
       URL：https://iqilu.vercel.app/api/iqilu?orgid=301&num=0
       LOGO：https://img11.iqilu.com/301/2022/10/15/b65e52f8ae484da5af0c219f17948178.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-224. 济铁频道                 [HTTPS] TVG-ID: auto_53277960
+224. 济铁频道                 [HTTPS] TVG-ID: auto_77510549
       URL：https://iqilu.vercel.app/api/iqilu?orgid=303&num=0
       LOGO：https://img11.iqilu.com/303/2020/12/11/86ce406556d6525424675b60522d6a59.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-225. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+225. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=305&num=0
       LOGO：https://img11.iqilu.com/305/2021/05/07/5a4752e61c5c2c074490119ceb0dc641.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-226. 生活频道                 [HTTPS] TVG-ID: auto_24599238
+226. 生活频道                 [HTTPS] TVG-ID: auto_83989134
       URL：https://iqilu.vercel.app/api/iqilu?orgid=305&num=1
       LOGO：https://img11.iqilu.com/305/2021/05/07/b2777021f2fa88dc90500d50b23b6b2d.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-227. 济铁频道                 [HTTPS] TVG-ID: auto_53277960
+227. 济铁频道                 [HTTPS] TVG-ID: auto_77510549
       URL：https://iqilu.vercel.app/api/iqilu?orgid=353&num=0
       LOGO：https://img11.iqilu.com/353/2022/03/16/c64c54f1bf565eabe2563b8c79ecd2b6.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-228. 潍坊高新区                [HTTPS] TVG-ID: auto_51857221
+228. 潍坊高新区                [HTTPS] TVG-ID: auto_85112067
       URL：https://iqilu.vercel.app/api/iqilu?orgid=421&num=0
       LOGO：https://img11.iqilu.com/421/2022/09/26/43ddf0d03c3d51602cc981f214ef0ddf.jpeg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-229. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+229. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=423&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-230. 新闻频道                 [HTTPS] TVG-ID: auto_23654073
+230. 新闻频道                 [HTTPS] TVG-ID: auto_49299880
       URL：https://iqilu.vercel.app/api/iqilu?orgid=423&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-231. 娱乐频道                 [HTTPS] TVG-ID: auto_58309608
+231. 娱乐频道                 [HTTPS] TVG-ID: auto_49315063
       URL：https://iqilu.vercel.app/api/iqilu?orgid=423&num=2
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-232. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+232. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=519&num=0
       LOGO：https://img11.iqilu.com/179/2019/12/10/8203f05252f2875d46a5d74ec804cf43.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-233. 经济生活频道               [HTTPS] TVG-ID: auto_49340110
+233. 经济生活频道               [HTTPS] TVG-ID: auto_17705424
       URL：https://iqilu.vercel.app/api/iqilu?orgid=519&num=1
       LOGO：https://img11.iqilu.com/179/2019/12/10/b1a10dda1e3a2b59265641d0a20a10b7.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-234. 图文频道                 [HTTPS] TVG-ID: auto_63102362
+234. 图文频道                 [HTTPS] TVG-ID: auto_32967374
       URL：https://iqilu.vercel.app/api/iqilu?orgid=519&num=2
       LOGO：https://img11.iqilu.com/179/2020/12/30/0ea68ecfb36ae47e4a6f78f03b40fbfd.jpg
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-235. 枣庄高新区                [HTTPS] TVG-ID: auto_69450922
+235. 枣庄高新区                [HTTPS] TVG-ID: auto_79732026
       URL：https://iqilu.vercel.app/api/iqilu?orgid=623&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-236. 新闻综合                 [HTTPS] TVG-ID: auto_31263453
+236. 新闻综合                 [HTTPS] TVG-ID: auto_39158178
       URL：https://iqilu.vercel.app/api/iqilu?orgid=635&num=0
       LOGO：https://img11.litenews.cn/635/2023/06/16/10eb8ca7a9579564d19e8da968f5301e.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-237. 经济生活                 [HTTPS] TVG-ID: auto_86561661
+237. 经济生活                 [HTTPS] TVG-ID: auto_35885712
       URL：https://iqilu.vercel.app/api/iqilu?orgid=635&num=1
       LOGO：https://img11.litenews.cn/635/2023/06/16/70b2c2cbfc6335a1f290d26993645f05.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-238. 影视综艺                 [HTTPS] TVG-ID: auto_20464115
+238. 影视综艺                 [HTTPS] TVG-ID: auto_49603003
       URL：https://iqilu.vercel.app/api/iqilu?orgid=635&num=2
       LOGO：https://img11.litenews.cn/635/2023/06/16/7dc04489203121086323a1002652354f.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-239. 科教文旅                 [HTTPS] TVG-ID: auto_77294108
+239. 科教文旅                 [HTTPS] TVG-ID: auto_61103246
       URL：https://iqilu.vercel.app/api/iqilu?orgid=635&num=3
       LOGO：https://img11.litenews.cn/635/2023/06/16/52d093b6da5aa768021280c51decff50.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-240. 生活频道                 [HTTPS] TVG-ID: auto_24599238
+240. 生活频道                 [HTTPS] TVG-ID: auto_83989134
       URL：https://iqilu.vercel.app/api/iqilu?orgid=672&num=0
       LOGO：https://img11.iqilu.com/227/2020/04/13/d5dd6313cd6afcb154c3626b2069a7f6.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-241. 综合频道                 [HTTPS] TVG-ID: auto_91758857
+241. 综合频道                 [HTTPS] TVG-ID: auto_53320125
       URL：https://iqilu.vercel.app/api/iqilu?orgid=672&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-242. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+242. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=686&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-243. 文旅教育频道               [HTTPS] TVG-ID: auto_12606064
+243. 文旅教育频道               [HTTPS] TVG-ID: auto_87091058
       URL：https://iqilu.vercel.app/api/iqilu?orgid=686&num=1
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
-244. 新闻综合频道               [HTTPS] TVG-ID: auto_83182573
+244. 新闻综合频道               [HTTPS] TVG-ID: auto_43640288
       URL：https://iqilu.vercel.app/api/iqilu?orgid=689&num=0
       LOGO：https://epg.pw/logos/default.png
       来源：https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u
