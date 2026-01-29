@@ -6,8 +6,7 @@ from collections import OrderedDict
 from datetime import datetime
 from pathlib import Path
 from dataclasses import dataclass
-from typing import List, Dict, Optional, Tuple, Set, OrderedDict as OrderedDictType
-from fuzzywuzzy import fuzz  # 新增：模糊匹配库
+from typing import List, Dict, Optional, Tuple, OrderedDict as OrderedDictType
 
 # 导入配置文件（确保config.py与当前脚本在同一目录）
 import config
@@ -44,9 +43,8 @@ SUPPORTED_PROTOCOLS = (
     "hls://"
 )
 
-# ===================== 新增：标准元信息库（可扩展） =====================
+# ===================== 标准元信息库（可扩展） =====================
 # 格式：{频道名称: {tvg-id: 唯一ID, tvg-logo: 图标URL, group-title: 标准分类}}
-# 可从公开IPTV元信息库（如epg.pw）或官方渠道获取真实tvg-id和logo
 STANDARD_CHANNEL_META = {
     "CCTV1 综合频道": {
         "tvg-id": "cctv1.cctv",
@@ -61,6 +59,11 @@ STANDARD_CHANNEL_META = {
     "CCTV5 体育频道": {
         "tvg-id": "cctv5.cctv",
         "tvg-logo": "https://epg.pw/logos/cctv5.png",
+        "group-title": "CCTV央视"
+    },
+    "CCTV5+ 体育赛事频道": {
+        "tvg-id": "cctv5plus.cctv",
+        "tvg-logo": "https://epg.pw/logos/cctv5plus.png",
         "group-title": "CCTV央视"
     },
     "湖南卫视": {
@@ -87,13 +90,14 @@ STANDARD_CHANNEL_META = {
         "tvg-id": "guangdongtv.guangdong",
         "tvg-logo": "https://epg.pw/logos/guangdong.png",
         "group-title": "省级卫视"
-    },
+    }
     # 可根据需要扩展更多频道...
 }
 
-# 模糊匹配阈值（0-100，越高匹配越严格）
-FUZZY_MATCH_THRESHOLD = 75
+# 匹配阈值（0-100，越高匹配越严格，原生实现建议70-80）
+MATCH_THRESHOLD = 75
 
+# ===================== 日志配置 =====================
 LOG_FILE_PATH = OUTPUT_FOLDER / "live_source_extract.log"
 logging.basicConfig(
     level=logging.INFO,
@@ -122,47 +126,11 @@ class ChannelMeta:
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
-
-# 移除：from fuzzywuzzy import fuzz （不再需要）
-
-# ===================== 新增：标准元信息库（可扩展） =====================
-# 格式：{频道名称: {tvg-id: 唯一ID, tvg-logo: 图标URL, group-title: 标准分类}}
-STANDARD_CHANNEL_META = {
-    "CCTV1 综合频道": {
-        "tvg-id": "cctv1.cctv",
-        "tvg-logo": "https://epg.pw/logos/cctv1.png",
-        "group-title": "CCTV央视"
-    },
-    "CCTV2 财经频道": {
-        "tvg-id": "cctv2.cctv",
-        "tvg-logo": "https://epg.pw/logos/cctv2.png",
-        "group-title": "CCTV央视"
-    },
-    "CCTV5 体育频道": {
-        "tvg-id": "cctv5.cctv",
-        "tvg-logo": "https://epg.pw/logos/cctv5.png",
-        "group-title": "CCTV央视"
-    },
-    "湖南卫视": {
-        "tvg-id": "hunantv.hunan",
-        "tvg-logo": "https://epg.pw/logos/hunan.png",
-        "group-title": "省级卫视"
-    },
-    "浙江卫视": {
-        "tvg-id": "zhejiangtv.zhejiang",
-        "tvg-logo": "https://epg.pw/logos/zhejiang.png",
-        "group-title": "省级卫视"
-    }
-}
-
-# 匹配阈值（0-100，越高匹配越严格，原生实现建议设置70-80）
-MATCH_THRESHOLD = 75
-
-# ===================== 替换：原生Python实现简易模糊匹配（无第三方依赖） =====================
+# ===================== 原生Python实现简易模糊匹配（无第三方依赖） =====================
 def calculate_string_similarity(s1: str, s2: str) -> int:
     """
     原生Python计算两个字符串的相似度（返回0-100的分值）
-    核心逻辑：先计算公共子串长度，再结合字符串总长度计算相似度
+    核心逻辑：先计算最长公共子串长度，再结合字符串总长度计算相似度
     """
     if not s1 or not s2:
         return 0
@@ -227,6 +195,7 @@ def fuzzy_match_channel(channel_name: str, group_title: str = "") -> Optional[Di
         logger.debug(f"频道近似匹配成功：[{channel_name}] → 标准库[{matched_std_name}]（得分：{highest_score}）")
     return best_match
 
+# ===================== 补全EXTINF信息 =====================
 def complete_extinf(meta: ChannelMeta) -> ChannelMeta:
     """
     补全不完整的EXTINF信息：保留已有字段，补全缺失字段
@@ -244,7 +213,8 @@ def complete_extinf(meta: ChannelMeta) -> ChannelMeta:
         meta.group_title = meta.group_title if meta.group_title != "未分类" else std_meta.get("group-title", "未分类")
     
     # 3. 最终兜底：确保无空字段（避免播放器解析异常）
-    meta.tvg_id = meta.tvg_id or f"auto_{hash(meta.channel_name or meta.url)[:8]}"  # 自动生成唯一ID
+    # 修正：hash返回int，先转绝对值→字符串→再切片（解决int不可切片错误）
+    meta.tvg_id = meta.tvg_id or f"auto_{str(abs(hash(meta.channel_name or meta.url)))[:8]}"
     meta.tvg_name = meta.tvg_name or meta.channel_name or "未知频道"
     meta.tvg_logo = meta.tvg_logo or "https://epg.pw/logos/default.png"  # 默认图标
     meta.group_title = meta.group_title or "未分类"
@@ -261,7 +231,7 @@ def complete_extinf(meta: ChannelMeta) -> ChannelMeta:
     )
     return meta
 
-# ===================== 工具函数（原有函数不变，仅修改extract_m3u_meta和extract_channels_from_content） =====================
+# ===================== 工具函数 =====================
 def get_url_protocol(url: str) -> str:
     """提取URL的协议类型，返回标准化协议名称（内部使用）"""
     if not url:
@@ -389,7 +359,6 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
     logger.error(f"所有候选地址均抓取失败：{original_url}")
     return None
 
-# ===================== 修改：解析M3U元信息时添加补全逻辑 =====================
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str, List[Tuple[str, str]]], List[ChannelMeta]]:
     """解析标准M3U格式内容，提取频道元信息和分类（支持多种直播协议，新增EXTINF补全）"""
     # 匹配EXTINF行和后续的直播URL
@@ -457,7 +426,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
             protocol=protocol
         )
         
-        # 新增：补全EXTINF信息
+        # 补全EXTINF信息
         meta = complete_extinf(meta)
         
         meta_list.append(meta)
@@ -472,7 +441,6 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
     logger.info(f"M3U格式提取有效频道数：{len(meta_list)}（支持协议：{SUPPORTED_PROTOCOLS}）")
     return categorized_channels, meta_list
 
-# ===================== 修改：自定义文本格式解析时添加补全逻辑 =====================
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDictType[str, List[Tuple[str, str]]]:
     """兼容解析M3U格式和自定义文本格式的直播源（支持多种直播协议，新增EXTINF补全）"""
     categorized_channels = OrderedDict()
@@ -536,7 +504,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                         protocol=protocol
                     )
                     
-                    # 新增：补全EXTINF信息
+                    # 补全EXTINF信息
                     meta = complete_extinf(meta)
                     
                     channel_meta_cache[url] = meta
@@ -571,7 +539,7 @@ def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: 
                 target[category_name].append((name, url))
                 url_set.add(url)
 
-# ===================== 生成输出文件（无需修改） =====================
+# ===================== 生成输出文件 =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     """生成汇总TXT文件和纯净版M3U文件（无协议标注，可直接导入播放器）"""
     if not all_channels:
@@ -637,7 +605,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     except Exception as e:
         logger.error(f"生成输出文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序入口（无需修改） =====================
+# ===================== 主程序入口 =====================
 def main():
     try:
         # 初始化全局缓存
@@ -648,7 +616,7 @@ def main():
         logger.info("="*60)
         logger.info("开始处理IPTV直播源（提取→标准化→EXTINF补全→合并→生成）")
         logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
-        logger.info(f"模糊匹配阈值：{FUZZY_MATCH_THRESHOLD}（越高越严格）")
+        logger.info(f"模糊匹配阈值：{MATCH_THRESHOLD}（越高越严格）")
         logger.info("="*60)
         
         # 从配置文件读取源URL列表
@@ -700,4 +668,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
