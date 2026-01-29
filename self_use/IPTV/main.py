@@ -66,14 +66,14 @@ class ChannelMeta:
     group_title: Optional[str] = None
     channel_name: Optional[str] = None
     source_url: str = ""
-    protocol: str = ""  # 新增：记录频道协议类型，方便区分
+    protocol: str = ""  # 保留协议记录（仅用于内部，不输出到M3U）
 
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
 # ===================== 工具函数 =====================
 def get_url_protocol(url: str) -> str:
-    """提取URL的协议类型，返回标准化协议名称"""
+    """提取URL的协议类型，返回标准化协议名称（内部使用）"""
     if not url:
         return "未知协议"
     for proto in SUPPORTED_PROTOCOLS:
@@ -222,9 +222,6 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         
         # 优化：过滤无效URL（非支持协议、已重复、空URL）
         if not url or not url.startswith(SUPPORTED_PROTOCOLS) or url in seen_urls:
-            # 日志：可选输出被过滤的URL（方便调试，默认关闭）
-            # if url and not url.startswith(SUPPORTED_PROTOCOLS):
-            #     logger.debug(f"过滤不支持协议的URL：{url[:50]}...")
             continue
         seen_urls.add(url)
         url_source_mapping[url] = source_url
@@ -253,7 +250,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         # 清洗分类名称
         group_title = clean_group_title(group_title, channel_name)
         
-        # 新增：提取协议类型
+        # 提取协议类型（内部使用，不输出）
         protocol = get_url_protocol(url)
         
         # 封装频道元信息
@@ -326,7 +323,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                     standard_name = standardize_cctv_name(name)
                     group_title = clean_group_title(current_group, standard_name)
                     
-                    # 提取协议类型
+                    # 提取协议类型（内部使用，不输出）
                     protocol = get_url_protocol(url)
                     
                     # 构造标准EXTINF行
@@ -375,7 +372,7 @@ def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: 
 
 # ===================== 生成输出文件 =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成汇总TXT文件和合并M3U文件（可直接导入IPTV播放器，带协议标注）"""
+    """生成汇总TXT文件和纯净版M3U文件（无协议标注，可直接导入播放器）"""
     if not all_channels:
         logger.warning("无有效频道可输出，跳过文件生成")
         return
@@ -388,7 +385,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     total_categories = len(all_channels)
     
     try:
-        # 生成易读的汇总TXT（带协议标注）
+        # 生成易读的汇总TXT（可选保留协议标注，方便人工查看）
         with open(summary_path, "w", encoding="utf-8") as f:
             f.write("IPTV直播源汇总（自动提取+标准化+多协议支持）\n")
             f.write("="*80 + "\n")
@@ -408,19 +405,17 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成可直接使用的M3U文件（带协议标注，优化解析兼容性）
+        # 生成纯净版M3U文件（无协议标注，优化解析兼容性）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源合并文件 | 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}\n")
-            f.write(f"# 支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n\n")
+            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}\n\n")
             
-            # 按分类写入M3U内容
+            # 按分类写入M3U内容（无协议标注）
             for group_title, channel_list in all_channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
-                    protocol = get_url_protocol(url) if meta else "未知协议"
                     
                     if meta and meta.raw_extinf:
                         standard_extinf = meta.raw_extinf
@@ -430,21 +425,21 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                             end_idx = standard_extinf.find('"', start_idx)
                             if end_idx > start_idx:
                                 standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
-                        # 转义特殊字符，避免播放器解析异常，添加协议标注
+                        # 转义特殊字符，避免播放器解析异常（去除协议标注）
                         if ',' in standard_extinf:
                             extinf_part, old_name = standard_extinf.rsplit(',', 1)
-                            safe_name = name.replace('\\', '\\\\').replace('$', '\\$') + f"[{protocol}]"
+                            safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
                             standard_extinf = extinf_part + ',' + safe_name
                         f.write(standard_extinf + "\n")
                     else:
-                        # 无元信息时构造默认EXTINF行（带协议标注）
-                        safe_name = name.replace('\\', '\\\\').replace('$', '\\$') + f"[{protocol}]"
+                        # 无元信息时构造默认EXTINF行（无协议标注）
+                        safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
                         f.write(f"#EXTINF:-1 tvg-name=\"{safe_name}\" group-title=\"{group_title}\",{safe_name}\n")
                     f.write(url + "\n\n")
         
         logger.info(f"文件生成完成：")
         logger.info(f"  - 汇总TXT：{summary_path.absolute()}")
-        logger.info(f"  - 合并M3U：{m3u_path.absolute()}")
+        logger.info(f"  - 纯净版M3U：{m3u_path.absolute()}")
         
     except Exception as e:
         logger.error(f"生成输出文件失败：{str(e)}", exc_info=True)
