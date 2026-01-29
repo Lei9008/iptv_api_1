@@ -1,21 +1,18 @@
 # config.py
 # ===================== 直播源配置（核心） =====================
-# 源URL列表（请替换为你自己的直播源链接）
+# 源URL列表（已优化格式，提升抓取成功率）
 SOURCE_URLS = [
-    # 示例链接，替换为实际的直播源URL
-    "https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u",
-    "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
-    "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u",
-    "https://github.com/plsy1/iqilu/blob/main/iqilu-generic.m3u",
-    "https://github.com/develop202/migu_video/blob/main/interface.txt",
-    
-
+    # 修正：GitHub blob地址 → raw原始文件地址，移除无效代理前缀格式
+    "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/output/live_ipv4.m3u",
+    "https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
+    "https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u",
+    "https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u",
+    "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt",
 ]
 
-
-# ========== 模板相关配置（必须配置） ==========
+# ========== 模板相关配置（已实现生效逻辑） ==========
 USE_TEMPLATE = True  # 启用模板匹配
-TEMPLATE_FILE = "demo.txt"  # 你的模板文件名称，与脚本同目录
+TEMPLATE_FILE = "demo.txt"  # 模板文件名称，与脚本同目录
 
 # 基础频道名称映射
 cntvNamesReverse = {
@@ -119,15 +116,13 @@ group_title_mapping = {
     '浙江频道': ['浙江地区'],
     '重庆频道': ['重庆地区'],
 
-
     # 特殊分类
     '港澳台频道': ['港澳台', '港澳代理', '湾区频道'],  # 港澳台/港澳代理→港澳台频道
     '央视频道': ['央视台'],              # 央视台→央视频道
-    '卫视频道': ['卫视台', '省级卫视'],              # 卫视台→卫视频道
+    '卫视频道': ['卫视台', '省级卫视'],  # 卫视台→卫视频道
     '4K超高清': ['超清频道', '4K频道'],  # 超清频道/4K频道→4K超高清
     '央视高清': ['央视高清频道'],        # 央视高清频道→央视高清（单独分类）
     '动漫频道': ['动画频道'],
-    
 }
 
 # 兼容旧映射：快速查找原始名称对应的目标名称（供代码调用）
@@ -135,16 +130,3 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
-
-
-
-
-
-
-
-
-
-
-
-
-
