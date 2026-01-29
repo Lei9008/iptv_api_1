@@ -43,9 +43,6 @@ SUPPORTED_PROTOCOLS = (
     "hls://"
 )
 
-# demo.txt文件路径（与主脚本同一目录）
-DEMO_TXT_PATH = Path("demo.txt")
-
 LOG_FILE_PATH = OUTPUT_FOLDER / "live_source_extract.log"
 logging.basicConfig(
     level=logging.INFO,
@@ -73,77 +70,6 @@ class ChannelMeta:
 
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
-# 新增：存储demo.txt的分类-频道映射（保留demo的分类和频道顺序）
-demo_cate_channel: OrderedDictType[str, Set[str]] = OrderedDict()
-# 新增：存储demo.txt的纯频道白名单（用于快速匹配）
-demo_channel_whitelist: Set[str] = set()
-
-# ===================== 核心修改：加载demo.txt（适配分类+CSV格式） =====================
-def load_demo_txt():
-    """
-    加载自定义格式的demo.txt：
-    1. 识别┃分类名,#genre# 标记的分类行
-    2. 解析分类下的CSV格式频道名（频道名,）
-    3. 生成有序分类-频道映射 + 全局频道白名单
-    4. 自动清洗频道名（去空格、去逗号、标准化CCTV名称）
-    """
-    global demo_cate_channel, demo_channel_whitelist
-    demo_cate_channel = OrderedDict()
-    demo_channel_whitelist = set()
-    current_cate = ""
-
-    # 检查demo.txt是否存在
-    if not DEMO_TXT_PATH.exists():
-        logger.error(f"demo.txt文件不存在！路径：{DEMO_TXT_PATH.absolute()}")
-        raise FileNotFoundError(f"缺少必要文件：{DEMO_TXT_PATH.name}")
-
-    try:
-        with open(DEMO_TXT_PATH, "r", encoding="utf-8") as f:
-            lines = [line.strip() for line in f.readlines() if line.strip()]
-
-        for line_num, line in enumerate(lines, 1):
-            # 匹配分类行：┃分类名,#genre#
-            cate_pattern = re.compile(r'┃(.+?),#genre#')
-            cate_match = cate_pattern.match(line)
-            if cate_match:
-                current_cate = cate_match.group(1).strip()
-                # 初始化当前分类的频道集合
-                if current_cate and current_cate not in demo_cate_channel:
-                    demo_cate_channel[current_cate] = set()
-                continue
-
-            # 匹配频道行：频道名, （过滤空行/注释行）
-            if not current_cate or line.startswith("#"):
-                continue
-            # 清洗频道名：去逗号、去空格、标准化
-            channel_name = line.rstrip(",").strip()
-            if not channel_name:
-                logger.warning(f"demo.txt第{line_num}行：无效频道名，已忽略 -> {line}")
-                continue
-            # 标准化频道名（与脚本内格式一致）
-            standard_name = standardize_cctv_name(channel_name)
-            if standard_name:
-                demo_cate_channel[current_cate].add(standard_name)
-                demo_channel_whitelist.add(standard_name)
-            else:
-                logger.warning(f"demo.txt第{line_num}行：标准化后无效，已忽略 -> {line}")
-
-        # 过滤空分类
-        demo_cate_channel = OrderedDict([(k, v) for k, v in demo_cate_channel.items() if v])
-        # 统计
-        total_demo_channels = len(demo_channel_whitelist)
-        total_demo_cates = len(demo_cate_channel)
-
-        if total_demo_channels == 0:
-            logger.error("demo.txt中无有效频道，程序终止")
-            raise ValueError("demo.txt有效频道数为0")
-        logger.info(f"成功加载demo.txt | 分类数：{total_demo_cates} | 有效频道数：{total_demo_channels}")
-        for cate, chans in demo_cate_channel.items():
-            logger.info(f"  - {cate}：{len(chans)}个频道")
-
-    except Exception as e:
-        logger.error(f"读取/解析demo.txt失败：{str(e)}", exc_info=True)
-        raise Exception(f"处理demo.txt异常：{str(e)}")
 
 # ===================== 工具函数 =====================
 def get_url_protocol(url: str) -> str:
@@ -156,26 +82,35 @@ def get_url_protocol(url: str) -> str:
     return "未知协议"
 
 def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
-    """清洗分类名称（兼容demo.txt分类，优先返回demo的分类，处理None值）"""
-    # 第一步：处理None值，转为空字符串（核心修复，避免strip()报错）
+    """
+    清洗分类名称（集成config中的分类映射标准化，返回有效分类）
+    """
     group_title = group_title or ""
+    channel_name = channel_name or ""
     
-    # 第二步：优先使用demo的分类，无需再做其他映射
-    for demo_cate in demo_cate_channel.keys():
-        if demo_cate in group_title:
-            return demo_cate
+    # 第一步：通过config中的反向映射实现分类标准化（优先匹配）
+    if hasattr(config, 'group_title_reverse_mapping') and group_title.strip() in config.group_title_reverse_mapping:
+        group_title = config.group_title_reverse_mapping[group_title.strip()]
     
-    # 第三步：清洗分类名称（去空格、判空）
-    cleaned_title = group_title.strip()
-    return cleaned_title if cleaned_title else "未分类"
+    # 第二步：清洗特殊字符，仅保留中文、字母、数字、下划线、括号
+    final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title.strip())).strip() or "未分类"
+    
+    # 第三步：限制长度，避免分类名称过长影响播放器显示
+    return final_title[:20] if final_title else "未分类"
 
 def global_replace_cctv_name(content: str) -> str:
     """批量替换文本中的CCTV频道名称为标准名称"""
     if not content:
         return content
     all_mappings = {}
-    all_mappings.update(config.cntvNamesReverse)
-    all_mappings.update(config.cctv_alias)
+    if hasattr(config, 'cntvNamesReverse'):
+        all_mappings.update(config.cntvNamesReverse)
+    if hasattr(config, 'cctv_alias'):
+        all_mappings.update(config.cctv_alias)
+    
+    # 无映射配置直接返回原内容
+    if not all_mappings:
+        return content
     
     # 按名称长度降序排序，避免短名称覆盖长名称（如先匹配"CCTV5+"再匹配"CCTV5"）
     sorted_mappings = sorted(all_mappings.items(), key=lambda x: (-len(x[0]), x[0]))
@@ -188,30 +123,28 @@ def global_replace_cctv_name(content: str) -> str:
     return replaced_content
 
 def standardize_cctv_name(channel_name: Optional[str]) -> str:
-    """标准化单个CCTV频道名称（处理None值，提升健壮性）"""
-    # 处理None值，转为空字符串
-    channel_name = channel_name or ""
-    
-    # 清洗前后空格
-    normalized_name = channel_name.strip()
-    if not normalized_name:
+    """标准化单个CCTV频道名称"""
+    if not channel_name:
         return ""
     
     # 精准匹配反向映射和别名
-    if normalized_name in config.cntvNamesReverse:
-        return config.cntvNamesReverse[normalized_name]
-    if normalized_name in config.cctv_alias:
-        return config.cctv_alias[normalized_name]
+    if hasattr(config, 'cntvNamesReverse') and channel_name in config.cntvNamesReverse:
+        return config.cntvNamesReverse[channel_name]
+    if hasattr(config, 'cctv_alias') and channel_name in config.cctv_alias:
+        return config.cctv_alias[channel_name]
     
     # 模糊匹配（包含关系）
-    for raw_name, standard_name in config.cntvNamesReverse.items():
-        if raw_name in normalized_name:
-            return standard_name
-    for alias_name, standard_name in config.cctv_alias.items():
-        if alias_name in normalized_name:
-            return standard_name
+    normalized_name = channel_name.strip()
+    if hasattr(config, 'cntvNamesReverse'):
+        for raw_name, standard_name in config.cntvNamesReverse.items():
+            if raw_name in normalized_name:
+                return standard_name
+    if hasattr(config, 'cctv_alias'):
+        for alias_name, standard_name in config.cctv_alias.items():
+            if alias_name in normalized_name:
+                return standard_name
     
-    # 无匹配则返回原名称（已清洗空格）
+    # 无匹配则返回原名称（清洗前后空格）
     return normalized_name
 
 def replace_github_domain(url: str) -> List[str]:
@@ -322,7 +255,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         if name_match:
             channel_name = standardize_cctv_name(name_match.group(1).strip())
         
-        # 清洗分类名称（适配demo.txt分类）
+        # 清洗分类名称
         group_title = clean_group_title(group_title, channel_name)
         
         # 提取协议类型（内部使用，不输出）
@@ -445,85 +378,151 @@ def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: 
                 target[category_name].append((name, url))
                 url_set.add(url)
 
-# ===================== 核心修改：按demo.txt过滤并对齐分类 =====================
-def filter_and_align_with_demo(all_channels: OrderedDictType[str, List[Tuple[str, str]]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
+
+# ===================== 新增：parse_template() 功能（适配demo.txt格式） =====================
+def parse_template(template_file: str) -> OrderedDictType[str, List[str]]:
     """
-    核心逻辑：
-    1. 过滤：仅保留demo_channel_whitelist中的频道
-    2. 对齐：将匹配到的频道按demo.txt的分类体系重新归类
-    3. 去重：按URL去重，保留首个匹配的有效地址
-    4. 保序：完全保留demo.txt的分类顺序和频道优先级
+    解析模板文件，适配2种格式：
+    1. 自定义格式（demo.txt）：┃分类名,#genre#  后续行是频道名,（逗号结尾）
+    2. 基础格式：#genre#分类名  后续行是频道名（无逗号）
+    提取预设的「分类-频道」结构，返回有序字典（保留模板顺序）
     """
-    # 第一步：将所有合并后的频道转为 频道名:[(url, meta)] 映射（方便匹配）
-    chan_name_url_map: Dict[str, List[Tuple[str, ChannelMeta]]] = {}
-    for _, ch_list in all_channels.items():
-        for name, url in ch_list:
-            meta = channel_meta_cache.get(url)
-            if name not in chan_name_url_map:
-                chan_name_url_map[name] = []
-            if url not in [u for u, _ in chan_name_url_map[name]]:
-                chan_name_url_map[name].append((url, meta))
+    template_channels = OrderedDict()  # 键：分类名，值：该分类下的频道名列表
+    current_category = None
 
-    # 第二步：按demo.txt的分类和频道顺序重新整理
-    final_channels = OrderedDict()
-    matched_chan_count = 0
-    used_urls = set()
+    # 校验模板文件是否存在
+    if not Path(template_file).exists():
+        logger.error(f"模板文件不存在：{template_file}")
+        return template_channels
 
-    # 遍历demo的分类（保序）
-    for demo_cate, demo_chans in demo_cate_channel.items():
-        final_channels[demo_cate] = []
-        # 遍历demo的频道（保序）
-        for demo_chan in demo_chans:
-            # 精准匹配+模糊匹配
-            match_chan_names = [
-                name for name in chan_name_url_map.keys()
-                if demo_chan == name or demo_chan in name or name in demo_chan
-            ]
-            for match_name in match_chan_names:
-                for url, meta in chan_name_url_map[match_name]:
-                    if url not in used_urls:
-                        final_channels[demo_cate].append((demo_chan, url))
-                        used_urls.add(url)
-                        matched_chan_count += 1
-                        break  # 每个频道仅保留一个有效URL
+    try:
+        with open(template_file, "r", encoding="utf-8") as f:
+            # 读取所有行并过滤空行（连续换行/全空格行）
+            lines = [line.strip() for line in f.readlines() if line.strip()]
+            for line_num, line in enumerate(lines, 1):
+                # 识别分类行：匹配「┃分类名,#genre#」或「#genre#分类名」格式
+                if ",#genre#" in line or "#genre#" in line:
+                    # 适配格式1：┃分类名,#genre# → 提取┃后、,#genre#前的内容
+                    if ",#genre#" in line:
+                        current_category = line.split(",#genre#")[0].replace("┃", "").strip()
+                    # 适配格式2：#genre#分类名 → 提取#genre#后的内容
+                    else:
+                        current_category = line.split("#genre#")[-1].strip()
+                    
+                    # 分类名兜底+标准化
+                    if not current_category:
+                        current_category = "未命名分类"
+                    current_category = clean_group_title(current_category)
+                    # 初始化该分类的频道列表
+                    template_channels[current_category] = []
+                    logger.debug(f"模板解析：识别分类 [{current_category}]（行号：{line_num}）")
+                
+                elif current_category:
+                    # 识别频道行：适配「频道名,」（逗号结尾）和「频道名」（无逗号）
+                    channel_name = line.rstrip(",").strip()  # 剔除结尾逗号+前后空格
+                    channel_name = standardize_cctv_name(channel_name)
+                    if channel_name:  # 跳过空的频道名
+                        template_channels[current_category].append(channel_name)
+                        logger.debug(f"模板解析：分类 [{current_category}] 新增频道 [{channel_name}]（行号：{line_num}）")
 
-    # 过滤demo分类下的空频道列表
-    final_channels = OrderedDict([(k, v) for k, v in final_channels.items() if v])
-    # 统计
-    total_demo_chan = len(demo_channel_whitelist)
-    logger.info(f"demo.txt频道匹配完成 | 总待匹配：{total_demo_chan} | 成功匹配：{matched_chan_count} | 未匹配：{total_demo_chan - matched_chan_count}")
-    if total_demo_chan - matched_chan_count > 0:
-        unmatched = [c for c in demo_channel_whitelist if c not in [mc for cate in final_channels.values() for mc, _ in cate]]
-        logger.warning(f"未匹配到的频道：{unmatched[:20]}{'...' if len(unmatched)>20 else ''}")
-    return final_channels
+    except Exception as e:
+        logger.error(f"解析模板文件失败：{str(e)}", exc_info=True)
+        return OrderedDict()
 
-# ===================== 生成输出文件 =====================
-def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成汇总TXT文件和纯净版M3U文件（无协议标注，沿用demo.txt分类）"""
-    if not all_channels:
+    # 过滤空分类（无有效频道的分类）
+    template_channels = OrderedDict([(k, v) for k, v in template_channels.items() if v])
+
+    # 输出模板解析统计
+    total_template_channels = sum(len(channel_list) for channel_list in template_channels.values())
+    logger.info(f"模板文件解析完成：{len(template_channels)}个分类，{total_template_channels}个预设频道")
+    logger.info(f"模板分类列表：{list(template_channels.keys())}")
+
+    return template_channels
+
+def match_template_and_extracted(template_channels: OrderedDictType[str, List[str]],
+                                 extracted_channels: OrderedDictType[str, List[Tuple[str, str]]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
+    """
+    匹配模板频道与抓取的频道，返回符合模板结构的频道字典
+    核心：按模板的分类顺序、频道顺序，筛选出抓取结果中存在的频道
+    适配：支持频道名模糊匹配（提升匹配成功率，如模板CCTV14匹配抓取的CCTV14少儿）
+    """
+    matched_channels = OrderedDict()
+    # 构建「频道名→(url, 协议, 来源)」的映射，同时构建模糊匹配的频道名集合
+    name_to_channel_info = {}
+    all_extracted_names = set()
+    for _, extracted_ch_list in extracted_channels.items():
+        for ch_name, ch_url in extracted_ch_list:
+            if ch_name not in name_to_channel_info:
+                name_to_channel_info[ch_name] = (ch_url, get_url_protocol(ch_url), url_source_mapping.get(ch_url, "未知来源"))
+                all_extracted_names.add(ch_name)
+
+    # 按模板结构遍历，筛选匹配的频道（精准匹配→模糊匹配）
+    for template_category, template_ch_names in template_channels.items():
+        matched_ch_list = []
+        for template_ch_name in template_ch_names:
+            # 1. 精准匹配：模板名 == 抓取名
+            if template_ch_name in name_to_channel_info:
+                ch_url, _, _ = name_to_channel_info[template_ch_name]
+                matched_ch_list.append((template_ch_name, ch_url))
+                logger.debug(f"频道精准匹配成功：[{template_category}] {template_ch_name}")
+            # 2. 模糊匹配：抓取名包含模板名（如模板CCTV14匹配CCTV14少儿，山东少儿匹配山东少儿频道）
+            else:
+                match_flag = False
+                for extracted_name in all_extracted_names:
+                    if template_ch_name in extracted_name:
+                        ch_url, _, _ = name_to_channel_info[extracted_name]
+                        matched_ch_list.append((template_ch_name, ch_url))  # 保留模板中的标准名
+                        logger.debug(f"频道模糊匹配成功：[{template_category}] {template_ch_name} → 抓取名：{extracted_name}")
+                        match_flag = True
+                        break
+                if not match_flag:
+                    logger.warning(f"频道匹配失败：[{template_category}] {template_ch_name}（抓取结果中无该频道/相似频道）")
+
+        if matched_ch_list:
+            matched_channels[template_category] = matched_ch_list
+
+    # 输出匹配统计
+    total_matched = sum(len(ch_list) for ch_list in matched_channels.values())
+    total_template = sum(len(ch_list) for ch_list in template_channels.values())
+    logger.info(f"频道匹配完成：模板总频道{total_template}个，匹配成功{total_matched}个（精准+模糊）")
+
+    return matched_channels
+                                     
+
+# ===================== 生成输出文件（兼容模板匹配结果） =====================
+def generate_summary(channels: OrderedDictType[str, List[Tuple[str, str]]], is_template_matched: bool = False):
+    """
+    生成汇总TXT文件和纯净版M3U文件（支持模板匹配结果和原始抓取结果）
+    :param channels: 待输出的频道字典（模板匹配结果或原始抓取结果）
+    :param is_template_matched: 是否是模板匹配后的结果（用于文件命名区分）
+    """
+    if not channels:
         logger.warning("无有效频道可输出，跳过文件生成")
         return
     
-    # 定义输出文件路径
-    summary_path = OUTPUT_FOLDER / "live_source_summary.txt"
-    m3u_path = OUTPUT_FOLDER / "live_source_merged.m3u"
+    # 定义输出文件路径（区分模板匹配结果和原始结果）
+    file_suffix = "_template_matched" if is_template_matched else "_merged"
+    summary_path = OUTPUT_FOLDER / f"live_source{file_suffix}.txt"
+    m3u_path = OUTPUT_FOLDER / f"live_source{file_suffix}.m3u"
     generate_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
-    total_categories = len(all_channels)
+    total_channels = sum(len(ch_list) for _, ch_list in channels.items())
+    total_categories = len(channels)
     
     try:
-        # 生成易读的汇总TXT（按demo分类，带协议/来源）
+        # 生成易读的汇总TXT（可选保留协议标注，方便人工查看）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（完全适配demo.txt分类+频道）\n")
+            f.write("IPTV直播源汇总（自动提取+标准化+多协议支持）\n")
+            if is_template_matched:
+                f.write("（按模板筛选并排序，仅保留模板中存在的频道）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{generate_time}\n")
-            f.write(f"总匹配频道数：{total_channels}\n")
-            f.write(f"分类数（与demo一致）：{total_categories}\n")
+            f.write(f"总频道数：{total_channels}\n")
+            f.write(f"分类数：{total_categories}\n")
             f.write(f"支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n")
             f.write("="*80 + "\n\n")
             
-            # 按demo分类写入频道详情
-            for group_title, channel_list in all_channels.items():
+            # 按分类写入频道详情
+            for group_title, channel_list in channels.items():
                 f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
                     source = url_source_mapping.get(url, "未知来源")
@@ -532,34 +531,36 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成纯净版M3U文件（无协议标注，沿用demo分类，可直接导入）
+        # 生成纯净版M3U文件（无协议标注，优化解析兼容性）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
-            f.write(f"# IPTV直播源（适配demo.txt）| 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels} | 分类数：{total_categories}\n\n")
+            f.write(f"# IPTV直播源文件 | 生成时间：{generate_time}\n")
+            if is_template_matched:
+                f.write(f"# 按模板筛选排序 | ")
+            f.write(f"总频道数：{total_channels} | 总分类数：{total_categories}\n\n")
             
-            # 按demo分类写入M3U内容（无协议标注）
-            for group_title, channel_list in all_channels.items():
+            # 按分类写入M3U内容（无协议标注）
+            for group_title, channel_list in channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
                     
                     if meta and meta.raw_extinf:
                         standard_extinf = meta.raw_extinf
-                        # 强制替换为demo的分类名称
+                        # 确保分类名称为标准化后的名称（与模板分类一致）
                         if 'group-title="' in standard_extinf:
                             start_idx = standard_extinf.find('group-title="') + len('group-title="')
                             end_idx = standard_extinf.find('"', start_idx)
                             if end_idx > start_idx:
                                 standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
-                        # 转义特殊字符，使用demo的标准频道名
+                        # 转义特殊字符，避免播放器解析异常（去除协议标注）
                         if ',' in standard_extinf:
-                            extinf_part, _ = standard_extinf.rsplit(',', 1)
+                            extinf_part, old_name = standard_extinf.rsplit(',', 1)
                             safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
                             standard_extinf = extinf_part + ',' + safe_name
                         f.write(standard_extinf + "\n")
                     else:
-                        # 无元信息时构造默认EXTINF行（demo分类+纯净名称）
+                        # 无元信息时构造默认EXTINF行（无协议标注）
                         safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
                         f.write(f"#EXTINF:-1 tvg-name=\"{safe_name}\" group-title=\"{group_title}\",{safe_name}\n")
                     f.write(url + "\n\n")
@@ -571,7 +572,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     except Exception as e:
         logger.error(f"生成输出文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序入口 =====================
+# ===================== 主程序入口（集成模板解析功能） =====================
 def main():
     try:
         # 初始化全局缓存
@@ -580,29 +581,26 @@ def main():
         url_source_mapping = {}
         
         logger.info("="*60)
-        logger.info("开始处理IPTV直播源（加载demo→提取→标准化→合并→过滤对齐→生成）")
+        logger.info("开始处理IPTV直播源（提取→标准化→合并→模板匹配→生成）")
         logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
         logger.info("="*60)
         
-        # 第一步：核心 - 加载demo.txt并解析分类/频道白名单
-        try:
-            load_demo_txt()
-        except Exception as e:
-            logger.critical(f"加载demo.txt失败，程序终止：{str(e)}")
-            return
-        
-        # 第二步：从配置文件读取源URL列表
+        # 1. 从配置文件读取参数
         source_urls = getattr(config, 'SOURCE_URLS', [])
+        template_file = getattr(config, 'TEMPLATE_FILE', "live_template.txt")  # 模板文件路径
+        use_template = getattr(config, 'USE_TEMPLATE', True)  # 是否启用模板匹配
+        
         if not source_urls:
             logger.error("配置文件中未设置有效SOURCE_URLS，程序终止")
             return
         logger.info(f"读取到待处理的源URL数：{len(source_urls)}")
+        if use_template:
+            logger.info(f"启用模板匹配功能，模板文件：{template_file}")
         
-        # 第三步：初始化全局频道字典（保留顺序）
+        # 2. 遍历所有源URL，逐个处理并合并频道
         all_channels = OrderedDict()
         failed_urls = []
         
-        # 第四步：遍历所有源URL，逐个处理
         for idx, url in enumerate(source_urls, 1):
             logger.info(f"\n===== 处理第 {idx}/{len(source_urls)} 个源：{url} =====")
             # 抓取URL内容
@@ -617,23 +615,37 @@ def main():
             # 合并到全局频道字典
             merge_channels(all_channels, extracted_channels)
         
-        # 第五步：核心 - 按demo.txt过滤频道并对齐分类/顺序
-        all_channels = filter_and_align_with_demo(all_channels)
-        
-        # 第六步：输出处理完成统计
-        logger.info(f"\n===== 处理完成统计 =====")
-        total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
+        # 3. 输出原始抓取统计
+        logger.info(f"\n===== 原始抓取结果统计 =====")
+        total_channels_raw = sum(len(ch_list) for _, ch_list in all_channels.items())
         logger.info(f"  - 源URL总数：{len(source_urls)}")
         logger.info(f"  - 抓取失败源数：{len(failed_urls)}")
-        logger.info(f"  - 最终匹配demo频道数：{total_channels}")
-        logger.info(f"  - 最终分类数（与demo一致）：{len(all_channels)}")
+        logger.info(f"  - 原始有效频道数：{total_channels_raw}")
+        logger.info(f"  - 原始有效分类数：{len(all_channels)}")
         if all_channels:
-            logger.info(f"  - 分类列表（demo顺序）：{list(all_channels.keys())}")
+            logger.info(f"  - 原始分类列表：{list(all_channels.keys())}")
         if failed_urls:
             logger.warning(f"  - 失败的源URL列表：{failed_urls}")
         
-        # 第七步：生成输出文件
-        generate_summary(all_channels)
+        # 4. 模板匹配（如果启用）
+        final_channels = all_channels
+        is_template_matched = False
+        
+        if use_template:
+            # 解析模板文件
+            template_channels = parse_template(template_file)
+            if template_channels:
+                # 匹配模板与抓取结果
+                final_channels = match_template_and_extracted(template_channels, all_channels)
+                is_template_matched = True
+            else:
+                logger.warning("模板解析失败或为空，使用原始抓取结果进行输出")
+        
+        # 5. 生成输出文件（原始结果/模板匹配结果）
+        # 可选：同时生成原始结果和模板匹配结果（方便对比）
+        generate_summary(all_channels, is_template_matched=False)
+        if is_template_matched:
+            generate_summary(final_channels, is_template_matched=True)
         
         logger.info("\n===== 所有操作执行完毕 =====")
         logger.info(f"输出文件存放目录：{OUTPUT_FOLDER.absolute()}")
