@@ -156,12 +156,18 @@ def get_url_protocol(url: str) -> str:
     return "未知协议"
 
 def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
-    """清洗分类名称（兼容demo.txt分类，优先返回demo的分类）"""
-    # 优先使用demo的分类，无需再做其他映射
+    """清洗分类名称（兼容demo.txt分类，优先返回demo的分类，处理None值）"""
+    # 第一步：处理None值，转为空字符串（核心修复，避免strip()报错）
+    group_title = group_title or ""
+    
+    # 第二步：优先使用demo的分类，无需再做其他映射
     for demo_cate in demo_cate_channel.keys():
-        if group_title and demo_cate in group_title:
+        if demo_cate in group_title:
             return demo_cate
-    return group_title.strip() or "未分类"
+    
+    # 第三步：清洗分类名称（去空格、判空）
+    cleaned_title = group_title.strip()
+    return cleaned_title if cleaned_title else "未分类"
 
 def global_replace_cctv_name(content: str) -> str:
     """批量替换文本中的CCTV频道名称为标准名称"""
@@ -182,18 +188,22 @@ def global_replace_cctv_name(content: str) -> str:
     return replaced_content
 
 def standardize_cctv_name(channel_name: Optional[str]) -> str:
-    """标准化单个CCTV频道名称"""
-    if not channel_name:
+    """标准化单个CCTV频道名称（处理None值，提升健壮性）"""
+    # 处理None值，转为空字符串
+    channel_name = channel_name or ""
+    
+    # 清洗前后空格
+    normalized_name = channel_name.strip()
+    if not normalized_name:
         return ""
     
     # 精准匹配反向映射和别名
-    if channel_name in config.cntvNamesReverse:
-        return config.cntvNamesReverse[channel_name]
-    if channel_name in config.cctv_alias:
-        return config.cctv_alias[channel_name]
+    if normalized_name in config.cntvNamesReverse:
+        return config.cntvNamesReverse[normalized_name]
+    if normalized_name in config.cctv_alias:
+        return config.cctv_alias[normalized_name]
     
     # 模糊匹配（包含关系）
-    normalized_name = channel_name.strip()
     for raw_name, standard_name in config.cntvNamesReverse.items():
         if raw_name in normalized_name:
             return standard_name
@@ -201,7 +211,7 @@ def standardize_cctv_name(channel_name: Optional[str]) -> str:
         if alias_name in normalized_name:
             return standard_name
     
-    # 无匹配则返回原名称（清洗前后空格）
+    # 无匹配则返回原名称（已清洗空格）
     return normalized_name
 
 def replace_github_domain(url: str) -> List[str]:
