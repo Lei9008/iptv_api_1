@@ -126,111 +126,6 @@ class ChannelMeta:
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
-# ===================== 模板功能实现（最终版：白名单模式+支持跨分类重复） =====================
-def load_template() -> OrderedDictType[str, List[str]]:
-    """
-    读取分类式模板文件，返回有序字典 {分类名称: [频道列表]}
-    模板格式：#分类:xxx 标识分类行，后续行为该分类下的频道，注释行以#开头（非#分类:的行）
-    """
-    if not config.USE_TEMPLATE:
-        logger.info("模板匹配已关闭，跳过模板文件读取")
-        return OrderedDict()
-    
-    template_path = Path(config.TEMPLATE_FILE)
-    if not template_path.exists():
-        logger.warning(f"模板文件不存在：{template_path.absolute()}，自动关闭模板匹配")
-        config.USE_TEMPLATE = False
-        return OrderedDict()
-    
-    try:
-        template_dict = OrderedDict()  # 保留分类和频道的原始顺序
-        current_category = None
-        with open(template_path, "r", encoding="utf-8") as f:
-            for line_num, line in enumerate(f.readlines(), 1):
-                line_content = line.strip()
-                # 跳过空行和非分类的注释行
-                if not line_content or (line_content.startswith("#") and not line_content.startswith("#分类:")):
-                    continue
-                # 匹配分类行：#分类:xxx（兼容定制模板格式）
-                if line_content.startswith("#分类:"):
-                    current_category = line_content.replace("#分类:", "").strip()
-                    if current_category and current_category not in template_dict:
-                        template_dict[current_category] = []
-                    continue
-                # 频道行：添加到当前分类（自动去重当前分类内的重复频道名称）
-                if current_category and line_content:
-                    if line_content not in template_dict[current_category]:
-                        template_dict[current_category].append(line_content)
-        
-        # 统计模板信息并打印
-        total_template_channels = sum(len(ch_list) for ch_list in template_dict.values())
-        logger.info(f"成功读取分类式模板文件 | 分类数：{len(template_dict)} | 模板内总频道数：{total_template_channels}")
-        logger.info(f"模板分类顺序：{list(template_dict.keys())}")
-        return template_dict
-    except Exception as e:
-        logger.error(f"读取模板文件失败：{str(e)}，自动关闭模板匹配", exc_info=True)
-        config.USE_TEMPLATE = False
-        return OrderedDict()
-
-def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[str, str]]],
-                                template_dict: OrderedDictType[str, List[str]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
-    """
-    按分类式模板筛选频道（严格白名单模式）：仅保留demo.txt中列出的频道，无额外频道泄露
-    保留模板的分类顺序+频道顺序，支持同一URL跨分类重复出现，仅当前分类内可选去重
-    :param all_channels: 原始合并后的所有频道
-    :param template_dict: 模板的{分类:频道列表}有序字典
-    :return: 仅包含模板频道的结果，无匹配的频道/分类会被过滤
-    """
-    if not template_dict or not config.USE_TEMPLATE:
-        return all_channels
-    
-    # 构建「原始频道名称→(分类, URL)」的快速查询映射，方便模糊匹配
-    name_to_channel_info = {}
-    for raw_category, ch_list in all_channels.items():
-        for ch_name, ch_url in ch_list:
-            if ch_name not in name_to_channel_info:
-                name_to_channel_info[ch_name] = []
-            name_to_channel_info[ch_name].append((raw_category, ch_url))
-    
-    # 按模板顺序筛选（严格白名单，仅处理模板中存在的频道和分类）
-    template_filtered = OrderedDict()
-    total_matched = 0
-
-    for template_cate, template_chs in template_dict.items():
-        template_filtered[template_cate] = []  # 按模板创建分类，保留原始顺序
-        # 可选：当前分类内URL去重（避免同一分类内重复出现相同频道，如需完全无去重可删除以下3行）
-        current_cate_urls = set()
-        
-        for template_ch in template_chs:
-            matched = False
-            # 仅遍历原始频道，匹配当前模板频道（不额外添加任何非模板频道）
-            for channel_name, info_list in name_to_channel_info.items():
-                similarity = calculate_string_similarity(channel_name, template_ch)
-                if similarity >= MATCH_THRESHOLD:
-                    # 匹配成功：提取URL（无全局去重，支持跨分类重复）
-                    for _, ch_url in info_list:
-                        # 如需完全移除所有去重（包括当前分类内），删除此if判断及后续2行
-                        if ch_url not in current_cate_urls:
-                            current_cate_urls.add(ch_url)  # 仅当前分类内去重（可选）
-                            template_filtered[template_cate].append((channel_name, ch_url))
-                            total_matched += 1
-                            matched = True
-                            logger.debug(f"模板匹配成功（白名单） | 【{template_cate}】{template_ch} → {channel_name}（得分：{similarity}）")
-                            break
-                if matched:
-                    break
-            if not matched:
-                logger.warning(f"模板频道无匹配结果（已忽略） | 【{template_cate}】{template_ch}")
-    
-    # 过滤模板中无匹配频道的空分类（无有效内容不生成）
-    for template_cate in list(template_filtered.keys()):
-        if not template_filtered[template_cate]:
-            del template_filtered[template_cate]
-            logger.warning(f"模板分类无匹配频道，已过滤 | 【{template_cate}】")
-    
-    logger.info(f"模板筛选完成（白名单模式） | 最终保留分类数：{len(template_filtered)} | 最终保留频道数：{total_matched}（仅模板内有效频道）")
-    return template_filtered
-
 # ===================== 原生Python实现简易模糊匹配（无第三方依赖） =====================
 def calculate_string_similarity(s1: str, s2: str) -> int:
     """
@@ -481,7 +376,7 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
     
     categorized_channels = OrderedDict()
     meta_list = []
-    seen_urls = set()  # 单个M3U文件内去重，不影响模板白名单逻辑
+    seen_urls = set()  # 单个M3U文件内去重，避免同一文件内重复频道
     matches = m3u_pattern.findall(content)
     
     logger.info(f"M3U格式匹配到 {len(matches)} 个候选条目")
@@ -563,7 +458,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
         # 处理自定义文本格式
         lines = content.split('\n')
         current_group = ""
-        seen_urls = set()  # 单个文本文件内去重，不影响模板白名单逻辑
+        seen_urls = set()  # 单个文本文件内去重，避免同一文件内重复频道
         
         for line in lines:
             line = line.strip()
@@ -633,7 +528,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
     return categorized_channels
 
 def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: OrderedDictType[str, List[Tuple[str, str]]]):
-    """合并多个来源的频道（支持跨分类重复，仅单个来源内去重，不影响白名单逻辑）"""
+    """合并多个来源的频道（支持跨分类重复，仅单个来源内去重）"""
     # 遍历源字典，合并新频道（保留单个来源内的去重，支持跨来源/跨分类重复）
     for category_name, ch_list in source.items():
         if category_name not in target:
@@ -644,7 +539,7 @@ def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: 
 
 # ===================== 生成输出文件 =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成汇总TXT文件和纯净版M3U文件（仅保留模板频道，支持重复频道，可直接导入播放器）"""
+    """生成汇总TXT文件和纯净版M3U文件（包含所有有效频道，可直接导入播放器）"""
     if not all_channels:
         logger.warning("无有效频道可输出，跳过文件生成")
         return
@@ -657,13 +552,13 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     total_categories = len(all_channels)
     
     try:
-        # 生成易读的汇总TXT（仅模板内频道，包含重复频道，方便查看分类分布）
+        # 生成易读的汇总TXT（包含所有有效频道，方便查看分类分布）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（白名单模式+标准化+多协议支持+EXTINF补全+支持跨分类重复）\n")
+            f.write("IPTV直播源汇总（标准化+多协议支持+EXTINF补全）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{generate_time}\n")
-            f.write(f"总频道数：{total_channels}（仅模板内有效频道，含跨分类重复）\n")
-            f.write(f"分类数：{total_categories}（与模板分类一致）\n")
+            f.write(f"总频道数：{total_channels}（所有有效抓取频道，含跨分类重复）\n")
+            f.write(f"分类数：{total_categories}\n")
             f.write(f"支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n")
             f.write("="*80 + "\n\n")
             
@@ -682,11 +577,11 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成纯净版M3U文件（仅模板内频道，补全EXTINF信息，兼容播放器）
+        # 生成纯净版M3U文件（包含所有有效频道，补全EXTINF信息，兼容播放器）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
-            f.write(f"# IPTV直播源合并文件（白名单模式） | 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels}（仅模板内有效频道，含跨分类重复） | 总分类数：{total_categories} | 已自动补全EXTINF信息\n\n")
+            f.write(f"# IPTV直播源合并文件 | 生成时间：{generate_time}\n")
+            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories} | 已自动补全EXTINF信息\n\n")
             
             # 按分类写入M3U内容（使用补全后的raw_extinf，保留重复频道）
             for group_title, channel_list in all_channels.items():
@@ -717,12 +612,9 @@ def main():
         url_source_mapping = {}
         
         logger.info("="*60)
-        logger.info("开始处理IPTV直播源（提取→标准化→EXTINF补全→合并→白名单筛选）")
+        logger.info("开始处理IPTV直播源（提取→标准化→EXTINF补全→合并）")
         logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
         logger.info(f"模糊匹配阈值：{MATCH_THRESHOLD}（越高越严格）")
-        logger.info(f"模板匹配状态：{'启用' if config.USE_TEMPLATE else '关闭'}（白名单模式，仅保留模板频道）")
-        if config.USE_TEMPLATE:
-            logger.info(f"模板文件：{config.TEMPLATE_FILE}")
         logger.info("="*60)
         
         # 第二步：从配置文件读取源URL列表
@@ -751,24 +643,22 @@ def main():
             # 合并到全局频道字典（支持跨分类重复）
             merge_channels(all_channels, extracted_channels)
         
-        # 第五步：按分类式模板筛选排序（白名单模式，仅保留模板频道）
-        template_dict = load_template()
-        if config.USE_TEMPLATE and template_dict:
-            all_channels = filter_channels_by_template(all_channels, template_dict)
+        # 过滤空分类（最终清理，确保无空分类输出）
+        all_channels = OrderedDict([(k, v) for k, v in all_channels.items() if v])
         
-        # 第六步：输出处理完成统计
+        # 第五步：输出处理完成统计
         logger.info(f"\n===== 处理完成统计 =====")
         total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
         logger.info(f"  - 源URL总数：{len(source_urls)}")
         logger.info(f"  - 抓取失败源数：{len(failed_urls)}")
-        logger.info(f"  - 最终有效频道数：{total_channels}（仅模板内有效频道，含跨分类重复）")
-        logger.info(f"  - 最终有效分类数：{len(all_channels)}（与模板分类一致）")
+        logger.info(f"  - 最终有效频道数：{total_channels}（所有有效抓取频道，含跨分类重复）")
+        logger.info(f"  - 最终有效分类数：{len(all_channels)}")
         if all_channels:
             logger.info(f"  - 分类列表：{list(all_channels.keys())}")
         if failed_urls:
             logger.warning(f"  - 失败的源URL列表：{failed_urls}")
         
-        # 第七步：生成输出文件
+        # 第六步：生成输出文件
         generate_summary(all_channels)
         
         logger.info("\n===== 所有操作执行完毕 =====")
