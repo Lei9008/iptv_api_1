@@ -40,6 +40,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests aiohttp
 
+    - name: 安装Python依赖(Install Python dependencies)
+      run: |
+       python -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+       pip install requests aiohttp fuzzywuzzy -i https://pypi.tuna.tsinghua.edu.cn/simple
+
     - name: 执行主脚本(Run Python script)  # 执行主脚本
       run: |
         python  self_use/IPTV/main.py
