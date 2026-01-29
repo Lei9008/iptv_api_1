@@ -90,8 +90,28 @@ STANDARD_CHANNEL_META = {
         "tvg-id": "guangdongtv.guangdong",
         "tvg-logo": "https://epg.pw/logos/guangdong.png",
         "group-title": "卫视频道"
+    },
+    "山东卫视": {
+        "tvg-id": "shandongtv.shandong",
+        "tvg-logo": "https://epg.pw/logos/shandong.png",
+        "group-title": "卫视频道"
+    },
+    "江苏卫视": {
+        "tvg-id": "jiangshutv.jiangsu",
+        "tvg-logo": "https://epg.pw/logos/jiangsu.png",
+        "group-title": "卫视频道"
+    },
+    "河南卫视": {
+        "tvg-id": "henantv.henan",
+        "tvg-logo": "https://epg.pw/logos/henan.png",
+        "group-title": "卫视频道"
     }
-    # 可根据需要扩展更多频道...
+}
+
+# ===================== TVG-NAME 标准分类映射（自动生成，无需手动维护） =====================
+TVG_NAME_TO_STD_GROUP = {
+    ch_name: meta["group-title"] 
+    for ch_name, meta in STANDARD_CHANNEL_META.items()
 }
 
 # 匹配阈值（0-100，越高匹配越严格，原生实现建议70-80）
@@ -195,24 +215,32 @@ def fuzzy_match_channel(channel_name: str, group_title: str = "") -> Optional[Di
         logger.debug(f"频道近似匹配成功：[{channel_name}] → 标准库[{matched_std_name}]（得分：{highest_score}）")
     return best_match
 
-# ===================== 补全EXTINF信息 =====================
+# ===================== 补全EXTINF信息（核心优化：tvg-name分类强制统一） =====================
 def complete_extinf(meta: ChannelMeta) -> ChannelMeta:
     """
     补全不完整的EXTINF信息：保留已有字段，补全缺失字段
+    核心优化：基于tvg-name强制统一分类，优先级：TVG_NAME_TO_STD_GROUP > 标准库匹配 > 原分类清洗
     :param meta: 原始频道元信息（可能存在缺失字段）
     :return: 补全后的频道元信息
     """
     # 1. 优先通过模糊匹配获取标准元信息
     std_meta = fuzzy_match_channel(meta.channel_name, meta.group_title)
     
-    # 2. 补全缺失字段（已有字段不覆盖，缺失字段用标准库/默认值填充）
+    # 2. 补全基础字段（已有字段不覆盖，缺失字段用标准库/默认值填充）
     if std_meta:
         meta.tvg_id = meta.tvg_id or std_meta.get("tvg-id")
         meta.tvg_logo = meta.tvg_logo or std_meta.get("tvg-logo")
-        # 分类以清洗后的为准，若清洗后为空则用标准库分类
+        # 先临时补全分类，后续通过tvg-name强制覆盖
         meta.group_title = meta.group_title if meta.group_title != "未分类" else std_meta.get("group-title", "未分类")
     
-    # 3. 最终兜底：确保无空字段（避免播放器解析异常）
+    # 3. 核心优化：基于tvg-name强制统一group-title（解决同一tvg-name多分类问题）
+    if meta.tvg_name and meta.tvg_name in TVG_NAME_TO_STD_GROUP:
+        original_group = meta.group_title
+        meta.group_title = TVG_NAME_TO_STD_GROUP[meta.tvg_name]
+        if original_group and original_group != meta.group_title:
+            logger.debug(f"基于tvg-name统一分类：[{meta.tvg_name}] 原分类[{original_group}] → 标准分类[{meta.group_title}]")
+    
+    # 4. 最终兜底：确保无空字段（避免播放器解析异常）
     # 修正：hash返回int，先转绝对值→字符串→再切片（解决int不可切片错误）
     meta.tvg_id = meta.tvg_id or f"auto_{str(abs(hash(meta.channel_name or meta.url)))[:8]}"
     meta.tvg_name = meta.tvg_name or meta.channel_name or "未知频道"
@@ -220,7 +248,7 @@ def complete_extinf(meta: ChannelMeta) -> ChannelMeta:
     meta.group_title = meta.group_title or "未分类"
     meta.channel_name = meta.channel_name or "未知频道"
     
-    # 4. 重构完整的raw_extinf行（基于补全后的字段）
+    # 5. 重构完整的raw_extinf行（基于补全后的字段，含统一后的group-title）
     meta.raw_extinf = (
         f"#EXTINF:-1 "
         f"tvg-id=\"{meta.tvg_id}\" "
@@ -431,13 +459,13 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
             protocol=protocol
         )
         
-        # 补全EXTINF信息
+        # 补全EXTINF信息（含tvg-name分类统一）
         meta = complete_extinf(meta)
         
         meta_list.append(meta)
         channel_meta_cache[url] = meta
         
-        # 按分类整理频道（补全后的分类可能更新，以补全后为准）
+        # 按补全后的分类（统一后的）整理频道
         final_group_title = meta.group_title
         if final_group_title not in categorized_channels:
             categorized_channels[final_group_title] = []
@@ -509,12 +537,12 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                         protocol=protocol
                     )
                     
-                    # 补全EXTINF信息
+                    # 补全EXTINF信息（含tvg-name分类统一）
                     meta = complete_extinf(meta)
                     
                     channel_meta_cache[url] = meta
                     
-                    # 按补全后的分类整理频道
+                    # 按补全后的分类（统一后的）整理频道
                     final_group_title = meta.group_title
                     if final_group_title not in categorized_channels:
                         categorized_channels[final_group_title] = []
@@ -554,7 +582,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     try:
         # 生成易读的汇总TXT（包含所有有效频道，方便查看分类分布）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（标准化+多协议支持+EXTINF补全）\n")
+            f.write("IPTV直播源汇总（标准化+多协议支持+EXTINF补全+TVG-NAME分类统一）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{generate_time}\n")
             f.write(f"总频道数：{total_channels}（所有有效抓取频道，含跨分类重复）\n")
@@ -581,7 +609,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源合并文件 | 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories} | 已自动补全EXTINF信息\n\n")
+            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories} | 已自动补全EXTINF信息 | 已基于TVG-NAME统一分类\n\n")
             
             # 按分类写入M3U内容（使用补全后的raw_extinf，保留重复频道）
             for group_title, channel_list in all_channels.items():
@@ -589,7 +617,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
                     if meta:
-                        # 直接使用补全后的raw_extinf
+                        # 直接使用补全后的raw_extinf（含统一后的group-title）
                         f.write(meta.raw_extinf + "\n")
                     else:
                         safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
@@ -612,9 +640,10 @@ def main():
         url_source_mapping = {}
         
         logger.info("="*60)
-        logger.info("开始处理IPTV直播源（提取→标准化→EXTINF补全→合并）")
+        logger.info("开始处理IPTV直播源（提取→标准化→EXTINF补全→TVG-NAME分类统一→合并）")
         logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
         logger.info(f"模糊匹配阈值：{MATCH_THRESHOLD}（越高越严格）")
+        logger.info(f"已加载TVG-NAME标准分类映射数：{len(TVG_NAME_TO_STD_GROUP)}")
         logger.info("="*60)
         
         # 第二步：从配置文件读取源URL列表
@@ -638,7 +667,7 @@ def main():
                 continue
             # 批量替换CCTV频道名称
             content = global_replace_cctv_name(content)
-            # 提取频道信息（包含EXTINF补全）
+            # 提取频道信息（含EXTINF补全+TVG-NAME分类统一）
             extracted_channels = extract_channels_from_content(content, url)
             # 合并到全局频道字典（支持跨分类重复）
             merge_channels(all_channels, extracted_channels)
