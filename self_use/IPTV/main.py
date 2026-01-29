@@ -52,14 +52,18 @@ class ChannelMeta:
     group_title: Optional[str] = None
     channel_name: Optional[str] = None
     source_url: str = ""
+    # 新增：完整EXTINF哈希字段，用于精准去重
+    extinf_signature: str = ""
 
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
+# 新增：EXTINF签名缓存，用于优先按EXTINF去重
+extinf_signature_cache: Set[str] = set()
 
-# ===================== 工具函数（修改：移除demo.txt相关逻辑） =====================
+# ===================== 工具函数（核心优化：EXTINF提取与去重） =====================
 def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
     """
-    清洗分类名称（不再依赖demo.txt，直接返回有效分类）
+    清洗分类名称（直接返回有效分类，默认"未分类"）
     """
     group_title = group_title or ""
     channel_name = channel_name or ""
@@ -67,6 +71,54 @@ def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = 
     final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title.strip())).strip() or "未分类"
     # 限制长度，返回有效分类（默认"未分类"避免空分类）
     return final_title[:20] if final_title else "未分类"
+
+def generate_extinf_signature(meta: ChannelMeta) -> str:
+    """
+    生成EXTINF签名（用于精准去重）
+    包含核心字段：tvg-id、tvg-name、tvg-logo、group-title
+    """
+    signature_parts = [
+        meta.tvg_id or "",
+        meta.tvg_name or "",
+        meta.tvg_logo or "",
+        meta.group_title or ""
+    ]
+    return "|".join([part.strip() for part in signature_parts])
+
+def parse_extinf_priority(extinf_line: str) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]]:
+    """
+    优先提取EXTINF字段，优先级：tvg-name > group-title > tvg-id > tvg-logo > 频道名称
+    返回：(tvg_id, tvg_name, tvg_logo, group_title, channel_name)
+    """
+    if not extinf_line:
+        return (None, None, None, None, None)
+    
+    # 预编译正则（优先匹配核心字段）
+    tvg_id_pattern = re.compile(r'tvg-id="([^"]+)"', re.IGNORECASE)
+    tvg_name_pattern = re.compile(r'tvg-name="([^"]+)"', re.IGNORECASE)
+    tvg_logo_pattern = re.compile(r'tvg-logo="([^"]+)"', re.IGNORECASE)
+    group_title_pattern = re.compile(r'group-title="([^"]+)"', re.IGNORECASE)
+    channel_name_pattern = re.compile(r',\s*([^#\n\r]+)$', re.IGNORECASE)
+    
+    # 1. 优先提取核心字段（tvg-name、group-title）
+    tvg_name = tvg_name_pattern.search(extinf_line)
+    group_title = group_title_pattern.search(extinf_line)
+    
+    # 2. 提取扩展字段（tvg-id、tvg-logo）
+    tvg_id = tvg_id_pattern.search(extinf_line)
+    tvg_logo = tvg_logo_pattern.search(extinf_line)
+    
+    # 3. 提取频道名称（EXTINF末尾逗号后内容）
+    channel_name = channel_name_pattern.search(extinf_line)
+    
+    # 格式化返回结果
+    return (
+        tvg_id.group(1).strip() if tvg_id else None,
+        tvg_name.group(1).strip() if tvg_name else None,
+        tvg_logo.group(1).strip() if tvg_logo else None,
+        group_title.group(1).strip() if group_title else None,
+        channel_name.group(1).strip() if channel_name else None
+    )
 
 def global_replace_cctv_name(content: str) -> str:
     if not content:
@@ -148,41 +200,30 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         r"(#EXTINF:-?\d+.*?)\n\s*([^#\n\r\s].*?)(?=\s|#|$)",
         re.IGNORECASE | re.DOTALL | re.MULTILINE
     )
-    attr_pattern = re.compile(r'(\w+)-(\w+)="([^"]*)"')
     categorized_channels = OrderedDict()
     meta_list = []
     seen_urls = set()
+    
     matches = m3u_pattern.findall(content)
     logger.info(f"M3U匹配条目数：{len(matches)}")
     
     for raw_extinf, url in matches:
         url = url.strip()
         raw_extinf = raw_extinf.strip()
-        if not url or not url.startswith(("http://", "https://")) or url in seen_urls:
+        
+        # 基础过滤：无效URL跳过
+        if not url or not url.startswith(("http://", "https://")):
             continue
-        seen_urls.add(url)
-        url_source_mapping[url] = source_url
         
-        tvg_id, tvg_name, tvg_logo, group_title = None, None, None, None
-        channel_name = ""
-        attr_matches = attr_pattern.findall(raw_extinf)
-        for attr1, attr2, value in attr_matches:
-            if attr1 == "tvg" and attr2 == "id":
-                tvg_id = value
-            elif attr1 == "tvg" and attr2 == "name":
-                tvg_name = standardize_cctv_name(value)
-            elif attr1 == "tvg" and attr2 == "logo":
-                tvg_logo = value
-            elif attr1 == "group" and attr2 == "title":
-                group_title = value
+        # 1. 优先解析EXTINF字段（按优先级提取）
+        tvg_id, tvg_name, tvg_logo, group_title, channel_name = parse_extinf_priority(raw_extinf)
         
-        name_match = re.search(r',\s*(.+?)\s*$', raw_extinf)
-        if name_match:
-            channel_name = standardize_cctv_name(name_match.group(1).strip())
-        
-        # 清洗分类名称（不再过滤，直接返回有效分类）
+        # 2. 标准化频道名称和分类（补全缺失值）
+        channel_name = standardize_cctv_name(channel_name) or tvg_name or "未知频道"
+        tvg_name = tvg_name or channel_name  # 核心字段补全：tvg-name缺失用频道名称填充
         group_title = clean_group_title(group_title, channel_name)
         
+        # 3. 构建ChannelMeta并生成EXTINF签名（用于精准去重）
         meta = ChannelMeta(
             url=url,
             raw_extinf=raw_extinf,
@@ -193,6 +234,17 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
             channel_name=channel_name,
             source_url=source_url
         )
+        meta.extinf_signature = generate_extinf_signature(meta)
+        
+        # 4. 优化去重：先按EXTINF签名去重，再按URL去重
+        if meta.extinf_signature in extinf_signature_cache or url in seen_urls:
+            logger.debug(f"重复频道跳过：{channel_name}（签名/URL已存在）")
+            continue
+        extinf_signature_cache.add(meta.extinf_signature)
+        seen_urls.add(url)
+        url_source_mapping[url] = source_url
+        
+        # 5. 缓存并整理分类
         meta_list.append(meta)
         channel_meta_cache[url] = meta
         
@@ -231,14 +283,13 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                     url = url.strip()
                     if not url or url in seen_urls:
                         continue
-                    standard_name = standardize_cctv_name(name)
-                    seen_urls.add(url)
-                    url_source_mapping[url] = source_url
                     
-                    # 清洗分类名称（不再过滤，直接返回有效分类）
+                    # 标准化信息，补全EXTINF核心字段
+                    standard_name = standardize_cctv_name(name) or "未知频道"
                     group_title = clean_group_title(current_group, standard_name)
                     
-                    raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standard_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{standard_name}"
+                    # 构建模拟EXTINF（普通文本格式补全核心字段）
+                    raw_extinf = f"#EXTINF:-1 tvg-name=\"{standard_name}\" group-title=\"{group_title}\",{standard_name}"
                     meta = ChannelMeta(
                         url=url,
                         raw_extinf=raw_extinf,
@@ -249,8 +300,18 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                         channel_name=standard_name,
                         source_url=source_url
                     )
-                    channel_meta_cache[url] = meta
+                    meta.extinf_signature = generate_extinf_signature(meta)
                     
+                    # 去重：先EXTINF签名，再URL
+                    if meta.extinf_signature in extinf_signature_cache or url in seen_urls:
+                        logger.debug(f"重复频道跳过：{standard_name}（签名/URL已存在）")
+                        continue
+                    extinf_signature_cache.add(meta.extinf_signature)
+                    seen_urls.add(url)
+                    url_source_mapping[url] = source_url
+                    
+                    # 缓存并整理分类
+                    channel_meta_cache[url] = meta
                     if group_title not in categorized_channels:
                         categorized_channels[group_title] = []
                     categorized_channels[group_title].append((standard_name, url))
@@ -262,24 +323,35 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
     return categorized_channels
 
 def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: OrderedDictType[str, List[Tuple[str, str]]]):
-    """合并频道（移除demo.txt相关校验，仅去重）"""
-    url_set = set()
+    """合并频道（优先按EXTINF签名去重，再按URL去重）"""
+    # 构建当前目标的URL和EXTINF签名缓存
+    current_urls = set()
+    current_extinf_signatures = set()
     for category_name, ch_list in target.items():
         for _, url in ch_list:
-            url_set.add(url)
+            current_urls.add(url)
+            meta = channel_meta_cache.get(url)
+            if meta:
+                current_extinf_signatures.add(meta.extinf_signature)
     
-    # 遍历所有源分类，直接合并（不去除任何分类）
+    # 遍历所有源分类，进行合并
     for category_name, ch_list in source.items():
         if category_name not in target:
             target[category_name] = []
         for name, url in ch_list:
-            if url not in url_set:  # 仅去重，无其他校验
-                target[category_name].append((name, url))
-                url_set.add(url)
+            meta = channel_meta_cache.get(url)
+            if not meta:
+                continue
+            # 双重去重：EXTINF签名 + URL
+            if meta.extinf_signature in current_extinf_signatures or url in current_urls:
+                continue
+            target[category_name].append((name, url))
+            current_urls.add(url)
+            current_extinf_signatures.add(meta.extinf_signature)
 
-# ===================== 生成文件（修改：移除demo.txt相关逻辑） =====================
+# ===================== 生成文件 =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成汇总文件（包含所有有效频道，无demo.txt过滤）"""
+    """生成汇总文件（包含所有有效频道，优先保留完整EXTINF信息）"""
     if not all_channels:
         logger.warning("无有效频道，跳过生成文件")
         return
@@ -290,7 +362,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     try:
         # 生成汇总TXT（包含所有分类和频道）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（所有有效频道）\n")
+            f.write("IPTV直播源汇总（所有有效频道，优先保留EXTINF完整信息）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
@@ -302,14 +374,17 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                 f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
                     source = url_source_mapping.get(url, "未知来源")
+                    meta = channel_meta_cache.get(url)
+                    extinf_info = meta.extinf_signature if meta else "未知EXTINF信息"
                     f.write(f"{idx:>3}. {name:<20} {url}\n")
                     f.write(f"      来源：{source}\n")
+                    f.write(f"      EXTINF信息：{extinf_info}\n")
                 f.write("\n")
         
-        # 生成M3U文件（包含所有有效频道）
+        # 生成M3U文件（包含所有有效频道，还原完整EXTINF）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
-            f.write(f"# 所有有效直播源 | 按抓取分类顺序排列\n")
+            f.write(f"# 所有有效直播源 | 优先保留EXTINF完整信息（tvg-name/group-title/tvg-id/tvg-logo）\n")
             f.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
             
@@ -319,19 +394,23 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
                     if meta and meta.raw_extinf:
+                        # 优先使用原始EXTINF，确保信息完整
                         standard_extinf = meta.raw_extinf
+                        # 补全group-title（确保分类一致）
                         if 'group-title="' in standard_extinf:
                             start_idx = standard_extinf.find('group-title="') + len('group-title="')
                             end_idx = standard_extinf.find('"', start_idx)
                             if end_idx > start_idx:
                                 standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
+                        # 补全频道名称（确保显示一致）
                         if ',' in standard_extinf:
                             extinf_part, old_name = standard_extinf.rsplit(',', 1)
                             safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
                             standard_extinf = extinf_part + ',' + safe_name
                         f.write(standard_extinf + "\n")
                     else:
-                        f.write(f"#EXTINF:-1 tvg-name=\"{name}\" group-title=\"{group_title}\",{name}\n")
+                        # 模拟完整EXTINF，优先填充核心字段
+                        f.write(f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{name}\" tvg-logo=\"\" group-title=\"{group_title}\",{name}\n")
                     f.write(url + "\n\n")
         
         logger.info(f"文件生成完成：")
@@ -341,13 +420,14 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     except Exception as e:
         logger.error(f"生成文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序（修改：移除demo.txt相关初始化和排序） =====================
+# ===================== 主程序 =====================
 def main():
     try:
-        global channel_meta_cache, url_source_mapping
+        global channel_meta_cache, url_source_mapping, extinf_signature_cache
         channel_meta_cache = {}
         url_source_mapping = {}
-        logger.info("===== 开始处理直播源（提取所有有效频道） =====")
+        extinf_signature_cache = set()  # 初始化EXTINF签名缓存
+        logger.info("===== 开始处理直播源（优先提取EXTINF核心字段，精准去重） =====")
         
         source_urls = getattr(config, 'SOURCE_URLS', [])
         if not source_urls:
@@ -368,10 +448,10 @@ def main():
             extracted_channels = extract_channels_from_content(content, url)
             merge_channels(all_channels, extracted_channels)
         
-        # 移除demo顺序整理，直接使用合并后的所有频道
+        # 直接使用合并后的所有频道
         final_channels = all_channels
         
-        # 统计结果（移除demo相关统计）
+        # 统计结果
         total_channels = sum(len(ch_list) for _, ch_list in final_channels.items())
         logger.info(f"\n===== 处理完成统计 =====")
         logger.info(f"  - 源URL总数：{len(source_urls)}")
