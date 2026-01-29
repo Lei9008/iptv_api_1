@@ -17,6 +17,7 @@ warnings.filterwarnings('ignore', category=requests.packages.urllib3.exceptions.
 OUTPUT_FOLDER = Path("output")
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
+# 支持的GitHub镜像域名
 GITHUB_MIRRORS = [
     "raw.githubusercontent.com",
     "raw.kkgithub.com",
@@ -25,11 +26,22 @@ GITHUB_MIRRORS = [
     "raw.fgithub.de"
 ]
 
+# 支持的GitHub代理前缀
 PROXY_PREFIXES = [
     "https://ghproxy.com/",
     "https://mirror.ghproxy.com/",
     "https://gh.api.99988866.xyz/"
 ]
+
+# 扩展：支持的直播源协议（解决RTSP被过滤的问题）
+SUPPORTED_PROTOCOLS = (
+    "http://",
+    "https://",
+    "rtsp://",
+    "rtmp://",
+    "m3u8://",
+    "hls://"
+)
 
 LOG_FILE_PATH = OUTPUT_FOLDER / "live_source_extract.log"
 logging.basicConfig(
@@ -54,11 +66,21 @@ class ChannelMeta:
     group_title: Optional[str] = None
     channel_name: Optional[str] = None
     source_url: str = ""
+    protocol: str = ""  # 新增：记录频道协议类型，方便区分
 
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
 # ===================== 工具函数 =====================
+def get_url_protocol(url: str) -> str:
+    """提取URL的协议类型，返回标准化协议名称"""
+    if not url:
+        return "未知协议"
+    for proto in SUPPORTED_PROTOCOLS:
+        if url.lower().startswith(proto.lower()):
+            return proto[:-3].upper()  # 去除"://"，转为大写（如HTTP、RTSP）
+    return "未知协议"
+
 def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
     """
     清洗分类名称（集成config中的分类映射标准化，返回有效分类）
@@ -178,7 +200,7 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
     return None
 
 def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str, List[Tuple[str, str]]], List[ChannelMeta]]:
-    """解析标准M3U格式内容，提取频道元信息和分类"""
+    """解析标准M3U格式内容，提取频道元信息和分类（支持多种直播协议）"""
     # 匹配EXTINF行和后续的直播URL
     m3u_pattern = re.compile(
         r"(#EXTINF:-?\d+.*?)\n\s*([^#\n\r\s].*?)(?=\s|#|$)",
@@ -198,8 +220,11 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         url = url.strip()
         raw_extinf = raw_extinf.strip()
         
-        # 过滤无效URL（非HTTP/HTTPS、已重复）
-        if not url or not url.startswith(("http://", "https://")) or url in seen_urls:
+        # 优化：过滤无效URL（非支持协议、已重复、空URL）
+        if not url or not url.startswith(SUPPORTED_PROTOCOLS) or url in seen_urls:
+            # 日志：可选输出被过滤的URL（方便调试，默认关闭）
+            # if url and not url.startswith(SUPPORTED_PROTOCOLS):
+            #     logger.debug(f"过滤不支持协议的URL：{url[:50]}...")
             continue
         seen_urls.add(url)
         url_source_mapping[url] = source_url
@@ -228,6 +253,9 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         # 清洗分类名称
         group_title = clean_group_title(group_title, channel_name)
         
+        # 新增：提取协议类型
+        protocol = get_url_protocol(url)
+        
         # 封装频道元信息
         meta = ChannelMeta(
             url=url,
@@ -237,7 +265,8 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
             tvg_logo=tvg_logo,
             group_title=group_title,
             channel_name=channel_name,
-            source_url=source_url
+            source_url=source_url,
+            protocol=protocol
         )
         meta_list.append(meta)
         channel_meta_cache[url] = meta
@@ -247,11 +276,11 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
             categorized_channels[group_title] = []
         categorized_channels[group_title].append((channel_name, url))
     
-    logger.info(f"M3U格式提取有效频道数：{len(meta_list)}")
+    logger.info(f"M3U格式提取有效频道数：{len(meta_list)}（支持协议：{SUPPORTED_PROTOCOLS}）")
     return categorized_channels, meta_list
 
 def extract_channels_from_content(content: str, source_url: str) -> OrderedDictType[str, List[Tuple[str, str]]]:
-    """兼容解析M3U格式和自定义文本格式的直播源"""
+    """兼容解析M3U格式和自定义文本格式的直播源（支持多种直播协议）"""
     categorized_channels = OrderedDict()
     
     # 优先处理标准M3U格式
@@ -279,7 +308,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                 continue
             
             # 匹配"名称,URL"或"名称|URL"格式的行
-            pattern = r'([^,|#$]+)[,|#$]\s*(https?://[^\s,|#$]+)'
+            pattern = r'([^,|#$]+)[,|#$]\s*(' + '|'.join([p[:-3] for p in SUPPORTED_PROTOCOLS]) + r':\/\/[^\s,|#$]+)'
             matches = re.findall(pattern, line, re.IGNORECASE)
             
             if matches:
@@ -287,7 +316,7 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                     name = name.strip()
                     url = url.strip()
                     
-                    # 过滤无效URL（已重复、非HTTP/HTTPS）
+                    # 过滤无效URL（已重复、非支持协议）
                     if not url or url in seen_urls:
                         continue
                     seen_urls.add(url)
@@ -296,6 +325,9 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                     # 标准化频道名称和分类
                     standard_name = standardize_cctv_name(name)
                     group_title = clean_group_title(current_group, standard_name)
+                    
+                    # 提取协议类型
+                    protocol = get_url_protocol(url)
                     
                     # 构造标准EXTINF行
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standard_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{standard_name}"
@@ -307,7 +339,8 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                         tvg_logo="",
                         group_title=group_title,
                         channel_name=standard_name,
-                        source_url=source_url
+                        source_url=source_url,
+                        protocol=protocol
                     )
                     channel_meta_cache[url] = meta
                     
@@ -316,7 +349,8 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                         categorized_channels[group_title] = []
                     categorized_channels[group_title].append((standard_name, url))
         
-        logger.info(f"自定义文本格式提取有效频道数：{sum(len(v) for v in categorized_channels.values())}")
+        valid_channel_count = sum(len(v) for v in categorized_channels.values())
+        logger.info(f"自定义文本格式提取有效频道数：{valid_channel_count}（支持协议：{SUPPORTED_PROTOCOLS}）")
     
     # 过滤空分类（无有效频道的分类）
     categorized_channels = OrderedDict([(k, v) for k, v in categorized_channels.items() if v])
@@ -341,7 +375,7 @@ def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: 
 
 # ===================== 生成输出文件 =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成汇总TXT文件和合并M3U文件（可直接导入IPTV播放器）"""
+    """生成汇总TXT文件和合并M3U文件（可直接导入IPTV播放器，带协议标注）"""
     if not all_channels:
         logger.warning("无有效频道可输出，跳过文件生成")
         return
@@ -354,13 +388,14 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     total_categories = len(all_channels)
     
     try:
-        # 生成易读的汇总TXT
+        # 生成易读的汇总TXT（带协议标注）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（自动提取+标准化）\n")
+            f.write("IPTV直播源汇总（自动提取+标准化+多协议支持）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{generate_time}\n")
             f.write(f"总频道数：{total_channels}\n")
             f.write(f"分类数：{total_categories}\n")
+            f.write(f"支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n")
             f.write("="*80 + "\n\n")
             
             # 按分类写入频道详情
@@ -368,21 +403,25 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                 f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
                     source = url_source_mapping.get(url, "未知来源")
-                    f.write(f"{idx:>3}. {name:<20} {url}\n")
+                    protocol = get_url_protocol(url)
+                    f.write(f"{idx:>3}. {name:<20} [{protocol}] {url}\n")
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成可直接使用的M3U文件
+        # 生成可直接使用的M3U文件（带协议标注，优化解析兼容性）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源合并文件 | 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}\n\n")
+            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}\n")
+            f.write(f"# 支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n\n")
             
             # 按分类写入M3U内容
             for group_title, channel_list in all_channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
+                    protocol = get_url_protocol(url) if meta else "未知协议"
+                    
                     if meta and meta.raw_extinf:
                         standard_extinf = meta.raw_extinf
                         # 确保分类名称为标准化后的名称
@@ -391,15 +430,16 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                             end_idx = standard_extinf.find('"', start_idx)
                             if end_idx > start_idx:
                                 standard_extinf = standard_extinf[:start_idx] + group_title + standard_extinf[end_idx:]
-                        # 转义特殊字符，避免播放器解析异常
+                        # 转义特殊字符，避免播放器解析异常，添加协议标注
                         if ',' in standard_extinf:
                             extinf_part, old_name = standard_extinf.rsplit(',', 1)
-                            safe_name = name.replace('\\', '\\\\').replace('$', '\\$')
+                            safe_name = name.replace('\\', '\\\\').replace('$', '\\$') + f"[{protocol}]"
                             standard_extinf = extinf_part + ',' + safe_name
                         f.write(standard_extinf + "\n")
                     else:
-                        # 无元信息时构造默认EXTINF行
-                        f.write(f"#EXTINF:-1 tvg-name=\"{name}\" group-title=\"{group_title}\",{name}\n")
+                        # 无元信息时构造默认EXTINF行（带协议标注）
+                        safe_name = name.replace('\\', '\\\\').replace('$', '\\$') + f"[{protocol}]"
+                        f.write(f"#EXTINF:-1 tvg-name=\"{safe_name}\" group-title=\"{group_title}\",{safe_name}\n")
                     f.write(url + "\n\n")
         
         logger.info(f"文件生成完成：")
@@ -419,6 +459,7 @@ def main():
         
         logger.info("="*60)
         logger.info("开始处理IPTV直播源（提取→标准化→合并→生成）")
+        logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
         logger.info("="*60)
         
         # 从配置文件读取源URL列表
