@@ -122,10 +122,82 @@ class ChannelMeta:
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
-# ===================== 新增：近似匹配补全函数 =====================
+
+# 移除：from fuzzywuzzy import fuzz （不再需要）
+
+# ===================== 新增：标准元信息库（可扩展） =====================
+# 格式：{频道名称: {tvg-id: 唯一ID, tvg-logo: 图标URL, group-title: 标准分类}}
+STANDARD_CHANNEL_META = {
+    "CCTV1 综合频道": {
+        "tvg-id": "cctv1.cctv",
+        "tvg-logo": "https://epg.pw/logos/cctv1.png",
+        "group-title": "CCTV央视"
+    },
+    "CCTV2 财经频道": {
+        "tvg-id": "cctv2.cctv",
+        "tvg-logo": "https://epg.pw/logos/cctv2.png",
+        "group-title": "CCTV央视"
+    },
+    "CCTV5 体育频道": {
+        "tvg-id": "cctv5.cctv",
+        "tvg-logo": "https://epg.pw/logos/cctv5.png",
+        "group-title": "CCTV央视"
+    },
+    "湖南卫视": {
+        "tvg-id": "hunantv.hunan",
+        "tvg-logo": "https://epg.pw/logos/hunan.png",
+        "group-title": "省级卫视"
+    },
+    "浙江卫视": {
+        "tvg-id": "zhejiangtv.zhejiang",
+        "tvg-logo": "https://epg.pw/logos/zhejiang.png",
+        "group-title": "省级卫视"
+    }
+}
+
+# 匹配阈值（0-100，越高匹配越严格，原生实现建议设置70-80）
+MATCH_THRESHOLD = 75
+
+# ===================== 替换：原生Python实现简易模糊匹配（无第三方依赖） =====================
+def calculate_string_similarity(s1: str, s2: str) -> int:
+    """
+    原生Python计算两个字符串的相似度（返回0-100的分值）
+    核心逻辑：先计算公共子串长度，再结合字符串总长度计算相似度
+    """
+    if not s1 or not s2:
+        return 0
+    
+    # 统一转为小写，忽略大小写差异
+    s1_lower = s1.lower()
+    s2_lower = s2.lower()
+    
+    # 计算最长公共子串长度（核心：衡量两个字符串的重叠度）
+    len1, len2 = len(s1_lower), len(s2_lower)
+    # 构建二维数组，存储子串长度
+    dp = [[0] * (len2 + 1) for _ in range(len1 + 1)]
+    max_common_len = 0
+    
+    for i in range(1, len1 + 1):
+        for j in range(1, len2 + 1):
+            if s1_lower[i-1] == s2_lower[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+                max_common_len = max(max_common_len, dp[i][j])
+    
+    # 计算相似度（兼顾公共子串长度和字符串整体长度，避免短字符串匹配偏差）
+    total_len = len1 + len2
+    if total_len == 0:
+        return 100
+    similarity = int((2 * max_common_len / total_len) * 100)
+    
+    # 额外加分：若其中一个字符串是另一个的子串（如"央1"包含在"CCTV1 综合频道"）
+    if s1_lower in s2_lower or s2_lower in s1_lower:
+        similarity += 15
+    # 限制分值不超过100
+    return min(similarity, 100)
+
 def fuzzy_match_channel(channel_name: str, group_title: str = "") -> Optional[Dict[str, str]]:
     """
-    模糊匹配标准元信息库，返回最接近的频道元信息
+    原生Python实现近似匹配，返回最接近的频道元信息（无第三方依赖）
     :param channel_name: 待匹配的频道名称
     :param group_title: 分类（辅助提升匹配精度）
     :return: 匹配到的标准元信息（无匹配返回None）
@@ -138,22 +210,21 @@ def fuzzy_match_channel(channel_name: str, group_title: str = "") -> Optional[Di
     
     # 遍历标准库，计算匹配度
     for std_name, std_meta in STANDARD_CHANNEL_META.items():
-        # 核心匹配：频道名称的模糊相似度（部分匹配+完全匹配结合）
-        partial_score = fuzz.partial_ratio(channel_name.lower(), std_name.lower())  # 部分匹配（如"央1"匹配"CCTV1"）
-        token_score = fuzz.token_sort_ratio(channel_name.lower(), std_name.lower())  # 分词排序匹配（如"综合 CCTV1"匹配"CCTV1 综合频道"）
-        final_score = (partial_score * 0.6) + (token_score * 0.4)  # 加权得分
+        # 计算核心相似度
+        similarity_score = calculate_string_similarity(channel_name, std_name)
         
-        # 辅助提升：分类一致时加分（如分类是"CCTV央视"，优先匹配标准库中同分类的频道）
+        # 辅助提升：分类一致时加分（提升匹配精度）
         if group_title and std_meta.get("group-title") == group_title:
-            final_score += 10
+            similarity_score += 10
         
         # 记录最高得分的匹配结果
-        if final_score > highest_score and final_score >= FUZZY_MATCH_THRESHOLD:
-            highest_score = final_score
+        if similarity_score > highest_score and similarity_score >= MATCH_THRESHOLD:
+            highest_score = similarity_score
             best_match = std_meta
     
     if best_match:
-        logger.debug(f"频道近似匹配成功：[{channel_name}] → 标准库[{[k for k, v in STANDARD_CHANNEL_META.items() if v == best_match][0]}]（得分：{highest_score:.1f}）")
+        matched_std_name = [k for k, v in STANDARD_CHANNEL_META.items() if v == best_match][0]
+        logger.debug(f"频道近似匹配成功：[{channel_name}] → 标准库[{matched_std_name}]（得分：{highest_score}）")
     return best_match
 
 def complete_extinf(meta: ChannelMeta) -> ChannelMeta:
@@ -629,3 +700,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
