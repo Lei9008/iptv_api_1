@@ -46,50 +46,50 @@ SUPPORTED_PROTOCOLS = (
 # ===================== 标准元信息库（可扩展） =====================
 # 格式：{频道名称: {tvg-id: 唯一ID, tvg-logo: 图标URL, group-title: 标准分类}}
 STANDARD_CHANNEL_META = {
-    "CCTV1 综合频道": {
+    "CCTV1": {
         "tvg-id": "cctv1.cctv",
         "tvg-logo": "https://epg.pw/logos/cctv1.png",
-        "group-title": "CCTV央视"
+        "group-title": "央视频道"
     },
-    "CCTV2 财经频道": {
+    "CCTV2": {
         "tvg-id": "cctv2.cctv",
         "tvg-logo": "https://epg.pw/logos/cctv2.png",
-        "group-title": "CCTV央视"
+        "group-title": "央视频道"
     },
-    "CCTV5 体育频道": {
+    "CCTV5": {
         "tvg-id": "cctv5.cctv",
         "tvg-logo": "https://epg.pw/logos/cctv5.png",
-        "group-title": "CCTV央视"
+        "group-title": "央视频道"
     },
-    "CCTV5+ 体育赛事频道": {
+    "CCTV5+": {
         "tvg-id": "cctv5plus.cctv",
         "tvg-logo": "https://epg.pw/logos/cctv5plus.png",
-        "group-title": "CCTV央视"
+        "group-title": "央视频道"
     },
     "湖南卫视": {
         "tvg-id": "hunantv.hunan",
         "tvg-logo": "https://epg.pw/logos/hunan.png",
-        "group-title": "省级卫视"
+        "group-title": "卫视频道"
     },
     "浙江卫视": {
         "tvg-id": "zhejiangtv.zhejiang",
         "tvg-logo": "https://epg.pw/logos/zhejiang.png",
-        "group-title": "省级卫视"
+        "group-title": "卫视频道"
     },
     "北京卫视": {
         "tvg-id": "beijingtv.beijing",
         "tvg-logo": "https://epg.pw/logos/beijing.png",
-        "group-title": "省级卫视"
+        "group-title": "卫视频道"
     },
     "东方卫视": {
         "tvg-id": "dongfangtv.shanghai",
         "tvg-logo": "https://epg.pw/logos/dongfang.png",
-        "group-title": "省级卫视"
+        "group-title": "卫视频道"
     },
     "广东卫视": {
         "tvg-id": "guangdongtv.guangdong",
         "tvg-logo": "https://epg.pw/logos/guangdong.png",
-        "group-title": "省级卫视"
+        "group-title": "卫视频道"
     }
     # 可根据需要扩展更多频道...
 }
@@ -125,6 +125,94 @@ class ChannelMeta:
 
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
+
+# ===================== 模板功能实现（新增核心） =====================
+def load_template() -> List[str]:
+    """
+    读取模板文件，返回需要保留的频道列表
+    注释行以 # 开头，空行会被自动过滤
+    """
+    if not config.USE_TEMPLATE:
+        logger.info("模板匹配已关闭，跳过模板文件读取")
+        return []
+    
+    template_path = Path(config.TEMPLATE_FILE)
+    # 检查模板文件是否存在
+    if not template_path.exists():
+        logger.warning(f"模板文件不存在：{template_path.absolute()}，自动关闭模板匹配")
+        config.USE_TEMPLATE = False
+        return []
+    
+    try:
+        with open(template_path, "r", encoding="utf-8") as f:
+            # 过滤注释行、空行，去重并保留顺序
+            template_channels = []
+            seen_template_names = set()
+            for line in f.readlines():
+                line_content = line.strip()
+                # 跳过注释行和空行
+                if not line_content or line_content.startswith("#"):
+                    continue
+                # 去重并添加
+                if line_content not in seen_template_names:
+                    seen_template_names.add(line_content)
+                    template_channels.append(line_content)
+        
+        logger.info(f"成功读取模板文件，共 {len(template_channels)} 个待匹配频道")
+        return template_channels
+    except Exception as e:
+        logger.error(f"读取模板文件失败：{str(e)}，自动关闭模板匹配", exc_info=True)
+        config.USE_TEMPLATE = False
+        return []
+
+def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[str, str]]],
+                                template_channels: List[str]) -> OrderedDictType[str, List[Tuple[str, str]]]:
+    """
+    按模板筛选并排序频道，保留模板中匹配的频道，且顺序与模板一致
+    """
+    if not template_channels or not config.USE_TEMPLATE:
+        return all_channels
+    
+    # 第一步：构建「频道名称→(分类, URL)」的映射表，方便快速查找
+    name_to_channel_info = {}
+    for group_title, ch_list in all_channels.items():
+        for name, url in ch_list:
+            # 用标准化名称作为key，保留分类和URL
+            if name not in name_to_channel_info:
+                name_to_channel_info[name] = []
+            name_to_channel_info[name].append((group_title, url))
+    
+    # 第二步：按模板顺序筛选频道，保留匹配结果
+    template_filtered = OrderedDict()
+    seen_filtered_urls = set()  # 去重（按URL）
+    
+    for template_name in template_channels:
+        # 遍历所有已提取的频道，进行模糊匹配
+        matched = False
+        for channel_name, info_list in name_to_channel_info.items():
+            similarity = calculate_string_similarity(channel_name, template_name)
+            if similarity >= MATCH_THRESHOLD:
+                # 匹配成功，提取分类和URL
+                for group_title, url in info_list:
+                    if url in seen_filtered_urls:
+                        continue
+                    seen_filtered_urls.add(url)
+                    
+                    # 初始化分类
+                    if group_title not in template_filtered:
+                        template_filtered[group_title] = []
+                    # 添加到筛选结果中
+                    template_filtered[group_title].append((channel_name, url))
+                    matched = True
+                    logger.debug(f"模板匹配成功：[{template_name}] → [{channel_name}]（得分：{similarity}）")
+        if not matched:
+            logger.warning(f"模板中的频道未匹配到有效结果：[{template_name}]")
+    
+    # 第三步：过滤空分类
+    final_filtered = OrderedDict([(k, v) for k, v in template_filtered.items() if v])
+    logger.info(f"模板筛选完成，最终保留 {sum(len(v) for v in final_filtered.values())} 个有效频道")
+    
+    return final_filtered
 
 # ===================== 原生Python实现简易模糊匹配（无第三方依赖） =====================
 def calculate_string_similarity(s1: str, s2: str) -> int:
@@ -331,9 +419,14 @@ def fetch_url_with_retry(url: str, timeout: int = 15) -> Optional[str]:
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
     original_url = url
     
-    # 转换GitHub blob地址为raw原始文件地址
+    # 优化1：自动转换GitHub blob地址为raw原始文件地址（关键修复）
     if "github.com" in url and "/blob/" in url:
         url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+        logger.debug(f"自动转换GitHub blob地址 → raw地址：{url}")
+    
+    # 优化2：清理重复的https://前缀（修复ghfast.top这类代理的格式问题）
+    url = re.sub(r'https://+', 'https://', url)
+    url = re.sub(r'http://+', 'http://', url)
     
     # 获取候选地址列表
     candidate_urls = replace_github_domain(url)
@@ -617,20 +710,26 @@ def main():
         logger.info("开始处理IPTV直播源（提取→标准化→EXTINF补全→合并→生成）")
         logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
         logger.info(f"模糊匹配阈值：{MATCH_THRESHOLD}（越高越严格）")
+        logger.info(f"模板匹配状态：{'启用' if config.USE_TEMPLATE else '关闭'}")
+        if config.USE_TEMPLATE:
+            logger.info(f"模板文件：{config.TEMPLATE_FILE}")
         logger.info("="*60)
         
-        # 从配置文件读取源URL列表
+        # 第一步：读取模板文件（若启用）
+        template_channels = load_template()
+        
+        # 第二步：从配置文件读取源URL列表
         source_urls = getattr(config, 'SOURCE_URLS', [])
         if not source_urls:
             logger.error("配置文件中未设置有效SOURCE_URLS，程序终止")
             return
         logger.info(f"读取到待处理的源URL数：{len(source_urls)}")
         
-        # 初始化全局频道字典（保留顺序）
+        # 第三步：初始化全局频道字典（保留顺序）
         all_channels = OrderedDict()
         failed_urls = []
         
-        # 遍历所有源URL，逐个处理
+        # 第四步：遍历所有源URL，逐个处理
         for idx, url in enumerate(source_urls, 1):
             logger.info(f"\n===== 处理第 {idx}/{len(source_urls)} 个源：{url} =====")
             # 抓取URL内容
@@ -645,7 +744,11 @@ def main():
             # 合并到全局频道字典
             merge_channels(all_channels, extracted_channels)
         
-        # 输出处理完成统计
+        # 第五步：按模板筛选排序（若启用）
+        if config.USE_TEMPLATE and template_channels:
+            all_channels = filter_channels_by_template(all_channels, template_channels)
+        
+        # 第六步：输出处理完成统计
         logger.info(f"\n===== 处理完成统计 =====")
         total_channels = sum(len(ch_list) for _, ch_list in all_channels.items())
         logger.info(f"  - 源URL总数：{len(source_urls)}")
@@ -657,7 +760,7 @@ def main():
         if failed_urls:
             logger.warning(f"  - 失败的源URL列表：{failed_urls}")
         
-        # 生成输出文件
+        # 第七步：生成输出文件
         generate_summary(all_channels)
         
         logger.info("\n===== 所有操作执行完毕 =====")
