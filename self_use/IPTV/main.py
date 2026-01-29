@@ -370,11 +370,11 @@ def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: 
                 target[category_name].append((name, url))
                 url_set.add(url)
 
-def parse_demo_file(demo_path: Path = Path("demo.txt")) -> OrderedDictType[str, Set[str]]:
+def parse_demo_file(demo_path: Path = Path("demo.txt")) -> OrderedDictType[str, List[str]]:
     """
-    解析demo.txt，提取「分类-允许的频道名称列表」映射（保留分类顺序）
+    解析demo.txt，提取「分类-允许的频道名称列表」映射（保留分类顺序+频道顺序）
     :param demo_path: demo.txt文件路径
-    :return: 有序字典，key=分类名称，value=该分类下允许的频道名称集合
+    :return: 有序字典，key=分类名称，value=该分类下允许的频道名称列表（保留顺序）
     """
     demo_channel_mapping = OrderedDict()
     if not demo_path.exists():
@@ -392,24 +392,25 @@ def parse_demo_file(demo_path: Path = Path("demo.txt")) -> OrderedDictType[str, 
                 # 提取分类名称（去除┃、,#genre#）
                 current_category = line.replace("┃", "").replace(",#genre#", "").strip()
                 if current_category and current_category not in demo_channel_mapping:
-                    demo_channel_mapping[current_category] = set()  # 用集合存储，方便后续快速匹配
+                    demo_channel_mapping[current_category] = []  # 用列表存储，保留频道顺序
                 continue
             
             # 匹配频道行：频道名称,（以逗号结尾，提取逗号前的频道名称）
             if current_category and line.endswith(","):
                 channel_name = line[:-1].strip()  # 去除末尾逗号和前后空格
-                if channel_name:
-                    demo_channel_mapping[current_category].add(channel_name)
+                if channel_name and channel_name not in demo_channel_mapping[current_category]:
+                    # 去重并保留顺序，避免demo.txt自身重复
+                    demo_channel_mapping[current_category].append(channel_name)
         
         # 过滤空分类（无有效频道的分类）
         demo_channel_mapping = OrderedDict([
-            (cat, chan_set) for cat, chan_set in demo_channel_mapping.items()
-            if chan_set
+            (cat, chan_list) for cat, chan_list in demo_channel_mapping.items()
+            if chan_list
         ])
         
-        logger.info(f"成功解析demo.txt：提取到 {len(demo_channel_mapping)} 个分类，共 {sum(len(s) for s in demo_channel_mapping.values())} 个允许的频道")
-        for cat, chan_set in demo_channel_mapping.items():
-            logger.debug(f"  - 【{cat}】：{list(chan_set)}")
+        logger.info(f"成功解析demo.txt：提取到 {len(demo_channel_mapping)} 个分类，共 {sum(len(l) for l in demo_channel_mapping.values())} 个允许的频道")
+        for cat, chan_list in demo_channel_mapping.items():
+            logger.debug(f"  - 【{cat}】：{chan_list}")
         
     except Exception as e:
         logger.error(f"解析demo.txt失败，跳过筛选配对：{str(e)}", exc_info=True)
@@ -418,45 +419,57 @@ def parse_demo_file(demo_path: Path = Path("demo.txt")) -> OrderedDictType[str, 
     return demo_channel_mapping
 
 def filter_channels_by_demo(all_channels: OrderedDictType[str, List[Tuple[str, str]]],
-                           demo_mapping: OrderedDictType[str, Set[str]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
+                           demo_mapping: OrderedDictType[str, List[str]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
     """
-    根据demo.txt的映射关系，筛选符合条件的频道（仅保留demo中存在的分类和频道）
+    根据demo.txt的映射关系，筛选符合条件的频道（保留demo的分类顺序+频道顺序）
     :param all_channels: 原始合并后的所有频道
-    :param demo_mapping: demo.txt解析后的「分类-频道名称」映射
-    :return: 筛选后的有序频道字典
+    :param demo_mapping: demo.txt解析后的「分类-频道名称」映射（保留顺序）
+    :return: 筛选后的有序频道字典（完全复刻demo排序）
     """
     # 若demo_mapping为空（无demo.txt或解析失败），直接返回原始频道
     if not demo_mapping:
         return all_channels
     
     filtered_channels = OrderedDict()
-    # 遍历demo.txt中的分类（保留demo的分类顺序）
-    for demo_category, demo_channel_set in demo_mapping.items():
-        # 遍历原始频道的所有分类，匹配频道名称（忽略分类名称差异，只匹配频道名）
+    # 第一步：先收集原始频道的「频道名称-URL列表」映射（方便后续快速匹配）
+    # 注意：一个频道名称可能对应多个URL，这里保留所有有效URL
+    original_name_url_mapping = {}
+    for _, original_channel_list in all_channels.items():
+        for channel_name, url in original_channel_list:
+            standard_name = channel_name.strip()
+            if standard_name not in original_name_url_mapping:
+                original_name_url_mapping[standard_name] = []
+            if url not in original_name_url_mapping[standard_name]:
+                original_name_url_mapping[standard_name].append(url)
+    
+    # 第二步：按demo.txt的顺序遍历，逐个匹配（核心：保留demo排序）
+    seen_urls = set()  # 全局去重，避免同一URL重复出现
+    for demo_category, demo_channel_list in demo_mapping.items():
         matched_channel_list = []
-        seen_urls = set()  # 去重，避免同一频道重复匹配
         
-        for original_category, original_channel_list in all_channels.items():
-            for channel_name, url in original_channel_list:
-                # 关键：频道名称匹配（demo中的频道名 与 原始频道名 精准匹配，忽略前后空格）
-                standard_demo_channel_names = {name.strip() for name in demo_channel_set}
-                standard_original_name = channel_name.strip()
-                
-                if (standard_original_name in standard_demo_channel_names 
-                    and url not in seen_urls):
-                    seen_urls.add(url)
-                    matched_channel_list.append((channel_name, url))
+        # 按demo.txt中该分类下的频道顺序，逐个匹配
+        for demo_channel_name in demo_channel_list:
+            standard_demo_name = demo_channel_name.strip()
+            # 查找原始频道中是否有该名称的频道
+            if standard_demo_name in original_name_url_mapping:
+                # 取出该频道名称对应的所有URL（按原始顺序，取第一个未被使用的URL）
+                for url in original_name_url_mapping[standard_demo_name]:
+                    if url not in seen_urls:
+                        # 找到匹配，保留原始频道名称（标准化后）和URL
+                        matched_channel_list.append((standard_demo_name, url))
+                        seen_urls.add(url)
+                        break  # 每个demo频道只匹配一个有效URL，避免重复
         
-        # 若该分类下有匹配到的频道，加入筛选结果（使用demo中的分类名称）
+        # 若该分类下有匹配到的频道，加入筛选结果（使用demo中的分类名称+频道顺序）
         if matched_channel_list:
             filtered_channels[demo_category] = matched_channel_list
     
-    logger.info(f"筛选完成：保留 {len(filtered_channels)} 个分类，共 {sum(len(l) for l in filtered_channels.values())} 个频道（符合demo.txt规则）")
+    logger.info(f"筛选完成：保留 {len(filtered_channels)} 个分类，共 {sum(len(l) for l in filtered_channels.values())} 个频道（符合demo.txt规则并按其排序）")
     return filtered_channels
 
 # ===================== 生成输出文件 =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成汇总TXT文件和纯净版M3U文件（无协议标注，可直接导入播放器）"""
+    """生成汇总TXT文件和纯净版M3U文件（无协议标注，可直接导入播放器，按demo.txt排序）"""
     if not all_channels:
         logger.warning("无有效频道可输出，跳过文件生成")
         return
@@ -471,7 +484,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     try:
         # 生成易读的汇总TXT（可选保留协议标注，方便人工查看）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（自动提取+标准化+多协议支持+demo筛选）\n")
+            f.write("IPTV直播源汇总（自动提取+标准化+多协议支持+demo筛选+demo排序）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{generate_time}\n")
             f.write(f"总频道数：{total_channels}\n")
@@ -479,7 +492,7 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
             f.write(f"支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n")
             f.write("="*80 + "\n\n")
             
-            # 按分类写入频道详情
+            # 按分类写入频道详情（已按demo排序）
             for group_title, channel_list in all_channels.items():
                 f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
@@ -489,13 +502,13 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成纯净版M3U文件（无协议标注，优化解析兼容性）
+        # 生成纯净版M3U文件（无协议标注，优化解析兼容性，按demo排序）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源合并文件 | 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}（已按demo.txt筛选）\n\n")
+            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}（已按demo.txt筛选并排序）\n\n")
             
-            # 按分类写入M3U内容（无协议标注）
+            # 按分类写入M3U内容（已按demo排序）
             for group_title, channel_list in all_channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
                 for name, url in channel_list:
@@ -537,7 +550,7 @@ def main():
         url_source_mapping = {}
         
         logger.info("="*60)
-        logger.info("开始处理IPTV直播源（提取→标准化→合并→筛选→生成）")
+        logger.info("开始处理IPTV直播源（提取→标准化→合并→筛选→排序→生成）")
         logger.info(f"支持的直播协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}")
         logger.info("="*60)
         
@@ -567,12 +580,12 @@ def main():
             # 合并到全局频道字典
             merge_channels(all_channels, extracted_channels)
         
-        # ---------------------- 新增：筛选配对功能 ----------------------
-        # 1. 解析demo.txt，获取允许的频道映射
+        # ---------------------- 新增：筛选配对+排序功能 ----------------------
+        # 1. 解析demo.txt，获取允许的频道映射（保留顺序）
         demo_mapping = parse_demo_file(Path("demo.txt"))
-        # 2. 根据demo.txt筛选频道
+        # 2. 根据demo.txt筛选频道并按其排序
         filtered_channels = filter_channels_by_demo(all_channels, demo_mapping)
-        # ----------------------------------------------------------------
+        # ----------------------------------------------------------------------
         
         # 输出处理完成统计
         logger.info(f"\n===== 处理完成统计 =====")
@@ -580,14 +593,14 @@ def main():
         total_categories = len(filtered_channels)
         logger.info(f"  - 源URL总数：{len(source_urls)}")
         logger.info(f"  - 抓取失败源数：{len(failed_urls)}")
-        logger.info(f"  - 最终有效频道数：{total_channels}（符合demo.txt规则）")
+        logger.info(f"  - 最终有效频道数：{total_channels}（符合demo.txt规则并按其排序）")
         logger.info(f"  - 最终有效分类数：{total_categories}")
         if filtered_channels:
             logger.info(f"  - 分类列表：{list(filtered_channels.keys())}")
         if failed_urls:
             logger.warning(f"  - 失败的源URL列表：{failed_urls}")
         
-        # 生成输出文件（传入筛选后的频道）
+        # 生成输出文件（传入筛选并排序后的频道）
         generate_summary(filtered_channels)
         
         logger.info("\n===== 所有操作执行完毕 =====")
