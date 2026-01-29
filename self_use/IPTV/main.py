@@ -41,11 +41,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# ===================== 全局变量（demo.txt映射+顺序） =====================
-demo_channel_to_group: Dict[str, str] = {}  # 频道→分类
-demo_all_groups: Set[str] = set()           # 所有分类
-demo_group_order: List[str] = []            # demo.txt中的分类顺序（核心新增）
-
 # ===================== 数据结构 =====================
 @dataclass
 class ChannelMeta:
@@ -61,69 +56,17 @@ class ChannelMeta:
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
-# ===================== 核心修改：解析demo.txt并保存分类顺序 =====================
-def parse_demo_txt() -> Tuple[Dict[str, str], Set[str], List[str]]:
-    """
-    解析demo.txt，返回：
-    - 频道→分类映射
-    - 所有分类集合
-    - 分类顺序列表（严格按demo.txt中的顺序）
-    """
-    channel_to_group = {}
-    all_groups = set()
-    group_order = []
-    demo_path = Path(config.DEMO_TXT_PATH)
-    
-    if not demo_path.exists():
-        logger.error(f"demo.txt文件不存在：{demo_path.absolute()}")
-        return channel_to_group, all_groups, group_order
-    
-    try:
-        with open(demo_path, "r", encoding="utf-8") as f:
-            lines = [line.strip() for line in f if line.strip()]
-        
-        current_group = None
-        for line in lines:
-            # 匹配分类行
-            if line.startswith("┃") and ",#genre#" in line:
-                current_group = line.replace("┃", "").replace(",#genre#", "").strip()
-                if current_group and current_group not in all_groups:
-                    all_groups.add(current_group)
-                    group_order.append(current_group)  # 保存分类顺序
-                    logger.debug(f"demo.txt分类（顺序{len(group_order)}）：{current_group}")
-                continue
-            # 匹配频道行
-            if current_group and line:
-                channel_name = line.rstrip(",").strip()
-                if channel_name:
-                    channel_to_group[channel_name] = current_group
-                    logger.debug(f"demo.txt映射：{channel_name} → {current_group}")
-        
-        logger.info(f"demo.txt解析完成：{len(group_order)}个分类（按顺序），{len(channel_to_group)}个频道映射")
-    except Exception as e:
-        logger.error(f"解析demo.txt失败：{str(e)}", exc_info=True)
-    
-    return channel_to_group, all_groups, group_order
-
-# 初始化demo映射（包含顺序）
-demo_channel_to_group, demo_all_groups, demo_group_order = parse_demo_txt()
-
-# ===================== 工具函数（仅clean_group_title需微调） =====================
+# ===================== 工具函数（修改：移除demo.txt相关逻辑） =====================
 def clean_group_title(group_title: Optional[str], channel_name: Optional[str] = "") -> str:
+    """
+    清洗分类名称（不再依赖demo.txt，直接返回有效分类）
+    """
     group_title = group_title or ""
     channel_name = channel_name or ""
-    original_title = group_title.strip()
-    result_title = original_title
-
-    # 仅保留demo.txt中的分类匹配
-    if channel_name and channel_name in demo_channel_to_group:
-        result_title = demo_channel_to_group[channel_name]
-        logger.debug(f"demo匹配：{channel_name} → {result_title}")
-        final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', result_title)).strip() or ""
-        return final_title[:20] if final_title else ""
-
-    # 非demo匹配的内容返回空（后续过滤）
-    return ""
+    # 直接清洗分类名称：仅保留中文、字母、数字、下划线、括号
+    final_title = ''.join(re.findall(r'[\u4e00-\u9fa5a-zA-Z0-9_\(\)]+', group_title.strip())).strip() or "未分类"
+    # 限制长度，返回有效分类（默认"未分类"避免空分类）
+    return final_title[:20] if final_title else "未分类"
 
 def global_replace_cctv_name(content: str) -> str:
     if not content:
@@ -237,10 +180,8 @@ def extract_m3u_meta(content: str, source_url: str) -> Tuple[OrderedDictType[str
         if name_match:
             channel_name = standardize_cctv_name(name_match.group(1).strip())
         
-        # 标准化分类（仅保留demo匹配的分类）
+        # 清洗分类名称（不再过滤，直接返回有效分类）
         group_title = clean_group_title(group_title, channel_name)
-        if not group_title:  # 无demo匹配，跳过该频道
-            continue
         
         meta = ChannelMeta(
             url=url,
@@ -294,10 +235,8 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
                     seen_urls.add(url)
                     url_source_mapping[url] = source_url
                     
-                    # 标准化分类（仅保留demo匹配的分类）
+                    # 清洗分类名称（不再过滤，直接返回有效分类）
                     group_title = clean_group_title(current_group, standard_name)
-                    if not group_title:  # 无demo匹配，跳过
-                        continue
                     
                     raw_extinf = f"#EXTINF:-1 tvg-id=\"\" tvg-name=\"{standard_name}\" tvg-logo=\"\" group-title=\"{group_title}\",{standard_name}"
                     meta = ChannelMeta(
@@ -323,67 +262,43 @@ def extract_channels_from_content(content: str, source_url: str) -> OrderedDictT
     return categorized_channels
 
 def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: OrderedDictType[str, List[Tuple[str, str]]]):
-    """合并频道并仅保留demo.txt中的分类"""
+    """合并频道（移除demo.txt相关校验，仅去重）"""
     url_set = set()
     for category_name, ch_list in target.items():
         for _, url in ch_list:
             url_set.add(url)
     
-    # 仅处理demo.txt中的分类
-    for category_name in demo_all_groups:
-        if category_name not in source:
-            continue
+    # 遍历所有源分类，直接合并（不去除任何分类）
+    for category_name, ch_list in source.items():
         if category_name not in target:
             target[category_name] = []
-        for name, url in source[category_name]:
-            if url not in url_set and name in demo_channel_to_group:  # 双重校验
+        for name, url in ch_list:
+            if url not in url_set:  # 仅去重，无其他校验
                 target[category_name].append((name, url))
                 url_set.add(url)
 
-# ===================== 核心新增：按demo顺序整理并过滤频道 =====================
-def reorder_by_demo(all_channels: OrderedDictType[str, List[Tuple[str, str]]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
-    """
-    按demo.txt的分类顺序重新整理频道：
-    1. 仅保留demo.txt中定义的分类
-    2. 严格按demo.txt的分类顺序排列
-    3. 过滤空分类
-    """
-    ordered_channels = OrderedDict()
-    
-    # 严格按demo.txt的分类顺序遍历
-    for group in demo_group_order:
-        if group in all_channels and all_channels[group]:  # 仅保留有内容的分类
-            ordered_channels[group] = all_channels[group]
-            logger.debug(f"按demo顺序添加分类：{group}（{len(all_channels[group])}个频道）")
-    
-    logger.info(f"按demo顺序整理后分类数：{len(ordered_channels)}")
-    return ordered_channels
-
-# ===================== 核心修改：生成文件（仅保留demo匹配内容+按顺序） =====================
+# ===================== 生成文件（修改：移除demo.txt相关逻辑） =====================
 def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
-    """生成按demo.txt顺序排列、仅保留匹配内容的汇总文件"""
-    # 先按demo顺序整理频道
-    ordered_channels = reorder_by_demo(all_channels)
-    if not ordered_channels:
-        logger.warning("无demo.txt匹配的频道，跳过生成文件")
+    """生成汇总文件（包含所有有效频道，无demo.txt过滤）"""
+    if not all_channels:
+        logger.warning("无有效频道，跳过生成文件")
         return
     
     summary_path = OUTPUT_FOLDER / "live_source_summary.txt"
     m3u_path = OUTPUT_FOLDER / "live_source_merged.m3u"
     
     try:
-        # 生成汇总TXT（按demo顺序）
+        # 生成汇总TXT（包含所有分类和频道）
         with open(summary_path, "w", encoding="utf-8") as f:
-            f.write("IPTV直播源汇总（仅保留demo.txt匹配内容+按demo顺序）\n")
+            f.write("IPTV直播源汇总（所有有效频道）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"总频道数：{sum(len(ch_list) for _, ch_list in ordered_channels.items())}\n")
-            f.write(f"分类数：{len(ordered_channels)}\n")
-            f.write(f"demo.txt分类总数：{len(demo_group_order)}\n")
+            f.write(f"总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n")
+            f.write(f"分类数：{len(all_channels)}\n")
             f.write("="*80 + "\n\n")
             
-            # 严格按demo顺序写入
-            for group_title, channel_list in ordered_channels.items():
+            # 遍历所有提取到的分类（按抓取顺序）
+            for group_title, channel_list in all_channels.items():
                 f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
                     source = url_source_mapping.get(url, "未知来源")
@@ -391,15 +306,15 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
                     f.write(f"      来源：{source}\n")
                 f.write("\n")
         
-        # 生成M3U文件（按demo顺序）
+        # 生成M3U文件（包含所有有效频道）
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
-            f.write(f"# 仅保留demo.txt匹配内容 | 按demo.txt分类顺序排列\n")
+            f.write(f"# 所有有效直播源 | 按抓取分类顺序排列\n")
             f.write(f"# 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in ordered_channels.items())}\n\n")
+            f.write(f"# 总频道数：{sum(len(ch_list) for _, ch_list in all_channels.items())}\n\n")
             
-            # 严格按demo顺序写入
-            for group_title, channel_list in ordered_channels.items():
+            # 遍历所有分类写入M3U
+            for group_title, channel_list in all_channels.items():
                 f.write(f"# ===== {group_title}（{len(channel_list)}个频道） =====\n")
                 for name, url in channel_list:
                     meta = channel_meta_cache.get(url)
@@ -426,13 +341,13 @@ def generate_summary(all_channels: OrderedDictType[str, List[Tuple[str, str]]]):
     except Exception as e:
         logger.error(f"生成文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序 =====================
+# ===================== 主程序（修改：移除demo.txt相关初始化和排序） =====================
 def main():
     try:
         global channel_meta_cache, url_source_mapping
         channel_meta_cache = {}
         url_source_mapping = {}
-        logger.info("===== 开始处理直播源（仅保留demo匹配+按demo顺序） =====")
+        logger.info("===== 开始处理直播源（提取所有有效频道） =====")
         
         source_urls = getattr(config, 'SOURCE_URLS', [])
         if not source_urls:
@@ -453,17 +368,17 @@ def main():
             extracted_channels = extract_channels_from_content(content, url)
             merge_channels(all_channels, extracted_channels)
         
-        # 按demo顺序整理并过滤
-        final_channels = reorder_by_demo(all_channels)
+        # 移除demo顺序整理，直接使用合并后的所有频道
+        final_channels = all_channels
         
-        # 统计结果
+        # 统计结果（移除demo相关统计）
         total_channels = sum(len(ch_list) for _, ch_list in final_channels.items())
         logger.info(f"\n===== 处理完成统计 =====")
         logger.info(f"  - 源URL总数：{len(source_urls)}")
         logger.info(f"  - 失败源数：{len(failed_urls)}")
-        logger.info(f"  - demo匹配频道数：{total_channels}")
-        logger.info(f"  - demo匹配分类数：{len(final_channels)}")
-        logger.info(f"  - 分类顺序：{list(final_channels.keys())}")
+        logger.info(f"  - 有效频道数：{total_channels}")
+        logger.info(f"  - 有效分类数：{len(final_channels)}")
+        logger.info(f"  - 分类列表：{list(final_channels.keys())}")
         
         # 生成文件
         generate_summary(final_channels)
