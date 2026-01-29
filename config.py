@@ -169,7 +169,7 @@ SOURCE_URLS = [
    "https://m3u.ibert.me/txt/ycl_iptv.txt",
    "https://m3u.ibert.me/txt/y_g.txt",
    "https://gitee.com/tushaoyong/live/raw/master/%E6%8E%A5%E5%8F%A3/IPV6.txt",
-   "http://tot.totalh.net/tttt.txt
+   "http://tot.totalh.net/tttt.txt",
 
 
 
