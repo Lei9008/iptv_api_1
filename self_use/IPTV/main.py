@@ -719,8 +719,8 @@ def generate_summary(filtered_channels: OrderedDictType[str, List[Tuple[str, str
         return
     
     # 定义输出文件路径
-    summary_path = OUTPUT_FOLDER / "live_source_template_summary.txt"
-    m3u_path = OUTPUT_FOLDER / "live_source_template_merged.m3u"
+    summary_path = OUTPUT_FOLDER / "live_source_merged.txt"
+    m3u_path = OUTPUT_FOLDER / "live_source_merged.m3u"
     generate_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     total_channels = sum(len(ch_list) for _, ch_list in filtered_channels.items())
     total_categories = len(filtered_channels)
@@ -862,3 +862,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
