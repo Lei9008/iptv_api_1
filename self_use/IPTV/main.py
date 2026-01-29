@@ -172,14 +172,15 @@ def load_template() -> OrderedDictType[str, List[str]]:
         config.USE_TEMPLATE = False
         return OrderedDict()
 
+
 def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[str, str]]],
                                 template_dict: OrderedDictType[str, List[str]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
     """
-    按分类式模板筛选频道：保留模板的分类顺序+频道顺序，支持同一URL跨分类重复出现
-    （已移除全局URL去重，仅保留当前分类内可选去重，兼顾使用体验）
+    按分类式模板筛选频道：严格只保留模板中列出的频道（白名单模式）
+    保留模板的分类顺序+频道顺序，支持同一URL跨分类重复出现，无额外频道泄露
     :param all_channels: 原始合并后的所有频道
     :param template_dict: 模板的{分类:频道列表}有序字典
-    :return: 按模板排序后的频道，无匹配的频道/分类会被过滤
+    :return: 仅包含模板频道的结果，无匹配的频道/分类会被过滤
     """
     if not template_dict or not config.USE_TEMPLATE:
         return all_channels
@@ -192,7 +193,7 @@ def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[st
                 name_to_channel_info[ch_name] = []
             name_to_channel_info[ch_name].append((raw_category, ch_url))
     
-    # 按模板顺序筛选，保留模板的分类和频道顺序
+    # 按模板顺序筛选，严格只处理模板中列出的频道（白名单）
     template_filtered = OrderedDict()
     total_matched = 0
 
@@ -203,7 +204,7 @@ def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[st
         
         for template_ch in template_chs:
             matched = False
-            # 遍历所有原始频道，进行模糊匹配
+            # 仅匹配模板中的当前频道，无额外频道
             for channel_name, info_list in name_to_channel_info.items():
                 similarity = calculate_string_similarity(channel_name, template_ch)
                 if similarity >= MATCH_THRESHOLD:
@@ -215,12 +216,12 @@ def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[st
                             template_filtered[template_cate].append((channel_name, ch_url))
                             total_matched += 1
                             matched = True
-                            logger.debug(f"模板匹配成功 | 【{template_cate}】{template_ch} → {channel_name}（得分：{similarity}）")
+                            logger.debug(f"模板匹配成功（白名单） | 【{template_cate}】{template_ch} → {channel_name}（得分：{similarity}）")
                             break
                 if matched:
                     break
             if not matched:
-                logger.warning(f"模板无匹配结果 | 【{template_cate}】{template_ch}")
+                logger.warning(f"模板频道无匹配结果（已忽略） | 【{template_cate}】{template_ch}")
     
     # 过滤模板中无匹配频道的空分类
     for template_cate in list(template_filtered.keys()):
@@ -228,8 +229,9 @@ def filter_channels_by_template(all_channels: OrderedDictType[str, List[Tuple[st
             del template_filtered[template_cate]
             logger.warning(f"模板分类无匹配频道，已过滤 | 【{template_cate}】")
     
-    logger.info(f"模板筛选完成 | 最终保留分类数：{len(template_filtered)} | 最终保留频道数：{total_matched}")
+    logger.info(f"模板筛选完成（白名单模式） | 最终保留分类数：{len(template_filtered)} | 最终保留频道数：{total_matched}（仅模板内频道）")
     return template_filtered
+
 
 # ===================== 原生Python实现简易模糊匹配（无第三方依赖） =====================
 def calculate_string_similarity(s1: str, s2: str) -> int:
@@ -779,3 +781,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
