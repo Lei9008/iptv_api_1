@@ -1,0 +1,229 @@
+IPTV直播源汇总（自动提取+标准化+多协议支持）
+（按模板筛选并排序，仅保留模板中存在的频道）
+================================================================================
+生成时间：2026-01-29 13:09:33
+总频道数：101
+分类数：9
+支持协议：HTTP, HTTPS, RTSP, RTMP, M3U8, HLS
+================================================================================
+
+【4K超高清】（4个频道）
+  1. CCTV4K               [RTSP] rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23122814382128126762.rsc/99912_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+  2. 北京4k                 [HTTP] http://ddns.xryo.cn:8888/udp/239.111.205.51:5140$ipv4•线路1(497ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  3. 深圳4k                 [HTTPS] https://cdn3.163189.xyz/163189/szws4k$ipv4•线路1(223ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 四川4k                 [HTTP] http://ddns.xryo.cn:8888/udp/239.111.205.62:5140$ipv4•线路1(459ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【央视频道】（21个频道）
+  1. CCTV1                [HTTP] http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009$ipv4•线路1(48ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. CCTV2                [HTTP] http://23.237.228.134/live5/CCTV2.m3u8$ipv4•线路1(19ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  3. CCTV3                [HTTP] http://23.237.228.134/live5/CCTV3.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. CCTV4                [HTTP] http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009$ipv4•线路1(47ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  5. CCTV5                [HTTP] http://23.237.228.134/live5/CCTV5p.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  6. CCTV5+               [HTTP] http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009$ipv4•线路1(55ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  7. CCTV6                [HTTP] http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009$ipv4•线路1(47ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  8. CCTV7                [HTTP] http://23.237.228.134/live5/CCTV7.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  9. CCTV8                [HTTP] http://23.237.228.134/live5/CCTV8.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 10. CCTV9                [HTTP] http://23.237.228.134/live5/CCTV9.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 11. CCTV10               [HTTP] http://23.237.228.134/live5/CCTV10.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 12. CCTV11               [HTTP] http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009$ipv4•线路1(47ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 13. CCTV12               [HTTP] http://23.237.228.134/live3/CCTV12.m3u8$ipv4•线路1(19ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 14. CCTV13               [HTTPS] https://cdn3.163189.xyz/163189/cctv13$ipv4•线路1(22ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 15. CCTV14               [HTTP] http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 16. CCTV15               [HTTP] http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891$ipv4•线路1(10ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 17. CCTV16               [HTTP] http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$ipv4•线路1(61ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 18. CCTV17               [HTTP] http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路1(11ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 19. CETV1                [HTTP] http://39.152.103.17:8089/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&down=1$ipv4•线路1(363ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 20. CETV4                [HTTP] http://39.152.103.17:8089/tsfile/live/1092_1.m3u8?key=txiptv&playlive=1&down=1$ipv4•线路1(364ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 21. 重温经典                 [HTTPS] https://cdn3.163189.xyz/live/cwjd/stream.m3u8$ipv4•线路1(7ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【央视付费频道】（9个频道）
+  1. 第一剧场                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$ipv4•线路1(120ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. 风云剧场                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub$ipv4•线路1(117ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  3. 怀旧剧场                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub$ipv4•线路1(128ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 风云音乐                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$ipv4•线路1(115ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  5. 风云足球                 [HTTP] http://173.208.187.18:82/live/fyzq.m3u8?jsbt=1760355398&jsbk=d838949ce8ba43fabfa8e16a02449bcf$ipv4•线路1(98ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  6. 世界地理                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub$ipv4•线路1(114ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  7. 兵器科技                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$ipv4•线路1(116ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  8. 老故事                  [RTSP] rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314302384136112.rsc/100078_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+  9. 中学生                  [RTSP] rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314300175015886.rsc/100054_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+
+【卫视频道】（38个频道）
+  1. 山东卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub$ipv4•线路1(116ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. 北京卫视                 [HTTP] http://23.237.228.134/live3/beijing.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  3. 东方卫视                 [HTTP] http://69.30.246.194/live/dfws.m3u8$ipv4•线路1(103ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 浙江卫视                 [HTTP] http://69.30.246.194/live/zjws.m3u8$ipv4•线路1(97ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  5. 江苏卫视                 [HTTP] http://69.30.246.194/live/jsws.m3u8$ipv4•线路1(97ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  6. 湖南卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009$ipv4•线路1(56ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  7. 辽宁卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub$ipv4•线路1(123ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  8. 吉林卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub$ipv4•线路1(108ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  9. 安徽卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/ahwshd.m3u8?auth=testpub$ipv4•线路1(224ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 10. 山西卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/sxwshd.m3u8?auth=testpub$ipv4•线路1(116ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 11. 深圳卫视                 [HTTP] http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8$ipv4•线路1(26ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 12. 东南卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub$ipv4•线路1(124ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 13. 广东卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub$ipv4•线路1(124ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 14. 广西卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub$ipv4•线路1(117ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 15. 河北卫视                 [HTTP] http://60.16.0.216:5757/hls/38/index.m3u8$ipv4•线路1(205ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 16. 河南卫视                 [HTTP] http://111.43.126.240:9003/hls/44/index.m3u8$ipv4•线路1(183ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 17. 黑龙江卫视                [HTTP] http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub$ipv4•线路1(116ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 18. 湖北卫视                 [HTTP] http://39.152.103.17:8089/tsfile/live/1043_1.m3u8$ipv4•线路1(180ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 19. 四川卫视                 [HTTP] http://112.27.235.94:8000/hls/35/index.m3u8$ipv4•线路1(304ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 20. 天津卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub$ipv4•线路1(118ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 21. 甘肃卫视                 [HTTP] http://tvlist.top/jd/index.php?id=gsws&qt=183.224.122.114:8014$ipv4•线路1(362ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 22. 江西卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub$ipv4•线路1(106ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 23. 内蒙古卫视                [HTTP] http://112.27.235.94:8000/hls/49/index.m3u8$ipv4•线路1(153ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 24. 宁夏卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub$ipv4•线路1(118ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 25. 青海卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub$ipv4•线路1(120ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 26. 西藏卫视                 [HTTP] http://111.43.126.240:9003/hls/58/index.m3u8$ipv4•线路1(367ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 27. 新疆卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$ipv4•线路1(117ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 28. 云南卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub$ipv4•线路1(107ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 29. 贵州卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub$ipv4•线路1(107ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 30. 海南卫视                 [HTTP] http://111.43.126.240:9003/hls/53/index.m3u8$ipv4•线路1(184ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 31. 重庆卫视                 [HTTP] http://111.221.137.234:44330/tsfile/live/0142_1.m3u8?key=txiptv&playlive=0&authid=0$ipv4•线路1(213ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 32. 海峡卫视                 [HTTPS] https://t.freetv.fun/live/hai-xia-wei-shi-1.m3u8$ipv4•线路1(9ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 33. 康巴卫视                 [HTTP] http://tvlist.top/jd/index.php?id=live4468&qt=183.224.122.114:8014$ipv4•线路1(375ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 34. 农林卫视                 [HTTP] http://124.116.183.146:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路1(310ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 35. 三沙卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$ipv4•线路1(111ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 36. 厦门卫视                 [HTTP] http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub$ipv4•线路1(123ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 37. 延边卫视                 [HTTP] http://111.43.126.240:9003/hls/65/index.m3u8$ipv4•线路1(369ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+ 38. 兵团卫视                 [HTTP] http://api.kkitv.itv888.cn:8080/hls/nbzfa7gljzp/index.m3u8$ipv4•线路1(389ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【山东频道】（9个频道）
+  1. 山东齐鲁                 [HTTP] http://123.130.84.106:8154/tsfile/live/1001_1.m3u8$ipv4•线路1(260ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. 山东新闻                 [RTSP] rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117023986249401.rsc/70005_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+  3. 山东综艺                 [HTTP] http://58.57.40.22:9901/tsfile/live/1021_1.m3u8$ipv4•线路1(471ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 山东少儿                 [RTSP] rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11012815083626567264.rsc/69988_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+  5. 山东教育                 [HTTP] http://183.11.239.36:808/hls/72/index.m3u8$ipv4•线路1(215ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  6. 山东农科                 [HTTP] http://112.254.55.106:22222/rtp/239.253.254.24:8000$ipv4•线路1(429ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  7. 山东生活                 [HTTP] http://58.57.40.22:9901/tsfile/live/1018_1.m3u8$ipv4•线路1(199ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  8. 山东体育                 [HTTP] http://61.156.228.12:8154/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路1(447ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  9. 山东文旅                 [HTTP] http://58.57.40.22:9901/tsfile/live/1023_1.m3u8$ipv4•线路1(444ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【江苏频道】（5个频道）
+  1. 南京新闻综合               [HTTP] http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+  2. 南京教科                 [HTTP] http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8$ipv4•线路1(456ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  3. 南京文旅记录               [HTTP] http://nklive.nbs.cn/hls/9b2005c4-046c-422f-ba45-e6adc4f4de07/index.m3u8$ipv4•线路1(389ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 南京十八生活               [HTTP] http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8
+      来源：https://github.com/develop202/migu_video/blob/main/interface.txt
+  5. 南京少儿                 [HTTP] http://221.226.51.220:50080/newlive/live/hls/46/live.m3u8$ipv4•线路1(392ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【动漫频道】（9个频道）
+  1. CCTV14               [HTTP] http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路1(18ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. 山东少儿                 [RTSP] rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11012815083626567264.rsc/69988_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+  3. 广东少儿                 [HTTPS] https://t.freetv.fun/live/yan-dong-shao-er-15.m3u8$ipv4•线路1(19ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 黑龙江少儿                [HTTP] http://111.43.126.240:9003/hls/12/index.m3u8$ipv4•线路1(184ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  5. 浙江少儿                 [HTTP] http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?fbl=$ipv4•线路1(330ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  6. 卡酷少儿                 [HTTP] http://111.43.126.240:9003/hls/71/index.m3u8$ipv4•线路1(394ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  7. 金鹰卡通                 [HTTP] http://111.43.126.240:9003/hls/73/index.m3u8$ipv4•线路1(186ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  8. 动漫秀场                 [RTSP] rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch17121814421621825244.rsc/96206_Uni.sdp
+      来源：https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u
+  9. 优漫卡通                 [HTTP] http://111.43.126.240:9003/hls/74/index.m3u8$ipv4•线路1(370ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【港澳台频道】（4个频道）
+  1. 凤凰中文                 [HTTP] http://r.jdshipin.com/cCCzW$ipv4•线路1(55ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. 凤凰资讯                 [HTTPS] https://cdn9.163189.xyz/smt1.1.php?id=phoenixinfo_hd$ipv4(493ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  3. 凤凰香港                 [HTTPS] https://cdn9.163189.xyz/smt1.1.php?id=hkphoenix_twn$ipv4(424ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  4. 翡翠台                  [HTTPS] https://t.freetv.fun/live/fei-cui-6.m3u8$ipv4•线路1(27ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+
+【影视频道】（2个频道）
+  1. CHC动作电影              [HTTPS] https://t.freetv.fun/live/chcdong-zuo-dian-ying.m3u8$ipv4•线路1(28ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+  2. CHC家庭影院              [HTTPS] https://t.freetv.fun/live/chcjia-ting-ying-yuan.m3u8$ipv4•线路1(19ms)
+      来源：https://github.com/Lei9008/iptv_api_1/blob/main/output/live_ipv4.m3u
+

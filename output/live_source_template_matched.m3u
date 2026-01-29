@@ -1,0 +1,316 @@
+#EXTM3U x-tvg-url=""
+# IPTV直播源文件 | 生成时间：2026-01-29 13:09:33
+# 按模板筛选排序 | 总频道数：101 | 总分类数：9
+
+# ===== 4K超高清（4个频道） =====
+#EXTINF:-1 tvg-name="CCTV4K" group-title="4K超高清" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV4K.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/Tvod/iptv/001/001/ch23122814382128126762.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",CCTV4K
+rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23122814382128126762.rsc/99912_Uni.sdp
+
+#EXTINF:-1 tvg-id="1" tvg-name="北京4k" tvg-logo="https://live.fanmingming.cn/tv/{name}.png/北京卫视.png" group-title="4K超高清",北京4k
+http://ddns.xryo.cn:8888/udp/239.111.205.51:5140$ipv4•线路1(497ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="深圳4k" tvg-logo="" group-title="4K超高清",深圳4k
+https://cdn3.163189.xyz/163189/szws4k$ipv4•线路1(223ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="四川4k" tvg-logo="" group-title="4K超高清",四川4k
+http://ddns.xryo.cn:8888/udp/239.111.205.62:5140$ipv4•线路1(459ms)
+
+# ===== 央视频道（21个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV1.png" group-title="央视频道",CCTV1
+http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009$ipv4•线路1(48ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV2" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV2.png" group-title="央视频道",CCTV2
+http://23.237.228.134/live5/CCTV2.m3u8$ipv4•线路1(19ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV3" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV3.png" group-title="央视频道",CCTV3
+http://23.237.228.134/live5/CCTV3.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV4" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV4.png" group-title="央视频道",CCTV4
+http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009$ipv4•线路1(47ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV5" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV5.png" group-title="央视频道",CCTV5
+http://23.237.228.134/live5/CCTV5p.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV5+" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV5+.png" group-title="央视频道",CCTV5+
+http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009$ipv4•线路1(55ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV6" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV6.png" group-title="央视频道",CCTV6
+http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009$ipv4•线路1(47ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV7" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV7.png" group-title="央视频道",CCTV7
+http://23.237.228.134/live5/CCTV7.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV8" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV8.png" group-title="央视频道",CCTV8
+http://23.237.228.134/live5/CCTV8.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV9" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV9.png" group-title="央视频道",CCTV9
+http://23.237.228.134/live5/CCTV9.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV10" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV10.png" group-title="央视频道",CCTV10
+http://23.237.228.134/live5/CCTV10.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV11" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV11.png" group-title="央视频道",CCTV11
+http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009$ipv4•线路1(47ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV12" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV12.png" group-title="央视频道",CCTV12
+http://23.237.228.134/live3/CCTV12.m3u8$ipv4•线路1(19ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV13" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV13.png" group-title="央视频道",CCTV13
+https://cdn3.163189.xyz/163189/cctv13$ipv4•线路1(22ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV14" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV14.png" group-title="央视频道",CCTV14
+http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV15" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV15.png" group-title="央视频道",CCTV15
+http://38.75.136.137:98/gslb/jsbtv/cctv15hd.m3u8?tm=1760967331&key=541bbad4d18ef0fb7a9bc3a342bf2891$ipv4•线路1(10ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV16" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV16.png" group-title="央视频道",CCTV16
+http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009$ipv4•线路1(61ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV17" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV17.png" group-title="央视频道",CCTV17
+http://23.237.228.134/live3/CCTV17.m3u8$ipv4•线路1(11ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CETV1" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CETV1.png" group-title="央视频道",CETV1
+http://39.152.103.17:8089/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&down=1$ipv4•线路1(363ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CETV4" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CETV4.png" group-title="央视频道",CETV4
+http://39.152.103.17:8089/tsfile/live/1092_1.m3u8?key=txiptv&playlive=1&down=1$ipv4•线路1(364ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="重温经典" tvg-logo="https://live.fanmingming.cn/tv/重温经典.png" group-title="央视频道",重温经典
+https://cdn3.163189.xyz/live/cwjd/stream.m3u8$ipv4•线路1(7ms)
+
+# ===== 央视付费频道（9个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="第一剧场" tvg-logo="https://live.fanmingming.cn/tv/第一剧场.png" group-title="央视付费频道",第一剧场
+http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub$ipv4•线路1(120ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="风云剧场" tvg-logo="https://live.fanmingming.cn/tv/风云剧场.png" group-title="央视付费频道",风云剧场
+http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub$ipv4•线路1(117ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="怀旧剧场" tvg-logo="https://live.fanmingming.cn/tv/怀旧剧场.png" group-title="央视付费频道",怀旧剧场
+http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub$ipv4•线路1(128ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="风云音乐" tvg-logo="https://tb.zbds.top/logo/风云音乐.png" group-title="央视付费频道",风云音乐
+http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub$ipv4•线路1(115ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="风云足球" tvg-logo="pic/logo/风云足球.png" group-title="央视付费频道",风云足球
+http://173.208.187.18:82/live/fyzq.m3u8?jsbt=1760355398&jsbk=d838949ce8ba43fabfa8e16a02449bcf$ipv4•线路1(98ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="世界地理" tvg-logo="https://live.fanmingming.cn/tv/世界地理.png" group-title="央视付费频道",世界地理
+http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub$ipv4•线路1(114ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="兵器科技" tvg-logo="https://live.fanmingming.cn/tv/兵器科技.png" group-title="央视付费频道",兵器科技
+http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub$ipv4•线路1(116ms)
+
+#EXTINF:-1 tvg-name="老故事" group-title="央视付费频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/老故事.png" catchup="default" catchup-source="rtsp://112.245.125.42:1554/iptv/Tvod/iptv/001/001/ch24012314302384136112.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",老故事
+rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314302384136112.rsc/100078_Uni.sdp
+
+#EXTINF:-1 tvg-name="中学生" group-title="央视付费频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中学生.png" catchup="default" catchup-source="rtsp://112.245.125.42:1554/iptv/Tvod/iptv/001/001/ch24012314300175015886.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",中学生
+rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314300175015886.rsc/100054_Uni.sdp
+
+# ===== 卫视频道（38个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="山东卫视" tvg-logo="https://img11.iqilu.com/225/2020/03/15/ba8984b49547d66568524b8671c69bb2.jpeg" group-title="卫视频道",山东卫视
+http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub$ipv4•线路1(116ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="北京卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/北京卫视.png" group-title="卫视频道",北京卫视
+http://23.237.228.134/live3/beijing.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="东方卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东方卫视.png" group-title="卫视频道",东方卫视
+http://69.30.246.194/live/dfws.m3u8$ipv4•线路1(103ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="浙江卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/浙江卫视.png" group-title="卫视频道",浙江卫视
+http://69.30.246.194/live/zjws.m3u8$ipv4•线路1(97ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="江苏卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江苏卫视.png" group-title="卫视频道",江苏卫视
+http://69.30.246.194/live/jsws.m3u8$ipv4•线路1(97ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="湖南卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/湖南卫视.png" group-title="卫视频道",湖南卫视
+http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009$ipv4•线路1(56ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="辽宁卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/辽宁卫视.png" group-title="卫视频道",辽宁卫视
+http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub$ipv4•线路1(123ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="吉林卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/吉林卫视.png" group-title="卫视频道",吉林卫视
+http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub$ipv4•线路1(108ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="安徽卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/安徽卫视.png" group-title="卫视频道",安徽卫视
+http://38.75.136.137:98/gslb/dsdqpub/ahwshd.m3u8?auth=testpub$ipv4•线路1(224ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="山西卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山西卫视.png" group-title="卫视频道",山西卫视
+http://38.75.136.137:98/gslb/dsdqpub/sxwshd.m3u8?auth=testpub$ipv4•线路1(116ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="深圳卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/深圳卫视.png" group-title="卫视频道",深圳卫视
+http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8$ipv4•线路1(26ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="东南卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/东南卫视.png" group-title="卫视频道",东南卫视
+http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub$ipv4•线路1(124ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="广东卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/广东卫视.png" group-title="卫视频道",广东卫视
+http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub$ipv4•线路1(124ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="广西卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/广西卫视.png" group-title="卫视频道",广西卫视
+http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub$ipv4•线路1(117ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="河北卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/河北卫视.png" group-title="卫视频道",河北卫视
+http://60.16.0.216:5757/hls/38/index.m3u8$ipv4•线路1(205ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="河南卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/河南卫视.png" group-title="卫视频道",河南卫视
+http://111.43.126.240:9003/hls/44/index.m3u8$ipv4•线路1(183ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="黑龙江卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/黑龙江卫视.png" group-title="卫视频道",黑龙江卫视
+http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub$ipv4•线路1(116ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="湖北卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/湖北卫视.png" group-title="卫视频道",湖北卫视
+http://39.152.103.17:8089/tsfile/live/1043_1.m3u8$ipv4•线路1(180ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="四川卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/四川卫视.png" group-title="卫视频道",四川卫视
+http://112.27.235.94:8000/hls/35/index.m3u8$ipv4•线路1(304ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="天津卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/天津卫视.png" group-title="卫视频道",天津卫视
+http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub$ipv4•线路1(118ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="甘肃卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/甘肃卫视.png" group-title="卫视频道",甘肃卫视
+http://tvlist.top/jd/index.php?id=gsws&qt=183.224.122.114:8014$ipv4•线路1(362ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="江西卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/江西卫视.png" group-title="卫视频道",江西卫视
+http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub$ipv4•线路1(106ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="内蒙古卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/内蒙古卫视.png" group-title="卫视频道",内蒙古卫视
+http://112.27.235.94:8000/hls/49/index.m3u8$ipv4•线路1(153ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="宁夏卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/宁夏卫视.png" group-title="卫视频道",宁夏卫视
+http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub$ipv4•线路1(118ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="青海卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/青海卫视.png" group-title="卫视频道",青海卫视
+http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub$ipv4•线路1(120ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="西藏卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/西藏卫视.png" group-title="卫视频道",西藏卫视
+http://111.43.126.240:9003/hls/58/index.m3u8$ipv4•线路1(367ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="新疆卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/新疆卫视.png" group-title="卫视频道",新疆卫视
+http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub$ipv4•线路1(117ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="云南卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/云南卫视.png" group-title="卫视频道",云南卫视
+http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub$ipv4•线路1(107ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="贵州卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/贵州卫视.png" group-title="卫视频道",贵州卫视
+http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub$ipv4•线路1(107ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="海南卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/海南卫视.png" group-title="卫视频道",海南卫视
+http://111.43.126.240:9003/hls/53/index.m3u8$ipv4•线路1(184ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="重庆卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/重庆卫视.png" group-title="卫视频道",重庆卫视
+http://111.221.137.234:44330/tsfile/live/0142_1.m3u8?key=txiptv&playlive=0&authid=0$ipv4•线路1(213ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="海峡卫视" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/海峡卫视.png" group-title="卫视频道",海峡卫视
+https://t.freetv.fun/live/hai-xia-wei-shi-1.m3u8$ipv4•线路1(9ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="康巴卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/康巴卫视.png" group-title="卫视频道",康巴卫视
+http://tvlist.top/jd/index.php?id=live4468&qt=183.224.122.114:8014$ipv4•线路1(375ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="农林卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/农林卫视.png" group-title="卫视频道",农林卫视
+http://124.116.183.146:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路1(310ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="三沙卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/三沙卫视.png" group-title="卫视频道",三沙卫视
+http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub$ipv4•线路1(111ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="厦门卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/厦门卫视.png" group-title="卫视频道",厦门卫视
+http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub$ipv4•线路1(123ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="延边卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/延边卫视.png" group-title="卫视频道",延边卫视
+http://111.43.126.240:9003/hls/65/index.m3u8$ipv4•线路1(369ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="兵团卫视" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/兵团卫视.png" group-title="卫视频道",兵团卫视
+http://api.kkitv.itv888.cn:8080/hls/nbzfa7gljzp/index.m3u8$ipv4•线路1(389ms)
+
+# ===== 山东频道（9个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="山东齐鲁" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东齐鲁.png" group-title="山东频道",山东齐鲁
+http://123.130.84.106:8154/tsfile/live/1001_1.m3u8$ipv4•线路1(260ms)
+
+#EXTINF:-1 tvg-name="山东新闻" group-title="山东频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东新闻.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/Tvod/iptv/001/001/ch10120117023986249401.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",山东新闻
+rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117023986249401.rsc/70005_Uni.sdp
+
+#EXTINF:-1 tvg-id="1" tvg-name="山东综艺" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东综艺.png" group-title="山东频道",山东综艺
+http://58.57.40.22:9901/tsfile/live/1021_1.m3u8$ipv4•线路1(471ms)
+
+#EXTINF:-1 tvg-name="山东少儿" group-title="山东频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东少儿.png" catchup="default" catchup-source="rtsp://112.245.125.48:1554/iptv/Tvod/iptv/001/001/ch11012815083626567264.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",山东少儿
+rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11012815083626567264.rsc/69988_Uni.sdp
+
+#EXTINF:-1 tvg-id="1" tvg-name="山东教育" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东教育.png" group-title="山东频道",山东教育
+http://183.11.239.36:808/hls/72/index.m3u8$ipv4•线路1(215ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="山东农科" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东农科.png" group-title="山东频道",山东农科
+http://112.254.55.106:22222/rtp/239.253.254.24:8000$ipv4•线路1(429ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="山东生活" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东生活.png" group-title="山东频道",山东生活
+http://58.57.40.22:9901/tsfile/live/1018_1.m3u8$ipv4•线路1(199ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="山东体育" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东体育.png" group-title="山东频道",山东体育
+http://61.156.228.12:8154/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0$ipv4•线路1(447ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="山东文旅" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东文旅.png" group-title="山东频道",山东文旅
+http://58.57.40.22:9901/tsfile/live/1023_1.m3u8$ipv4•线路1(444ms)
+
+# ===== 江苏频道（5个频道） =====
+#EXTINF:-1 tvg-id="南京新闻综合" tvg-name="南京新闻综合" tvg-logo="" group-title="江苏频道",南京新闻综合
+http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8
+
+#EXTINF:-1 tvg-id="1" tvg-name="南京教科" tvg-logo="https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/南京教科.png" group-title="江苏频道",南京教科
+http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8$ipv4•线路1(456ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="南京文旅记录" tvg-logo="" group-title="江苏频道",南京文旅记录
+http://nklive.nbs.cn/hls/9b2005c4-046c-422f-ba45-e6adc4f4de07/index.m3u8$ipv4•线路1(389ms)
+
+#EXTINF:-1 tvg-id="南京十八生活" tvg-name="南京十八生活" tvg-logo="" group-title="江苏频道",南京十八生活
+http://nklive.nbs.cn/hls/1173a815-bfdb-4c3c-9f73-89ec37ae7716/index.m3u8
+
+#EXTINF:-1 tvg-id="1" tvg-name="南京少儿" tvg-logo="" group-title="江苏频道",南京少儿
+http://221.226.51.220:50080/newlive/live/hls/46/live.m3u8$ipv4•线路1(392ms)
+
+# ===== 动漫频道（9个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV14" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CCTV14.png" group-title="动漫频道",CCTV14
+http://23.237.228.134/live3/CCTV14.m3u8$ipv4•线路1(18ms)
+
+#EXTINF:-1 tvg-name="山东少儿" group-title="动漫频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/山东少儿.png" catchup="default" catchup-source="rtsp://112.245.125.48:1554/iptv/Tvod/iptv/001/001/ch11012815083626567264.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",山东少儿
+rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11012815083626567264.rsc/69988_Uni.sdp
+
+#EXTINF:-1 tvg-id="1" tvg-name="广东少儿" tvg-logo="https://live.fanmingming.cn/tv/广东少儿.png" group-title="动漫频道",广东少儿
+https://t.freetv.fun/live/yan-dong-shao-er-15.m3u8$ipv4•线路1(19ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="黑龙江少儿" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/heilongjiang/Heilongjiang6.png" group-title="动漫频道",黑龙江少儿
+http://111.43.126.240:9003/hls/12/index.m3u8$ipv4•线路1(184ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="浙江少儿" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/浙江少儿.png" group-title="动漫频道",浙江少儿
+http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?fbl=$ipv4•线路1(330ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="卡酷少儿" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/卡酷少儿.png" group-title="动漫频道",卡酷少儿
+http://111.43.126.240:9003/hls/71/index.m3u8$ipv4•线路1(394ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="金鹰卡通" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/金鹰卡通.png" group-title="动漫频道",金鹰卡通
+http://111.43.126.240:9003/hls/73/index.m3u8$ipv4•线路1(186ms)
+
+#EXTINF:-1 tvg-name="动漫秀场" group-title="动漫频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/动漫秀场.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch17121814421621825244.rsc?tvdr=${(b)yyyyMMddHHmmss|UTC}GMT-${(e)yyyyMMddHHmmss|UTC}GMT",动漫秀场
+rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch17121814421621825244.rsc/96206_Uni.sdp
+
+#EXTINF:-1 tvg-id="1" tvg-name="优漫卡通" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/优漫卡通.png" group-title="动漫频道",优漫卡通
+http://111.43.126.240:9003/hls/74/index.m3u8$ipv4•线路1(370ms)
+
+# ===== 港澳台频道（4个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="凤凰中文" tvg-logo="https://live.fanmingming.cn/tv/{name}.png/凤凰卫视中文台.png" group-title="港澳台频道",凤凰中文
+http://r.jdshipin.com/cCCzW$ipv4•线路1(55ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="凤凰资讯" tvg-logo="https://live.fanmingming.cn/tv/{name}.png/凤凰卫视资讯台.png" group-title="港澳台频道",凤凰资讯
+https://cdn9.163189.xyz/smt1.1.php?id=phoenixinfo_hd$ipv4(493ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="凤凰香港" tvg-logo="https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/凤凰香港.png" group-title="港澳台频道",凤凰香港
+https://cdn9.163189.xyz/smt1.1.php?id=hkphoenix_twn$ipv4(424ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" group-title="港澳台频道",翡翠台
+https://t.freetv.fun/live/fei-cui-6.m3u8$ipv4•线路1(27ms)
+
+# ===== 影视频道（2个频道） =====
+#EXTINF:-1 tvg-id="1" tvg-name="CHC动作电影" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC动作电影.png" group-title="影视频道",CHC动作电影
+https://t.freetv.fun/live/chcdong-zuo-dian-ying.m3u8$ipv4•线路1(28ms)
+
+#EXTINF:-1 tvg-id="1" tvg-name="CHC家庭影院" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/CHC家庭影院.png" group-title="影视频道",CHC家庭影院
+https://t.freetv.fun/live/chcjia-ting-ying-yuan.m3u8$ipv4•线路1(19ms)
+
