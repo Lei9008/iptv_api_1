@@ -24,7 +24,7 @@ SOURCE_URLS = [
     # 替换为你自己的直播源链接
    
     "https://github.com/alantang1977/IPTV/blob/main/live_ipv4.txt",
-    "https://github.com/alantang1977/iptv_api/blob/main/output/live_ipv4.m3u",
+    #"https://github.com/alantang1977/iptv_api/blob/main/output/live_ipv4.m3u",
     "https://github.com/alantang1977/IPTV_SuperA/blob/main/output/result.m3u",
     "https://github.com/alantang1977/IPTV_SuperB/blob/main/output/live_ipv4.m3u",
     "https://github.com/alantang1977/iptv8/blob/main/bbxx.txt",
