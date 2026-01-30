@@ -6,7 +6,7 @@ TEMPLATE_FILE = "demo.txt"
 
 # ===================== 测速配置 =====================
 # 延迟阈值（ms），超过该值仍保留但标注延迟
-LATENCY_THRESHOLD = 500
+LATENCY_THRESHOLD = 400
 # 异步并发数（根据服务器性能调整）
 CONCURRENT_LIMIT = 20
 # 超时时间（s）
