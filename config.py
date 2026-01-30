@@ -14,7 +14,7 @@ TIMEOUT = 12
 # 重试次数
 RETRY_TIMES = 2
 # 频道匹配阈值（默认 0.4）
-MATCH_CUTOFF = 0.5
+MATCH_CUTOFF = 0.6
 # IP版本优先级（ipv4/ipv6）
 IP_VERSION_PRIORITY = "ipv4"
 
