@@ -71,7 +71,7 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/iodata999/frxz751113-IPTVzb1/refs/heads/main/结果.m3u",
     "https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
     "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
-    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt",
+    #"https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/others_output.txt",
     "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
     "https://raw.githubusercontent.com/n3rddd/CTVLive/refs/heads/main/live.txt",
     "https://raw.githubusercontent.com/qwerttvv/Beijing-IPTV/master/IPTV-Unicom.m3u",
