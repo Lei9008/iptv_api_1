@@ -1,60 +1,17 @@
 IPTV直播源汇总（按模板匹配+标准化+多协议支持）
 ================================================================================
-生成时间：2026-02-01 21:22:25
-总频道数：23
-分类数：3
+生成时间：2026-02-01 21:31:52
+总频道数（列表计数）：2
+真实独立频道数（URL去重）：2
+分类数：2
 支持协议：HTTP, HTTPS, RTSP, RTMP, M3U8, HLS
 ================================================================================
 
-【央视频道】（21个频道）
+【央视频道】（1个频道，独立URL数：1）
   1. CETV-1               [未知协议] rtsp
       来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  2. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  3. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  4. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  5. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  6. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  7. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  8. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-  9. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 10. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 11. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 12. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 13. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 14. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 15. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 16. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 17. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 18. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 19. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 20. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
- 21. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
 
-【卫视频道】（1个频道）
+【卫视频道】（1个频道，独立URL数：1）
   1. 甘肃卫视                 [未知协议] rtmp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
-
-【动漫频道】（1个频道）
-  1. CETV-1               [未知协议] rtsp
       来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
 

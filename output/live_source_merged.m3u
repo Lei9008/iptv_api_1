@@ -1,76 +1,12 @@
 #EXTM3U x-tvg-url=""
-# IPTV直播源匹配合并文件 | 生成时间：2026-02-01 21:22:25
-# 总频道数：23 | 总分类数：3
+# IPTV直播源匹配合并文件 | 生成时间：2026-02-01 21:31:52
+# 总频道数（列表计数）：2 | 真实独立频道数：2 | 总分类数：2
 
-# ===== 央视频道（21个频道） =====
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
-rtsp
-
+# ===== 央视频道（1个频道） =====
 #EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="央视频道",CETV-1
 rtsp
 
 # ===== 卫视频道（1个频道） =====
 #EXTINF:-1 tvg-id="" tvg-name="甘肃卫视" tvg-logo="" group-title="卫视频道",甘肃卫视
 rtmp
-
-# ===== 动漫频道（1个频道） =====
-#EXTINF:-1 tvg-id="" tvg-name="CETV-1" tvg-logo="" group-title="动漫频道",CETV-1
-rtsp
 
