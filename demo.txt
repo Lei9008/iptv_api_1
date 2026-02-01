@@ -1,31 +1,31 @@
-┃央视频道,#genre#
-CCTV-1,
-CCTV-2,
-CCTV-3,
-CCTV-4,
-CCTV-5,
-CCTV-5+,
-CCTV-6,
-CCTV-7,
-CCTV-8,
-CCTV-9,
-CCTV-10,
-CCTV-11,
-CCTV-12,
-CCTV-13,
-CCTV-14,
-CCTV-15,
-CCTV-16,
-CCTV-17,
-CETV-1,
-CETV-2,
-CETV-3,
-CETV-4,
-CETV-5,
+央视频道,#genre#
+CCTV1,
+CCTV2,
+CCTV3,
+CCTV4,
+CCTV5,
+CCTV5+,
+CCTV6,
+CCTV7,
+CCTV8,
+CCTV9,
+CCTV10,
+CCTV11,
+CCTV12,
+CCTV13,
+CCTV14,
+CCTV15,
+CCTV16,
+CCTV17,
+CETV1,
+CETV2,
+CETV4,
+CETV5,
 重温经典,
 中国天气,
 
-┃央视付费频道,#genre#
+
+央视付费频道,#genre#
 第一剧场,
 风云剧场,
 怀旧剧场,
@@ -37,7 +37,7 @@ CETV-5,
 老故事,
 中学生,
 
-┃卫视频道,#genre#
+卫视频道,#genre#
 山东卫视,
 北京卫视,
 东方卫视,
@@ -82,7 +82,7 @@ CETV-5,
 香港卫视,
 
 
-┃山东频道,#genre#
+山东频道,#genre#
 山东齐鲁,
 山东新闻,
 山东综艺,
@@ -94,14 +94,14 @@ CETV-5,
 山东文旅,
 
 
-┃江苏频道,#genre#
+江苏频道,#genre#
 南京新闻综合,
 南京教科,
 南京文旅记录,
 南京十八生活,
 南京少儿,
 
-┃动漫频道,#genre#
+动漫频道,#genre#
 CCTV-14,
 山东少儿,
 河北少儿,
@@ -118,7 +118,7 @@ CCTV-14,
 
 
 
-┃港澳台频道,#genre#
+港澳台频道,#genre#
 凤凰中文,
 凤凰资讯,
 凤凰香港,
@@ -126,7 +126,7 @@ CCTV-14,
 香港卫视,
 翡翠台,
 
-┃影视频道,#genre#
+影视频道,#genre#
 CHC动作电影,
 CHC高清电影,
 CHC家庭影院,
