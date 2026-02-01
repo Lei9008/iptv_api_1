@@ -317,19 +317,6 @@ def sort_and_filter_urls(
     written_urls.update(filtered_urls)
     return filtered_urls
 
-def add_url_suffix(url: str, index: int, total_urls: int, ip_version: str, latency: float) -> str:
-    """添加URL后缀（显示IP版本和延迟）"""
-    if not url:
-        return ""
-    base_url = url.split('$', 1)[0] if '$' in url else url
-    ip_version = ip_version.lower()
-    latency_str = f"{latency:.0f}ms"
-    if total_urls == 1:
-        suffix = f"${ip_version}({latency_str})"
-    else:
-        suffix = f"${ip_version}•线路{index}({latency_str})"
-    return f"{base_url}{suffix}"
-
 @lru_cache(maxsize=1)
 def get_github_logo_list() -> List[str]:
     """获取GitHub logo列表（增加异常保护）"""
@@ -389,7 +376,7 @@ def get_channel_logo_url(channel_name: str) -> str:
         for logo_dir in LOGO_DIRS:
             local_logo_path = logo_dir / logo_filename
             if len(str(local_logo_path)) < 255 and local_logo_path.exists():
-                return local_logo_path.as_posix()
+                return str(local_logo_path.resolve())  # 兼容Windows，替换as_posix()
     except OSError as e:
         logger.debug(f"检查本地logo失败：{logo_filename} | {str(e)[:30]}")
         pass
@@ -832,9 +819,9 @@ class SpeedTester:
         
         return results
 
-# ===================== 文件生成与处理（整合版，已移除基础版文件相关逻辑） =====================
+# ===================== 文件生成与处理（整合版，已移除URL后缀功能） =====================
 def parse_template(template_file: str) -> OrderedDict:
-    """解析模板文件"""
+    """解析模板文件（兼容两种格式）"""
     template_channels = OrderedDict()
     current_category = None
 
@@ -842,17 +829,23 @@ def parse_template(template_file: str) -> OrderedDict:
         with open(template_file, "r", encoding="utf-8") as f:
             for line_num, line in enumerate(f, 1):
                 line = line.strip()
-                if not line or line.startswith("#"):
+                if not line or line.startswith("#") and "#genre#" not in line:
                     continue
                 
+                # 兼容两种格式：#genre#分类 / 分类,#genre#
                 if "#genre#" in line:
-                    current_category = line.split(",")[0].strip()
+                    if line.startswith("#genre#"):
+                        current_category = line.replace("#genre#", "").strip()
+                    else:
+                        current_category = line.split(",")[0].strip()
                     template_channels[current_category] = []
-                elif current_category:
+                    continue
+                
+                if current_category:
                     channel_name = line.split(",")[0].strip()
                     template_channels[current_category].append(channel_name)
     except FileNotFoundError:
-        logger.error(f"模板文件不存在：{template_file}，请创建后再运行")
+        logger.error(f"模板文件不存在：{template_file}")
         return OrderedDict()
     except Exception as e:
         logger.error(f"解析模板失败：{str(e)}", exc_info=True)
@@ -940,7 +933,7 @@ def match_channels(template_channels: OrderedDict, all_channels: OrderedDict) ->
     return matched_channels
 
 def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
-    """抓取并过滤源URL（整合版，已移除基础版文件生成调用）"""
+    """抓取并过滤源URL（整合版）"""
     template_channels = parse_template(template_file)
     if not template_channels:
         logger.error("模板解析为空，终止流程")
@@ -990,13 +983,13 @@ def filter_source_urls(template_file: str) -> Tuple[OrderedDict, OrderedDict]:
     if failed_urls:
         logger.info(f"  - 失败的源：{', '.join(failed_urls)}")
     
-    # 匹配频道（移除了generate_basic_m3u()调用）
+    # 匹配频道
     matched_channels = match_channels(template_channels, all_channels)
     
     return matched_channels, template_channels
 
 def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version, latency):
-    """写入文件（整合版）"""
+    """写入文件（整合版，已移除URL后缀相关逻辑）"""
     if not url:
         return
     
@@ -1007,13 +1000,13 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url, ip_version,
         tvg_name = meta.clean_channel_name if (meta and meta.clean_channel_name) else channel_name
         group_title = meta.standard_group_title if (meta and meta.standard_group_title) else category
         
-        # 写入M3U
+        # 写入M3U（保持纯净，不附加后缀）
         f_m3u.write(
             f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{tvg_name}\" "
             f"tvg-logo=\"{logo_url}\" group-title=\"{group_title}\",{channel_name}\n"
         )
         f_m3u.write(url + "\n")
-        # 写入TXT
+        # 写入TXT（保持纯净格式）
         f_txt.write(f"{channel_name},{url}\n")
     except Exception as e:
         logger.warning(f"写入文件失败（频道：{channel_name}）：{str(e)[:50]}")
@@ -1087,7 +1080,7 @@ def generate_speed_report(latency_results: Dict[str, SpeedTestResult], latency_t
         logger.error(f"生成测速报告失败：{str(e)}", exc_info=True)
 
 def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str, SpeedTestResult]):
-    """生成最终优化版文件（整合版）"""
+    """生成最终优化版文件（已移除URL后缀功能）"""
     latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
@@ -1150,9 +1143,10 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                         if is_ipv6(entry_url):
                             if entry_url not in written_urls_ipv6:
                                 written_urls_ipv6.add(entry_url)
+                                # 移除频道名后的延迟后缀，保持纯净
                                 f_m3u_ipv6.write(
                                     f"#EXTINF:-1 tvg-id=\"{announcement_id}\" tvg-name=\"{entry_name}\" "
-                                    f"tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}({entry_result.latency:.0f}ms)\n"
+                                    f"tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}\n"
                                 )
                                 f_m3u_ipv6.write(f"{entry_url}\n")
                                 f_txt_ipv6.write(f"{entry_name},{entry_url}\n")
@@ -1160,9 +1154,10 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                         else:
                             if entry_url not in written_urls_ipv4:
                                 written_urls_ipv4.add(entry_url)
+                                # 移除频道名后的延迟后缀，保持纯净
                                 f_m3u_ipv4.write(
                                     f"#EXTINF:-1 tvg-id=\"{announcement_id}\" tvg-name=\"{entry_name}\" "
-                                    f"tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}({entry_result.latency:.0f}ms)\n"
+                                    f"tvg-logo=\"{entry_logo}\" group-title=\"{channel_name}\",{entry_name}\n"
                                 )
                                 f_m3u_ipv4.write(f"{entry_url}\n")
                                 f_txt_ipv4.write(f"{entry_name},{entry_url}\n")
@@ -1220,20 +1215,20 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
                         latency_threshold
                     )
                     
-                    # 写入IPv4
+                    # 写入IPv4（直接使用原始URL，不附加后缀）
                     total_ipv4 = len(ipv4_urls)
                     for idx, url in enumerate(ipv4_urls, start=1):
                         latency = latency_results[url].latency
-                        new_url = add_url_suffix(url, idx, total_ipv4, "IPV4", latency)
-                        write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, idx, new_url, "IPV4", latency)
+                        # 移除add_url_suffix调用，直接传入原始url
+                        write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, idx, url, "IPV4", latency)
                         ipv4_written += 1
                     
-                    # 写入IPv6
+                    # 写入IPv6（直接使用原始URL，不附加后缀）
                     total_ipv6 = len(ipv6_urls)
                     for idx, url in enumerate(ipv6_urls, start=1):
                         latency = latency_results[url].latency
-                        new_url = add_url_suffix(url, idx, total_ipv6, "IPV6", latency)
-                        write_to_files(f_m3u_ipv6, f_txt_ipv6, category, channel_name, idx, new_url, "IPV6", latency)
+                        # 移除add_url_suffix调用，直接传入原始url
+                        write_to_files(f_m3u_ipv6, f_txt_ipv6, category, channel_name, idx, url, "IPV6", latency)
                         ipv6_written += 1
 
             # 生成报告
@@ -1251,11 +1246,12 @@ def updateChannelUrlsM3U(channels, template_channels, latency_results: Dict[str,
             logger.info(f"  - IPv6 M3U: {ipv6_m3u_path} (写入{ipv6_written}个URL)")
             logger.info(f"  - IPv6 TXT: {ipv6_txt_path}")
             logger.info(f"  - 延迟阈值：{latency_threshold}ms")
+            logger.info(f"  - 备注：URL已保持纯净，未附加任何后缀信息")
             
     except Exception as e:
         logger.error(f"生成最终文件失败：{str(e)}", exc_info=True)
 
-# ===================== 主程序（整合版，已移除基础版文件相关说明） =====================
+# ===================== 主程序（整合版） =====================
 async def main():
     """整合版主函数"""
     start_total = time.time()
@@ -1269,7 +1265,7 @@ async def main():
         template_file = getattr(config, 'TEMPLATE_FILE', CONFIG_DEFAULTS["TEMPLATE_FILE"])
         latency_threshold = getattr(config, 'LATENCY_THRESHOLD', CONFIG_DEFAULTS["LATENCY_THRESHOLD"])
         
-        logger.info("===== 开始处理直播源（整合优化版） =====")
+        logger.info("===== 开始处理直播源（整合优化版，已移除URL后缀功能） =====")
         logger.info(f"配置信息：延迟阈值{latency_threshold}ms | 匹配阈值{getattr(config, 'MATCH_CUTOFF', 0.4)}")
         
         # 预加载logo
@@ -1308,7 +1304,7 @@ async def main():
         total_elapsed = time.time() - start_total
         logger.info(f"\n===== 所有流程执行完成 | 总耗时：{total_elapsed:.1f}s =====")
         logger.info(f"\n文件说明：")
-        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类+黑名单过滤）")
+        logger.info(f"  - live_ipv4.m3u/live_ipv6.m3u: 优化版（测速筛选+IP分类+黑名单过滤，URL纯净无后缀）")
         logger.info(f"  - speed_test_report.txt: 详细测速报告")
     
     except Exception as e:
