@@ -73,7 +73,7 @@ class ChannelMeta:
 channel_meta_cache: Dict[str, ChannelMeta] = {}
 url_source_mapping: Dict[str, str] = {}
 
-# ===================== 模板相关核心功能（移植并优化自第一段代码） =====================
+# ===================== 模板相关核心功能（优化后：解决计数虚高、重复匹配） =====================
 def clean_channel_name(channel_name: Optional[str]) -> str:
     """
     数据清洗函数（移植自第一段代码）
@@ -121,9 +121,9 @@ def parse_template(template_file: str) -> OrderedDictType[str, List[str]]:
     
     return template_channels
 
-def find_similar_name(target_name: str, name_list: List[str], cutoff: float = 0.6) -> Optional[str]:
+def find_similar_name(target_name: str, name_list: List[str], cutoff: float = 0.8) -> Optional[str]:
     """
-    查找最相似的名称（移植自第一段代码）
+    查找最相似的名称（优化：默认阈值提升至0.8，减少无效匹配）
     使用difflib进行字符串相似度匹配，返回最相似的名称
     """
     if not target_name or not name_list:
@@ -133,46 +133,53 @@ def find_similar_name(target_name: str, name_list: List[str], cutoff: float = 0.
 
 def match_channels(template_channels: OrderedDictType[str, List[str]], all_extracted_channels: OrderedDictType[str, List[Tuple[str, str]]]) -> OrderedDictType[str, List[Tuple[str, str]]]:
     """
-    匹配模板中的频道与抓取到的频道（移植并优化自第一段代码）
+    匹配模板中的频道与抓取到的频道（核心优化：解决计数虚高、避免重复匹配URL）
     仅保留模板中存在（或相似度匹配）的频道，返回匹配后的有序字典
+    关键改进：1. 先对抓取URL去重 2. 记录已匹配URL，避免重复累加 3. 统计真实独立URL数
     """
     matched_channels = OrderedDict()
     if not template_channels or not all_extracted_channels:
         logger.warning("模板或抓取到的频道为空，无法进行匹配")
         return matched_channels
     
-    # 第一步：收集所有抓取到的频道（清洗后名称→(原始名称, URL) 映射）
+    # 第一步：收集所有抓取到的频道（清洗后名称→(原始名称, URL) 映射），同时记录所有独立URL（用于去重）
     extracted_name_url_mapping: Dict[str, List[Tuple[str, str]]] = {}
     all_extracted_cleaned_names: List[str] = []
+    all_extracted_urls: Set[str] = set()  # 新增：记录所有独立的抓取URL，避免原始数据重复
     
     for _, channel_list in all_extracted_channels.items():
         for original_name, url in channel_list:
             cleaned_name = clean_channel_name(original_name)
-            if cleaned_name:
+            # 过滤：空清洗名、重复URL不纳入
+            if cleaned_name and url not in all_extracted_urls:
+                all_extracted_urls.add(url)
                 if cleaned_name not in extracted_name_url_mapping:
                     extracted_name_url_mapping[cleaned_name] = []
                 extracted_name_url_mapping[cleaned_name].append((original_name, url))
                 all_extracted_cleaned_names.append(cleaned_name)
     
-    # 第二步：遍历模板，进行相似度匹配并收集结果
+    # 第二步：遍历模板，进行相似度匹配并收集结果（新增：已匹配URL去重，避免重复累加）
+    matched_urls: Set[str] = set()  # 新增：记录已匹配的URL，确保每个URL仅匹配一次
     for template_category, template_channel_list in template_channels.items():
         matched_channel_list = []
         for template_channel in template_channel_list:
-            # 查找相似名称
+            # 查找相似名称（使用优化后的默认阈值0.8）
             similar_cleaned_name = find_similar_name(template_channel, all_extracted_cleaned_names)
             if similar_cleaned_name and similar_cleaned_name in extracted_name_url_mapping:
-                # 合并匹配到的频道（去重URL）
-                seen_urls = set()
+                # 合并匹配到的频道（仅保留未匹配过的独立URL）
                 for original_name, url in extracted_name_url_mapping[similar_cleaned_name]:
-                    if url not in seen_urls:
-                        seen_urls.add(url)
+                    if url not in matched_urls:
+                        matched_urls.add(url)
                         matched_channel_list.append((original_name, url))
         
         # 仅保留有有效频道的分类
         if matched_channel_list:
             matched_channels[template_category] = matched_channel_list
     
-    logger.info(f"频道匹配完成：提取到 {len(matched_channels)} 个有效分类，{sum(len(v) for v in matched_channels.values())} 个有效频道")
+    # 优化日志：同时输出列表计数和真实独立URL数，方便验证
+    total_matched_list = sum(len(v) for v in matched_channels.values())
+    total_matched_unique = len(matched_urls)
+    logger.info(f"频道匹配完成：提取到 {len(matched_channels)} 个有效分类，{total_matched_list} 个有效频道（真实独立URL数：{total_matched_unique}）")
     return matched_channels
 
 def merge_channels(target: OrderedDictType[str, List[Tuple[str, str]]], source: OrderedDictType[str, List[Tuple[str, str]]]):
@@ -496,20 +503,28 @@ def generate_summary(matched_channels: OrderedDictType[str, List[Tuple[str, str]
     total_channels = sum(len(ch_list) for _, ch_list in matched_channels.items())
     total_categories = len(matched_channels)
     
+    # 额外统计真实独立URL数（避免汇总文件也出现虚高）
+    unique_urls_in_output = set()
+    for _, ch_list in matched_channels.items():
+        for _, url in ch_list:
+            unique_urls_in_output.add(url)
+    total_unique_channels = len(unique_urls_in_output)
+    
     try:
         # 生成易读的汇总TXT（可选保留协议标注，方便人工查看）
         with open(summary_path, "w", encoding="utf-8") as f:
             f.write("IPTV直播源汇总（按模板匹配+标准化+多协议支持）\n")
             f.write("="*80 + "\n")
             f.write(f"生成时间：{generate_time}\n")
-            f.write(f"总频道数：{total_channels}\n")
+            f.write(f"总频道数（列表计数）：{total_channels}\n")
+            f.write(f"真实独立频道数（URL去重）：{total_unique_channels}\n")
             f.write(f"分类数：{total_categories}\n")
             f.write(f"支持协议：{', '.join([p[:-3].upper() for p in SUPPORTED_PROTOCOLS])}\n")
             f.write("="*80 + "\n\n")
             
             # 按分类写入频道详情
             for group_title, channel_list in matched_channels.items():
-                f.write(f"【{group_title}】（{len(channel_list)}个频道）\n")
+                f.write(f"【{group_title}】（{len(channel_list)}个频道，独立URL数：{len(set([url for _, url in channel_list]))}）\n")
                 for idx, (name, url) in enumerate(channel_list, 1):
                     source = url_source_mapping.get(url, "未知来源")
                     protocol = get_url_protocol(url)
@@ -521,7 +536,7 @@ def generate_summary(matched_channels: OrderedDictType[str, List[Tuple[str, str]
         with open(m3u_path, "w", encoding="utf-8") as f:
             f.write("#EXTM3U x-tvg-url=\"\"\n")
             f.write(f"# IPTV直播源匹配合并文件 | 生成时间：{generate_time}\n")
-            f.write(f"# 总频道数：{total_channels} | 总分类数：{total_categories}\n\n")
+            f.write(f"# 总频道数（列表计数）：{total_channels} | 真实独立频道数：{total_unique_channels} | 总分类数：{total_categories}\n\n")
             
             # 按分类写入M3U内容（无协议标注）
             for group_title, channel_list in matched_channels.items():
@@ -552,6 +567,7 @@ def generate_summary(matched_channels: OrderedDictType[str, List[Tuple[str, str]
         logger.info(f"文件生成完成：")
         logger.info(f"  - 汇总TXT：{summary_path.absolute()}")
         logger.info(f"  - 纯净版M3U：{m3u_path.absolute()}")
+        logger.info(f"  - 输出统计：列表计数{total_channels}条，真实独立URL{total_unique_channels}条")
         
     except Exception as e:
         logger.error(f"生成输出文件失败：{str(e)}", exc_info=True)
@@ -608,11 +624,18 @@ def main(template_file: str = "demo.txt"):
         # 步骤5：输出处理完成统计
         logger.info(f"\n===== 处理完成统计 =====")
         total_extracted_channels = sum(len(ch_list) for _, ch_list in all_extracted_channels.items())
+        # 统计原始抓取的独立URL数
+        total_extracted_unique = len(set([url for _, ch_list in all_extracted_channels.items() for _, url in ch_list]))
+        
         total_matched_channels = sum(len(ch_list) for _, ch_list in matched_channels.items())
+        total_matched_unique = len(set([url for _, ch_list in matched_channels.items() for _, url in ch_list]))
+        
         logger.info(f"  - 源URL总数：{len(source_urls)}")
         logger.info(f"  - 抓取失败源数：{len(failed_urls)}")
-        logger.info(f"  - 原始抓取频道数：{total_extracted_channels}")
-        logger.info(f"  - 模板匹配后频道数：{total_matched_channels}")
+        logger.info(f"  - 原始抓取频道数（列表计数）：{total_extracted_channels}")
+        logger.info(f"  - 原始抓取独立URL数：{total_extracted_unique}")
+        logger.info(f"  - 模板匹配后频道数（列表计数）：{total_matched_channels}")
+        logger.info(f"  - 模板匹配后独立URL数：{total_matched_unique}")
         logger.info(f"  - 模板匹配后分类数：{len(matched_channels)}")
         if matched_channels:
             logger.info(f"  - 匹配后分类列表：{list(matched_channels.keys())}")
@@ -631,4 +654,3 @@ def main(template_file: str = "demo.txt"):
 if __name__ == "__main__":
     # 可修改模板文件路径（默认同目录下的demo.txt）
     main(template_file="demo.txt")
-
