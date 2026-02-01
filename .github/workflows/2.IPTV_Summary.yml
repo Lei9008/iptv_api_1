@@ -1,4 +1,4 @@
-name: 1.IPTV 源汇总(IPTV Source Summary)
+name: 2.IPTV 源汇总(IPTV Source Summary)
 
 on:
   schedule:
@@ -42,7 +42,7 @@ jobs:
 
     - name: 执行主脚本(Run Python script)  # 执行主脚本
       run: |
-        python main/main.py
+        python self_use/IPTV/main.py
         
     - name: 如果有更改，则提交并推送(Commit and push if changed)  # 修正推送逻辑，添加PAT认证
       env:
