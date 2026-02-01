@@ -39,13 +39,6 @@ SOURCE_URLS = [
     "https://github.com/alantang1977/yuanzl77/blob/main/live.m3u",
     "https://raw.githubusercontent.com/alantang1977/iptv_SuperD/dist/live.m3u",
     "https://raw.githubusercontent.com/alantang1977/jtv/refs/heads/main/网络收集.txt",
-    "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u",
-    "https://ghfast.top/https://raw.githubusercontent.com/plsy1/iptv/main/unicast/unicast-ku9.m3u",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
-    "https://raw.githubusercontent.com/mymsnn/DailyIPTV/main/outputs/full_validated.m3u",
     # 其他源链接...
 ]
 
