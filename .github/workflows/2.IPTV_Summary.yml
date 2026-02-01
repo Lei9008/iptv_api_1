@@ -14,15 +14,15 @@ jobs:
     runs-on: ubuntu-latest  # 使用最新的Ubuntu运行器
 
     steps:
-    - name: 检出代码库(Checkout repository)  # 检出代码库
+    - name: Checkout repository  # 检出代码库
       uses: actions/checkout@v3
 
-    - name: 设置Python环境(Set up Python)  # 设置Python环境
+    - name: Set up Python  # 设置Python环境
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'  # 使用Python 3.10
 
-    - name: 缓存pip依赖项(Cache dependencies)  # 缓存pip依赖项
+    - name: Cache dependencies  # 缓存pip依赖项
       uses: actions/cache@v4
       with:
         path: ~/.cache/pip
@@ -30,43 +30,29 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
 
-    - name: 安装系统依赖(Install system dependencies)  # 安装系统依赖
+    - name: Install system dependencies  # 安装系统依赖
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
 
-    - name: 安装Python依赖(Install Python dependencies)  # 合并冗余的依赖安装步骤
+    - name: Install Python dependencies  # 安装Python依赖
       run: |
         python -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
         pip install requests aiohttp fuzzywuzzy -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-    - name: 执行主脚本(Run Python script)  # 执行主脚本
+    - name: Run Python script  # 执行主脚本
       run: |
         python self_use/IPTV/main.py
-        
-    - name: 如果有更改，则提交并推送(Commit and push if changed)  # 修正推送逻辑，添加PAT认证
-      env:
-        # 引入仓库Secrets中配置的PAT（名称要和你配置的一致，例如IPTV_PUSH_TOKEN）
-        IPTV_PUSH_TOKEN: ${{ secrets.IPTV_PUSH_TOKEN }}
+
+    - name: Commit and push if changed  # 如果有更改，则提交并推送
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
-        # 步骤1：替换远程仓库地址，使用PAT认证（核心修正，解决403）
-        git remote set-url origin https://${IPTV_PUSH_TOKEN}@github.com/Lei9008/IPTV.git
-        
-        # 步骤2：添加所有更改
         git add -A
-        
-        # 步骤3：仅当有变更时才提交
         if ! git diff --staged --quiet; then
           git commit -m "Auto-update live files"
-          
-          # 步骤4：拉取远程最新代码（避免推送冲突，添加|| true容错）
-          git pull --rebase origin main || true
-          
-          # 步骤5：推送代码（使用PAT认证的远程地址）
-          git push origin main
-        else
-          echo "No changes to commit, skip push."
+          git pull --rebase
+          git push
         fi
+
+   
