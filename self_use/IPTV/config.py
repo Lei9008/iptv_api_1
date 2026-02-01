@@ -8,6 +8,7 @@ SOURCE_URLS = [
     "https://ghfast.top/raw.githubusercontent.com/plsy1/iptv/main/multicast/multicast-jining.m3u",
     "https://raw.githubusercontent.com/plsy1/iqilu/main/iqilu-generic.m3u",
     "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt",
+    "https://github.com/Lei9008/IPTV/blob/main/input/source/Ku9-IPTV-source.txt",
 ]
 
 # ========== 模板相关配置（已实现生效逻辑） ==========
@@ -130,4 +131,5 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
+
 
