@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url=""
-# IPTV直播源匹配合并文件 | 生成时间：2026-02-01 21:11:35
-# 总频道数：2163 | 总分类数：8
+# IPTV直播源匹配合并文件 | 生成时间：2026-02-01 21:16:08
+# 总频道数：2164 | 总分类数：8
 
 # ===== 央视频道（845个频道） =====
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV-1" tvg-logo="CCTV1.png" group-title="央视频道",CCTV-1
@@ -2581,7 +2581,7 @@ rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch24012314300175015886.
 #EXTINF:-1 tvg-name="中学生" group-title="央视付费频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/中学生.png" ,中学生
 http://192.168.0.1:5140/rtp/239.253.244.163:8000?fcc=124.132.240.66:15970
 
-# ===== 卫视频道（1040个频道） =====
+# ===== 卫视频道（1041个频道） =====
 #EXTINF:-1 tvg-id="1" tvg-name="山东卫视" tvg-logo="山东卫视.png" group-title="卫视频道",山东卫视
 http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub&replay=1&days=7$ipv4•线路1(123ms)
 
@@ -4312,6 +4312,9 @@ rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch21092610332476918454.
 
 #EXTINF:-1 tvg-name="甘肃卫视" group-title="卫视频道" tvg-logo="https://fastly.jsdelivr.net/gh/plsy1/iptv@master/logo/甘肃卫视.png" ,甘肃卫视
 http://192.168.0.1:5140/rtp/239.253.244.74:8000?fcc=124.132.240.66:15970
+
+#EXTINF:-1 tvg-id="" tvg-name="甘肃卫视" tvg-logo="" group-title="卫视频道",甘肃卫视
+http
 
 #EXTINF:-1 tvg-id="1" tvg-name="江西卫视" tvg-logo="江西卫视.png" group-title="卫视频道",江西卫视
 http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8366&tk=a0c4f6cfaba3$ipv4•线路1(107ms)
