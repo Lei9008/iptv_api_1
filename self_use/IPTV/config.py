@@ -3,8 +3,9 @@
 # 源URL列表（已优化格式，提升抓取成功率）
 SOURCE_URLS = [
     # 修正：GitHub blob地址 → raw原始文件地址，移除无效代理前缀格式
-    "https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt",
-    "https://github.com/Lei9008/IPTV/blob/main/input/source/Ku9-IPTV-source.txt",
+   # "https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt",
+    #"https://github.com/Lei9008/IPTV/blob/main/input/source/Ku9-IPTV-source.txt",
+    "https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt",
 
 ]
 
@@ -128,6 +129,7 @@ group_title_reverse_mapping = {}
 for target, originals in group_title_mapping.items():
     for original in originals:
         group_title_reverse_mapping[original] = target
+
 
 
 
