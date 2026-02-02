@@ -1,17 +1,58 @@
 IPTV直播源汇总（按模板匹配+标准化+多协议支持）
 ================================================================================
-生成时间：2026-02-01 21:31:52
-总频道数（列表计数）：2
-真实独立频道数（URL去重）：2
+生成时间：2026-02-03 07:31:01
+总频道数：23
 分类数：2
 支持协议：HTTP, HTTPS, RTSP, RTMP, M3U8, HLS
 ================================================================================
 
-【央视频道】（1个频道，独立URL数：1）
-  1. CETV-1               [未知协议] rtsp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
+【央视频道】（22个频道）
+  1. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  2. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  3. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  4. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  5. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  6. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  7. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  8. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+  9. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 10. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 11. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 12. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 13. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 14. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 15. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 16. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 17. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 18. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 19. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 20. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 21. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
+ 22. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
 
-【卫视频道】（1个频道，独立URL数：1）
-  1. 甘肃卫视                 [未知协议] rtmp
-      来源：https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt
+【动漫频道】（1个频道）
+  1. CCTV1                [未知协议] rtsp
+      来源：https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt
 
