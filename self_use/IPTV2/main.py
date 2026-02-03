@@ -3,6 +3,7 @@ import requests
 import logging
 from collections import OrderedDict
 from datetime import datetime
+# 注意：你仍需创建config.py文件（参考上一次的说明）
 import config
 import os
 import difflib
@@ -39,9 +40,9 @@ def parse_template(template_file):
 
 # 数据清洗函数
 def clean_channel_name(channel_name):
-    cleaned_name = re.sub(r'[$「」-]', '', channel_name)  # 去掉中括号、«», 和'-'字符
+    cleaned_name = re.sub(r'[$「」-]', '', channel_name)  # 去掉指定特殊字符
     cleaned_name = re.sub(r'\s+', '', cleaned_name)  # 去掉所有空白字符
-    cleaned_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), cleaned_name)  # 将数字前面的部分保留，数字转换为整数
+    cleaned_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), cleaned_name)  # 数字转整数（去除前导零）
     return cleaned_name.upper()  # 转换为大写
 
 def fetch_channels(url):
@@ -72,9 +73,10 @@ def fetch_channels(url):
     return channels
 
 def parse_m3u_lines(lines):
-    # 解析M3U格式的频道列表行。
+    # 解析M3U格式的频道列表行（修复了channel_name未初始化的问题）
     channels = OrderedDict()
     current_category = None
+    channel_name = None  # 初始化频道名为None，避免变量未定义报错
 
     for line in lines:
         line = line.strip()
@@ -88,6 +90,8 @@ def parse_m3u_lines(lines):
 
                 if current_category not in channels:
                     channels[current_category] = []
+            else:
+                channel_name = None  # 匹配失败时重置为None
         elif line and not line.startswith("#"):
             channel_url = line.strip()
             if current_category and channel_name:
@@ -179,7 +183,7 @@ def is_ipv6(url):
     return re.match(r'^http:\/\/\[[0-9a-fA-F:]+\]', url) is not None
 
 def updateChannelUrlsM3U(channels, template_channels):
-    # 更新频道URL到M3U和TXT文件中。
+    # 更新频道URL到M3U和TXT文件中（已移除URL后缀逻辑）
     written_urls_ipv4 = set()
     written_urls_ipv6 = set()
 
@@ -189,6 +193,7 @@ def updateChannelUrlsM3U(channels, template_channels):
             if announcement['name'] is None:
                 announcement['name'] = current_date
 
+    # 修复IPv6 TXT文件路径笔误
     ipv4_m3u_path = os.path.join(output_folder, "live_ipv4_source.m3u")
     ipv4_txt_path = os.path.join(output_folder, "live_ipv4_source.txt")
     ipv6_m3u_path = os.path.join(output_folder, "live_ipv6_source.m3u")
@@ -238,16 +243,12 @@ def updateChannelUrlsM3U(channels, template_channels):
                                     sorted_urls_ipv4.append(url)
                                     written_urls_ipv4.add(url)
 
-                        total_urls_ipv4 = len(sorted_urls_ipv4)
-                        total_urls_ipv6 = len(sorted_urls_ipv6)
-
+                        # 直接使用原始URL，不再调用add_url_suffix添加后缀
                         for index, url in enumerate(sorted_urls_ipv4, start=1):
-                            new_url = add_url_suffix(url, index, total_urls_ipv4, "IPV4")
-                            write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, index, new_url)
+                            write_to_files(f_m3u_ipv4, f_txt_ipv4, category, channel_name, index, url)
 
                         for index, url in enumerate(sorted_urls_ipv6, start=1):
-                            new_url = add_url_suffix(url, index, total_urls_ipv6, "IPV6")
-                            write_to_files(f_m3u_ipv6, f_txt_ipv6, category, channel_name, index, new_url)
+                            write_to_files(f_m3u_ipv6, f_txt_ipv6, category, channel_name, index, url)
 
         f_txt_ipv4.write("\n")
         f_txt_ipv6.write("\n")
@@ -261,18 +262,12 @@ def sort_and_filter_urls(urls, written_urls):
     written_urls.update(filtered_urls)
     return filtered_urls
 
-def add_url_suffix(url, index, total_urls, ip_version):
-    # 添加URL后缀。
-    suffix = f"${ip_version}" if total_urls == 1 else f"${ip_version}•线路{index}"
-    base_url = url.split('$', 1)[0] if '$' in url else url
-    return f"{base_url}{suffix}"
-
-def write_to_files(f_m3u, f_txt, category, channel_name, index, new_url):
-    # 写入M3U和TXT文件。
+def write_to_files(f_m3u, f_txt, category, channel_name, index, url):
+    # 写入M3U和TXT文件（仅接收原始URL，无后缀处理）
     logo_url = f"./pic/logos{channel_name}.png"
     f_m3u.write(f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n")
-    f_m3u.write(new_url + "\n")
-    f_txt.write(f"{channel_name},{new_url}\n")
+    f_m3u.write(url + "\n")
+    f_txt.write(f"{channel_name},{url}\n")
 
 if __name__ == "__main__":
     template_file = "demo.txt"
