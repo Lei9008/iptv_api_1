@@ -7,22 +7,36 @@ import config
 import os
 import difflib
 
-# 确保 output 文件夹存在（同级目录，自动创建）
-output_folder = "output"
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
 
 
-# 日志记录：保存到 output 文件夹下，每次运行覆盖旧日志，支持中文
-log_file_path = os.path.join(output_folder, "function.log")
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(log_file_path, "w", encoding="utf-8"),
-        logging.StreamHandler()  # 同时输出到控制台
-    ]
-)
+# ---------------------- 全局配置与初始化 ----------------------
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))  # 项目根目录（当前文件所在目录）
+OUTPUT_DIR = os.path.join(PROJECT_DIR, "output")
+LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")
+TEMPLATE_FILE = os.path.join(PROJECT_DIR, "demo.txt")
+
+# 确保必要文件夹存在
+def init_folders():
+    """初始化项目所需文件夹（output）"""
+    for folder in [OUTPUT_DIR]:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+            logging.info(f"创建文件夹成功：{folder}")
+
+# 配置日志系统
+def init_logging():
+    """初始化日志配置，同时输出到控制台和日志文件"""
+    init_folders()
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',  # 补充日期时间格式，更易读
+        handlers=[
+            logging.FileHandler(LOG_FILE, "a", encoding="utf-8"),  # 改为追加模式，保留历史日志
+            logging.StreamHandler()
+        ]
+    )
+
 
 def parse_template(template_file):
     """解析同级目录下的模板文件，提取频道分类和频道名称（保留顺序）"""
