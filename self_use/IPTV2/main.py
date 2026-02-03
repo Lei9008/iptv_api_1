@@ -192,7 +192,7 @@ def updateChannelUrlsM3U(channels, template_channels):
     ipv4_m3u_path = os.path.join(output_folder, "live_ipv4_source.m3u")
     ipv4_txt_path = os.path.join(output_folder, "live_ipv4_source.txt")
     ipv6_m3u_path = os.path.join(output_folder, "live_ipv6_source.m3u")
-    ipv6_txt_path = os.path.join(output_folder, "live_ipv6_sourcelive.txt")
+    ipv6_txt_path = os.path.join(output_folder, "live_ipv6_source.txt")
 
     with open(ipv4_m3u_path, "w", encoding="utf-8") as f_m3u_ipv4, \
             open(ipv4_txt_path, "w", encoding="utf-8") as f_txt_ipv4, \
@@ -261,11 +261,11 @@ def sort_and_filter_urls(urls, written_urls):
     written_urls.update(filtered_urls)
     return filtered_urls
 
-#def add_url_suffix(url, index, total_urls, ip_version):
+def add_url_suffix(url, index, total_urls, ip_version):
     # 添加URL后缀。
-    #suffix = f"${ip_version}" if total_urls == 1 else f"${ip_version}•线路{index}"
-    #base_url = url.split('$', 1)[0] if '$' in url else url
-    #return f"{base_url}{suffix}"
+    suffix = f"${ip_version}" if total_urls == 1 else f"${ip_version}•线路{index}"
+    base_url = url.split('$', 1)[0] if '$' in url else url
+    return f"{base_url}{suffix}"
 
 def write_to_files(f_m3u, f_txt, category, channel_name, index, new_url):
     # 写入M3U和TXT文件。
