@@ -67,7 +67,7 @@ announcements = [
         "entries": [
             {
                 "name": None,
-                "url": "webview://https://www.bilibili.com/video/BV18nzFBjELC/?spm_id_from=333.1387.upload.video_card.click",
+                "url": "https://txmov2.a.kwimgs.com/upic/2023/06/18/23/BMjAyMzA2MTgyMzE1MjBfMzQ4MzI0MjA1OF8xMDU4Nzc4MzAzNjZfMF8z_b_B386baa1bb2c0c48626a830ff69393771.mp4",
                 "logo": "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/pic/Updatetime.png"
             }
         ]
