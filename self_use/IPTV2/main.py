@@ -275,7 +275,7 @@ def updateChannelUrlsM3U(channels, template_channels):
     written_urls_ipv6 = set()
 
     # 填充公告信息中的当前日期
-    current_date = datetime.now().strftime("%Y-%m-%d")
+    current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     for group in config.announcements:
         for entry in group['entries']:
             if entry['name'] is None:

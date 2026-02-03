@@ -13,6 +13,13 @@ source_urls = [
 
 # 直播源黑名单URL列表，去除了重复项
 url_blacklist = [
+    "https://iptv.catvod.com/",
+    "http://38.75.136.137:98/gslb/dsdqca",
+    "https://migu.188766.xyz",
+    "https://epg.pw/stream/",
+    "http://38.75.136.137:98/gslb/dsdqpub/scwshd",
+    "https://www.freetv.top",
+    "https://stream1.freetv.fun",
     "epg.pw/stream/",
     "103.40.13.71:12390",
     "[2409:8087:1a01:df::4077]/PLTV/",
@@ -35,11 +42,19 @@ url_blacklist = [
     "[2409:8087:2001:20:2800:0:df6e:eb1d]/ott.mobaibox.com/",
     "[2409:8087:2001:20:2800:0:df6e:eb1d]:80",
     "[2409:8087:2001:20:2800:0:df6e:eb24]",
-    "2409:8087:2001:20:2800:0:df6e:eb25]:80",
+    "[2409:8087:2001:20:2800:0:df6e:eb25]:80",  
     "stream1.freetv.fun",
     "chinamobile",
     "gaoma",
-    "[2409:8087:2001:20:2800:0:df6e:eb27]"
+    "[2409:8087:2001:20:2800:0:df6e:eb27]",
+    "http://ygbh.site/php/bfgd.php?",
+    "http://23.237.228.134/live8",
+    "https://smt.858.qzz.io/Smart.php",
+    "http://23.237.228.134/live6",
+    "http://23.237.228.134/live6/dongnan.m3u8",
+    "http://player.cntv.cn/standard/",
+    "https://player.cntv.cn/standard/live",
+    "http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8"
 ]
 
 # 公告信息
