@@ -66,8 +66,8 @@ announcements = [
         "channel": "更新日期",
         "entries": [
             {
-                "name": None,
-                "url": "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/pic/Updatetime.mp4",
+                "name": "周杰伦",
+                "url": "https://www.bilibili.com/video/BV18nzFBjELC/?spm_id_from=333.1387.upload.video_card.click",
                 "logo": "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/pic/Updatetime.png"
             }
         ]
