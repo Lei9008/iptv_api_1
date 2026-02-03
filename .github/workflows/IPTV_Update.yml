@@ -1,4 +1,4 @@
-name: 1.Update IPTV Sources（更新IPTV源）
+name: Update IPTV Sources（更新IPTV源）
 
 on:
   schedule:

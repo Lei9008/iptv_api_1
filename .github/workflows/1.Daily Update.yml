@@ -1,4 +1,4 @@
-name: IPTV 源汇总(IPTV Source Summary)
+name: 1.Daily Update
 
 on:
   schedule:
@@ -42,7 +42,7 @@ jobs:
 
     - name: Run Python script  # 执行主脚本
       run: |
-        python self_use/IPTV1/main.py
+        python self_use/IPTV/main.py
 
     - name: Commit and push if changed  # 如果有更改，则提交并推送
       run: |
