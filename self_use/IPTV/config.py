@@ -7,6 +7,7 @@ ip_version_priority = "ipv4"
 # 直播源URL列表
 source_urls = [
     "https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt",
+    "https://ghproxy.it/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt",
    
 
 ]
