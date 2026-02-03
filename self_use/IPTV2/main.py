@@ -189,10 +189,10 @@ def updateChannelUrlsM3U(channels, template_channels):
             if announcement['name'] is None:
                 announcement['name'] = current_date
 
-    ipv4_m3u_path = os.path.join(output_folder, "live_ipv4.m3u")
-    ipv4_txt_path = os.path.join(output_folder, "live_ipv4.txt")
-    ipv6_m3u_path = os.path.join(output_folder, "live_ipv6.m3u")
-    ipv6_txt_path = os.path.join(output_folder, "live_ipv6.txt")
+    ipv4_m3u_path = os.path.join(output_folder, "live_ipv41.m3u")
+    ipv4_txt_path = os.path.join(output_folder, "live_ipv41.txt")
+    ipv6_m3u_path = os.path.join(output_folder, "live_ipv61.m3u")
+    ipv6_txt_path = os.path.join(output_folder, "live_ipv61.txt")
 
     with open(ipv4_m3u_path, "w", encoding="utf-8") as f_m3u_ipv4, \
             open(ipv4_txt_path, "w", encoding="utf-8") as f_txt_ipv4, \
