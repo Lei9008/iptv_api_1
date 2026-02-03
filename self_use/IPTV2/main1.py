@@ -7,13 +7,11 @@ import config
 import os
 import difflib
 
-
-
 # ---------------------- 全局配置与初始化 ----------------------
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))  # 项目根目录（当前文件所在目录）
-OUTPUT_DIR = os.path.join(PROJECT_DIR, "output")
-LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")
-TEMPLATE_FILE = os.path.join(PROJECT_DIR, "demo.txt")
+OUTPUT_DIR = os.path.join(PROJECT_DIR, "output")  # 输出文件夹绝对路径
+LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")  # 日志文件绝对路径
+TEMPLATE_FILE = os.path.join(PROJECT_DIR, "demo.txt")  # 模板文件绝对路径
 
 # 确保必要文件夹存在
 def init_folders():
@@ -36,7 +34,6 @@ def init_logging():
             logging.StreamHandler()
         ]
     )
-
 
 def parse_template(template_file):
     """解析同级目录下的模板文件，提取频道分类和频道名称（保留顺序）"""
@@ -284,12 +281,12 @@ def updateChannelUrlsM3U(channels, template_channels):
             if entry['name'] is None:
                 entry['name'] = current_date
 
-    # 定义输出文件路径（同级output文件夹下）
+    # 定义输出文件路径（使用全局常量OUTPUT_DIR，修复未定义错误）
     file_paths = {
-        "ipv4_m3u": os.path.join(output_folder, "live_ipv4_source.m3u"),
-        "ipv4_txt": os.path.join(output_folder, "live_ipv4_source.txt"),
-        "ipv6_m3u": os.path.join(output_folder, "live_ipv6_source.m3u"),
-        "ipv6_txt": os.path.join(output_folder, "live_ipv6_source.txt")
+        "ipv4_m3u": os.path.join(OUTPUT_DIR, "live_ipv4_source.m3u"),
+        "ipv4_txt": os.path.join(OUTPUT_DIR, "live_ipv4_source.txt"),
+        "ipv6_m3u": os.path.join(OUTPUT_DIR, "live_ipv6_source.m3u"),
+        "ipv6_txt": os.path.join(OUTPUT_DIR, "live_ipv6_source.txt")
     }
 
     # 同时打开4个输出文件，批量写入
@@ -365,18 +362,20 @@ def updateChannelUrlsM3U(channels, template_channels):
             f_txt4.write("\n")
             f_txt6.write("\n")
 
-        logging.info(f"所有输出文件生成完成，保存路径：{output_folder}")
+        logging.info(f"所有输出文件生成完成，保存路径：{OUTPUT_DIR}")
     except IOError as e:
         logging.error(f"文件写入失败 ❌，错误信息：{e}")
         raise
 
 if __name__ == "__main__":
-    # 指定同级目录下的模板文件
-    template_file = "demo.txt"
     try:
-        # 执行核心流程：过滤源URL + 生成输出文件
-        matched_channels, template_channels = filter_source_urls(template_file)
+        # 第一步：初始化日志和文件夹（修复遗漏调用问题）
+        init_logging()
+        
+        # 第二步：执行核心流程：过滤源URL + 生成输出文件
+        matched_channels, template_channels = filter_source_urls(TEMPLATE_FILE)
         updateChannelUrlsM3U(matched_channels, template_channels)
+        
         logging.info("程序运行完成 ✅")
     except Exception as e:
         logging.error(f"程序运行异常终止 ❌，错误信息：{e}")
