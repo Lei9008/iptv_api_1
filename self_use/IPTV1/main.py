@@ -168,8 +168,8 @@ def parse_txt_lines(lines):
     return channels
 
 def find_similar_name(target_name, name_list):
-    """使用模糊匹配，查找最相似的频道名称（相似度阈值0.6）"""
-    matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=0.6)
+    """使用模糊匹配，查找最相似的频道名称（相似度阈值0.8）"""
+    matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=0.8)
     return matches[0] if matches else None
 
 def match_channels(template_channels, all_channels):
