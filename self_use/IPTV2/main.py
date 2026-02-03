@@ -264,7 +264,7 @@ def sort_and_filter_urls(urls, written_urls):
 
 def write_to_files(f_m3u, f_txt, category, channel_name, index, url):
     # 写入M3U和TXT文件（仅接收原始URL，无后缀处理）
-    logo_url = f"./pic/logos{channel_name}.png"
+    logo_url = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_name}.png"
     f_m3u.write(f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" tvg-logo=\"{logo_url}\" group-title=\"{category}\",{channel_name}\n")
     f_m3u.write(url + "\n")
     f_txt.write(f"{channel_name},{url}\n")
