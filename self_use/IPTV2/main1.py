@@ -7,6 +7,10 @@ import config
 import os
 import difflib
 
+# 确保 output 文件夹存在（同级目录，自动创建）
+output_folder = "output"
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
 
 # 日志记录：保存到 output 文件夹下，每次运行覆盖旧日志，支持中文
