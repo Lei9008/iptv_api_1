@@ -67,8 +67,8 @@ announcements = [
         "entries": [
             {
                 "name": None,
-                "url": "https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Robot.mp4",
-                "logo": "https://cnb.cool/junchao.tang/jtv/-/git/raw/main/Pictures/Chao.png"
+                "url": "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/pic/Updatetime.mp4",
+                "logo": "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/pic/Updatetime.png"
             }
         ]
     }
