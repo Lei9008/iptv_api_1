@@ -76,9 +76,9 @@ announcements = [
 epg_urls = [
     "https://epg.v1.mk/fy.xml",
     "http://epg.51zmt.top:8000/e.xml",
-    "https://epg.pw/xmltv/epg_CN.xml",
-    "https://epg.pw/xmltv/epg_HK.xml",
-    "https://epg.pw/xmltv/epg_TW.xml"
+    "https://raw.githubusercontent.com/springs/epg/main/pp.xml",
+    "https://live.fanmingming.com/e.xml",
+    "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
 ]
 # 测速超时时间（秒）
 TEST_TIMEOUT = 10
