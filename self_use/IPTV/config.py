@@ -8,6 +8,10 @@ ip_version_priority = "ipv4"
 source_urls = [
     "https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt",
     "https://ghproxy.it/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt",
+    "https://raw.githubusercontent.com/alantang1977/IPTV/main/live_ipv4.txt",
+    "https://raw.githubusercontent.com/alantang1977/iptv_api/main/output/live_ipv4.m3u",
+    "https://raw.githubusercontent.com/alantang1977/IPTV_SuperA/main/output/result.m3u",
+    "https://raw.githubusercontent.com/alantang1977/IPTV_SuperB/main/output/live_ipv4.m3u",
    
 
 ]
