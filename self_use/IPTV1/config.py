@@ -6,7 +6,8 @@ ip_version_priority = "ipv4"
 
 # 直播源URL列表
 source_urls = [
-    "https://raw.githubusercontent.com/Lei9008/IPTV/main/input/source/Ku9-IPTV-source.txt",
+    "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/self_use/IPTV1/Ku9-IPTV-source.txt",
+    "https://raw.githubusercontent.com/Lei9008/iptv_selfuse/master/output/user_result.txt"
 
     
 
