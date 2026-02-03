@@ -13,6 +13,9 @@ OUTPUT_DIR = os.path.join(PROJECT_DIR, "output")  # 输出文件夹绝对路径
 LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")  # 日志文件绝对路径
 TEMPLATE_FILE = os.path.join(PROJECT_DIR, "demo.txt")  # 模板文件绝对路径
 
+# 特殊优先级URL前缀（最优先排列）
+SPECIAL_WEBVIEW_PREFIX = "webview://https://yangshipin.cn"
+
 # 确保必要文件夹存在
 def init_folders():
     """初始化项目所需文件夹（output）"""
@@ -229,12 +232,16 @@ def is_ipv6(url):
     """判断URL是否为IPv6格式（匹配 http://[xxxx:xxxx:...]/ 格式）"""
     return re.match(r'^http:\/\/\[[0-9a-fA-F:]+\]', url) is not None
 
+def is_special_webview(url):
+    """判断URL是否为特殊优先级webview（webview://https://yangshipin.cn开头）"""
+    return url.startswith(SPECIAL_WEBVIEW_PREFIX)
+
 def is_webview(url):
-    """判断URL是否为webview协议（匹配 webview:// 开头）"""
-    return url.startswith("webview://")
+    """判断URL是否为普通webview协议（排除特殊优先级后）"""
+    return url.startswith("webview://") and not is_special_webview(url)
 
 def sort_and_filter_urls(urls, written_urls):
-    """URL排序与过滤：协议优先级（webview>http）→ IP版本优先级 → 去重 → 黑名单，返回处理后的URL列表"""
+    """URL排序与过滤：特殊webview→普通webview→HTTP → IP版本优先级 → 去重 → 黑名单"""
     if not urls:
         return []
 
@@ -244,21 +251,26 @@ def sort_and_filter_urls(urls, written_urls):
         if url and url not in written_urls and not any(blk in url for blk in config.url_blacklist)
     ]
 
-    # 2. 排序逻辑：先按协议优先级（webview在前），再按IP版本优先级
+    # 2. 三级排序逻辑
     def sort_key(url):
-        # 第一优先级：webview协议排在前面（返回0，http返回1）
-        protocol_priority = 0 if is_webview(url) else 1
+        # 第一级：特殊webview（0）→ 普通webview（1）→ HTTP（2）
+        if is_special_webview(url):
+            protocol_priority = 0
+        elif is_webview(url):
+            protocol_priority = 1
+        else:
+            protocol_priority = 2
         
-        # 第二优先级：IP版本优先级（根据配置排序）
+        # 第二级：IP版本优先级（根据配置排序）
         if config.ip_version_priority == "ipv6":
             ip_priority = 0 if is_ipv6(url) else 1
         else:
             ip_priority = 1 if is_ipv6(url) else 0
         
-        # 组合排序键（先按协议，再按IP版本）
+        # 组合排序键（先按协议层级，再按IP版本）
         return (protocol_priority, ip_priority)
 
-    # 按排序键排序，确保webview在前，http在后
+    # 按排序键排序，确保特殊webview排在最前
     sorted_urls = sorted(valid_urls, key=sort_key)
 
     # 3. 更新已写入URL集合，避免重复
@@ -357,15 +369,15 @@ def updateChannelUrlsM3U(channels, template_channels):
                     # 提取该频道的所有URL，先去重
                     all_urls = list(set(channels[category][channel_name]))
 
-                    # 按IPv4/IPv6分别过滤排序（已包含协议优先级）
+                    # 按IPv4/IPv6分别过滤排序（已包含三级协议优先级）
                     ipv4_urls = sort_and_filter_urls([u for u in all_urls if not is_ipv6(u)], written_urls_ipv4)
                     ipv6_urls = sort_and_filter_urls([u for u in all_urls if is_ipv6(u)], written_urls_ipv6)
 
-                    # 写入IPv4文件（webview在前，http在后）
+                    # 写入IPv4文件（特殊webview→普通webview→HTTP）
                     for idx, url in enumerate(ipv4_urls, start=1):
                         write_to_files(f_m3u4, f_txt4, category, channel_name, idx, url)
 
-                    # 写入IPv6文件（webview在前，http在后）
+                    # 写入IPv6文件（特殊webview→普通webview→HTTP）
                     for idx, url in enumerate(ipv6_urls, start=1):
                         write_to_files(f_m3u6, f_txt6, category, channel_name, idx, url)
 
@@ -374,7 +386,7 @@ def updateChannelUrlsM3U(channels, template_channels):
             f_txt6.write("\n")
 
         logging.info(f"所有输出文件生成完成，保存路径：{OUTPUT_DIR}")
-        logging.info("URL排列顺序：webview协议在前，HTTP协议在后（按配置的IP版本优先级排序）")
+        logging.info("URL排列顺序：webview://https://yangshipin.cn → 其他webview → HTTP（按IP版本优先级排序）")
     except IOError as e:
         logging.error(f"文件写入失败 ❌，错误信息：{e}")
         raise
