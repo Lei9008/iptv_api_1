@@ -7,7 +7,7 @@ ip_version_priority = "ipv4"
 # 直播源URL列表
 source_urls = [
     "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/self_use/IPTV1/Ku9-IPTV-source.txt",
-    "https://raw.kkgithub.com/Lei9008/iptv_selfuse/master/output/user_result.m3u"
+    "https://raw.kkgithub.com/Lei9008/iptv_selfuse/master/output/user_result.m3u",
     "https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt",
 
     
