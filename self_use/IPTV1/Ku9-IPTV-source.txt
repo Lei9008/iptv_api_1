@@ -259,13 +259,4 @@ SHE,https://txmov2.a.kwimgs.com/upic/2023/07/30/19/BMjAyMzA3MzAxOTEyNDhfODI4NTk1
 周深,https://txmov2.a.kwimgs.com/upic/2023/08/07/21/BMjAyMzA4MDcyMTAzMzZfMzYxMjUyNDA3MV8xMDk5Mjc3MDcwMTFfMF8z_b_B707fdf2100370008b57219d4a1dab568.mp4
 庄心妍,https://txmov2.a.kwimgs.com/upic/2023/09/29/09/BMjAyMzA5MjkwOTEzMDVfMjE0OTExOTI2N18xMTM3OTU3ODM3NzFfMF8z_b_B1909889bf55e6af6f994b05596fb589f.mp4
 
-汪苏泷,webview://https://www.bilibili.com/video/BV1thrjBhEFs/
-周杰伦,webview://https://www.bilibili.com/video/BV18nzFBjELC/
-毛不易,webview://https://www.bilibili.com/video/BV1cfzYB8Eka/
-赵雷,webview://https://www.bilibili.com/video/BV1DSiXBxEnZ/
-许巍,webview://https://www.bilibili.com/video/BV1mriyBfEwV/
-莫文蔚,webview://https://www.bilibili.com/video/BV1bHkEBuEM7/
-陈奕迅,webview://https://www.bilibili.com/video/BV1YmFPe4EnY/
-王力宏,webview://https://www.bilibili.com/video/BV1GNXVYaE9V/
-
 
