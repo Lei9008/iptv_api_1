@@ -3,7 +3,7 @@ import requests
 import logging
 from collections import OrderedDict
 from datetime import datetime
-import config  # 导入新增的映射配置
+import config  # 导入配置（仅使用非group_title_mapping相关配置）
 import os
 import difflib
 
@@ -39,7 +39,7 @@ def init_logging():
     )
 
 def parse_template(template_file):
-    """解析同级目录下的模板文件，提取频道分类和频道名称（保留顺序）"""
+    """解析同级目录下的模板文件，提取频道分类和频道名称（保留顺序，不处理分类标准化）"""
     template_channels = OrderedDict()
     current_category = None
 
@@ -50,13 +50,11 @@ def parse_template(template_file):
                 # 跳过空行和注释行（#开头）
                 if line and not line.startswith("#"):
                     if "#genre#" in line:
-                        # 提取分类名称（逗号前的内容）
+                        # 提取分类名称（逗号前的内容，保留原始名称）
                         current_category = line.split(",")[0].strip()
-                        # 分类名称也进行标准化（应用group_title_mapping）
-                        current_category = standardize_group_title(current_category)
                         template_channels[current_category] = []
                     elif current_category:
-                        # 提取频道名称并加入当前分类，同时进行标准化
+                        # 提取频道名称并加入当前分类，同时进行频道标准化
                         channel_name = line.split(",")[0].strip()
                         standardized_channel = standardize_channel_name(channel_name)
                         template_channels[current_category].append(standardized_channel)
@@ -65,17 +63,6 @@ def parse_template(template_file):
         logging.error(f"模板文件 {template_file} 未找到，请确认文件在同级目录下")
         raise
     return template_channels
-
-def standardize_group_title(group_title):
-    """标准化分类名称：应用config中的group_title_mapping"""
-    if not group_title:
-        return ""
-    # 遍历映射配置，匹配并替换分类名称
-    for target_title, original_titles in config.group_title_mapping.items():
-        if group_title in original_titles:
-            return target_title
-    # 无匹配时返回原名称（保持兼容性）
-    return group_title
 
 def standardize_channel_name(channel_name):
     """标准化频道名称：依次应用cntvNamesReverse、cctv_alias，最后执行基础清洗"""
@@ -137,7 +124,7 @@ def fetch_channels(url):
     return channels
 
 def parse_m3u_lines(lines):
-    """解析M3U格式内容，提取分类、CCTV频道名称和对应URL"""
+    """解析M3U格式内容，提取分类、CCTV频道名称和对应URL（保留分类原始名称）"""
     channels = OrderedDict()
     current_category = None
     channel_name = None  # 初始化，避免变量未定义报错
@@ -148,9 +135,8 @@ def parse_m3u_lines(lines):
             # 匹配M3U格式中的分类和频道名称
             match = re.search(r'group-title="(.*?)",(.*)', line)
             if match:
-                # 提取分类并标准化
+                # 提取分类（保留原始名称，不做标准化）
                 current_category = match.group(1).strip()
-                current_category = standardize_group_title(current_category)
                 # 提取频道名称并标准化
                 channel_name = match.group(2).strip()
                 channel_name = standardize_channel_name(channel_name)
@@ -174,7 +160,7 @@ def parse_m3u_lines(lines):
     return channels
 
 def parse_txt_lines(lines):
-    """解析TXT格式内容，提取分类、CCTV频道名称和对应URL（支持#分割多URL）"""
+    """解析TXT格式内容，提取分类、CCTV频道名称和对应URL（支持#分割多URL，保留分类原始名称）"""
     channels = OrderedDict()
     current_category = None
 
@@ -182,9 +168,8 @@ def parse_txt_lines(lines):
         line = line.strip()
         if line and not line.startswith("#"):
             if "#genre#" in line:
-                # 提取分类名称并标准化
+                # 提取分类名称（保留原始名称，不做标准化）
                 current_category = line.split(",")[0].strip()
-                current_category = standardize_group_title(current_category)
                 channels[current_category] = []
             elif current_category:
                 # 匹配 频道名称,URL 格式
@@ -230,7 +215,7 @@ def match_channels(template_channels, all_channels):
     for category, channel_list in template_channels.items():
         matched_channels[category] = OrderedDict()
         for channel_name in channel_list:
-            # 查找相似频道名称（此时双方已完成标准化，匹配准确率更高）
+            # 查找相似频道名称（此时频道已完成标准化，匹配准确率更高）
             similar_name = find_similar_name(channel_name, all_online_channel_names)
             if similar_name:
                 # 收集该相似频道对应的所有URL
@@ -322,7 +307,7 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url):
     # 频道logo链接（适配GitHub公开图库）
     channel_logo = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_name}.png"
 
-    # 写入M3U格式（标准EXTINF字段）
+    # 写入M3U格式（标准EXTINF字段，分类保留原始名称）
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" tvg-logo=\"{channel_logo}\" group-title=\"{category}\",{channel_name}\n"
     )
@@ -364,11 +349,9 @@ def updateChannelUrlsM3U(channels, template_channels):
             f_m3u4.write(f"#EXTM3U x-tvg-url={epg_str}\n")
             f_m3u6.write(f"#EXTM3U x-tvg-url={epg_str}\n")
 
-            # 写入公告信息
+            # 写入公告信息（分类保留原始配置名称，不做标准化）
             for group in config.announcements:
                 category_name = group['channel']
-                # 公告分类也进行标准化
-                category_name = standardize_group_title(category_name)
                 # 写入TXT文件的分类标记
                 f_txt4.write(f"{category_name},#genre#\n")
                 f_txt6.write(f"{category_name},#genre#\n")
@@ -394,9 +377,9 @@ def updateChannelUrlsM3U(channels, template_channels):
                         f_m3u4.write(f"{entry_url}\n")
                         f_txt4.write(f"{entry_name},{entry_url}\n")
 
-            # 写入匹配到的频道数据
+            # 写入匹配到的频道数据（分类保留模板原始名称）
             for category, channel_list in template_channels.items():
-                # 写入TXT文件的分类标记（已标准化）
+                # 写入TXT文件的分类标记
                 f_txt4.write(f"{category},#genre#\n")
                 f_txt6.write(f"{category},#genre#\n")
 
