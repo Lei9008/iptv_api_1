@@ -1,17 +1,94 @@
-# config.py
-# ===================== 直播源配置（核心） =====================
-# 源URL列表（已优化格式，提升抓取成功率）
-SOURCE_URLS = [
-    # 修正：GitHub blob地址 → raw原始文件地址，移除无效代理前缀格式
-   # "https://github.com/Lei9008/iptv_selfuse/blob/master/output/user_result.txt",
-    #"https://github.com/Lei9008/IPTV/blob/main/input/source/Ku9-IPTV-source.txt",
-    "https://raw.githubusercontent.com/alantang1977/iptv8/main/bbxx.txt",
+
+# 配置文件，包含直播源URL、黑名单URL、公告信息、EPG URL、测速超时时间和线程池最大工作线程数
+
+# 优先使用的IP版本，这里设置为ipv4
+ip_version_priority = "ipv4"
+
+# 直播源URL列表
+source_urls = [
+    "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/self_use/IPTV1/Ku9-IPTV-source.txt",
+    "https://raw.githubusercontent.com/Lei9008/iptv_selfuse/master/output/user_result.txt",
+    "https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt",
+
+    
 
 ]
 
-# ========== 模板相关配置（已实现生效逻辑） ==========
-#USE_TEMPLATE = True  # 启用模板匹配
-#TEMPLATE_FILE = "demo.txt"  # 模板文件名称，与脚本同目录
+# 直播源黑名单URL列表，去除了重复项
+url_blacklist = [
+    "https://iptv.catvod.com/",
+    "http://38.75.136.137:98/gslb/dsdqca",
+    "https://migu.188766.xyz",
+    "https://epg.pw/stream/",
+    "http://38.75.136.137:98/gslb/dsdqpub/scwshd",
+    "https://www.freetv.top",
+    "https://stream1.freetv.fun",
+    "epg.pw/stream/",
+    "103.40.13.71:12390",
+    "[2409:8087:1a01:df::4077]/PLTV/",
+    "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226419/index.m3u8",
+    "http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000006000233001/1.m3u8",
+    "8.210.140.75:68",
+    "154.12.50.54",
+    "yinhe.live_hls.zte.com",
+    "8.137.59.151",
+    "[2409:8087:7000:20:1000::22]:6060",
+    "histar.zapi.us.kg",
+    "www.tfiplaytv.vip",
+    "dp.sxtv.top",
+    "111.230.30.193",
+    "148.135.93.213:81",
+    "live.goodiptv.club",
+    "iptv.luas.edu.cn",
+    "[2409:8087:2001:20:2800:0:df6e:eb22]:80",
+    "[2409:8087:2001:20:2800:0:df6e:eb23]:80",
+    "[2409:8087:2001:20:2800:0:df6e:eb1d]/ott.mobaibox.com/",
+    "[2409:8087:2001:20:2800:0:df6e:eb1d]:80",
+    "[2409:8087:2001:20:2800:0:df6e:eb24]",
+    "[2409:8087:2001:20:2800:0:df6e:eb25]:80",  
+    "stream1.freetv.fun",
+    "chinamobile",
+    "gaoma",
+    "audio",
+    "[2409:8087:2001:20:2800:0:df6e:eb27]",
+    "http://ygbh.site/php/bfgd.php?",
+    "http://23.237.228.134/live8",
+    "https://smt.858.qzz.io/Smart.php",
+    "http://23.237.228.134/live6",
+    "http://23.237.228.134/live6/dongnan.m3u8",
+    "http://player.cntv.cn/standard/",
+    "https://player.cntv.cn/standard/live",
+    "http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8"
+]
+
+# 公告信息
+announcements = [
+    {
+        "channel": "更新日期",
+        "entries": [
+            {
+                "name": None,
+                "url": "https://txmov2.a.kwimgs.com/upic/2023/06/18/23/BMjAyMzA2MTgyMzE1MjBfMzQ4MzI0MjA1OF8xMDU4Nzc4MzAzNjZfMF8z_b_B386baa1bb2c0c48626a830ff69393771.mp4",
+                "logo": "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/pic/Updatetime.png"
+            }
+        ]
+    }
+]
+
+# EPG（电子节目指南）URL列表
+epg_urls = [
+    "https://epg.v1.mk/fy.xml",
+    "http://epg.51zmt.top:8000/e.xml",
+    "https://raw.githubusercontent.com/springs/epg/main/pp.xml",
+    "https://live.fanmingming.com/e.xml",
+    "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
+]
+# 测速超时时间（秒）
+TEST_TIMEOUT = 10
+
+# 测速线程池最大工作线程数
+MAX_WORKERS = 20
+
 
 # 基础频道名称映射
 cntvNamesReverse = {
@@ -79,60 +156,4 @@ cctv_alias = {
     "中央17套": "CCTV17",
     "CCTV9纪录片": "CCTV9",
 }
-
-# 修正后的 group-title 标准化映射（解决重复键问题，多对一）
-# 格式：{目标名称: [需要映射的原始名称列表]}
-group_title_mapping = {
-    # 地区频道
-    '安徽频道': ['安徽地区'],
-    '北京频道': ['北京地区'],
-    '福建频道': ['福建地区'],
-    '甘肃频道': ['甘肃地区'],
-    '广东频道': ['广东地区'],
-    '广西频道': ['广西地区'],
-    '贵州频道': ['贵州地区'],
-    '海南频道': ['海南地区'],
-    '河北频道': ['河北地区'],
-    '河南频道': ['河南地区'],
-    '黑龙江频道': ['黑龙江地区'],
-    '湖北频道': ['湖北地区'],
-    '湖南频道': ['湖南地区'],
-    '吉林频道': ['吉林地区'],
-    '江苏频道': ['江苏地区'],
-    '江西频道': ['江西地区'],
-    '辽宁频道': ['辽宁地区'],
-    '内蒙古频道': ['内蒙古地区'],
-    '宁夏频道': ['宁夏地区'],
-    '青海频道': ['青海地区'],
-    '山东频道': ['山东地区', '山东省级'],  # 新增：山东省级→山东频道
-    '山西频道': ['山西地区'],
-    '陕西频道': ['陕西地区'],
-    '上海频道': ['上海地区'],
-    '四川频道': ['四川地区'],
-    '天津频道': ['天津地区'],
-    '新疆频道': ['新疆地区'],
-    '云南频道': ['云南地区'],
-    '浙江频道': ['浙江地区'],
-    '重庆频道': ['重庆地区'],
-
-    # 特殊分类
-    '港澳台频道': ['港澳台', '港澳代理', '湾区频道'],  # 港澳台/港澳代理→港澳台频道
-    '央视频道': ['央视台','💓专享央视','💓专享央视'],              # 央视台→央视频道
-    '卫视频道': ['卫视台', '省级卫视','💓专享卫视','📡卫视频道'],  # 卫视台→卫视频道
-    '4K超高清': ['超清频道', '4K频道'],  # 超清频道/4K频道→4K超高清
-    '央视高清': ['央视高清频道'],        # 央视高清频道→央视高清（单独分类）
-    '动漫频道': ['动画频道'],
-
-}
-
-# 兼容旧映射：快速查找原始名称对应的目标名称（供代码调用）
-group_title_reverse_mapping = {}
-for target, originals in group_title_mapping.items():
-    for original in originals:
-        group_title_reverse_mapping[original] = target
-
-
-
-
-
 
