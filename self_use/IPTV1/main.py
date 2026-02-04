@@ -64,17 +64,33 @@ def parse_template(template_file):
     return template_channels
 
 def clean_channel_name(channel_name):
-    """数据清洗：去除特殊字符、空白、数字前导零，转为大写（仅处理CCTV频道）"""
+    """数据清洗：去除特殊字符、空白、数字前导零，兼容带分辨率后缀的频道名称（如超清、4K）"""
     if not channel_name:
         return ""
-    # 去除指定特殊字符（$、「、」、-）
-    cleaned_name = re.sub(r'[$「」-]', '', channel_name)
+    # 去除指定特殊字符（$、「、」、-、()、[]、【】）
+    cleaned_name = re.sub(r'[$「」-\(\)\[\]【】]', '', channel_name)
     # 去除所有空白字符（空格、制表符等）
     cleaned_name = re.sub(r'\s+', '', cleaned_name)
     # 数字转整数，去除前导零（如 CCTV001 → CCTV1）
     cleaned_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), cleaned_name)
+    # 去除分辨率后缀（如 超清、4K、HD、SD，不区分大小写）
+    cleaned_name = re.sub(r'(超清|4K|HD|SD|高清|超高清)$', '', cleaned_name, flags=re.IGNORECASE)
     # 转为大写，保证匹配一致性
     return cleaned_name.upper()
+
+def extract_channel_name(extinf_line):
+    """从EXTINF行提取频道名称，兼容两种场景：1. 末尾为日期 2. 标准频道名称"""
+    # 场景1：EXTINF行末尾为日期（如 ",更新日期: 2026-2-4 04:02:08"）
+    date_match = re.search(r',更新日期:\s*\d{4}-\d{1,2}-\d{1,2}\s*\d{1,2}:\d{1,2}:\d{1,2}$', extinf_line)
+    if date_match:
+        # 提取日期前的频道名称
+        name_part = extinf_line[:date_match.start()].split(',')[-1].strip()
+        return name_part
+    # 场景2：标准频道名称（如 ",CCTV1综合"、",浙江卫视超清"）
+    name_match = re.search(r',([^,]+)$', extinf_line)
+    if name_match:
+        return name_match.group(1).strip()
+    return ""
 
 def fetch_channels(url):
     """从指定URL抓取频道列表，自动判断M3U/TXT格式，返回有序频道字典"""
@@ -107,7 +123,7 @@ def fetch_channels(url):
     return channels
 
 def parse_m3u_lines(lines):
-    """解析M3U格式内容，提取分类、CCTV频道名称和对应URL"""
+    """解析增强版M3U格式（支持catchup属性、长参数URL、多分辨率频道）"""
     channels = OrderedDict()
     current_category = None
     channel_name = None  # 初始化，避免变量未定义报错
@@ -115,14 +131,15 @@ def parse_m3u_lines(lines):
     for line in lines:
         line = line.strip()
         if line.startswith("#EXTINF"):
-            # 匹配M3U格式中的分类和频道名称
-            match = re.search(r'group-title="(.*?)",(.*)', line)
-            if match:
-                current_category = match.group(1).strip()
-                channel_name = match.group(2).strip()
+            # 匹配M3U格式中的group-title（兼容EXTINF行包含catchup等额外属性）
+            group_match = re.search(r'group-title="(.*?)"', line)
+            if group_match:
+                current_category = group_match.group(1).strip()
+                # 提取频道名称（兼容日期后缀和标准名称）
+                channel_name = extract_channel_name(line)
 
-                # 仅处理CCTV开头的频道，进行数据清洗
-                if channel_name and channel_name.startswith("CCTV"):
+                # 处理CCTV开头和地方卫视频道（如浙江卫视、江苏卫视）
+                if channel_name and (channel_name.startswith("CCTV") or any(keyword in channel_name for keyword in ["卫视", "电视台", "综合", "新闻", "影视"])):
                     channel_name = clean_channel_name(channel_name)
 
                 # 初始化分类对应的频道列表
@@ -131,14 +148,16 @@ def parse_m3u_lines(lines):
             else:
                 channel_name = None  # 匹配失败时重置，避免无效数据
         elif line and not line.startswith("#"):
-            # 提取频道URL，仅在分类和频道名称有效时保存
+            # 提取频道URL（支持http/https、带复杂参数、flv/m3u8格式）
             channel_url = line.strip()
-            if current_category and channel_name and channel_url:
-                channels[current_category].append((channel_name, channel_url))
+            # 过滤无效URL（仅保留http/https/webview开头的链接）
+            if channel_url.startswith(("http://", "https://", "webview://")):
+                if current_category and channel_name and channel_url:
+                    channels[current_category].append((channel_name, channel_url))
     return channels
 
 def parse_txt_lines(lines):
-    """解析TXT格式内容，提取分类、CCTV频道名称和对应URL（支持#分割多URL）"""
+    """解析TXT格式内容，提取分类、频道名称和对应URL（支持#分割多URL）"""
     channels = OrderedDict()
     current_category = None
 
@@ -156,14 +175,14 @@ def parse_txt_lines(lines):
                     channel_name = match.group(1).strip()
                     channel_url_str = match.group(2).strip()
 
-                    # 仅处理CCTV开头的频道，进行数据清洗
-                    if channel_name and channel_name.startswith("CCTV"):
+                    # 处理CCTV开头和地方卫视频道
+                    if channel_name and (channel_name.startswith("CCTV") or any(keyword in channel_name for keyword in ["卫视", "电视台", "综合", "新闻", "影视"])):
                         channel_name = clean_channel_name(channel_name)
 
                     # 分割#分隔的多个URL，逐个保存
                     for channel_url in channel_url_str.split('#'):
                         channel_url = channel_url.strip()
-                        if channel_url:  # 跳过空URL
+                        if channel_url.startswith(("http://", "https://", "webview://")):  # 过滤有效URL
                             channels[current_category].append((channel_name, channel_url))
                 elif line:
                     # 无URL的情况，保存空URL占位
@@ -171,12 +190,20 @@ def parse_txt_lines(lines):
     return channels
 
 def find_similar_name(target_name, name_list):
-    """使用模糊匹配，查找最相似的频道名称（相似度阈值0.6）"""
-    matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=0.6)
-    return matches[0] if matches else None
+    """使用模糊匹配，查找最相似的频道名称（相似度阈值0.6，兼容带后缀的名称）"""
+    # 对目标名称和候选列表都进行清洗，再匹配
+    cleaned_target = clean_channel_name(target_name)
+    cleaned_list = [(clean_channel_name(name), name) for name in name_list]
+    
+    # 查找匹配
+    matches = difflib.get_close_matches(cleaned_target, [item[0] for item in cleaned_list], n=1, cutoff=0.6)
+    if matches:
+        # 返回原始名称（不是清洗后的名称）
+        return next(item[1] for item in cleaned_list if item[0] == matches[0])
+    return None
 
 def match_channels(template_channels, all_channels):
-    """将模板频道与抓取到的频道进行匹配，返回匹配结果"""
+    """将模板频道与抓取到的频道进行匹配，支持多分辨率、地方卫视频道匹配"""
     matched_channels = OrderedDict()
 
     # 收集所有抓取到的频道名称（去重，提升匹配效率）
@@ -190,7 +217,7 @@ def match_channels(template_channels, all_channels):
     for category, channel_list in template_channels.items():
         matched_channels[category] = OrderedDict()
         for channel_name in channel_list:
-            # 查找相似频道名称
+            # 查找相似频道名称（兼容模板中带后缀的名称）
             similar_name = find_similar_name(channel_name, all_online_channel_names)
             if similar_name:
                 # 收集该相似频道对应的所有URL
@@ -229,8 +256,8 @@ def merge_channels(target, source):
             target[category] = channel_list
 
 def is_ipv6(url):
-    """判断URL是否为IPv6格式（匹配 http://[xxxx:xxxx:...]/ 格式）"""
-    return re.match(r'^http:\/\/\[[0-9a-fA-F:]+\]', url) is not None
+    """判断URL是否为IPv6格式（匹配 http://[xxxx:xxxx:...]/ 或 https://[xxxx:xxxx:...]/ 格式）"""
+    return re.match(r'^https?://\[[0-9a-fA-F:]+\]', url) is not None
 
 def is_special_webview(url):
     """判断URL是否为特殊优先级webview（webview://https://yangshipin.cn开头）"""
@@ -241,11 +268,11 @@ def is_webview(url):
     return url.startswith("webview://") and not is_special_webview(url)
 
 def sort_and_filter_urls(urls, written_urls):
-    """URL排序与过滤：特殊webview→普通webview→HTTP → IP版本优先级 → 去重 → 黑名单"""
+    """URL排序与过滤：特殊webview→普通webview→HTTP/HTTPS → IP版本优先级 → 去重 → 黑名单"""
     if not urls:
         return []
 
-    # 1. 基础过滤：非空、未写入、不在黑名单
+    # 1. 基础过滤：非空、未写入、不在黑名单、支持https
     valid_urls = [
         url for url in urls
         if url and url not in written_urls and not any(blk in url for blk in config.url_blacklist)
@@ -253,7 +280,7 @@ def sort_and_filter_urls(urls, written_urls):
 
     # 2. 三级排序逻辑
     def sort_key(url):
-        # 第一级：特殊webview（0）→ 普通webview（1）→ HTTP（2）
+        # 第一级：特殊webview（0）→ 普通webview（1）→ HTTP/HTTPS（2）
         if is_special_webview(url):
             protocol_priority = 0
         elif is_webview(url):
@@ -278,128 +305,16 @@ def sort_and_filter_urls(urls, written_urls):
     return sorted_urls
 
 def write_to_files(f_m3u, f_txt, category, channel_name, index, url):
-    """统一写入M3U和TXT文件，填充标准字段和频道logo"""
-    # 频道logo链接（适配GitHub公开图库）
-    channel_logo = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_name}.png"
+    """统一写入M3U和TXT文件，填充标准字段和频道logo（兼容多分辨率频道）"""
+    # 频道logo链接（适配GitHub公开图库，兼容带后缀的频道名称）
+    cleaned_logo_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), channel_name)
+    cleaned_logo_name = re.sub(r'(超清|4K|HD|SD|高清|超高清)$', '', cleaned_logo_name, flags=re.IGNORECASE)
+    channel_logo = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{cleaned_logo_name}.png"
 
-    # 写入M3U格式（标准EXTINF字段）
+    # 写入M3U格式（标准EXTINF字段，保留原始频道名称）
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" tvg-logo=\"{channel_logo}\" group-title=\"{category}\",{channel_name}\n"
     )
     f_m3u.write(f"{url}\n")
 
-    # 写入TXT格式（频道名称,URL）
-    f_txt.write(f"{channel_name},{url}\n")
-
-def updateChannelUrlsM3U(channels, template_channels):
-    """生成最终的IPv4/IPv6版本M3U和TXT文件，保存到output文件夹"""
-    # 初始化已写入URL集合，避免跨频道重复
-    written_urls_ipv4 = set()
-    written_urls_ipv6 = set()
-
-    # 填充公告信息中的当前日期
-    current_date = datetime.now().strftime("%Y-%m-%d %H:%M")
-    for group in config.announcements:
-        for entry in group['entries']:
-            if entry['name'] is None:
-                entry['name'] = current_date
-
-    # 定义输出文件路径（使用全局常量OUTPUT_DIR）
-    file_paths = {
-        "ipv4_m3u": os.path.join(OUTPUT_DIR, "live_ipv4_source.m3u"),
-        "ipv4_txt": os.path.join(OUTPUT_DIR, "live_ipv4_source.txt"),
-        "ipv6_m3u": os.path.join(OUTPUT_DIR, "live_ipv6_source.m3u"),
-        "ipv6_txt": os.path.join(OUTPUT_DIR, "live_ipv6_source.txt")
-    }
-
-    # 同时打开4个输出文件，批量写入
-    try:
-        with open(file_paths["ipv4_m3u"], "w", encoding="utf-8") as f_m3u4, \
-             open(file_paths["ipv4_txt"], "w", encoding="utf-8") as f_txt4, \
-             open(file_paths["ipv6_m3u"], "w", encoding="utf-8") as f_m3u6, \
-             open(file_paths["ipv6_txt"], "w", encoding="utf-8") as f_txt6:
-
-            # 写入M3U文件头部（包含EPG地址）
-            epg_str = ",".join(f'"{epg}"' for epg in config.epg_urls)
-            f_m3u4.write(f"#EXTM3U x-tvg-url={epg_str}\n")
-            f_m3u6.write(f"#EXTM3U x-tvg-url={epg_str}\n")
-
-            # 写入公告信息
-            for group in config.announcements:
-                category_name = group['channel']
-                # 写入TXT文件的分类标记
-                f_txt4.write(f"{category_name},#genre#\n")
-                f_txt6.write(f"{category_name},#genre#\n")
-
-                for entry in group['entries']:
-                    entry_url = entry['url']
-                    entry_name = entry['name']
-                    entry_logo = entry['logo']
-
-                    # 区分IPv4/IPv6，分别写入对应文件
-                    if is_ipv6(entry_url) and entry_url not in written_urls_ipv6:
-                        written_urls_ipv6.add(entry_url)
-                        f_m3u6.write(
-                            f"#EXTINF:-1 tvg-id=\"1\" tvg-name=\"{entry_name}\" tvg-logo=\"{entry_logo}\" group-title=\"{category_name}\",{entry_name}\n"
-                        )
-                        f_m3u6.write(f"{entry_url}\n")
-                        f_txt6.write(f"{entry_name},{entry_url}\n")
-                    elif not is_ipv6(entry_url) and entry_url not in written_urls_ipv4:
-                        written_urls_ipv4.add(entry_url)
-                        f_m3u4.write(
-                            f"#EXTINF:-1 tvg-id=\"1\" tvg-name=\"{entry_name}\" tvg-logo=\"{entry_logo}\" group-title=\"{category_name}\",{entry_name}\n"
-                        )
-                        f_m3u4.write(f"{entry_url}\n")
-                        f_txt4.write(f"{entry_name},{entry_url}\n")
-
-            # 写入匹配到的频道数据
-            for category, channel_list in template_channels.items():
-                # 写入TXT文件的分类标记
-                f_txt4.write(f"{category},#genre#\n")
-                f_txt6.write(f"{category},#genre#\n")
-
-                if category not in channels:
-                    continue
-
-                # 遍历模板中的每个频道
-                for channel_name in channel_list:
-                    if channel_name not in channels[category]:
-                        continue
-
-                    # 提取该频道的所有URL，先去重
-                    all_urls = list(set(channels[category][channel_name]))
-
-                    # 按IPv4/IPv6分别过滤排序（已包含三级协议优先级）
-                    ipv4_urls = sort_and_filter_urls([u for u in all_urls if not is_ipv6(u)], written_urls_ipv4)
-                    ipv6_urls = sort_and_filter_urls([u for u in all_urls if is_ipv6(u)], written_urls_ipv6)
-
-                    # 写入IPv4文件（特殊webview→普通webview→HTTP）
-                    for idx, url in enumerate(ipv4_urls, start=1):
-                        write_to_files(f_m3u4, f_txt4, category, channel_name, idx, url)
-
-                    # 写入IPv6文件（特殊webview→普通webview→HTTP）
-                    for idx, url in enumerate(ipv6_urls, start=1):
-                        write_to_files(f_m3u6, f_txt6, category, channel_name, idx, url)
-
-            # 写入文件末尾空行，优化格式
-            f_txt4.write("\n")
-            f_txt6.write("\n")
-
-        logging.info(f"所有输出文件生成完成，保存路径：{OUTPUT_DIR}")
-        logging.info("URL排列顺序：webview://https://yangshipin.cn → 其他webview → HTTP（按IP版本优先级排序）")
-    except IOError as e:
-        logging.error(f"文件写入失败 ❌，错误信息：{e}")
-        raise
-
-if __name__ == "__main__":
-    try:
-        # 第一步：初始化日志和文件夹
-        init_logging()
-        
-        # 第二步：执行核心流程：过滤源URL + 生成输出文件
-        matched_channels, template_channels = filter_source_urls(TEMPLATE_FILE)
-        updateChannelUrlsM3U(matched_channels, template_channels)
-        
-        logging.info("程序运行完成 ✅")
-    except Exception as e:
-        logging.error(f"程序运行异常终止 ❌，错误信息：{e}")
+    #
