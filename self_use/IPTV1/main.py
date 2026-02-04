@@ -3,7 +3,7 @@ import requests
 import logging
 from collections import OrderedDict
 from datetime import datetime
-import config  # 导入配置（仅使用非group_title_mapping相关配置）
+import config  # 已包含新增的两个映射字典
 import os
 import difflib
 
@@ -39,7 +39,7 @@ def init_logging():
     )
 
 def parse_template(template_file):
-    """解析同级目录下的模板文件，提取频道分类和频道名称（保留顺序，不处理分类标准化）"""
+    """解析同级目录下的模板文件，提取频道分类和频道名称（保留顺序）"""
     template_channels = OrderedDict()
     current_category = None
 
@@ -50,35 +50,20 @@ def parse_template(template_file):
                 # 跳过空行和注释行（#开头）
                 if line and not line.startswith("#"):
                     if "#genre#" in line:
-                        # 提取分类名称（逗号前的内容，保留原始名称）
+                        # 提取分类名称（逗号前的内容）
                         current_category = line.split(",")[0].strip()
                         template_channels[current_category] = []
                     elif current_category:
-                        # 提取频道名称并加入当前分类，同时进行频道标准化
+                        # 提取频道名称并加入当前分类
                         channel_name = line.split(",")[0].strip()
-                        standardized_channel = standardize_channel_name(channel_name)
-                        template_channels[current_category].append(standardized_channel)
+                        # 【修改点1】模板频道名称也做标准化（适配映射表）
+                        channel_name = standardize_channel_name(channel_name)
+                        template_channels[current_category].append(channel_name)
         logging.info(f"模板文件 {template_file} 解析成功，包含 {len(template_channels)} 个分类")
     except FileNotFoundError:
         logging.error(f"模板文件 {template_file} 未找到，请确认文件在同级目录下")
         raise
     return template_channels
-
-def standardize_channel_name(channel_name):
-    """标准化频道名称：依次应用cntvNamesReverse、cctv_alias，最后执行基础清洗"""
-    if not channel_name:
-        return ""
-    
-    # 步骤1：应用基础频道全称→简写映射（cntvNamesReverse）
-    if channel_name in config.cntvNamesReverse:
-        channel_name = config.cntvNamesReverse[channel_name]
-    
-    # 步骤2：应用非规范别名→标准名映射（cctv_alias）
-    if channel_name in config.cctv_alias:
-        channel_name = config.cctv_alias[channel_name]
-    
-    # 步骤3：执行原有基础清洗，保证格式统一
-    return clean_channel_name(channel_name)
 
 def clean_channel_name(channel_name):
     """数据清洗：去除特殊字符、空白、数字前导零，转为大写（仅处理CCTV频道）"""
@@ -92,6 +77,29 @@ def clean_channel_name(channel_name):
     cleaned_name = re.sub(r'(\D*)(\d+)', lambda m: m.group(1) + str(int(m.group(2))), cleaned_name)
     # 转为大写，保证匹配一致性
     return cleaned_name.upper()
+
+# 【新增函数】标准化频道名称（利用config中的两个映射表做精准转换）
+def standardize_channel_name(channel_name):
+    """
+    利用config中的映射表标准化频道名称
+    优先级：cntvNamesReverse → cctv_alias → 原名称（清洗后）
+    """
+    if not channel_name:
+        return ""
+    
+    # 第一步：先做基础清洗
+    cleaned_name = clean_channel_name(channel_name)
+    
+    # 第二步：优先匹配 cntvNamesReverse（基础频道全称→简写）
+    if cleaned_name in config.cntvNamesReverse:
+        return config.cntvNamesReverse[cleaned_name]
+    
+    # 第三步：匹配 cctv_alias（非规范别名→标准名称）
+    if cleaned_name in config.cctv_alias:
+        return config.cctv_alias[cleaned_name]
+    
+    # 第四步：无匹配则返回清洗后的原名称
+    return cleaned_name
 
 def fetch_channels(url):
     """从指定URL抓取频道列表，自动判断M3U/TXT格式，返回有序频道字典"""
@@ -124,7 +132,7 @@ def fetch_channels(url):
     return channels
 
 def parse_m3u_lines(lines):
-    """解析M3U格式内容，提取分类、CCTV频道名称和对应URL（保留分类原始名称）"""
+    """解析M3U格式内容，提取分类、CCTV频道名称和对应URL"""
     channels = OrderedDict()
     current_category = None
     channel_name = None  # 初始化，避免变量未定义报错
@@ -135,17 +143,12 @@ def parse_m3u_lines(lines):
             # 匹配M3U格式中的分类和频道名称
             match = re.search(r'group-title="(.*?)",(.*)', line)
             if match:
-                # 提取分类（保留原始名称，不做标准化）
                 current_category = match.group(1).strip()
-                # 提取频道名称并标准化
                 channel_name = match.group(2).strip()
-                channel_name = standardize_channel_name(channel_name)
 
-                # 仅处理CCTV开头的频道
-                if channel_name and channel_name.startswith("CCTV"):
-                    pass  # 已完成标准化，无需额外处理
-                else:
-                    channel_name = None  # 非CCTV频道，重置跳过
+                # 【修改点2】替换原clean_channel_name，使用标准化函数（包含映射表转换）
+                if channel_name and channel_name.startswith("CCTV") or any(alias in channel_name for alias in config.cctv_alias.keys()):
+                    channel_name = standardize_channel_name(channel_name)
 
                 # 初始化分类对应的频道列表
                 if current_category not in channels:
@@ -160,7 +163,7 @@ def parse_m3u_lines(lines):
     return channels
 
 def parse_txt_lines(lines):
-    """解析TXT格式内容，提取分类、CCTV频道名称和对应URL（支持#分割多URL，保留分类原始名称）"""
+    """解析TXT格式内容，提取分类、CCTV频道名称和对应URL（支持#分割多URL）"""
     channels = OrderedDict()
     current_category = None
 
@@ -168,7 +171,7 @@ def parse_txt_lines(lines):
         line = line.strip()
         if line and not line.startswith("#"):
             if "#genre#" in line:
-                # 提取分类名称（保留原始名称，不做标准化）
+                # 提取分类名称
                 current_category = line.split(",")[0].strip()
                 channels[current_category] = []
             elif current_category:
@@ -178,10 +181,9 @@ def parse_txt_lines(lines):
                     channel_name = match.group(1).strip()
                     channel_url_str = match.group(2).strip()
 
-                    # 标准化频道名称，仅处理CCTV开头的频道
-                    channel_name = standardize_channel_name(channel_name)
-                    if not channel_name or not channel_name.startswith("CCTV"):
-                        continue  # 非CCTV频道，直接跳过
+                    # 【修改点3】替换原clean_channel_name，使用标准化函数（包含映射表转换）
+                    if channel_name and channel_name.startswith("CCTV") or any(alias in channel_name for alias in config.cctv_alias.keys()):
+                        channel_name = standardize_channel_name(channel_name)
 
                     # 分割#分隔的多个URL，逐个保存
                     for channel_url in channel_url_str.split('#'):
@@ -189,14 +191,14 @@ def parse_txt_lines(lines):
                         if channel_url:  # 跳过空URL
                             channels[current_category].append((channel_name, channel_url))
                 elif line:
-                    # 无URL的情况，仅标准化名称后保存（非CCTV频道跳过）
-                    standardized_line = standardize_channel_name(line)
-                    if standardized_line and standardized_line.startswith("CCTV"):
-                        channels[current_category].append((standardized_line, ''))
+                    # 无URL的情况，保存空URL占位
+                    channels[current_category].append((line, ''))
     return channels
 
 def find_similar_name(target_name, name_list):
     """使用模糊匹配，查找最相似的频道名称（相似度阈值0.6）"""
+    # 【修改点4】模糊匹配前，先对目标名称做标准化
+    target_name = standardize_channel_name(target_name)
     matches = difflib.get_close_matches(target_name, name_list, n=1, cutoff=0.6)
     return matches[0] if matches else None
 
@@ -209,19 +211,28 @@ def match_channels(template_channels, all_channels):
     for online_channel_list in all_channels.values():
         for online_channel_name, _ in online_channel_list:
             if online_channel_name and online_channel_name not in all_online_channel_names:
-                all_online_channel_names.append(online_channel_name)
+                # 【修改点5】抓取到的频道名称也做标准化，统一匹配基准
+                standardized_online_name = standardize_channel_name(online_channel_name)
+                all_online_channel_names.append(standardized_online_name)
 
     # 按模板分类进行匹配
     for category, channel_list in template_channels.items():
         matched_channels[category] = OrderedDict()
         for channel_name in channel_list:
-            # 查找相似频道名称（此时频道已完成标准化，匹配准确率更高）
-            similar_name = find_similar_name(channel_name, all_online_channel_names)
-            if similar_name:
+            # 第一步：先尝试精准匹配（标准化后的名称直接比对，效率最高）
+            if channel_name in all_online_channel_names:
+                matched_name = channel_name
+            # 第二步：精准匹配失败，再用模糊匹配
+            else:
+                matched_name = find_similar_name(channel_name, all_online_channel_names)
+            
+            if matched_name:
                 # 收集该相似频道对应的所有URL
                 for online_channel_list in all_channels.values():
                     for online_name, online_url in online_channel_list:
-                        if online_name == similar_name and online_url:
+                        # 标准化在线频道名称，确保匹配一致性
+                        standardized_online_name = standardize_channel_name(online_name)
+                        if standardized_online_name == matched_name and online_url:
                             matched_channels[category].setdefault(channel_name, []).append(online_url)
 
     logging.info(f"频道匹配完成，模板中有效匹配频道 {len([c for cl in matched_channels.values() for c in cl])} 个")
@@ -307,7 +318,7 @@ def write_to_files(f_m3u, f_txt, category, channel_name, index, url):
     # 频道logo链接（适配GitHub公开图库）
     channel_logo = f"https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_name}.png"
 
-    # 写入M3U格式（标准EXTINF字段，分类保留原始名称）
+    # 写入M3U格式（标准EXTINF字段）
     f_m3u.write(
         f"#EXTINF:-1 tvg-id=\"{index}\" tvg-name=\"{channel_name}\" tvg-logo=\"{channel_logo}\" group-title=\"{category}\",{channel_name}\n"
     )
@@ -349,7 +360,7 @@ def updateChannelUrlsM3U(channels, template_channels):
             f_m3u4.write(f"#EXTM3U x-tvg-url={epg_str}\n")
             f_m3u6.write(f"#EXTM3U x-tvg-url={epg_str}\n")
 
-            # 写入公告信息（分类保留原始配置名称，不做标准化）
+            # 写入公告信息
             for group in config.announcements:
                 category_name = group['channel']
                 # 写入TXT文件的分类标记
@@ -377,7 +388,7 @@ def updateChannelUrlsM3U(channels, template_channels):
                         f_m3u4.write(f"{entry_url}\n")
                         f_txt4.write(f"{entry_name},{entry_url}\n")
 
-            # 写入匹配到的频道数据（分类保留模板原始名称）
+            # 写入匹配到的频道数据
             for category, channel_list in template_channels.items():
                 # 写入TXT文件的分类标记
                 f_txt4.write(f"{category},#genre#\n")
@@ -386,7 +397,7 @@ def updateChannelUrlsM3U(channels, template_channels):
                 if category not in channels:
                     continue
 
-                # 遍历模板中的每个频道（已标准化）
+                # 遍历模板中的每个频道
                 for channel_name in channel_list:
                     if channel_name not in channels[category]:
                         continue
