@@ -3,7 +3,7 @@ import requests
 import logging
 from collections import OrderedDict
 from datetime import datetime
-import config
+import config  # 导入新增的映射配置
 import os
 import difflib
 
@@ -52,16 +52,46 @@ def parse_template(template_file):
                     if "#genre#" in line:
                         # 提取分类名称（逗号前的内容）
                         current_category = line.split(",")[0].strip()
+                        # 分类名称也进行标准化（应用group_title_mapping）
+                        current_category = standardize_group_title(current_category)
                         template_channels[current_category] = []
                     elif current_category:
-                        # 提取频道名称并加入当前分类
+                        # 提取频道名称并加入当前分类，同时进行标准化
                         channel_name = line.split(",")[0].strip()
-                        template_channels[current_category].append(channel_name)
+                        standardized_channel = standardize_channel_name(channel_name)
+                        template_channels[current_category].append(standardized_channel)
         logging.info(f"模板文件 {template_file} 解析成功，包含 {len(template_channels)} 个分类")
     except FileNotFoundError:
         logging.error(f"模板文件 {template_file} 未找到，请确认文件在同级目录下")
         raise
     return template_channels
+
+def standardize_group_title(group_title):
+    """标准化分类名称：应用config中的group_title_mapping"""
+    if not group_title:
+        return ""
+    # 遍历映射配置，匹配并替换分类名称
+    for target_title, original_titles in config.group_title_mapping.items():
+        if group_title in original_titles:
+            return target_title
+    # 无匹配时返回原名称（保持兼容性）
+    return group_title
+
+def standardize_channel_name(channel_name):
+    """标准化频道名称：依次应用cntvNamesReverse、cctv_alias，最后执行基础清洗"""
+    if not channel_name:
+        return ""
+    
+    # 步骤1：应用基础频道全称→简写映射（cntvNamesReverse）
+    if channel_name in config.cntvNamesReverse:
+        channel_name = config.cntvNamesReverse[channel_name]
+    
+    # 步骤2：应用非规范别名→标准名映射（cctv_alias）
+    if channel_name in config.cctv_alias:
+        channel_name = config.cctv_alias[channel_name]
+    
+    # 步骤3：执行原有基础清洗，保证格式统一
+    return clean_channel_name(channel_name)
 
 def clean_channel_name(channel_name):
     """数据清洗：去除特殊字符、空白、数字前导零，转为大写（仅处理CCTV频道）"""
@@ -118,12 +148,18 @@ def parse_m3u_lines(lines):
             # 匹配M3U格式中的分类和频道名称
             match = re.search(r'group-title="(.*?)",(.*)', line)
             if match:
+                # 提取分类并标准化
                 current_category = match.group(1).strip()
+                current_category = standardize_group_title(current_category)
+                # 提取频道名称并标准化
                 channel_name = match.group(2).strip()
+                channel_name = standardize_channel_name(channel_name)
 
-                # 仅处理CCTV开头的频道，进行数据清洗
+                # 仅处理CCTV开头的频道
                 if channel_name and channel_name.startswith("CCTV"):
-                    channel_name = clean_channel_name(channel_name)
+                    pass  # 已完成标准化，无需额外处理
+                else:
+                    channel_name = None  # 非CCTV频道，重置跳过
 
                 # 初始化分类对应的频道列表
                 if current_category not in channels:
@@ -146,8 +182,9 @@ def parse_txt_lines(lines):
         line = line.strip()
         if line and not line.startswith("#"):
             if "#genre#" in line:
-                # 提取分类名称
+                # 提取分类名称并标准化
                 current_category = line.split(",")[0].strip()
+                current_category = standardize_group_title(current_category)
                 channels[current_category] = []
             elif current_category:
                 # 匹配 频道名称,URL 格式
@@ -156,9 +193,10 @@ def parse_txt_lines(lines):
                     channel_name = match.group(1).strip()
                     channel_url_str = match.group(2).strip()
 
-                    # 仅处理CCTV开头的频道，进行数据清洗
-                    if channel_name and channel_name.startswith("CCTV"):
-                        channel_name = clean_channel_name(channel_name)
+                    # 标准化频道名称，仅处理CCTV开头的频道
+                    channel_name = standardize_channel_name(channel_name)
+                    if not channel_name or not channel_name.startswith("CCTV"):
+                        continue  # 非CCTV频道，直接跳过
 
                     # 分割#分隔的多个URL，逐个保存
                     for channel_url in channel_url_str.split('#'):
@@ -166,8 +204,10 @@ def parse_txt_lines(lines):
                         if channel_url:  # 跳过空URL
                             channels[current_category].append((channel_name, channel_url))
                 elif line:
-                    # 无URL的情况，保存空URL占位
-                    channels[current_category].append((line, ''))
+                    # 无URL的情况，仅标准化名称后保存（非CCTV频道跳过）
+                    standardized_line = standardize_channel_name(line)
+                    if standardized_line and standardized_line.startswith("CCTV"):
+                        channels[current_category].append((standardized_line, ''))
     return channels
 
 def find_similar_name(target_name, name_list):
@@ -190,7 +230,7 @@ def match_channels(template_channels, all_channels):
     for category, channel_list in template_channels.items():
         matched_channels[category] = OrderedDict()
         for channel_name in channel_list:
-            # 查找相似频道名称
+            # 查找相似频道名称（此时双方已完成标准化，匹配准确率更高）
             similar_name = find_similar_name(channel_name, all_online_channel_names)
             if similar_name:
                 # 收集该相似频道对应的所有URL
@@ -327,6 +367,8 @@ def updateChannelUrlsM3U(channels, template_channels):
             # 写入公告信息
             for group in config.announcements:
                 category_name = group['channel']
+                # 公告分类也进行标准化
+                category_name = standardize_group_title(category_name)
                 # 写入TXT文件的分类标记
                 f_txt4.write(f"{category_name},#genre#\n")
                 f_txt6.write(f"{category_name},#genre#\n")
@@ -354,14 +396,14 @@ def updateChannelUrlsM3U(channels, template_channels):
 
             # 写入匹配到的频道数据
             for category, channel_list in template_channels.items():
-                # 写入TXT文件的分类标记
+                # 写入TXT文件的分类标记（已标准化）
                 f_txt4.write(f"{category},#genre#\n")
                 f_txt6.write(f"{category},#genre#\n")
 
                 if category not in channels:
                     continue
 
-                # 遍历模板中的每个频道
+                # 遍历模板中的每个频道（已标准化）
                 for channel_name in channel_list:
                     if channel_name not in channels[category]:
                         continue
