@@ -1,4 +1,4 @@
-name: Update IPTV Sources（更新IPTV源）
+name: IPTV Sources_speed_test
 
 on:
   schedule:
