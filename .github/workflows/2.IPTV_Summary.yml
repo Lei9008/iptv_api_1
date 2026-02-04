@@ -58,6 +58,6 @@ jobs:
       with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
-        keep_minimum_runs: 5  # 保留最近3条运行记录
+        keep_minimum_runs: 5  # 保留最近5条运行记录
         retain_days: 0       # 保留3天（即不按天数保留，仅按最小运行记录数保留）
         ignore_error: true    # 忽略清理错误
