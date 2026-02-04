@@ -1,4 +1,4 @@
-name: EPG Update
+name: 3.EPG Update
 on:
   schedule:
     - cron: '55 23 * * *' # 上海时间7:55
