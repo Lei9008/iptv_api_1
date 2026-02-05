@@ -6,26 +6,6 @@ import os
 from dataclasses import dataclass
 from typing import List, Tuple, Optional, Set
 
-# ===================== 内置配置兼容（也可单独提取为config.py） =====================
-class Config:
-    """全局配置类，确保output文件夹与主脚本同目录"""
-    # 1. 获取当前主脚本（speed_test.py）的目录路径
-    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-    
-    # 2. 并发与请求配置
-    CONCURRENT_LIMIT = 20  # 并发限制
-    TIMEOUT = 10  # 超时时间（秒）
-    RETRY_TIMES = 2  # 重试次数
-    
-    # 3. 目录与文件配置（output文件夹与主脚本同目录）
-    OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")
-    LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")
-    
-    # 4. 远程直播源URL列表
-    SOURCE_URLS = [
-        "https://raw.githubusercontent.com/alantang1977/IPTV/main/live_ipv4.txt",
-        "https://raw.githubusercontent.com/alantang1977/iptv_api/main/output/live_ipv4.m3u"
-    ]
 
 # 实例化配置
 config = Config()
