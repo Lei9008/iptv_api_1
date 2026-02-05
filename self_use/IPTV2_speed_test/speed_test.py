@@ -155,37 +155,48 @@ class SpeedTester:
         # 按延迟升序排序（失败项排最后）
         return sorted(results, key=lambda x: x.latency if x.latency is not None else float('inf'))
 
-# M3U文件处理类（优化：支持解析字符串内容，新增去重逻辑）
+# M3U文件处理类（优化：增强解析兼容性，适配.txt后缀的M3U格式）
 class M3UProcessor:
     @staticmethod
     def parse_m3u_content(m3u_content: str) -> List[Tuple[str, str]]:
-        """解析M3U字符串内容，返回[(名称, URL), ...]（替代原有本地文件解析）"""
+        """解析M3U字符串内容（增强兼容性），返回[(名称, URL), ...]"""
         try:
-            lines = m3u_content.splitlines()  # 按行分割字符串，模拟本地文件读取
+            # 预处理：去除空白行、过滤注释行（除了#EXTINF:），按行分割
+            lines = []
+            for line in m3u_content.splitlines():
+                line = line.strip()
+                # 保留非空行、保留#EXTINF:行，过滤其他注释行（#开头且非#EXTINF:）
+                if line and not (line.startswith('#') and not line.startswith('#EXTINF:')):
+                    lines.append(line)
+            
             live_sources = []
-            current_name = None
+            current_name = "未知频道"  # 默认值，避免为空
             
             for line in lines:
-                line = line.strip()
                 if line.startswith('#EXTINF:'):
-                    # 提取频道名称
+                    # 优化1：兼容无逗号、逗号后无内容的情况
                     name_start = line.find(',') + 1
-                    current_name = line[name_start:] if name_start > 0 else "未知频道"
-                elif line.startswith('http') and current_name:
-                    # 过滤无效短链接（可选优化）
-                    if len(line) > 10:
+                    # 提取名称，若提取不到则保留默认值"未知频道"
+                    extracted_name = line[name_start:].strip() if name_start > 0 else ""
+                    current_name = extracted_name if extracted_name else "未知频道"
+                elif line.startswith(('http', 'https')):  # 优化2：显式支持http/https，更严谨
+                    # 优化3：过滤过短URL（避免无效链接），同时允许正常短链接
+                    if len(line) >= 8:  # 最小如"http://a.com"
                         live_sources.append((current_name, line))
-                        current_name = None
+                        # 重置当前名称，避免重复绑定
+                        current_name = "未知频道"
             
+            logger.info(f"解析单个M3U内容完成，提取到 {len(live_sources)} 个直播源")
             return live_sources
         except Exception as e:
-            logger.error(f"解析M3U内容失败: {e}")
+            logger.error(f"解析M3U内容失败: {str(e)}")
             return []
     
     @staticmethod
     def merge_and_deduplicate(sources_list: List[List[Tuple[str, str]]]) -> List[Tuple[str, str]]:
         """合并多个M3U解析结果，去重（按URL去重，保留首次出现的名称）"""
         if not sources_list:
+            logger.warning("待合并的M3U源列表为空")
             return []
         
         url_set: Set[str] = set()
