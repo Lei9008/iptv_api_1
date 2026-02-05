@@ -1,4 +1,9 @@
-# config.py
+# 导入必要模块
+import os
+
+# 定义项目根目录（当前config.py文件所在的目录，即项目根目录）
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # 全局配置项
 class Config:
     # 并发与请求配置
@@ -6,11 +11,10 @@ class Config:
     TIMEOUT = 10  # 超时时间（秒）
     RETRY_TIMES = 2  # 重试次数
     
-    # 目录与文件配置
+    # 目录与文件配置（使用绝对路径，提升可移植性）
     OUTPUT_DIR = os.path.join(PROJECT_DIR, "output")  # 输出文件夹绝对路径
     LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")  # 日志文件绝对路径
    
-    
     # 关键修改：远程直播源URL列表（支持GitHub RAW / 普通HTTP链接）
     # 示例：GitHub RAW链接、普通HTTP链接均可
     SOURCE_URLS = [
