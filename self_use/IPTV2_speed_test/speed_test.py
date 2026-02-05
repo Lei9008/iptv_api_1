@@ -5,7 +5,7 @@ import logging
 import os
 from dataclasses import dataclass
 from typing import List, Tuple, Optional, Set
-
+from config import Config
 
 # 实例化配置
 config = Config()
