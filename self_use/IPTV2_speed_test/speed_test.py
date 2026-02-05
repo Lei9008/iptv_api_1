@@ -4,29 +4,49 @@ import time
 import logging
 import os
 from dataclasses import dataclass
-from typing import List, Dict, Tuple, Optional, Set
+from typing import List, Tuple, Optional, Set
 
-# 从config.py导入Config类
-from config import Config
+# ===================== 内置配置兼容（也可单独提取为config.py） =====================
+class Config:
+    """全局配置类，确保output文件夹与主脚本同目录"""
+    # 1. 获取当前主脚本（speed_test.py）的目录路径
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    
+    # 2. 并发与请求配置
+    CONCURRENT_LIMIT = 20  # 并发限制
+    TIMEOUT = 10  # 超时时间（秒）
+    RETRY_TIMES = 2  # 重试次数
+    
+    # 3. 目录与文件配置（output文件夹与主脚本同目录）
+    OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")
+    LOG_FILE = os.path.join(OUTPUT_DIR, "function.log")
+    
+    # 4. 远程直播源URL列表
+    SOURCE_URLS = [
+        "https://raw.githubusercontent.com/alantang1977/IPTV/main/live_ipv4.txt",
+        "https://raw.githubusercontent.com/alantang1977/iptv_api/main/output/live_ipv4.m3u"
+    ]
 
 # 实例化配置
 config = Config()
 
-# 确保输出目录存在，避免日志/报告创建失败
+# ===================== 初始化目录与日志 =====================
+# 确保output文件夹存在（与主脚本同目录）
 os.makedirs(config.OUTPUT_DIR, exist_ok=True)
 
-# 日志配置
+# 日志配置（UTF-8编码，避免中文乱码，同时输出到文件和控制台）
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
     handlers=[
-        logging.FileHandler(config.LOG_FILE),
+        logging.FileHandler(config.LOG_FILE, encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
-# 数据类：存储单个URL测速结果
+# ===================== 数据类：存储单个URL测速结果 =====================
 @dataclass
 class SpeedTestResult:
     url: str
@@ -36,15 +56,15 @@ class SpeedTestResult:
     error: Optional[str] = None  # 错误信息（截断过长内容）
     test_time: float = 0  # 测试时间戳
 
-# 远程文件下载工具类：适配GitHub RAW链接，支持缓存、多编码兼容
+# ===================== 远程文件下载工具类 =====================
 class RemoteM3UDownloader:
-    """异步下载远程M3U/纯文本URL文件，适配GitHub RAW链接，优化请求成功率"""
+    """异步下载远程M3U/纯文本URL文件，适配GitHub RAW链接，支持缓存、多编码兼容"""
     def __init__(self):
         self.session = None
         self.download_cache = {}  # 下载缓存，避免重复请求同一链接
 
     async def __aenter__(self):
-        # 优化请求头，模拟浏览器，提升GitHub链接访问成功率
+        """创建异步会话，配置请求头与超时"""
         self.session = aiohttp.ClientSession(
             timeout=aiohttp.ClientTimeout(total=config.TIMEOUT),
             headers={
@@ -56,16 +76,13 @@ class RemoteM3UDownloader:
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
-        # 关闭会话，清理缓存
+        """关闭异步会话，清理缓存"""
         if self.session:
             await self.session.close()
         self.download_cache.clear()
 
     async def download_content(self, url: str) -> Optional[str]:
-        """
-        下载单个远程文件，支持缓存和多编码解析
-        返回：文件内容字符串 | None（下载失败）
-        """
+        """下载单个远程文件，支持缓存和多编码解析，返回内容字符串或None"""
         # 优先从缓存获取
         if url in self.download_cache:
             logger.info(f"从缓存中获取链接内容：{url}")
@@ -80,11 +97,12 @@ class RemoteM3UDownloader:
 
             # 第二步：多编码尝试解析内容，解决乱码问题
             async with self.session.get(url) as response:
+                raw_content = await response.read()
                 encodings = ['utf-8', 'gbk', 'gb2312', 'latin-1']
                 content = None
                 for encoding in encodings:
                     try:
-                        content = await response.text(encoding=encoding)
+                        content = raw_content.decode(encoding)
                         break
                     except Exception:
                         continue
@@ -93,11 +111,9 @@ class RemoteM3UDownloader:
                     logger.error(f"下载成功但无法解析编码：{url}")
                     return None
 
-                # 缓存结果，更新缓存
+                # 缓存结果并返回
                 self.download_cache[url] = content
                 logger.info(f"成功下载并缓存 {url}（内容大小：{len(content)} 字符）")
-
-                # 保存调试文件，便于排查格式问题
                 self._save_debug_file(url, content)
                 return content
         except Exception as e:
@@ -106,12 +122,11 @@ class RemoteM3UDownloader:
 
     @staticmethod
     def _save_debug_file(url: str, content: str):
-        """保存下载内容到本地调试文件，按链接后缀命名，避免覆盖"""
+        """保存下载内容到本地调试文件，便于排查格式问题"""
         try:
-            # 提取链接末尾文件名作为调试文件名
-            file_suffix = url.split('/')[-1].replace('/', '_').replace('?', '_')
+            file_suffix = url.split('/')[-1].replace('/', '_').replace('?', '_').replace('&', '_')
             debug_filename = f"debug_{file_suffix}.txt"
-            debug_path = os.path.join(os.getcwd(), debug_filename)
+            debug_path = os.path.join(config.SCRIPT_DIR, debug_filename)  # 调试文件也放在脚本目录
 
             with open(debug_path, 'w', encoding='utf-8') as f:
                 f.write(content)
@@ -121,7 +136,7 @@ class RemoteM3UDownloader:
             logger.warning(f"保存调试文件失败：{str(e)[:50]}")
 
     async def batch_download(self, urls: List[str]) -> List[str]:
-        """批量下载多个远程文件，返回所有有效内容列表，带并发控制"""
+        """批量下载多个远程文件，带并发控制，返回有效内容列表"""
         if not urls:
             logger.warning("远程URL列表为空，无需下载")
             return []
@@ -135,33 +150,27 @@ class RemoteM3UDownloader:
                 if content:
                     valid_contents.append(content)
 
-        # 创建并执行所有下载任务
+        # 执行所有下载任务
         tasks = [worker(url) for url in urls]
         await asyncio.gather(*tasks)
 
         logger.info(f"批量下载完成：共 {len(urls)} 个链接，成功下载 {len(valid_contents)} 个")
         return valid_contents
 
-# IPTV处理核心类：兼容3种格式，支持合并去重、标准M3U生成
+# ===================== IPTV处理核心类 =====================
 class IPTVProcessor:
+    """IPTV文件解析、合并去重、M3U生成核心类"""
     @staticmethod
     def _judge_file_type(url: str, content: str) -> str:
-        """
-        预判文件类型，支持3种格式：
-        - m3u_standard: 标准M3U（#EXTINF: + URL）
-        - m3u_custom: 自定义M3U（名称, URL 逗号分隔）
-        - txt: 纯URL列表（一行一个URL）
-        """
-        # 第一步：按文件后缀初步判断
+        """预判文件类型：m3u_standard / m3u_custom / txt"""
         if url.endswith(('.m3u', '.m3u8')):
-            # 第二步：按内容细分格式
             lines = content.splitlines()
-            # 判断是否为标准M3U（包含#EXTINF:）
+            # 判断标准M3U（包含#EXTINF:）
             has_standard_extinf = any(line.strip().startswith('#EXTINF:') for line in lines)
             if has_standard_extinf:
                 return "m3u_standard"
 
-            # 判断是否为自定义M3U（名称, URL 格式）
+            # 判断自定义M3U（名称, URL 格式）
             for line in lines:
                 line = line.strip()
                 if ',' in line:
@@ -169,7 +178,6 @@ class IPTVProcessor:
                     if url_part.strip().startswith(('http', 'https', 'rtmp', 'udp')):
                         return "m3u_custom"
 
-            # 兜底：视为标准M3U
             return "m3u_standard"
 
         if url.endswith('.txt'):
@@ -190,13 +198,12 @@ class IPTVProcessor:
 
     @staticmethod
     def parse_txt_content(content: str) -> List[Tuple[str, str]]:
-        """解析.txt纯URL列表（一行一个URL），提取有效直播源"""
+        """解析纯文本URL列表，提取有效直播源"""
         live_sources = []
         try:
             lines = content.splitlines()
             for line in lines:
                 line = line.strip()
-                # 筛选有效URL：以http/https开头，无空白字符，长度≥10
                 if (line.startswith(('http', 'https')) and
                     len(line) >= 10 and
                     not any(char in line for char in [' ', '\t', '\r'])):
@@ -210,34 +217,28 @@ class IPTVProcessor:
 
     @staticmethod
     def parse_m3u_standard_content(content: str) -> List[Tuple[str, str]]:
-        """解析标准M3U文件（#EXTINF: + URL），增强兼容性"""
+        """解析标准M3U文件，提取有效直播源"""
         live_sources = []
         try:
             lines = content.splitlines()
             current_name = "未知频道"
-            has_extinf_flag = False  # 标记是否已读取#EXTINF:行
+            has_extinf_flag = False
 
             for line in lines:
                 line = line.strip()
                 if not line:
-                    continue  # 跳过空白行
+                    continue
 
-                # 处理#EXTINF:行，提取频道名称
                 if line.startswith('#EXTINF:'):
                     comma_indexes = [i for i, char in enumerate(line) if char == ',']
                     if comma_indexes:
-                        # 取最后一个逗号后的内容，兼容多逗号格式
                         name_part = line[comma_indexes[-1]+1:].strip()
-                    else:
-                        name_part = ""
-                    current_name = name_part if name_part else "未知频道"
+                        current_name = name_part if name_part else "未知频道"
                     has_extinf_flag = True
 
-                # 处理URL行，绑定最近的频道名称
                 elif line.startswith(('http', 'https', 'rtmp', 'udp')) and len(line) >= 8:
                     if has_extinf_flag:
                         live_sources.append((current_name, line))
-                        # 重置标记，避免重复绑定
                         has_extinf_flag = False
                         current_name = "未知频道"
                     else:
@@ -251,24 +252,21 @@ class IPTVProcessor:
 
     @staticmethod
     def parse_m3u_custom_content(content: str) -> List[Tuple[str, str]]:
-        """解析自定义M3U文件（名称, URL 逗号分隔），适配目标GitHub链接"""
+        """解析自定义M3U文件（名称, URL格式），提取有效直播源"""
         live_sources = []
         try:
             lines = content.splitlines()
             for line in lines:
                 line = line.strip()
-                # 跳过空行、注释行、分类行（如"广东频道,#genre#"）
                 if not line or line.startswith('#') or line.endswith(',#genre#'):
                     continue
 
-                # 按第一个逗号分割，避免URL中包含逗号导致解析失败
                 if ',' not in line:
                     continue
                 name_part, url_part = line.split(',', 1)
                 name_part = name_part.strip()
                 url_part = url_part.strip()
 
-                # 筛选有效URL，支持多种直播协议
                 if url_part.startswith(('http', 'https', 'rtmp', 'udp')) and len(url_part) >= 10:
                     final_name = name_part if name_part else "未知频道"
                     live_sources.append((final_name, url_part))
@@ -281,7 +279,7 @@ class IPTVProcessor:
 
     @staticmethod
     def parse_content_by_url(url: str, content: str) -> List[Tuple[str, str]]:
-        """根据URL自动选择解析策略，适配对应文件格式"""
+        """根据URL自动选择解析策略，返回有效直播源列表"""
         file_type = IPTVProcessor._judge_file_type(url, content)
         if file_type == "m3u_standard":
             return IPTVProcessor.parse_m3u_standard_content(content)
@@ -292,7 +290,7 @@ class IPTVProcessor:
 
     @staticmethod
     def merge_and_deduplicate(sources_list: List[List[Tuple[str, str]]]) -> List[Tuple[str, str]]:
-        """合并多个解析结果，按URL去重（保留首次出现的频道名称），提升大规模数据效率"""
+        """合并多个解析结果，按URL去重，保留首次出现的频道名称"""
         if not sources_list:
             logger.warning("待合并的直播源列表为空")
             return []
@@ -313,29 +311,30 @@ class IPTVProcessor:
 
     @staticmethod
     def generate_sorted_m3u(live_sources: List[Tuple[str, str]], output_filename: str = "live_ipv4_source_sorted.m3u") -> None:
-        """生成标准M3U文件，可直接导入IPTV播放器，优化频道名称和URL格式"""
+        """生成标准M3U文件，存入output文件夹（与主脚本同目录），可直接导入IPTV播放器"""
         if not live_sources:
             logger.error("无有效直播源，无法生成M3U文件")
             return
 
         try:
-            output_path = os.path.join(os.getcwd(), output_filename)
+            # M3U文件路径：output文件夹（与主脚本同目录）
+            output_path = os.path.join(config.OUTPUT_DIR, output_filename)
             with open(output_path, 'w', encoding='utf-8') as f:
-                # 写入标准M3U头，添加EPG链接，提升播放器体验
+                # 写入标准M3U头，添加EPG链接提升播放器兼容性
                 f.write('#EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml"\n\n')
 
                 for name, url in live_sources:
-                    # 优化：提取URL中的线路信息（$后内容），添加到频道名称
+                    # 提取URL线路信息，优化频道名称显示
                     final_name = name
                     final_url = url
                     if '$' in url:
                         url_parts = url.split('$', 1)
                         if len(url_parts) == 2:
-                            final_url = url_parts[0].strip()  # 核心播放URL，去除后缀
-                            line_info = url_parts[1].strip()  # 线路信息
-                            final_name = f"{name}（{line_info}）"  # 拼接频道名称
+                            final_url = url_parts[0].strip()
+                            line_info = url_parts[1].strip()
+                            final_name = f"{name}（{line_info}）"
 
-                    # 格式化写入，添加分组，提升可读性
+                    # 格式化写入频道信息
                     f.write(f'#EXTINF:-1 group-title="默认分组",{final_name}\n')
                     f.write(f'{final_url}\n\n')
 
@@ -343,13 +342,14 @@ class IPTVProcessor:
         except Exception as e:
             logger.error(f"生成M3U文件失败：{str(e)[:100]}")
 
-# 速度测试工具类：优化测速效率，适配大规模直播源
+# ===================== 速度测试工具类 =====================
 class SpeedTester:
+    """异步批量测速，按延迟排序，筛选可用直播源"""
     def __init__(self):
         self.session = None
 
     async def __aenter__(self):
-        # 优化请求头，提升测速成功率，避免被目标服务器封禁
+        """创建异步会话，配置请求头"""
         self.session = aiohttp.ClientSession(
             timeout=aiohttp.ClientTimeout(total=config.TIMEOUT),
             headers={
@@ -361,20 +361,20 @@ class SpeedTester:
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
+        """关闭异步会话"""
         if self.session:
             await self.session.close()
 
-    async def measure_latency(self, url: str, retry_times: int = 3) -> SpeedTestResult:
-        """测量单个URL延迟，优化重试策略，仅验证响应状态码，提升效率"""
+    async def measure_latency(self, url: str) -> SpeedTestResult:
+        """测量单个URL延迟，使用配置中的重试次数"""
         result = SpeedTestResult(url=url, test_time=time.time())
+        retry_times = config.RETRY_TIMES
 
         for attempt in range(retry_times):
             try:
                 start_time = time.time()
-                # 允许重定向，适配跳转类直播源，不下载完整内容
                 async with self.session.get(url, allow_redirects=True, ssl=False) as response:
                     if response.status == 200:
-                        # 计算延迟，保留2位小数
                         latency = (time.time() - start_time) * 1000
                         result.latency = round(latency, 2)
                         result.resolution = "unknown"
@@ -384,15 +384,14 @@ class SpeedTester:
                     else:
                         result.error = f"HTTP状态码：{response.status}"
             except Exception as e:
-                result.error = str(e)[:100]  # 截断过长错误信息
+                result.error = str(e)[:100]
                 logger.debug(f"测速失败 {url[:50]}... 尝试 {attempt+1}/{retry_times}：{result.error}")
-                # 递增重试间隔，避免频繁请求被封禁
                 await asyncio.sleep(0.5 * (attempt + 1))
 
         return result
 
     async def batch_speed_test(self, urls: List[str]) -> List[SpeedTestResult]:
-        """批量测速，分批处理，避免内存溢出，适配大规模直播源"""
+        """批量测速，分批处理避免内存溢出，返回排序后的结果"""
         if not urls:
             logger.warning("待测速URL列表为空")
             return []
@@ -403,10 +402,10 @@ class SpeedTester:
 
         async def worker(url):
             async with semaphore:
-                result = await self.measure_latency(url, config.RETRY_TIMES)
+                result = await self.measure_latency(url)
                 results.append(result)
 
-        # 分批创建并执行任务，提升大规模数据处理稳定性
+        # 分批执行测速任务
         for i in range(0, len(urls), batch_size):
             batch_urls = urls[i:i+batch_size]
             batch_tasks = [worker(url) for url in batch_urls]
@@ -416,15 +415,16 @@ class SpeedTester:
         # 按延迟升序排序，失败项排最后
         return sorted(results, key=lambda x: x.latency if x.latency is not None else float('inf'))
 
-# 主程序：串联所有流程，实现从下载到生成的闭环
+# ===================== 主程序入口 =====================
 async def main():
+    """主流程：下载 -> 解析 -> 合并 -> 测速 -> 生成文件"""
     # 1. 验证配置中的远程URL列表
     if not config.SOURCE_URLS:
-        logger.error("config.py中的SOURCE_URLS列表为空，请先配置有效GitHub链接")
+        logger.error("SOURCE_URLS列表为空，请配置有效远程IPTV链接")
         return
 
     # 2. 批量下载远程文件
-    logger.info(f"开始处理 {len(config.SOURCE_URLS)} 个GitHub远程链接...")
+    logger.info(f"开始处理 {len(config.SOURCE_URLS)} 个远程链接...")
     async with RemoteM3UDownloader() as downloader:
         valid_contents = await downloader.batch_download(config.SOURCE_URLS)
 
@@ -432,49 +432,48 @@ async def main():
         logger.error("未成功下载任何远程文件，程序退出")
         return
 
-    # 3. 解析所有下载内容，自动适配格式
+    # 3. 解析所有下载内容
     logger.info("开始解析所有远程文件内容...")
     iptv_processor = IPTVProcessor()
     all_parsed_sources = []
-    for url, content in zip(config.SOURCE_URLS, valid_contents):
+    for url, content in zip(config.SOURCE_URLS[:len(valid_contents)], valid_contents):
         parsed_sources = iptv_processor.parse_content_by_url(url, content)
         if parsed_sources:
             all_parsed_sources.append(parsed_sources)
 
-    # 4. 合并去重，获取有效直播源列表
+    # 4. 合并去重获取有效直播源
     merged_sources = iptv_processor.merge_and_deduplicate(all_parsed_sources)
     if not merged_sources:
         logger.error("合并去重后无有效直播源，程序退出")
         return
 
-    # 5. 批量异步测速，获取排序结果
+    # 5. 批量异步测速
     logger.info(f"开始对 {len(merged_sources)} 个有效直播源进行测速...")
     async with SpeedTester() as tester:
         urls_to_test = [source[1] for source in merged_sources]
         test_results = await tester.batch_speed_test(urls_to_test)
 
-    # 6. 筛选测速成功的源，按延迟排序
+    # 6. 筛选测速成功的源并排序
     url_to_result = {result.url: result for result in test_results}
-    valid_live_sources = [(name, url) for name, url in merged_sources if url_to_result[url].success]
+    valid_live_sources = [(name, url) for name, url in merged_sources if url_to_result.get(url, SpeedTestResult(url)).success]
 
     if not valid_live_sources:
         logger.error("无测速成功的直播源，无法生成最终文件")
         return
 
-    # 按延迟升序排序有效源
     sorted_valid_sources = sorted(
         valid_live_sources,
         key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
     )
 
-    # 7. 生成标准M3U文件和详细测试报告
+    # 7. 生成M3U文件和测速报告
     iptv_processor.generate_sorted_m3u(sorted_valid_sources)
 
-    # 生成测试报告
-    report_file = f"{config.OUTPUT_DIR}/speed_test_report_{int(time.time())}.txt"
+    # 生成测速报告（存入output文件夹）
+    report_file = os.path.join(config.OUTPUT_DIR, f"speed_test_report_{int(time.time())}.txt")
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
-            f.write("IPTV直播源速度测试报告（GitHub专属优化版）\n")
+            f.write("IPTV直播源速度测试报告（专属优化版）\n")
             f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"远程链接数量: {len(config.SOURCE_URLS)}\n")
             f.write(f"总解析源数量: {len(merged_sources)}\n")
@@ -502,8 +501,15 @@ async def main():
 
     # 8. 程序执行完成提示
     logger.info("=" * 60)
-    logger.info("程序执行完成，所有结果文件已生成，可直接导入IPTV播放器使用")
+    logger.info("程序执行完成，所有结果文件已存入output文件夹（与主脚本同目录）")
     logger.info("=" * 60)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    """运行入口，兼容Windows系统asyncio事件循环"""
+    try:
+        asyncio.run(main())
+    except RuntimeError as e:
+        if "Event loop is closed" in str(e):
+            logger.warning("Windows系统事件循环关闭警告，核心功能已正常完成")
+        else:
+            logger.error(f"程序运行异常：{str(e)[:100]}")
