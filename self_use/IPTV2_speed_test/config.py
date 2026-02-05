@@ -17,6 +17,8 @@ class Config:
     
     # 远程直播源URL列表
     SOURCE_URLS = [
-        "https://raw.githubusercontent.com/alantang1977/IPTV/main/live_ipv4.txt",
-        "https://raw.githubusercontent.com/alantang1977/iptv_api/main/output/live_ipv4.m3u"
+        "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/self_use/IPTV_Update/output/live_ipv4_source.m3u",
+
+
+        
     ]
