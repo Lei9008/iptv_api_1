@@ -6,42 +6,25 @@ import os
 from dataclasses import dataclass
 from typing import List, Dict, Tuple, Optional, Set
 
-# 从config.py导入Config类（适配绝对路径配置）
+# 从config.py导入Config类
 from config import Config
 
 # 实例化配置
 config = Config()
 
-# 提前定义日志对象（后续初始化后会覆盖配置，避免未定义报错）
+# 确保输出目录存在，避免日志/报告创建失败
+os.makedirs(config.OUTPUT_DIR, exist_ok=True)
+
+# 日志配置
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(config.LOG_FILE),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
-
-# 确保必要文件夹存在
-def init_folders():
-    """初始化项目所需文件夹（output，使用config中的绝对路径）"""
-    # 从config中获取文件夹绝对路径，保证可移植性
-    folder = config.OUTPUT_DIR
-    if not os.path.exists(folder):
-        os.makedirs(folder)
-        logging.info(f"创建文件夹成功：{folder}")
-
-# 配置日志系统
-def init_logging():
-    """初始化日志配置，同时输出到控制台和日志文件（绝对路径）"""
-    init_folders()
-    # 从config中获取日志文件绝对路径
-    log_file = config.LOG_FILE
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',  # 补充日期时间格式，更易读
-        handlers=[
-            logging.FileHandler(log_file, "a", encoding="utf-8"),  # 追加模式，保留历史日志
-            logging.StreamHandler()
-        ]
-    )
-    # 全局更新logger对象，应用最新配置
-    global logger
-    logger = logging.getLogger(__name__)
 
 # 数据类：存储单个URL测速结果
 @dataclass
@@ -83,13 +66,13 @@ class RemoteM3UDownloader:
         下载单个远程文件，支持缓存和多编码解析
         返回：文件内容字符串 | None（下载失败）
         """
-        # 优先从缓存获取，避免重复请求
+        # 优先从缓存获取
         if url in self.download_cache:
             logger.info(f"从缓存中获取链接内容：{url}")
             return self.download_cache[url]
 
         try:
-            # 第一步：验证响应状态码，不下载完整内容
+            # 第一步：验证响应状态码
             async with self.session.get(url) as response:
                 if response.status != 200:
                     logger.error(f"下载失败 {url}：HTTP状态码 {response.status}")
@@ -114,7 +97,7 @@ class RemoteM3UDownloader:
                 self.download_cache[url] = content
                 logger.info(f"成功下载并缓存 {url}（内容大小：{len(content)} 字符）")
 
-                # 保存调试文件，便于排查格式问题（当前工作目录，不使用绝对路径，方便查看）
+                # 保存调试文件，便于排查格式问题
                 self._save_debug_file(url, content)
                 return content
         except Exception as e:
@@ -125,8 +108,8 @@ class RemoteM3UDownloader:
     def _save_debug_file(url: str, content: str):
         """保存下载内容到本地调试文件，按链接后缀命名，避免覆盖"""
         try:
-            # 提取链接末尾文件名作为调试文件名，处理特殊字符
-            file_suffix = url.split('/')[-1].replace('/', '_').replace('?', '_').replace('&', '_')
+            # 提取链接末尾文件名作为调试文件名
+            file_suffix = url.split('/')[-1].replace('/', '_').replace('?', '_')
             debug_filename = f"debug_{file_suffix}.txt"
             debug_path = os.path.join(os.getcwd(), debug_filename)
 
@@ -143,7 +126,6 @@ class RemoteM3UDownloader:
             logger.warning("远程URL列表为空，无需下载")
             return []
 
-        # 使用config中的并发限制配置
         semaphore = asyncio.Semaphore(config.CONCURRENT_LIMIT)
         valid_contents = []
 
@@ -337,7 +319,6 @@ class IPTVProcessor:
             return
 
         try:
-            # 生成M3U文件到当前工作目录（方便用户查找，也可改为绝对路径）
             output_path = os.path.join(os.getcwd(), output_filename)
             with open(output_path, 'w', encoding='utf-8') as f:
                 # 写入标准M3U头，添加EPG链接，提升播放器体验
@@ -385,14 +366,12 @@ class SpeedTester:
 
     async def measure_latency(self, url: str, retry_times: int = 3) -> SpeedTestResult:
         """测量单个URL延迟，优化重试策略，仅验证响应状态码，提升效率"""
-        # 使用config中的重试次数配置
-        retry_times = config.RETRY_TIMES
         result = SpeedTestResult(url=url, test_time=time.time())
 
         for attempt in range(retry_times):
             try:
                 start_time = time.time()
-                # 允许重定向，适配跳转类直播源，不下载完整内容（关闭SSL验证，提升兼容性）
+                # 允许重定向，适配跳转类直播源，不下载完整内容
                 async with self.session.get(url, allow_redirects=True, ssl=False) as response:
                     if response.status == 200:
                         # 计算延迟，保留2位小数
@@ -419,13 +398,12 @@ class SpeedTester:
             return []
 
         results = []
-        # 使用config中的并发限制配置
         semaphore = asyncio.Semaphore(config.CONCURRENT_LIMIT)
         batch_size = 100  # 分批大小，可根据机器性能调整
 
         async def worker(url):
             async with semaphore:
-                result = await self.measure_latency(url)
+                result = await self.measure_latency(url, config.RETRY_TIMES)
                 results.append(result)
 
         # 分批创建并执行任务，提升大规模数据处理稳定性
@@ -489,11 +467,11 @@ async def main():
         key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
     )
 
-    # 7. 生成标准M3U文件和详细测试报告（使用config中的绝对路径保存报告）
+    # 7. 生成标准M3U文件和详细测试报告
     iptv_processor.generate_sorted_m3u(sorted_valid_sources)
 
-    # 生成测试报告（保存到output文件夹，绝对路径）
-    report_file = os.path.join(config.OUTPUT_DIR, f"speed_test_report_{int(time.time())}.txt")
+    # 生成测试报告
+    report_file = f"{config.OUTPUT_DIR}/speed_test_report_{int(time.time())}.txt"
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write("IPTV直播源速度测试报告（GitHub专属优化版）\n")
@@ -528,6 +506,4 @@ async def main():
     logger.info("=" * 60)
 
 if __name__ == "__main__":
-    # 关键：先执行日志和文件夹初始化（适配绝对路径），再运行主程序
-    init_logging()
     asyncio.run(main())
