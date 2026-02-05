@@ -1,10 +1,11 @@
 import os
 
-# 1. 获取当前主脚本（speed_test.py）的目录路径
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-
 # 全局配置项
 class Config:
+
+    # 1. 获取当前主脚本（speed_test.py）的目录路径
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
     # 2. 并发与请求配置
     CONCURRENT_LIMIT = 20
     TIMEOUT = 10
@@ -22,3 +23,5 @@ class Config:
 
 
     ]
+
+   
