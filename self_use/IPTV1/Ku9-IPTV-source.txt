@@ -147,7 +147,7 @@ CCTV-17,webview://https://www.yangshipin.cn/tv/home?pid=600001810
 重庆卫视,webview://https://yangshipin.cn/tv/home?pid=600002531
 云南卫视,webview://https://yangshipin.cn/tv/home?pid=600190402
 西藏卫视,webview://https://yangshipin.cn/tv/home?pid=600190403
-陕西农林,webview://http://live.snrtv.com/nl
+农林卫视,webview://http://live.snrtv.com/nl
 
 浙江卫视,webview://https://www.xuexi.cn/xxqg.html?id=0b0936946bd7416fa80aaeb4072f369a
 浙江卫视,webview://https://zmtv.cztv.com/cmsh5-share/prod/cztv-tvLive/index.html
