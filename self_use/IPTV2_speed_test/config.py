@@ -14,4 +14,5 @@ class Config:
     # 示例：GitHub RAW链接、普通HTTP链接均可
     SOURCE_URLS = [
          "https://raw.githubusercontent.com/alantang1977/IPTV/main/live_ipv4.txt",
+         "https://raw.githubusercontent.com/alantang1977/iptv_api/main/output/live_ipv4.m3u"
     ]
