@@ -1,5 +1,5 @@
 
-name: Daily Update
+name: Speed Test
 
 on:
   schedule:
