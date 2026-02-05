@@ -186,7 +186,7 @@ CCTV-14,webview://https://tv.cctv.com/live/cctvchild/
 山东农科,webview://https://v.iqilu.com/live/nkpd/
 山东文旅,webview://https://v.iqilu.com/live/yspd/
 山东少儿,webview://https://v.iqilu.com/live/sepd/
-山东教育电视台,webview://https://www.sdetv.com.cn/edu/pc/live/index.html
+山东教育,webview://https://www.sdetv.com.cn/edu/pc/live/index.html
 
 
 江苏频道,#genre#
