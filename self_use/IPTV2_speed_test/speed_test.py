@@ -11,7 +11,7 @@ from typing import List, Dict, Tuple, Optional
 class Config:
     CONCURRENT_LIMIT = 20  # 并发限制
     TIMEOUT = 10  # 超时时间（秒）
-    RETRY_TIMES = 3  # 重试次数
+    RETRY_TIMES = 2  # 重试次数
     OUTPUT_DIR = "output"  # 输出目录
     LOG_FILE = "output/speed_test.log"  # 日志文件
 
@@ -148,9 +148,9 @@ class M3UProcessor:
 # 主程序
 async def main():
     # 输入输出文件路径
-    #input_file = "input/live_sources.m3u"
-    input_file = "output/live_ipv4.m3u"
-    output_file = f"{config.OUTPUT_DIR}/live_sources_ipv4}.m3u"
+    input_file = "self_use/IPTV_Update/output/live_ipv4_source.m3u"
+    #input_file = "self_use/IPTV2_speed_test/output/live_ipv4_source.m3u"
+    output_file = f"self_use/IPTV2_speed_test/output/live_ipv4_source.m3u"
     
     # 解析M3U文件
     logger.info(f"开始解析M3U文件: {input_file}")
