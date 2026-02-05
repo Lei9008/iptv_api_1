@@ -13,5 +13,5 @@ class Config:
     # 关键修改：远程直播源URL列表（支持GitHub RAW / 普通HTTP链接）
     # 示例：GitHub RAW链接、普通HTTP链接均可
     SOURCE_URLS = [
-        "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/self_use/IPTV1/Ku9-IPTV-source.txt",
+         "https://raw.githubusercontent.com/alantang1977/IPTV/main/live_ipv4.txt",
     ]
