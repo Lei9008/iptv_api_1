@@ -36,110 +36,280 @@ class SpeedTestResult:
     error: Optional[str] = None  # 错误信息
     test_time: float = 0  # 测试时间戳
 
-# 远程M3U下载工具类（新增）
+# 远程M3U/纯文本URL列表下载工具类（深度优化）
 class RemoteM3UDownloader:
-    """异步下载远程M3U文件，支持多链接批量下载"""
+    """异步下载远程M3U/纯文本URL文件，适配GitHub RAW链接，支持缓存和编码兼容"""
     def __init__(self):
         self.session = None
-    
+        # 缓存：避免重复下载同一URL
+        self.download_cache = {}
+
     async def __aenter__(self):
         self.session = aiohttp.ClientSession(
             timeout=aiohttp.ClientTimeout(total=config.TIMEOUT),
-            headers={"User-Agent": "Mozilla/5.0"}
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "Accept": "text/plain, text/html, application/x-mpegurl"
+            }
         )
         return self
-    
+
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         if self.session:
             await self.session.close()
-    
-    async def download_m3u_content(self, url: str) -> Optional[str]:
-        """下载单个远程M3U文件，返回文件内容（字符串）"""
+        self.download_cache.clear()
+
+    async def download_content(self, url: str) -> Optional[str]:
+        """
+        下载单个远程文件，支持缓存，兼容UTF-8/GBK/GB2312编码
+        返回文件内容字符串，失败返回None
+        """
+        # 先查缓存，避免重复下载
+        if url in self.download_cache:
+            logger.info(f"从缓存中获取 {url} 的内容")
+            return self.download_cache[url]
+
         try:
             async with self.session.get(url) as response:
-                if response.status == 200:
-                    content = await response.text(encoding='utf-8')
-                    logger.info(f"成功下载远程M3U文件: {url}")
-                    return content
-                else:
-                    logger.error(f"下载远程M3U失败 {url}：HTTP状态码 {response.status}")
+                if response.status != 200:
+                    logger.error(f"下载失败 {url}：HTTP状态码 {response.status}")
                     return None
+
+            # 重新请求获取内容（分开处理状态码和编码，提升兼容性）
+            async with self.session.get(url) as response:
+                # 尝试多种编码解析
+                encodings = ['utf-8', 'gbk', 'gb2312', 'latin-1']
+                content = None
+                for encoding in encodings:
+                    try:
+                        content = await response.text(encoding=encoding)
+                        break
+                    except:
+                        continue
+
+                if not content:
+                    logger.error(f"下载 {url} 成功，但无法解析任何编码格式")
+                    return None
+
+                # 缓存结果
+                self.download_cache[url] = content
+                logger.info(f"成功下载并缓存 {url}（大小：{len(content)} 字符）")
+
+                # 保存调试文件（可选，便于排查问题）
+                self._save_debug_file(url, content)
+
+                return content
         except Exception as e:
-            logger.error(f"下载远程M3U异常 {url}：{str(e)}")
+            logger.error(f"下载异常 {url}：{str(e)}")
             return None
-    
-    async def batch_download_m3u(self, urls: List[str]) -> List[str]:
-        """批量下载多个远程M3U文件，返回所有有效文件内容列表"""
+
+    @staticmethod
+    def _save_debug_file(url: str, content: str):
+        """保存下载内容到本地调试文件，按链接命名避免覆盖"""
+        try:
+            # 提取简单文件名作为调试文件名称
+            file_name = url.split('/')[-1].replace('.', '_') + "_debug.txt"
+            debug_path = os.path.join(os.getcwd(), file_name)
+            with open(debug_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            logger.debug(f"调试文件已保存：{debug_path}")
+        except:
+            pass
+
+    async def batch_download(self, urls: List[str]) -> List[str]:
+        """批量下载多个远程文件，返回所有有效内容列表"""
         if not urls:
-            logger.warning("远程M3U URL列表为空")
+            logger.warning("远程URL列表为空")
             return []
-        
+
         # 并发下载（复用全局并发限制）
         semaphore = asyncio.Semaphore(config.CONCURRENT_LIMIT)
-        downloaded_contents = []
-        
+        valid_contents = []
+
         async def worker(m3u_url):
             async with semaphore:
-                content = await self.download_m3u_content(m3u_url)
+                content = await self.download_content(m3u_url)
                 if content:
-                    downloaded_contents.append(content)
-        
-        tasks = [worker(url) for url in config.SOURCE_URLS]
-        await asyncio.gather(*tasks)
-        
-        return downloaded_contents
+                    valid_contents.append(content)
 
-# 速度测试工具类（保留原有逻辑，无核心修改）
+        tasks = [worker(url) for url in urls]
+        await asyncio.gather(*tasks)
+
+        logger.info(f"批量下载完成：共 {len(urls)} 个链接，成功下载 {len(valid_contents)} 个")
+        return valid_contents
+
+# M3U/纯文本URL处理类（专属适配两个GitHub链接）
+class IPTVProcessor:
+    @staticmethod
+    def _judge_file_type(url: str, content: str) -> str:
+        """
+        预判文件类型，支持：m3u（标准格式）、txt（纯URL列表）
+        返回："m3u" 或 "txt"
+        """
+        # 先通过文件名后缀判断
+        if url.endswith('.m3u') or url.endswith('.m3u8'):
+            return "m3u"
+        if url.endswith('.txt'):
+            return "txt"
+
+        # 后缀无法判断时，通过内容判断
+        if any(line.strip().startswith('#EXTINF:') for line in content.splitlines()):
+            return "m3u"
+        return "txt"
+
+    @staticmethod
+    def parse_txt_content(content: str) -> List[Tuple[str, str]]:
+        """解析.txt纯URL列表（适配第一个GitHub链接），一行一个URL"""
+        live_sources = []
+        try:
+            lines = content.splitlines()
+            for line in lines:
+                line = line.strip()
+                # 严格筛选有效直播源URL
+                if line.startswith(('http', 'https')) and len(line) >= 10:
+                    # 过滤无效链接（包含特殊字符、过短链接）
+                    if not any(char in line for char in [' ', '\t', '\r', '\n']):
+                        live_sources.append(("未知频道", line))
+            logger.info(f"解析纯文本URL列表完成，提取到 {len(live_sources)} 个直播源")
+            return live_sources
+        except Exception as e:
+            logger.error(f"解析纯文本URL失败：{str(e)}")
+            return []
+
+    @staticmethod
+    def parse_m3u_content(content: str) -> List[Tuple[str, str]]:
+        """解析标准.m3u文件（适配第二个GitHub链接），带#EXTINF:频道名称"""
+        live_sources = []
+        try:
+            lines = []
+            # 预处理：过滤空白行和无关注释行
+            for line in content.splitlines():
+                line = line.strip()
+                if line and not (line.startswith('#') and not line.startswith('#EXTINF:')):
+                    lines.append(line)
+
+            current_name = "未知频道"
+            for line in lines:
+                if line.startswith('#EXTINF:'):
+                    # 精准提取频道名称，兼容各种#EXTINF格式
+                    name_part = line.split(',', 1)[-1].strip() if ',' in line else ""
+                    current_name = name_part if name_part else "未知频道"
+                elif line.startswith(('http', 'https')) and len(line) >= 10:
+                    live_sources.append((current_name, line))
+                    current_name = "未知频道"  # 重置名称，避免重复绑定
+
+            logger.info(f"解析标准M3U文件完成，提取到 {len(live_sources)} 个直播源")
+            return live_sources
+        except Exception as e:
+            logger.error(f"解析标准M3U失败：{str(e)}")
+            return []
+
+    @staticmethod
+    def parse_content_by_url(url: str, content: str) -> List[Tuple[str, str]]:
+        """根据URL自动选择解析策略，适配两个GitHub链接"""
+        file_type = IPTVProcessor._judge_file_type(url, content)
+        if file_type == "m3u":
+            return IPTVProcessor.parse_m3u_content(content)
+        else:
+            return IPTVProcessor.parse_txt_content(content)
+
+    @staticmethod
+    def merge_and_deduplicate(sources_list: List[List[Tuple[str, str]]]) -> List[Tuple[str, str]]:
+        """
+        合并多个解析结果，按URL去重（保留首次出现的频道名称）
+        去重逻辑优化，提升大规模数据处理效率
+        """
+        if not sources_list:
+            logger.warning("待合并的直播源列表为空")
+            return []
+
+        url_set: Set[str] = set()
+        merged_sources: List[Tuple[str, str]] = []
+
+        for sources in sources_list:
+            for name, url in sources:
+                if url not in url_set:
+                    url_set.add(url)
+                    merged_sources.append((name, url))
+
+        total_original = sum(len(s) for s in sources_list)
+        total_merged = len(merged_sources)
+        logger.info(f"合并去重完成：原始 {total_original} 个源，去重后 {total_merged} 个有效源")
+        return merged_sources
+
+    @staticmethod
+    def generate_sorted_m3u(live_sources: List[Tuple[str, str]], output_filename: str = "live_ipv4_source_sorted.m3u") -> None:
+        """生成排序后的M3U文件，与main.py同目录，格式规范可直接用于IPTV播放器"""
+        if not live_sources:
+            logger.error("无有效直播源，无法生成M3U文件")
+            return
+
+        try:
+            output_path = os.path.join(os.getcwd(), output_filename)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                # 写入标准M3U文件头
+                f.write('#EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml"\n\n')
+                for name, url in live_sources:
+                    # 格式化写入，提升文件可读性
+                    f.write(f'#EXTINF:-1 group-title="默认分组",{name}\n')
+                    f.write(f'{url}\n\n')
+
+            logger.info(f"已生成标准M3U文件：{output_path}（包含 {len(live_sources)} 个有效直播源）")
+        except Exception as e:
+            logger.error(f"生成M3U文件失败：{str(e)}")
+
+# 速度测试工具类（优化请求头，提升GitHub链接测速成功率）
 class SpeedTester:
     def __init__(self):
         self.session = None
-    
+
     async def __aenter__(self):
-        self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=config.TIMEOUT))
+        self.session = aiohttp.ClientSession(
+            timeout=aiohttp.ClientTimeout(total=config.TIMEOUT),
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip, deflate, br"
+            }
+        )
         return self
-    
+
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         if self.session:
             await self.session.close()
-    
+
     async def measure_latency(self, url: str, retry_times: int = 3) -> SpeedTestResult:
-        """测量单个URL的延迟和分辨率"""
+        """测量单个URL延迟，优化重试策略，减少GitHub链接请求被封禁"""
         result = SpeedTestResult(url=url, test_time=time.time())
-        
+
         for attempt in range(retry_times):
             try:
                 start_time = time.time()
-                async with self.session.get(url, headers={"User-Agent": "Mozilla/5.0"}) as response:
+                async with self.session.get(url, allow_redirects=True) as response:
+                    # 只需确认响应状态码，无需下载完整内容（提升测速效率）
                     if response.status == 200:
-                        # 简单测量响应时间作为延迟（转换为毫秒）
-                        latency = (time.time() - start_time) * 1000
-                        
-                        # 简化分辨率提取（仅判断响应类型）
-                        resolution = None
-                        content_type = response.headers.get("Content-Type", "")
-                        if "video" in content_type or "application/vnd.apple.mpegurl" in content_type:
-                            resolution = "unknown"
-                        
-                        result.latency = latency
-                        result.resolution = resolution
+                        latency = (time.time() - start_time) * 1000  # 转换为毫秒
+                        result.latency = round(latency, 2)  # 保留2位小数，更整洁
+                        result.resolution = "unknown"
                         result.success = True
-                        logger.info(f"URL: {url} 测试成功，延迟: {latency:.2f}ms")
+                        logger.debug(f"URL: {url[:50]}... 测试成功，延迟: {result.latency}ms")
                         break
                     else:
                         result.error = f"HTTP状态码: {response.status}"
             except Exception as e:
-                result.error = str(e)
-                logger.warning(f"URL: {url} 尝试 {attempt+1}/{retry_times} 失败: {e}")
-                await asyncio.sleep(1)  # 重试前等待1秒，避免频繁请求
-        
+                result.error = str(e)[:100]  # 截断过长错误信息
+                logger.debug(f"URL: {url[:50]}... 尝试 {attempt+1}/{retry_times} 失败: {result.error}")
+                # 优化重试间隔，避免频繁请求
+                await asyncio.sleep(0.5 * (attempt + 1))
+
         return result
-    
+
     async def batch_speed_test(self, urls: List[str]) -> List[SpeedTestResult]:
-        """批量测速（带并发控制）"""
+        """批量测速，优化并发控制，提升大规模URL处理效率"""
         if not urls:
             logger.warning("待测速URL列表为空")
             return []
-        
+
         results = []
         semaphore = asyncio.Semaphore(config.CONCURRENT_LIMIT)
 
@@ -149,157 +319,94 @@ class SpeedTester:
                 result = await self.measure_latency(url, config.RETRY_TIMES)
                 results.append(result)
 
-        tasks = [worker(url) for url in urls]
-        await asyncio.gather(*tasks)
-        
-        # 按延迟升序排序（失败项排最后）
+        # 分批创建任务，避免内存溢出（适配大规模直播源）
+        batch_size = 100
+        for i in range(0, len(urls), batch_size):
+            batch_urls = urls[i:i+batch_size]
+            batch_tasks = [worker(url) for url in batch_urls]
+            await asyncio.gather(*batch_tasks)
+            logger.info(f"已完成 {min(i+batch_size, len(urls))}/{len(urls)} 个URL测速")
+
+        # 按延迟升序排序，失败项排最后
         return sorted(results, key=lambda x: x.latency if x.latency is not None else float('inf'))
 
-# M3U文件处理类（优化：增强解析兼容性，适配.txt后缀的M3U格式）
-class M3UProcessor:
-    @staticmethod
-    def parse_m3u_content(m3u_content: str) -> List[Tuple[str, str]]:
-        """解析M3U字符串内容（增强兼容性），返回[(名称, URL), ...]"""
-        try:
-            # 预处理：去除空白行、过滤注释行（除了#EXTINF:），按行分割
-            lines = []
-            for line in m3u_content.splitlines():
-                line = line.strip()
-                # 保留非空行、保留#EXTINF:行，过滤其他注释行（#开头且非#EXTINF:）
-                if line and not (line.startswith('#') and not line.startswith('#EXTINF:')):
-                    lines.append(line)
-            
-            live_sources = []
-            current_name = "未知频道"  # 默认值，避免为空
-            
-            for line in lines:
-                if line.startswith('#EXTINF:'):
-                    # 优化1：兼容无逗号、逗号后无内容的情况
-                    name_start = line.find(',') + 1
-                    # 提取名称，若提取不到则保留默认值"未知频道"
-                    extracted_name = line[name_start:].strip() if name_start > 0 else ""
-                    current_name = extracted_name if extracted_name else "未知频道"
-                elif line.startswith(('http', 'https')):  # 优化2：显式支持http/https，更严谨
-                    # 优化3：过滤过短URL（避免无效链接），同时允许正常短链接
-                    if len(line) >= 8:  # 最小如"http://a.com"
-                        live_sources.append((current_name, line))
-                        # 重置当前名称，避免重复绑定
-                        current_name = "未知频道"
-            
-            logger.info(f"解析单个M3U内容完成，提取到 {len(live_sources)} 个直播源")
-            return live_sources
-        except Exception as e:
-            logger.error(f"解析M3U内容失败: {str(e)}")
-            return []
-    
-    @staticmethod
-    def merge_and_deduplicate(sources_list: List[List[Tuple[str, str]]]) -> List[Tuple[str, str]]:
-        """合并多个M3U解析结果，去重（按URL去重，保留首次出现的名称）"""
-        if not sources_list:
-            logger.warning("待合并的M3U源列表为空")
-            return []
-        
-        url_set: Set[str] = set()
-        merged_sources: List[Tuple[str, str]] = []
-        
-        for sources in sources_list:
-            for name, url in sources:
-                if url not in url_set:
-                    url_set.add(url)
-                    merged_sources.append((name, url))
-        
-        logger.info(f"合并完成：共处理 {sum(len(s) for s in sources_list)} 个原始源，去重后剩余 {len(merged_sources)} 个有效源")
-        return merged_sources
-    
-    @staticmethod
-    def generate_m3u(live_sources: List[Tuple[str, str]], output_path: str) -> None:
-        """生成M3U文件（与main.py同目录，无修改）"""
-        try:
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write('#EXTM3U\n')
-                for name, url in live_sources:
-                    f.write(f'#EXTINF:-1,{name}\n')
-                    f.write(f'{url}\n')
-            
-            logger.info(f"已生成排序后的M3U文件: {output_path}")
-        except Exception as e:
-            logger.error(f"生成M3U文件失败: {e}")
-
-# 主程序（核心流程改造：下载 -> 合并解析 -> 测速 -> 生成结果）
+# 主程序（专属适配两个GitHub链接，流程优化）
 async def main():
-    # 1. 验证远程URL列表是否为空
+    # 1. 验证配置中的远程URL列表
     if not config.SOURCE_URLS:
-        logger.error("config.py中的SOURCE_URLS列表为空，请先配置远程M3U链接")
+        logger.error("config.py中的SOURCE_URLS列表为空，请配置目标GitHub链接")
         return
-    
-    # 2. 异步批量下载所有远程M3U文件
-    logger.info(f"开始下载 {len(config.SOURCE_URLS)} 个远程M3U文件...")
+
+    # 2. 批量下载远程文件
+    logger.info(f"开始处理 {len(config.SOURCE_URLS)} 个GitHub远程链接...")
     async with RemoteM3UDownloader() as downloader:
-        m3u_contents = await downloader.batch_download_m3u(config.SOURCE_URLS)
-    
-    if not m3u_contents:
-        logger.error("未成功下载任何远程M3U文件，程序退出")
+        valid_contents = await downloader.batch_download(config.SOURCE_URLS)
+
+    if not valid_contents:
+        logger.error("未成功下载任何远程文件，程序退出")
         return
-    
-    # 3. 解析所有下载的M3U内容，合并并去重
-    logger.info("开始解析并合并M3U内容...")
-    m3u_processor = M3UProcessor()
+
+    # 3. 解析每个下载的内容（自动适配.txt/.m3u格式）
+    logger.info("开始解析所有远程文件内容...")
+    iptv_processor = IPTVProcessor()
     all_sources = []
-    for content in m3u_contents:
-        parsed_sources = m3u_processor.parse_m3u_content(content)
+    for url, content in zip(config.SOURCE_URLS, valid_contents):
+        parsed_sources = iptv_processor.parse_content_by_url(url, content)
         if parsed_sources:
             all_sources.append(parsed_sources)
-    
-    merged_live_sources = m3u_processor.merge_and_deduplicate(all_sources)
-    if not merged_live_sources:
+
+    # 4. 合并去重
+    merged_sources = iptv_processor.merge_and_deduplicate(all_sources)
+    if not merged_sources:
         logger.error("合并去重后无有效直播源，程序退出")
         return
-    
-    # 4. 异步批量测速
-    logger.info(f"开始对 {len(merged_live_sources)} 个直播源进行测速...")
+
+    # 5. 批量异步测速
+    logger.info(f"开始对 {len(merged_sources)} 个有效直播源进行测速...")
     async with SpeedTester() as tester:
-        urls = [source[1] for source in merged_live_sources]
+        urls = [source[1] for source in merged_sources]
         test_results = await tester.batch_speed_test(urls)
-    
-    # 5. 构建URL->测试结果映射，筛选有效源并排序
+
+    # 6. 筛选有效源并排序
     url_to_result = {result.url: result for result in test_results}
-    # 筛选仅成功的源
-    valid_live_sources = [(name, url) for name, url in merged_live_sources if url_to_result[url].success]
+    valid_live_sources = [(name, url) for name, url in merged_sources if url_to_result[url].success]
+
     if not valid_live_sources:
-        logger.error("无测速成功的有效直播源，无法生成输出文件")
+        logger.error("无测速成功的直播源，无法生成最终文件")
         return
-    
+
     # 按延迟升序排序有效源
     sorted_valid_sources = sorted(
         valid_live_sources,
         key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
     )
-    
-    # 6. 生成输出M3U文件（与main.py同目录）
-    output_file = "live_ipv4_source_sorted.m3u"
-    # 可选：带时间戳避免覆盖
-    # output_file = f"live_ipv4_source_sorted_{int(time.time())}.m3u"
-    m3u_processor.generate_m3u(sorted_valid_sources, output_file)
-    
-    # 7. 生成详细测试报告
+
+    # 7. 生成最终M3U文件和测试报告
+    iptv_processor.generate_sorted_m3u(sorted_valid_sources)
+
+    # 生成详细测试报告
     report_file = f"{config.OUTPUT_DIR}/speed_test_report_{int(time.time())}.txt"
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
-            f.write("IPTV直播源速度测试报告（远程源版）\n")
+            f.write("IPTV直播源速度测试报告（GitHub专属版）\n")
             f.write(f"测试时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"远程源数量: {len(config.SOURCE_URLS)}\n")
-            f.write(f"总解析源数量: {len(merged_live_sources)}\n")
+            f.write(f"远程链接数量: {len(config.SOURCE_URLS)}\n")
+            f.write(f"总解析源数量: {len(merged_sources)}\n")
             f.write(f"测速成功数量: {len(sorted_valid_sources)}\n\n")
-            
-            f.write("排序后的有效直播源列表（按延迟升序）:\n")
+
+            f.write("前20个最快的直播源（按延迟升序）:\n")
+            for i, (name, url) in enumerate(sorted_valid_sources[:20], 1):
+                result = url_to_result[url]
+                f.write(f"{i}. {name} - 延迟: {result.latency}ms - 状态: 成功\n")
+
+            f.write(f"\n完整有效源列表（共 {len(sorted_valid_sources)} 个）:\n")
             for i, (name, url) in enumerate(sorted_valid_sources, 1):
                 result = url_to_result[url]
-                latency_str = f"{result.latency:.2f}" if isinstance(result.latency, float) else "N/A"
-                f.write(f"{i}. {name} - 延迟: {latency_str}ms - 状态: 成功\n")
-        
+                f.write(f"{i}. {name} - 延迟: {result.latency}ms - URL: {url[:100]}...\n")
+
         logger.info(f"已生成详细测试报告: {report_file}")
     except Exception as e:
-        logger.error(f"生成测试报告失败: {e}")
+        logger.error(f"生成测试报告失败: {str(e)}")
 
 if __name__ == "__main__":
     asyncio.run(main())
