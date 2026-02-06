@@ -450,7 +450,7 @@ async def main():
     iptv_processor.generate_sorted_m3u(sorted_valid_sources)
 
     # 生成测速报告（存入output文件夹）
-    report_file = os.path.join(config.OUTPUT_DIR, f"speed_test_report_{int(time.time())}.txt")
+    report_file = os.path.join(config.OUTPUT_DIR, f"speed_test_report.txt")
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write("IPTV直播源速度测试报告（专属优化版）\n")
