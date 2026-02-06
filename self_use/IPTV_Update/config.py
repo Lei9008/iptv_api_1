@@ -34,8 +34,6 @@ source_urls = [
     #"https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
 
 
-
-
 ]
 
 # 直播源黑名单URL列表，去除了重复项
@@ -48,7 +46,7 @@ url_blacklist = [
     "http://tv.sohu.blog",
     "http://120.76.248.139",
     "http://120.238.94.10",
-    "iptv.catvod.com/","
+    "iptv.catvod.com/",
 
     "https://iptv.catvod.com/",
     "http://38.75.136.137:98/gslb/dsdqca",
