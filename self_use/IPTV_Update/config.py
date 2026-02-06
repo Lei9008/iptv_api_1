@@ -32,22 +32,8 @@ source_urls = [
     #"https://ghproxy.cc/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
     #"https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u",
     #"https://ghproxy.cc/https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u",
-    "https://ghproxy.cc/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
-    "https://raw.githubusercontent.com/alantang1977/iptv-auto/refs/heads/main/my.txt",
-    "https://raw.githubusercontent.com/alantang1977/TVsmile/refs/heads/main/%E7%BD%91%E7%BB%9C%E6%94%B6%E9%9B%86.txt",
-    "https://raw.githubusercontent.com/develop202/migu_video/main/interface.txt",
-    "https://raw.githubusercontent.com/fuxinyi0505/Ku9-IPTV-source/refs/heads/main/Ku9-IPTV-source.txt",
-    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%8F%B0%E6%B9%BE%E9%A6%99%E6%B8%AF%E6%BE%B3%E9%97%A82023.m3u",
-    "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B02023.m3u8",
-    "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt",
-    "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
-    "https://raw.githubusercontent.com/xiongjian83/TvBox/refs/heads/main/live.txt",
-    "https://raw.githubusercontent.com/yoursmile66/TVBox/refs/heads/main/live.txt",
-    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/cjdszb.txt",
-    "https://raw.githubusercontent.com/zxmlxw520/5566/refs/heads/main/gqds+.txt",
-    "https://raw.githubusercontent.com/zzmaze/iptv/main/itvlist.txt",
+
+
 
 
 ]
