@@ -3,7 +3,7 @@ name: IPTV Sources_speed_test
 on:
   schedule:
     # 每3天UTC时间23:32执行（对应上海时间8:00）
-    - cron: '32 23 * * *'  
+    - cron: '32 23 */2 * *'  
   workflow_dispatch:  # 允许手动触发
     inputs:
       force_update:
