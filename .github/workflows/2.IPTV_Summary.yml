@@ -2,7 +2,7 @@ name: 2.IPTV 源汇总(IPTV Source Summary)
 
 on:
   schedule:
-    - cron: '00 07 * * *'  # 每天凌晨07点00分执行任务（上海时间：15:00）
+    - cron: '00 06 */2 * *'  # 每天凌晨07点00分执行任务（上海时间：15:00）
   workflow_dispatch:  # 允许手动触发工作流
 
 
