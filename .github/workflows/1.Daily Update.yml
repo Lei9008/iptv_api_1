@@ -2,7 +2,7 @@ name: 1.Daily Update
 
 on:
   schedule:
-    - cron: '00 01 * * *'  # 每天凌晨01点分执行任务（上海时间：9:00）
+    - cron: '00 01 */2 * *'  # 每天凌晨01点分执行任务（上海时间：9:00）
   workflow_dispatch:  # 允许手动触发工作流
 
 
