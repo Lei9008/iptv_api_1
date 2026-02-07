@@ -3,7 +3,7 @@ name: Speed Test
 
 on:
   schedule:
-    - cron: '05 2 * * *'  
+    - cron: '05 2 */2 * *'  
   workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
@@ -54,3 +54,4 @@ jobs:
 
     env:
       TZ: Asia/Shanghai  # 设置时区为上海
+
