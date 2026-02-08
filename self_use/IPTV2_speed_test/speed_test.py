@@ -433,14 +433,27 @@ async def main():
         urls_to_test = [source[1] for source in merged_sources]
         test_results = await tester.batch_speed_test(urls_to_test)
 
-    # 6. 筛选测速成功的源并排序
+    # 6. 筛选测速成功且延迟≤阈值的源并排序（核心修改部分）
     url_to_result = {result.url: result for result in test_results}
-    valid_live_sources = [(name, url) for name, url in merged_sources if url_to_result.get(url, SpeedTestResult(url)).success]
+    
+    # 新增：过滤延迟≤阈值的源（同时保留测速成功）
+    valid_live_sources = [
+        (name, url) for name, url in merged_sources 
+        if (url_to_result.get(url, SpeedTestResult(url)).success and 
+            url_to_result[url].latency is not None and 
+            url_to_result[url].latency <= config.LATENCY_THRESHOLD)
+    ]
+
+    # 新增：日志提示过滤结果
+    total_success = len([r for r in test_results if r.success])
+    total_under_threshold = len(valid_live_sources)
+    logger.info(f"测速成功总数：{total_success} | 延迟≤{config.LATENCY_THRESHOLD}ms的源数：{total_under_threshold}")
 
     if not valid_live_sources:
-        logger.error("无测速成功的直播源，无法生成最终文件")
+        logger.error(f"无延迟≤{config.LATENCY_THRESHOLD}ms的直播源，无法生成最终文件")
         return
 
+    # 按延迟升序排序有效源
     sorted_valid_sources = sorted(
         valid_live_sources,
         key=lambda x: url_to_result[x[1]].latency if url_to_result[x[1]].latency is not None else float('inf')
