@@ -39,7 +39,6 @@ source_urls = [
 # 直播源黑名单URL列表，去除了重复项
 url_blacklist = [
 
-
     "http://live.xmcdn.com/live",
     "http://ls.qingting.fm",
     "http://123.129.70.178",
@@ -48,6 +47,9 @@ url_blacklist = [
     "http://120.238.94.10",
     "iptv.catvod.com/",
 
+    "http://free.cnlive.club/channel",
+    "http://120.238.94.82:9901/tsfile/live/1052_1.m3u8",
+    "http://183.237.95.108:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=0&authid=0",
     "https://iptv.catvod.com/",
     "http://38.75.136.137:98/gslb/dsdqca",
     "https://migu.188766.xyz",
