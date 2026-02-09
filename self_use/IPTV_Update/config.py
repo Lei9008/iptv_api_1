@@ -47,9 +47,10 @@ url_blacklist = [
     "http://120.238.94.10",
     "iptv.catvod.com/",
 
+    
     "http://free.cnlive.club/channel",
     "http://120.238.94.82:9901/tsfile/live/1052_1.m3u8",
-    "http://183.237.95.108:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=0&authid=0",
+    "http://183.237.95.108:9901/tsfile",
     "https://iptv.catvod.com/",
     "http://38.75.136.137:98/gslb/dsdqca",
     "https://migu.188766.xyz",
