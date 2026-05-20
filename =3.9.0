@@ -27,7 +27,7 @@ Collecting multidict<7.0,>=4.5 (from aiohttp)
 Collecting propcache>=0.2.0 (from aiohttp)
   Downloading propcache-0.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
 Collecting yarl<2.0,>=1.17.0 (from aiohttp)
-  Using cached yarl-1.23.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+  Downloading yarl-1.24.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (94 kB)
 Collecting typing-extensions>=4.1.0 (from multidict<7.0,>=4.5->aiohttp)
   Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
@@ -35,10 +35,10 @@ Downloading charset_normalizer-3.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_
 Downloading idna-3.15-py3-none-any.whl (72 kB)
 Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
 Downloading aiohttp-3.13.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 21.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 173.2 MB/s  0:00:00
 Using cached async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
 Using cached multidict-6.7.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (243 kB)
-Using cached yarl-1.23.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (102 kB)
+Downloading yarl-1.24.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (106 kB)
 Using cached python_dotenv-1.2.2-py3-none-any.whl (22 kB)
 Using cached aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
 Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
@@ -49,4 +49,4 @@ Downloading propcache-0.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_
 Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
 Installing collected packages: urllib3, typing-extensions, python-dotenv, propcache, idna, frozenlist, charset_normalizer, certifi, attrs, async-timeout, aiohappyeyeballs, requests, multidict, aiosignal, yarl, aiohttp
 
-Successfully installed aiohappyeyeballs-2.6.1 aiohttp-3.13.5 aiosignal-1.4.0 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.4.22 charset_normalizer-3.4.7 frozenlist-1.8.0 idna-3.15 multidict-6.7.1 propcache-0.5.2 python-dotenv-1.2.2 requests-2.34.2 typing-extensions-4.15.0 urllib3-2.7.0 yarl-1.23.0
+Successfully installed aiohappyeyeballs-2.6.1 aiohttp-3.13.5 aiosignal-1.4.0 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.4.22 charset_normalizer-3.4.7 frozenlist-1.8.0 idna-3.15 multidict-6.7.1 propcache-0.5.2 python-dotenv-1.2.2 requests-2.34.2 typing-extensions-4.15.0 urllib3-2.7.0 yarl-1.24.2
