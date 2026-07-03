@@ -20,7 +20,7 @@ class Config:
     # 5. 远程IPTV源URL列表（可自行添加/修改）
     SOURCE_URLS = [
         "https://raw.githubusercontent.com/Lei9008/iptv_api_1/main/self_use/IPTV_Update/output/live_ipv4_source.m3u",
-        "https://gh-proxy.com/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u",
+        "https://wget.la/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u",
         "https://wget.la/https://raw.githubusercontent.com/qingtingjjjjjjj/iptv-auto/main/output/tv.m3u",
         # 可添加更多源链接
     ]
