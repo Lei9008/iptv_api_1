@@ -7,11 +7,11 @@ class Config:
     
     # 2. 并发与请求配置（可根据网络情况调整）
     CONCURRENT_LIMIT = 20    # 最大并发数（建议10-30）
-    TIMEOUT = 10             # 单次请求超时时间（秒）
+    TIMEOUT = 8             # 单次请求超时时间（秒）
     RETRY_TIMES = 2          # 测速重试次数
     
     # 3. 延迟阈值配置（新增）：仅保留延迟≤该值的直播源（单位：毫秒）
-    LATENCY_THRESHOLD = 1000  # 示例：1000ms，可根据需求修改（如1000=1秒）
+    LATENCY_THRESHOLD = 800  # 示例：1000ms，可根据需求修改（如1000=1秒）
     
     # 4. 目录与文件配置（output文件夹与主脚本同目录）
     OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")  # 输出目录
