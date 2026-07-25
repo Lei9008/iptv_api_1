@@ -1,17 +1,474 @@
 #EXTM3U
 
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
-
+#EXTINF:-1 group-title="其他频道",中天新闻
+rtmp://47.238.2.198/live/888ztxw
+#EXTINF:-1 group-title="其他频道",民视
+rtmp://f13h.mine.nu/sat/tv051
+#EXTINF:-1 group-title="其他频道",中视
+rtmp://f13h.mine.nu/sat/tv091
+#EXTINF:-1 group-title="其他频道",华视
+rtmp://f13h.mine.nu/sat/tv111
+#EXTINF:-1 group-title="其他频道",台视
+rtmp://f13h.mine.nu/sat/tv071
+#EXTINF:-1 group-title="其他频道",非凡新闻
+rtmp://f13h.mine.nu/sat/tv581
+#EXTINF:-1 group-title="其他频道",东森超视
+rtmp://f13h.mine.nu/sat/tv331
+#EXTINF:-1 group-title="其他频道",纬来育乐
+rtmp://f13h.mine.nu/sat/tv701
+#EXTINF:-1 group-title="其他频道",纬来日本
+rtmp://f13h.mine.nu/sat/tv771
+#EXTINF:-1 group-title="其他频道",纬来体育
+rtmp://f13h.mine.nu/sat/tv721
+#EXTINF:-1 group-title="其他频道",DAZN-体育
+rtmp://f13h.mine.nu/sat/tv731
+#EXTINF:-1 group-title="其他频道",DAZN-体育
+rtmp://f13h.mine.nu/sat/tv741
+#EXTINF:-1 group-title="其他频道",momo'tv
+rtmp://f13h.mine.nu/sat/tv761
+#EXTINF:-1 group-title="其他频道",广州综合
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230104/453207146.smil?0&accountinfo=%7E%7EV2.0%7EzPzHhhIQTsmwS_6SJEwFCg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广州新闻
+rtsp://183.59.131.100:554/PLTV/88888905/224/3221230113/453206913.smil?0&accountinfo=%7E%7EV2.0%7E0SFQT4d134tJBYGpDmeXDQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广州影视
+rtsp://183.59.131.37:554/PLTV/88888905/224/3221230115/453198755.smil?0&accountinfo=%7E%7EV2.0%7ENaCaue7LGOmXprWOEgXTzw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广州法治
+rtsp://183.59.153.37:554/PLTV/88888905/224/3221230168/453206912.smil?0&accountinfo=%7E%7EV2.0%7EUSiyCu_w9WF99m5iQxHYRA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广州竞赛
+rtsp://183.59.153.37:554/PLTV/88888905/224/3221230122/453206917.smil?0&accountinfo=%7E%7EV2.0%7EYewCUd3e3HXUSDKCfQk-Jw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东综艺
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229717/10000100000000060000000008643415_0.smil?0&accountinfo=%7E%7EV2.0%7E5eD1tRLue3bsAGvSDf20HA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东综艺
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229713/10000100000000060000000008646185_0.smil?0&accountinfo=%7E%7EV2.0%7EG5fEQeO2yT2LgijcyazKdg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东新闻
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230032/320917528.smil?0&accountinfo=%7E%7EV2.0%7EgDBfCrlNs_X3qljSJ3njZQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",经济科教
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227811/10000100000000060000000005076860_0.smil?0&accountinfo=%7E%7EV2.0%7E48XOVHB4fc_HwuvjgY3xFw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东体育
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227818/10000100000000060000000005076859_0.smil?0&accountinfo=%7E%7EV2.0%7Edgvm8f681JWRBTttSMlhLg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东珠江
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229854/10000100000000060000000009467088_0.smil?0&accountinfo=%7E%7EV2.0%7E7xb_jH8yZ2X8k0sIPsWwYA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",经济科教
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227238/10000100000000060000000000987130_0.smil?0&accountinfo=%7E%7EV2.0%7EyU3xvT9RGErxisUE0wkmkg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东体育
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227484/10000100000000060000000003928833_0.smil?0&accountinfo=%7E%7EV2.0%7Ew7Bz7WWUvefO8y8c0TBseg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东珠江
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229811/10000100000000060000000009467087_0.smil?0&accountinfo=%7E%7EV2.0%7EQRLIDngmxvSnsGioni22UA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东影视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229939/10000100000000060000000011293286_0.smil?0&accountinfo=%7E%7EV2.0%7EF8Djf5I5I3zFotQpnhkjvw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东公共
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230072/10000100000000060000000011293287_0.smil?0&accountinfo=%7E%7EV2.0%7EJfOJh8kUHwkvOQkuZOyKkA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",广东少儿
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230010/10000100000000060000000011293288_0.smil?0&accountinfo=%7E%7EV2.0%7EBncdZ3rFEXgsm3o4YCdIFQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",中国教育1台
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221228289/10000100000000060000000007781467_0.smil?0&accountinfo=%7E%7EV2.0%7Ez2AWP-zqo9KD6UbN3pARPg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",上海纪实
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229872/10000100000000060000000009575047_0.smil?0&accountinfo=%7E%7EV2.0%7EK7Z3v0csIIQiA8ZhV0ySEA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",CHC电影
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230008/10000100000000060000000010481261_0.smil?0&accountinfo=%7E%7EV2.0%7E08zSQD91Uwj13p7HUFLHNw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",湖南茶
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229888/10000100000000060000000010323146_0.smil?0&accountinfo=%7E%7EV2.0%7EMhQ6ZyeRjk5mta22OM89Dw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",快乐垂钓
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229928/10000100000000060000000010323147_0.smil?0&accountinfo=%7E%7EV2.0%7ESPI66mLUhoK6e_bTbSQQCQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",兵器科技
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229974/10000100000000060000000011037420_0.smil?0&accountinfo=%7E%7EV2.0%7E2U67mt0WVlTxn4-qKV6NZw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",电视指南
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230003/10000100000000060000000011037421_0.smil?0&accountinfo=%7E%7EV2.0%7EBHePkGqjYN4rI8ecgMjDIg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",风云足球
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229930/10000100000000060000000011037422_0.smil?0&accountinfo=%7E%7EV2.0%7Elo3t0CkPXl-Ytuu5GGG77w%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",央视台球
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230116/10000100000000060000000011037423_0.smil?0&accountinfo=%7E%7EV2.0%7Egdwsh1RXp5fQuBy7_IblpA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",高尔夫网球
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229987/10000100000000060000000011037424_0.smil?0&accountinfo=%7E%7EV2.0%7ETwh27NLfFB5S4M6z4yiEwg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",女性时尚
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229950/10000100000000060000000011037425_0.smil?0&accountinfo=%7E%7EV2.0%7EIh85H3lDd1c-09md5VaRjg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",世界地理
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229959/10000100000000060000000011037426_0.smil?0&accountinfo=%7E%7EV2.0%7EitOVtQcPxFXPmllDB1u98w%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",怀旧剧场
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230063/10000100000000060000000011037427_0.smil?0&accountinfo=%7E%7EV2.0%7EtPTBU3lbH_24WPpP3v_3NQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",风云剧场
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229941/10000100000000060000000011037428_0.smil?0&accountinfo=%7E%7EV2.0%7En0p5WLOuwVvGl1qIGWWf0g%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",央视精品
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230012/10000100000000060000000011037429_0.smil?0&accountinfo=%7E%7EV2.0%7Ebwc4e8DirJRb8Zg3L8Qr4A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",第一剧场
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230007/10000100000000060000000011037430_0.smil?0&accountinfo=%7E%7EV2.0%7EpccAWCDK-1830Yc6RZWfcQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",风云音乐
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230021/10000100000000060000000011039295_0.smil?0&accountinfo=%7E%7EV2.0%7EKSWHdyQNKw5UgmkIp_Gqlw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",IPTV谍战剧场
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227158/10000100000000060000000000937867_0.smil?0&accountinfo=%7E%7EV2.0%7EDrPxmKDwQZeAvzANz-MGng%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",经典电影
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227204/10000100000000060000000000987156_0.smil?0&accountinfo=%7E%7EV2.0%7EsWQFnsCT-Agib29CAIH5Xw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",极K精选
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221228304/10000100000000060000000008188821_0.smil?0&accountinfo=%7E%7EV2.0%7E8-1sixSy3h6EVYxRzBr1rw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",精选频道1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221228307/10000100000000060000000008189136_0.smil?0&accountinfo=%7E%7EV2.0%7EAqd3ciY3-pzJVhUaGjQUaw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",精选频道2
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221228179/10000100000000060000000008189131_0.smil?0&accountinfo=%7E%7EV2.0%7El0PMxMTr89VnbogvGkhHKQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",精选频道3
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229891/10000100000000060000000009714024_0.smil?0&accountinfo=%7E%7EV2.0%7Ewh4GzNmJ9Ru12FmJnUao9A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",英国TNT体育
+http://206.212.246.239/live/Cori/123456/224931.m3u8
+#EXTINF:-1 group-title="其他频道",RCNCOLOMBIA
+http://108.181.23.41:80/livehttpplay?channel_id=23515
+#EXTINF:-1 group-title="其他频道",SEÑALCOLOMBIA
+http://108.181.23.41:80/livehttpplay?channel_id=23510
+#EXTINF:-1 group-title="其他频道",WinSports
+http://108.181.23.41:80/livehttpplay?channel_id=23548
+#EXTINF:-1 group-title="其他频道",DHE
+http://108.181.23.41:80/livehttpplay?channel_id=23504
+#EXTINF:-1 group-title="其他频道",TELEANTIOQUIACOLOMBIA
+http://108.181.23.41:80/livehttpplay?channel_id=23532
+#EXTINF:-1 group-title="其他频道",GOLDENPLUSMX
+http://108.181.23.41:80/livehttpplay?channel_id=23623
+#EXTINF:-1 group-title="其他频道",NTN24HORAS
+http://108.181.23.41:80/livehttpplay?channel_id=23705
+#EXTINF:-1 group-title="其他频道",UNIVERSALCOMEDY
+http://108.181.23.41:80/livehttpplay?channel_id=23550
+#EXTINF:-1 group-title="其他频道",美国ESPNSECNETWORK
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/1419
+#EXTINF:-1 group-title="其他频道",美国ESPNU
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/1274
+#EXTINF:-1 group-title="其他频道",美国ESPN2
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/119666
+#EXTINF:-1 group-title="其他频道",美国ESPN
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/119665
+#EXTINF:-1 group-title="其他频道",英国PREMIERSPORTS1
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/98771
+#EXTINF:-1 group-title="其他频道",美国ESPNNEWS
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/1275
+#EXTINF:-1 group-title="其他频道",美国ESPNACCNETWORK
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/98754
+#EXTINF:-1 group-title="其他频道",英国TNT体育3
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/89212
+#EXTINF:-1 group-title="其他频道",英国TNT体育4
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/89211
+#EXTINF:-1 group-title="其他频道",英国TNT体育
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/119906
+#EXTINF:-1 group-title="其他频道",英国TNT体育1
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/110708
+#EXTINF:-1 group-title="其他频道",英国TNT体育2
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/89213
+#EXTINF:-1 group-title="其他频道",英国PREMIERSPORTS2
+http://89.187.179.148:826/anto.j/c9yJDcXyPe/98770
 #EXTINF:-1 group-title="其他频道",#EXTM3Ux-tvg-url="https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
 https://hk.gh-proxy.org/raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
+#EXTINF:-1 group-title="其他频道",天映频道
+http://173.208.234.146/live/typd.m3u8
+#EXTINF:-1 group-title="其他频道",中天新闻
+http://173.208.234.146/live/ctinews.m3u8
+#EXTINF:-1 group-title="其他频道",NOW星影台
+http://173.208.234.146/live/nowxy.m3u8
+#EXTINF:-1 group-title="其他频道",NOW爆谷台
+http://173.208.234.146/live/nowbg.m3u8
+#EXTINF:-1 group-title="其他频道",美亚电影
+http://173.208.234.146/live/mymovie.m3u8
+#EXTINF:-1 group-title="其他频道",美国NBA
+http://23.237.104.106:8080/USA_NBA/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="其他频道",CJB
+http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
+#EXTINF:-1 group-title="其他频道",C
+http://112.175.51.214:1935/live/myStream/playlist.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist.m3u8
+#EXTINF:-1 group-title="其他频道",JTV
+http://61.85.197.53:1935/jtv_live/myStream/chunklist_w1542137203.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist.m3u
+#EXTINF:-1 group-title="其他频道",SBSCJB
+http://1.222.207.80:1935/live/cjbtv/playlist.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist_w644291506.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist_w1306745753.m3u8
+#EXTINF:-1 group-title="其他频道",SBSJTV
+http://61.85.197.53:1935/jtv_live/myStream/playlist.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV광주CH05
+http://119.77.96.184:1935/chn05/chn05/playlist.m3u8
+#EXTINF:-1 group-title="其他频道",tvbs
+http://61.221.215.25:8800/hls/9/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东民生
+http://119.29.142.81:4022/udp/239.77.0.225:5146
+#EXTINF:-1 group-title="其他频道",广东影视
+http://119.29.142.81:4022/udp/239.77.0.217:5146
+#EXTINF:-1 group-title="其他频道",广东少儿
+http://119.29.142.81:4022/udp/239.77.0.250:5146
+#EXTINF:-1 group-title="其他频道",广东体育
+http://119.29.142.81:4022/udp/239.77.0.112:5146
+#EXTINF:-1 group-title="其他频道",中天新闻
+http://111.0.115.129:8081/live/222ztxw.m3u8
+#EXTINF:-1 group-title="其他频道",汕头综合
+http://119.29.142.81:4022/udp/239.253.43.45:5146
+#EXTINF:-1 group-title="其他频道",潮州综合
+http://119.29.142.81:4022/udp/239.253.43.70:5146
+#EXTINF:-1 group-title="其他频道",汕尾生活
+http://119.29.142.81:4022/udp/239.77.0.187:5146
+#EXTINF:-1 group-title="其他频道",揭阳生活
+http://119.29.142.81:4022/udp/239.77.0.251:5146
+#EXTINF:-1 group-title="其他频道",经济科教
+http://119.29.142.81:4022/udp/239.77.0.85:5146
+#EXTINF:-1 group-title="其他频道",潮州民生
+http://119.29.142.81:4022/udp/239.253.43.75:5146
+#EXTINF:-1 group-title="其他频道",汕头生活
+http://119.29.142.81:4022/udp/239.253.43.46:5146
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://119.29.142.81:4022/udp/239.77.0.1:5146
+#EXTINF:-1 group-title="其他频道",汕尾综合
+http://119.29.142.81:4022/udp/239.77.0.25:5146
+#EXTINF:-1 group-title="其他频道",美国beIN体育
+http://23.237.104.106:8080/USA_BEIN/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="其他频道",揭阳综合
+http://119.29.142.81:4022/udp/239.77.0.229:5146
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://119.29.142.81:4022/udp/239.77.0.173:5146
+#EXTINF:-1 group-title="其他频道",经济科教
+http://8.134.175.232:4022/udp/239.77.0.85:5146
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://8.138.7.223/tv/gdzj.m3u8
+#EXTINF:-1 group-title="其他频道",汕头生活
+http://8.134.175.232:4022/udp/239.253.43.46:5146
+#EXTINF:-1 group-title="其他频道",广东影视
+http://8.134.175.232:4022/udp/239.77.0.217:5146
+#EXTINF:-1 group-title="其他频道",广东民生
+http://8.134.175.232:4022/udp/239.77.0.225:5146
+#EXTINF:-1 group-title="其他频道",潮州综合
+http://8.134.175.232:4022/udp/239.253.43.70:5146
+#EXTINF:-1 group-title="其他频道",广东体育
+http://8.134.175.232:4022/udp/239.77.0.112:5146
+#EXTINF:-1 group-title="其他频道",汕头综合
+http://8.134.175.232:4022/udp/239.253.43.45:5146
+#EXTINF:-1 group-title="其他频道",揭阳生活
+http://8.134.175.232:4022/udp/239.77.0.251:5146
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://8.134.175.232:4022/udp/239.77.0.173:5146
+#EXTINF:-1 group-title="其他频道",汕头经济
+http://129.211.14.102:25000/gdst.php?id=st2&token=www.9kds.com
+#EXTINF:-1 group-title="其他频道",广东公共
+http://111.221.137.234:44330/tsfile/live/0127_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",明珠台
+http://111.221.137.234:44330/tsfile/live/0112_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",深圳都市
+http://111.221.137.234:44330/tsfile/live/1014_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://111.221.137.234:44330/tsfile/live/0107_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",Channel
+http://111.221.137.234:44330/tsfile/live/0118_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",重温经典
+http://111.221.137.234:44330/tsfile/live/0143_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",深圳电视剧
+http://111.221.137.234:44330/tsfile/live/1015_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",CGTN
+http://111.221.137.234:44330/tsfile/live/1012_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="其他频道",汕头综合
+http://129.211.14.102:25000/gdst.php?id=st1&token=www.9kds.com
+#EXTINF:-1 group-title="其他频道",广东体育
+http://111.221.137.234:44330/tsfile/live/0124_1.m3u8?key=txiptv&playlive=0&authid=0
 
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227610/10000100000000060000000004462931_0.smil?0&accountinfo=%7E%7EV2.0%7EjrJOUmzk157kD2TdQGpdFA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888888/224/3221229774/10000100000000060000000008842383_0.smil?0&accountinfo=%7E%7EV2.0%7EGUoe1ahxCx0poylztUdZdg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227270/10000100000000060000000001141346_0.smil?0&accountinfo=%7E%7EV2.0%7EUwOl-Gl8Z1MFFJlY1q_RCg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227631/10000100000000060000000004662500_0.smil?0&accountinfo=%7E%7EV2.0%7EP33t7yUqS7YkT4cRFRHKTA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888888/224/3221229756/10000100000000060000000008839531_0.smil?0&accountinfo=%7E%7EV2.0%7E_UaC2578x0PG41ZT3mJG9g%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229858/10000100000000060000000010595398_0.smil?0&accountinfo=%7E%7EV2.0%7ElJjNhC1QR9nYivNY1m6PzA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227576/10000100000000060000000004662502_0.smil?0&accountinfo=%7E%7EV2.0%7EkNzDSSP1HQj9YVj3Av_NKw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230039/10000100000000060000000011392793_0.smil?0&accountinfo=%7E%7EV2.0%7En9bUXjDLYcK9yZEdi0IjnQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227573/10000100000000060000000004662499_0.smil?0&accountinfo=%7E%7EV2.0%7Eh6OEczNSNnl8ovf0ICURZg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229902/10000100000000060000000010595397_0.smil?0&accountinfo=%7E%7EV2.0%7EG5WL2lRn6ADFf02YUwwIUg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229870/10000100000000060000000010232873_0.smil?0&accountinfo=%7E%7EV2.0%7Ehr_lPp5U_a_DAbe9aVJFVA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0001_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0012_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0010_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0015_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0013_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://111.221.137.234:44330/tsfile/live/0014_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://txycdn3.video.qq.com/1370437002.m3u8?time=1784883945&from=player&cdn=tcloud&sdtfrom=v401010931632&platform=4010603&butype=31&HLSP2P=1&vkey=nvkey_AQQgIP6Wyg-G3s49JvF6fLQU6JFOOerQBxcL2U9JOgaPeBGNEPIRa9BskGxSqmB8HeIB17oBcA58dqfQ4-bn6VrbRVIMvevHrbJRaqeXBuwbskD0qfJJ6ADmtfB5Xg7ryH2KHgNIc4SMmW6uLF2Z1Gp6n7wSBrkuE7tmU3gtJFQ19ESKIvLwa1G7ZIVCZZ7gvVkrYRnABIESmethbEB9Un6VhVzR6R9Gi1FPuyLVFIwYWNd8npzTCP811j3WpRwCUSQbyEFP1k1R07iFxl-3DUVUzlvnK6QMyGtcdfkqa1TrLIuOcdB-SwNunTrNhBWLT_jvk60eRFesmD__HGHU6rbDSYDCKBsY8lpga0vCO9CoTutOk_ZFw0DiIiRjOQ19sXIKPOkFl0djn0bHOwI8mYRXcW5S1vsM1OMokVwAEY96q3u22suRsR4v9l0-1WqQIaNsEbss2kW2PHzWRv-_Ys8YT4e1V-vhyitaI2-pCvF_hxxWxL9PyxpKTzywj6K0XCiOVk681whsSbfO1pLA3cCuUvRBIiw_3w3DZ2sGm37jIEL6VygQ&drmtype=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://txycdn2.video.qq.com/1755789202.m3u8?time=1784883849&from=player&cdn=tcloud&sdtfrom=v401010931632&platform=4010603&butype=31&HLSP2P=1&vkey=nvkey_AQQgIDQfSU82A1Dy2FjP_GRlpbOSuYnF8_yM8rTR-H7cVz4XELgTbhw982LyPgHwQ0c5bCEBcLpEXivJwLSbtyDqR4YFBdLxZ8-ZMNatu7Hmvo1G_psJKdq8Zo8LnB6VgOuL9jwUWWyYwW90YFiSvFl1wEsBAh0HQfIP8CRMcYHTYQ5shEB7D6gLX84FTpkitb07eyL0h9whuz35crQnjlzF0_OkguGlM1zkO8_k9T3cl9XpfPQYoAl-hktahYQ_BPFuDpdobeOBjPkOm7Mh1QGwF5fJ8iepAm7pW4kbS_ZUUnTjhdRlPWeSZq-Xg5BMWDZ2x4SOMEWO76Ytjf3L3nkp7zwc1sVJSyUZbbJiTaf4XQkhlMDZvlU9B7iVg_jx_4NKIoeqplzNGfDc0ZNa4w3uBCmBbvq0tRgl1wdT2EWezK8BUDGL9zj7iQWhjc8iJz18vfS4Wa35FUVZycmLPXTJzU57qkFSFLEYN9u7i_L2KYzQXx1Cx5FhzICm3JtbK8ajOqoeZOCSJ59hi70shs-DwxmelB4tA8n5z334mJ_PZViOjubK&drmtype=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://txycdn2.video.qq.com/1755770102.m3u8?time=1784883743&from=player&cdn=tcloud&sdtfrom=v401010931632&platform=4010603&butype=31&HLSP2P=1&vkey=nvkey_AQQgIEPRT4s8FQhe1QeCOy7Sm4OM2yVgHUl8aXMy_HRXFwTBEEB0CPu2M4IgQCsz3JI59KMBcNaZBHCiluu0FiJo-eqvxPgY0gKA5UttRRVfXoPexeBl_xepx4ePlKZqlrAPLwOxywICTJAIv2RKDBrbfZzKf9iaA82mvgLf1XeTASaltCB_hspwL2ZBl2a4t-D09oIpLDZeyrEYcMG_AbgPLEoY9wKKzh7jPIuO7qiP664Qfi5I8ajkSZJIT3LrrOwtNZQdotl9q9rvyXSatvp4D85_eSMdCbH2KyVSuS8wGFpBr1g9HvKbON0ulp9PdO3X-J0FKA0TDilCOxQ7FCwSQeod78owB7o1e0dvQw059VprLfAmrVz-yv4ovvotK2HrYBZYqp_5Gj1iJ9oZ9c5RkBVo0tARlblOwX_uGKrDqrb3_s-gIJdDoO8l3BakHYNl19VOaW-Fvos4iKCFCCIuuQtcNk7ScjYqNaOCKlN2CDnzX0kACnIAkDkjAHEoHgEbaE0dqkWXux83z614ehOqTkxiEVbg2cU0vG_Ecx2P3qJYXGVc&drmtype=0
+#EXTINF:-1 group-title="央视频道",CCTV2
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227634/10000100000000060000000004662503_0.smil?0&accountinfo=%7E%7EV2.0%7Ew08QX--mxmtiRia3ZBMEZA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV2
+rtsp://183.59.56.116:554/PLTV/88888888/224/3221229763/10000100000000060000000008839684_0.smil?0&accountinfo=%7E%7EV2.0%7Eyrbxm7qu5XPuYvuNLEODpA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV2
+http://111.221.137.234:44330/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV3
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229838/10000100000000060000000009924454_0.smil?0&accountinfo=%7E%7EV2.0%7EgvH63pQiXJKEZibMVS_W8g%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV3
+http://111.221.137.234:44330/tsfile/live/0003_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV4
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229981/10000100000000060000000010232874_0.smil?0&accountinfo=%7E%7EV2.0%7EWWB8_f1wHT6FqFOd9jVYYQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV4
+http://111.221.137.234:44330/tsfile/live/0004_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV5
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229857/10000100000000060000000009924447_0.smil?0&accountinfo=%7E%7EV2.0%7EEKh7Q4W2FxVQNRn0W0dHbA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV5
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227192/10000100000000060000000000987131_0.smil?0&accountinfo=%7E%7EV2.0%7Er6jF1xCjzHv7swACkj1iSQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV5
+http://111.221.137.234:44330/tsfile/live/0125_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV5
+http://111.221.137.234:44330/tsfile/live/0005_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV6电影
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229898/10000100000000060000000009924445_0.smil?0&accountinfo=%7E%7EV2.0%7Ed-FexEoDWH8JBMQLRWKq3w%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV7国防军事
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227620/10000100000000060000000004662504_0.smil?0&accountinfo=%7E%7EV2.0%7EmBZ9vCGayUb5OiqnpyUtBg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV7国防军事
+rtsp://183.59.56.116:554/PLTV/88888888/224/3221229730/10000100000000060000000008839665_0.smil?0&accountinfo=%7E%7EV2.0%7E8ypR9pO-8JO0kQ2MzKDp5Q%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV7国防军事
+http://txycdn7.video.qq.com/1370436302.m3u8?time=1784884059&from=player&cdn=tcloud&sdtfrom=v401010931632&platform=4010603&butype=31&HLSP2P=1&vkey=nvkey_AQQgIG--PBvehUzrZLE10SUI-dPNbrVLI5sQRhxCdAB9mThvEJHwGXj_UQWO2u1gE5cvlVYBcKqx5FGjTAywWLA-LeGYgxvzcGKHJw3XzHvVb89XuXfEOx3RcmtisujwkeE39V7Xh6JwtgxZfJgUsN60BbrydkRAKaTaUZYIdjatPeUp3VhG4XhE1yGMz8C88mnK_6CXU3YXhXY8DcInAIbUpe-iXl7skhHocK5M55mIySk41oxJVdXqMZ4Wh7xzV7vBljiExkq3JhMl1Gfq_0Q8Q_vjXmAM16EIf_-zzOgzX1qQo6Iu2OoBZLor5jeT0zxchz1mMKdfrwIsri4nqhu3x9dvFbrELFbzfIeA_BxyyE2Xc_MzB-FyMb7SJgGD4kCpp12TEIA-guNvhsXyHPw5Y9edRVn_JRGN66I-FRxJvtYly9Tma1h3fyb56TMYfk84KNCMNkRnu3OYLhqSFbAxOgs35xBJmmadcLlyx8H5J-dNU8i7FuLMMTsI9A1EEtrZxsrw7L7r4_mEwRee92mwp6YRGw_cIviX7JwRwNdnIr20_y5Y&drmtype=0
+#EXTINF:-1 group-title="央视频道",CCTV8电视剧
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229900/10000100000000060000000009924385_0.smil?0&accountinfo=%7E%7EV2.0%7EsIJM3FaGUlm_stwXY7o0AA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV9纪录
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227617/10000100000000060000000004662501_0.smil?0&accountinfo=%7E%7EV2.0%7EdT_-cvTqkfdJ1X89SBzV5A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV-6电影
+http://111.221.137.234:44330/tsfile/live/0006_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV-9纪录
+http://111.221.137.234:44330/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV-7国防军事
+http://111.221.137.234:44330/tsfile/live/0007_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV-8电视剧
+http://111.221.137.234:44330/tsfile/live/0008_1.m3u8?key=txiptv&playlive=0&authid=0
+
+#EXTINF:-1 group-title="港澳台",翡翠台
+http://116.77.239.26:44300/tsfile/live/0141_1.m3u8
+#EXTINF:-1 group-title="港澳台",翡翠台
+http://111.221.137.203:4455/tsfile/live/1008_1.m3u8
+#EXTINF:-1 group-title="港澳台",翡翠台
+http://111.221.137.234:44330/tsfile/live/0141_1.m3u8?key=txiptv&playlive=0&authid=0
+
 #EXTINF:-1 group-title="卫视频道",湖南卫视
-http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227581/10000100000000060000000004462928_0.smil?0&accountinfo=%7E%7EV2.0%7EzIYMxo8wtW4k6wf7gJlomw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227543/10000100000000060000000004462919_0.smil?0&accountinfo=%7E%7EV2.0%7E0konh4hFkquc848UdP9yOw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",黑龙江卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227604/10000100000000060000000004462921_0.smil?0&accountinfo=%7E%7EV2.0%7EQN9_lS2prEZSf6XyQkpjcQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227584/10000100000000060000000004462929_0.smil?0&accountinfo=%7E%7EV2.0%7EZIj_4E2ewBQbd51BiTNKOA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",天津卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227575/10000100000000060000000004462922_0.smil?0&accountinfo=%7E%7EV2.0%7E-J4B7nijVKr_NAMo7qZTIw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227325/10000100000000060000000001141345_0.smil?0&accountinfo=%7E%7EV2.0%7ENkc6QNZEfJ1Hqm12eGaKxw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="卫视频道",浙江卫视
-http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227296/10000100000000060000000001141335_0.smil?0&accountinfo=%7E%7EV2.0%7EBng-uKyYgdUpj01BXpVWug%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227027/10000100000000060000000000698853_0.smil?0&accountinfo=%7E%7EV2.0%7EaxGs9GVvEtywWlMV9_8zfw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",东方卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227299/10000100000000060000000001141344_0.smil?0&accountinfo=%7E%7EV2.0%7E6KTDBPHM-03Uw5OdPJsmUg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",北京卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227018/10000100000000060000000000698843_0.smil?0&accountinfo=%7E%7EV2.0%7EMm_aUPQYUefILnxsgT-jTQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",天津卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227346/10000100000000060000000003100521_0.smil?0&accountinfo=%7E%7EV2.0%7ErN-BuTVrGNWqfRpgcaeoYA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",广东卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227768/10000100000000060000000005076861_0.smil?0&accountinfo=%7E%7EV2.0%7Efp8S09q4rzSyDL5cSiNmOQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",广东卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227218/10000100000000060000000000988525_0.smil?0&accountinfo=%7E%7EV2.0%7EsFZ46mFNJb4XrlnNoWuN5w%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227267/10000100000000060000000001141334_0.smil?0&accountinfo=%7E%7EV2.0%7E0e6_CpdWVE14AFzBPTzwXw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",安徽卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227928/10000100000000060000000006526299_0.smil?0&accountinfo=%7E%7EV2.0%7EuOrkSwl7X_jL_XI5Lg2NiQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227322/10000100000000060000000001141333_0.smil?0&accountinfo=%7E%7EV2.0%7EH1tDedGzar6X8PIQ6bdTvg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",黑龙江卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227302/10000100000000060000000001141347_0.smil?0&accountinfo=%7E%7EV2.0%7Emt5PkJ7RdAiZS0qHFtT_Cg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",山东卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227215/10000100000000060000000000988473_0.smil?0&accountinfo=%7E%7EV2.0%7Ea9_wJpZCyFNPMyJVu70lPg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227608/10000100000000060000000004547240_0.smil?0&accountinfo=%7E%7EV2.0%7Efb2FO4DXRVfclC948uGXUQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",四川卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227882/10000100000000060000000006078789_0.smil?0&accountinfo=%7E%7EV2.0%7EixNpj7xZEM3lokst1bOsCA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221227897/10000100000000060000000006388228_0.smil?0&accountinfo=%7E%7EV2.0%7EtgaHrsUgJAi5sGQ5J3Grjw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",贵州卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221228286/10000100000000060000000007781468_0.smil?0&accountinfo=%7E%7EV2.0%7EIKugDj03eot3ijhtEwmBwg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",东南卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229798/10000100000000060000000009574969_0.smil?0&accountinfo=%7E%7EV2.0%7EfJL0ZFSnBct56inJbkqSmw%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",河北卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229830/10000100000000060000000009574961_0.smil?0&accountinfo=%7E%7EV2.0%7EDyxoCpP_LG-nsJ5V4zjxbQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",江西卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229779/10000100000000060000000009575029_0.smil?0&accountinfo=%7E%7EV2.0%7EWZ8ggVo2loF2Lx6AD0nTog%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",吉林卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229881/10000100000000060000000009574938_0.smil?0&accountinfo=%7E%7EV2.0%7El9QgdTgvQ7gvk0b1n8Fs3w%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",广西卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221229990/10000100000000060000000010232875_0.smil?0&accountinfo=%7E%7EV2.0%7E5_WBXEf9DsrAEr08Jx_i0A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+rtsp://183.59.56.116:554/PLTV/88888905/224/3221230001/10000100000000060000000011293289_0.smil?0&accountinfo=%7E%7EV2.0%7EiKe-NYf8wqbfEoP3btv9QA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="卫视频道",陕西卫视
+http://111.221.137.234:44330/tsfile/live/0116_2.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",江西卫视
+http://111.221.137.234:44330/tsfile/live/0137_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",吉林卫视
+http://111.221.137.234:44330/tsfile/live/0113_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+http://111.221.137.234:44330/tsfile/live/0142_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",云南卫视
+http://111.221.137.234:44330/tsfile/live/0118_2.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",河南卫视
+http://111.221.137.234:44330/tsfile/live/0136_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://119.29.142.81:4022/udp/239.77.0.215:5146
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://119.29.142.81:4022/udp/239.77.0.84:5146
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://8.138.7.223/tv/dwq.m3u8
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://8.134.175.232:4022/udp/239.77.0.84:5146
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://8.134.175.232:4022/udp/239.77.0.215:5146
+#EXTINF:-1 group-title="卫视频道",星空卫视
+http://111.221.137.234:44330/tsfile/live/0112_2.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",南方卫视
+http://111.221.137.234:44330/tsfile/live/0130_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",凤凰卫视中文台
+http://111.221.137.234:44330/tsfile/live/0141_2.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+http://111.221.137.234:44330/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://111.221.137.234:44330/tsfile/live/0121_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",天津卫视
+http://111.221.137.234:44330/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+http://111.221.137.234:44330/tsfile/live/0123_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://111.221.137.234:44330/tsfile/live/0139_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",北京卫视
+http://111.221.137.234:44330/tsfile/live/0138_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",浙江卫视
+http://111.221.137.234:44330/tsfile/live/0131_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",安徽卫视
+http://111.221.137.234:44330/tsfile/live/0120_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+http://111.221.137.234:44330/tsfile/live/0122_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+http://111.221.137.234:44330/tsfile/live/1013_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",海南卫视
+http://111.221.137.234:44330/tsfile/live/0117_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://111.221.137.234:44330/tsfile/live/0128_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",东方卫视
+http://111.221.137.234:44330/tsfile/live/0126_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="卫视频道",四川卫视
+http://111.221.137.234:44330/tsfile/live/0137_2.m3u8?key=txiptv&playlive=0&authid=0
 
 #EXTINF:-1 group-title="🎞️电影直播",邵氏电影
 http://38.75.136.137:98/gslb/dsdqpub/lbssdy.m3u8?auth=testpub
