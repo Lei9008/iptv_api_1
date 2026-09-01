@@ -104,372 +104,386 @@ rtsp://183.59.56.116:554/PLTV/88888905/224/3221228307/10000100000000060000000008
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221228179/10000100000000060000000008189131_0.smil?0&accountinfo=%7E%7EV2.0%7El0PMxMTr89VnbogvGkhHKQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="其他频道",精选频道3
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221229891/10000100000000060000000009714024_0.smil?0&accountinfo=%7E%7EV2.0%7Ewh4GzNmJ9Ru12FmJnUao9A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
-#EXTINF:-1 group-title="其他频道",cctv5
-http://38.75.136.137:98/gslb/dsdqca/xjwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",湖北垄上
-http://38.75.136.137:98/gslb/dsdqpub/hbls.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",中天新闻
-http://173.208.234.146/live/ctinews.m3u8
-#EXTINF:-1 group-title="其他频道",湖北生活
-http://38.75.136.137:98/gslb/dsdqpub/hbty.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",没
-http://38.75.136.137:98/gslb/dsdqca/szwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",湖北影视
-http://38.75.136.137:98/gslb/dsdqpub/hbys.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv11
-http://38.75.136.137:98/gslb/dsdqca/ahwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv9
-http://38.75.136.137:98/gslb/dsdqca/nmgwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",CHC家庭影院
-http://107.150.60.122/live/chcjt.m3u8
-#EXTINF:-1 group-title="其他频道",第一财经
-http://38.75.136.137:98/gslb/dsdqpub/dycjhd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",重温经典
-http://107.150.60.122/live/cwjd.m3u8
-#EXTINF:-1 group-title="其他频道",重庆汽摩
-http://38.75.136.137:98/gslb/dsdqpub/cqqm.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",CHC动作电影
-http://107.150.60.122/live/chcdz.m3u8
-#EXTINF:-1 group-title="其他频道",CHC影迷电影
-http://107.150.60.122/live/chchd.m3u8
-#EXTINF:-1 group-title="其他频道",cctv8
-http://38.75.136.137:98/gslb/dsdqca/gxwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv13
-http://38.75.136.137:98/gslb/dsdqca/ybwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv10
-http://38.75.136.137:98/gslb/dsdqca/nxwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv17
-http://38.75.136.137:98/gslb/dsdqca/fhzwhd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv14
-http://38.75.136.137:98/gslb/dsdqca/chcdzdyhd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv11
-http://38.75.136.137:98/gslb/dsdqca/qhwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",重庆重广融媒
-http://38.75.136.137:98/gslb/dsdqpub/cqjc.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",湖北教育
-http://38.75.136.137:98/gslb/dsdqpub/hbjy.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv2
-http://38.75.136.137:98/gslb/dsdqca/gzwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",湖北经视
-http://38.75.136.137:98/gslb/dsdqpub/hbjs.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",重庆新农村
-http://38.75.136.137:98/gslb/dsdqpub/cqgg.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",重庆少儿
-http://38.75.136.137:98/gslb/dsdqpub/cqse.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",重庆新闻
-http://38.75.136.137:98/gslb/dsdqpub/cqxw.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",重庆影视剧
 http://38.75.136.137:98/gslb/dsdqpub/cqys.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",湖北垄上
+http://38.75.136.137:98/gslb/dsdqpub/hbls.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",重庆重广融媒
+http://38.75.136.137:98/gslb/dsdqpub/cqjc.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",cctv7
-http://38.75.136.137:98/gslb/dsdqca/sswshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv16
-http://38.75.136.137:98/gslb/dsdqca/chcjtyyhd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",重庆社会与法
-http://38.75.136.137:98/gslb/dsdqpub/cqds.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv14
-http://38.75.136.137:98/gslb/dsdqca/hunwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv15
-http://38.75.136.137:98/gslb/dsdqca/jxwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",没
-http://38.75.136.137:98/gslb/dsdqca/gdwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",没
-http://38.75.136.137:98/gslb/dsdqca/xmwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv4
-http://38.75.136.137:98/gslb/dsdqca/ynwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv6
-http://38.75.136.137:98/gslb/dsdqca/hinwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",重庆文体娱乐
-http://38.75.136.137:98/gslb/dsdqpub/cqyl.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",重庆红岩文化
-http://38.75.136.137:98/gslb/dsdqpub/cqss.m3u8?auth=testpub
+http://38.75.136.137:98/gslb/dsdqca/cctv7hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv10
-http://38.75.136.137:98/gslb/dsdqca/snwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv13
-http://38.75.136.137:98/gslb/dsdqca/hubwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",青岛新闻综合
-http://38.75.136.137:98/gslb/dsdqpub/sdqdtv1.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",青岛生活服务
-http://38.75.136.137:98/gslb/dsdqpub/sdqdtv2.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",湖北综合
-http://38.75.136.137:98/gslb/dsdqpub/hbzh.m3u8?auth=testpub
+http://38.75.136.137:98/gslb/dsdqca/cctv10hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv12
 http://38.75.136.137:98/gslb/dsdqca/xzwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv15
-http://38.75.136.137:98/gslb/dsdqca/chcymdyhd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",CHC家庭影院
+http://107.150.60.122/live/chcjt.m3u8
 #EXTINF:-1 group-title="其他频道",重庆红叶
 http://38.75.136.137:98/gslb/dsdqpub/cqkj.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv4
-http://38.75.136.137:98/gslb/dsdqca/cctv4hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv3
-http://38.75.136.137:98/gslb/dsdqca/scwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",青岛休闲资讯
-http://38.75.136.137:98/gslb/dsdqpub/sdqdtv4.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv4
-http://38.75.136.137:98/gslb/dsdqca/hljwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv5
-http://38.75.136.137:98/gslb/dsdqca/jlwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",青岛影视频道
-http://38.75.136.137:98/gslb/dsdqpub/sdqdtv3.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv1
-http://38.75.136.137:98/gslb/dsdqca/cctv1hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv13
-http://38.75.136.137:98/gslb/dsdqca/cctv13hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",重庆文体娱乐
+http://38.75.136.137:98/gslb/dsdqpub/cqyl.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",重庆少儿
+http://38.75.136.137:98/gslb/dsdqpub/cqse.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",湖北生活
+http://38.75.136.137:98/gslb/dsdqpub/hbty.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",湖北经视
+http://38.75.136.137:98/gslb/dsdqpub/hbjs.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",cctv2
 http://38.75.136.137:98/gslb/dsdqca/cctv2hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv12
 http://38.75.136.137:98/gslb/dsdqca/cctv12hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv4
+http://38.75.136.137:98/gslb/dsdqca/hljwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv10
+http://38.75.136.137:98/gslb/dsdqca/snwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv3
+http://38.75.136.137:98/gslb/dsdqca/scwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",重庆汽摩
+http://38.75.136.137:98/gslb/dsdqpub/cqqm.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",湖北教育
+http://38.75.136.137:98/gslb/dsdqpub/hbjy.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",cctv9
-http://38.75.136.137:98/gslb/dsdqca/cctv9hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv15
-http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv17
-http://38.75.136.137:98/gslb/dsdqca/cctv17hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv8
-http://38.75.136.137:98/gslb/dsdqca/cctv8hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv7
-http://38.75.136.137:98/gslb/dsdqca/cctv7hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv11
-http://38.75.136.137:98/gslb/dsdqca/cctv11hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv16
-http://38.75.136.137:98/gslb/dsdqca/cctv16hd.m3u8?auth=test20251009
+http://38.75.136.137:98/gslb/dsdqca/nmgwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv5
+http://38.75.136.137:98/gslb/dsdqca/xjwshd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv9
 http://38.75.136.137:98/gslb/dsdqca/sxwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv3
-http://38.75.136.137:98/gslb/dsdqca/cctv3hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv14
+http://38.75.136.137:98/gslb/dsdqca/chcdzdyhd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv16
+http://38.75.136.137:98/gslb/dsdqca/chcjtyyhd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv15
+http://38.75.136.137:98/gslb/dsdqca/chcymdyhd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",没
+http://38.75.136.137:98/gslb/dsdqca/szwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",湖北影视
+http://38.75.136.137:98/gslb/dsdqpub/hbys.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",没
+http://38.75.136.137:98/gslb/dsdqca/gdwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",没
+http://38.75.136.137:98/gslb/dsdqca/xmwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",中央新影-老故事
+http://107.150.60.122/live/lgs.m3u8
+#EXTINF:-1 group-title="其他频道",第一财经
+http://38.75.136.137:98/gslb/dsdqpub/dycjhd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv9
+http://38.75.136.137:98/gslb/dsdqca/cctv9hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv14
+http://38.75.136.137:98/gslb/dsdqca/hunwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv13
+http://38.75.136.137:98/gslb/dsdqca/hubwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv17
+http://38.75.136.137:98/gslb/dsdqca/fhzwhd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",重庆红岩文化
+http://38.75.136.137:98/gslb/dsdqpub/cqss.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",重庆新闻
+http://38.75.136.137:98/gslb/dsdqpub/cqxw.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv17
+http://38.75.136.137:98/gslb/dsdqca/cctv17hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv16
+http://38.75.136.137:98/gslb/dsdqca/cctv16hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv14
 http://38.75.136.137:98/gslb/dsdqca/cctv14hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv6
 http://38.75.136.137:98/gslb/dsdqca/cctv6hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv5
+http://38.75.136.137:98/gslb/dsdqca/jlwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",青岛影视频道
+http://38.75.136.137:98/gslb/dsdqpub/sdqdtv3.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv13
+http://38.75.136.137:98/gslb/dsdqca/cctv13hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv15
+http://38.75.136.137:98/gslb/dsdqca/jxwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv8
+http://38.75.136.137:98/gslb/dsdqca/gxwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",重庆社会与法
+http://38.75.136.137:98/gslb/dsdqpub/cqds.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",青岛休闲资讯
+http://38.75.136.137:98/gslb/dsdqpub/sdqdtv4.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv13
+http://38.75.136.137:98/gslb/dsdqca/ybwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",重庆新农村
+http://38.75.136.137:98/gslb/dsdqpub/cqgg.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv8
+http://38.75.136.137:98/gslb/dsdqca/cctv8hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv11
+http://38.75.136.137:98/gslb/dsdqca/ahwshd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv10
-http://38.75.136.137:98/gslb/dsdqca/cctv10hd.m3u8?auth=test20251009
+http://38.75.136.137:98/gslb/dsdqca/nxwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",CHC动作电影
+http://107.150.60.122/live/chcdz.m3u8
+#EXTINF:-1 group-title="其他频道",cctv1
+http://38.75.136.137:98/gslb/dsdqca/cctv1hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv3
+http://38.75.136.137:98/gslb/dsdqca/cctv3hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",CHC影迷电影
+http://107.150.60.122/live/chchd.m3u8
+#EXTINF:-1 group-title="其他频道",重温经典
+http://107.150.60.122/live/cwjd.m3u8
+#EXTINF:-1 group-title="其他频道",cctv4
+http://38.75.136.137:98/gslb/dsdqca/ynwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv7
+http://38.75.136.137:98/gslb/dsdqca/sswshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv2
+http://38.75.136.137:98/gslb/dsdqca/gzwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv6
+http://38.75.136.137:98/gslb/dsdqca/hinwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv11
+http://38.75.136.137:98/gslb/dsdqca/qhwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",青岛都市频道
+http://38.75.136.137:98/gslb/dsdqpub/sdqdtv5.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv15
+http://38.75.136.137:98/gslb/dsdqca/cctv15hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv11
+http://38.75.136.137:98/gslb/dsdqca/cctv11hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv4
+http://38.75.136.137:98/gslb/dsdqca/cctv4hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",青岛新闻综合
+http://38.75.136.137:98/gslb/dsdqpub/sdqdtv1.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",cctv5
 http://38.75.136.137:98/gslb/dsdqca/cctv5hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",中央新影-发现之旅
-http://107.150.60.122/live/fxzl.m3u8
-#EXTINF:-1 group-title="其他频道",中央新影-老故事
-http://107.150.60.122/live/lgs.m3u8
-#EXTINF:-1 group-title="其他频道",国学频道
-http://107.150.60.122/live/gxpd.m3u8
-#EXTINF:-1 group-title="其他频道",天津影视
-http://38.75.136.137:98/gslb/dsdqpub/tjtv3.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",邵氏喜剧
-http://38.75.136.137:98/gslb/dsdqpub/lbssxj.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",天津文艺
-http://38.75.136.137:98/gslb/dsdqpub/tjtv2.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",邵氏电影
-http://38.75.136.137:98/gslb/dsdqpub/lbssdy.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",天津新闻
-http://38.75.136.137:98/gslb/dsdqpub/tjtv1.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",天津体育
-http://38.75.136.137:98/gslb/dsdqpub/tjtv5.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",青岛生活服务
+http://38.75.136.137:98/gslb/dsdqpub/sdqdtv2.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",湖北综合
+http://38.75.136.137:98/gslb/dsdqpub/hbzh.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",天津教育
 http://38.75.136.137:98/gslb/dsdqpub/tjtv6.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",天津体育
+http://38.75.136.137:98/gslb/dsdqpub/tjtv5.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",邵氏电影
+http://38.75.136.137:98/gslb/dsdqpub/lbssdy.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",邵氏喜剧
+http://38.75.136.137:98/gslb/dsdqpub/lbssxj.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv15
+http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",天津文艺
+http://38.75.136.137:98/gslb/dsdqpub/tjtv2.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",中央新影-发现之旅
+http://107.150.60.122/live/fxzl.m3u8
+#EXTINF:-1 group-title="其他频道",北京卡酷少儿
+http://38.75.136.137:98/gslb/dsdqpub/btvkk.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",邵氏动作
 http://38.75.136.137:98/gslb/dsdqpub/lbssdz.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",邵氏武侠
 http://38.75.136.137:98/gslb/dsdqpub/lbsswx.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv4
-http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv6
-http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",广东珠江
-http://38.75.136.137:98/gslb/dsdqpub/gdzj.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",CHC家庭影院
-http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",优漫卡通
-http://38.75.136.137:98/gslb/dsdqpub/ymkt.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",岭南戏曲
-http://38.75.136.137:98/gslb/dsdqpub/gdlnxq.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",中国教育1
-http://38.75.136.137:98/gslb/dsdqpub/cetv1hd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",CHC影迷电影
-http://38.75.136.137:98/gslb/dsdqpub/chchd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",天元围棋
-http://38.75.136.137:98/gslb/dsdqpub/gztywq.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv2
+http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",中央新影-老故事
 http://38.75.136.137:98/gslb/dsdqpub/lgs.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",北京纪实科教
-http://38.75.136.137:98/gslb/dsdqpub/btv3.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",北京卡酷少儿
-http://38.75.136.137:98/gslb/dsdqpub/btvkk.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",优漫卡通
+http://38.75.136.137:98/gslb/dsdqpub/ymkt.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",天映频道
+http://173.208.234.146/live/typd.m3u8
+#EXTINF:-1 group-title="其他频道",CHC影迷电影
+http://38.75.136.137:98/gslb/dsdqpub/chchd.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",中国教育4
 http://38.75.136.137:98/gslb/dsdqpub/cetv4.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",CHC动作电影
-http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",嘉佳卡通
-http://38.75.136.137:98/gslb/dsdqpub/gdjjkt.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",中国教育2
-http://38.75.136.137:98/gslb/dsdqpub/cetv2.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",中央新影-发现之旅
-http://38.75.136.137:98/gslb/dsdqpub/fxzl.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",早期教育
-http://38.75.136.137:98/gslb/dsdqpub/zqjy.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",重温经典
-http://38.75.136.137:98/gslb/dsdqpub/cwjd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",欢笑剧场
-http://38.75.136.137:98/gslb/dsdqpub/hxjchd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",生活时尚
-http://38.75.136.137:98/gslb/dsdqpub/shsshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",广东新闻
 http://38.75.136.137:98/gslb/dsdqpub/gdxw.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广西都市
-http://38.75.136.137:98/gslb/dsdqpub/gxds.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广西新闻
-http://38.75.136.137:98/gslb/dsdqpub/gxxw.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",广东超
 http://38.75.136.137:98/gslb/dsdqpub/gdtvs3.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广西移动
-http://38.75.136.137:98/gslb/dsdqpub/gxyd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广西影视
-http://38.75.136.137:98/gslb/dsdqpub/gxys.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",重温经典
+http://38.75.136.137:98/gslb/dsdqpub/cwjd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广西新闻
+http://38.75.136.137:98/gslb/dsdqpub/gxxw.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",国学频道
-http://38.75.136.137:98/gslb/dsdqpub/gxpd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广东少儿
-http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub
+http://107.150.60.122/live/gxpd.m3u8
 #EXTINF:-1 group-title="其他频道",中国教育3
 http://38.75.136.137:98/gslb/dsdqpub/cetv3.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",CHC动作电影
+http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",岭南戏曲
+http://38.75.136.137:98/gslb/dsdqpub/gdlnxq.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",都市剧场
+http://38.75.136.137:98/gslb/dsdqpub/dsjchd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广东移动
+http://38.75.136.137:98/gslb/dsdqpub/gdyd.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",广东体育
 http://38.75.136.137:98/gslb/dsdqpub/gdty.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",上海都市
 http://38.75.136.137:98/gslb/dsdqpub/shylhd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广西国际
-http://38.75.136.137:98/gslb/dsdqpub/gxgj.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广东民生
+http://38.75.136.137:98/gslb/dsdqpub/gdgg.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",五星体育
+http://38.75.136.137:98/gslb/dsdqpub/wxtyhd.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",广西综艺旅游
 http://38.75.136.137:98/gslb/dsdqpub/gxzy.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv8
+http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",生活时尚
+http://38.75.136.137:98/gslb/dsdqpub/shsshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",哈哈炫动
+http://38.75.136.137:98/gslb/dsdqpub/xdkthd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://38.75.136.137:98/gslb/dsdqpub/gdxwa.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",嘉佳卡通
+http://38.75.136.137:98/gslb/dsdqpub/gdjjkt.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广西国际
+http://38.75.136.137:98/gslb/dsdqpub/gxgj.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广西移动
+http://38.75.136.137:98/gslb/dsdqpub/gxyd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",林正英影院
+http://38.75.136.137:98/gslb/dsdqpub/lblzy.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv3
+http://38.75.136.137:98/gslb/dsdqbv/cctv3hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",欢笑剧场
+http://38.75.136.137:98/gslb/dsdqpub/hxjchd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广西影视
+http://38.75.136.137:98/gslb/dsdqpub/gxys.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv17
+http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",早期教育
+http://38.75.136.137:98/gslb/dsdqpub/zqjy.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",天元围棋
+http://38.75.136.137:98/gslb/dsdqpub/gztywq.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",中央新影-发现之旅
+http://38.75.136.137:98/gslb/dsdqpub/fxzl.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",上海新闻
 http://38.75.136.137:98/gslb/dsdqpub/shxwhd.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",东方影视
 http://38.75.136.137:98/gslb/dsdqpub/shdsjhd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",五星体育
-http://38.75.136.137:98/gslb/dsdqpub/wxtyhd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",都市剧场
-http://38.75.136.137:98/gslb/dsdqpub/dsjchd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广东民生
-http://38.75.136.137:98/gslb/dsdqpub/gdgg.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广东珠江
-http://38.75.136.137:98/gslb/dsdqpub/gdzja.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",林正英影院
-http://38.75.136.137:98/gslb/dsdqpub/lblzy.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",成龙电影
-http://38.75.136.137:98/gslb/dsdqpub/lbcl.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv11
-http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",周润发电影
-http://38.75.136.137:98/gslb/dsdqpub/lbzrf.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv10
-http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv14
-http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",广东移动
-http://38.75.136.137:98/gslb/dsdqpub/gdyd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",广东新闻
-http://38.75.136.137:98/gslb/dsdqpub/gdxwa.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",cctv15
-http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",广西都市
+http://38.75.136.137:98/gslb/dsdqpub/gxds.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",cctv5
 http://38.75.136.137:98/gslb/dsdqbv/cctv5hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv12
-http://38.75.136.137:98/gslb/dsdqbv/cctv12hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv3
-http://38.75.136.137:98/gslb/dsdqbv/cctv3hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",广东少儿
+http://38.75.136.137:98/gslb/dsdqpub/gdtvs5.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://38.75.136.137:98/gslb/dsdqpub/gdzja.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",国学频道
+http://38.75.136.137:98/gslb/dsdqpub/gxpd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv6
+http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",CHC家庭影院
+http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",中国教育2
+http://38.75.136.137:98/gslb/dsdqpub/cetv2.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv4
+http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",中国教育1
+http://38.75.136.137:98/gslb/dsdqpub/cetv1hd.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv1
+http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv11
+http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv9
 http://38.75.136.137:98/gslb/dsdqbv/cctv9hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",周润发电影
+http://38.75.136.137:98/gslb/dsdqpub/lbzrf.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",成龙电影
+http://38.75.136.137:98/gslb/dsdqpub/lbcl.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",天津影视
+http://38.75.136.137:98/gslb/dsdqpub/tjtv3.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",天津新闻
+http://38.75.136.137:98/gslb/dsdqpub/tjtv1.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",周星驰电影
+http://38.75.136.137:98/gslb/dsdqpub/lbzxc.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv10
+http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv13
 http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv17
-http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv16
-http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv12
+http://38.75.136.137:98/gslb/dsdqbv/cctv12hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",天津都市
+http://38.75.136.137:98/gslb/dsdqpub/tjtv4.m3u8?auth=testpub
 #EXTINF:-1 group-title="其他频道",cctv5p
 http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",cctv7
 http://38.75.136.137:98/gslb/dsdqbv/cctv7hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv1
-http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv2
-http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="其他频道",cctv8
-http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",cctv16
+http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="其他频道",KCTV
 http://119.77.96.184:1935/chn05/chn05/chunklist_w1306745753.m3u8
-#EXTINF:-1 group-title="其他频道",WINSPORTSPREMIUMCOL
-http://108.181.23.41:80/livehttpplay?channel_id=23542
-#EXTINF:-1 group-title="其他频道",NTN24HORAS
-http://108.181.23.41:80/livehttpplay?channel_id=23705
+#EXTINF:-1 group-title="其他频道",NOW爆谷台失效
+http://173.208.234.146/live/nowbg.m3u8
+#EXTINF:-1 group-title="其他频道",中天新闻
+http://173.208.234.146/live/ctinews.m3u8
+#EXTINF:-1 group-title="其他频道",美亚电影
+http://173.208.234.146/live/mymovie.m3u8
+#EXTINF:-1 group-title="其他频道",NOW星影台失效
+http://173.208.234.146/live/nowxy.m3u8
+#EXTINF:-1 group-title="其他频道",ONDIRECTV
+http://108.181.23.41:80/livehttpplay?channel_id=23544
+#EXTINF:-1 group-title="其他频道",DHE
+http://108.181.23.41:80/livehttpplay?channel_id=23504
+#EXTINF:-1 group-title="其他频道",SEÑALCOLOMBIA
+http://108.181.23.41:80/livehttpplay?channel_id=23510
 #EXTINF:-1 group-title="其他频道",WinSports
 http://108.181.23.41:80/livehttpplay?channel_id=23548
 #EXTINF:-1 group-title="其他频道",GOLDENPLUSMX
 http://108.181.23.41:80/livehttpplay?channel_id=23623
 #EXTINF:-1 group-title="其他频道",DISNEYCHANELL
 http://108.181.23.41:80/livehttpplay?channel_id=23517
-#EXTINF:-1 group-title="其他频道",#EXTM3Ux-tvg-url="https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
-https://hk.gh-proxy.org/raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
+#EXTINF:-1 group-title="其他频道",CARACOLCOLOMBIA
+http://108.181.23.41:80/livehttpplay?channel_id=23513
+#EXTINF:-1 group-title="其他频道",RCNCOLOMBIA
+http://108.181.23.41:80/livehttpplay?channel_id=23515
+#EXTINF:-1 group-title="其他频道",NTN24HORAS
+http://108.181.23.41:80/livehttpplay?channel_id=23705
 #EXTINF:-1 group-title="其他频道",ESPNPREMIUM
 http://108.181.23.41:80/livehttpplay?channel_id=23523
-#EXTINF:-1 group-title="其他频道",SEÑALCOLOMBIA
-http://108.181.23.41:80/livehttpplay?channel_id=23510
+#EXTINF:-1 group-title="其他频道",WINSPORTSPREMIUMCOL
+http://108.181.23.41:80/livehttpplay?channel_id=23542
 #EXTINF:-1 group-title="其他频道",KCTV광주CH05
 http://119.77.96.184:1935/chn05/chn05/playlist.m3u8
-#EXTINF:-1 group-title="其他频道",CJB
-http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist.m3u
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist.m3u8
 #EXTINF:-1 group-title="其他频道",KCTV
 http://119.77.96.184:1935/chn05/chn05/chunklist_w644291506.m3u8
 #EXTINF:-1 group-title="其他频道",tvbs
 http://61.221.215.25:8800/hls/9/index.m3u8
-#EXTINF:-1 group-title="其他频道",KCTV
-http://119.77.96.184:1935/chn05/chn05/chunklist.m3u
+#EXTINF:-1 group-title="其他频道",CJB
+http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
 #EXTINF:-1 group-title="其他频道",SBSCJB
 http://1.222.207.80:1935/live/cjbtv/playlist.m3u8
-#EXTINF:-1 group-title="其他频道",KCTV
-http://119.77.96.184:1935/chn05/chn05/chunklist.m3u8
-#EXTINF:-1 group-title="其他频道",广东珠江
-http://119.29.142.81:4022/udp/239.77.0.1:5146
 #EXTINF:-1 group-title="其他频道",中天新闻
 http://111.0.115.129:8081/live/000ztxw.m3u8
-#EXTINF:-1 group-title="其他频道",广东体育
-http://119.29.142.81:4022/udp/239.77.0.112:5146
 #EXTINF:-1 group-title="其他频道",经济科教
 http://119.29.142.81:4022/udp/239.77.0.85:5146
-#EXTINF:-1 group-title="其他频道",汕头生活
-http://119.29.142.81:4022/udp/239.253.43.46:5146
-#EXTINF:-1 group-title="其他频道",广东民生
-http://119.29.142.81:4022/udp/239.77.0.225:5146
-#EXTINF:-1 group-title="其他频道",广东影视
-http://119.29.142.81:4022/udp/239.77.0.217:5146
-#EXTINF:-1 group-title="其他频道",揭阳生活
-http://119.29.142.81:4022/udp/239.77.0.251:5146
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://119.29.142.81:4022/udp/239.77.0.1:5146
 #EXTINF:-1 group-title="其他频道",汕头综合
 http://119.29.142.81:4022/udp/239.253.43.45:5146
-#EXTINF:-1 group-title="其他频道",潮州综合
-http://119.29.142.81:4022/udp/239.253.43.70:5146
-#EXTINF:-1 group-title="其他频道",广东新闻
-http://119.29.142.81:4022/udp/239.77.0.173:5146
+#EXTINF:-1 group-title="其他频道",汕头生活
+http://119.29.142.81:4022/udp/239.253.43.46:5146
+#EXTINF:-1 group-title="其他频道",揭阳生活
+http://119.29.142.81:4022/udp/239.77.0.251:5146
 #EXTINF:-1 group-title="其他频道",潮州民生
 http://119.29.142.81:4022/udp/239.253.43.75:5146
+#EXTINF:-1 group-title="其他频道",广东影视
+http://119.29.142.81:4022/udp/239.77.0.217:5146
+#EXTINF:-1 group-title="其他频道",汕尾生活
+http://119.29.142.81:4022/udp/239.77.0.187:5146
+#EXTINF:-1 group-title="其他频道",潮州综合
+http://119.29.142.81:4022/udp/239.253.43.70:5146
 #EXTINF:-1 group-title="其他频道",广东少儿
 http://119.29.142.81:4022/udp/239.77.0.250:5146
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://119.29.142.81:4022/udp/239.77.0.173:5146
 #EXTINF:-1 group-title="其他频道",揭阳综合
 http://119.29.142.81:4022/udp/239.77.0.229:5146
 #EXTINF:-1 group-title="其他频道",汕尾综合
 http://119.29.142.81:4022/udp/239.77.0.25:5146
-#EXTINF:-1 group-title="其他频道",汕尾生活
-http://119.29.142.81:4022/udp/239.77.0.187:5146
+#EXTINF:-1 group-title="其他频道",广东体育
+http://119.29.142.81:4022/udp/239.77.0.112:5146
 #EXTINF:-1 group-title="其他频道",广东珠江
 http://8.138.7.223/tv/gdzj.m3u8
-#EXTINF:-1 group-title="其他频道",2026八仙
-http://111.229.219.148:808/Cache/lzgg/7a367b98744276dba9ea2844bf13ab1e.m3u8
 #EXTINF:-1 group-title="其他频道",2019哪吒之魔童降世
 http://111.229.219.148:808/Cache/lzgg/67f35a41a439e00540d0d88f62d3d56a.m3u8
-#EXTINF:-1 group-title="其他频道",RCNCOLOMBIA
-http://108.181.23.41:80/livehttpplay?channel_id=23515
-#EXTINF:-1 group-title="其他频道",天津都市
-http://38.75.136.137:98/gslb/dsdqpub/tjtv4.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",周星驰电影
-http://38.75.136.137:98/gslb/dsdqpub/lbzxc.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",哈哈炫动
-http://38.75.136.137:98/gslb/dsdqpub/xdkthd.m3u8?auth=testpub
-#EXTINF:-1 group-title="其他频道",青岛都市频道
-http://38.75.136.137:98/gslb/dsdqpub/sdqdtv5.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",2026八仙
+http://111.229.219.148:808/Cache/lzgg/7a367b98744276dba9ea2844bf13ab1e.m3u8
+#EXTINF:-1 group-title="其他频道",#EXTM3Ux-tvg-url="https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
+https://hk.gh-proxy.org/raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://38.75.136.137:98/gslb/dsdqpub/gdzj.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",cctv14
+http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="其他频道",北京纪实科教
+http://38.75.136.137:98/gslb/dsdqpub/btv3.m3u8?auth=testpub
+#EXTINF:-1 group-title="其他频道",广东民生
+http://119.29.142.81:4022/udp/239.77.0.225:5146
 
 #EXTINF:-1 group-title="港澳台",翡翠台
 http://211.97.63.3:3443/hls/541/index.m3u8
@@ -530,164 +544,166 @@ rtsp://183.59.56.116:554/PLTV/88888905/224/3221229881/10000100000000060000000009
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221229990/10000100000000060000000010232875_0.smil?0&accountinfo=%7E%7EV2.0%7E5_WBXEf9DsrAEr08Jx_i0A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="卫视频道",大湾区卫视
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221230001/10000100000000060000000011293289_0.smil?0&accountinfo=%7E%7EV2.0%7EiKe-NYf8wqbfEoP3btv9QA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://38.75.136.137:98/gslb/dsdqca/lnwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://38.75.136.137:98/gslb/dsdqca/sdwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",湖北卫视
-http://38.75.136.137:98/gslb/dsdqca/hbwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://38.75.136.137:98/gslb/dsdqca/zjwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://38.75.136.137:98/gslb/dsdqca/dnwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",重庆卫视
-http://38.75.136.137:98/gslb/dsdqca/cqwshd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="卫视频道",江苏卫视
 http://38.75.136.137:98/gslb/dsdqca/jswshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://38.75.136.137:98/gslb/dsdqca/dfwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",天津卫视
+http://38.75.136.137:98/gslb/dsdqca/tjwshd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="卫视频道",北京卫视
 http://38.75.136.137:98/gslb/dsdqca/bjwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+http://38.75.136.137:98/gslb/dsdqca/lnwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+http://38.75.136.137:98/gslb/dsdqca/cqwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",浙江卫视
+http://38.75.136.137:98/gslb/dsdqca/zjwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://38.75.136.137:98/gslb/dsdqca/hbwshd.m3u8?auth=test20251009
 #EXTINF:-1 group-title="卫视频道",湖南卫视
 http://38.75.136.137:98/gslb/dsdqca/hnwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",重庆卫视
-http://38.75.136.137:98/gslb/dsdqpub/cqwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",内蒙古卫视
-http://38.75.136.137:98/gslb/dsdqpub/nmgws.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",东南卫视
+http://38.75.136.137:98/gslb/dsdqca/dnwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",东方卫视
+http://38.75.136.137:98/gslb/dsdqca/dfwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://38.75.136.137:98/gslb/dsdqca/sdwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://38.75.136.137:98/gslb/dsdqpub/gdgj.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",天津卫视
+http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",安徽卫视
+http://38.75.136.137:98/gslb/dsdqpub/ahwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",贵州卫视
 http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",甘肃卫视
-http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",大湾区卫视
-http://38.75.136.137:98/gslb/dsdqpub/nfws.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",厦门卫视
-http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",湖北卫视
-http://38.75.136.137:98/gslb/dsdqpub/hbwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",广西卫视
-http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",浙江卫视
+http://38.75.136.137:98/gslb/dsdqpub/zjwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",兵团卫视
 http://38.75.136.137:98/gslb/dsdqpub/btws.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",甘肃卫视
+http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",陕西卫视
 http://38.75.136.137:98/gslb/dsdqpub/snwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",北京卫视
 http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",青海卫视
-http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://38.75.136.137:98/gslb/dsdqpub/ahwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",大湾区卫视
-http://38.75.136.137:98/gslb/dsdqpub/gdgj.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",山西卫视
-http://38.75.136.137:98/gslb/dsdqpub/sxwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",云南卫视
+http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",新疆卫视
 http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",河北卫视
 http://38.75.136.137:98/gslb/dsdqpub/hewshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",河南卫视
-http://38.75.136.137:98/gslb/dsdqpub/hawshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",三沙卫视
-http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",四川卫视
 http://38.75.136.137:98/gslb/dsdqpub/scwshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",东方卫视
+http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",河南卫视
+http://38.75.136.137:98/gslb/dsdqpub/hawshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",厦门卫视
+http://38.75.136.137:98/gslb/dsdqpub/xmws.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",东南卫视
+http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",江西卫视
+http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://38.75.136.137:98/gslb/dsdqpub/nfws.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",内蒙古卫视
+http://38.75.136.137:98/gslb/dsdqpub/nmgws.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",东方卫视
 http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",云南卫视
-http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://38.75.136.137:98/gslb/dsdqpub/zjwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",宁夏卫视
 http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://119.29.142.81:4022/udp/239.77.0.84:5146
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://120.76.248.139/live/bfgd/4200000092.m3u8
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://120.76.248.139/live/bfgd/4200000185.m3u8
-#EXTINF:-1 group-title="卫视频道",大湾区卫视
-http://8.138.7.223/tv/dwq.m3u8
-#EXTINF:-1 group-title="卫视频道",大湾区卫视
-http://119.29.142.81:4022/udp/239.77.0.215:5146
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://120.76.248.139/live/bfgd/4200000096.m3u8
-#EXTINF:-1 group-title="卫视频道",甘肃卫视
-http://120.76.248.139/live/bfgd/4200000119.m3u8
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://120.76.248.139/live/bfgd/4200000093.m3u8
-#EXTINF:-1 group-title="卫视频道",河北卫视
-http://120.76.248.139/live/bfgd/4200000108.m3u8
-#EXTINF:-1 group-title="卫视频道",湖北卫视
-http://120.76.248.139/live/bfgd/4200000102.m3u8
-#EXTINF:-1 group-title="卫视频道",陕西卫视
-http://120.76.248.139/live/bfgd/4200000512.m3u8
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://120.76.248.139/live/bfgd/4200000100.m3u8
-#EXTINF:-1 group-title="卫视频道",河南卫视
-http://120.76.248.139/live/bfgd/4200000339.m3u8
-#EXTINF:-1 group-title="卫视频道",广西卫视
-http://120.76.248.139/live/bfgd/4200000116.m3u8
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://120.76.248.139/live/bfgd/4200000141.m3u8
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://120.76.248.139/live/bfgd/4200000483.m3u8
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://120.76.248.139/live/bfgd/4200000085.m3u8
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://120.76.248.139/live/bfgd/4200000099.m3u8
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://120.76.248.139/live/bfgd/4200000095.m3u8
-#EXTINF:-1 group-title="卫视频道",山西卫视
-http://120.76.248.139/live/bfgd/4200000109.m3u8
-#EXTINF:-1 group-title="卫视频道",吉林卫视
-http://120.76.248.139/live/bfgd/4200000097.m3u8
-#EXTINF:-1 group-title="卫视频道",重庆卫视
-http://120.76.248.139/live/bfgd/4200000107.m3u8
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://120.76.248.139/live/bfgd/4200000058.m3u8
-#EXTINF:-1 group-title="卫视频道",云南卫视
-http://120.76.248.139/live/bfgd/4200000482.m3u8
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://120.76.248.139/live/bfgd/4200000094.m3u8
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://120.76.248.139/live/bfgd/4200000083.m3u8
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://120.76.248.139/live/bfgd/4200000086.m3u8
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://120.76.248.139/live/bfgd/4200000098.m3u8
-#EXTINF:-1 group-title="卫视频道",延边卫视
-http://120.76.248.139/live/bfgd/4200000117.m3u8
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://120.76.248.139/live/bfgd/4200000101.m3u8
-#EXTINF:-1 group-title="卫视频道",四川卫视
-http://120.76.248.139/live/bfgd/4200000103.m3u8
+#EXTINF:-1 group-title="卫视频道",三沙卫视
+http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",青海卫视
+http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub
 #EXTINF:-1 group-title="卫视频道",吉林卫视
 http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",北京卫视
+http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+http://38.75.136.137:98/gslb/dsdqpub/cqwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://38.75.136.137:98/gslb/dsdqpub/hbwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",广西卫视
+http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://119.29.142.81:4022/udp/239.77.0.215:5146
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://119.29.142.81:4022/udp/239.77.0.84:5146
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://8.138.7.223/tv/dwq.m3u8
+#EXTINF:-1 group-title="卫视频道",吉林卫视
+http://120.76.248.139/live/bfgd/4200000097.m3u8
+#EXTINF:-1 group-title="卫视频道",河南卫视
+http://120.76.248.139/live/bfgd/4200000339.m3u8
+#EXTINF:-1 group-title="卫视频道",东方卫视
+http://120.76.248.139/live/bfgd/4200000093.m3u8
+#EXTINF:-1 group-title="卫视频道",黑龙江卫视
+http://120.76.248.139/live/bfgd/4200000095.m3u8
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://120.76.248.139/live/bfgd/4200000102.m3u8
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+http://120.76.248.139/live/bfgd/4200000058.m3u8
+#EXTINF:-1 group-title="卫视频道",北京卫视
+http://120.76.248.139/live/bfgd/4200000083.m3u8
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+http://120.76.248.139/live/bfgd/4200000085.m3u8
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+http://120.76.248.139/live/bfgd/4200000100.m3u8
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+http://120.76.248.139/live/bfgd/4200000107.m3u8
+#EXTINF:-1 group-title="卫视频道",甘肃卫视
+http://120.76.248.139/live/bfgd/4200000119.m3u8
+#EXTINF:-1 group-title="卫视频道",山西卫视
+http://120.76.248.139/live/bfgd/4200000109.m3u8
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+http://120.76.248.139/live/bfgd/4200000185.m3u8
+#EXTINF:-1 group-title="卫视频道",河北卫视
+http://120.76.248.139/live/bfgd/4200000108.m3u8
+#EXTINF:-1 group-title="卫视频道",江西卫视
+http://120.76.248.139/live/bfgd/4200000098.m3u8
+#EXTINF:-1 group-title="卫视频道",云南卫视
+http://120.76.248.139/live/bfgd/4200000482.m3u8
+#EXTINF:-1 group-title="卫视频道",延边卫视
+http://120.76.248.139/live/bfgd/4200000117.m3u8
+#EXTINF:-1 group-title="卫视频道",四川卫视
+http://120.76.248.139/live/bfgd/4200000103.m3u8
+#EXTINF:-1 group-title="卫视频道",贵州卫视
+http://120.76.248.139/live/bfgd/4200000101.m3u8
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://120.76.248.139/live/bfgd/4200000099.m3u8
+#EXTINF:-1 group-title="卫视频道",安徽卫视
+http://120.76.248.139/live/bfgd/4200000096.m3u8
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+http://120.76.248.139/live/bfgd/4200000086.m3u8
+#EXTINF:-1 group-title="卫视频道",陕西卫视
+http://120.76.248.139/live/bfgd/4200000512.m3u8
+#EXTINF:-1 group-title="卫视频道",广西卫视
+http://120.76.248.139/live/bfgd/4200000116.m3u8
+#EXTINF:-1 group-title="卫视频道",东南卫视
+http://120.76.248.139/live/bfgd/4200000483.m3u8
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://120.76.248.139/live/bfgd/4200000092.m3u8
+#EXTINF:-1 group-title="卫视频道",浙江卫视
+http://120.76.248.139/live/bfgd/4200000094.m3u8
+#EXTINF:-1 group-title="卫视频道",辽宁卫视
+http://120.76.248.139/live/bfgd/4200000141.m3u8
+#EXTINF:-1 group-title="卫视频道",黑龙江卫视
+http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub
+#EXTINF:-1 group-title="卫视频道",山西卫视
+http://38.75.136.137:98/gslb/dsdqpub/sxwshd.m3u8?auth=testpub
 
 #EXTINF:-1 group-title="央视频道",CCTV1
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221227610/10000100000000060000000004462931_0.smil?0&accountinfo=%7E%7EV2.0%7EjrJOUmzk157kD2TdQGpdFA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
@@ -714,55 +730,59 @@ rtsp://183.59.56.116:554/PLTV/88888905/224/3221229870/10000100000000060000000010
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://107.150.60.122/live/cctv14hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://107.150.60.122/live/cctv1hd.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://107.150.60.122/live/cctv13hd.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
 http://107.150.60.122/live/cctv11hd.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://107.150.60.122/live/cctv10hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://107.150.60.122/live/cctv16hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://107.150.60.122/live/cctv12hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
+http://107.150.60.122/live/cctv1hd.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://107.150.60.122/live/cctv13hd.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://107.150.60.122/live/cctv15hd.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://107.150.60.122/live/cctv10hd.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
 http://107.150.60.122/live/cctv17hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://38.75.136.137:98/gslb/dsdqpub/cctv10hd.m3u8?auth=testpub
+http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://38.75.136.137:98/gslb/dsdqpub/cctv11hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub
+http://38.75.136.137:98/gslb/dsdqpub/cctv10hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://38.75.136.137:98/gslb/dsdqpub/cctv13hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://120.76.248.139/live/bfgd/4200000488.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://120.76.248.139/live/bfgd/4200000133.m3u8
+http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://120.76.248.139/live/bfgd/4200000489.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://120.76.248.139/live/bfgd/4200000488.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://120.76.248.139/live/bfgd/4200000484.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://120.76.248.139/live/bfgd/4200000201.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://120.76.248.139/live/bfgd/4200000130.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
 http://120.76.248.139/live/bfgd/4200000129.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://120.76.248.139/live/bfgd/4200000067.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://120.76.248.139/live/bfgd/4200000204.m3u8
+http://120.76.248.139/live/bfgd/4200000130.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://120.76.248.139/live/bfgd/4200000131.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
+http://120.76.248.139/live/bfgd/4200000204.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://120.76.248.139/live/bfgd/4200000067.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
 http://120.76.248.139/live/bfgd/4200000132.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://107.150.60.122/live/cctv15hd.m3u8
+http://120.76.248.139/live/bfgd/4200000133.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://38.75.136.137:98/gslb/dsdqpub/cctv15hd.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://38.75.136.137:98/gslb/dsdqpub/cctv14hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV2
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221227634/10000100000000060000000004662503_0.smil?0&accountinfo=%7E%7EV2.0%7Ew08QX--mxmtiRia3ZBMEZA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="央视频道",CCTV2
@@ -796,17 +816,15 @@ http://107.150.60.122/live/cctv5hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV5
 http://107.150.60.122/live/cctv5p.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV5
-http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV5
 http://38.75.136.137:98/gslb/dsdqpub/cctv5hd.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV5
+http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV5
 http://120.76.248.139/live/bfgd/4200000064.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV5
 http://120.76.248.139/live/bfgd/4200000246.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV6电影
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221229898/10000100000000060000000009924445_0.smil?0&accountinfo=%7E%7EV2.0%7Ed-FexEoDWH8JBMQLRWKq3w%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://38.75.136.137:98/gslb/dsdqpub/cctv6hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV7国防军事
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221227620/10000100000000060000000004662504_0.smil?0&accountinfo=%7E%7EV2.0%7EmBZ9vCGayUb5OiqnpyUtBg%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="央视频道",CCTV7国防军事
@@ -815,78 +833,78 @@ rtsp://183.59.56.116:554/PLTV/88888888/224/3221229730/10000100000000060000000008
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221229900/10000100000000060000000009924385_0.smil?0&accountinfo=%7E%7EV2.0%7EsIJM3FaGUlm_stwXY7o0AA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="央视频道",CCTV9纪录
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221227617/10000100000000060000000004662501_0.smil?0&accountinfo=%7E%7EV2.0%7EdT_-cvTqkfdJ1X89SBzV5A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="央视频道",CCTV-怀旧剧场
+http://107.150.60.122/live/hjjc.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-兵器科技
 http://107.150.60.122/live/gfjs.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-9
-http://107.150.60.122/live/cctv9hd.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-高尔夫网球
+http://107.150.60.122/live/gefwq.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-世界地理
+http://107.150.60.122/live/sjdl.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-女性时尚
+http://107.150.60.122/live/nxss.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-风云音乐
+http://107.150.60.122/live/fyyy.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-7
 http://107.150.60.122/live/cctv7hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-6
 http://107.150.60.122/live/cctv6hd.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-风云剧场
-http://107.150.60.122/live/fyjc.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-8K超
-http://107.150.60.122/live/cctv8k.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-电视指南
-http://107.150.60.122/live/dszn.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-怀旧剧场
-http://107.150.60.122/live/hjjc.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-8
-http://107.150.60.122/live/cctv8hd.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-超
-http://107.150.60.122/live/cctv4k.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-世界地理
-http://107.150.60.122/live/sjdl.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-央视台球
-http://107.150.60.122/live/ystq.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-女性时尚
-http://107.150.60.122/live/nxss.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-第一剧场
-http://107.150.60.122/live/dyjc.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-风云足球
 http://107.150.60.122/live/fyzq.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-风云音乐
-http://107.150.60.122/live/fyyy.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-高尔夫网球
-http://107.150.60.122/live/gefwq.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-兵器科技
-http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV-8K超
-http://38.75.136.137:98/gslb/dsdqpub/cctv8k.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV-电视指南
-http://38.75.136.137:98/gslb/dsdqpub/dszn.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-9
-http://38.75.136.137:98/gslb/dsdqpub/cctv9hd.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV-风云足球
-http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
+http://107.150.60.122/live/cctv9hd.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-风云剧场
+http://107.150.60.122/live/fyjc.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-超
+http://107.150.60.122/live/cctv4k.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-央视台球
-http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
+http://107.150.60.122/live/ystq.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-风云音乐
+http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-8K超
+http://107.150.60.122/live/cctv8k.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-第一剧场
+http://107.150.60.122/live/dyjc.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-超
+http://38.75.136.137:98/gslb/dsdqpub/cctv4k.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-怀旧剧场
 http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-8
+http://107.150.60.122/live/cctv8hd.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-高尔夫网球
 http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-兵器科技
+http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-女性时尚
+http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-9
+http://38.75.136.137:98/gslb/dsdqpub/cctv9hd.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-世界地理
 http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-7
 http://38.75.136.137:98/gslb/dsdqpub/cctv7hd.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV-风云音乐
-http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-电视指南
+http://38.75.136.137:98/gslb/dsdqpub/dszn.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-第一剧场
 http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-风云足球
+http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-风云剧场
 http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV-超
-http://38.75.136.137:98/gslb/dsdqpub/cctv4k.m3u8?auth=testpub
-#EXTINF:-1 group-title="央视频道",CCTV-6
-http://120.76.248.139/live/bfgd/4200000065.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-9
-http://120.76.248.139/live/bfgd/4200000128.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-8K超
+http://38.75.136.137:98/gslb/dsdqpub/cctv8k.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-央视台球
+http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
 #EXTINF:-1 group-title="央视频道",CCTV-7
 http://120.76.248.139/live/bfgd/4200000127.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV-8
 http://120.76.248.139/live/bfgd/4200000066.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV-女性时尚
-http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub
+#EXTINF:-1 group-title="央视频道",CCTV-9
+http://120.76.248.139/live/bfgd/4200000128.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-6
+http://120.76.248.139/live/bfgd/4200000065.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV-电视指南
+http://107.150.60.122/live/dszn.m3u8
 
 #EXTINF:-1 group-title="🎞️电影直播",华数电影
 http://hmfs.f3322.net:3388/hls/40/index.m3u8
