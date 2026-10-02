@@ -3,9 +3,9 @@ Collecting requests
 Collecting aiohttp
   Using cached aiohttp-3.14.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
 Collecting python-dotenv
-  Using cached python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+  Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
 Collecting charset_normalizer<4,>=2 (from requests)
-  Using cached charset_normalizer-3.5.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+  Downloading charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
 Collecting idna<4,>=2.5 (from requests)
   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
 Collecting urllib3<3,>=1.26 (from requests)
@@ -31,14 +31,14 @@ Collecting typing_extensions>=4.4 (from aiohttp)
 Collecting yarl<2.0,>=1.17.0 (from aiohttp)
   Downloading yarl-1.25.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
 Using cached requests-2.34.2-py3-none-any.whl (73 kB)
-Using cached charset_normalizer-3.5.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)
+Downloading charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (271 kB)
 Downloading idna-3.20-py3-none-any.whl (69 kB)
 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
 Using cached aiohttp-3.14.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
 Using cached async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
 Downloading multidict-6.9.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (303 kB)
 Downloading yarl-1.25.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (118 kB)
-Using cached python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
 Using cached aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
 Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
 Using cached attrs-26.1.0-py3-none-any.whl (67 kB)
@@ -48,4 +48,4 @@ Downloading propcache-0.5.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_
 Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
 Installing collected packages: urllib3, typing_extensions, python-dotenv, propcache, idna, frozenlist, charset_normalizer, certifi, attrs, async-timeout, aiohappyeyeballs, requests, multidict, aiosignal, yarl, aiohttp
 
-Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.7.22 charset_normalizer-3.5.1 frozenlist-1.8.0 idna-3.20 multidict-6.9.1 propcache-0.5.4 python-dotenv-1.2.3 requests-2.34.2 typing_extensions-4.16.0 urllib3-2.8.0 yarl-1.25.1
+Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.7.22 charset_normalizer-3.5.2 frozenlist-1.8.0 idna-3.20 multidict-6.9.1 propcache-0.5.4 python-dotenv-1.2.4 requests-2.34.2 typing_extensions-4.16.0 urllib3-2.8.0 yarl-1.25.1
