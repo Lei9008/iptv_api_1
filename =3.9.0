@@ -35,7 +35,7 @@ Downloading charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_
 Downloading idna-3.20-py3-none-any.whl (69 kB)
 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
 Downloading aiohttp-3.14.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 46.6 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 63.2 MB/s  0:00:00
 Using cached async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
 Downloading multidict-6.9.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (303 kB)
 Downloading yarl-1.25.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (118 kB)
