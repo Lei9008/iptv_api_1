@@ -106,70 +106,70 @@ rtsp://183.59.56.116:554/PLTV/88888905/224/3221228307/10000100000000060000000008
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221228179/10000100000000060000000008189131_0.smil?0&accountinfo=%7E%7EV2.0%7El0PMxMTr89VnbogvGkhHKQ%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="其他频道",精选频道3
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221229891/10000100000000060000000009714024_0.smil?0&accountinfo=%7E%7EV2.0%7Ewh4GzNmJ9Ru12FmJnUao9A%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
+#EXTINF:-1 group-title="其他频道",天映频道
+http://173.208.234.146/live/typd.m3u8
 #EXTINF:-1 group-title="其他频道",美亚电影
 http://173.208.234.146/live/mymovie.m3u8
 #EXTINF:-1 group-title="其他频道",星影台
 http://173.208.234.146/live/nowxy.m3u8
-#EXTINF:-1 group-title="其他频道",天映频道
-http://173.208.234.146/live/typd.m3u8
 #EXTINF:-1 group-title="其他频道",爆谷台
 http://173.208.234.146/live/nowbg.m3u8
-#EXTINF:-1 group-title="其他频道",#EXTM3Ux-tvg-url="https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
-https://hk.gh-proxy.org/raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
-#EXTINF:-1 group-title="其他频道",tvbs
-http://61.221.215.25:8800/hls/9/index.m3u8
-#EXTINF:-1 group-title="其他频道",KCTV
-http://119.77.96.184:1935/chn05/chn05/chunklist_w644291506.m3u8
-#EXTINF:-1 group-title="其他频道",KCTV
-http://119.77.96.184:1935/chn05/chn05/chunklist.m3u8
-#EXTINF:-1 group-title="其他频道",SBSCJB
-http://1.222.207.80:1935/live/cjbtv/playlist.m3u8
-#EXTINF:-1 group-title="其他频道",KCTV
-http://119.77.96.184:1935/chn05/chn05/chunklist.m3u
-#EXTINF:-1 group-title="其他频道",CJB
-http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
 #EXTINF:-1 group-title="其他频道",JTV
 http://61.85.197.53:1935/jtv_live/myStream/chunklist_w1542137203.m3u8
 #EXTINF:-1 group-title="其他频道",KCTV
-http://119.77.96.184:1935/chn05/chn05/chunklist_w1306745753.m3u8
+http://119.77.96.184:1935/chn05/chn05/chunklist.m3u8
 #EXTINF:-1 group-title="其他频道",SBSJTV
 http://61.85.197.53:1935/jtv_live/myStream/playlist.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist_w1306745753.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist_w644291506.m3u8
+#EXTINF:-1 group-title="其他频道",SBSCJB
+http://1.222.207.80:1935/live/cjbtv/playlist.m3u8
+#EXTINF:-1 group-title="其他频道",CJB
+http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
+#EXTINF:-1 group-title="其他频道",KCTV
+http://119.77.96.184:1935/chn05/chn05/chunklist.m3u
 #EXTINF:-1 group-title="其他频道",KCTV광주CH05
 http://119.77.96.184:1935/chn05/chn05/playlist.m3u8
-#EXTINF:-1 group-title="其他频道",广东珠江
-http://8.138.7.223/tv/gdzj.m3u8
-#EXTINF:-1 group-title="其他频道",广东珠江
-http://119.29.142.81:4022/udp/239.77.0.1:5146
-#EXTINF:-1 group-title="其他频道",广东少儿
-http://119.29.142.81:4022/udp/239.77.0.250:5146
+#EXTINF:-1 group-title="其他频道",tvbs
+http://61.221.215.25:8800/hls/9/index.m3u8
 #EXTINF:-1 group-title="其他频道",中天新闻
 http://111.0.115.129:8081/live/000ztxw.m3u8
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://8.138.7.223/tv/gdzj.m3u8
+#EXTINF:-1 group-title="其他频道",#EXTM3Ux-tvg-url="https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
+https://hk.gh-proxy.org/raw.githubusercontent.com/develop202/migu_video/refs/heads/main/playback.xml
+#EXTINF:-1 group-title="其他频道",广东少儿
+http://119.29.142.81:4022/udp/239.77.0.250:5146
 #EXTINF:-1 group-title="其他频道",揭阳综合
 http://119.29.142.81:4022/udp/239.77.0.229:5146
-#EXTINF:-1 group-title="其他频道",汕头生活
-http://119.29.142.81:4022/udp/239.253.43.46:5146
-#EXTINF:-1 group-title="其他频道",广东民生
-http://119.29.142.81:4022/udp/239.77.0.225:5146
-#EXTINF:-1 group-title="其他频道",潮州综合
-http://119.29.142.81:4022/udp/239.253.43.70:5146
-#EXTINF:-1 group-title="其他频道",汕尾生活
-http://119.29.142.81:4022/udp/239.77.0.187:5146
-#EXTINF:-1 group-title="其他频道",潮州民生
-http://119.29.142.81:4022/udp/239.253.43.75:5146
-#EXTINF:-1 group-title="其他频道",广东影视
-http://119.29.142.81:4022/udp/239.77.0.217:5146
-#EXTINF:-1 group-title="其他频道",广东体育
-http://119.29.142.81:4022/udp/239.77.0.112:5146
-#EXTINF:-1 group-title="其他频道",汕头综合
-http://119.29.142.81:4022/udp/239.253.43.45:5146
-#EXTINF:-1 group-title="其他频道",揭阳生活
-http://119.29.142.81:4022/udp/239.77.0.251:5146
 #EXTINF:-1 group-title="其他频道",汕尾综合
 http://119.29.142.81:4022/udp/239.77.0.25:5146
-#EXTINF:-1 group-title="其他频道",经济科教
-http://119.29.142.81:4022/udp/239.77.0.85:5146
+#EXTINF:-1 group-title="其他频道",广东体育
+http://119.29.142.81:4022/udp/239.77.0.112:5146
+#EXTINF:-1 group-title="其他频道",广东影视
+http://119.29.142.81:4022/udp/239.77.0.217:5146
+#EXTINF:-1 group-title="其他频道",汕头综合
+http://119.29.142.81:4022/udp/239.253.43.45:5146
 #EXTINF:-1 group-title="其他频道",广东新闻
 http://119.29.142.81:4022/udp/239.77.0.173:5146
+#EXTINF:-1 group-title="其他频道",经济科教
+http://119.29.142.81:4022/udp/239.77.0.85:5146
+#EXTINF:-1 group-title="其他频道",广东民生
+http://119.29.142.81:4022/udp/239.77.0.225:5146
+#EXTINF:-1 group-title="其他频道",揭阳生活
+http://119.29.142.81:4022/udp/239.77.0.251:5146
+#EXTINF:-1 group-title="其他频道",潮州综合
+http://119.29.142.81:4022/udp/239.253.43.70:5146
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://119.29.142.81:4022/udp/239.77.0.1:5146
+#EXTINF:-1 group-title="其他频道",汕头生活
+http://119.29.142.81:4022/udp/239.253.43.46:5146
+#EXTINF:-1 group-title="其他频道",潮州民生
+http://119.29.142.81:4022/udp/239.253.43.75:5146
+#EXTINF:-1 group-title="其他频道",汕尾生活
+http://119.29.142.81:4022/udp/239.77.0.187:5146
 
 #EXTINF:-1 group-title="港澳台",翡翠台
 http://218.13.139.26:9901/tsfile/live/1079_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -236,10 +236,10 @@ rtsp://183.59.56.116:554/PLTV/88888905/224/3221229990/10000100000000060000000010
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221230001/10000100000000060000000011293289_0.smil?0&accountinfo=%7E%7EV2.0%7EiKe-NYf8wqbfEoP3btv9QA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
 #EXTINF:-1 group-title="卫视频道",大湾区卫视
 http://8.138.7.223/tv/dwq.m3u8
-#EXTINF:-1 group-title="卫视频道",大湾区卫视
-http://119.29.142.81:4022/udp/239.77.0.215:5146
 #EXTINF:-1 group-title="卫视频道",广东卫视
 http://119.29.142.81:4022/udp/239.77.0.84:5146
+#EXTINF:-1 group-title="卫视频道",大湾区卫视
+http://119.29.142.81:4022/udp/239.77.0.215:5146
 
 #EXTINF:-1 group-title="央视频道",CCTV1
 rtsp://183.59.56.116:554/PLTV/88888905/224/3221227610/10000100000000060000000004462931_0.smil?0&accountinfo=%7E%7EV2.0%7EjrJOUmzk157kD2TdQGpdFA%7EzJeEdQQK6GK7r2Q5jZjxjKYhZiHklGs8wg1XyXUSKdk5d8f2s2AYjzO2-qcyDeaExan3Pra4cuU_Whoju6BKGf666OGX7-GKwJrfpZjwyfM~ExtInfoWNHSPSTb+3AG0FnUkYLPMw=-1%2C0%2C1%2C%2C%2C2%2C%2C%2C%2C2%2CEND&GuardEncType=2
